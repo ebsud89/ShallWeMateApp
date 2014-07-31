@@ -20,7 +20,6 @@
 		EB7859F0198A1631000B4C18 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB7859EE198A1631000B4C18 /* InfoPlist.strings */; };
 		EB7859F2198A1631000B4C18 /* ShallWeMateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7859F1198A1631000B4C18 /* ShallWeMateTests.m */; };
 		EB785A09198A1B32000B4C18 /* SWMRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB785A08198A1B32000B4C18 /* SWMRootViewController.m */; };
-		EB785A0B198A231C000B4C18 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB785A0A198A231C000B4C18 /* FacebookSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +51,6 @@
 		EB7859F1198A1631000B4C18 /* ShallWeMateTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShallWeMateTests.m; sourceTree = "<group>"; };
 		EB785A07198A1B32000B4C18 /* SWMRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMRootViewController.h; sourceTree = "<group>"; };
 		EB785A08198A1B32000B4C18 /* SWMRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMRootViewController.m; sourceTree = "<group>"; };
-		EB785A0A198A231C000B4C18 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../FacebookSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +59,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB7859CF198A1631000B4C18 /* CoreGraphics.framework in Frameworks */,
-				EB785A0B198A231C000B4C18 /* FacebookSDK.framework in Frameworks */,
 				EB7859D1198A1631000B4C18 /* UIKit.framework in Frameworks */,
 				EB7859CD198A1631000B4C18 /* Foundation.framework in Frameworks */,
 			);
@@ -102,7 +99,6 @@
 		EB7859CB198A1631000B4C18 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EB785A0A198A231C000B4C18 /* FacebookSDK.framework */,
 				EB7859CC198A1631000B4C18 /* Foundation.framework */,
 				EB7859CE198A1631000B4C18 /* CoreGraphics.framework */,
 				EB7859D0198A1631000B4C18 /* UIKit.framework */,
