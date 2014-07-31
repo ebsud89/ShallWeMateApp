@@ -19,8 +19,8 @@
 		EB7859E8198A1631000B4C18 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB7859D0198A1631000B4C18 /* UIKit.framework */; };
 		EB7859F0198A1631000B4C18 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB7859EE198A1631000B4C18 /* InfoPlist.strings */; };
 		EB7859F2198A1631000B4C18 /* ShallWeMateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7859F1198A1631000B4C18 /* ShallWeMateTests.m */; };
-		EB7859FC198A1685000B4C18 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB7859FB198A1685000B4C18 /* FacebookSDK.framework */; };
 		EB785A09198A1B32000B4C18 /* SWMRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB785A08198A1B32000B4C18 /* SWMRootViewController.m */; };
+		EB785A0B198A231C000B4C18 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB785A0A198A231C000B4C18 /* FacebookSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,9 +50,9 @@
 		EB7859ED198A1631000B4C18 /* ShallWeMateTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ShallWeMateTests-Info.plist"; sourceTree = "<group>"; };
 		EB7859EF198A1631000B4C18 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EB7859F1198A1631000B4C18 /* ShallWeMateTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShallWeMateTests.m; sourceTree = "<group>"; };
-		EB7859FB198A1685000B4C18 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		EB785A07198A1B32000B4C18 /* SWMRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMRootViewController.h; sourceTree = "<group>"; };
 		EB785A08198A1B32000B4C18 /* SWMRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMRootViewController.m; sourceTree = "<group>"; };
+		EB785A0A198A231C000B4C18 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../FacebookSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +61,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB7859CF198A1631000B4C18 /* CoreGraphics.framework in Frameworks */,
-				EB7859FC198A1685000B4C18 /* FacebookSDK.framework in Frameworks */,
+				EB785A0B198A231C000B4C18 /* FacebookSDK.framework in Frameworks */,
 				EB7859D1198A1631000B4C18 /* UIKit.framework in Frameworks */,
 				EB7859CD198A1631000B4C18 /* Foundation.framework in Frameworks */,
 			);
@@ -102,7 +102,7 @@
 		EB7859CB198A1631000B4C18 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EB7859FB198A1685000B4C18 /* FacebookSDK.framework */,
+				EB785A0A198A231C000B4C18 /* FacebookSDK.framework */,
 				EB7859CC198A1631000B4C18 /* Foundation.framework */,
 				EB7859CE198A1631000B4C18 /* CoreGraphics.framework */,
 				EB7859D0198A1631000B4C18 /* UIKit.framework */,
@@ -418,6 +418,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/ebsud89/Documents/FacebookSDK,
+					/Users/ebsud89/Documents/Development/ios/swmapp,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ShallWeMate/ShallWeMate-Prefix.pch";
@@ -436,6 +437,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/ebsud89/Documents/FacebookSDK,
+					/Users/ebsud89/Documents/Development/ios/swmapp,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ShallWeMate/ShallWeMate-Prefix.pch";
@@ -505,6 +507,7 @@
 				EB7859F7198A1631000B4C18 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EB7859F8198A1631000B4C18 /* Build configuration list for PBXNativeTarget "ShallWeMateTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +516,7 @@
 				EB7859FA198A1631000B4C18 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
