@@ -12,6 +12,52 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    // Whenever a person opens the app, check for a cached session
+    if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
+        
+        // If there's one, just open the session silently, without showing the user the login UI
+        [FBSession openActiveSessionWithReadPermissions:@[@"public_profile"]
+                                           allowLoginUI:NO
+                                      completionHandler:^(FBSession *session, FBSessionState state, NSError *error) {
+                                          //for fbUser profile picture
+                                          self.fbUserId = [[NSString alloc] init];
+                                          NSLog(@"default user id setting");
+                                          
+                                          // Handler for session state changes
+                                          // This method will be called EACH time the session state changes,
+                                          // also for intermediate states and NOT just when the session open
+                                          [self sessionStateChanged:session state:state error:error];
+                                          
+                                          //for session check and log
+                                          [FBRequestConnection startForMeWithCompletionHandler:^(FBRequestConnection *connection, id<FBGraphUser> result, NSError *error) {
+                                              if (!error) {
+                                                  NSLog(@"first .. user info: %@", result);
+                                                  NSLog(@"user's name: %@", result.name);
+                                                  NSLog(@"user's objectID(=id): %@", result.objectID);
+                                                  self.fbUserId = result.objectID;
+                                                  self.fbUserName = result.name;
+                                                  NSLog(@"fbUserID : %@", self.fbUserId);
+                                              } else {
+                                                  NSLog(@"sessionStateChanged .. Facebook connection Error!!");
+                                              }
+                                          }];
+                                          
+                                      }];
+    }
+    //default app 설정
+    [FBSettings setDefaultAppID:@"742631819134258"];
+    //    self.fbUserId = @"646117635484916";
+    
+    //session 유지
+    //[[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookieAcceptPolicy:NSHTTPCookieAcceptPolicyAlways];
+    
+    // Root view controller
+    _rootViewController = [[RootViewController alloc];
+                           
+    
+                        
+    // Main Window View start
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];

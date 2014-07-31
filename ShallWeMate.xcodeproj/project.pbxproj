@@ -20,6 +20,7 @@
 		EB7859F0198A1631000B4C18 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB7859EE198A1631000B4C18 /* InfoPlist.strings */; };
 		EB7859F2198A1631000B4C18 /* ShallWeMateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7859F1198A1631000B4C18 /* ShallWeMateTests.m */; };
 		EB7859FC198A1685000B4C18 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB7859FB198A1685000B4C18 /* FacebookSDK.framework */; };
+		EB785A09198A1B32000B4C18 /* SWMRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB785A08198A1B32000B4C18 /* SWMRootViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,8 @@
 		EB7859EF198A1631000B4C18 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EB7859F1198A1631000B4C18 /* ShallWeMateTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShallWeMateTests.m; sourceTree = "<group>"; };
 		EB7859FB198A1685000B4C18 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		EB785A07198A1B32000B4C18 /* SWMRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMRootViewController.h; sourceTree = "<group>"; };
+		EB785A08198A1B32000B4C18 /* SWMRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMRootViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,10 +114,17 @@
 		EB7859D2198A1631000B4C18 /* ShallWeMate */ = {
 			isa = PBXGroup;
 			children = (
+				EB785A06198A1A18000B4C18 /* MainPage */,
+				EB785A03198A19E8000B4C18 /* Register */,
+				EB785A02198A19E1000B4C18 /* Login */,
+				EB785A01198A19D9000B4C18 /* Resource */,
+				EB7859FF198A1997000B4C18 /* Menu */,
 				EB7859DB198A1631000B4C18 /* SWMAppDelegate.h */,
 				EB7859DC198A1631000B4C18 /* SWMAppDelegate.m */,
 				EB7859DE198A1631000B4C18 /* Images.xcassets */,
 				EB7859D3198A1631000B4C18 /* Supporting Files */,
+				EB785A07198A1B32000B4C18 /* SWMRootViewController.h */,
+				EB785A08198A1B32000B4C18 /* SWMRootViewController.m */,
 			);
 			path = ShallWeMate;
 			sourceTree = "<group>";
@@ -146,6 +156,41 @@
 				EB7859EE198A1631000B4C18 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EB7859FF198A1997000B4C18 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
+		EB785A01198A19D9000B4C18 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
+		EB785A02198A19E1000B4C18 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		EB785A03198A19E8000B4C18 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Register;
+			sourceTree = "<group>";
+		};
+		EB785A06198A1A18000B4C18 /* MainPage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = MainPage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB7859DD198A1631000B4C18 /* SWMAppDelegate.m in Sources */,
+				EB785A09198A1B32000B4C18 /* SWMRootViewController.m in Sources */,
 				EB7859D9198A1631000B4C18 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
