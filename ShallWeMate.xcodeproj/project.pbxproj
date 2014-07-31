@@ -19,6 +19,7 @@
 		EB7859E8198A1631000B4C18 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB7859D0198A1631000B4C18 /* UIKit.framework */; };
 		EB7859F0198A1631000B4C18 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB7859EE198A1631000B4C18 /* InfoPlist.strings */; };
 		EB7859F2198A1631000B4C18 /* ShallWeMateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7859F1198A1631000B4C18 /* ShallWeMateTests.m */; };
+		EB7859FC198A1685000B4C18 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB7859FB198A1685000B4C18 /* FacebookSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		EB7859ED198A1631000B4C18 /* ShallWeMateTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ShallWeMateTests-Info.plist"; sourceTree = "<group>"; };
 		EB7859EF198A1631000B4C18 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EB7859F1198A1631000B4C18 /* ShallWeMateTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShallWeMateTests.m; sourceTree = "<group>"; };
+		EB7859FB198A1685000B4C18 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB7859CF198A1631000B4C18 /* CoreGraphics.framework in Frameworks */,
+				EB7859FC198A1685000B4C18 /* FacebookSDK.framework in Frameworks */,
 				EB7859D1198A1631000B4C18 /* UIKit.framework in Frameworks */,
 				EB7859CD198A1631000B4C18 /* Foundation.framework in Frameworks */,
 			);
@@ -96,6 +99,7 @@
 		EB7859CB198A1631000B4C18 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EB7859FB198A1685000B4C18 /* FacebookSDK.framework */,
 				EB7859CC198A1631000B4C18 /* Foundation.framework */,
 				EB7859CE198A1631000B4C18 /* CoreGraphics.framework */,
 				EB7859D0198A1631000B4C18 /* UIKit.framework */,
@@ -192,6 +196,13 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "___FULLUSERNAME___";
 				TargetAttributes = {
+					EB7859C8198A1631000B4C18 = {
+						SystemCapabilities = {
+							com.apple.iOS = {
+								enabled = 0;
+							};
+						};
+					};
 					EB7859E3198A1631000B4C18 = {
 						TestTargetID = EB7859C8198A1631000B4C18;
 					};
@@ -358,10 +369,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/ebsud89/Documents/FacebookSDK,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ShallWeMate/ShallWeMate-Prefix.pch";
 				INFOPLIST_FILE = "ShallWeMate/ShallWeMate-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -371,10 +387,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/ebsud89/Documents/FacebookSDK,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ShallWeMate/ShallWeMate-Prefix.pch";
 				INFOPLIST_FILE = "ShallWeMate/ShallWeMate-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
