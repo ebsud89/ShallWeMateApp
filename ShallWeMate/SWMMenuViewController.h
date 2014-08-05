@@ -15,5 +15,8 @@
 @property (strong, nonatomic) IBOutlet UIButton *houseInfoBtn;
 @property (strong, nonatomic) IBOutlet UIButton *settingBtn;
 
+//-(void)moveLayer:(CALayer*)layer to:(CGPoint)point;
+-(void)openMenu;
+//-(void)closeMenu;
 
 @end

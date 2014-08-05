@@ -9,7 +9,7 @@
 #import "SWMAppDelegate.h"
 #import <FacebookSDK/FacebookSDK.h>
 #import <UIKit/UIKit.h>
-#import "SWMRootViewController.h"
+#import "SWMLoginViewController.h"
 #import "SWMCheckRole_VC.h"
 
 

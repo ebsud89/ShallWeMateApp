@@ -176,6 +176,13 @@
 			name = Message;
 			sourceTree = "<group>";
 		};
+		EB433BD81990A5C4002667D0 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = TableViewCell;
+			sourceTree = "<group>";
+		};
 		EB7859C0198A1631000B4C18 = {
 			isa = PBXGroup;
 			children = (
@@ -210,6 +217,7 @@
 		EB7859D2198A1631000B4C18 /* ShallWeMate */ = {
 			isa = PBXGroup;
 			children = (
+				EB433BD81990A5C4002667D0 /* TableViewCell */,
 				EB433BD71990A48B002667D0 /* Message */,
 				EB433BBB19909C28002667D0 /* DumpData */,
 				EB7859DE198A1631000B4C18 /* Images.xcassets */,

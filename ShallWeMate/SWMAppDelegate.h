@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <FacebookSDK/FacebookSDK.h>
-#import "RootViewController.h"
+#import "SWMRootViewController.h"
+
+@class ViewController;
 
 @interface SWMAppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -24,6 +26,6 @@ extern NSString *const FBSessionStateChangedNotification;
 - (void) sessionStateChanged:(FBSession *)session state:(FBSessionState)state error:(NSError *)error;
 
 
-@property (strong, nonatomic) UIWindow *window;
-
+// Root view controller
+@property (nonatomic, strong, readonly) SWMRootViewController *rootViewController;
 @end
