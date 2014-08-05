@@ -7,6 +7,11 @@
 //
 
 #import "SWMAppDelegate.h"
+#import <FacebookSDK/FacebookSDK.h>
+#import <UIKit/UIKit.h>
+#import "SWMRootViewController.h"
+#import "SWMCheckRole_VC.h"
+
 
 @implementation SWMAppDelegate
 
@@ -53,13 +58,12 @@
     //[[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookieAcceptPolicy:NSHTTPCookieAcceptPolicyAlways];
     
     // Root view controller
-    _rootViewController = [[RootViewController alloc];
-                           
+    _rootViewController = [[RootViewController alloc] init];
     
                         
     // Main Window View start
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
+    // Override point for customization after application launch.z
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

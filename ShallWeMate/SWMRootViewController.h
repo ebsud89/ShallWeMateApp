@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YSMenuViewController.h"
 
 @interface SWMRootViewController : UIViewController
+
+@property (nonatomic, strong, readonly) YSMenuViewController *menuViewController;
 
 @end

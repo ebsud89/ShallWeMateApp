@@ -7,6 +7,8 @@
 //
 
 #import "SWMRootViewController.h"
+#import "SWMProviderMainDetailViewController.h"
+#import "SWMMenuViewController.h"
 
 @interface SWMRootViewController ()
 
@@ -19,6 +21,17 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        
+        UIViewController *mainViewController = [storyboard instantiateInitialViewController];
+        
+        // Prepare side menu view controller
+        _menuViewController = [[YSMenuViewController alloc] initWithCenterViewController:mainViewController];
+        
+        UIViewController * menu = [storyboard instantiateViewControllerWithIdentifier:@"menuViewController"];
+        _menuViewController.leftViewController = menu;
+        
     }
     return self;
 }
@@ -27,6 +40,12 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    NSLog(@"RootViewControll Start");
+    
+    // Add to view
+    [self addChildViewController:_menuViewController];
+    [self.view addSubview:_menuViewController.view];
+    _menuViewController.view.frame = self.view.bounds;
 }
 
 - (void)didReceiveMemoryWarning
