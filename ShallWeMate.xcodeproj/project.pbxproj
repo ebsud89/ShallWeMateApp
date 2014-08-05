@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		EB3BF1BF198A28220080715F /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB3BF1BE198A28220080715F /* FacebookSDK.framework */; };
+		EB433B9D1990671C002667D0 /* YSMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB433B9C1990671C002667D0 /* YSMenuViewController.m */; };
+		EB433BA119906861002667D0 /* SWMMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB433BA019906861002667D0 /* SWMMenuViewController.m */; };
+		EB433BA619907907002667D0 /* SWMProviderMainDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB433BA519907907002667D0 /* SWMProviderMainDetailViewController.m */; };
+		EB433BAC19909307002667D0 /* SWMMainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB433BAB19909307002667D0 /* SWMMainTableViewCell.m */; };
+		EB433BAF199093BD002667D0 /* SWMMainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB433BAE199093BD002667D0 /* SWMMainTableViewController.m */; };
 		EB7859CD198A1631000B4C18 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB7859CC198A1631000B4C18 /* Foundation.framework */; };
 		EB7859CF198A1631000B4C18 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB7859CE198A1631000B4C18 /* CoreGraphics.framework */; };
 		EB7859D1198A1631000B4C18 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB7859D0198A1631000B4C18 /* UIKit.framework */; };
@@ -21,6 +26,7 @@
 		EB7859F0198A1631000B4C18 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB7859EE198A1631000B4C18 /* InfoPlist.strings */; };
 		EB7859F2198A1631000B4C18 /* ShallWeMateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7859F1198A1631000B4C18 /* ShallWeMateTests.m */; };
 		EB785A09198A1B32000B4C18 /* SWMRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB785A08198A1B32000B4C18 /* SWMRootViewController.m */; };
+		EB7BC78F198A341700161D44 /* SWMCheckRole_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7BC78E198A341700161D44 /* SWMCheckRole_VC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +41,17 @@
 
 /* Begin PBXFileReference section */
 		EB3BF1BE198A28220080715F /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		EB433B9B1990671C002667D0 /* YSMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSMenuViewController.h; sourceTree = "<group>"; };
+		EB433B9C1990671C002667D0 /* YSMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSMenuViewController.m; sourceTree = "<group>"; };
+		EB433B9E1990673B002667D0 /* YSMenuProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YSMenuProtocol.h; sourceTree = "<group>"; };
+		EB433B9F19906861002667D0 /* SWMMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMMenuViewController.h; sourceTree = "<group>"; };
+		EB433BA019906861002667D0 /* SWMMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMMenuViewController.m; sourceTree = "<group>"; };
+		EB433BA419907907002667D0 /* SWMProviderMainDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWMProviderMainDetailViewController.h; path = ShallWeMate/SWMProviderMainDetailViewController.h; sourceTree = "<group>"; };
+		EB433BA519907907002667D0 /* SWMProviderMainDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWMProviderMainDetailViewController.m; path = ShallWeMate/SWMProviderMainDetailViewController.m; sourceTree = "<group>"; };
+		EB433BAA19909307002667D0 /* SWMMainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMMainTableViewCell.h; sourceTree = "<group>"; };
+		EB433BAB19909307002667D0 /* SWMMainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMMainTableViewCell.m; sourceTree = "<group>"; };
+		EB433BAD199093BD002667D0 /* SWMMainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMMainTableViewController.h; sourceTree = "<group>"; };
+		EB433BAE199093BD002667D0 /* SWMMainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMMainTableViewController.m; sourceTree = "<group>"; };
 		EB7859C9198A1631000B4C18 /* ShallWeMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShallWeMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB7859CC198A1631000B4C18 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EB7859CE198A1631000B4C18 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -53,6 +70,8 @@
 		EB7859F1198A1631000B4C18 /* ShallWeMateTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShallWeMateTests.m; sourceTree = "<group>"; };
 		EB785A07198A1B32000B4C18 /* SWMRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMRootViewController.h; sourceTree = "<group>"; };
 		EB785A08198A1B32000B4C18 /* SWMRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMRootViewController.m; sourceTree = "<group>"; };
+		EB7BC78D198A341700161D44 /* SWMCheckRole_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMCheckRole_VC.h; sourceTree = "<group>"; };
+		EB7BC78E198A341700161D44 /* SWMCheckRole_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMCheckRole_VC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +99,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EB433BA2199078AE002667D0 /* MainPage */ = {
+			isa = PBXGroup;
+			children = (
+				EB433BA3199078E2002667D0 /* Provider */,
+			);
+			name = MainPage;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		EB433BA3199078E2002667D0 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				EB433BA419907907002667D0 /* SWMProviderMainDetailViewController.h */,
+				EB433BA519907907002667D0 /* SWMProviderMainDetailViewController.m */,
+			);
+			name = Provider;
+			sourceTree = "<group>";
+		};
 		EB7859C0198A1631000B4C18 = {
 			isa = PBXGroup;
 			children = (
@@ -114,15 +151,15 @@
 		EB7859D2198A1631000B4C18 /* ShallWeMate */ = {
 			isa = PBXGroup;
 			children = (
-				EB785A06198A1A18000B4C18 /* MainPage */,
-				EB785A03198A19E8000B4C18 /* Register */,
+				EB7859DE198A1631000B4C18 /* Images.xcassets */,
 				EB785A02198A19E1000B4C18 /* Login */,
-				EB785A01198A19D9000B4C18 /* Resource */,
+				EB433BA2199078AE002667D0 /* MainPage */,
 				EB7859FF198A1997000B4C18 /* Menu */,
+				EB785A03198A19E8000B4C18 /* Register */,
+				EB785A01198A19D9000B4C18 /* Resource */,
+				EB7859D3198A1631000B4C18 /* Supporting Files */,
 				EB7859DB198A1631000B4C18 /* SWMAppDelegate.h */,
 				EB7859DC198A1631000B4C18 /* SWMAppDelegate.m */,
-				EB7859DE198A1631000B4C18 /* Images.xcassets */,
-				EB7859D3198A1631000B4C18 /* Supporting Files */,
 				EB785A07198A1B32000B4C18 /* SWMRootViewController.h */,
 				EB785A08198A1B32000B4C18 /* SWMRootViewController.m */,
 			);
@@ -161,6 +198,13 @@
 		EB7859FF198A1997000B4C18 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				EB7BC790198A35D900161D44 /* Classes */,
+				EB433B9F19906861002667D0 /* SWMMenuViewController.h */,
+				EB433BA019906861002667D0 /* SWMMenuViewController.m */,
+				EB433BAA19909307002667D0 /* SWMMainTableViewCell.h */,
+				EB433BAB19909307002667D0 /* SWMMainTableViewCell.m */,
+				EB433BAD199093BD002667D0 /* SWMMainTableViewController.h */,
+				EB433BAE199093BD002667D0 /* SWMMainTableViewController.m */,
 			);
 			name = Menu;
 			sourceTree = "<group>";
@@ -182,15 +226,28 @@
 		EB785A03198A19E8000B4C18 /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				EB7BC78C198A33DC00161D44 /* Classes */,
+				EB7BC78D198A341700161D44 /* SWMCheckRole_VC.h */,
+				EB7BC78E198A341700161D44 /* SWMCheckRole_VC.m */,
 			);
 			name = Register;
 			sourceTree = "<group>";
 		};
-		EB785A06198A1A18000B4C18 /* MainPage */ = {
+		EB7BC78C198A33DC00161D44 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = MainPage;
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		EB7BC790198A35D900161D44 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				EB433B9B1990671C002667D0 /* YSMenuViewController.h */,
+				EB433B9C1990671C002667D0 /* YSMenuViewController.m */,
+				EB433B9E1990673B002667D0 /* YSMenuProtocol.h */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,9 +353,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB433BAC19909307002667D0 /* SWMMainTableViewCell.m in Sources */,
+				EB433BA619907907002667D0 /* SWMProviderMainDetailViewController.m in Sources */,
 				EB7859DD198A1631000B4C18 /* SWMAppDelegate.m in Sources */,
 				EB785A09198A1B32000B4C18 /* SWMRootViewController.m in Sources */,
 				EB7859D9198A1631000B4C18 /* main.m in Sources */,
+				EB433BAF199093BD002667D0 /* SWMMainTableViewController.m in Sources */,
+				EB433B9D1990671C002667D0 /* YSMenuViewController.m in Sources */,
+				EB433BA119906861002667D0 /* SWMMenuViewController.m in Sources */,
+				EB7BC78F198A341700161D44 /* SWMCheckRole_VC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +478,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/ebsud89/Documents/FacebookSDK,
@@ -434,6 +498,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/ebsud89/Documents/FacebookSDK,
