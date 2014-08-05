@@ -13,6 +13,20 @@
 		EB433BA619907907002667D0 /* SWMProviderMainDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB433BA519907907002667D0 /* SWMProviderMainDetailViewController.m */; };
 		EB433BAC19909307002667D0 /* SWMMainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB433BAB19909307002667D0 /* SWMMainTableViewCell.m */; };
 		EB433BAF199093BD002667D0 /* SWMMainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB433BAE199093BD002667D0 /* SWMMainTableViewController.m */; };
+		EB433BB619909791002667D0 /* SWMDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB433BB519909791002667D0 /* SWMDetailViewController.m */; };
+		EB433BB919909BCD002667D0 /* SWMHouseImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB433BB819909BCD002667D0 /* SWMHouseImageScrollView.m */; };
+		EB433BBE19909C5D002667D0 /* HouseData.m in Sources */ = {isa = PBXBuildFile; fileRef = EB433BBD19909C5D002667D0 /* HouseData.m */; };
+		EB433BC11990A104002667D0 /* MakeDumpData.m in Sources */ = {isa = PBXBuildFile; fileRef = EB433BC01990A104002667D0 /* MakeDumpData.m */; };
+		EB433BC41990A274002667D0 /* SWMLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB433BC31990A274002667D0 /* SWMLoginViewController.m */; };
+		EB433BCE1990A3E1002667D0 /* radio-off.png in Resources */ = {isa = PBXBuildFile; fileRef = EB433BC51990A3E1002667D0 /* radio-off.png */; };
+		EB433BCF1990A3E1002667D0 /* radio-on.png in Resources */ = {isa = PBXBuildFile; fileRef = EB433BC61990A3E1002667D0 /* radio-on.png */; };
+		EB433BD01990A3E1002667D0 /* subway.csv in Resources */ = {isa = PBXBuildFile; fileRef = EB433BC71990A3E1002667D0 /* subway.csv */; };
+		EB433BD11990A3E1002667D0 /* makefg.php.png in Resources */ = {isa = PBXBuildFile; fileRef = EB433BC81990A3E1002667D0 /* makefg.php.png */; };
+		EB433BD21990A3E1002667D0 /* face_test.png in Resources */ = {isa = PBXBuildFile; fileRef = EB433BC91990A3E1002667D0 /* face_test.png */; };
+		EB433BD31990A3E1002667D0 /* testImg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB433BCA1990A3E1002667D0 /* testImg.jpg */; };
+		EB433BD41990A3E1002667D0 /* testImg3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB433BCB1990A3E1002667D0 /* testImg3.jpg */; };
+		EB433BD51990A3E1002667D0 /* testImg1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB433BCC1990A3E1002667D0 /* testImg1.jpg */; };
+		EB433BD61990A3E1002667D0 /* testImg2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB433BCD1990A3E1002667D0 /* testImg2.jpg */; };
 		EB7859CD198A1631000B4C18 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB7859CC198A1631000B4C18 /* Foundation.framework */; };
 		EB7859CF198A1631000B4C18 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB7859CE198A1631000B4C18 /* CoreGraphics.framework */; };
 		EB7859D1198A1631000B4C18 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB7859D0198A1631000B4C18 /* UIKit.framework */; };
@@ -48,10 +62,29 @@
 		EB433BA019906861002667D0 /* SWMMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMMenuViewController.m; sourceTree = "<group>"; };
 		EB433BA419907907002667D0 /* SWMProviderMainDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWMProviderMainDetailViewController.h; path = ShallWeMate/SWMProviderMainDetailViewController.h; sourceTree = "<group>"; };
 		EB433BA519907907002667D0 /* SWMProviderMainDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWMProviderMainDetailViewController.m; path = ShallWeMate/SWMProviderMainDetailViewController.m; sourceTree = "<group>"; };
-		EB433BAA19909307002667D0 /* SWMMainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMMainTableViewCell.h; sourceTree = "<group>"; };
-		EB433BAB19909307002667D0 /* SWMMainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMMainTableViewCell.m; sourceTree = "<group>"; };
-		EB433BAD199093BD002667D0 /* SWMMainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMMainTableViewController.h; sourceTree = "<group>"; };
-		EB433BAE199093BD002667D0 /* SWMMainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMMainTableViewController.m; sourceTree = "<group>"; };
+		EB433BAA19909307002667D0 /* SWMMainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWMMainTableViewCell.h; path = ShallWeMate/SWMMainTableViewCell.h; sourceTree = "<group>"; };
+		EB433BAB19909307002667D0 /* SWMMainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWMMainTableViewCell.m; path = ShallWeMate/SWMMainTableViewCell.m; sourceTree = "<group>"; };
+		EB433BAD199093BD002667D0 /* SWMMainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWMMainTableViewController.h; path = ShallWeMate/SWMMainTableViewController.h; sourceTree = "<group>"; };
+		EB433BAE199093BD002667D0 /* SWMMainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWMMainTableViewController.m; path = ShallWeMate/SWMMainTableViewController.m; sourceTree = "<group>"; };
+		EB433BB419909791002667D0 /* SWMDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWMDetailViewController.h; path = ShallWeMate/SWMDetailViewController.h; sourceTree = "<group>"; };
+		EB433BB519909791002667D0 /* SWMDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWMDetailViewController.m; path = ShallWeMate/SWMDetailViewController.m; sourceTree = "<group>"; };
+		EB433BB719909BCD002667D0 /* SWMHouseImageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWMHouseImageScrollView.h; path = ShallWeMate/SWMHouseImageScrollView.h; sourceTree = "<group>"; };
+		EB433BB819909BCD002667D0 /* SWMHouseImageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWMHouseImageScrollView.m; path = ShallWeMate/SWMHouseImageScrollView.m; sourceTree = "<group>"; };
+		EB433BBC19909C5D002667D0 /* HouseData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouseData.h; sourceTree = "<group>"; };
+		EB433BBD19909C5D002667D0 /* HouseData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HouseData.m; sourceTree = "<group>"; };
+		EB433BBF1990A104002667D0 /* MakeDumpData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakeDumpData.h; sourceTree = "<group>"; };
+		EB433BC01990A104002667D0 /* MakeDumpData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakeDumpData.m; sourceTree = "<group>"; };
+		EB433BC21990A274002667D0 /* SWMLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMLoginViewController.h; sourceTree = "<group>"; };
+		EB433BC31990A274002667D0 /* SWMLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMLoginViewController.m; sourceTree = "<group>"; };
+		EB433BC51990A3E1002667D0 /* radio-off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "radio-off.png"; sourceTree = "<group>"; };
+		EB433BC61990A3E1002667D0 /* radio-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "radio-on.png"; sourceTree = "<group>"; };
+		EB433BC71990A3E1002667D0 /* subway.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = subway.csv; sourceTree = "<group>"; };
+		EB433BC81990A3E1002667D0 /* makefg.php.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = makefg.php.png; sourceTree = "<group>"; };
+		EB433BC91990A3E1002667D0 /* face_test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = face_test.png; sourceTree = "<group>"; };
+		EB433BCA1990A3E1002667D0 /* testImg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testImg.jpg; sourceTree = "<group>"; };
+		EB433BCB1990A3E1002667D0 /* testImg3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testImg3.jpg; sourceTree = "<group>"; };
+		EB433BCC1990A3E1002667D0 /* testImg1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testImg1.jpg; sourceTree = "<group>"; };
+		EB433BCD1990A3E1002667D0 /* testImg2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testImg2.jpg; sourceTree = "<group>"; };
 		EB7859C9198A1631000B4C18 /* ShallWeMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShallWeMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB7859CC198A1631000B4C18 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EB7859CE198A1631000B4C18 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -103,6 +136,14 @@
 			isa = PBXGroup;
 			children = (
 				EB433BA3199078E2002667D0 /* Provider */,
+				EB433BB419909791002667D0 /* SWMDetailViewController.h */,
+				EB433BB519909791002667D0 /* SWMDetailViewController.m */,
+				EB433BAA19909307002667D0 /* SWMMainTableViewCell.h */,
+				EB433BAB19909307002667D0 /* SWMMainTableViewCell.m */,
+				EB433BAD199093BD002667D0 /* SWMMainTableViewController.h */,
+				EB433BAE199093BD002667D0 /* SWMMainTableViewController.m */,
+				EB433BB719909BCD002667D0 /* SWMHouseImageScrollView.h */,
+				EB433BB819909BCD002667D0 /* SWMHouseImageScrollView.m */,
 			);
 			name = MainPage;
 			path = ..;
@@ -115,6 +156,24 @@
 				EB433BA519907907002667D0 /* SWMProviderMainDetailViewController.m */,
 			);
 			name = Provider;
+			sourceTree = "<group>";
+		};
+		EB433BBB19909C28002667D0 /* DumpData */ = {
+			isa = PBXGroup;
+			children = (
+				EB433BBC19909C5D002667D0 /* HouseData.h */,
+				EB433BBD19909C5D002667D0 /* HouseData.m */,
+				EB433BBF1990A104002667D0 /* MakeDumpData.h */,
+				EB433BC01990A104002667D0 /* MakeDumpData.m */,
+			);
+			name = DumpData;
+			sourceTree = "<group>";
+		};
+		EB433BD71990A48B002667D0 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Message;
 			sourceTree = "<group>";
 		};
 		EB7859C0198A1631000B4C18 = {
@@ -151,6 +210,8 @@
 		EB7859D2198A1631000B4C18 /* ShallWeMate */ = {
 			isa = PBXGroup;
 			children = (
+				EB433BD71990A48B002667D0 /* Message */,
+				EB433BBB19909C28002667D0 /* DumpData */,
 				EB7859DE198A1631000B4C18 /* Images.xcassets */,
 				EB785A02198A19E1000B4C18 /* Login */,
 				EB433BA2199078AE002667D0 /* MainPage */,
@@ -201,10 +262,6 @@
 				EB7BC790198A35D900161D44 /* Classes */,
 				EB433B9F19906861002667D0 /* SWMMenuViewController.h */,
 				EB433BA019906861002667D0 /* SWMMenuViewController.m */,
-				EB433BAA19909307002667D0 /* SWMMainTableViewCell.h */,
-				EB433BAB19909307002667D0 /* SWMMainTableViewCell.m */,
-				EB433BAD199093BD002667D0 /* SWMMainTableViewController.h */,
-				EB433BAE199093BD002667D0 /* SWMMainTableViewController.m */,
 			);
 			name = Menu;
 			sourceTree = "<group>";
@@ -212,6 +269,15 @@
 		EB785A01198A19D9000B4C18 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				EB433BC51990A3E1002667D0 /* radio-off.png */,
+				EB433BC61990A3E1002667D0 /* radio-on.png */,
+				EB433BC71990A3E1002667D0 /* subway.csv */,
+				EB433BC81990A3E1002667D0 /* makefg.php.png */,
+				EB433BC91990A3E1002667D0 /* face_test.png */,
+				EB433BCA1990A3E1002667D0 /* testImg.jpg */,
+				EB433BCB1990A3E1002667D0 /* testImg3.jpg */,
+				EB433BCC1990A3E1002667D0 /* testImg1.jpg */,
+				EB433BCD1990A3E1002667D0 /* testImg2.jpg */,
 			);
 			name = Resource;
 			sourceTree = "<group>";
@@ -219,6 +285,8 @@
 		EB785A02198A19E1000B4C18 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				EB433BC21990A274002667D0 /* SWMLoginViewController.h */,
+				EB433BC31990A274002667D0 /* SWMLoginViewController.m */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -333,8 +401,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB433BCF1990A3E1002667D0 /* radio-on.png in Resources */,
 				EB7859D7198A1631000B4C18 /* InfoPlist.strings in Resources */,
+				EB433BD11990A3E1002667D0 /* makefg.php.png in Resources */,
+				EB433BD51990A3E1002667D0 /* testImg1.jpg in Resources */,
 				EB7859DF198A1631000B4C18 /* Images.xcassets in Resources */,
+				EB433BD01990A3E1002667D0 /* subway.csv in Resources */,
+				EB433BD41990A3E1002667D0 /* testImg3.jpg in Resources */,
+				EB433BD61990A3E1002667D0 /* testImg2.jpg in Resources */,
+				EB433BD21990A3E1002667D0 /* face_test.png in Resources */,
+				EB433BCE1990A3E1002667D0 /* radio-off.png in Resources */,
+				EB433BD31990A3E1002667D0 /* testImg.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,11 +431,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB433BAC19909307002667D0 /* SWMMainTableViewCell.m in Sources */,
+				EB433BB619909791002667D0 /* SWMDetailViewController.m in Sources */,
 				EB433BA619907907002667D0 /* SWMProviderMainDetailViewController.m in Sources */,
 				EB7859DD198A1631000B4C18 /* SWMAppDelegate.m in Sources */,
+				EB433BBE19909C5D002667D0 /* HouseData.m in Sources */,
 				EB785A09198A1B32000B4C18 /* SWMRootViewController.m in Sources */,
+				EB433BC41990A274002667D0 /* SWMLoginViewController.m in Sources */,
+				EB433BC11990A104002667D0 /* MakeDumpData.m in Sources */,
 				EB7859D9198A1631000B4C18 /* main.m in Sources */,
 				EB433BAF199093BD002667D0 /* SWMMainTableViewController.m in Sources */,
+				EB433BB919909BCD002667D0 /* SWMHouseImageScrollView.m in Sources */,
 				EB433B9D1990671C002667D0 /* YSMenuViewController.m in Sources */,
 				EB433BA119906861002667D0 /* SWMMenuViewController.m in Sources */,
 				EB7BC78F198A341700161D44 /* SWMCheckRole_VC.m in Sources */,
