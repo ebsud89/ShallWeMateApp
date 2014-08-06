@@ -9,16 +9,27 @@
 #import <UIKit/UIKit.h>
 #import "SWMSubwayViewController.h"
 
-@interface PRegisterViewController1 : UIViewController <SubwayViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate>
+@interface PRegisterViewController1 : UIViewController <SubwayViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate>
+
 {
     HouseData *housedata;
+    NSMutableArray *selectHouseImage;
 }
+
+@property (weak, nonatomic) IBOutlet UIButton *premiumBrand;
 @property (strong, nonatomic) IBOutlet UIButton *subwaySearchBtn;
 @property (strong, nonatomic) IBOutlet UITextField *houseTitleTextField;
 @property (strong, nonatomic) IBOutlet UITextField *subwayMinutesTextFiled;
 @property (strong, nonatomic) IBOutlet UITextField *introHouse;
-@property (strong, nonatomic) IBOutlet UIImageView *houseImageview;
+@property (strong, nonatomic) NSString *premiumBrandName;
 
+@property (strong, nonatomic) IBOutlet UIScrollView *houseImageScrollView;
+@property (strong, nonatomic) IBOutlet UIButton *addPhotoBtn;
+
+
+- (IBAction)premiumBrandRegister:(id)sender;
 - (void)fillhouseData;
 - (void)refreshHouseData;
+- (void) initHouseImageScrollView;
+
 @end
