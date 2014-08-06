@@ -148,7 +148,7 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     
     UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
-    self.houseImageview.image = chosenImage;
+    self.houseImageView.image = chosenImage;
     
     [picker dismissViewControllerAnimated:YES completion:NULL];
     

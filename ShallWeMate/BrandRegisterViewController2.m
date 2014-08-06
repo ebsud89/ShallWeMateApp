@@ -17,17 +17,16 @@
 @synthesize authCode;
 @synthesize commitBtn;
 
-- (id)initWithStyle:(UITableViewStyle)style
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle*)nibBundleOrNil
 {
-    self = [super initWithStyle:style];
-    
-    
-    if (self) {
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self){
         // Custom initialization
-       
     }
+    
     return self;
 }
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];

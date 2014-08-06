@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		68A7CF77199207BB00DF4BB3 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68A7CF76199207BB00DF4BB3 /* FacebookSDK.framework */; };
 		EB2F77401990CD6F00EA365E /* PRegisterViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2F77331990CD6F00EA365E /* PRegisterViewController1.m */; };
 		EB2F77411990CD6F00EA365E /* PRegisterViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2F77351990CD6F00EA365E /* PRegisterViewController2.m */; };
 		EB2F77421990CD6F00EA365E /* PRegisterViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2F77371990CD6F00EA365E /* PRegisterViewController3.m */; };
@@ -30,7 +31,6 @@
 		EB2F77761991C0BD00EA365E /* ManagementTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB2F776D1991C0BD00EA365E /* ManagementTableViewCell.xib */; };
 		EB2F77771991C0BD00EA365E /* BasicSearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2F776F1991C0BD00EA365E /* BasicSearchTableViewCell.m */; };
 		EB2F77781991C0BD00EA365E /* BasicSearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB2F77701991C0BD00EA365E /* BasicSearchTableViewCell.xib */; };
-		EB2F777A1991C99800EA365E /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB2F77791991C99800EA365E /* FacebookSDK.framework */; };
 		EB2F77A51991D36600EA365E /* NSBubbleData.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2F77951991D36600EA365E /* NSBubbleData.m */; };
 		EB2F77A61991D36600EA365E /* UIBubbleTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2F77971991D36600EA365E /* UIBubbleTableView.m */; };
 		EB2F77A71991D36600EA365E /* UIBubbleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2F77991991D36600EA365E /* UIBubbleTableViewCell.m */; };
@@ -45,7 +45,7 @@
 		EB2F77BB1991EE2000EA365E /* RegisterViewController4.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2F77B51991EE2000EA365E /* RegisterViewController4.m */; };
 		EB2F77BC1991EE2000EA365E /* RegisterViewController5.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2F77B71991EE2000EA365E /* RegisterViewController5.m */; };
 		EB2F77BE1991F41C00EA365E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB2F77BD1991F41C00EA365E /* Main.storyboard */; };
-		EB2F77C61991F71000EA365E /* BrandRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2F77C11991F71000EA365E /* BrandRegisterViewController.m */; };
+		EB2F77C61991F71000EA365E /* BrandRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2F77C11991F71000EA365E /* BrandRegisterViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		EB2F77C71991F71000EA365E /* BrandRegisterViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2F77C31991F71000EA365E /* BrandRegisterViewController2.m */; };
 		EB2F77C81991F71000EA365E /* BrandRegisterViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2F77C51991F71000EA365E /* BrandRegisterViewCell.m */; };
 		EB433B9D1990671C002667D0 /* YSMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB433B9C1990671C002667D0 /* YSMenuViewController.m */; };
@@ -94,6 +94,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		68A7CF76199207BB00DF4BB3 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		EB2F77321990CD6F00EA365E /* PRegisterViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRegisterViewController1.h; sourceTree = "<group>"; };
 		EB2F77331990CD6F00EA365E /* PRegisterViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRegisterViewController1.m; sourceTree = "<group>"; };
 		EB2F77341990CD6F00EA365E /* PRegisterViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRegisterViewController2.h; sourceTree = "<group>"; };
@@ -133,7 +134,6 @@
 		EB2F776E1991C0BD00EA365E /* BasicSearchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicSearchTableViewCell.h; sourceTree = "<group>"; };
 		EB2F776F1991C0BD00EA365E /* BasicSearchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicSearchTableViewCell.m; sourceTree = "<group>"; };
 		EB2F77701991C0BD00EA365E /* BasicSearchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasicSearchTableViewCell.xib; sourceTree = "<group>"; };
-		EB2F77791991C99800EA365E /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		EB2F77941991D36600EA365E /* NSBubbleData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSBubbleData.h; sourceTree = "<group>"; };
 		EB2F77951991D36600EA365E /* NSBubbleData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSBubbleData.m; sourceTree = "<group>"; };
 		EB2F77961991D36600EA365E /* UIBubbleTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBubbleTableView.h; sourceTree = "<group>"; };
@@ -225,13 +225,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68A7CF77199207BB00DF4BB3 /* FacebookSDK.framework in Frameworks */,
 				EB2F77611990D1F600EA365E /* Accounts.framework in Frameworks */,
 				EB2F775F1990D1F200EA365E /* Social.framework in Frameworks */,
 				EB7859CF198A1631000B4C18 /* CoreGraphics.framework in Frameworks */,
 				EB2F775D1990D1D900EA365E /* AdSupport.framework in Frameworks */,
 				EB7859D1198A1631000B4C18 /* UIKit.framework in Frameworks */,
 				EB7859CD198A1631000B4C18 /* Foundation.framework in Frameworks */,
-				EB2F777A1991C99800EA365E /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,7 +423,7 @@
 		EB7859CB198A1631000B4C18 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EB2F77791991C99800EA365E /* FacebookSDK.framework */,
+				68A7CF76199207BB00DF4BB3 /* FacebookSDK.framework */,
 				EB2F77601990D1F600EA365E /* Accounts.framework */,
 				EB2F775E1990D1F200EA365E /* Social.framework */,
 				EB2F775C1990D1D900EA365E /* AdSupport.framework */,
@@ -831,6 +831,7 @@
 					"$(inherited)",
 					/Users/ebsud89/Documents/FacebookSDK,
 					/Users/ebsud89/Documents/Development/ios/swmapp,
+					/Users/keom038/Documents/FacebookSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ShallWeMate/ShallWeMate-Prefix.pch";
@@ -851,6 +852,7 @@
 					"$(inherited)",
 					/Users/ebsud89/Documents/FacebookSDK,
 					/Users/ebsud89/Documents/Development/ios/swmapp,
+					/Users/keom038/Documents/FacebookSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ShallWeMate/ShallWeMate-Prefix.pch";
