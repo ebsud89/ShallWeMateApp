@@ -10,12 +10,12 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import "SWMRootViewController.h"
 
-@class ViewController;
+@class LoginViewController;
 
 @interface SWMAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) ViewController *viewController;
+@property (strong, nonatomic) LoginViewController *viewController;
 @property (strong, nonatomic) FBSession *session;
 @property (strong, nonatomic) NSString *fbUserId;
 @property (strong, nonatomic) NSString *fbUserName;

@@ -31,6 +31,14 @@
 		EB2F77771991C0BD00EA365E /* BasicSearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2F776F1991C0BD00EA365E /* BasicSearchTableViewCell.m */; };
 		EB2F77781991C0BD00EA365E /* BasicSearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB2F77701991C0BD00EA365E /* BasicSearchTableViewCell.xib */; };
 		EB2F777A1991C99800EA365E /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB2F77791991C99800EA365E /* FacebookSDK.framework */; };
+		EB2F77A51991D36600EA365E /* NSBubbleData.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2F77951991D36600EA365E /* NSBubbleData.m */; };
+		EB2F77A61991D36600EA365E /* UIBubbleTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2F77971991D36600EA365E /* UIBubbleTableView.m */; };
+		EB2F77A71991D36600EA365E /* UIBubbleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2F77991991D36600EA365E /* UIBubbleTableViewCell.m */; };
+		EB2F77A81991D36600EA365E /* UIBubbleHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2F779B1991D36600EA365E /* UIBubbleHeaderTableViewCell.m */; };
+		EB2F77A91991D36600EA365E /* UIBubbleTypingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2F779D1991D36600EA365E /* UIBubbleTypingTableViewCell.m */; };
+		EB2F77AA1991D36600EA365E /* MsgListTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2F77A01991D36600EA365E /* MsgListTableCell.m */; };
+		EB2F77AB1991D36600EA365E /* MsgListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2F77A21991D36600EA365E /* MsgListTableViewController.m */; };
+		EB2F77AC1991D36600EA365E /* MsgContentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2F77A41991D36600EA365E /* MsgContentsViewController.m */; };
 		EB433B9D1990671C002667D0 /* YSMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB433B9C1990671C002667D0 /* YSMenuViewController.m */; };
 		EB433BA119906861002667D0 /* SWMMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB433BA019906861002667D0 /* SWMMenuViewController.m */; };
 		EB433BA619907907002667D0 /* SWMProviderMainDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB433BA519907907002667D0 /* SWMProviderMainDetailViewController.m */; };
@@ -117,6 +125,23 @@
 		EB2F776F1991C0BD00EA365E /* BasicSearchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicSearchTableViewCell.m; sourceTree = "<group>"; };
 		EB2F77701991C0BD00EA365E /* BasicSearchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasicSearchTableViewCell.xib; sourceTree = "<group>"; };
 		EB2F77791991C99800EA365E /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		EB2F77941991D36600EA365E /* NSBubbleData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSBubbleData.h; sourceTree = "<group>"; };
+		EB2F77951991D36600EA365E /* NSBubbleData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSBubbleData.m; sourceTree = "<group>"; };
+		EB2F77961991D36600EA365E /* UIBubbleTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBubbleTableView.h; sourceTree = "<group>"; };
+		EB2F77971991D36600EA365E /* UIBubbleTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIBubbleTableView.m; sourceTree = "<group>"; };
+		EB2F77981991D36600EA365E /* UIBubbleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBubbleTableViewCell.h; sourceTree = "<group>"; };
+		EB2F77991991D36600EA365E /* UIBubbleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIBubbleTableViewCell.m; sourceTree = "<group>"; };
+		EB2F779A1991D36600EA365E /* UIBubbleHeaderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBubbleHeaderTableViewCell.h; sourceTree = "<group>"; };
+		EB2F779B1991D36600EA365E /* UIBubbleHeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIBubbleHeaderTableViewCell.m; sourceTree = "<group>"; };
+		EB2F779C1991D36600EA365E /* UIBubbleTypingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBubbleTypingTableViewCell.h; sourceTree = "<group>"; };
+		EB2F779D1991D36600EA365E /* UIBubbleTypingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIBubbleTypingTableViewCell.m; sourceTree = "<group>"; };
+		EB2F779E1991D36600EA365E /* UIBubbleTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBubbleTableViewDataSource.h; sourceTree = "<group>"; };
+		EB2F779F1991D36600EA365E /* MsgListTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsgListTableCell.h; sourceTree = "<group>"; };
+		EB2F77A01991D36600EA365E /* MsgListTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MsgListTableCell.m; sourceTree = "<group>"; };
+		EB2F77A11991D36600EA365E /* MsgListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsgListTableViewController.h; sourceTree = "<group>"; };
+		EB2F77A21991D36600EA365E /* MsgListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MsgListTableViewController.m; sourceTree = "<group>"; };
+		EB2F77A31991D36600EA365E /* MsgContentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsgContentsViewController.h; sourceTree = "<group>"; };
+		EB2F77A41991D36600EA365E /* MsgContentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MsgContentsViewController.m; sourceTree = "<group>"; };
 		EB433B9B1990671C002667D0 /* YSMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSMenuViewController.h; sourceTree = "<group>"; };
 		EB433B9C1990671C002667D0 /* YSMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSMenuViewController.m; sourceTree = "<group>"; };
 		EB433B9E1990673B002667D0 /* YSMenuProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YSMenuProtocol.h; sourceTree = "<group>"; };
@@ -280,6 +305,23 @@
 		EB433BD71990A48B002667D0 /* Message */ = {
 			isa = PBXGroup;
 			children = (
+				EB2F77941991D36600EA365E /* NSBubbleData.h */,
+				EB2F77951991D36600EA365E /* NSBubbleData.m */,
+				EB2F77961991D36600EA365E /* UIBubbleTableView.h */,
+				EB2F77971991D36600EA365E /* UIBubbleTableView.m */,
+				EB2F77981991D36600EA365E /* UIBubbleTableViewCell.h */,
+				EB2F77991991D36600EA365E /* UIBubbleTableViewCell.m */,
+				EB2F779A1991D36600EA365E /* UIBubbleHeaderTableViewCell.h */,
+				EB2F779B1991D36600EA365E /* UIBubbleHeaderTableViewCell.m */,
+				EB2F779C1991D36600EA365E /* UIBubbleTypingTableViewCell.h */,
+				EB2F779D1991D36600EA365E /* UIBubbleTypingTableViewCell.m */,
+				EB2F779E1991D36600EA365E /* UIBubbleTableViewDataSource.h */,
+				EB2F779F1991D36600EA365E /* MsgListTableCell.h */,
+				EB2F77A01991D36600EA365E /* MsgListTableCell.m */,
+				EB2F77A11991D36600EA365E /* MsgListTableViewController.h */,
+				EB2F77A21991D36600EA365E /* MsgListTableViewController.m */,
+				EB2F77A31991D36600EA365E /* MsgContentsViewController.h */,
+				EB2F77A41991D36600EA365E /* MsgContentsViewController.m */,
 			);
 			name = Message;
 			sourceTree = "<group>";
@@ -562,6 +604,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB2F77AC1991D36600EA365E /* MsgContentsViewController.m in Sources */,
 				EB2F77771991C0BD00EA365E /* BasicSearchTableViewCell.m in Sources */,
 				EB433BAC19909307002667D0 /* SWMMainTableViewCell.m in Sources */,
 				EB2F77541990CFCF00EA365E /* SelectionTableViewController.m in Sources */,
@@ -569,11 +612,16 @@
 				EB2F77441990CD6F00EA365E /* PRegisterViewController5.m in Sources */,
 				EB7859DD198A1631000B4C18 /* SWMAppDelegate.m in Sources */,
 				EB433BBE19909C5D002667D0 /* HouseData.m in Sources */,
+				EB2F77A91991D36600EA365E /* UIBubbleTypingTableViewCell.m in Sources */,
 				EB785A09198A1B32000B4C18 /* SWMRootViewController.m in Sources */,
+				EB2F77A81991D36600EA365E /* UIBubbleHeaderTableViewCell.m in Sources */,
+				EB2F77AB1991D36600EA365E /* MsgListTableViewController.m in Sources */,
 				EB2F77451990CD6F00EA365E /* PRegisterViewController6.m in Sources */,
 				EB433BC41990A274002667D0 /* SWMLoginViewController.m in Sources */,
 				EB2F77461990CD6F00EA365E /* PRegisterViewController7.m in Sources */,
+				EB2F77A51991D36600EA365E /* NSBubbleData.m in Sources */,
 				EB433BC11990A104002667D0 /* MakeDumpData.m in Sources */,
+				EB2F77A71991D36600EA365E /* UIBubbleTableViewCell.m in Sources */,
 				EB7859D9198A1631000B4C18 /* main.m in Sources */,
 				EB2F77731991C0BD00EA365E /* TitleTableViewCell.m in Sources */,
 				EB2F77431990CD6F00EA365E /* PRegisterViewController4.m in Sources */,
@@ -586,8 +634,10 @@
 				EB2F77421990CD6F00EA365E /* PRegisterViewController3.m in Sources */,
 				EB2F77711991C0BD00EA365E /* CollectionViewTableViewCell.m in Sources */,
 				EB2F77551990CFCF00EA365E /* SelectionCollectionViewController.m in Sources */,
+				EB2F77AA1991D36600EA365E /* MsgListTableCell.m in Sources */,
 				EB2F77491990CD9100EA365E /* PSummeryViewController.m in Sources */,
 				EB433B9D1990671C002667D0 /* YSMenuViewController.m in Sources */,
+				EB2F77A61991D36600EA365E /* UIBubbleTableView.m in Sources */,
 				EB433BA119906861002667D0 /* SWMMenuViewController.m in Sources */,
 				EB433BDF1990ABC6002667D0 /* SWMMainDetailViewController.m in Sources */,
 				EB2F77411990CD6F00EA365E /* PRegisterViewController2.m in Sources */,
