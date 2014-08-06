@@ -70,6 +70,7 @@ NSString *const FBSessionStateChangedNotification = @"swm.ShallWeMate:FBSessionS
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.z
     self.window.backgroundColor = [UIColor whiteColor];
+    self.window.rootViewController = _rootViewController;
     [self.window makeKeyAndVisible];
     return YES;
 }
