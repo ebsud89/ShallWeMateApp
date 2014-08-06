@@ -39,6 +39,11 @@
 		EB2F77AA1991D36600EA365E /* MsgListTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2F77A01991D36600EA365E /* MsgListTableCell.m */; };
 		EB2F77AB1991D36600EA365E /* MsgListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2F77A21991D36600EA365E /* MsgListTableViewController.m */; };
 		EB2F77AC1991D36600EA365E /* MsgContentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2F77A41991D36600EA365E /* MsgContentsViewController.m */; };
+		EB2F77B81991EE2000EA365E /* RegisterViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2F77AF1991EE2000EA365E /* RegisterViewController1.m */; };
+		EB2F77B91991EE2000EA365E /* RegisterViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2F77B11991EE2000EA365E /* RegisterViewController2.m */; };
+		EB2F77BA1991EE2000EA365E /* RegisterViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2F77B31991EE2000EA365E /* RegisterViewController3.m */; };
+		EB2F77BB1991EE2000EA365E /* RegisterViewController4.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2F77B51991EE2000EA365E /* RegisterViewController4.m */; };
+		EB2F77BC1991EE2000EA365E /* RegisterViewController5.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2F77B71991EE2000EA365E /* RegisterViewController5.m */; };
 		EB433B9D1990671C002667D0 /* YSMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB433B9C1990671C002667D0 /* YSMenuViewController.m */; };
 		EB433BA119906861002667D0 /* SWMMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB433BA019906861002667D0 /* SWMMenuViewController.m */; };
 		EB433BA619907907002667D0 /* SWMProviderMainDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB433BA519907907002667D0 /* SWMProviderMainDetailViewController.m */; };
@@ -142,6 +147,16 @@
 		EB2F77A21991D36600EA365E /* MsgListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MsgListTableViewController.m; sourceTree = "<group>"; };
 		EB2F77A31991D36600EA365E /* MsgContentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsgContentsViewController.h; sourceTree = "<group>"; };
 		EB2F77A41991D36600EA365E /* MsgContentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MsgContentsViewController.m; sourceTree = "<group>"; };
+		EB2F77AE1991EE2000EA365E /* RegisterViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController1.h; sourceTree = "<group>"; };
+		EB2F77AF1991EE2000EA365E /* RegisterViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController1.m; sourceTree = "<group>"; };
+		EB2F77B01991EE2000EA365E /* RegisterViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController2.h; sourceTree = "<group>"; };
+		EB2F77B11991EE2000EA365E /* RegisterViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController2.m; sourceTree = "<group>"; };
+		EB2F77B21991EE2000EA365E /* RegisterViewController3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController3.h; sourceTree = "<group>"; };
+		EB2F77B31991EE2000EA365E /* RegisterViewController3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController3.m; sourceTree = "<group>"; };
+		EB2F77B41991EE2000EA365E /* RegisterViewController4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController4.h; sourceTree = "<group>"; };
+		EB2F77B51991EE2000EA365E /* RegisterViewController4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController4.m; sourceTree = "<group>"; };
+		EB2F77B61991EE2000EA365E /* RegisterViewController5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController5.h; sourceTree = "<group>"; };
+		EB2F77B71991EE2000EA365E /* RegisterViewController5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController5.m; sourceTree = "<group>"; };
 		EB433B9B1990671C002667D0 /* YSMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSMenuViewController.h; sourceTree = "<group>"; };
 		EB433B9C1990671C002667D0 /* YSMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSMenuViewController.m; sourceTree = "<group>"; };
 		EB433B9E1990673B002667D0 /* YSMenuProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YSMenuProtocol.h; sourceTree = "<group>"; };
@@ -263,6 +278,23 @@
 				EB2F774E1990CFCF00EA365E /* Label2TableViewCell.m */,
 			);
 			name = TableViewCell;
+			sourceTree = "<group>";
+		};
+		EB2F77AD1991EE0800EA365E /* RegisterViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EB2F77AE1991EE2000EA365E /* RegisterViewController1.h */,
+				EB2F77AF1991EE2000EA365E /* RegisterViewController1.m */,
+				EB2F77B01991EE2000EA365E /* RegisterViewController2.h */,
+				EB2F77B11991EE2000EA365E /* RegisterViewController2.m */,
+				EB2F77B21991EE2000EA365E /* RegisterViewController3.h */,
+				EB2F77B31991EE2000EA365E /* RegisterViewController3.m */,
+				EB2F77B41991EE2000EA365E /* RegisterViewController4.h */,
+				EB2F77B51991EE2000EA365E /* RegisterViewController4.m */,
+				EB2F77B61991EE2000EA365E /* RegisterViewController5.h */,
+				EB2F77B71991EE2000EA365E /* RegisterViewController5.m */,
+			);
+			name = RegisterViewController;
 			sourceTree = "<group>";
 		};
 		EB433BA2199078AE002667D0 /* MainPage */ = {
@@ -467,6 +499,7 @@
 		EB785A03198A19E8000B4C18 /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				EB2F77AD1991EE0800EA365E /* RegisterViewController */,
 				EB2F77571990CFE700EA365E /* TableViewCell */,
 				EB2F77561990CFD600EA365E /* Classes */,
 				EB2F772E1990CD1D00EA365E /* Provider */,
@@ -610,15 +643,19 @@
 				EB2F77541990CFCF00EA365E /* SelectionTableViewController.m in Sources */,
 				EB433BA619907907002667D0 /* SWMProviderMainDetailViewController.m in Sources */,
 				EB2F77441990CD6F00EA365E /* PRegisterViewController5.m in Sources */,
+				EB2F77B81991EE2000EA365E /* RegisterViewController1.m in Sources */,
 				EB7859DD198A1631000B4C18 /* SWMAppDelegate.m in Sources */,
+				EB2F77BA1991EE2000EA365E /* RegisterViewController3.m in Sources */,
 				EB433BBE19909C5D002667D0 /* HouseData.m in Sources */,
 				EB2F77A91991D36600EA365E /* UIBubbleTypingTableViewCell.m in Sources */,
 				EB785A09198A1B32000B4C18 /* SWMRootViewController.m in Sources */,
+				EB2F77BB1991EE2000EA365E /* RegisterViewController4.m in Sources */,
 				EB2F77A81991D36600EA365E /* UIBubbleHeaderTableViewCell.m in Sources */,
 				EB2F77AB1991D36600EA365E /* MsgListTableViewController.m in Sources */,
 				EB2F77451990CD6F00EA365E /* PRegisterViewController6.m in Sources */,
 				EB433BC41990A274002667D0 /* SWMLoginViewController.m in Sources */,
 				EB2F77461990CD6F00EA365E /* PRegisterViewController7.m in Sources */,
+				EB2F77BC1991EE2000EA365E /* RegisterViewController5.m in Sources */,
 				EB2F77A51991D36600EA365E /* NSBubbleData.m in Sources */,
 				EB433BC11990A104002667D0 /* MakeDumpData.m in Sources */,
 				EB2F77A71991D36600EA365E /* UIBubbleTableViewCell.m in Sources */,
@@ -637,6 +674,7 @@
 				EB2F77AA1991D36600EA365E /* MsgListTableCell.m in Sources */,
 				EB2F77491990CD9100EA365E /* PSummeryViewController.m in Sources */,
 				EB433B9D1990671C002667D0 /* YSMenuViewController.m in Sources */,
+				EB2F77B91991EE2000EA365E /* RegisterViewController2.m in Sources */,
 				EB2F77A61991D36600EA365E /* UIBubbleTableView.m in Sources */,
 				EB433BA119906861002667D0 /* SWMMenuViewController.m in Sources */,
 				EB433BDF1990ABC6002667D0 /* SWMMainDetailViewController.m in Sources */,
