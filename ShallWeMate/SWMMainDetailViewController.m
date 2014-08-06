@@ -1,18 +1,18 @@
 //
-//  SWMDetailViewController.m
+//  SWMMainDetailViewController.m
 //  ShallWeMate
 //
 //  Created by Kim Junhyoung on 8/5/14.
 //  Copyright (c) 2014 Kim Junhyoung. All rights reserved.
 //
 
-#import "SWMDetailViewController.h"
+#import "SWMMainDetailViewController.h"
 
-@interface SWMDetailViewController ()
+@interface SWMMainDetailViewController ()
 
 @end
 
-@implementation SWMDetailViewController
+@implementation SWMMainDetailViewController
 
 @synthesize myTitle;
 @synthesize shareView;
@@ -62,7 +62,7 @@ const int inervalValue = 60;
     shareMode = NO;
     
     [self.view bringSubviewToFront:detailView];
-
+    
 }
 
 
@@ -244,14 +244,14 @@ const int inervalValue = 60;
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

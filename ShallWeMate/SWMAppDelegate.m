@@ -15,6 +15,10 @@
 
 @implementation SWMAppDelegate
 
+
+NSString *const FBSessionStateChangedNotification = @"sgen.project.start:FBSessionStateChangedNotification";
+
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
@@ -58,7 +62,7 @@
     //[[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookieAcceptPolicy:NSHTTPCookieAcceptPolicyAlways];
     
     // Root view controller
-    _rootViewController = [[RootViewController alloc] init];
+    _rootViewController = [[SWMRootViewController alloc] init];
     
                         
     // Main Window View start
@@ -94,6 +98,90 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    // Note this handler block should be the exact same as the handler passed to any open calls.
+    [FBSession.activeSession setStateChangeHandler:
+     ^(FBSession *session, FBSessionState state, NSError *error) {
+         
+         // Retrieve the app delegate
+         SWMAppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
+         // Call the app delegate's sessionStateChanged:state:error method to handle session state changes
+         [appDelegate sessionStateChanged:session state:state error:error];
+         NSLog(@"here?");
+     }];
+    return [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
+    //return [FBSession.activeSession handleOpenURL:url];
+}
+
+
+- (BOOL) openSessionWithAllowLoginUI:(BOOL)allowLoginUI {
+    
+    return [FBSession openActiveSessionWithReadPermissions:nil allowLoginUI:allowLoginUI completionHandler:^(FBSession *session,FBSessionState state, NSError *error) {
+        [self sessionStateChanged:session state:state error:error];
+        NSLog(@"orhere?");
+    }];
+}
+
+// This method will handle ALL the session state changes in the app
+- (void)sessionStateChanged:(FBSession *)session state:(FBSessionState) state error:(NSError *)error
+{
+    // If the session was opened successfully
+    if (!error && state == FBSessionStateOpen){
+        // Show the user the logged-in UI
+        //[self userLoggedIn];
+        
+        //for session check and log
+        [FBRequestConnection startForMeWithCompletionHandler:^(FBRequestConnection *connection, id<FBGraphUser> result, NSError *error) {
+            if (!error) {
+                NSLog(@"sessionStateChanged .. user info: %@", result);
+                NSLog(@"user's name: %@", result.name);
+                NSLog(@"user's objectID(=id): %@", result.objectID);
+                self.fbUserId = result.objectID;
+                NSLog(@"fbUserID : %@", self.fbUserId);
+            } else {
+                NSLog(@"sessionStateChanged .. Facebook connection Error!!");
+            }
+        }];
+        
+        return;
+    }
+    if (state == FBSessionStateClosed || state == FBSessionStateClosedLoginFailed){
+        // If the session is closed
+        NSLog(@"Session closed");
+        // Show the user the logged-out UI
+        //[self userLoggedOut];
+    }
+    
+    // Handle errors
+    if (error){
+        NSLog(@"Error");
+        // If the error requires people using an app to make an action outside of the app in order to recover
+        if ([FBErrorUtility shouldNotifyUserForError:error] == YES){
+        } else {
+            
+            // If the user cancelled login, do nothing
+            if ([FBErrorUtility errorCategoryForError:error] == FBErrorCategoryUserCancelled) {
+                NSLog(@"User cancelled login");
+                
+                // Handle session closures that happen outside of the app
+            } else if ([FBErrorUtility errorCategoryForError:error] == FBErrorCategoryAuthenticationReopenSession){
+                //[self showMessage:alertText withTitle:alertTitle];
+                
+                // Here we will handle all other errors with a generic error message.
+                // We recommend you check our Handling Errors guide for more information
+                // https://developers.facebook.com/docs/ios/errors/
+            } else {
+                //Get more error information from the error
+                NSDictionary *errorInformation = [[[error.userInfo objectForKey:@"com.facebook.sdk:ParsedJSONResponseKey"] objectForKey:@"body"] objectForKey:@"error"];
+                //[self showMessage:alertText withTitle:alertTitle];
+            }
+        }
+    }
+    
+    
 }
 
 @end

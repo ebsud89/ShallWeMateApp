@@ -1,5 +1,5 @@
 //
-//  SWMDetailViewController.h
+//  SWMMainDetailViewController.h
 //  ShallWeMate
 //
 //  Created by Kim Junhyoung on 8/5/14.
@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SWMDetailViewController : UIViewController
+@interface SWMMainDetailViewController : UIViewController
 
 {
-BOOL shareMode;
+    BOOL shareMode;
 }
 
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;

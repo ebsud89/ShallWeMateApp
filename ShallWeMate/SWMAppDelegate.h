@@ -25,7 +25,7 @@ extern NSString *const FBSessionStateChangedNotification;
 - (BOOL) openSessionWithAllowLoginUI:(BOOL)allowLoginUI;
 - (void) sessionStateChanged:(FBSession *)session state:(FBSessionState)state error:(NSError *)error;
 
-
 // Root view controller
 @property (nonatomic, strong, readonly) SWMRootViewController *rootViewController;
+
 @end

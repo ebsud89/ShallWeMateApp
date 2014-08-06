@@ -7,6 +7,10 @@
 //
 
 #import "YSMenuViewController.h"
+#import <QuartzCore/QuartzCore.h>
+#import "YSMenuProtocol.h"
+
+#define kAnimationDuration 0.25f
 
 @interface YSMenuViewController ()
 

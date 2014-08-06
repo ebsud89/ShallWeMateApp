@@ -13,4 +13,13 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+    #import "SWMAppDelegate.h"
+    #import "YSMenuViewController.h"
+    #import "SWMRootViewController.h"
+    #import "HouseData.h"
 #endif
+
+// Shortcuts
+#define APP_DELEGATE            (SWMAppDelegate *)[[UIApplication sharedApplication] delegate]
+#define ROOT_VIEW_CONTROLLER    (SWMRootViewController *)[APP_DELEGATE rootViewController]
+#define MENU_VIEW_CONTROLLER    ((YSMenuViewController *)[(SWMRootViewController *) ROOT_VIEW_CONTROLLER menuViewController])

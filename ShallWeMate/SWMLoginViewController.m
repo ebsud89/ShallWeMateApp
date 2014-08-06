@@ -104,7 +104,7 @@
         }
     }];
     
-    SWMheckRole_VC *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"registerView"];
+    SWMCheckRole_VC *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"registerView"];
     [self.view addSubview:vc.view];
     
 }
