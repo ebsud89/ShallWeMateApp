@@ -31,7 +31,7 @@
     
     jobsArray = [[NSArray alloc] initWithObjects:@"학생", @"직장인", @"프리랜서", nil];
     
-    AppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
+    SWMAppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
     
     self.fbProfilePictureView.layer.cornerRadius = self.fbProfilePictureView.frame.size.width / 2;
     self.fbProfilePictureView.clipsToBounds = YES;

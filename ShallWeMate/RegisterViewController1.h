@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AppDelegate.h"
+#import "SWMAppDelegate.h"
 
 @interface RegisterViewController1  : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate>
 {
