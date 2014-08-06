@@ -46,7 +46,7 @@
     
     if (cell == nil) {
         NSLog(@"클남.... 셀 생성 안됨");
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId    ];
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellId];
         [cell setSelectionStyle:UITableViewCellSelectionStyleDefault];
     }
     
