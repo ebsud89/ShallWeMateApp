@@ -11,6 +11,7 @@
 
 @interface RegisterViewController1  : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate>
 {
+    
     UIButton *jobButton;
     NSArray *jobsArray;
     FBProfilePictureView *fbProfilePictureView;
