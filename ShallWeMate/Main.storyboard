@@ -2482,7 +2482,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="입주신청" id="RHe-ad-Zjl">
                         <barButtonItem key="leftBarButtonItem" title="Item" id="7st-Un-l9q"/>
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="1uB-Jv-paD"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="1uB-Jv-paD">
+                            <connections>
+                                <action selector="doneButtonpressed:" destination="FzD-1m-OaH" id="rhs-lf-KiL"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="ch2" destination="H1r-Q5-PQB" id="sbN-Qw-deD"/>

@@ -22,7 +22,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    //체크박스 이미지 설정
     [self.ck1 setBackgroundImage:[UIImage imageNamed:@"checkbox.png"] forState:UIControlStateNormal];
     [self.ck1 setBackgroundImage:[UIImage imageNamed:@"checkbox-checked.png"] forState:UIControlStateSelected];
     [self.ck1 addTarget:self action:@selector(ckeckbox1pressed:) forControlEvents:UIControlEventTouchUpInside];
@@ -42,6 +43,7 @@
     [self.ck4 setBackgroundImage:[UIImage imageNamed:@"checkbox-checked.png"] forState:UIControlStateSelected];
     [self.ck4 addTarget:self action:@selector(ckeckbox4pressed:) forControlEvents:UIControlEventTouchUpInside];
     
+    //체크박스 선택 유무 확인위한 플래그 설정
     checkbox1Selected = 0;
     checkbox2Selected = 0;
     checkbox3Selected = 0;
@@ -126,5 +128,33 @@
     checkbox2Selected = 1;
     checkbox3Selected = 1;
     checkbox4Selected = 1;
+}
+
+- (IBAction)doneButtonpressed:(id)sender {
+    
+    if (checkbox1Selected == 1 && checkbox2Selected == 1 && checkbox3Selected == 1 && checkbox4Selected == 1) {
+        
+        NSLog(@"chekck 1");
+        //요약 페이지로 이동
+        //        PRegisterViewController1 *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"pRegisterViewController1"];
+        //        vc.premiumBrandName = brandNameString;
+        //        [self.view addSubview:vc.view];
+    } else {
+        NSLog(@"che2");
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"모두 동의해주세요."
+                                                        message:@"동의하지 않으면 입주신청이 불가능 합니다."
+                                                       delegate:self
+                                              cancelButtonTitle:@"돌아가기"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
+
+}
+
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    [self viewDidLoad];
+    //[[self] popViewControllerAnimated:YES];
+    //[[self navigationController] popViewControllerAnimated:YES];
 }
 @end

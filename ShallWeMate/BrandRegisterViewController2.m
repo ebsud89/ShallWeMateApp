@@ -31,31 +31,43 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self brandImageSetting];
+    [self authCodeSetting];
+    
+}
+
+//브랜드 로고 이미지 세팅하는 함수
+-(void)brandImageSetting
+{
     UIImage *woozooImage = [UIImage imageNamed:@"makefg.php.png"];
     UIImage *othersImage = [UIImage imageNamed:@"face_test.png"];
     
     if ([self.brandNameString  isEqual: @"woozoo"]) {
         self.brandImage.image = woozooImage;
-        self.authCode = @"1234";
     } else {
         self.brandImage.image = othersImage;
+    }
+    
+}
+
+//브랜드 인증 코드 세팅하는 함수
+-(void) authCodeSetting
+{
+    if ([self.brandNameString  isEqual: @"woozoo"]) {
+        self.authCode = @"1234";
+    } else {
         self.authCode = @"2345";
     }
     self.brandName.text = brandNameString;
     
-//    [[[self navigationController] commitBtn] setTarget:self];
-//    [[[self navigationController] commitBtn] setAction:@selector(backBtnUserClicked:)];
-//    commitBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemDone target:self action:@selector(doneButtonPressed:)];
-
 }
 
--(void)doneButtonPressed:(id)sender
+-(IBAction)doneButtonPressed:(id)sender
 {
     if ([inputAuthCode.text isEqual:authCode]) {
 
         PRegisterViewController1 *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"pRegisterViewController1"];
         vc.premiumBrandName = brandNameString;
-        NSLog(@" brand controller, brand name : %@", brandNameString);
         [self.view addSubview:vc.view];
     } else {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"인증코드"
@@ -68,7 +80,7 @@
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    self.viewDidLoad;
+    [self viewDidLoad];
     //[[self] popViewControllerAnimated:YES];
     //[[self navigationController] popViewControllerAnimated:YES];
 }

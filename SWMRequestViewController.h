@@ -26,5 +26,6 @@
 - (IBAction)ckeckbox3pressed:(id)sender;
 - (IBAction)ckeckbox4pressed:(id)sender;
 - (IBAction)allCheckPressed:(id)sender;
+- (IBAction)doneButtonpressed:(id)sender;
 
 @end
