@@ -16,6 +16,7 @@
 		68A9E5EC1995FF1900EF1396 /* bubbleMine.png in Resources */ = {isa = PBXBuildFile; fileRef = 68A9E5EB1995FF1900EF1396 /* bubbleMine.png */; };
 		68A9E5EE1995FF2E00EF1396 /* bubbleSomeone.png in Resources */ = {isa = PBXBuildFile; fileRef = 68A9E5ED1995FF2E00EF1396 /* bubbleSomeone.png */; };
 		68A9E5F01995FF4D00EF1396 /* missingAvatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 68A9E5EF1995FF4D00EF1396 /* missingAvatar.png */; };
+		EB221A86199754F900643820 /* SWMNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = EB221A85199754F900643820 /* SWMNetwork.m */; };
 		EB2F77401990CD6F00EA365E /* PRegisterViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2F77331990CD6F00EA365E /* PRegisterViewController1.m */; };
 		EB2F77411990CD6F00EA365E /* PRegisterViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2F77351990CD6F00EA365E /* PRegisterViewController2.m */; };
 		EB2F77421990CD6F00EA365E /* PRegisterViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2F77371990CD6F00EA365E /* PRegisterViewController3.m */; };
@@ -112,6 +113,8 @@
 		68A9E5EB1995FF1900EF1396 /* bubbleMine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubbleMine.png; sourceTree = "<group>"; };
 		68A9E5ED1995FF2E00EF1396 /* bubbleSomeone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubbleSomeone.png; sourceTree = "<group>"; };
 		68A9E5EF1995FF4D00EF1396 /* missingAvatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = missingAvatar.png; sourceTree = "<group>"; };
+		EB221A84199754F900643820 /* SWMNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMNetwork.h; sourceTree = "<group>"; };
+		EB221A85199754F900643820 /* SWMNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMNetwork.m; sourceTree = "<group>"; };
 		EB2F77321990CD6F00EA365E /* PRegisterViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRegisterViewController1.h; sourceTree = "<group>"; };
 		EB2F77331990CD6F00EA365E /* PRegisterViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRegisterViewController1.m; sourceTree = "<group>"; };
 		EB2F77341990CD6F00EA365E /* PRegisterViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRegisterViewController2.h; sourceTree = "<group>"; };
@@ -273,6 +276,15 @@
 				68A7CF841992178700DF4BB3 /* SWMRequestViewController.m */,
 			);
 			name = SubPages;
+			sourceTree = "<group>";
+		};
+		EB221A831997549A00643820 /* network */ = {
+			isa = PBXGroup;
+			children = (
+				EB221A84199754F900643820 /* SWMNetwork.h */,
+				EB221A85199754F900643820 /* SWMNetwork.m */,
+			);
+			name = network;
 			sourceTree = "<group>";
 		};
 		EB2F772E1990CD1D00EA365E /* Provider */ = {
@@ -466,6 +478,7 @@
 		EB7859D2198A1631000B4C18 /* ShallWeMate */ = {
 			isa = PBXGroup;
 			children = (
+				EB221A831997549A00643820 /* network */,
 				EB433BBB19909C28002667D0 /* DumpData */,
 				EB7859DE198A1631000B4C18 /* Images.xcassets */,
 				EB785A02198A19E1000B4C18 /* Login */,
@@ -719,6 +732,7 @@
 				EB2F77A81991D36600EA365E /* UIBubbleHeaderTableViewCell.m in Sources */,
 				EB2F77AB1991D36600EA365E /* MsgListTableViewController.m in Sources */,
 				EB2F77451990CD6F00EA365E /* PRegisterViewController6.m in Sources */,
+				EB221A86199754F900643820 /* SWMNetwork.m in Sources */,
 				EB2F77C71991F71000EA365E /* BrandRegisterViewController2.m in Sources */,
 				EB433BC41990A274002667D0 /* SWMLoginViewController.m in Sources */,
 				EB2F77461990CD6F00EA365E /* PRegisterViewController7.m in Sources */,
