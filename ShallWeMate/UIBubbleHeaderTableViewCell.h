@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NSBubbleData.h"
 
 @interface UIBubbleHeaderTableViewCell : UITableViewCell
 

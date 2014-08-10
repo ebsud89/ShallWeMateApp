@@ -19,6 +19,26 @@
      */
     [self.view addSubview:vc.view];
     
+//    [[_textView layer] setBorderColor:[[UIColor blackColor] CGColor]];
+//    [[self view] addSubview:_textView];
+    _textView.layer.borderColor = [[UIColor grayColor] CGColor];
+    _textView.layer.borderWidth = 1.0;
+    _textView.layer.cornerRadius = 8;
+    
+    //TextView
+//    UITextView *textview =   [[UITextView alloc] initWithFrame:CGRectMake   (10, 40, 300, 160)];
+    [_textView setBackgroundColor:[UIColor blackColor]];
+    [_textView setFont:[UIFont boldSystemFontOfSize:14.0]];
+    [_textView setTextAlignment:UITextAlignmentLeft];
+    // For the border and rounded corners
+    [[_textView layer] setBorderColor:[[UIColor colorWithRed:48/256.0 green:134/256.0 blue:174/256.0 alpha:1.0] CGColor]];
+    [[_textView layer] setBorderWidth:2.3];
+    [[_textView layer] setCornerRadius:10];
+    [_textView setClipsToBounds: YES];
+    [_textView setEditable:YES];
+    
+    //add Textview to the View
+    [[self view] addSubview:_textView];
     
 }
 

@@ -53,7 +53,70 @@
     
     [self.view addSubview:radiobutton1];
     [self.view addSubview:radiobutton2];
+    //키보드 올라갈 때 뷰 올리기
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:self.view.window];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillHideNotification object:self.view.window];
+    
 }
+
+
+- (void)setViewMovedUp:(BOOL)movedUp height:(float)height
+
+{
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.3];
+    
+    CGRect rect = self.view.frame;
+    
+    if (movedUp)
+    {
+        rect.origin.y -= height;
+        rect.size.height += height;
+        
+    }
+    else
+    {
+        rect.origin.y += height;
+        rect.size.height -= height;
+    }
+    
+    self.view.frame = rect;
+    
+    [UIView commitAnimations];
+    
+}
+
+
+
+- (void)keyboardWillShow:(NSNotification *)notification
+
+{
+    
+    NSDictionary *userInfo = [notification userInfo];
+    CGRect keyboardRect;
+    [[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] getValue:&keyboardRect];
+    
+    if (self.view.frame.origin.y >= 0)
+        
+    {
+        [self setViewMovedUp:YES height:keyboardRect.size.height];
+    }
+    else if (self.view.frame.origin.y < 0)
+        
+    {
+        [self setViewMovedUp:NO height:keyboardRect.size.height];
+        
+    }
+    
+}
+
+
+- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.view endEditing:TRUE];
+}
+
 
 
 -(void)radiobuttonSelected:(id)sender{

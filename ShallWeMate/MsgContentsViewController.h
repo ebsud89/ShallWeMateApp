@@ -13,11 +13,11 @@
 {
     BOOL shareMode;
     
+    
 }
 @property (strong, nonatomic) IBOutlet UILabel *providerNameLabel;
 @property (strong, nonatomic) NSString *providerName;
 @property UIImageView *providerImage;
-
 
 
 

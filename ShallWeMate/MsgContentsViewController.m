@@ -42,18 +42,29 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+//    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+//    [dateFormatter setDateStyle:NSDateFormatterShortStyle];
+//    [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+//    NSString *text = [dateFormatter stringFromDate:self.date];
+//    self.dateLabel.text = text; self.selectionStyle = UITableViewCellSelectionStyleNone;
+//    self.dateLabel = [[UILabel alloc] initWithFrame:CGRectMake(0/*width + self.data.insets.left + self.data.insets.right+100*/, height + self.data.insets.top + self.data.insets.bottom + 35, self.frame.size.width, 60.0)];
+//    self.dateLabel.text = text;
+//    self.dateLabel.font = [UIFont boldSystemFontOfSize:12];
+//    self.dateLabel.textAlignment = NSTextAlignmentLeft;
+//    self.dateLabel.shadowOffset = CGSizeMake(0, 1);
+//    self.dateLabel.shadowColor = [UIColor whiteColor];
+//    self.dateLabel.textColor = [UIColor darkGrayColor];
+//    self.dateLabel.backgroundColor = [UIColor clearColor];
     
-    
-    
-    
-    NSBubbleData *heyBubble = [NSBubbleData dataWithText:@"Hey, halloween is soon" date:[NSDate dateWithTimeIntervalSinceNow:-300] type:BubbleTypeSomeoneElse];
+    NSBubbleData *heyBubble = [NSBubbleData dataWithText:@"hihi~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" date:[NSDate dateWithTimeIntervalSinceNow:-300] type:BubbleTypeSomeoneElse];
     heyBubble.avatar = [UIImage imageNamed:@"avatar1.png"];
-    NSLog(@"heybubble");
     
-    NSBubbleData *replyBubble = [NSBubbleData dataWithText:@"Wow.. Really cool picture out there. iPhone 5 has really nice camera, yeah?" date:[NSDate dateWithTimeIntervalSinceNow:-5] type:BubbleTypeMine];
+    NSBubbleData *replyBubble = [NSBubbleData dataWithText:@"hihihihi" date:[NSDate dateWithTimeIntervalSinceNow:-5] type:BubbleTypeMine];
     replyBubble.avatar = nil;
     
     bubbleData = [[NSMutableArray alloc] initWithObjects:heyBubble  , replyBubble, nil];
+    
+    
     
     bubbleTable.bubbleDataSource = self;
     
@@ -87,44 +98,30 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:self.view.window];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillHideNotification object:self.view.window];
+    
 }
 
 - (void)setViewMovedUp:(BOOL)movedUp height:(float)height
 
 {
     [UIView beginAnimations:nil context:NULL];
-    
     [UIView setAnimationDuration:0.3];
-    
-    
     
     CGRect rect = self.view.frame;
     
     if (movedUp)
-        
-        
-        
     {
-        
         rect.origin.y -= height;
-        
         rect.size.height += height;
         
     }
-    
     else
-        
     {
-        
         rect.origin.y += height;
-        
         rect.size.height -= height;
-        
     }
     
     self.view.frame = rect;
-    
-    
     
     [UIView commitAnimations];
     
@@ -137,33 +134,20 @@
 {
     
     NSDictionary *userInfo = [notification userInfo];
-    
     CGRect keyboardRect;
-    
     [[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] getValue:&keyboardRect];
-    
-    
-    
     
     if (self.view.frame.origin.y >= 0)
         
     {
-        
         [self setViewMovedUp:YES height:keyboardRect.size.height];
-        
     }
-    
-    
-    
     else if (self.view.frame.origin.y < 0)
         
     {
-        
         [self setViewMovedUp:NO height:keyboardRect.size.height];
         
     }
-    
-    
     
 }
 - (void)didReceiveMemoryWarning
@@ -235,9 +219,12 @@
     [bubbleData addObject:sayBubble];
     [bubbleTable reloadData];
     
-    NSLog(@"sayBubble %@", sayBubble.date);
     textField.text = @"";
     [textField resignFirstResponder];
+    
+    
+    //
+    
 }
 
 @end

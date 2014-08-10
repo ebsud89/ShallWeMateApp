@@ -215,6 +215,7 @@
         cell.date = data.date;
         
         return cell;
+        
     }
     
     // Standard bubble
@@ -225,6 +226,7 @@
     if (cell == nil) cell = [[UIBubbleTableViewCell alloc] init];
     
     cell.data = data;
+    cell.date = data.date;
     cell.showAvatar = self.showAvatars;
     
     return cell;

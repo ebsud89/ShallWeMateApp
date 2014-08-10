@@ -32,7 +32,70 @@
         [self.houseData printAll];
     
     avgAgesArray = [[NSArray alloc] initWithObjects:@"20대 초반", @"20대 중반", @"20대 후반", @"30대 초반", @"30대 중반", @"30대 후반", @"40대 이상", nil];
+    //키보드 올라갈 때 뷰 올리기
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:self.view.window];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillHideNotification object:self.view.window];
+    
 }
+
+
+- (void)setViewMovedUp:(BOOL)movedUp height:(float)height
+
+{
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.3];
+    
+    CGRect rect = self.view.frame;
+    
+    if (movedUp)
+    {
+        rect.origin.y -= height;
+        rect.size.height += height;
+        
+    }
+    else
+    {
+        rect.origin.y += height;
+        rect.size.height -= height;
+    }
+    
+    self.view.frame = rect;
+    
+    [UIView commitAnimations];
+    
+}
+
+
+
+- (void)keyboardWillShow:(NSNotification *)notification
+
+{
+    
+    NSDictionary *userInfo = [notification userInfo];
+    CGRect keyboardRect;
+    [[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] getValue:&keyboardRect];
+    
+    if (self.view.frame.origin.y >= 0)
+        
+    {
+        [self setViewMovedUp:YES height:keyboardRect.size.height];
+    }
+    else if (self.view.frame.origin.y < 0)
+        
+    {
+        [self setViewMovedUp:NO height:keyboardRect.size.height];
+        
+    }
+    
+}
+
+
+- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.view endEditing:TRUE];
+}
+
 - (IBAction)selectAgeButtonClicked:(id)sender {
     
     actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self     cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
