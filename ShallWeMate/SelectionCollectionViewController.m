@@ -9,6 +9,8 @@
 #import "SelectionCollectionViewController.h"
 
 @implementation SelectionCollectionViewController
+@synthesize viewController;
+int count = 0;
 
 - (id) init
 {
@@ -59,24 +61,50 @@
 
 - (void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"did selectItem  %ld %ld", (long)indexPath.row, (long)indexPath.section);
-    [self.delegate didSelectedItem:indexPath];
+    if ([viewController isEqual:@"lifeStyle"]) {
+        if (count < 6){
+        count++;
+        NSLog(@"did selectItem  %ld %ld", (long)indexPath.row, (long)indexPath.section);
+        [self.delegate didSelectedItem:indexPath];
+        
+        UICollectionViewCell *cell = [self.selectList cellForItemAtIndexPath:indexPath];
     
-    UICollectionViewCell *cell = [self.selectList cellForItemAtIndexPath:indexPath];
-    
-    cell.layer.borderColor = [UIColor blueColor].CGColor;
-    cell.layer.borderWidth = 3.0f;
+        cell.layer.borderColor = [UIColor blueColor].CGColor;
+        cell.layer.borderWidth = 3.0f;
+        }
+    } else {
+        NSLog(@"did selectItem  %ld %ld", (long)indexPath.row, (long)indexPath.section);
+        [self.delegate didSelectedItem:indexPath];
+        
+        UICollectionViewCell *cell = [self.selectList cellForItemAtIndexPath:indexPath];
+        
+        cell.layer.borderColor = [UIColor blueColor].CGColor;
+        cell.layer.borderWidth = 3.0f;
+    }
 }
 
 - (void) collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"did DeSelectItem %ld", (long)indexPath.row);
-    [self.delegate didDeSelectedItem:indexPath];
+    if ([viewController isEqual:@"lifeStyle"]) {
+        if (count <= 6){
+        count--;
+        NSLog(@"did DeSelectItem %ld", (long)indexPath.row);
+        [self.delegate didDeSelectedItem:indexPath];
     
-    UICollectionViewCell *cell = [self.selectList cellForItemAtIndexPath:indexPath];
+        UICollectionViewCell *cell = [self.selectList cellForItemAtIndexPath:indexPath];
     
-    cell.layer.borderColor = nil;
-    cell.layer.borderWidth = 0.0f;
+        cell.layer.borderColor = nil;
+        cell.layer.borderWidth = 0.0f;
+        }
+    } else {
+        NSLog(@"did selectItem  %ld %ld", (long)indexPath.row, (long)indexPath.section);
+        [self.delegate didSelectedItem:indexPath];
+        
+        UICollectionViewCell *cell = [self.selectList cellForItemAtIndexPath:indexPath];
+        
+        cell.layer.borderColor = [UIColor blueColor].CGColor;
+        cell.layer.borderWidth = 3.0f;
+    }
 }
 
 

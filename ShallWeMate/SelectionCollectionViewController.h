@@ -13,7 +13,7 @@
 @interface SelectionCollectionViewController : NSObject <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, assign) id<SelectionCollectionViewDelegate>delegate;
-
+@property (nonatomic, assign) NSString *viewController;
 @property (strong, nonatomic) UICollectionView *selectList;
 @property (assign, nonatomic) int numberOfItemsInSection;
 

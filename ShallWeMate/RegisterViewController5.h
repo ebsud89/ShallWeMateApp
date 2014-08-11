@@ -21,4 +21,5 @@
 @property (weak, nonatomic) IBOutlet UIButton *drinkOk;
 @property (weak, nonatomic) IBOutlet UIButton *drinkNo;
 -(void)radiobuttonSelected:(id)sender;
+- (IBAction)doneButtonClicked:(id)sender;
 @end

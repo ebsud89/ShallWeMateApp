@@ -49,6 +49,13 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillHideNotification object:self.view.window];
     
+    //cursor coloer
+    [[UITextField appearance] setTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1.0]];
+    
+    //navigation bar color
+    [[[self navigationController] navigationBar] setTintColor:[UIColor whiteColor]];
+    [[[self navigationController] navigationBar] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000]];
 }
 
 
@@ -62,14 +69,17 @@
     
     if (movedUp)
     {
-        rect.origin.y -= height;
-        rect.size.height += height;
-        
+        //        rect.origin.y -= height;
+        //        rect.size.height += height;
+        rect.origin.y -= 40;
+        rect.size.height += 40;
     }
     else
     {
-        rect.origin.y += height;
-        rect.size.height -= height;
+        //        rect.origin.y += height;
+        //        rect.size.height -= height;
+        rect.origin.y += 40;
+        rect.size.height -= 40;
     }
     
     self.view.frame = rect;

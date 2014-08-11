@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8kg-nR-K8v">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="JAB-B7-TYR">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -61,7 +61,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReuseableMainTableCellWithIdentifier" rowHeight="200" id="gHM-nm-6O4" customClass="MainTableViewCell">
-                                <rect key="frame" x="0.0" y="86" width="320" height="200"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gHM-nm-6O4" id="0EN-jj-SUa">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="199"/>
@@ -168,6 +168,9 @@
                                         <state key="normal" title="Button">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="FSK-fA-jmf" kind="push" id="KHf-4G-Oq7"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tLu-Hn-iYW">
                                         <rect key="frame" x="137" y="314" width="46" height="30"/>
@@ -175,6 +178,9 @@
                                         <state key="normal" title="Button">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="FSK-fA-jmf" kind="push" id="Hjx-M2-23f"/>
+                                        </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yf8-6D-YLX">
                                         <rect key="frame" x="114" y="134" width="93" height="88"/>
@@ -569,13 +575,13 @@
                                 <rect key="frame" x="20" y="145" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="@@@만원" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O6B-Rf-OaV">
                                 <rect key="frame" x="20" y="252" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="@@@만원" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b9I-Aq-87I">
                                 <rect key="frame" x="20" y="349" width="280" height="30"/>
@@ -964,7 +970,7 @@
                         <outlet property="posibleRoomLabel" destination="ZJJ-hn-aiF" id="fCs-33-UXT"/>
                         <outlet property="prMinusBtn" destination="VMI-Un-9fU" id="XN5-pn-7fB"/>
                         <outlet property="prPlusBtn" destination="cXU-9P-Stx" id="nLy-lx-LzF"/>
-                        <outlet property="selectList" destination="IfZ-JL-MSU" id="lVU-mO-Am4"/>
+                        <outlet property="selectList" destination="IfZ-JL-MSU" id="5V6-BP-f4O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vf9-00-Euw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1119,7 +1125,7 @@
                                 <rect key="frame" x="87" y="154" width="181" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="평균 연령을 선택해주세요">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1363,7 +1369,7 @@
                         <barButtonItem key="backBarButtonItem" title="  " id="gbL-Mx-SyZ"/>
                         <barButtonItem key="rightBarButtonItem" title="Item" id="Y9Y-bH-DYe">
                             <connections>
-                                <segue destination="4D1-HB-U6s" kind="push" identifier="goNext" id="5QH-5g-Od3"/>
+                                <action selector="doneButtonClicked:" destination="qYO-nB-hg4" id="mnj-zI-euD"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1387,7 +1393,7 @@
         <!--Summery View Controller-->
         <scene sceneID="AFT-za-dKx">
             <objects>
-                <viewController id="4D1-HB-U6s" customClass="PSummeryViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PSummeryViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4D1-HB-U6s" customClass="PSummeryViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IgG-Az-rJB"/>
                         <viewControllerLayoutGuide type="bottom" id="5oC-0N-jMm"/>
@@ -2162,7 +2168,7 @@
                         <barButtonItem key="backBarButtonItem" title="  " id="ajx-Ld-QBI"/>
                         <barButtonItem key="rightBarButtonItem" title="Item" id="lup-5c-1wM">
                             <connections>
-                                <segue destination="PKe-8K-1Cu" kind="push" identifier="toLifeKeyword" id="JVw-Bd-BeE"/>
+                                <action selector="doneButtonClicked:" destination="9kh-fP-wRD" id="BR4-nc-Qbi"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -2313,7 +2319,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R7f-2N-iZZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="407" y="3223"/>
+            <point key="canvasLocation" x="378" y="3223"/>
         </scene>
         <!--Msg Contents View Controller-->
         <scene sceneID="R2w-2D-RCQ">
@@ -2360,7 +2366,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="sayPressed:" destination="3ee-EG-cyG" eventType="touchUpInside" id="sXc-rt-Jxr"/>
+                                            <action selector="sayPressed:" destination="3ee-EG-cyG" eventType="touchUpInside" id="bFP-DO-Qtb"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -2372,13 +2378,98 @@
                     <navigationItem key="navigationItem" id="DSq-at-ADI"/>
                     <connections>
                         <outlet property="bubbleTable" destination="xSC-8C-qfR" id="rY3-AJ-Vg5"/>
-                        <outlet property="textField" destination="2IM-Tl-bxu" id="3dD-YW-KTC"/>
+                        <outlet property="textField" destination="2IM-Tl-bxu" id="acs-MA-8JG"/>
                         <outlet property="textInputView" destination="PAK-sP-W1B" id="YdO-aZ-NFG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gZw-SE-peA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="933" y="3223"/>
+            <point key="canvasLocation" x="754" y="3223"/>
+        </scene>
+        <!--Notice View Controller - 알림-->
+        <scene sceneID="iTa-yX-FzM">
+            <objects>
+                <viewController id="Xbt-mw-3G1" customClass="SWMNoticeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4bg-2D-HSM"/>
+                        <viewControllerLayoutGuide type="bottom" id="aIh-fW-fiW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="73z-uN-vIc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="메세지 알림" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wdo-OG-5ee">
+                                <rect key="frame" x="33" y="112" width="96" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="새로운 하우스 알림" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="chJ-4o-Bxi">
+                                <rect key="frame" x="33" y="175" width="139" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="답글" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVm-ph-bKg">
+                                <rect key="frame" x="33" y="239" width="56" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xog-t9-04X">
+                                <rect key="frame" x="229" y="107" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="messageNoticeSwitch:" destination="Xbt-mw-3G1" eventType="valueChanged" id="20p-eZ-Z2h"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="biX-i0-N8S">
+                                <rect key="frame" x="229" y="170" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="newHouseNoticeSwitch:" destination="Xbt-mw-3G1" eventType="valueChanged" id="yTz-5t-TL8"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9cd-fA-I4l">
+                                <rect key="frame" x="229" y="234" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="replyNoticeSwitch:" destination="Xbt-mw-3G1" eventType="valueChanged" id="lNm-bQ-700"/>
+                                </connections>
+                            </switch>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="알림" id="hPU-ET-0ud">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="fES-JK-kul"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="houseAddNotice" destination="biX-i0-N8S" id="Kto-HP-af2"/>
+                        <outlet property="messageNotice" destination="Xog-t9-04X" id="I6J-DH-S7r"/>
+                        <outlet property="replyNotice" destination="9cd-fA-I4l" id="G8A-2b-9Wr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B60-Ye-6C6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1594" y="3223"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="HUO-2Y-zQR">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="Rit-By-TCS" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9k5-Si-M9z">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Xbt-mw-3G1" kind="relationship" relationship="rootViewController" id="rcw-eu-Psq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tgv-GB-nd3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1186" y="3223"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1Dc-Hb-NBR">
@@ -2399,6 +2490,7 @@
         <scene sceneID="uTo-Of-a17">
             <objects>
                 <navigationController definesPresentationContext="YES" id="FSK-fA-jmf" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Dbl-tV-erf"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="DG2-JR-aWy">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2430,7 +2522,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7kS-ol-9qV">
-                                <rect key="frame" x="131" y="239" width="58" height="29"/>
+                                <rect key="frame" x="131" y="316" width="58" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="등록하기">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -2439,14 +2531,8 @@
                                     <action selector="registerButtonPressed:" destination="8kg-nR-K8v" eventType="touchUpInside" id="8GZ-9s-Kq3"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uOa-hs-f4t">
-                                <rect key="frame" x="20" y="152" width="280" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text=" " translatesAutoresizingMaskIntoConstraints="NO" id="e1P-s3-rzT">
-                                <rect key="frame" x="28" y="276" width="272" height="128"/>
+                                <rect key="frame" x="20" y="152" width="280" height="82"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -2463,7 +2549,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="textField" destination="uOa-hs-f4t" id="1xb-W8-p5q"/>
                         <outlet property="textView" destination="e1P-s3-rzT" id="C03-CU-l0N"/>
                     </connections>
                 </viewController>
@@ -2604,8 +2689,9 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="KpW-0g-yCf"/>
         <segue reference="oPl-86-bfa"/>
-        <segue reference="cEM-01-FAo"/>
+        <segue reference="KHf-4G-Oq7"/>
         <segue reference="bq7-8l-ro8"/>
     </inferredMetricsTieBreakers>
 </document>

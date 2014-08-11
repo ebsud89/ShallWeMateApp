@@ -12,6 +12,8 @@
 @interface RegisterViewController3 : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate>
 {
     
+    UIActionSheet *actionSheet;
+    UIPickerView *picker;
     UIButton *ageSelectBtn;
     NSArray *agesArray;
     

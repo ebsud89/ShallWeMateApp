@@ -17,6 +17,7 @@
 }
 @property (strong, nonatomic) IBOutlet UILabel *providerNameLabel;
 @property (strong, nonatomic) NSString *providerName;
+@property (weak, nonatomic) IBOutlet UITextField *textField;
 @property UIImageView *providerImage;
 
 
