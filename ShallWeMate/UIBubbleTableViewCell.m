@@ -11,14 +11,12 @@
 #import <QuartzCore/QuartzCore.h>
 #import "UIBubbleTableViewCell.h"
 #import "NSBubbleData.h"
-#import "MsgContentsViewController.h"
 
 @interface UIBubbleTableViewCell ()
 
 @property (nonatomic, retain) UILabel *name;
 @property (nonatomic, retain) UILabel *description;
 @property (nonatomic, retain) UILabel *dateLabell;
-
 @property (nonatomic, retain) UIView *customView;
 @property (nonatomic, retain) UIImageView *bubbleImage;
 @property (nonatomic, retain) UIImageView *avatarImage;
@@ -34,12 +32,6 @@
 @synthesize bubbleImage = _bubbleImage;
 @synthesize showAvatar = _showAvatar;
 @synthesize avatarImage = _avatarImage;
-
-@synthesize name = _name;
-@synthesize description = _description;
-@synthesize dateLabel = _dateLabel;
-
-int flag = 0;
 
 - (void)setFrame:(CGRect)frame
 {
@@ -61,17 +53,16 @@ int flag = 0;
 - (void)setDataInternal:(NSBubbleData *)value
 {
 	self.data = value;
-//    self.date = value.date;
 	[self setupInternalData];
 }
 
 - (void) setupInternalData
-{
-    self.selectionStyle = UITableViewCellSelectionStyleNone;
-    //
+{//
     NSString *name = @"koh gabin"; // 상대 이름
     NSString *desc = @"house description"; //상대 하우스 설명
     //
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
+    
     if (!self.bubbleImage)
     {
 #if !__has_feature(objc_arc)
@@ -80,13 +71,7 @@ int flag = 0;
         self.bubbleImage = [[UIImageView alloc] init];
 #endif
         [self addSubview:self.bubbleImage];
-        
-        //
-        
-        self.name.text = name;
-        self.description.text = desc;
     }
-    
     //
     
     self.name = [[UILabel alloc] initWithFrame:CGRectMake(65, -10, self.frame.size.width, 50.0)];
@@ -107,35 +92,38 @@ int flag = 0;
     self.description.shadowColor = [UIColor whiteColor];
     self.description.textColor = [UIColor darkGrayColor];
     self.description.backgroundColor = [UIColor clearColor];
-//    [self addSubview:self.description];
     
     //
-    
     NSBubbleType type = self.data.type;
+    
     CGFloat width = self.data.view.frame.size.width;
     CGFloat height = self.data.view.frame.size.height;
     
     CGFloat x = (type == BubbleTypeSomeoneElse) ? 0 : self.frame.size.width - width - self.data.insets.left - self.data.insets.right;
     CGFloat y = 0;
     
-   
+    //
     if (type == BubbleTypeSomeoneElse) {
         x += 54;
-        //            y -= 10;
-        //            self.avatarImage.hidden = YES;
+        y += 18;
     }
     if (type == BubbleTypeMine) {
-        self.avatarImage.hidden = YES;
-    }
+        y -= 18;
+        self.avatarImage.hidden = YES;}
+    //
+    
+    
     
     [self.customView removeFromSuperview];
     self.customView = self.data.view;
-    self.customView.frame = CGRectMake(x + self.data.insets.left, y + self.data.insets.top + 60, width, height);
+    self.customView.frame = CGRectMake(x + self.data.insets.left, y + self.data.insets.top +30, width, height);
     [self.contentView addSubview:self.customView];
     
     if (type == BubbleTypeSomeoneElse)
     {
         self.bubbleImage.image = [[UIImage imageNamed:@"bubbleSomeone.png"] stretchableImageWithLeftCapWidth:21 topCapHeight:14];
+        
+        //
         // Adjusting the x coordinate for avatar
         if (self.showAvatar)
         {
@@ -153,21 +141,14 @@ int flag = 0;
             CGFloat avatarX = (type == BubbleTypeSomeoneElse) ? 2 : self.frame.size.width - 52;
             CGFloat avatarY = self.frame.size.height - 50;
             
-            self.avatarImage.frame = CGRectMake(avatarX, avatarY-30, 50, 50);
+            self.avatarImage.frame = CGRectMake(avatarX, avatarY, 50, 50);
             [self addSubview:self.avatarImage];
             
             CGFloat delta = self.frame.size.height - (self.data.insets.top + self.data.insets.bottom + self.data.view.frame.size.height);
             if (delta > 0) y = delta;
             
-//            if (type == BubbleTypeSomeoneElse) {
-//                x += 54;
-//                //            y -= 10;
-//                //            self.avatarImage.hidden = YES;
-//            }
-//            if (type == BubbleTypeMine) {
-//                self.avatarImage.hidden = YES;
-//            }
         }
+        
         
         [self addSubview:self.name];
         [self addSubview:self.description];
@@ -177,37 +158,13 @@ int flag = 0;
         self.bubbleImage.image = [[UIImage imageNamed:@"bubbleMine.png"] stretchableImageWithLeftCapWidth:15 topCapHeight:14];
     }
     
-    self.bubbleImage.frame = CGRectMake(x, y+60, width + self.data.insets.left + self.data.insets.right, height + self.data.insets.top + self.data.insets.bottom);
     
-    //////date
+    [self.customView removeFromSuperview];
+    self.customView = self.data.view;
+    self.customView.frame = CGRectMake(x + self.data.insets.left, y + self.data.insets.top +30, width, height);
+    [self.contentView addSubview:self.customView];
     
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateStyle:NSDateFormatterShortStyle];
-    [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
-    NSString *text = [dateFormatter stringFromDate:self.date];
-    self.dateLabell.text = text; self.selectionStyle = UITableViewCellSelectionStyleNone;
-    self.dateLabell = [[UILabel alloc] initWithFrame:CGRectMake(width + self.data.insets.left + self.data.insets.right+140, height + self.data.insets.top + self.data.insets.bottom + 35, self.frame.size.width, 60.0)];
-    self.dateLabell.text = text;
-    self.dateLabell.font = [UIFont boldSystemFontOfSize:12];
-    self.dateLabell.textAlignment = NSTextAlignmentLeft;
-    self.dateLabell.shadowOffset = CGSizeMake(0, 1);
-    self.dateLabell.shadowColor = [UIColor whiteColor];
-    self.dateLabell.textColor = [UIColor darkGrayColor];
-    self.dateLabell.backgroundColor = [UIColor clearColor];
-//    if (flag % 3 == 0)
-        [self addSubview:self.dateLabell];
-
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    
-//            MsgContentsViewController *vc = [[MsgContentsViewController alloc] init];
-//    vc.dateLabelText =
-//    NSLog(@" dateLabel : %@", self.dateLabel.text);
-//    
-    
-//    _dateLabel.text = self.dateLabell.text;
-//    
-//    NSLog(@"+: %@", self.dateLabell.text);
+    self.bubbleImage.frame = CGRectMake(x, y+30, width + self.data.insets.left + self.data.insets.right, height + self.data.insets.top + self.data.insets.bottom);
 }
 
 @end

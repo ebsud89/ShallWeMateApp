@@ -15,7 +15,5 @@
 
 @property (nonatomic, strong) NSBubbleData *data;
 @property (nonatomic) BOOL showAvatar;
-@property (nonatomic, strong) NSDate *date;
-@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 
 @end

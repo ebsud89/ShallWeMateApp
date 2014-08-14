@@ -14,13 +14,13 @@
     
     UIButton *jobButton;
     NSArray *jobsArray;
-    FBProfilePictureView *fbProfilePictureView;
     UITextField *userName;
     UIButton *radiobutton1;
     UIButton *radiobutton2;
 }
 @property (strong, nonatomic) IBOutlet UITextField *userName;
-@property (strong, nonatomic) IBOutlet FBProfilePictureView *fbProfilePictureView;
+@property (weak, nonatomic) IBOutlet FBProfilePictureView *fbProfilePictureView;
+
 
 @property (retain, nonatomic) IBOutlet UIButton *jobButton;
 

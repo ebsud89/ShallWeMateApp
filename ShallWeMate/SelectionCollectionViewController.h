@@ -16,6 +16,8 @@
 @property (nonatomic, assign) NSString *viewController;
 @property (strong, nonatomic) UICollectionView *selectList;
 @property (assign, nonatomic) int numberOfItemsInSection;
+@property (strong, nonatomic) NSArray *picData;
+@property (strong, nonatomic) NSArray *data;
 
 - (void) selectionListInit;
 - (void) selectItem:(int) index;

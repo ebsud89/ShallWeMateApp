@@ -38,6 +38,7 @@
     
     selectionCollection = [[SelectionCollectionViewController alloc] init];
     selectionCollection.delegate = self;
+    selectionCollection.viewController = @"enableRoomsMore";
     [selectionCollection setNumberOfItemsInSection:(int)[houseData.enableManagementStates count]];
     [selectionCollection setSelectList:self.selectList];
     [selectionCollection selectionListInit];

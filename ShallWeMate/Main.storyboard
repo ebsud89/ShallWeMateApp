@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="JAB-B7-TYR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="49Z-DN-Opu">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -61,7 +61,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReuseableMainTableCellWithIdentifier" rowHeight="200" id="gHM-nm-6O4" customClass="MainTableViewCell">
-                                <rect key="frame" x="0.0" y="22" width="320" height="200"/>
+                                <rect key="frame" x="0.0" y="86" width="320" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gHM-nm-6O4" id="0EN-jj-SUa">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="199"/>
@@ -283,6 +283,9 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="jyK-MM-4Jq" kind="modal" id="Rak-Rr-XJ8"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anj-R6-Foq">
                                 <rect key="frame" x="20" y="83" width="142" height="35"/>
@@ -446,7 +449,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="@@" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SMq-hN-ZRf">
-                                <rect key="frame" x="132" y="327" width="45" height="30"/>
+                                <rect key="frame" x="132" y="327" width="57" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -458,9 +461,10 @@
                                     <segment title="걸어서"/>
                                     <segment title="버스로"/>
                                 </segments>
+                                <color key="tintColor" red="0.92941176469999998" green="0.3872475178" blue="0.42253464039999999" alpha="1" colorSpace="calibratedRGB"/>
                             </segmentedControl>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="분" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3bO-WN-nrg">
-                                <rect key="frame" x="185" y="331" width="15" height="21"/>
+                                <rect key="frame" x="197" y="331" width="15" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
@@ -487,6 +491,7 @@
                                 <rect key="frame" x="20" y="518" width="191" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="등록하기">
+                                    <color key="titleColor" red="0.92941176469999998" green="0.3872475178" blue="0.42253464039999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -508,6 +513,7 @@
                                 <rect key="frame" x="137" y="121" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.92941176469999998" green="0.3872475178" blue="0.42253464039999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -523,6 +529,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="기본 정보 등록" id="7L3-y3-cHA">
                         <barButtonItem key="rightBarButtonItem" title="Item" id="Nzl-7d-e7i">
+                            <color key="tintColor" red="0.92941176470588238" green="0.38724751780292288" blue="0.4225346404208582" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="Xds-7s-O12" kind="push" identifier="goNext" id="mrL-Yk-Q0s"/>
                             </connections>
@@ -571,51 +578,73 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="@@@ 만원" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="29R-ct-fsc">
-                                <rect key="frame" x="20" y="145" width="280" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="@@@ " minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="29R-ct-fsc">
+                                <rect key="frame" x="20" y="145" width="181" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="@@@만원" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O6B-Rf-OaV">
-                                <rect key="frame" x="20" y="252" width="280" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="@@@" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O6B-Rf-OaV">
+                                <rect key="frame" x="20" y="252" width="181" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="@@@만원" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b9I-Aq-87I">
-                                <rect key="frame" x="20" y="349" width="280" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="@@@" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b9I-Aq-87I">
+                                <rect key="frame" x="20" y="349" width="181" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="efd-fL-YDj">
-                                <rect key="frame" x="20" y="395" width="285" height="153"/>
+                                <rect key="frame" x="25" y="395" width="270" height="153"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1oQ-lU-FXN">
-                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="itemSize" width="65" height="65"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionCell" id="XBa-jK-zre">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="만원" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3QA-Qt-WO3">
+                                <rect key="frame" x="209" y="149" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="만원" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="06R-nU-aHj">
+                                <rect key="frame" x="209" y="255" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="만원" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozJ-kG-byg">
+                                <rect key="frame" x="209" y="352" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="가격정보 등록" id="46h-rP-tJQ">
                         <barButtonItem key="leftBarButtonItem" id="1qr-Ym-61H"/>
                         <barButtonItem key="rightBarButtonItem" title="Item" id="Ko9-XY-jNf">
+                            <color key="tintColor" red="0.92941176469999998" green="0.3872475178" blue="0.42253464039999999" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="lAz-zD-AqY" kind="push" identifier="goNext" id="hEm-vJ-DFb"/>
                             </connections>
@@ -799,10 +828,10 @@
             </objects>
             <point key="canvasLocation" x="-710" y="1074"/>
         </scene>
-        <!--View Controller-->
+        <!--Register View Controller1-->
         <scene sceneID="XhR-tS-UOi">
             <objects>
-                <viewController storyboardIdentifier="pSelectView" id="kcE-fA-RxY" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="pSelectView" id="kcE-fA-RxY" customClass="PRegisterViewController1" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uah-sq-Wjb"/>
                         <viewControllerLayoutGuide type="bottom" id="FpG-kY-aNF"/>
@@ -821,7 +850,8 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tts-Ec-Ywn">
                                 <rect key="frame" x="39" y="292" width="242" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.20189216560000001" green="0.64504741259999998" blue="0.89935037360000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.92941176470588238" green="0.40392156862745099" blue="0.40392156862745099" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="네">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -833,7 +863,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XUO-t4-4nX">
                                 <rect key="frame" x="39" y="351" width="242" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.20189216560000001" green="0.64504741259999998" blue="0.89935037360000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.92941176470588238" green="0.38724751780292288" blue="0.4225346404208582" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="아니오. 둘러보기">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -932,20 +962,20 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IfZ-JL-MSU">
-                                <rect key="frame" x="15" y="289" width="285" height="153"/>
+                                <rect key="frame" x="25" y="289" width="270" height="219"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SP4-00-76g">
-                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="itemSize" width="65" height="65"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionCell" id="dec-dF-abX">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -990,28 +1020,28 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6vp-Gy-SCd">
-                                <rect key="frame" x="18" y="112" width="285" height="436"/>
+                                <rect key="frame" x="20" y="73" width="274" height="358"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OnC-xa-fC0">
-                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="itemSize" width="90" height="90"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionCell" id="ptJ-rc-fg0">
-                                        <rect key="frame" x="0.0" y="64" width="50" height="50"/>
+                                        <rect key="frame" x="0.0" y="64" width="90" height="90"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XFt-cl-rl6">
-                                <rect key="frame" x="20" y="83" width="42" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="제공되는 가전/가구" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XFt-cl-rl6">
+                                <rect key="frame" x="20" y="83" width="167" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1177,29 +1207,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="라이프 스타일 키워드를 선택해주세요 (최대 6개)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YHH-10-69p">
-                                <rect key="frame" x="0.0" y="64" width="320" height="42"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="YHH-10-69p">
+                                <rect key="frame" x="0.0" y="66" width="320" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.99174167800000002" green="0.94417546159999999" blue="0.78196894459999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">나의 라이프 스타일에 맞는 키워드를 선택해주세요.
+최대 6개까지 선택할 수 있습니다.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ntQ-Z9-eBg">
-                                <rect key="frame" x="18" y="114" width="285" height="427"/>
+                                <rect key="frame" x="5" y="114" width="309" height="454"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Yhh-rf-ibg">
-                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="itemSize" width="100" height="115"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionCell" id="YQB-Eo-UxR">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="115"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="115"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -1693,7 +1724,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="fbProfilePictureView" destination="yH1-0w-hdZ" id="9bx-J7-BWN"/>
+                        <outlet property="fbProfilePictureView" destination="yH1-0w-hdZ" id="cm0-qG-8o1"/>
                         <outlet property="jobButton" destination="pbR-LH-JuK" id="VRG-WZ-QED"/>
                         <outlet property="userName" destination="j6l-zL-G3E" id="rul-sJ-UK9"/>
                     </connections>
@@ -2333,16 +2364,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="92" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="xSC-8C-qfR" customClass="UIBubbleTableView">
-                                <rect key="frame" x="0.0" y="67" width="320" height="438"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="xSC-8C-qfR" customClass="UIBubbleTableView">
+                                <rect key="frame" x="0.0" y="20" width="320" height="438"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="92" id="XWp-R2-6ZT" customClass="UIBubbleTableViewCell">
-                                        <rect key="frame" x="0.0" y="86" width="320" height="92"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="359" id="XWp-R2-6ZT" customClass="UIBubbleTableViewCell">
+                                        <rect key="frame" x="0.0" y="86" width="320" height="359"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XWp-R2-6ZT" id="hEb-Fz-XHv">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="91"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="358"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -2366,7 +2397,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="sayPressed:" destination="3ee-EG-cyG" eventType="touchUpInside" id="bFP-DO-Qtb"/>
+                                            <action selector="sayPressed:" destination="3ee-EG-cyG" eventType="touchUpInside" id="3Cn-1w-IzW"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -2378,7 +2409,7 @@
                     <navigationItem key="navigationItem" id="DSq-at-ADI"/>
                     <connections>
                         <outlet property="bubbleTable" destination="xSC-8C-qfR" id="rY3-AJ-Vg5"/>
-                        <outlet property="textField" destination="2IM-Tl-bxu" id="acs-MA-8JG"/>
+                        <outlet property="textField" destination="2IM-Tl-bxu" id="LLL-2Y-zI7"/>
                         <outlet property="textInputView" destination="PAK-sP-W1B" id="YdO-aZ-NFG"/>
                     </connections>
                 </viewController>
@@ -2689,8 +2720,9 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="KpW-0g-yCf"/>
         <segue reference="oPl-86-bfa"/>
+        <segue reference="KpW-0g-yCf"/>
+        <segue reference="Rak-Rr-XJ8"/>
         <segue reference="KHf-4G-Oq7"/>
         <segue reference="bq7-8l-ro8"/>
     </inferredMetricsTieBreakers>

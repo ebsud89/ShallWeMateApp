@@ -17,6 +17,12 @@
 		68A9E5EC1995FF1900EF1396 /* bubbleMine.png in Resources */ = {isa = PBXBuildFile; fileRef = 68A9E5EB1995FF1900EF1396 /* bubbleMine.png */; };
 		68A9E5EE1995FF2E00EF1396 /* bubbleSomeone.png in Resources */ = {isa = PBXBuildFile; fileRef = 68A9E5ED1995FF2E00EF1396 /* bubbleSomeone.png */; };
 		68A9E5F01995FF4D00EF1396 /* missingAvatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 68A9E5EF1995FF4D00EF1396 /* missingAvatar.png */; };
+		68AD04411999F889006942AA /* ShallWeMate-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 68AD04401999F889006942AA /* ShallWeMate-Info.plist */; };
+		68AD04431999FCC2006942AA /* cook.png in Resources */ = {isa = PBXBuildFile; fileRef = 68AD04421999FCC2006942AA /* cook.png */; };
+		68AD04461999FEAF006942AA /* interior.png in Resources */ = {isa = PBXBuildFile; fileRef = 68AD04441999FEAF006942AA /* interior.png */; };
+		68AD04471999FEB0006942AA /* movie.png in Resources */ = {isa = PBXBuildFile; fileRef = 68AD04451999FEAF006942AA /* movie.png */; };
+		68AD044A199A03D9006942AA /* life_cover02.png in Resources */ = {isa = PBXBuildFile; fileRef = 68AD0448199A03D9006942AA /* life_cover02.png */; };
+		68AD044B199A03D9006942AA /* life_cover.png in Resources */ = {isa = PBXBuildFile; fileRef = 68AD0449199A03D9006942AA /* life_cover.png */; };
 		EB2F77401990CD6F00EA365E /* PRegisterViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2F77331990CD6F00EA365E /* PRegisterViewController1.m */; };
 		EB2F77411990CD6F00EA365E /* PRegisterViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2F77351990CD6F00EA365E /* PRegisterViewController2.m */; };
 		EB2F77421990CD6F00EA365E /* PRegisterViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2F77371990CD6F00EA365E /* PRegisterViewController3.m */; };
@@ -115,6 +121,12 @@
 		68A9E5EB1995FF1900EF1396 /* bubbleMine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubbleMine.png; sourceTree = "<group>"; };
 		68A9E5ED1995FF2E00EF1396 /* bubbleSomeone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubbleSomeone.png; sourceTree = "<group>"; };
 		68A9E5EF1995FF4D00EF1396 /* missingAvatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = missingAvatar.png; sourceTree = "<group>"; };
+		68AD04401999F889006942AA /* ShallWeMate-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ShallWeMate-Info.plist"; sourceTree = "<group>"; };
+		68AD04421999FCC2006942AA /* cook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cook.png; sourceTree = "<group>"; };
+		68AD04441999FEAF006942AA /* interior.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = interior.png; sourceTree = "<group>"; };
+		68AD04451999FEAF006942AA /* movie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = movie.png; sourceTree = "<group>"; };
+		68AD0448199A03D9006942AA /* life_cover02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = life_cover02.png; sourceTree = "<group>"; };
+		68AD0449199A03D9006942AA /* life_cover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = life_cover.png; sourceTree = "<group>"; };
 		EB2F77321990CD6F00EA365E /* PRegisterViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRegisterViewController1.h; sourceTree = "<group>"; };
 		EB2F77331990CD6F00EA365E /* PRegisterViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRegisterViewController1.m; sourceTree = "<group>"; };
 		EB2F77341990CD6F00EA365E /* PRegisterViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRegisterViewController2.h; sourceTree = "<group>"; };
@@ -221,7 +233,6 @@
 		EB7859CC198A1631000B4C18 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EB7859CE198A1631000B4C18 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		EB7859D0198A1631000B4C18 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		EB7859D4198A1631000B4C18 /* ShallWeMate-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ShallWeMate-Info.plist"; sourceTree = "<group>"; };
 		EB7859D6198A1631000B4C18 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EB7859D8198A1631000B4C18 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EB7859DA198A1631000B4C18 /* ShallWeMate-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ShallWeMate-Prefix.pch"; sourceTree = "<group>"; };
@@ -501,7 +512,7 @@
 		EB7859D3198A1631000B4C18 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				EB7859D4198A1631000B4C18 /* ShallWeMate-Info.plist */,
+				68AD04401999F889006942AA /* ShallWeMate-Info.plist */,
 				EB7859D5198A1631000B4C18 /* InfoPlist.strings */,
 				EB7859D8198A1631000B4C18 /* main.m */,
 				EB7859DA198A1631000B4C18 /* ShallWeMate-Prefix.pch */,
@@ -540,6 +551,11 @@
 		EB785A01198A19D9000B4C18 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				68AD0448199A03D9006942AA /* life_cover02.png */,
+				68AD0449199A03D9006942AA /* life_cover.png */,
+				68AD04441999FEAF006942AA /* interior.png */,
+				68AD04451999FEAF006942AA /* movie.png */,
+				68AD04421999FCC2006942AA /* cook.png */,
 				68A9E5EF1995FF4D00EF1396 /* missingAvatar.png */,
 				68A9E5ED1995FF2E00EF1396 /* bubbleSomeone.png */,
 				68A9E5EB1995FF1900EF1396 /* bubbleMine.png */,
@@ -684,15 +700,21 @@
 				EB433BD51990A3E1002667D0 /* testImg1.jpg in Resources */,
 				68A9E5EC1995FF1900EF1396 /* bubbleMine.png in Resources */,
 				EB7859DF198A1631000B4C18 /* Images.xcassets in Resources */,
+				68AD04411999F889006942AA /* ShallWeMate-Info.plist in Resources */,
 				EB433BD01990A3E1002667D0 /* subway.csv in Resources */,
 				EB433BD41990A3E1002667D0 /* testImg3.jpg in Resources */,
 				EB433BD61990A3E1002667D0 /* testImg2.jpg in Resources */,
 				EB433BD21990A3E1002667D0 /* face_test.png in Resources */,
+				68AD044B199A03D9006942AA /* life_cover.png in Resources */,
 				EB2F77741991C0BD00EA365E /* TitleTableViewCell.xib in Resources */,
 				EB2F77761991C0BD00EA365E /* ManagementTableViewCell.xib in Resources */,
+				68AD044A199A03D9006942AA /* life_cover02.png in Resources */,
 				EB433BCE1990A3E1002667D0 /* radio-off.png in Resources */,
+				68AD04471999FEB0006942AA /* movie.png in Resources */,
+				68AD04461999FEAF006942AA /* interior.png in Resources */,
 				68A9E5F01995FF4D00EF1396 /* missingAvatar.png in Resources */,
 				68A7CF89199240C600DF4BB3 /* checkbox.png in Resources */,
+				68AD04431999FCC2006942AA /* cook.png in Resources */,
 				68A7CF8B199240C600DF4BB3 /* checkbox-checked.png in Resources */,
 				EB2F77721991C0BD00EA365E /* CollectionViewTableViewCell.xib in Resources */,
 				EB2F77781991C0BD00EA365E /* BasicSearchTableViewCell.xib in Resources */,

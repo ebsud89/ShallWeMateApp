@@ -21,6 +21,10 @@ NSString *const FBSessionStateChangedNotification = @"swm.ShallWeMate:FBSessionS
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [application setStatusBarStyle:UIStatusBarStyleLightContent];
+    
+    [FBProfilePictureView class];
+    
     // Whenever a person opens the app, check for a cached session
     if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
         

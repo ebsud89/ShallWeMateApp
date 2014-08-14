@@ -23,7 +23,6 @@
 - (void)awakeFromNib
 {
     // Initialization code
-    NSLog(@"뷰가 로드 되었습니다!~~~~");
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

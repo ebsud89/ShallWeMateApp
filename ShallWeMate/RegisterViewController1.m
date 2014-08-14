@@ -35,7 +35,9 @@
     
     self.fbProfilePictureView.layer.cornerRadius = self.fbProfilePictureView.frame.size.width / 2;
     self.fbProfilePictureView.clipsToBounds = YES;
-    fbProfilePictureView.profileID =appDelegate.fbUserId;
+    fbProfilePictureView.profileID = appDelegate.fbUserId;    
+    
+    
     userName.text = appDelegate.fbUserName;
     
     radiobutton1 = [[UIButton alloc] initWithFrame:CGRectMake(93, 267, 30, 30)];
@@ -58,7 +60,7 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillHideNotification object:self.view.window];
     
-    //cursor coloer
+    //cursor color
     [[UITextField appearance] setTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1.0]];
     
     //navigation bar color
