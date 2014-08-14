@@ -65,7 +65,6 @@ const UIEdgeInsets textInsetsSomeone = {5, 15, 11, 10};
     
 #if !__has_feature(objc_arc)
     [label autorelease];
-    [description autorelease];
 #endif
     
     UIEdgeInsets insets = (type == BubbleTypeMine ? textInsetsMine : textInsetsSomeone);

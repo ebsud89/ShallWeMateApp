@@ -16,12 +16,8 @@
 @implementation PRegisterViewController3
 @synthesize allRoomLabel;
 @synthesize posibleRoomLabel;
-@synthesize avgAgeBtn;
-@synthesize roomInfoScrollView;
-@synthesize optionScrollView;
-@synthesize keywordScrollView;
-@synthesize lifestyleScrollView;
 @synthesize houseData;
+@synthesize selectList;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle*)nibBundleOrNil
 {
@@ -37,17 +33,59 @@
     [super viewDidLoad];
         [self.houseData printAll];
     
-    avgAgesArray = [[NSArray alloc] initWithObjects:@"20대 초반", @"20대 중반", @"20대 후반", @"30대 초반", @"30대 중반", @"30대 후반", @"40대 이상", nil];
+    NSLog(@"PRegisterViewController");
+    [self.houseData printAll];
     
+    selectionCollection = [[SelectionCollectionViewController alloc] init];
+    selectionCollection.delegate = self;
+    selectionCollection.viewController = @"enableRoomsMore";
+    [selectionCollection setNumberOfItemsInSection:(int)[houseData.enableManagementStates count]];
+    [selectionCollection setSelectList:self.selectList];
+    [selectionCollection selectionListInit];
+    
+    [self.selectList setDelegate:selectionCollection];
+    [self.selectList setDataSource:selectionCollection];
+    
+    [self refreshHouseData];
+    
+    //navigation bar color
+    [[[self navigationController] navigationBar] setTintColor:[UIColor whiteColor]];
+    [[[self navigationController] navigationBar] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000]];
    
 }
 
--(void)viewDidAppear:(BOOL)animated {
-    self.roomInfoScrollView.contentSize = CGSizeMake(320, 600);
-    self.lifestyleScrollView.contentSize = CGSizeMake(320, 1200);
-    self.optionScrollView.contentSize = CGSizeMake(320, 1200);
-    self.keywordScrollView.contentSize = CGSizeMake(320, 1200);
-//    [self.view addSubview:self.roomInfoScrollView];
+- (void) didSelectedItem:(NSIndexPath *)indexPath
+{
+    [houseData.enableRoomsMore replaceObjectAtIndex:indexPath.row withObject:[NSNumber numberWithBool:YES]];
+}
+
+- (void) didDeSelectedItem:(NSIndexPath *)indexPath
+{
+    [houseData.enableRoomsMore replaceObjectAtIndex:indexPath.row withObject:[NSNumber numberWithBool:NO]];
+    
+}
+
+- (void) refreshHouseData
+{
+    if (houseData.roomAll != nil) {
+        self.allRoomLabel.text = houseData.roomAll;
+    }
+    
+    if (houseData.roomEmpty != nil) {
+        self.posibleRoomLabel.text = houseData.roomEmpty;
+    }
+    
+    
+    
+    for (int i=0; i<[houseData.enableRoomsMore count]; i++) {
+        NSNumber *num = [houseData.enableRoomsMore objectAtIndex:i];
+        if ([num boolValue]) {
+            
+            [selectionCollection selectItem:i];
+        }
+    }
+    
 }
 
 - (IBAction)avgAgeSelect:(id)sender {
@@ -63,34 +101,6 @@
                                     keyWindow.frame.size.width,
                                     pickerView.frame.size.height)];
     [keyWindow addSubview:pickerView];
-    
-}
-
-// pickerView Component 갯수
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
-{
-    return 1;
-}
-// pickerView row 갯수
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
-{
-    return [avgAgesArray count];
-}
-
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
-{
-    [avgAgeBtn setTitle:[avgAgesArray objectAtIndex:row] forState:UIControlStateNormal];
-    
-    //picker view 내리기
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:1.0];
-    pickerView.transform = CGAffineTransformMakeTranslation(0, 275); //그냥 아래로 다시 내려주자
-    [UIView commitAnimations];
-    
-}
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
-{
-    return [avgAgesArray objectAtIndex:row];
     
 }
 

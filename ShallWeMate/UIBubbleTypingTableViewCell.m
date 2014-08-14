@@ -32,25 +32,25 @@
         self.typingImageView = [[UIImageView alloc] init];
         [self addSubview:self.typingImageView];
     }
-    //
-    //    self.selectionStyle = UITableViewCellSelectionStyleNone;
-    //
-    //    UIImage *bubbleImage = nil;
-    //    CGFloat x = 0;
-    //
-    //    if (value == NSBubbleTypingTypeMe)
-    //    {
-    //        bubbleImage = [UIImage imageNamed:@"typingMine.png"];
-    //        x = self.frame.size.width - bubbleImage.size.width;
-    //    }
-    //    else
-    //    {
-    //        bubbleImage = [UIImage imageNamed:@"typingSomeone.png"];
-    //        x = 0;
-    //    }
-    //
-    //    self.typingImageView.image = bubbleImage;
-    //    self.typingImageView.frame = CGRectMake(x, 4, 73, 31);
+    
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    UIImage *bubbleImage = nil;
+    CGFloat x = 0;
+    
+    if (value == NSBubbleTypingTypeMe)
+    {
+        bubbleImage = [UIImage imageNamed:@"typingMine.png"];
+        x = self.frame.size.width - bubbleImage.size.width;
+    }
+    else
+    {
+        bubbleImage = [UIImage imageNamed:@"typingSomeone.png"];
+        x = 0;
+    }
+    
+    self.typingImageView.image = bubbleImage;
+    self.typingImageView.frame = CGRectMake(x, 4, 73, 31);
 }
 
 @end

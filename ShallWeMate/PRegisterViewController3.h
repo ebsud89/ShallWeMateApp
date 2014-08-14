@@ -7,23 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SelectionCollectionViewController.h"
 
-@interface PRegisterViewController3 : UIViewController
+@interface PRegisterViewController3 : UIViewController <SelectionCollectionViewDelegate>
 {
+    NSArray *selectArr;
+    SelectionCollectionViewController *selectionCollection;
+
     UILabel *allRoomLable;
     UILabel *posibleRoomLabel;
-    
-    UIButton *avgAgeBtn;
-    NSArray *avgAgesArray;
+
 }
 
 @property (strong, nonatomic) HouseData *houseData;
-
-@property (weak, nonatomic) IBOutlet UIScrollView *keywordScrollView;
-@property (weak, nonatomic) IBOutlet UIScrollView *lifestyleScrollView;
-@property (weak, nonatomic) IBOutlet UIScrollView *optionScrollView;
-@property (retain, nonatomic) IBOutlet UIScrollView *roomInfoScrollView;
-@property (retain, nonatomic) IBOutlet UIButton *avgAgeBtn;
 
 @property (retain, nonatomic) IBOutlet UILabel *allRoomLabel;
 @property (retain, nonatomic) IBOutlet UILabel *posibleRoomLabel;
@@ -31,6 +27,7 @@
 @property (retain, nonatomic) IBOutlet UIButton *arPlusBtn;
 @property (retain, nonatomic) IBOutlet UIButton *prMinusBtn;
 @property (retain, nonatomic) IBOutlet UIButton *prPlusBtn;
+@property (weak, nonatomic) IBOutlet UICollectionView *selectList;
 
 - (IBAction)arMinus:(id)sender;
 - (IBAction)arPlus:(id)sender;

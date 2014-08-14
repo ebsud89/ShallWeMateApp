@@ -10,11 +10,12 @@
 #import "PRegisterViewController6.h"
 
 @interface PRegisterViewController5 ()
-
+@property (nonatomic, strong) UILabel *ageTitleLabel;
 @end
 
 @implementation PRegisterViewController5
 @synthesize houseData;
+@synthesize ageTitleLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,11 +32,32 @@
     // Do any additional setup after loading the view.
         [self.houseData printAll];
     
-    avgAgesArray = [[NSArray alloc] initWithObjects:@"20대 초반", @"20대 중반", @"20대 후반", @"30대 초반", @"30대 중반", @"30대 후반", @"40대 이상", nil];
+    avgAgesArray = [[NSArray alloc] initWithObjects:@"평균 연령을 선택해주세요", @"20대 초반", @"20대 중반", @"20대 후반", @"30대 초반", @"30대 중반", @"30대 후반", @"40대 이상", nil];
+    
+    // 버튼위에 라벨을 올려주기 위해 만듬
+    ageTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(6.0f, 2.0f, 150.0f, 30.0f)];
+    ageTitleLabel.textColor = [UIColor darkGrayColor];
+    ageTitleLabel.textAlignment = NSTextAlignmentCenter;
+    ageTitleLabel.backgroundColor = [UIColor clearColor];
+    ageTitleLabel.font = [UIFont systemFontOfSize:14.0f];
+    ageTitleLabel.lineBreakMode = NSLineBreakByClipping;
+    [_avgAgeButton addSubview:ageTitleLabel];
+    ageTitleLabel.text = [avgAgesArray objectAtIndex:0]; ;
+    
+    [_avgAgeButton addTarget:self action:@selector(selectAgeButtonClicked:)             forControlEvents:UIControlEventTouchUpInside];
+    
     //키보드 올라갈 때 뷰 올리기
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:self.view.window];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillHideNotification object:self.view.window];
+    
+    //cursor coloer
+    [[UITextField appearance] setTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1.0]];
+    
+    //navigation bar color
+    [[[self navigationController] navigationBar] setTintColor:[UIColor whiteColor]];
+    [[[self navigationController] navigationBar] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000]];
     
 }
 
@@ -107,31 +129,18 @@
     picker.dataSource = self;
     picker.delegate = self;
     picker.tag = 0;
-//    picker.tag=SelectedDropDown;
     [actionSheet addSubview:picker];
     
-    UIToolbar *tools=[[UIToolbar alloc]initWithFrame:CGRectMake(0, 0,320,40)];
-    tools.barStyle=UIBarStyleBlackOpaque;
-    [actionSheet addSubview:tools];
-    
-    UIBarButtonItem *doneButton=[[UIBarButtonItem alloc]initWithTitle:@"Done" style:UIBarButtonItemStyleBordered target:self action:@selector(btnActinDoneClicked)];
-    doneButton.imageInsets=UIEdgeInsetsMake(200, 6, 50, 25);
-    UIBarButtonItem *flexSpace= [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-    
-    NSArray *array = [[NSArray alloc]initWithObjects:flexSpace,doneButton,nil];
-    
-    [tools setItems:array];
-
-    
-    //picker title
-    UILabel *lblPickerTitle=[[UILabel alloc]initWithFrame:CGRectMake(60,8, 200, 25)];
-    lblPickerTitle.text=@"";
-    lblPickerTitle.backgroundColor=[UIColor clearColor];
-    lblPickerTitle.textColor=[UIColor whiteColor];
-    lblPickerTitle.textAlignment=NSTextAlignmentCenter;
-    lblPickerTitle.font=[UIFont boldSystemFontOfSize:15];
-    [tools addSubview:lblPickerTitle];
-    
+    // pickerView 상단에 올라갈 닫기 버튼 만들기
+    UISegmentedControl *closeButton = [[UISegmentedControl alloc] initWithItems:
+                                       [NSArray arrayWithObject:@"완료"]];
+    closeButton.momentary = YES;
+    closeButton.frame = CGRectMake(260, 7.0f, 50.0f, 30.0f);
+    closeButton.segmentedControlStyle = UISegmentedControlStyleBar;
+    closeButton.tintColor = [UIColor blackColor];
+    [closeButton addTarget:self action:@selector(dismissAnimated:) forControlEvents:UIControlEventValueChanged];
+    [actionSheet addSubview:closeButton];
+    [actionSheet showInView:self.view];
     
     [actionSheet showFromRect:CGRectMake(0,480, 320,215) inView:self.view animated:YES];
     [actionSheet setBounds:CGRectMake(0,0, 320, 411)];
@@ -154,6 +163,7 @@
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
     NSLog(@"%@",[avgAgesArray objectAtIndex:row] );
+    ageTitleLabel.text = [avgAgesArray objectAtIndex:row];
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
@@ -162,13 +172,12 @@
 }
 
 
-
--(void) btnActinDoneClicked
+// 피커뷰 'close'버튼 눌렀을 때,
+- (void)dismissAnimated:(UIButton *)button
 {
-    NSString *str = [avgAgesArray objectAtIndex:[picker numberOfComponents]];
-    self.avgAgeButton.titleLabel.text = str;
     [actionSheet dismissWithClickedButtonIndex:0 animated:YES];
 }
+
 
 - (void)didReceiveMemoryWarning
 {

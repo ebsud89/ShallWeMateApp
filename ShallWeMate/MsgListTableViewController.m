@@ -35,9 +35,16 @@
     //덤프 데이터 만들기
     MakeDumpData *dump = [[MakeDumpData alloc]init];
     dataSourceArray = [[NSMutableArray alloc]initWithArray:[dump getHouseDataArray]];
+//
+//    int i = (int) [self.dataSourceArray count];
     
-    int i = (int) [self.dataSourceArray count];
-    NSLog(@"데이터 테이블 갯수 : %d", i);
+    //cursor color
+    [[UITextField appearance] setTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1.0]];
+    
+    //navigation bar color
+    [[[self navigationController] navigationBar] setTintColor:[UIColor whiteColor]];
+    [[[self navigationController] navigationBar] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000]];
 }
 
 
@@ -92,11 +99,14 @@
     
     HouseData *houseData = [dataSourceArray objectAtIndex:indexPath.row];
     
-    NSLog(@"houseData %@", houseData.title);
+//    NSLog(@"houseData %@", houseData.title);
     
     return cell;
 }
 
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
+}
 
 //#pragma mark - Navigation
 //
