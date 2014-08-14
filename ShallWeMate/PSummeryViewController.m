@@ -42,6 +42,11 @@
     
     
     [self.houseData printAll];
+    
+    //navigation bar color
+    [[[self navigationController] navigationBar] setTintColor:[UIColor whiteColor]];
+    [[[self navigationController] navigationBar] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000]];
 }
 
 #pragma mark - UITableView

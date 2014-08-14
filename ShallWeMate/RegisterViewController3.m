@@ -7,9 +7,12 @@
 //
 
 #import "RegisterViewController3.h"
-
+@interface RegisterViewController3 ()
+@property (nonatomic, strong) UILabel *ageTitleLabel;
+@end
 @implementation RegisterViewController3
 
+@synthesize ageTitleLabel;
 @synthesize ageSelectBtn;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle*)nibBundleOrNil
@@ -25,51 +28,87 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    agesArray = [[NSArray alloc] initWithObjects:@"20대 초반", @"20대 중반", @"20대 후반", @"30대 초반", @"30대 중반", @"30대 후반", @"40대 이상", nil];
+    agesArray = [[NSArray alloc] initWithObjects:@"평균 연령을 선택해주세요", @"20대 초반", @"20대 중반", @"20대 후반", @"30대 초반", @"30대 중반", @"30대 후반", @"40대 이상", nil];
     
+    // 버튼위에 라벨을 올려주기 위해 만듬
+    ageTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(6.0f, 2.0f, 150.0f, 30.0f)];
+    ageTitleLabel.textColor = [UIColor darkGrayColor];
+    ageTitleLabel.textAlignment = NSTextAlignmentCenter;
+    ageTitleLabel.backgroundColor = [UIColor clearColor];
+    ageTitleLabel.font = [UIFont systemFontOfSize:14.0f];
+    ageTitleLabel.lineBreakMode = NSLineBreakByClipping;
+    [ageSelectBtn addSubview:ageTitleLabel];
+    ageTitleLabel.text = [agesArray objectAtIndex:0]; ;
+    
+    [ageSelectBtn addTarget:self action:@selector(selectAgeButtonClicked:)             forControlEvents:UIControlEventTouchUpInside];
+    
+    //cursor coloer
+    [[UITextField appearance] setTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1.0]];
+    
+    //navigation bar color
+    [[[self navigationController] navigationBar] setTintColor:[UIColor whiteColor]];
+    [[[self navigationController] navigationBar] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000]];
 }
 - (IBAction)ageSelect:(id)sender {
-    UIPickerView *agePickerView = [[UIPickerView alloc] init];
-    [agePickerView setDelegate:self];
-    [agePickerView setDataSource:self];
     
-    UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
+    actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self     cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
+    actionSheet.actionSheetStyle = UIActionSheetStyleBlackOpaque;
     
-    [agePickerView setFrame:CGRectMake(0.0f,
-                                       keyWindow.frame.size.height - agePickerView.frame.size.height,
-                                       keyWindow.frame.size.width,
-                                       agePickerView.frame.size.height)];
-    [keyWindow addSubview:agePickerView];
     
-}
-
-// pickerView Component 갯수
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
-{
-    return 1;
-}
-// pickerView row 갯수
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
-{
-    return [agesArray count];
-}
-
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
-{
-    [ageSelectBtn setTitle:[agesArray objectAtIndex:row] forState:UIControlStateNormal];
+    picker = [[UIPickerView alloc] initWithFrame:CGRectMake(0,40, 320, 216)];
+    picker.showsSelectionIndicator=YES;
+    picker.dataSource = self;
+    picker.delegate = self;
+    picker.tag = 0;
+    [actionSheet addSubview:picker];
     
-    //picker view 내리기
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:1.0];
-    pickerView.transform = CGAffineTransformMakeTranslation(0, 275); //그냥 아래로 다시 내려주자
-    [UIView commitAnimations];
+    // pickerView 상단에 올라갈 닫기 버튼 만들기
+    UISegmentedControl *closeButton = [[UISegmentedControl alloc] initWithItems:
+                                       [NSArray arrayWithObject:@"완료"]];
+    closeButton.momentary = YES;
+    closeButton.frame = CGRectMake(260, 7.0f, 50.0f, 30.0f);
+    closeButton.segmentedControlStyle = UISegmentedControlStyleBar;
+    closeButton.tintColor = [UIColor blackColor];
+    [closeButton addTarget:self action:@selector(dismissAnimated:) forControlEvents:UIControlEventValueChanged];
+    [actionSheet addSubview:closeButton];
+    [actionSheet showInView:self.view];
+    
+    [actionSheet showFromRect:CGRectMake(0,480, 320,215) inView:self.view animated:YES];
+    [actionSheet setBounds:CGRectMake(0,0, 320, 411)];
+    
     
 }
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
-{
-    return [agesArray objectAtIndex:row];
     
-}
+    
+    // pickerView Component 갯수
+    - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+    {
+        return 1;
+    }
+    // pickerView row 갯수
+    - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+    {
+        return [agesArray count];
+    }
+    
+    - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+    {
+        NSLog(@"%@",[agesArray objectAtIndex:row] );
+        ageTitleLabel.text = [agesArray objectAtIndex:row];
+    }
+    
+    - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+    {
+        return [agesArray objectAtIndex:row];
+    }
+    
+    
+    // 피커뷰 'close'버튼 눌렀을 때,
+    - (void)dismissAnimated:(UIButton *)button
+    {
+        [actionSheet dismissWithClickedButtonIndex:0 animated:YES];
+    }
 
 - (void)didReceiveMemoryWarning
 {

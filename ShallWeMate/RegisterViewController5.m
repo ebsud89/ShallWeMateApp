@@ -12,6 +12,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //navigation bar color
+    [[[self navigationController] navigationBar] setTintColor:[UIColor whiteColor]];
+    [[[self navigationController] navigationBar] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000]];
+    
     // Do any additional setup after loading the view, typically from a nib.
     [_inviteOk setTag:0];
     [_inviteOk setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -191,5 +197,33 @@
     }
     
 }
+
+- (IBAction)doneButtonClicked:(id)sender {
+    if((_inviteOk.isSelected == YES || _inviteNo == YES) && (_petOk.isSelected == YES || _petNo == YES) && (_privacyMore.isSelected == YES || _privacyLess == YES) && (_smokeOk.isSelected == YES || _smokeNo == YES) && (_drinkOk.isSelected == YES || _drinkNo == YES)) {
+        
+        //요약 페이지로 이동
+//        PSummeryViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"PSummeryViewController"];
+//        vc.houseData = self.houseData;
+//        [self.view addSubview:vc.view];
+    } else {
+        NSLog(@"che2");
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"모두 선택해주세요."
+                                                        message:@"~~"
+                                                       delegate:self
+                                              cancelButtonTitle:@"돌아가기"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
+    
+}
+
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    [self viewDidLoad];
+    //[[self] popViewControllerAnimated:YES];
+    //[[self navigationController] popViewControllerAnimated:YES];
+    
+}
+
 
 @end

@@ -11,6 +11,9 @@
 
 @interface PRegisterViewController3 : UIViewController<SelectionCollectionViewDelegate>
 {
+    NSArray *selectArr;
+    SelectionCollectionViewController *selectionCollection;
+
     UILabel *allRoomLable;
     UILabel *posibleRoomLabel;
     
@@ -30,6 +33,7 @@
 @property (retain, nonatomic) IBOutlet UIButton *arPlusBtn;
 @property (retain, nonatomic) IBOutlet UIButton *prMinusBtn;
 @property (retain, nonatomic) IBOutlet UIButton *prPlusBtn;
+@property (weak, nonatomic) IBOutlet UICollectionView *selectList;
 
 - (IBAction)arMinus:(id)sender;
 - (IBAction)arPlus:(id)sender;

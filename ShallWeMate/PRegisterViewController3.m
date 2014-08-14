@@ -18,6 +18,7 @@
 @synthesize allRoomLabel;
 @synthesize posibleRoomLabel;
 @synthesize houseData;
+@synthesize selectList;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle*)nibBundleOrNil
 {
@@ -42,6 +43,22 @@
     [self.selectList setDelegate:selectionCollection];
     [self.selectList setDataSource:selectionCollection];
     
+    selectionCollection = [[SelectionCollectionViewController alloc] init];
+    selectionCollection.delegate = self;
+    selectionCollection.viewController = @"enableRoomsMore";
+    [selectionCollection setNumberOfItemsInSection:(int)[houseData.enableManagementStates count]];
+    [selectionCollection setSelectList:self.selectList];
+    [selectionCollection selectionListInit];
+    
+    [self.selectList setDelegate:selectionCollection];
+    [self.selectList setDataSource:selectionCollection];
+    
+    [self refreshHouseData];
+    
+    //navigation bar color
+    [[[self navigationController] navigationBar] setTintColor:[UIColor whiteColor]];
+    [[[self navigationController] navigationBar] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000]];
    
 }
 

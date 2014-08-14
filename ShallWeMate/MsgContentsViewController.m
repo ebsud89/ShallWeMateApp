@@ -22,50 +22,23 @@
 }
 
 @end
+
 @implementation MsgContentsViewController
-
-@synthesize providerName;
-@synthesize providerImage;
-
-//const int intervalValue = 60;
-
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-//    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-//    [dateFormatter setDateStyle:NSDateFormatterShortStyle];
-//    [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
-//    NSString *text = [dateFormatter stringFromDate:self.date];
-//    self.dateLabel.text = text; self.selectionStyle = UITableViewCellSelectionStyleNone;
-//    self.dateLabel = [[UILabel alloc] initWithFrame:CGRectMake(0/*width + self.data.insets.left + self.data.insets.right+100*/, height + self.data.insets.top + self.data.insets.bottom + 35, self.frame.size.width, 60.0)];
-//    self.dateLabel.text = text;
-//    self.dateLabel.font = [UIFont boldSystemFontOfSize:12];
-//    self.dateLabel.textAlignment = NSTextAlignmentLeft;
-//    self.dateLabel.shadowOffset = CGSizeMake(0, 1);
-//    self.dateLabel.shadowColor = [UIColor whiteColor];
-//    self.dateLabel.textColor = [UIColor darkGrayColor];
-//    self.dateLabel.backgroundColor = [UIColor clearColor];
     
-    NSBubbleData *heyBubble = [NSBubbleData dataWithText:@"hihi~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" date:[NSDate dateWithTimeIntervalSinceNow:-300] type:BubbleTypeSomeoneElse];
+    NSBubbleData *heyBubble = [NSBubbleData dataWithText:@"Hey" date:[NSDate dateWithTimeIntervalSinceNow:-300] type:BubbleTypeSomeoneElse];
     heyBubble.avatar = [UIImage imageNamed:@"avatar1.png"];
     
-    NSBubbleData *replyBubble = [NSBubbleData dataWithText:@"hihihihi" date:[NSDate dateWithTimeIntervalSinceNow:-5] type:BubbleTypeMine];
+    NSBubbleData *photoBubble = [NSBubbleData dataWithImage:[UIImage imageNamed:@"halloween.jpg"] date:[NSDate dateWithTimeIntervalSinceNow:-290] type:BubbleTypeSomeoneElse];
+    photoBubble.avatar = [UIImage imageNamed:@"avatar1.png"];
+    
+    NSBubbleData *replyBubble = [NSBubbleData dataWithText:@"Wow.. Really cool picture out there. iPhone 5 has really nice camera, yeah?" date:[NSDate dateWithTimeIntervalSinceNow:-5] type:BubbleTypeMine];
     replyBubble.avatar = nil;
     
-    bubbleData = [[NSMutableArray alloc] initWithObjects:heyBubble  , replyBubble, nil];
-    
-    
-    
+    bubbleData = [[NSMutableArray alloc] initWithObjects:heyBubble, replyBubble, nil];
     bubbleTable.bubbleDataSource = self;
     
     // The line below sets the snap interval in seconds. This defines how the bubbles will be grouped in time.
@@ -93,67 +66,6 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWasShown:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillBeHidden:) name:UIKeyboardWillHideNotification object:nil];
-    
-    //키보드 올라갈 때 뷰 올리기
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:self.view.window];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillHideNotification object:self.view.window];
-    
-}
-
-- (void)setViewMovedUp:(BOOL)movedUp height:(float)height
-
-{
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:0.3];
-    
-    CGRect rect = self.view.frame;
-    
-    if (movedUp)
-    {
-        rect.origin.y -= height;
-        rect.size.height += height;
-        
-    }
-    else
-    {
-        rect.origin.y += height;
-        rect.size.height -= height;
-    }
-    
-    self.view.frame = rect;
-    
-    [UIView commitAnimations];
-    
-}
-
-
-
-- (void)keyboardWillShow:(NSNotification *)notification
-
-{
-    
-    NSDictionary *userInfo = [notification userInfo];
-    CGRect keyboardRect;
-    [[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] getValue:&keyboardRect];
-    
-    if (self.view.frame.origin.y >= 0)
-        
-    {
-        [self setViewMovedUp:YES height:keyboardRect.size.height];
-    }
-    else if (self.view.frame.origin.y < 0)
-        
-    {
-        [self setViewMovedUp:NO height:keyboardRect.size.height];
-        
-    }
-    
-}
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -221,10 +133,7 @@
     
     textField.text = @"";
     [textField resignFirstResponder];
-    
-    
-    //
-    
 }
+
 
 @end

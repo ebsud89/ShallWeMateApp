@@ -29,6 +29,7 @@
     // Do any additional setup after loading the view.
     
     selectionCol = [[SelectionCollectionViewController alloc]init];
+    selectionCol.viewController = @"lifeStyle";
     [selectionCol setNumberOfItemsInSection:24];
     [selectionCol setSelectList:self.selectList];
     [selectionCol selectionListInit];
@@ -36,6 +37,11 @@
     [self.selectList setDelegate:selectionCol];
     [self.selectList setDataSource:selectionCol];
     
+    
+    //navigation bar color
+    [[[self navigationController] navigationBar] setTintColor:[UIColor whiteColor]];
+    [[[self navigationController] navigationBar] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000]];
 }
 //
 //- (CGFloat) collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section

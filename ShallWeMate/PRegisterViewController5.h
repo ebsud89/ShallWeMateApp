@@ -11,7 +11,6 @@
 @interface PRegisterViewController5 : UIViewController <UIActionSheetDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
 {
     NSArray *avgAgesArray;
-    NSArray *avgAgesArray2;
     UIActionSheet *actionSheet;
     UIPickerView *picker;
 }
