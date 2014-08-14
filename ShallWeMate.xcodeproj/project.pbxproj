@@ -138,9 +138,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6899ED6F199743F700CE0F79 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		6899ED721997675100CE0F79 /* SWMNoticeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMNoticeViewController.h; sourceTree = "<group>"; };
 		6899ED731997675100CE0F79 /* SWMNoticeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMNoticeViewController.m; sourceTree = "<group>"; };
+		689ED64C199CE2C900EA2BCD /* cook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cook.png; path = ../cook.png; sourceTree = "<group>"; };
+		689ED64E199CE2DA00EA2BCD /* life_cover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = life_cover.png; path = ../life_cover.png; sourceTree = "<group>"; };
+		689ED64F199CE2DA00EA2BCD /* life_cover02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = life_cover02.png; path = ../life_cover02.png; sourceTree = "<group>"; };
+		689ED650199CE2DA00EA2BCD /* movie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = movie.png; path = ../movie.png; sourceTree = "<group>"; };
+		689ED651199CE2DA00EA2BCD /* interior.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = interior.png; path = ../interior.png; sourceTree = "<group>"; };
+		689ED658199CE45500EA2BCD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		68A7CF76199207BB00DF4BB3 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		68A7CF801992177A00DF4BB3 /* SWMAskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMAskViewController.h; sourceTree = "<group>"; };
 		68A7CF811992177A00DF4BB3 /* SWMAskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMAskViewController.m; sourceTree = "<group>"; };
@@ -694,12 +699,11 @@
 				EB433BD71990A48B002667D0 /* Message */,
 				EB785A03198A19E8000B4C18 /* Register */,
 				EB785A01198A19D9000B4C18 /* Resource */,
-				6899ED6F199743F700CE0F79 /* Main.storyboard */,
+				689ED658199CE45500EA2BCD /* Main.storyboard */,
 				EB7859DB198A1631000B4C18 /* SWMAppDelegate.h */,
 				EB7859DC198A1631000B4C18 /* SWMAppDelegate.m */,
 				EB785A07198A1B32000B4C18 /* SWMRootViewController.h */,
 				EB785A08198A1B32000B4C18 /* SWMRootViewController.m */,
-				6899ED6F199743F700CE0F79 /* Main.storyboard */,
 				EB433BE01990C8F1002667D0 /* TableViewCell */,
 				EB7859D3198A1631000B4C18 /* Supporting Files */,
 			);
@@ -883,7 +887,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6899ED70199743F700CE0F79 /* Main.storyboard in Resources */,
 				EB433BCF1990A3E1002667D0 /* radio-on.png in Resources */,
 				EB7859D7198A1631000B4C18 /* InfoPlist.strings in Resources */,
 				68A9E5EE1995FF2E00EF1396 /* bubbleSomeone.png in Resources */,
