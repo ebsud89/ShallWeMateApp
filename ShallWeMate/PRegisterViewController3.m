@@ -34,14 +34,8 @@
     [super viewDidLoad];
     [self.houseData printAll];
     
-    selectionCollection = [[SelectionCollectionViewController alloc] init];
-    selectionCollection.delegate = self;
-    [selectionCollection setNumberOfItemsInSection:(int)[houseData.enableManagementStates count]];
-    [selectionCollection setSelectList:self.selectList];
-    [selectionCollection selectionListInit];
-    
-    [self.selectList setDelegate:selectionCollection];
-    [self.selectList setDataSource:selectionCollection];
+    NSLog(@"PRegisterViewController");
+    [self.houseData printAll];
     
     selectionCollection = [[SelectionCollectionViewController alloc] init];
     selectionCollection.delegate = self;
@@ -62,10 +56,6 @@
    
 }
 
--(void)viewDidAppear:(BOOL)animated {
-
-}
-
 - (void) didSelectedItem:(NSIndexPath *)indexPath
 {
     [houseData.enableRoomsMore replaceObjectAtIndex:indexPath.row withObject:[NSNumber numberWithBool:YES]];
@@ -74,7 +64,56 @@
 - (void) didDeSelectedItem:(NSIndexPath *)indexPath
 {
     [houseData.enableRoomsMore replaceObjectAtIndex:indexPath.row withObject:[NSNumber numberWithBool:NO]];
+    
 }
+
+- (void) refreshHouseData
+{
+    if (houseData.roomAll != nil) {
+        self.allRoomLabel.text = houseData.roomAll;
+    }
+    
+    if (houseData.roomEmpty != nil) {
+        self.posibleRoomLabel.text = houseData.roomEmpty;
+    }
+    
+    
+    
+    for (int i=0; i<[houseData.enableRoomsMore count]; i++) {
+        NSNumber *num = [houseData.enableRoomsMore objectAtIndex:i];
+        if ([num boolValue]) {
+            
+            [selectionCollection selectItem:i];
+        }
+    }
+    
+}
+
+- (IBAction)avgAgeSelect:(id)sender {
+    
+    UIPickerView *pickerView = [[UIPickerView alloc] init];
+    [pickerView setDelegate:self];
+    [pickerView setDataSource:self];
+    
+    UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
+    
+    [pickerView setFrame:CGRectMake(0.0f,
+                                    keyWindow.frame.size.height - pickerView.frame.size.height,
+                                    keyWindow.frame.size.width,
+                                    pickerView.frame.size.height)];
+    [keyWindow addSubview:pickerView];
+    
+}
+
+//- (void) didSelectedItem:(NSIndexPath *)indexPath
+//{
+//    [houseData.enableRoomsMore replaceObjectAtIndex:indexPath.row withObject:[NSNumber numberWithBool:YES]];
+//}
+
+//- (void) didDeSelectedItem:(NSIndexPath *)indexPath
+//{
+//    [houseData.enableRoomsMore replaceObjectAtIndex:indexPath.row withObject:[NSNumber numberWithBool:NO]];
+//}
 
 - (IBAction)arMinus:(id)sender {
     if ([allRoomLabel.text isEqualToString:@"1"]) {

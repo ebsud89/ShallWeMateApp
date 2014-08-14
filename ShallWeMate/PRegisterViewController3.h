@@ -16,11 +16,7 @@
 
     UILabel *allRoomLable;
     UILabel *posibleRoomLabel;
-    
-    UIButton *avgAgeBtn;
-    NSArray *avgAgesArray;
-    
-    SelectionCollectionViewController *selectionCollection;
+
 }
 
 @property (strong, nonatomic) HouseData *houseData;
@@ -33,7 +29,6 @@
 @property (retain, nonatomic) IBOutlet UIButton *arPlusBtn;
 @property (retain, nonatomic) IBOutlet UIButton *prMinusBtn;
 @property (retain, nonatomic) IBOutlet UIButton *prPlusBtn;
-@property (weak, nonatomic) IBOutlet UICollectionView *selectList;
 
 - (IBAction)arMinus:(id)sender;
 - (IBAction)arPlus:(id)sender;

@@ -631,6 +631,7 @@
 			isa = PBXGroup;
 			children = (
 				AEA3948B199BCA390075CD1E /* Library */,
+				6899ED711997672B00CE0F79 /* notice */,
 				EB433BBB19909C28002667D0 /* DumpData */,
 				EB7859DE198A1631000B4C18 /* Images.xcassets */,
 				EB785A02198A19E1000B4C18 /* Login */,
