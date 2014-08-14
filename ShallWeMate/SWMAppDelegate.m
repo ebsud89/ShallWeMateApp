@@ -21,6 +21,7 @@ NSString *const FBSessionStateChangedNotification = @"swm.ShallWeMate:FBSessionS
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
     [application setStatusBarStyle:UIStatusBarStyleLightContent];
     
     [FBProfilePictureView class];
