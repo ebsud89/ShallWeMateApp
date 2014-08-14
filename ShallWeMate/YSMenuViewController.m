@@ -321,7 +321,7 @@
     
     //    newTransform = CGAffineTransformTranslate(view.transform, _edgeOffset.horizontal, CGRectGetMidY(view.bounds) + _edgeOffset.vertical);
     
-    newTransform = CGAffineTransformTranslate(view.transform, 1.0f, CGRectGetMidY(view.bounds) + _edgeOffset.vertical);
+    newTransform = CGAffineTransformTranslate(view.transform, 1.0f, CGRectGetMaxY(view.bounds)- 100 + _edgeOffset.vertical);
     
     //    // Transform variables
     //    CGFloat transformSize = _zoomScale;
@@ -399,14 +399,14 @@
 
 - (void)movePanel:(UIPanGestureRecognizer *)sender
 {
-    CGPoint velocity = [(UIPanGestureRecognizer *)sender velocityInView:[sender view]];
-    
-    // Gesture ended
-    if([(UIPanGestureRecognizer *)sender state] == UIGestureRecognizerStateEnded)
-    {
-        if(velocity.x > 0)
-            [self openLeftSideViewControllerAnimated:YES completion:nil];
-    }
+//    CGPoint velocity = [(UIPanGestureRecognizer *)sender velocityInView:[sender view]];
+//    
+//    // Gesture ended
+//    if([(UIPanGestureRecognizer *)sender state] == UIGestureRecognizerStateEnded)
+//    {
+//        if(velocity.x > 0)
+//            [self openLeftSideViewControllerAnimated:YES completion:nil];
+//    }
 }
 
 #pragma mark - UIGestureRecognizerDelegate methods
@@ -468,13 +468,19 @@
 
 - (void)prepareAndDisplayCenterViewControllerWithTransform:(CGAffineTransform)transform
 {
-    // Add gestures
-    _centerPanGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(movePanel:)];
-    [_centerPanGestureRecognizer setMinimumNumberOfTouches:1];
-    [_centerPanGestureRecognizer setMaximumNumberOfTouches:1];
-    [_centerPanGestureRecognizer setDelegate:self];
     
-    [_centerViewController.view addGestureRecognizer:_centerPanGestureRecognizer];
+    
+    
+    
+    
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // Add gestures
+//    _centerPanGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(movePanel:)];
+//    [_centerPanGestureRecognizer setMinimumNumberOfTouches:1];
+//    [_centerPanGestureRecognizer setMaximumNumberOfTouches:1];
+//    [_centerPanGestureRecognizer setDelegate:self];
+//    
+//    [_centerViewController.view addGestureRecognizer:_centerPanGestureRecognizer];
     
     // Add center view as subview
     [self.view addSubview:_centerViewController.view];

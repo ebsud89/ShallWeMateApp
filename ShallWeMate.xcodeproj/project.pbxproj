@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		6899ED70199743F700CE0F79 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6899ED6F199743F700CE0F79 /* Main.storyboard */; };
-		6899ED741997675100CE0F79 /* SWMNoticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6899ED731997675100CE0F79 /* SWMNoticeViewController.m */; };
 		68A7CF77199207BB00DF4BB3 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68A7CF76199207BB00DF4BB3 /* FacebookSDK.framework */; };
 		68A7CF821992177A00DF4BB3 /* SWMAskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A7CF811992177A00DF4BB3 /* SWMAskViewController.m */; };
 		68A7CF851992178700DF4BB3 /* SWMRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A7CF841992178700DF4BB3 /* SWMRequestViewController.m */; };
@@ -45,6 +44,15 @@
 		AEA76EF8199C90EC00B9B7C3 /* SWMHouseRoleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEA76EF6199C90EC00B9B7C3 /* SWMHouseRoleTableViewCell.xib */; };
 		AEAA197F1999D49F00B5FB8D /* SWMMateInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAA197D1999D49F00B5FB8D /* SWMMateInfoTableViewCell.m */; };
 		AEAA19801999D49F00B5FB8D /* SWMMateInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEAA197E1999D49F00B5FB8D /* SWMMateInfoTableViewCell.xib */; };
+		AED06BFD199CF10A00D0CE54 /* BadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = AED06BFC199CF10A00D0CE54 /* BadgeView.m */; };
+		AED06C01199CF1BD00D0CE54 /* SWMHouseImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AED06BFF199CF1BD00D0CE54 /* SWMHouseImageTableViewCell.m */; };
+		AED06C02199CF1BD00D0CE54 /* SWMHouseImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AED06C00199CF1BD00D0CE54 /* SWMHouseImageTableViewCell.xib */; };
+		AED06C06199D313800D0CE54 /* SWMRoomInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AED06C04199D313800D0CE54 /* SWMRoomInfoTableViewCell.m */; };
+		AED06C07199D313800D0CE54 /* SWMRoomInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AED06C05199D313800D0CE54 /* SWMRoomInfoTableViewCell.xib */; };
+		AED06C0B199D31EA00D0CE54 /* SWMQAndATableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AED06C09199D31EA00D0CE54 /* SWMQAndATableViewCell.m */; };
+		AED06C0C199D31EA00D0CE54 /* SWMQAndATableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AED06C0A199D31EA00D0CE54 /* SWMQAndATableViewCell.xib */; };
+		AED06C10199D409600D0CE54 /* SWMLikeItListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AED06C0F199D409600D0CE54 /* SWMLikeItListViewController.m */; };
+		AED06C13199D58D700D0CE54 /* SWMMyProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AED06C12199D58D700D0CE54 /* SWMMyProfileViewController.m */; };
 		EB2F77401990CD6F00EA365E /* PRegisterViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2F77331990CD6F00EA365E /* PRegisterViewController1.m */; };
 		EB2F77411990CD6F00EA365E /* PRegisterViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2F77351990CD6F00EA365E /* PRegisterViewController2.m */; };
 		EB2F77421990CD6F00EA365E /* PRegisterViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2F77371990CD6F00EA365E /* PRegisterViewController3.m */; };
@@ -194,6 +202,21 @@
 		AEAA197C1999D49F00B5FB8D /* SWMMateInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMMateInfoTableViewCell.h; sourceTree = "<group>"; };
 		AEAA197D1999D49F00B5FB8D /* SWMMateInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMMateInfoTableViewCell.m; sourceTree = "<group>"; };
 		AEAA197E1999D49F00B5FB8D /* SWMMateInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SWMMateInfoTableViewCell.xib; sourceTree = "<group>"; };
+		AED06BFB199CF10A00D0CE54 /* BadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadgeView.h; sourceTree = "<group>"; };
+		AED06BFC199CF10A00D0CE54 /* BadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgeView.m; sourceTree = "<group>"; };
+		AED06BFE199CF1BD00D0CE54 /* SWMHouseImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMHouseImageTableViewCell.h; sourceTree = "<group>"; };
+		AED06BFF199CF1BD00D0CE54 /* SWMHouseImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMHouseImageTableViewCell.m; sourceTree = "<group>"; };
+		AED06C00199CF1BD00D0CE54 /* SWMHouseImageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SWMHouseImageTableViewCell.xib; sourceTree = "<group>"; };
+		AED06C03199D313800D0CE54 /* SWMRoomInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMRoomInfoTableViewCell.h; sourceTree = "<group>"; };
+		AED06C04199D313800D0CE54 /* SWMRoomInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMRoomInfoTableViewCell.m; sourceTree = "<group>"; };
+		AED06C05199D313800D0CE54 /* SWMRoomInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SWMRoomInfoTableViewCell.xib; sourceTree = "<group>"; };
+		AED06C08199D31EA00D0CE54 /* SWMQAndATableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMQAndATableViewCell.h; sourceTree = "<group>"; };
+		AED06C09199D31EA00D0CE54 /* SWMQAndATableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMQAndATableViewCell.m; sourceTree = "<group>"; };
+		AED06C0A199D31EA00D0CE54 /* SWMQAndATableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SWMQAndATableViewCell.xib; sourceTree = "<group>"; };
+		AED06C0E199D409600D0CE54 /* SWMLikeItListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMLikeItListViewController.h; sourceTree = "<group>"; };
+		AED06C0F199D409600D0CE54 /* SWMLikeItListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMLikeItListViewController.m; sourceTree = "<group>"; };
+		AED06C11199D58D700D0CE54 /* SWMMyProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMMyProfileViewController.h; sourceTree = "<group>"; };
+		AED06C12199D58D700D0CE54 /* SWMMyProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMMyProfileViewController.m; sourceTree = "<group>"; };
 		EB2F77321990CD6F00EA365E /* PRegisterViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRegisterViewController1.h; sourceTree = "<group>"; };
 		EB2F77331990CD6F00EA365E /* PRegisterViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRegisterViewController1.m; sourceTree = "<group>"; };
 		EB2F77341990CD6F00EA365E /* PRegisterViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRegisterViewController2.h; sourceTree = "<group>"; };
@@ -426,6 +449,29 @@
 			name = CollectionView;
 			sourceTree = "<group>";
 		};
+		AED06BFA199CF0E900D0CE54 /* ImageScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				AED06BFB199CF10A00D0CE54 /* BadgeView.h */,
+				AED06BFC199CF10A00D0CE54 /* BadgeView.m */,
+				AED06BFE199CF1BD00D0CE54 /* SWMHouseImageTableViewCell.h */,
+				AED06BFF199CF1BD00D0CE54 /* SWMHouseImageTableViewCell.m */,
+				AED06C00199CF1BD00D0CE54 /* SWMHouseImageTableViewCell.xib */,
+			);
+			name = ImageScrollView;
+			sourceTree = "<group>";
+		};
+		AED06C0D199D406200D0CE54 /* Other Page */ = {
+			isa = PBXGroup;
+			children = (
+				AED06C0E199D409600D0CE54 /* SWMLikeItListViewController.h */,
+				AED06C0F199D409600D0CE54 /* SWMLikeItListViewController.m */,
+				AED06C11199D58D700D0CE54 /* SWMMyProfileViewController.h */,
+				AED06C12199D58D700D0CE54 /* SWMMyProfileViewController.m */,
+			);
+			name = "Other Page";
+			sourceTree = "<group>";
+		};
 		EB2F772E1990CD1D00EA365E /* Provider */ = {
 			isa = PBXGroup;
 			children = (
@@ -506,10 +552,10 @@
 			children = (
 				68A7CF7F1992176800DF4BB3 /* SubPages */,
 				EB433BA3199078E2002667D0 /* Provider */,
-				EB433BAA19909307002667D0 /* SWMMainTableViewCell.h */,
-				EB433BAB19909307002667D0 /* SWMMainTableViewCell.m */,
 				EB433BAD199093BD002667D0 /* SWMMainTableViewController.h */,
 				EB433BAE199093BD002667D0 /* SWMMainTableViewController.m */,
+				EB433BAA19909307002667D0 /* SWMMainTableViewCell.h */,
+				EB433BAB19909307002667D0 /* SWMMainTableViewCell.m */,
 				EB433BB719909BCD002667D0 /* SWMHouseImageScrollView.h */,
 				EB433BB819909BCD002667D0 /* SWMHouseImageScrollView.m */,
 				EB433BDD1990ABC6002667D0 /* SWMMainDetailViewController.h */,
@@ -570,6 +616,7 @@
 			children = (
 				AEA394C2199BD3980075CD1E /* SWMTableViewCell.h */,
 				AEA394C3199BD3980075CD1E /* SWMTableViewCell.m */,
+				AED06BFA199CF0E900D0CE54 /* ImageScrollView */,
 				AEA643E5199996E5007C0422 /* CollectionView */,
 				EB2F77681991C0BD00EA365E /* TitleTableViewCell.h */,
 				EB2F77691991C0BD00EA365E /* TitleTableViewCell.m */,
@@ -589,6 +636,12 @@
 				AEA76EF4199C90EC00B9B7C3 /* SWMHouseRoleTableViewCell.h */,
 				AEA76EF5199C90EC00B9B7C3 /* SWMHouseRoleTableViewCell.m */,
 				AEA76EF6199C90EC00B9B7C3 /* SWMHouseRoleTableViewCell.xib */,
+				AED06C03199D313800D0CE54 /* SWMRoomInfoTableViewCell.h */,
+				AED06C04199D313800D0CE54 /* SWMRoomInfoTableViewCell.m */,
+				AED06C05199D313800D0CE54 /* SWMRoomInfoTableViewCell.xib */,
+				AED06C08199D31EA00D0CE54 /* SWMQAndATableViewCell.h */,
+				AED06C09199D31EA00D0CE54 /* SWMQAndATableViewCell.m */,
+				AED06C0A199D31EA00D0CE54 /* SWMQAndATableViewCell.xib */,
 			);
 			name = TableViewCell;
 			sourceTree = "<group>";
@@ -630,6 +683,7 @@
 		EB7859D2198A1631000B4C18 /* ShallWeMate */ = {
 			isa = PBXGroup;
 			children = (
+				AED06C0D199D406200D0CE54 /* Other Page */,
 				AEA3948B199BCA390075CD1E /* Library */,
 				6899ED711997672B00CE0F79 /* notice */,
 				EB433BBB19909C28002667D0 /* DumpData */,
@@ -655,7 +709,6 @@
 		EB7859D3198A1631000B4C18 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				68AD04401999F889006942AA /* ShallWeMate-Info.plist */,
 				EB7859D5198A1631000B4C18 /* InfoPlist.strings */,
 				EB7859D8198A1631000B4C18 /* main.m */,
 				EB7859DA198A1631000B4C18 /* ShallWeMate-Prefix.pch */,
@@ -694,11 +747,6 @@
 		EB785A01198A19D9000B4C18 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				68AD0448199A03D9006942AA /* life_cover02.png */,
-				68AD0449199A03D9006942AA /* life_cover.png */,
-				68AD04441999FEAF006942AA /* interior.png */,
-				68AD04451999FEAF006942AA /* movie.png */,
-				68AD04421999FCC2006942AA /* cook.png */,
 				68A9E5EF1995FF4D00EF1396 /* missingAvatar.png */,
 				68A9E5ED1995FF2E00EF1396 /* bubbleSomeone.png */,
 				68A9E5EB1995FF1900EF1396 /* bubbleMine.png */,
@@ -841,28 +889,25 @@
 				68A9E5EE1995FF2E00EF1396 /* bubbleSomeone.png in Resources */,
 				EB433BD11990A3E1002667D0 /* makefg.php.png in Resources */,
 				EB433BD51990A3E1002667D0 /* testImg1.jpg in Resources */,
+				AED06C02199CF1BD00D0CE54 /* SWMHouseImageTableViewCell.xib in Resources */,
 				AEA76EF8199C90EC00B9B7C3 /* SWMHouseRoleTableViewCell.xib in Resources */,
 				AEA643EF1999992B007C0422 /* SWMCollectionViewCell4TableViewCell.xib in Resources */,
 				68A9E5EC1995FF1900EF1396 /* bubbleMine.png in Resources */,
 				EB7859DF198A1631000B4C18 /* Images.xcassets in Resources */,
-				68AD04411999F889006942AA /* ShallWeMate-Info.plist in Resources */,
 				EB433BD01990A3E1002667D0 /* subway.csv in Resources */,
 				AEA394B7199BCA6B0075CD1E /* CTAssetsPicker.xcassets in Resources */,
 				AEAA19801999D49F00B5FB8D /* SWMMateInfoTableViewCell.xib in Resources */,
 				EB433BD41990A3E1002667D0 /* testImg3.jpg in Resources */,
 				EB433BD61990A3E1002667D0 /* testImg2.jpg in Resources */,
 				EB433BD21990A3E1002667D0 /* face_test.png in Resources */,
-				68AD044B199A03D9006942AA /* life_cover.png in Resources */,
+				AED06C0C199D31EA00D0CE54 /* SWMQAndATableViewCell.xib in Resources */,
 				EB2F77741991C0BD00EA365E /* TitleTableViewCell.xib in Resources */,
 				EB2F77761991C0BD00EA365E /* ManagementTableViewCell.xib in Resources */,
-				68AD044A199A03D9006942AA /* life_cover02.png in Resources */,
 				EB433BCE1990A3E1002667D0 /* radio-off.png in Resources */,
-				68AD04471999FEB0006942AA /* movie.png in Resources */,
-				68AD04461999FEAF006942AA /* interior.png in Resources */,
+				AED06C07199D313800D0CE54 /* SWMRoomInfoTableViewCell.xib in Resources */,
 				68A9E5F01995FF4D00EF1396 /* missingAvatar.png in Resources */,
 				AEA643EA1999971A007C0422 /* SWMImageScrollTableViewCell.xib in Resources */,
 				68A7CF89199240C600DF4BB3 /* checkbox.png in Resources */,
-				68AD04431999FCC2006942AA /* cook.png in Resources */,
 				68A7CF8B199240C600DF4BB3 /* checkbox-checked.png in Resources */,
 				EB2F77721991C0BD00EA365E /* CollectionViewTableViewCell.xib in Resources */,
 				EB2F77781991C0BD00EA365E /* BasicSearchTableViewCell.xib in Resources */,
@@ -889,6 +934,7 @@
 				AEA394B3199BCA6B0075CD1E /* CTAssetScrollView.m in Sources */,
 				AEA394BC199BCA6B0075CD1E /* CTAssetsViewController.m in Sources */,
 				EB2F77771991C0BD00EA365E /* BasicSearchTableViewCell.m in Sources */,
+				AED06BFD199CF10A00D0CE54 /* BadgeView.m in Sources */,
 				EB433BAC19909307002667D0 /* SWMMainTableViewCell.m in Sources */,
 				EB2F77541990CFCF00EA365E /* SelectionTableViewController.m in Sources */,
 				68A7CF851992178700DF4BB3 /* SWMRequestViewController.m in Sources */,
@@ -928,18 +974,23 @@
 				EB2F77531990CFCF00EA365E /* Label2TableViewCell.m in Sources */,
 				EB433BAF199093BD002667D0 /* SWMMainTableViewController.m in Sources */,
 				AEA394BE199BCA6B0075CD1E /* NSDateFormatter+timeIntervalFormatter.m in Sources */,
+				AED06C06199D313800D0CE54 /* SWMRoomInfoTableViewCell.m in Sources */,
+				AED06C13199D58D700D0CE54 /* SWMMyProfileViewController.m in Sources */,
 				EB433BB919909BCD002667D0 /* SWMHouseImageScrollView.m in Sources */,
 				EB2F77401990CD6F00EA365E /* PRegisterViewController1.m in Sources */,
 				AEA394B9199BCA6B0075CD1E /* CTAssetsPickerController.m in Sources */,
 				EB2F77751991C0BD00EA365E /* ManagementTableViewCell.m in Sources */,
 				EB2F77421990CD6F00EA365E /* PRegisterViewController3.m in Sources */,
 				AEA394C4199BD3980075CD1E /* SWMTableViewCell.m in Sources */,
+				AED06C01199CF1BD00D0CE54 /* SWMHouseImageTableViewCell.m in Sources */,
+				AED06C10199D409600D0CE54 /* SWMLikeItListViewController.m in Sources */,
 				AEA394B4199BCA6B0075CD1E /* CTAssetsGroupViewCell.m in Sources */,
 				EB2F77711991C0BD00EA365E /* CollectionViewTableViewCell.m in Sources */,
 				EB2F77551990CFCF00EA365E /* SelectionCollectionViewController.m in Sources */,
 				EB2F77AA1991D36600EA365E /* MsgListTableCell.m in Sources */,
 				AEAA197F1999D49F00B5FB8D /* SWMMateInfoTableViewCell.m in Sources */,
 				EB2F77491990CD9100EA365E /* PSummeryViewController.m in Sources */,
+				AED06C0B199D31EA00D0CE54 /* SWMQAndATableViewCell.m in Sources */,
 				EB433B9D1990671C002667D0 /* YSMenuViewController.m in Sources */,
 				AEA643E419999197007C0422 /* SWMRegisterSummeryViewController.m in Sources */,
 				AEA394BB199BCA6B0075CD1E /* CTAssetsViewCell.m in Sources */,

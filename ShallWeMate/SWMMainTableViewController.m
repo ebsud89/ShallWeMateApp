@@ -11,6 +11,7 @@
 #import "SWMMainDetailViewController.h"
 #import "MakeDumpData.h"
 #import "HouseData.h"
+#import "SWMHouseImageTableViewCell.h"
 
 @interface SWMMainTableViewController ()
 
@@ -46,6 +47,7 @@
      여기서 서버에서 받아와서, HouseData타입의 배열을 만들 때 사용하면 됩니다.
      */
     
+    [self.tableView registerNib:[UINib nibWithNibName:@"SWMHouseImageTableViewCell" bundle:nil] forCellReuseIdentifier:@"houseImageTableViewCell"];
     
     
     //덤프 데이터 만들기
@@ -59,6 +61,8 @@
     [[[self navigationController] navigationBar] setTintColor:[UIColor whiteColor]];
     [[[self navigationController] navigationBar] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000]];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -79,6 +83,10 @@
 }
 
 
+- (IBAction)menuButtonClicked:(id)sender {
+    NSLog(@"button is touched");
+    [MENU_VIEW_CONTROLLER openLeftSideViewControllerAnimated:YES completion:nil];
+}
 
 
 
@@ -88,16 +96,20 @@
 {
 //#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 //#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return 10;
 }
 
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [SWMHouseImageTableViewCell getHeight];
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
  {
@@ -115,32 +127,97 @@
  
  */
 
-static NSString *reuseIdentifier = @"ReuseableMainTableCellWithIdentifier";
-SWMMainTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
+//     static NSString *reuseIdentifier = @"ReuseableMainTableCellWithIdentifier";
+//     SWMMainTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
+//     
+//     
+//     // Configure the cell...
+//     
+//     if (cell == nil) {
+//         NSLog(@"Cell is nil");
+//     }
+//     
+//     HouseData *houseData = [dataSourceArray objectAtIndex:indexPath.row];
+//     
+//     NSLog(@"houseData %@", houseData.title);
+//     cell.titleLabel.text = houseData.title;
+//     cell.subTitleLabel.text = houseData.subTitle;
+//     cell.priceLabel.text = [NSString stringWithFormat:@"%lu 만원", (unsigned long)houseData.price];
+//     
+//     int i = (int)[houseData.houseImageArray count];
+//     NSLog(@"이미지 개수 : %d", i);
+//     
+//     [cell setHouseImageArray:houseData.houseImageArray];
+//     
+//     return cell;
 
+     SWMHouseImageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"houseImageTableViewCell" forIndexPath:indexPath];
+     
+     [cell setEnabledBadgeView];
+     [cell setEnabledLikeIt];
+     
+     UITapGestureRecognizer *oneFingerOneTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(oneFingerOneTap:)];
+     
+     [oneFingerOneTap setNumberOfTapsRequired:1];
+     [oneFingerOneTap setNumberOfTouchesRequired:1];
+     
+     [cell.contentView addGestureRecognizer:oneFingerOneTap];
 
-// Configure the cell...
+//     UITapGestureRecognizer *oneFingerTwoTaps =
+//     [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(oneFingerTwoTaps:)] ;
+//     
+//     // Set required taps and number of touches
+//     [oneFingerTwoTaps setNumberOfTapsRequired:2];
+//     [oneFingerTwoTaps setNumberOfTouchesRequired:1];
+//     
+//     // Add the gesture to the view
+//     [cell.imageScrollView addGestureRecognizer:oneFingerTwoTaps];
 
-if (cell == nil) {
-    NSLog(@"Cell is nil");
+     
+     // Configure the cell...
+     [cell viewWithTag:9999999];
+     return cell;
 }
 
-HouseData *houseData = [dataSourceArray objectAtIndex:indexPath.row];
-
-NSLog(@"houseData %@", houseData.title);
-cell.titleLabel.text = houseData.title;
-cell.subTitleLabel.text = houseData.subTitle;
-cell.priceLabel.text = [NSString stringWithFormat:@"%lu 만원", (unsigned long)houseData.price];
-
-int i = (int)[houseData.houseImageArray count];
-NSLog(@"이미지 개수 : %d", i);
-
-[cell setHouseImageArray:houseData.houseImageArray];
-
-return cell;
-
+- (void) oneFingerTwoTaps:(UISwipeGestureRecognizer *)gestureRecognizer
+{
+        NSLog(@"Action : One Finger, Two Taps");
+//    //Get location of the swipe
+//    CGPoint location = [gestureRecognizer locationInView:self.tableView];
+//    
+//    //Get the corresponding index path within the table view
+//    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:location];
+    
+    //Check if index path is valid
+//    if(indexPath)
+//    {
+//        //Get the cell out of the table view
+//        SWMHouseImageTableViewCell *cell = (SWMHouseImageTableViewCell *) [self.tableView cellForRowAtIndexPath:indexPath];
+//        
+//        [cell openBadge];
+//    }
 }
 
+- (void) oneFingerOneTap:(UISwipeGestureRecognizer *)gestureRecognizer
+{
+    CGPoint location = [gestureRecognizer locationInView:self.tableView];
+    
+    //Get the corresponding index path within the table view
+    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:location];
+
+    NSLog(@"Action : One Finger, One Taps");
+    
+//    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    NSLog(@"%d 번째 셀이 선택되었습니다.", (int) indexPath.row);
+    
+    [self performSegueWithIdentifier:@"MainTableIdentifier" sender:self];
+    
+}
+- (void)tableView:(UITableView *)tableView
+didSelectRowAtIndexPath:(NSIndexPath *)newIndexPath
+{
+    NSLog(@"dddddddd didididi");
+}
 
 /*
 // Override to support conditional editing of the table view.

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="JAB-B7-TYR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -96,7 +96,6 @@
                                             <rect key="frame" x="258" y="129" width="42" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="people" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mz8-2Y-Rih">
@@ -127,7 +126,7 @@
                     <navigationItem key="navigationItem" title="하우스 매칭 리스트" id="GEh-6R-yCm">
                         <barButtonItem key="leftBarButtonItem" title="메뉴" id="7eC-DC-6EP">
                             <connections>
-                                <action selector="menuButtonTouched:" destination="6lN-dX-NxU" id="Cms-Tk-hWF"/>
+                                <action selector="menuButtonClicked:" destination="6lN-dX-NxU" id="TCF-5N-18j"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="검색" id="w68-tS-2Vz">
@@ -144,7 +143,7 @@
         <!--Main Detail View Controller - 살펴보기-->
         <scene sceneID="wwL-8F-fUP">
             <objects>
-                <viewController id="7N0-q9-8R3" customClass="SWMMainDetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="swmMainDetailViewController" id="7N0-q9-8R3" customClass="SWMMainDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oxk-MA-BKq"/>
                         <viewControllerLayoutGuide type="bottom" id="XWx-AO-7EB"/>
@@ -202,6 +201,9 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="s7T-3P-Sgw" kind="push" id="3lD-wT-Dzk"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -261,66 +263,129 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bg6-4i-t4e">
-                                <rect key="frame" x="20" y="40" width="88" height="35"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vCw-FV-jm2" userLabel="Provider">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <state key="normal" title="나의 프로필">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="jyK-MM-4Jq" kind="modal" id="Rak-Rr-XJ8"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anj-R6-Foq">
-                                <rect key="frame" x="20" y="83" width="142" height="35"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1c-hf-kKT">
+                                        <rect key="frame" x="20" y="20" width="100" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="하우스 정보 수정">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pMyHouseProfileClicked:" destination="49Z-DN-Opu" eventType="touchUpInside" id="W0i-bF-Goe"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DrV-uY-HqU">
+                                        <rect key="frame" x="20" y="58" width="39" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="메세지">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pMessageClicked:" destination="49Z-DN-Opu" eventType="touchUpInside" id="ivy-zh-uUo"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OGU-As-S93">
+                                        <rect key="frame" x="20" y="96" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="알림">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pAlarmClicked:" destination="49Z-DN-Opu" eventType="touchUpInside" id="ghY-j4-fb4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wIZ-e5-TKG">
+                                        <rect key="frame" x="20" y="134" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="설정">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ra9-Ke-hIs" userLabel="consumer">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <state key="normal" title="나의 하우스 프로필">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J45-kD-n45">
-                                <rect key="frame" x="20" y="126" width="87" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <state key="normal" title="찜 리스트">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dmL-n3-L25">
-                                <rect key="frame" x="20" y="169" width="98" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <state key="normal" title="메시지">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="KjO-Ni-fip" kind="modal" id="eFC-lb-PaQ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g3F-bo-OEw">
-                                <rect key="frame" x="20" y="207" width="147" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <state key="normal" title="알림">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ds-kY-baB">
-                                <rect key="frame" x="20" y="257" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <state key="normal" title="홈">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bg6-4i-t4e">
+                                        <rect key="frame" x="20" y="41" width="88" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <state key="normal" title="나의 프로필">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="myProfileClicked:" destination="49Z-DN-Opu" eventType="touchUpInside" id="Lro-Z1-0C0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anj-R6-Foq">
+                                        <rect key="frame" x="20" y="84" width="142" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <state key="normal" title="나의 하우스 프로필">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="myHouseProfileClicked:" destination="49Z-DN-Opu" eventType="touchUpInside" id="91k-y4-Zt8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J45-kD-n45">
+                                        <rect key="frame" x="20" y="127" width="87" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <state key="normal" title="찜 리스트">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="likeItListClicked:" destination="49Z-DN-Opu" eventType="touchUpInside" id="dGi-jt-KzX"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dmL-n3-L25">
+                                        <rect key="frame" x="20" y="170" width="98" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <state key="normal" title="메시지">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="messageClicked:" destination="49Z-DN-Opu" eventType="touchUpInside" id="DDs-76-MC4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g3F-bo-OEw">
+                                        <rect key="frame" x="20" y="208" width="147" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <state key="normal" title="알림">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="alarmClicked:" destination="49Z-DN-Opu" eventType="touchUpInside" id="2Rh-ay-D3X"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ds-kY-baB">
+                                        <rect key="frame" x="20" y="246" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <state key="normal" title="홈">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="homeClicked:" destination="49Z-DN-Opu" eventType="touchUpInside" id="S7T-0Y-QzI"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -337,7 +402,8 @@
         <!--Navigation Controller-->
         <scene sceneID="auh-qa-0Yn">
             <objects>
-                <navigationController definesPresentationContext="YES" id="Ndt-us-WJR" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MainTableViewControllerNav" definesPresentationContext="YES" id="Ndt-us-WJR" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="1Xk-gV-zSh"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="v2R-Yn-g8C">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -430,6 +496,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="2Gh-fJ-D7n"/>
                     <connections>
                         <outlet property="contentTableView" destination="1Mx-OH-inc" id="jhZ-gS-kjo"/>
                     </connections>
@@ -845,7 +912,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Ndt-us-WJR" kind="modal" id="t0f-vI-gem"/>
+                                    <segue destination="Ndt-us-WJR" kind="push" id="tDh-Qx-bbp"/>
                                 </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7JV-Lz-42h">
@@ -914,7 +981,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ug0-Gf-GNO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="360" y="1759"/>
+            <point key="canvasLocation" x="318" y="1759"/>
         </scene>
         <!--Register View Controller3 - 방 정보-->
         <scene sceneID="Bvv-mT-EVs">
@@ -1068,7 +1135,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionCell" id="ptJ-rc-fg0">
-                                        <rect key="frame" x="0.0" y="64" width="90" height="90"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
@@ -1667,7 +1734,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ne-oz-sbX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2375" y="2465"/>
+            <point key="canvasLocation" x="2327" y="2465"/>
         </scene>
         <!--Register View Controller1 - 기본 정보 등록-->
         <scene sceneID="aMX-8e-dPV">
@@ -1940,7 +2007,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="754" y="1095"/>
+            <point key="canvasLocation" x="754" y="1069"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ozg-vS-8PR">
@@ -1956,7 +2023,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1x3-WJ-X7R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1134" y="1095"/>
+            <point key="canvasLocation" x="1134" y="1074"/>
         </scene>
         <!--Brand Register View Controller - 브랜드 등록-->
         <scene sceneID="Nxn-gc-Qre">
@@ -2009,7 +2076,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZAW-4V-Erv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1537" y="1095"/>
+            <point key="canvasLocation" x="1529" y="1074"/>
         </scene>
         <!--Register View Controller3 - 메이트 정보-->
         <scene sceneID="Qfb-Qg-pHe">
@@ -2244,6 +2311,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Item" id="lup-5c-1wM">
                             <connections>
                                 <action selector="doneButtonClicked:" destination="9kh-fP-wRD" id="BR4-nc-Qbi"/>
+                                <segue destination="dkK-NB-Sur" kind="push" id="dsR-yf-jNe"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -2388,7 +2456,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="메세지" id="F0F-1p-ap2">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="JcX-94-C8N"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="JcX-94-C8N">
+                            <connections>
+                                <action selector="menuBtnClicked:" destination="WpS-Zl-RcB" id="uGw-kZ-W1c"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" id="8Xo-8m-Erw"/>
                     </navigationItem>
                 </tableViewController>
@@ -2534,7 +2606,7 @@
         <!--Navigation Controller-->
         <scene sceneID="HUO-2Y-zQR">
             <objects>
-                <navigationController definesPresentationContext="YES" id="Rit-By-TCS" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="alarmViewController" definesPresentationContext="YES" id="Rit-By-TCS" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9k5-Si-M9z">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2549,7 +2621,7 @@
         <!--Navigation Controller-->
         <scene sceneID="1Dc-Hb-NBR">
             <objects>
-                <navigationController definesPresentationContext="YES" id="KjO-Ni-fip" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="messageViewController" definesPresentationContext="YES" id="KjO-Ni-fip" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zPr-3F-w4T">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2560,6 +2632,96 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Xs-7W-XAK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-57" y="3223"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="IrW-M9-9CV">
+            <objects>
+                <navigationController storyboardIdentifier="LikeItListViewController" definesPresentationContext="YES" id="kqw-n9-5zI" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HUD-iL-s3t">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vgB-zg-iNF" kind="relationship" relationship="rootViewController" id="07o-XK-Ilu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zhd-uh-Eb1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-49" y="3921"/>
+        </scene>
+        <!--Like It List View Controller - 찜 리스트-->
+        <scene sceneID="fa0-da-ZNu">
+            <objects>
+                <viewController id="vgB-zg-iNF" customClass="SWMLikeItListViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1zs-zk-c39"/>
+                        <viewControllerLayoutGuide type="bottom" id="6fs-L3-tSz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Eap-RV-Zqx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="jLx-Je-91S">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="찜 리스트" id="X3C-zJ-ncY">
+                        <barButtonItem key="leftBarButtonItem" title="메뉴" id="CcM-2K-ebV">
+                            <connections>
+                                <action selector="menuBtnClicked:" destination="vgB-zg-iNF" id="xKl-lu-Gwc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="contentTableView" destination="jLx-Je-91S" id="Jd8-Pn-Nwe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LQ9-or-rdr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="378" y="3921"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="nKo-7J-cbH">
+            <objects>
+                <navigationController storyboardIdentifier="myProfileViewControllerNav" definesPresentationContext="YES" id="qr7-Jh-UgW" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yiZ-TO-Cz7">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Pjd-Wn-5nR" kind="relationship" relationship="rootViewController" id="QoA-Eo-Ddk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="58E-Ph-nGA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="783" y="3921"/>
+        </scene>
+        <!--My Profile View Controller - 내 정보-->
+        <scene sceneID="umR-Yk-yoK">
+            <objects>
+                <viewController id="Pjd-Wn-5nR" customClass="SWMMyProfileViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Uxh-2p-Tph"/>
+                        <viewControllerLayoutGuide type="bottom" id="grp-7x-15W"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8pq-sJ-va1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="내 정보" id="pEn-jE-5Ov">
+                        <barButtonItem key="leftBarButtonItem" title="메뉴" id="cok-Ee-KsY">
+                            <connections>
+                                <action selector="menuClicked:" destination="Pjd-Wn-5nR" id="FT2-3Y-R1R"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XtA-lu-w0q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1210" y="3921"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uTo-Of-a17">
@@ -2575,7 +2737,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kFx-80-ifj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1134" y="372"/>
+            <point key="canvasLocation" x="1136" y="372"/>
         </scene>
         <!--Ask View Controller - 질문하기-->
         <scene sceneID="YgJ-WY-xoa">
@@ -2761,10 +2923,10 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="oPl-86-bfa"/>
-        <segue reference="KpW-0g-yCf"/>
-        <segue reference="Rak-Rr-XJ8"/>
-        <segue reference="KHf-4G-Oq7"/>
-        <segue reference="bq7-8l-ro8"/>
+        <segue reference="Hjx-M2-23f"/>
+        <segue reference="cEM-01-FAo"/>
+        <segue reference="3lD-wT-Dzk"/>
+        <segue reference="E78-iB-w8x"/>
+        <segue reference="xO5-bQ-m8s"/>
     </inferredMetricsTieBreakers>
 </document>

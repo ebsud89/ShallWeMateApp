@@ -12,6 +12,8 @@
 #import "ManagementTableViewCell.h"
 #import "SWMImageScrollTableViewCell.h"
 #import "SWMTableViewCell.h"
+#import "SWMRoomInfoTableViewCell.h"
+#import "SWMQAndATableViewCell.h"
 
 
 @interface SWMMainDetailViewController ()
@@ -49,9 +51,13 @@ const int inervalValue = 60;
     
     [self.contentTableView registerNib:[UINib nibWithNibName:@"SWMImageScrollTableViewCell" bundle:nil] forCellReuseIdentifier:@"imageScrollViewTableViewCell"];
     
+    [self.contentTableView registerNib:[UINib nibWithNibName:@"SWMRoomInfoTableViewCell" bundle:nil] forCellReuseIdentifier:@"RoomInfoTableViewCell"];
+    [self.contentTableView registerNib:[UINib nibWithNibName:@"SWMQAndATableViewCell" bundle:nil] forCellReuseIdentifier:@"QAndATableViewCell"];
     
     self.contentTableView.delegate = self;
     self.contentTableView.dataSource = self;
+    
+    
     animator = [[UIDynamicAnimator alloc]initWithReferenceView:self.detailView];
     
 
@@ -268,11 +274,22 @@ const int inervalValue = 60;
     else if(indexPath.row == 2){
         return [ManagementTableViewCell getHeight];
     }
-    else if (indexPath.row == 3){
+    else if (indexPath.row == 3)
+    {
+        return [SWMRoomInfoTableViewCell getHeight];
+    }
+    else if (indexPath.row == 4)
+    {
+        return [SWMRoomInfoTableViewCell getHeight];
+    }
+    else if (indexPath.row == 5){
         return [CollectionViewTableViewCell getHeight];
     }
-    else if (indexPath.row == 4){
+    else if (indexPath.row == 6){
         return [CollectionViewTableViewCell getHeight];
+    }
+    else if (indexPath.row == 7){
+        return [SWMQAndATableViewCell getHeight];
     }
     else
         return 100.0f; //cell for comments, in reality the height has to be adjustable
@@ -286,7 +303,7 @@ const int inervalValue = 60;
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
     // If you're serving data from an array, return the length of the array:
-    return 5;
+    return 8;
 }
 
 // Customize the appearance of table view cells.
@@ -324,7 +341,19 @@ const int inervalValue = 60;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
-    else if (indexPath.row == 3)
+    else if (indexPath.row ==3)
+    {
+        SWMRoomInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RoomInfoTableViewCell"];
+        
+        return cell;
+    }
+    else if (indexPath.row == 4)
+    {
+        SWMRoomInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RoomInfoTableViewCell"];
+        
+        return cell;
+    }
+    else if (indexPath.row == 5)
     {
         CollectionViewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"collectionViewTableViewCell"];
         
@@ -336,7 +365,7 @@ const int inervalValue = 60;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
-    else if (indexPath.row == 4)
+    else if (indexPath.row == 6)
     {
         CollectionViewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"collectionViewTableViewCell"];
         
@@ -346,6 +375,12 @@ const int inervalValue = 60;
         }
         [cell setTitle:@"라이프 스타일 키워드"];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        return cell;
+    }
+    else if (indexPath.row == 7)
+    {
+        SWMQAndATableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"QAndATableViewCell"];
+        
         return cell;
     }
     else
@@ -358,12 +393,12 @@ const int inervalValue = 60;
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     
-    // Get visible cells on table view.
-    NSArray *visibleCells = [self.contentTableView visibleCells];
-    
-    for (SWMTableViewCell *cell in visibleCells) {
-        [cell cellOnTableView:self.contentTableView didScrollOnView:self.view];
-    }
+//    // Get visible cells on table view.
+//    NSArray *visibleCells = [self.contentTableView visibleCells];
+//    
+//    for (SWMTableViewCell *cell in visibleCells) {
+//        [cell cellOnTableView:self.contentTableView didScrollOnView:self.view];
+//    }
     
     CGPoint translation = [scrollView.panGestureRecognizer translationInView:scrollView.superview];
     
