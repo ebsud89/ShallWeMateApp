@@ -9,6 +9,7 @@
 #import "RegisterViewController1.h"
 
 @implementation RegisterViewController1
+@synthesize houseData;
 @synthesize jobButton;
 @synthesize fbProfilePictureView;
 @synthesize userName;
@@ -25,6 +26,15 @@
     return self;
 }
 
+//글씨체
+-(UIFont *)getFont
+{
+    UIFont *font = [UIFont fontWithName:@"AppleSDGothicNeo-Regular" size:15];
+    return font;
+}
+
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -39,14 +49,14 @@
     
     
     userName.text = appDelegate.fbUserName;
-    
-    radiobutton1 = [[UIButton alloc] initWithFrame:CGRectMake(93, 267, 30, 30)];
+    [userName setFont:[self getFont]];
+    radiobutton1 = [[UIButton alloc] initWithFrame:CGRectMake(93, 310, 30, 30)];
     [radiobutton1 setTag:0];
     [radiobutton1 setBackgroundImage:[UIImage imageNamed:@"radio-off.png"] forState:UIControlStateNormal];
     [radiobutton1 setBackgroundImage:[UIImage imageNamed:@"radio-on.png"] forState:UIControlStateSelected];
     [radiobutton1 addTarget:self action:@selector(radiobuttonSelected:) forControlEvents:UIControlEventTouchUpInside];
     
-    radiobutton2 = [[UIButton alloc] initWithFrame:CGRectMake(183, 267, 30, 30)];
+    radiobutton2 = [[UIButton alloc] initWithFrame:CGRectMake(183, 310, 30, 30)];
     [radiobutton2 setTag:1];
     [radiobutton2 setBackgroundImage:[UIImage imageNamed:@"radio-off.png"] forState:UIControlStateNormal];
     [radiobutton2 setBackgroundImage:[UIImage imageNamed:@"radio-on.png"] forState:UIControlStateSelected];
@@ -77,7 +87,7 @@
     [UIView setAnimationDuration:0.3];
     
     CGRect rect = self.view.frame;
-    
+    height -= 50;
     if (movedUp)
     {
         rect.origin.y -= height;

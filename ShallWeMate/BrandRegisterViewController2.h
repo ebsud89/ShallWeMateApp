@@ -15,6 +15,7 @@
     UIImageView *brandImage;
 }
 
+@property (strong, nonatomic) HouseData *houseData;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *commitBtn;
 @property (strong, nonatomic) NSString *brandNameString;
 @property (strong, nonatomic) IBOutlet UILabel *brandName;

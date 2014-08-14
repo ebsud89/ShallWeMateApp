@@ -71,6 +71,7 @@
     // Configure the cell.
     cell.brandName.text = [self.brandName
                            objectAtIndex: [indexPath row]];
+    
 //    cell.brandImage.image = [UIImage imageNamed:[picData objectAtIndex:indexPath.row]];
     //
     UIImage *woozooImage = [UIImage imageNamed:@"makefg.php.png"];
@@ -124,7 +125,14 @@
 //        vc.brandImage = brandImage;//picData[indexPath.row];
         vc.brandNameString = brandName[indexPath.row];
         NSLog(@"brand name : %@", brandName[indexPath.row]);
+        _houseData.premium = brandName[indexPath.row];
+        NSLog(@"brand name2 : %@",  _houseData.premium);
+        vc.houseData = _houseData;
         
     }
+}
+- (IBAction)backButtonPressed:(id)sender {
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 @end

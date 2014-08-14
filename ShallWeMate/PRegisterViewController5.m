@@ -16,6 +16,10 @@
 @implementation PRegisterViewController5
 @synthesize houseData;
 @synthesize ageTitleLabel;
+@synthesize existingMenNum;
+@synthesize existingWomenNum;
+@synthesize wantMenNum;
+@synthesize wantWomenNum;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -42,9 +46,11 @@
     ageTitleLabel.font = [UIFont systemFontOfSize:14.0f];
     ageTitleLabel.lineBreakMode = NSLineBreakByClipping;
     [_avgAgeButton addSubview:ageTitleLabel];
-    ageTitleLabel.text = [avgAgesArray objectAtIndex:0]; ;
+    ageTitleLabel.text = [avgAgesArray objectAtIndex:0];
     
     [_avgAgeButton addTarget:self action:@selector(selectAgeButtonClicked:)             forControlEvents:UIControlEventTouchUpInside];
+    
+    [self refreshHouseData];
     
     //키보드 올라갈 때 뷰 올리기
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:self.view.window];
@@ -59,8 +65,35 @@
     [[[self navigationController] navigationBar] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000]];
     
+    self.houseData.existingMenNum = existingMenNum.text;
+    self.houseData.existingWomenNum = existingMenNum.text;
+    self.houseData.wantMenNum = existingMenNum.text;
+    self.houseData.wantWomenNum = existingMenNum.text;
+    
 }
 
+- (void) refreshHouseData
+{
+    if (houseData.existingMenNum != nil) {
+        self.existingMenNum.text = houseData.existingMenNum;
+    }
+    
+    if (houseData.existingWomenNum != nil) {
+        self.existingWomenNum.text = houseData.existingWomenNum;
+    }
+    
+    if (houseData.wantMenNum != nil) {
+        self.wantMenNum.text = houseData.wantMenNum;
+    }
+    
+    if (houseData.wantWomenNum != nil) {
+        self.wantWomenNum.text = houseData.wantWomenNum;
+    }
+    
+    if (ageTitleLabel.text != [avgAgesArray objectAtIndex:0]) {
+        ageTitleLabel.text = houseData.avgAge;
+    }
+}
 
 - (void)setViewMovedUp:(BOOL)movedUp height:(float)height
 
@@ -70,6 +103,7 @@
     
     CGRect rect = self.view.frame;
     
+    height -= 80;
     if (movedUp)
     {
         rect.origin.y -= height;
@@ -163,6 +197,7 @@
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
     NSLog(@"%@",[avgAgesArray objectAtIndex:row] );
+    self.houseData.avgAge =[avgAgesArray objectAtIndex:row];
     ageTitleLabel.text = [avgAgesArray objectAtIndex:row];
 }
 

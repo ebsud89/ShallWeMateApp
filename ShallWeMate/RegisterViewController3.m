@@ -11,9 +11,9 @@
 @property (nonatomic, strong) UILabel *ageTitleLabel;
 @end
 @implementation RegisterViewController3
+@synthesize houseData;
 
 @synthesize ageTitleLabel;
-@synthesize ageSelectBtn;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle*)nibBundleOrNil
 {

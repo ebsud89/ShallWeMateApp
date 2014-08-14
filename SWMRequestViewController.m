@@ -54,6 +54,12 @@
     [self.view addSubview:self.ch3];
     [self.view addSubview:self.ck4];
     
+    //navigation bar color
+    [[[self navigationController] navigationBar] setTintColor:[UIColor whiteColor]];
+    [[[self navigationController] navigationBar] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:174/255.0 green:70/255.0 blue:115/255.0 alpha:10000]];
+    //    [[[self navigationController] navigationBar] setBackgroundColor:[UIColor colorWithRed:174/255.0 green:70/255.0 blue:115/255.0 alpha:10000]];
+    
 }
 
 - (void)didReceiveMemoryWarning

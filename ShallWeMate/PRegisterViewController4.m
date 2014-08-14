@@ -34,9 +34,7 @@
     
     selectCol = [[SelectionCollectionViewController alloc]init];
     selectCol.delegate = self;
-    [selectCol setNumberOfItemsInSection:(int)[houseData.enableOptions count]];
-//    NSArray *picArray = [[NSArray alloc] initWithObjects:@"makefg.php.png", @"face_test.png", @"face_test.png", @"face_test.png",@"face_test.png",nil];
-//    self.picData = picArray
+    [selectCol setNumberOfItemsInSection:12];//(int)[houseData.enableOptions count]];
     
     [selectCol setSelectList:self.selectList];
     [selectCol selectionListInit];

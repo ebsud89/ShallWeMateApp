@@ -34,7 +34,10 @@
 @property (retain) NSMutableArray *enableOptions;
 
 @property (retain) NSString *avgAge;
-@property (readwrite) BOOL *enableDifferentGender;
+@property (retain) NSString *existingMenNum;
+@property (retain) NSString *existingWomenNum;
+@property (retain) NSString *wantMenNum;
+@property (retain) NSString *wantWomenNum;
 
 @property (retain) NSMutableArray *enableLifeStyle;
 

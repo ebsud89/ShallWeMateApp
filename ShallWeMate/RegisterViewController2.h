@@ -21,6 +21,7 @@
 }
 
 
+@property (strong, nonatomic) HouseData *houseData;
 @property (retain, nonatomic) IBOutlet UISlider *maxBudget;
 @property (retain, nonatomic) IBOutlet UISlider *maxDeposit;
 @property (retain, nonatomic) IBOutlet UILabel *maxBudgetLabel;

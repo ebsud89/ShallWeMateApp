@@ -36,7 +36,7 @@
     selectionCollection = [[SelectionCollectionViewController alloc] init];
     selectionCollection.delegate = self;
     selectionCollection.viewController = @"enableManagementStates";
-    [selectionCollection setNumberOfItemsInSection:(int)[houseData.enableManagementStates count]];
+    [selectionCollection setNumberOfItemsInSection:8];//(int)[houseData.enableManagementStates count]];
     [selectionCollection setSelectList:self.selectList];
     [selectionCollection selectionListInit];
     
@@ -57,6 +57,10 @@
     [[[self navigationController] navigationBar] setTintColor:[UIColor whiteColor]];
     [[[self navigationController] navigationBar] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000]];
+    
+    self.houseData.monthlyRentCost = _monthlyRentTextField.text;
+    self.houseData.securityCost = _securityTextField.text;
+    self.houseData.managementCost = _managementTextField.text;
 }
 
 

@@ -10,6 +10,7 @@
 
 @interface RegisterViewController5 : UIViewController
 
+@property (strong, nonatomic) HouseData *houseData;
 @property (weak, nonatomic) IBOutlet UIButton *inviteOk;
 @property (weak, nonatomic) IBOutlet UIButton *inviteNo;
 @property (weak, nonatomic) IBOutlet UIButton *petOk;
