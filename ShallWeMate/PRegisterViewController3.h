@@ -7,23 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SelectionCollectionViewController.h"
 
-@interface PRegisterViewController3 : UIViewController
+@interface PRegisterViewController3 : UIViewController<SelectionCollectionViewDelegate>
 {
     UILabel *allRoomLable;
     UILabel *posibleRoomLabel;
     
     UIButton *avgAgeBtn;
     NSArray *avgAgesArray;
+    
+    SelectionCollectionViewController *selectionCollection;
 }
 
 @property (strong, nonatomic) HouseData *houseData;
 
-@property (weak, nonatomic) IBOutlet UIScrollView *keywordScrollView;
-@property (weak, nonatomic) IBOutlet UIScrollView *lifestyleScrollView;
-@property (weak, nonatomic) IBOutlet UIScrollView *optionScrollView;
-@property (retain, nonatomic) IBOutlet UIScrollView *roomInfoScrollView;
-@property (retain, nonatomic) IBOutlet UIButton *avgAgeBtn;
+@property (strong, nonatomic) IBOutlet UICollectionView *selectList;
 
 @property (retain, nonatomic) IBOutlet UILabel *allRoomLabel;
 @property (retain, nonatomic) IBOutlet UILabel *posibleRoomLabel;
@@ -37,8 +36,5 @@
 
 - (IBAction)prMinus:(id)sender;
 - (IBAction)prPlus:(id)sender;
-
-- (IBAction)avgAgeSelect:(id)sender;
-
 
 @end

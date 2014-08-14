@@ -8,6 +8,7 @@
 
 #import "PRegisterViewController3.h"
 #import "PRegisterViewController4.h"
+#import "SelectionCollectionViewController.h"
 
 @interface PRegisterViewController3 ()
 
@@ -16,11 +17,6 @@
 @implementation PRegisterViewController3
 @synthesize allRoomLabel;
 @synthesize posibleRoomLabel;
-@synthesize avgAgeBtn;
-@synthesize roomInfoScrollView;
-@synthesize optionScrollView;
-@synthesize keywordScrollView;
-@synthesize lifestyleScrollView;
 @synthesize houseData;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle*)nibBundleOrNil
@@ -35,78 +31,33 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-        [self.houseData printAll];
+    [self.houseData printAll];
     
-    avgAgesArray = [[NSArray alloc] initWithObjects:@"20대 초반", @"20대 중반", @"20대 후반", @"30대 초반", @"30대 중반", @"30대 후반", @"40대 이상", nil];
+    selectionCollection = [[SelectionCollectionViewController alloc] init];
+    selectionCollection.delegate = self;
+    [selectionCollection setNumberOfItemsInSection:(int)[houseData.enableManagementStates count]];
+    [selectionCollection setSelectList:self.selectList];
+    [selectionCollection selectionListInit];
+    
+    [self.selectList setDelegate:selectionCollection];
+    [self.selectList setDataSource:selectionCollection];
     
    
 }
 
 -(void)viewDidAppear:(BOOL)animated {
-    self.roomInfoScrollView.contentSize = CGSizeMake(320, 600);
-    self.lifestyleScrollView.contentSize = CGSizeMake(320, 1200);
-    self.optionScrollView.contentSize = CGSizeMake(320, 1200);
-    self.keywordScrollView.contentSize = CGSizeMake(320, 1200);
-//    [self.view addSubview:self.roomInfoScrollView];
+
 }
 
-- (IBAction)avgAgeSelect:(id)sender {
-    
-    UIPickerView *pickerView = [[UIPickerView alloc] init];
-    [pickerView setDelegate:self];
-    [pickerView setDataSource:self];
-    
-    UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
-    
-    [pickerView setFrame:CGRectMake(0.0f,
-                                    keyWindow.frame.size.height - pickerView.frame.size.height,
-                                    keyWindow.frame.size.width,
-                                    pickerView.frame.size.height)];
-    [keyWindow addSubview:pickerView];
-    
+- (void) didSelectedItem:(NSIndexPath *)indexPath
+{
+    [houseData.enableRoomsMore replaceObjectAtIndex:indexPath.row withObject:[NSNumber numberWithBool:YES]];
 }
 
-// pickerView Component 갯수
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+- (void) didDeSelectedItem:(NSIndexPath *)indexPath
 {
-    return 1;
+    [houseData.enableRoomsMore replaceObjectAtIndex:indexPath.row withObject:[NSNumber numberWithBool:NO]];
 }
-// pickerView row 갯수
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
-{
-    return [avgAgesArray count];
-}
-
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
-{
-    [avgAgeBtn setTitle:[avgAgesArray objectAtIndex:row] forState:UIControlStateNormal];
-    
-    //picker view 내리기
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:1.0];
-    pickerView.transform = CGAffineTransformMakeTranslation(0, 275); //그냥 아래로 다시 내려주자
-    [UIView commitAnimations];
-    
-}
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
-{
-    return [avgAgesArray objectAtIndex:row];
-    
-}
-
-//- (void)dealloc {
-//    [allRoomLabel release];
-//    [posibleRoomLabel release];
-    //    [arMinusBtn release];
-    //    [arPlusBtn release];
-    //    [prMinusRoom release];
-    //    [prMinusBtn release];
-    //    [prPlusBtn release];
-    //    [arPlus release];
-    //    [prPlus release];
-//    [avgAgeBtn release];
-//    [super dealloc];
-//}
 
 - (IBAction)arMinus:(id)sender {
     if ([allRoomLabel.text isEqualToString:@"1"]) {

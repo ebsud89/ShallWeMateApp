@@ -10,6 +10,10 @@
 
 @implementation TitleTableViewCell
 
++ (CGFloat) getHeight
+{
+    return 120.0f;
+}
 
 + (TitleTableViewCell*) titleTableViewCell
 {
@@ -32,6 +36,35 @@
 - (void)awakeFromNib
 {
     // Initialization code
+    
+    
+    
+    animator = [[UIDynamicAnimator alloc]initWithReferenceView:self.contentView];
+}
+
+- (void)cellOnTableView:(UITableView *)tableView didScrollOnView:(UIView *)view
+{
+    CGRect rectInSuperview = [tableView convertRect:self.frame toView:view];
+
+    
+    [animator removeAllBehaviors];
+    
+    
+    behavior1 = [[UIAttachmentBehavior alloc]initWithItem:self.titleLabel attachedToAnchor:CGPointMake(160.0f, 50.0f - (lastY -  rectInSuperview.origin.y)* 10)];
+    
+//    UIAttachmentBehavior * behavior1 = [[UIAttachmentBehavior alloc]initWithItem:self.titleLabel attachedToAnchor:CGPointMake(160.0f, -(difference/2) + move)];
+//        behavior1 = [[UIAttachmentBehavior alloc]initWithItem:self.titleLabel attachedToAnchor:CGPointMake(160.0f, 100.0f)];
+    
+    behavior1.length = 2.0;
+    behavior1.damping = 0.9;
+    behavior1.frequency = 2.0;
+    
+    [animator addBehavior:behavior1];
+    
+    //    lastY = titleRect.origin;
+    //    temp = 0.0f;
+    //    lastYPos = titleRect.origin.y;
+        lastY = rectInSuperview.origin.y;
 }
 
 - (void) setTitle:(NSString *)title

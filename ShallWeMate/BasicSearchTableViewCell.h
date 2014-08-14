@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SWMTableViewCell.h"
 
-@interface BasicSearchTableViewCell : UITableViewCell
+@interface BasicSearchTableViewCell : SWMTableViewCell
 
 + (BasicSearchTableViewCell*) basicSearchTableViewCell;
++ (CGFloat) getHeight;
 
 @property (strong, nonatomic) IBOutlet UILabel *searchLocationLabel;
 @property (strong, nonatomic) IBOutlet UILabel *monthlyCostMaxLabel;

@@ -9,10 +9,20 @@
 #import <UIKit/UIKit.h>
 #import "YSMenuProtocol.h"
 
-@interface SWMProviderMainDetailViewController : UIViewController
+@interface SWMProviderMainDetailViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+{
+    CGFloat lastScroll;
+//    CGPoint lastGestureVelocity;
+    BOOL scrollDir;
+    
+    UIDynamicAnimator *animator;
+    UIAttachmentBehavior *behavior;
+}
+@property (strong, nonatomic) IBOutlet UITableView *contentTableView;
+@property (strong, nonatomic) IBOutlet UIButton *mateButton;
 
-@property (strong, nonatomic) IBOutlet UIButton *btn;
+@property (strong, nonatomic) HouseData *houseData;
 
-- (IBAction)menuBtnTouch:(id)sender;
+- (void) scrollViewDidChangedDirection;
 
 @end

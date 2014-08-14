@@ -7,13 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SWMTableViewCell.h"
 
-@interface CollectionViewTableViewCell : UITableViewCell<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
+@interface CollectionViewTableViewCell : SWMTableViewCell<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 {
     int numberOfItemsInSection;
 }
 
 + (CollectionViewTableViewCell*) collectionViewTableViewCell;
++ (CGFloat) getHeight;
 
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;

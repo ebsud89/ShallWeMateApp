@@ -8,12 +8,20 @@
 
 #import "PRegisterViewController1.h"
 #import "PRegisterViewController2.h"
+#import "CTAssetsPickerController.h"
+#import "CTAssetsPageViewController.h"
 
 @interface PRegisterViewController1 ()
+<CTAssetsPickerControllerDelegate, UIPopoverControllerDelegate>
+
+@property (nonatomic, copy) NSArray *assets;
+@property (nonatomic, strong) NSDateFormatter *dateFormatter;
+@property (nonatomic, strong) UIPopoverController *popover;
 
 @end
 
 @implementation PRegisterViewController1
+@synthesize houseImageScrollView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -42,6 +50,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillHideNotification object:self.view.window];
     
 }
+
 
 
 - (void)setViewMovedUp:(BOOL)movedUp height:(float)height
@@ -139,6 +148,47 @@
     self.subwaySearchBtn.titleLabel.text = text;
 }
 
+- (void) initScrollView
+{
+    self.houseImageScrollView.scrollsToTop = YES;
+    NSArray *subViews = [houseImageScrollView subviews];
+    if (subViews != nil) {
+        for (UIView *subView in subViews) {
+            [subView removeFromSuperview];
+        }
+    }
+    
+    
+    int count = (int) [self.assets count];
+    
+    
+    for (int i=0; i<count; i++) {
+        CGRect frame;
+        frame.origin.x = houseImageScrollView.frame.size.width*i;
+        frame.origin.y = 0;
+        frame.size = houseImageScrollView.frame.size;
+        
+        ALAsset *asset = [self.assets objectAtIndex:i];
+        
+        // 원본이미지
+        UIImage *myImage = [UIImage imageWithCGImage:asset.defaultRepresentation.fullResolutionImage];
+        // 썸네일
+//        UIImage *myImage = [UIImage imageWithCGImage:asset.thumbnail];
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:myImage];
+        imageView.frame = frame;
+        [houseImageScrollView addSubview:imageView];
+    }
+    
+    self.addPhotoBtn.frame = CGRectMake(houseImageScrollView.frame.size.width*count + 160, houseImageScrollView.frame.size.height/2, self.addPhotoBtn.frame.size.width, self.addPhotoBtn.frame.size.height);
+    
+    [houseImageScrollView addSubview:self.addPhotoBtn];
+    
+    houseImageScrollView.contentSize = CGSizeMake(houseImageScrollView.frame.size.width * (self.assets.count+1), houseImageScrollView.frame.size.height);
+    
+    [self.houseImageScrollView reloadInputViews];
+    [self.houseImageScrollView setContentOffset:CGPointZero animated:YES];
+}
+
 - (IBAction)imagePickerTouched:(id)sender {
     
     NSLog(@"dakfjdsovj");
@@ -153,12 +203,17 @@
 
 -(IBAction)selectPhoto:(UIButton *)sender
 {
-    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-    picker.delegate = self;
-    picker.allowsEditing = YES;
-    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    if (!self.assets)
+        self.assets = [[NSMutableArray alloc] init];
     
-    [self presentViewController:picker animated:YES completion:NULL];
+    CTAssetsPickerController *picker = [[CTAssetsPickerController alloc] init];
+    picker.assetsFilter         = [ALAssetsFilter allAssets];
+    picker.showsCancelButton    = (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad);
+    picker.delegate             = self;
+    picker.selectedAssets       = [NSMutableArray arrayWithArray:self.assets];
+    
+    [self presentViewController:picker animated:YES completion:nil];
+
 }
 
 - (IBAction)takePhoto:(UIButton *)sender {
@@ -202,20 +257,20 @@
     }
 }
 
-
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-    
-    UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
-    self.houseImageView.image = chosenImage;
-    
-    [picker dismissViewControllerAnimated:YES completion:NULL];
-    
-}
-- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
-    
-    [picker dismissViewControllerAnimated:YES completion:NULL];
-    
-}
+// 단일 이미지 피커...
+//- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+//    
+//    UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
+//
+//    
+//    [picker dismissViewControllerAnimated:YES completion:NULL];
+//    
+//}
+//- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+//    
+//    [picker dismissViewControllerAnimated:YES completion:NULL];
+//    
+//}
 
 
 - (void)didReceiveMemoryWarning
@@ -224,6 +279,80 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Popover Controller Delegate
+
+- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
+{
+    self.popover = nil;
+}
+
+
+#pragma mark - Assets Picker Delegate
+
+- (BOOL)assetsPickerController:(CTAssetsPickerController *)picker isDefaultAssetsGroup:(ALAssetsGroup *)group
+{
+    return ([[group valueForProperty:ALAssetsGroupPropertyType] integerValue] == ALAssetsGroupSavedPhotos);
+}
+
+// 뷰에서 선택 완료 한 후...
+- (void)assetsPickerController:(CTAssetsPickerController *)picker didFinishPickingAssets:(NSArray *)assets
+{
+    if (self.popover != nil)
+        [self.popover dismissPopoverAnimated:YES];
+    else
+        [picker.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    
+    self.assets = [NSMutableArray arrayWithArray:assets];
+    
+    
+    [self initScrollView];
+    
+    //    [self.tableView reloadData];
+}
+
+
+- (BOOL)assetsPickerController:(CTAssetsPickerController *)picker shouldEnableAsset:(ALAsset *)asset
+{
+    // Enable video clips if they are at least 5s
+    if ([[asset valueForProperty:ALAssetPropertyType] isEqual:ALAssetTypeVideo])
+    {
+        NSTimeInterval duration = [[asset valueForProperty:ALAssetPropertyDuration] doubleValue];
+        return lround(duration) >= 5;
+    }
+    else
+    {
+        return YES;
+    }
+}
+
+- (BOOL)assetsPickerController:(CTAssetsPickerController *)picker shouldSelectAsset:(ALAsset *)asset
+{
+    if (picker.selectedAssets.count >= 10)
+    {
+        UIAlertView *alertView =
+        [[UIAlertView alloc] initWithTitle:@"Attention"
+                                   message:@"Please select not more than 10 assets"
+                                  delegate:nil
+                         cancelButtonTitle:nil
+                         otherButtonTitles:@"OK", nil];
+        
+        [alertView show];
+    }
+    
+    if (!asset.defaultRepresentation)
+    {
+        UIAlertView *alertView =
+        [[UIAlertView alloc] initWithTitle:@"Attention"
+                                   message:@"Your asset has not yet been downloaded to your device"
+                                  delegate:nil
+                         cancelButtonTitle:nil
+                         otherButtonTitles:@"OK", nil];
+        
+        [alertView show];
+    }
+    
+    return (picker.selectedAssets.count < 10 && asset.defaultRepresentation != nil);
+}
 
 #pragma mark - Navigation
 

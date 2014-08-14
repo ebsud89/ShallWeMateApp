@@ -10,6 +10,11 @@
 
 @implementation BasicSearchTableViewCell
 
++ (CGFloat) getHeight
+{
+    return 150.0f;
+}
+
 + (BasicSearchTableViewCell*) basicSearchTableViewCell
 {
     BasicSearchTableViewCell *cell = [[[NSBundle mainBundle] loadNibNamed:@"BasicSearchTableViewCell" owner:self options:nil] objectAtIndex:0];
