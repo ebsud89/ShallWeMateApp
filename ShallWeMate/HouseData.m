@@ -27,17 +27,17 @@
         }
         
         self.enableRoomsMore = [[NSMutableArray alloc]init];
-        for (int i = 0; i<8; i++) {
+        for (int i = 0; i<9; i++) {
             [self.enableRoomsMore addObject:[NSNumber numberWithBool:NO]];
         }
         
         self.enableOptions = [[NSMutableArray alloc]init];
-        for (int i = 0; i<24; i++) {
+        for (int i = 0; i<12; i++) {
             [self.enableOptions addObject:[NSNumber numberWithBool:NO]];
         }
         
         self.enableLifeStyle = [[NSMutableArray alloc]init];
-        for (int i = 0; i<24; i++) {
+        for (int i = 0; i<15; i++) {
             [self.enableLifeStyle addObject:[NSNumber numberWithBool:NO]];
         }
         
