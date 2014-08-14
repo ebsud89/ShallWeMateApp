@@ -203,6 +203,8 @@ const int inervalValue = 60;
     }
 }
 
+
+
 - (UIImageView*) createImageViewLeft:(UIImageView*)view
 {
     CGSize snapSize = CGSizeMake(view.frame.size.width/2, view.frame.size.height);
