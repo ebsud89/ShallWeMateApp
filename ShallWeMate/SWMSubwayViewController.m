@@ -52,25 +52,56 @@
     
     NSArray *contentArray = [content componentsSeparatedByString:@"\n"];
     
-    subwayStationArray = [[NSMutableArray alloc]initWithArray:nil];
-    subwayStationNameArray = [[NSMutableArray alloc]initWithArray:nil];
+//    subwayStationArray = [[NSMutableArray alloc]initWithArray:nil];
+//    subwayStationNameArray = [[NSMutableArray alloc]initWithArray:nil];
     
+    subwayDicArray = [[NSMutableArray alloc]init];
+    
+//    NSString *item = [contentArray objectAtIndex:0];
+//    NSArray *indexArray = [item componentsSeparatedByString:@","];
+    
+//    전철역코드,전철역명,호선,외부코드
     for (NSString *item in contentArray) {
         NSArray *itemArray = [item componentsSeparatedByString:@","];
+        
+        NSDictionary *subwayDic = [[NSDictionary alloc]initWithObjectsAndKeys:
+        [itemArray objectAtIndex:0], @"전철역코드",
+        [itemArray objectAtIndex:1], @"전철역명",
+        [itemArray objectAtIndex:2], @"호선",
+        [itemArray objectAtIndex:3], @"외부코드", nil];
+        
+        [subwayDicArray addObject:subwayDic];
+        
+        [self.subwaySearchBar sizeToFit];
+        self.searchDisplayController.delegate = self;
+        
         //        NSLog(@"%@",[itemArray objectAtIndex:1]);
-        [subwayStationNameArray addObject:[itemArray objectAtIndex:1]];
-        // log first item
-        [subwayStationArray addObject:itemArray];
+//        [subwayStationNameArray addObject:[itemArray objectAtIndex:1]];
+//        // log first item
+//        [subwayStationArray addObject:itemArray];
     }
+}
+
+- (void)searchDisplayController:(UISearchDisplayController *)controller didShowSearchResultsTableView:(UITableView *)tableView  {
+    
+    tableView.frame = self.subwayTableView.frame;
+    
 }
 
 - (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
 {
-    NSPredicate *resultPredicate = [NSPredicate
-                                    predicateWithFormat:@"SELF contains[cd] %@",
-                                    searchText];
     
-    searchResults = [subwayStationNameArray filteredArrayUsingPredicate:resultPredicate];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K contains[cd] %@",@"전철역명",searchText];
+    
+    searchResults = [subwayDicArray filteredArrayUsingPredicate:predicate];
+    
+//    NSLog(@"%@", filteredKeys);
+    
+//    NSPredicate *resultPredicate = [NSPredicate
+//                                    predicateWithFormat:@"SELF contains[cd] %@",
+//                                    searchText];
+//    
+//    searchResults = [subwayStationNameArray filteredArrayUsingPredicate:resultPredicate];
 }
 
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
@@ -87,9 +118,9 @@
         return [searchResults count];
     }
     else {
-        return [subwayStationArray count];
+        return [subwayDicArray count];
     }
-    return [subwayStationArray count];
+    return [subwayDicArray count];
 }
 
 //user tapped on the cancel button
@@ -109,11 +140,15 @@
     
     
     if (tableView == self.searchDisplayController.searchResultsTableView) {
-        cell.textLabel.text = [searchResults objectAtIndex:indexPath.row];
+//        cell.textLabel.text = [searchResults objectAtIndex:indexPath.row];
+        NSMutableDictionary *dic = [searchResults objectAtIndex:indexPath.row];
+        cell.textLabel.text= [dic objectForKey:@"전철역명"];
     }
     else {
-        NSArray *arr = [subwayStationArray objectAtIndex:indexPath.row];
-        cell.textLabel.text = [arr objectAtIndex:1];
+        NSMutableDictionary *dic = [subwayDicArray objectAtIndex:indexPath.row];
+        cell.textLabel.text = [dic objectForKey:@"전철역명"];
+//        NSArray *arr = [subwayStationArray objectAtIndex:indexPath.row];
+//        cell.textLabel.text = [arr objectAtIndex:1];
     }
     
     
@@ -136,8 +171,8 @@
     if (self.searchDisplayController.active) {
         index = [self.searchDisplayController.searchResultsTableView indexPathForSelectedRow];
         
-        NSString *str = [searchResults objectAtIndex:index.row];
-        [self.delegate didSelectedSubwayStation:str];
+        NSMutableDictionary *dic = [searchResults objectAtIndex:index.row];
+        [self.delegate didSelectedSubwayStation:[dic objectForKey:@"전철역명"]];
         [self.navigationController popViewControllerAnimated:YES];
     } else {
         index = [self.subwayTableView indexPathForSelectedRow];

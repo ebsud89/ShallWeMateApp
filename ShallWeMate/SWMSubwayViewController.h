@@ -10,13 +10,15 @@
 
 @protocol SubwayViewControllerDelegate;
 
-@interface SWMSubwayViewController : UIViewController
+@interface SWMSubwayViewController : UIViewController <UISearchDisplayDelegate>
 
 {
-NSMutableArray *subwayStationArray;
-
-NSMutableArray *subwayStationNameArray;
+//NSMutableArray *subwayStationArray;
+//
+//NSMutableArray *subwayStationNameArray;
 NSArray *searchResults;
+    
+    NSMutableArray *subwayDicArray;
 
 //    id<SubwayViewControllerDelegate> delegate;
 }
