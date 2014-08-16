@@ -158,9 +158,9 @@
 
 
 // subway delegate
-- (void) didSelectedSubwayStation:(NSString *) text
+- (void) didSelectedSubwayStation:(NSDictionary *) subwayDic
 {
-    self.subwaySearchBtn.titleLabel.text = text;
+    self.subwaySearchBtn.titleLabel.text = [subwayDic objectForKey:@"전철역명"];
 
 }
 

@@ -150,7 +150,8 @@
         index = [self.searchDisplayController.searchResultsTableView indexPathForSelectedRow];
         
         NSMutableDictionary *dic = [searchResults objectAtIndex:index.row];
-        [self.delegate didSelectedSubwayStation:[dic objectForKey:@"전철역명"]];
+//        [self.delegate didSelectedSubwayStation:[dic objectForKey:@"전철역명"]];
+        [self.delegate didSelectedSubwayStation:dic];
         [self.navigationController popViewControllerAnimated:YES];
     } else {
         index = [self.subwayTableView indexPathForSelectedRow];

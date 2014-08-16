@@ -33,5 +33,5 @@
 @protocol SubwayViewControllerDelegate <NSObject>;
 
 @required
-- (void) didSelectedSubwayStation:(NSString *) text;
+- (void) didSelectedSubwayStation:(NSDictionary *) subwayDic;
 @end
