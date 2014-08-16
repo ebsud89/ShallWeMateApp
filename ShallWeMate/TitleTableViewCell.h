@@ -7,8 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SWMTableViewCell.h"
 
-@interface TitleTableViewCell : UITableViewCell
+@interface TitleTableViewCell : SWMTableViewCell
+{
+    UIAttachmentBehavior *behavior1;
+    UIDynamicAnimator *animator;
+    CGFloat lastY;
+}
 
 @property (strong, nonatomic) NSString* title;
 @property (strong, nonatomic) NSString *content;
@@ -16,4 +22,5 @@
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *contentLabel;
 + (TitleTableViewCell*) titleTableViewCell;
++ (CGFloat) getHeight;
 @end

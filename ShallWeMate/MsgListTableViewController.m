@@ -54,6 +54,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)menuBtnClicked:(id)sender {
+    NSLog(@"button is touched");
+    [MENU_VIEW_CONTROLLER openLeftSideViewControllerAnimated:YES completion:nil];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

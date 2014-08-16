@@ -50,6 +50,56 @@
 */
 
 // User funtions
+// Consumer Buttons
+- (IBAction)likeItListClicked:(id)sender {
+    NSLog(@"소비자 - 찜 리스트 클릭");
+    UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"LikeItListViewController"];
+    [MENU_VIEW_CONTROLLER presentCenterViewController:vc animated:YES];
+}
+
+- (IBAction)messageClicked:(id)sender {
+    NSLog(@"소비자 - 메세지 클릭");
+    UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"messageViewController"];
+    [MENU_VIEW_CONTROLLER presentCenterViewController:vc animated:YES];
+}
+
+- (IBAction)myHouseProfileClicked:(id)sender {
+    NSLog(@"소비자 - 나의 하우스 프로필 클릭");
+    
+}
+
+- (IBAction)myProfileClicked:(id)sender {
+    NSLog(@"소비자 - 나의 프로필 클릭");
+//    UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"srchUserInfo"];
+    UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"myProfileViewControllerNav"];
+    [MENU_VIEW_CONTROLLER presentCenterViewController:vc animated:YES];
+    
+}
+
+- (IBAction)alarmClicked:(id)sender {
+    NSLog(@"소비자 - 알람 클릭");
+    UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"alarmViewController"];
+    
+    [MENU_VIEW_CONTROLLER presentCenterViewController:vc animated:YES];
+}
+- (IBAction)homeClicked:(id)sender {
+    NSLog(@"소비자 - 홈 클릭");
+    UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"MainTableViewControllerNav"];
+    
+    [MENU_VIEW_CONTROLLER presentCenterViewController:vc animated:YES];
+}
+
+// Provider Buttons
+- (IBAction)pMyHouseProfileClicked:(id)sender {
+    NSLog(@"공급자 - 하우스 정보 수정 클릭");
+}
+- (IBAction)pMessageClicked:(id)sender {
+    NSLog(@"공금자 - 메세지 클릭");
+}
+- (IBAction)pAlarmClicked:(id)sender {
+    NSLog(@"공급자 - 알림 클릭");
+}
+
 
 -(void)openMenu
 {

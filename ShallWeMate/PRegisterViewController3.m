@@ -8,6 +8,7 @@
 
 #import "PRegisterViewController3.h"
 #import "PRegisterViewController4.h"
+#import "SelectionCollectionViewController.h"
 
 @interface PRegisterViewController3 ()
 
@@ -31,7 +32,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-        [self.houseData printAll];
+    [self.houseData printAll];
     
     NSLog(@"PRegisterViewController");
     [self.houseData printAll];
@@ -107,18 +108,14 @@
     
 }
 
-//- (void)dealloc {
-//    [allRoomLabel release];
-//    [posibleRoomLabel release];
-    //    [arMinusBtn release];
-    //    [arPlusBtn release];
-    //    [prMinusRoom release];
-    //    [prMinusBtn release];
-    //    [prPlusBtn release];
-    //    [arPlus release];
-    //    [prPlus release];
-//    [avgAgeBtn release];
-//    [super dealloc];
+//- (void) didSelectedItem:(NSIndexPath *)indexPath
+//{
+//    [houseData.enableRoomsMore replaceObjectAtIndex:indexPath.row withObject:[NSNumber numberWithBool:YES]];
+//}
+
+//- (void) didDeSelectedItem:(NSIndexPath *)indexPath
+//{
+//    [houseData.enableRoomsMore replaceObjectAtIndex:indexPath.row withObject:[NSNumber numberWithBool:NO]];
 //}
 
 - (IBAction)arMinus:(id)sender {

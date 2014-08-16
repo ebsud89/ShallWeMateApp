@@ -7,8 +7,14 @@
 //
 
 #import "CollectionViewTableViewCell.h"
+#import "SWMCollectionViewCell4TableViewCell.h"
 
 @implementation CollectionViewTableViewCell
+
++ (CGFloat) getHeight
+{
+    return 200.0f;
+}
 
 + (CollectionViewTableViewCell*) collectionViewTableViewCell
 {
@@ -21,12 +27,20 @@
 - (void)awakeFromNib
 {
     // Initialization code
+
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
-//        [self.contentTableView registerNib:[UINib nibWithNibName:@"CollectionViewTableViewCell" bundle:nil] forHeaderFooterViewReuseIdentifier:@"collectionViewTableViewCell"];
+    [self.collectionView setBackgroundColor:[UIColor clearColor]];
     
-//    [self.collectionView registerNib:[UINib nibWithNibName:@"KTCell" bundle:nil] forCellWithReuseIdentifier:@"CELL"];
-//    [self.collectionView registerNib:[UINib nibWithNibName:@"CollectionViewTableViewCell" bundle:nil] forCellWithReuseIdentifier:@"collectionCell"];
+    /* uncomment this block to use subclassed cells */
+    [self.collectionView registerClass:[SWMCollectionViewCell4TableViewCell class] forCellWithReuseIdentifier:@"collectionViewCell4TableViewCell"];
+    /* end of subclass-based cells block */
+    
+    // Configure layout
+    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+    [flowLayout setItemSize:CGSizeMake(65, 65)];
+    [flowLayout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
+    [self.collectionView setCollectionViewLayout:flowLayout];
 }
 
 -(void) setTitle:(NSString *)title
@@ -47,23 +61,28 @@
     return 6;
 }
 
+-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return 1;
+}
+
 - (UICollectionViewCell *) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"collectionCell" forIndexPath:indexPath];
+    static NSString *cellIdentifier = @"collectionViewCell4TableViewCell";
     
-    if (cell == nil) {
-        cell = [[UICollectionViewCell alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
-    }
-//    UIImageView *imgView = [[UIImageView alloc] initWithFrame:cell.contentView.frame];
-//    imgView.image = [UIImage imageNamed:@"makefg.php.png"];
-//    
-//    [cell.contentView addSubview:imgView];
-//    
-//    UILabel *lable = [[UILabel alloc] initWithFrame:CGRectMake(0, 70, 100, 30)];
-//    //    [lable setText:[NSString stringWithFormat:@"[JW]%d-%d",indexPath.section,indexPath.row]];
-//    
-//    [cell.contentView addSubview:lable];
+    /*  Uncomment this block to use nib-based cells */
+    // UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
+    // UILabel *titleLabel = (UILabel *)[cell viewWithTag:100];
+    // [titleLabel setText:cellData];
+    /* end of nib-based cell block */
     
+    /* Uncomment this block to use subclass-based cells */
+    SWMCollectionViewCell4TableViewCell *cell = (SWMCollectionViewCell4TableViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
+    
+
+    /* end of subclass-based cells block */
+    
+    // Return the cell
     return cell;
 }
 
