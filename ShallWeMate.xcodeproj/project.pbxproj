@@ -68,6 +68,8 @@
 		AED06C0C199D31EA00D0CE54 /* SWMQAndATableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AED06C0A199D31EA00D0CE54 /* SWMQAndATableViewCell.xib */; };
 		AED06C10199D409600D0CE54 /* SWMLikeItListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AED06C0F199D409600D0CE54 /* SWMLikeItListViewController.m */; };
 		AED06C13199D58D700D0CE54 /* SWMMyProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AED06C12199D58D700D0CE54 /* SWMMyProfileViewController.m */; };
+		EB005B38199FD3390055F89C /* SWMHouse.m in Sources */ = {isa = PBXBuildFile; fileRef = EB005B37199FD3390055F89C /* SWMHouse.m */; };
+		EB1FDCFE199FD55E00A7157F /* SWMNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1FDCFD199FD55E00A7157F /* SWMNetwork.m */; };
 		EB2F77401990CD6F00EA365E /* PRegisterViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2F77331990CD6F00EA365E /* PRegisterViewController1.m */; };
 		EB2F77411990CD6F00EA365E /* PRegisterViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2F77351990CD6F00EA365E /* PRegisterViewController2.m */; };
 		EB2F77421990CD6F00EA365E /* PRegisterViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2F77371990CD6F00EA365E /* PRegisterViewController3.m */; };
@@ -253,6 +255,10 @@
 		AED06C0F199D409600D0CE54 /* SWMLikeItListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMLikeItListViewController.m; sourceTree = "<group>"; };
 		AED06C11199D58D700D0CE54 /* SWMMyProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMMyProfileViewController.h; sourceTree = "<group>"; };
 		AED06C12199D58D700D0CE54 /* SWMMyProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMMyProfileViewController.m; sourceTree = "<group>"; };
+		EB005B36199FD3390055F89C /* SWMHouse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMHouse.h; sourceTree = "<group>"; };
+		EB005B37199FD3390055F89C /* SWMHouse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMHouse.m; sourceTree = "<group>"; };
+		EB1FDCFC199FD55E00A7157F /* SWMNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMNetwork.h; sourceTree = "<group>"; };
+		EB1FDCFD199FD55E00A7157F /* SWMNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMNetwork.m; sourceTree = "<group>"; };
 		EB2F77321990CD6F00EA365E /* PRegisterViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRegisterViewController1.h; sourceTree = "<group>"; };
 		EB2F77331990CD6F00EA365E /* PRegisterViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRegisterViewController1.m; sourceTree = "<group>"; };
 		EB2F77341990CD6F00EA365E /* PRegisterViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRegisterViewController2.h; sourceTree = "<group>"; };
@@ -520,6 +526,17 @@
 			name = "Other Page";
 			sourceTree = "<group>";
 		};
+		EB005B35199FD2DB0055F89C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				EB005B36199FD3390055F89C /* SWMHouse.h */,
+				EB005B37199FD3390055F89C /* SWMHouse.m */,
+				EB1FDCFC199FD55E00A7157F /* SWMNetwork.h */,
+				EB1FDCFD199FD55E00A7157F /* SWMNetwork.m */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
 		EB2F772E1990CD1D00EA365E /* Provider */ = {
 			isa = PBXGroup;
 			children = (
@@ -736,6 +753,7 @@
 		EB7859D2198A1631000B4C18 /* ShallWeMate */ = {
 			isa = PBXGroup;
 			children = (
+				EB005B35199FD2DB0055F89C /* Network */,
 				AED06C0D199D406200D0CE54 /* Other Page */,
 				AEA3948B199BCA390075CD1E /* Library */,
 				6899ED711997672B00CE0F79 /* notice */,
@@ -1028,6 +1046,7 @@
 				EB433BBE19909C5D002667D0 /* HouseData.m in Sources */,
 				EB2F77A91991D36600EA365E /* UIBubbleTypingTableViewCell.m in Sources */,
 				EB785A09198A1B32000B4C18 /* SWMRootViewController.m in Sources */,
+				EB1FDCFE199FD55E00A7157F /* SWMNetwork.m in Sources */,
 				EB2F77BB1991EE2000EA365E /* RegisterViewController4.m in Sources */,
 				AEA394BA199BCA6B0075CD1E /* CTAssetsSupplementaryView.m in Sources */,
 				EB2F77A81991D36600EA365E /* UIBubbleHeaderTableViewCell.m in Sources */,
@@ -1045,6 +1064,7 @@
 				EB2F77A71991D36600EA365E /* UIBubbleTableViewCell.m in Sources */,
 				EB7859D9198A1631000B4C18 /* main.m in Sources */,
 				EB2F77731991C0BD00EA365E /* TitleTableViewCell.m in Sources */,
+				EB005B38199FD3390055F89C /* SWMHouse.m in Sources */,
 				EB2F77431990CD6F00EA365E /* PRegisterViewController4.m in Sources */,
 				EB2F774C1990CDDF00EA365E /* SWMSubwayViewController.m in Sources */,
 				EB2F77531990CFCF00EA365E /* Label2TableViewCell.m in Sources */,
