@@ -118,7 +118,6 @@
 
 -(void)openMenu
 {
-    NSLog(@"openMenuasdfasdfasfasfasdfafasf");
     //    self.myInfoBtn.transform = CGAffineTransformMakeTranslation(0, -CGRectGetMidY(self.view.bounds)/2);
     //    self.houseInfoBtn.transform = CGAffineTransformMakeTranslation(0, -CGRectGetMidY(self.view.bounds)/2);
     //    self.settingBtn.transform = CGAffineTransformMakeTranslation(0, -CGRectGetMidY(self.view.bounds)/2);
