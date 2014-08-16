@@ -156,6 +156,17 @@
 		689ED650199CE2DA00EA2BCD /* movie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = movie.png; path = ../movie.png; sourceTree = "<group>"; };
 		689ED651199CE2DA00EA2BCD /* interior.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = interior.png; path = ../interior.png; sourceTree = "<group>"; };
 		689ED658199CE45500EA2BCD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		689ED65A199D24E700EA2BCD /* SWMSummeryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMSummeryViewController.h; sourceTree = "<group>"; };
+		689ED65B199D24E700EA2BCD /* SWMSummeryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMSummeryViewController.m; sourceTree = "<group>"; };
+		689ED66D199D2BB400EA2BCD /* AppleSDGothicNeo-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AppleSDGothicNeo-ExtraBold.otf"; sourceTree = "<group>"; };
+		689ED66E199D2BB400EA2BCD /* AppleSDGothicNeo-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AppleSDGothicNeo-Heavy.otf"; sourceTree = "<group>"; };
+		689ED66F199D2BB400EA2BCD /* AppleSDGothicNeo-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AppleSDGothicNeo-Light.otf"; sourceTree = "<group>"; };
+		689ED670199D2BB400EA2BCD /* AppleSDGothicNeo-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AppleSDGothicNeo-Medium.otf"; sourceTree = "<group>"; };
+		689ED671199D2BB400EA2BCD /* AppleSDGothicNeo-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AppleSDGothicNeo-SemiBold.otf"; sourceTree = "<group>"; };
+		689ED672199D2BB400EA2BCD /* AppleSDGothicNeo-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AppleSDGothicNeo-Thin.otf"; sourceTree = "<group>"; };
+		689ED673199D2BB400EA2BCD /* AppleSDGothicNeo-UltraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AppleSDGothicNeo-UltraLight.otf"; sourceTree = "<group>"; };
+		689ED67B199D2C5500EA2BCD /* AppleSDGothicNeo-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AppleSDGothicNeo-Bold.otf"; sourceTree = "<group>"; };
+		689ED67C199D2C5500EA2BCD /* AppleSDGothicNeo-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AppleSDGothicNeo-Regular.otf"; sourceTree = "<group>"; };
 		68A7CF76199207BB00DF4BB3 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		68A7CF801992177A00DF4BB3 /* SWMAskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMAskViewController.h; sourceTree = "<group>"; };
 		68A7CF811992177A00DF4BB3 /* SWMAskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMAskViewController.m; sourceTree = "<group>"; };
@@ -717,6 +728,7 @@
 				EB7859DC198A1631000B4C18 /* SWMAppDelegate.m */,
 				EB785A07198A1B32000B4C18 /* SWMRootViewController.h */,
 				EB785A08198A1B32000B4C18 /* SWMRootViewController.m */,
+				AEB4BD68199F59FC004343C3 /* Main.storyboard */,
 				EB433BE01990C8F1002667D0 /* TableViewCell */,
 				EB7859D3198A1631000B4C18 /* Supporting Files */,
 			);
