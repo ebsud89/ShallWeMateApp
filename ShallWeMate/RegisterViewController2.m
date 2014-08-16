@@ -9,6 +9,7 @@
 #import "RegisterViewController2.h"
 
 @implementation RegisterViewController2
+@synthesize houseData;
 
 @synthesize maxBudgetLabel;
 @synthesize maxDepositLabel;

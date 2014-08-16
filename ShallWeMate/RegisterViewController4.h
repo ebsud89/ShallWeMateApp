@@ -15,6 +15,7 @@
 }
 
 
+@property (strong, nonatomic) HouseData *houseData;
 @property (strong, nonatomic) IBOutlet UICollectionView *selectList;
 
 @end

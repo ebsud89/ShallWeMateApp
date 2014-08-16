@@ -12,10 +12,11 @@
 @interface PRegisterViewController1 : UIViewController <SubwayViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate>
 
 {
-    HouseData *housedata;
+//    HouseData *housedata;
     NSMutableArray *selectHouseImage;
 }
 
+@property (strong, nonatomic) HouseData *housedata;
 @property (weak, nonatomic) IBOutlet UIButton *premiumBrand;
 @property (strong, nonatomic) IBOutlet UIButton *subwaySearchBtn;
 @property (strong, nonatomic) IBOutlet UITextField *houseTitleTextField;

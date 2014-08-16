@@ -13,6 +13,7 @@
 
 @end
 @implementation RegisterViewController4
+@synthesize houseData;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,7 +31,7 @@
     
     selectionCol = [[SelectionCollectionViewController alloc]init];
     selectionCol.viewController = @"lifeStyle";
-    [selectionCol setNumberOfItemsInSection:24];
+    [selectionCol setNumberOfItemsInSection:15];
     [selectionCol setSelectList:self.selectList];
     [selectionCol selectionListInit];
     
@@ -42,6 +43,16 @@
     [[[self navigationController] navigationBar] setTintColor:[UIColor whiteColor]];
     [[[self navigationController] navigationBar] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000]];
+}
+
+- (void) didSelectedItem:(NSIndexPath *)indexPath
+{
+    [houseData.enableLifeStyle replaceObjectAtIndex:indexPath.row withObject:[NSNumber numberWithBool:YES]];
+}
+
+- (void) didDeSelectedItem:(NSIndexPath *)indexPath
+{
+    [houseData.enableLifeStyle replaceObjectAtIndex:indexPath.row withObject:[NSNumber numberWithBool:NO]];
 }
 //
 //- (CGFloat) collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
@@ -61,7 +72,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -73,6 +83,7 @@
     if ([[segue identifier] isEqualToString:@"goNext"])
     {
         RegisterViewController5 *vc = [segue destinationViewController];
+        vc.houseData = houseData;
     }
 }
 

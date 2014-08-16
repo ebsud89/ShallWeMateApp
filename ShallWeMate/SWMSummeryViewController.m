@@ -1,21 +1,21 @@
 //
-//  PSummeryViewController.m
-//  start
+//  SWMSummeryViewController.m
+//  ShallWeMate
 //
-//  Created by 컴049 on 2014. 7. 18..
-//  Copyright (c) 2014년 컴049. All rights reserved.
+//  Created by 컴038 on 8/15/14.
+//  Copyright (c) 2014 컴038. All rights reserved.
 //
 
-#import "PSummeryViewController.h"
+#import "SWMSummeryViewController.h"
 #import "CollectionViewTableViewCell.h"
 #import "TitleTableViewCell.h"
 #import "ManagementTableViewCell.h"
 
-@interface PSummeryViewController ()
+@interface SWMSummeryViewController ()
 
 @end
 
-@implementation PSummeryViewController
+@implementation SWMSummeryViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -85,7 +85,7 @@
     
     if (indexPath.row == 0) {
         TitleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"titleTableViewCell"];
-
+        
         if (cell == nil) {
             cell = [TitleTableViewCell titleTableViewCell];
         }
@@ -149,14 +149,14 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

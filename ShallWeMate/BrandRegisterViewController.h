@@ -15,7 +15,9 @@
     NSArray *picData;
 }
 
+@property (strong, nonatomic) HouseData *houseData;
 @property (strong, nonatomic) NSArray *brandName;
 @property (strong, nonatomic) NSArray *picData;
 @property (strong, nonatomic) UIImage *brandImage;
+- (IBAction)backButtonPressed:(id)sender;
 @end

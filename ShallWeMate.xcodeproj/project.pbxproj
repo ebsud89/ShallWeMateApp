@@ -7,7 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6899ED70199743F700CE0F79 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6899ED6F199743F700CE0F79 /* Main.storyboard */; };
+		689ED65C199D24E700EA2BCD /* SWMSummeryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 689ED65B199D24E700EA2BCD /* SWMSummeryViewController.m */; };
+		689ED674199D2BB400EA2BCD /* AppleSDGothicNeo-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 689ED66D199D2BB400EA2BCD /* AppleSDGothicNeo-ExtraBold.otf */; };
+		689ED675199D2BB400EA2BCD /* AppleSDGothicNeo-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 689ED66E199D2BB400EA2BCD /* AppleSDGothicNeo-Heavy.otf */; };
+		689ED676199D2BB400EA2BCD /* AppleSDGothicNeo-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 689ED66F199D2BB400EA2BCD /* AppleSDGothicNeo-Light.otf */; };
+		689ED677199D2BB400EA2BCD /* AppleSDGothicNeo-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 689ED670199D2BB400EA2BCD /* AppleSDGothicNeo-Medium.otf */; };
+		689ED678199D2BB400EA2BCD /* AppleSDGothicNeo-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 689ED671199D2BB400EA2BCD /* AppleSDGothicNeo-SemiBold.otf */; };
+		689ED679199D2BB400EA2BCD /* AppleSDGothicNeo-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 689ED672199D2BB400EA2BCD /* AppleSDGothicNeo-Thin.otf */; };
+		689ED67A199D2BB400EA2BCD /* AppleSDGothicNeo-UltraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 689ED673199D2BB400EA2BCD /* AppleSDGothicNeo-UltraLight.otf */; };
+		689ED67D199D2C5500EA2BCD /* AppleSDGothicNeo-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 689ED67B199D2C5500EA2BCD /* AppleSDGothicNeo-Bold.otf */; };
+		689ED67E199D2C5500EA2BCD /* AppleSDGothicNeo-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 689ED67C199D2C5500EA2BCD /* AppleSDGothicNeo-Regular.otf */; };
 		68A7CF77199207BB00DF4BB3 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68A7CF76199207BB00DF4BB3 /* FacebookSDK.framework */; };
 		68A7CF821992177A00DF4BB3 /* SWMAskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A7CF811992177A00DF4BB3 /* SWMAskViewController.m */; };
 		68A7CF851992178700DF4BB3 /* SWMRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A7CF841992178700DF4BB3 /* SWMRequestViewController.m */; };
@@ -44,6 +53,7 @@
 		AEA76EF8199C90EC00B9B7C3 /* SWMHouseRoleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEA76EF6199C90EC00B9B7C3 /* SWMHouseRoleTableViewCell.xib */; };
 		AEAA197F1999D49F00B5FB8D /* SWMMateInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAA197D1999D49F00B5FB8D /* SWMMateInfoTableViewCell.m */; };
 		AEAA19801999D49F00B5FB8D /* SWMMateInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEAA197E1999D49F00B5FB8D /* SWMMateInfoTableViewCell.xib */; };
+		AEB4BD69199F59FC004343C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEB4BD68199F59FC004343C3 /* Main.storyboard */; };
 		AED06BFD199CF10A00D0CE54 /* BadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = AED06BFC199CF10A00D0CE54 /* BadgeView.m */; };
 		AED06C01199CF1BD00D0CE54 /* SWMHouseImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AED06BFF199CF1BD00D0CE54 /* SWMHouseImageTableViewCell.m */; };
 		AED06C02199CF1BD00D0CE54 /* SWMHouseImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AED06C00199CF1BD00D0CE54 /* SWMHouseImageTableViewCell.xib */; };
@@ -207,6 +217,7 @@
 		AEAA197C1999D49F00B5FB8D /* SWMMateInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMMateInfoTableViewCell.h; sourceTree = "<group>"; };
 		AEAA197D1999D49F00B5FB8D /* SWMMateInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMMateInfoTableViewCell.m; sourceTree = "<group>"; };
 		AEAA197E1999D49F00B5FB8D /* SWMMateInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SWMMateInfoTableViewCell.xib; sourceTree = "<group>"; };
+		AEB4BD68199F59FC004343C3 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		AED06BFB199CF10A00D0CE54 /* BadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadgeView.h; sourceTree = "<group>"; };
 		AED06BFC199CF10A00D0CE54 /* BadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgeView.m; sourceTree = "<group>"; };
 		AED06BFE199CF1BD00D0CE54 /* SWMHouseImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMHouseImageTableViewCell.h; sourceTree = "<group>"; };
@@ -533,6 +544,8 @@
 				EB2F77B51991EE2000EA365E /* RegisterViewController4.m */,
 				EB2F77B61991EE2000EA365E /* RegisterViewController5.h */,
 				EB2F77B71991EE2000EA365E /* RegisterViewController5.m */,
+				689ED65A199D24E700EA2BCD /* SWMSummeryViewController.h */,
+				689ED65B199D24E700EA2BCD /* SWMSummeryViewController.m */,
 				AEA643E219999197007C0422 /* SWMRegisterSummeryViewController.h */,
 				AEA643E319999197007C0422 /* SWMRegisterSummeryViewController.m */,
 			);
@@ -751,6 +764,15 @@
 		EB785A01198A19D9000B4C18 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				689ED67B199D2C5500EA2BCD /* AppleSDGothicNeo-Bold.otf */,
+				689ED67C199D2C5500EA2BCD /* AppleSDGothicNeo-Regular.otf */,
+				689ED66D199D2BB400EA2BCD /* AppleSDGothicNeo-ExtraBold.otf */,
+				689ED66E199D2BB400EA2BCD /* AppleSDGothicNeo-Heavy.otf */,
+				689ED66F199D2BB400EA2BCD /* AppleSDGothicNeo-Light.otf */,
+				689ED670199D2BB400EA2BCD /* AppleSDGothicNeo-Medium.otf */,
+				689ED671199D2BB400EA2BCD /* AppleSDGothicNeo-SemiBold.otf */,
+				689ED672199D2BB400EA2BCD /* AppleSDGothicNeo-Thin.otf */,
+				689ED673199D2BB400EA2BCD /* AppleSDGothicNeo-UltraLight.otf */,
 				68A9E5EF1995FF4D00EF1396 /* missingAvatar.png */,
 				68A9E5ED1995FF2E00EF1396 /* bubbleSomeone.png */,
 				68A9E5EB1995FF1900EF1396 /* bubbleMine.png */,
@@ -888,6 +910,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB433BCF1990A3E1002667D0 /* radio-on.png in Resources */,
+				689ED677199D2BB400EA2BCD /* AppleSDGothicNeo-Medium.otf in Resources */,
+				689ED67E199D2C5500EA2BCD /* AppleSDGothicNeo-Regular.otf in Resources */,
 				EB7859D7198A1631000B4C18 /* InfoPlist.strings in Resources */,
 				68A9E5EE1995FF2E00EF1396 /* bubbleSomeone.png in Resources */,
 				EB433BD11990A3E1002667D0 /* makefg.php.png in Resources */,
@@ -902,15 +926,23 @@
 				AEAA19801999D49F00B5FB8D /* SWMMateInfoTableViewCell.xib in Resources */,
 				EB433BD41990A3E1002667D0 /* testImg3.jpg in Resources */,
 				EB433BD61990A3E1002667D0 /* testImg2.jpg in Resources */,
+				AEB4BD69199F59FC004343C3 /* Main.storyboard in Resources */,
 				EB433BD21990A3E1002667D0 /* face_test.png in Resources */,
 				AED06C0C199D31EA00D0CE54 /* SWMQAndATableViewCell.xib in Resources */,
+				689ED67A199D2BB400EA2BCD /* AppleSDGothicNeo-UltraLight.otf in Resources */,
+				689ED67D199D2C5500EA2BCD /* AppleSDGothicNeo-Bold.otf in Resources */,
+				689ED675199D2BB400EA2BCD /* AppleSDGothicNeo-Heavy.otf in Resources */,
 				EB2F77741991C0BD00EA365E /* TitleTableViewCell.xib in Resources */,
 				EB2F77761991C0BD00EA365E /* ManagementTableViewCell.xib in Resources */,
+				689ED676199D2BB400EA2BCD /* AppleSDGothicNeo-Light.otf in Resources */,
+				689ED674199D2BB400EA2BCD /* AppleSDGothicNeo-ExtraBold.otf in Resources */,
 				EB433BCE1990A3E1002667D0 /* radio-off.png in Resources */,
 				AED06C07199D313800D0CE54 /* SWMRoomInfoTableViewCell.xib in Resources */,
 				68A9E5F01995FF4D00EF1396 /* missingAvatar.png in Resources */,
+				689ED678199D2BB400EA2BCD /* AppleSDGothicNeo-SemiBold.otf in Resources */,
 				AEA643EA1999971A007C0422 /* SWMImageScrollTableViewCell.xib in Resources */,
 				68A7CF89199240C600DF4BB3 /* checkbox.png in Resources */,
+				689ED679199D2BB400EA2BCD /* AppleSDGothicNeo-Thin.otf in Resources */,
 				68A7CF8B199240C600DF4BB3 /* checkbox-checked.png in Resources */,
 				EB2F77721991C0BD00EA365E /* CollectionViewTableViewCell.xib in Resources */,
 				EB2F77781991C0BD00EA365E /* BasicSearchTableViewCell.xib in Resources */,
@@ -951,6 +983,7 @@
 				AEA643ED1999990C007C0422 /* SWMCollectionViewCell4TableViewCell.m in Sources */,
 				EB7859DD198A1631000B4C18 /* SWMAppDelegate.m in Sources */,
 				EB2F77BA1991EE2000EA365E /* RegisterViewController3.m in Sources */,
+				689ED65C199D24E700EA2BCD /* SWMSummeryViewController.m in Sources */,
 				AEA394B8199BCA6B0075CD1E /* CTAssetsPickerConstants.m in Sources */,
 				EB433BBE19909C5D002667D0 /* HouseData.m in Sources */,
 				EB2F77A91991D36600EA365E /* UIBubbleTypingTableViewCell.m in Sources */,

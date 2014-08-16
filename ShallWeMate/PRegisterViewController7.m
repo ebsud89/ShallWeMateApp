@@ -219,12 +219,34 @@
 - (IBAction)doneButtonClicked:(id)sender {
     if((_inviteOk.isSelected == 1 || _inviteNo.isSelected == 1) && (_petOk.isSelected == 1 || _petNo.isSelected == 1) && (_privacyMore.isSelected == 1 || _privacyLess.isSelected == 1) && (_smokeOk.isSelected == 1 || _smokeNo.isSelected == 1) && (_drinkOk.isSelected == 1 || _drinkNo.isSelected == 1)) {
         
+        self.houseData.enableHouseRoles = [[NSMutableArray alloc]init];
+
+        if (_inviteOk.isSelected == 1)
+            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:YES]];
+        else if (_inviteNo.isSelected == 1)
+            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:NO]];
+        if (_petOk.isSelected == 1)
+            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:YES]];
+        else if (_petNo.isSelected == 1)
+            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:NO]];
+        if (_privacyMore.isSelected == 1)
+            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:YES]];
+        else if (_privacyLess.isSelected == 1)
+            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:NO]];
+        if (_smokeOk.isSelected == 1)
+            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:YES]];
+        else if (_smokeNo.isSelected == 1)
+            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:NO]];
+        if (_drinkOk.isSelected == 1)
+            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:YES]];
+        else if (_drinkNo.isSelected == 1)
+            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:NO]];
+
         //요약 페이지로 이동
             PSummeryViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"PSummeryViewController"];
             vc.houseData = self.houseData;
             [self.view addSubview:vc.view];
     } else {
-        NSLog(@"selected.. invite: %i %i, pet: %i %i, privacy: %i %i, smoke: %i %i, drink: %i %i", _inviteOk.isSelected, _inviteNo.isSelected, _petOk.isSelected, _petNo.isSelected, _privacyMore.isSelected, _privacyLess.isSelected, _smokeOk.isSelected, _smokeNo.isSelected, _drinkOk.isSelected, _drinkNo.isSelected);
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"모두 선택해주세요."
                                                         message:@"~~"
                                                        delegate:self
@@ -242,20 +264,20 @@
 
 }
 
-//#pragma mark - Navigation
-//
-//// In a storyboard-based application, you will often want to do a little preparation before navigation
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-//{
-//    // Get the new view controller using [segue destinationViewController].
-//    // Pass the selected object to the new view controller.
-//    
-//    if ([[segue identifier] isEqualToString:@"goNext"])
-//    {
-//        PSummeryViewController *vc = [segue destinationViewController];
-//        vc.houseData = self.houseData;
-//    }
-//}
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+    
+    if ([[segue identifier] isEqualToString:@"goNext"])
+    {
+        PSummeryViewController *vc = [segue destinationViewController];
+        vc.houseData = self.houseData;
+    }
+}
 
 
 @end

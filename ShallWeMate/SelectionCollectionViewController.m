@@ -70,39 +70,15 @@ UIImageView *image;
     
     [cell.contentView addSubview:lable];
     }else if ([viewController isEqual:@"enableOptions"]) {
-        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 90, 90)];
-        //    [imgView setContentMode:UIViewContentModeCenter];
-        //    self.data = [[NSArray alloc]
-        //                      initWithObjects:@"cook\n요리", @"Green",
-        //                 @"Blue", @"Indigo", @"Violet", @"Green",
-        //                 @"Blue", @"Indigo", @"Violet", @"Green",
-        //                 @"Blue", @"Indigo", @"Violet", @"Green",
-        //                 @"Blue", @"Indigo", @"Violet", nil];
+        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 65, 65)];
         
         NSArray *picArray = [[NSArray alloc] initWithObjects:@"cook.png", @"movie.png", @"interior.png",@"cook.png", @"movie.png", @"interior.png",@"cook.png", @"movie.png", @"interior.png",@"cook.png", @"movie.png", @"interior.png",@"cook.png", @"movie.png", @"interior.png", nil];
         self.picData = picArray;
         
         imgView.image = [UIImage imageNamed:[self.picData objectAtIndex:indexPath.row]];
         [cell.contentView addSubview:imgView];
-//        UILabel *lable = [[UILabel alloc] initWithFrame:CGRectMake(0, 86, 100, 30)];
-//        [lable setFont:[UIFont systemFontOfSize:10]];
-//        [lable setNumberOfLines:0];
-//        [lable setLineBreakMode:UILineBreakModeWordWrap];
-//        [lable setTextColor:[UIColor darkGrayColor]];
-//        [lable setText:[NSString stringWithFormat:@"cook\n요리",indexPath.section,indexPath.row]];
-//        [lable setTextAlignment:NSTextAlignmentCenter];
-//        
-//        [cell.contentView addSubview:lable];
     } else if ([viewController isEqual:@"enableRoomsMore"]) {
-        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 65, 65)];
-        //    [imgView setContentMode:UIViewContentModeCenter];
-        //    self.data = [[NSArray alloc]
-        //                      initWithObjects:@"cook\n요리", @"Green",
-        //                 @"Blue", @"Indigo", @"Violet", @"Green",
-        //                 @"Blue", @"Indigo", @"Violet", @"Green",
-        //                 @"Blue", @"Indigo", @"Violet", @"Green",
-        //                 @"Blue", @"Indigo", @"Violet", nil];
-        
+        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 90, 90)];
         NSArray *picArray = [[NSArray alloc] initWithObjects:@"cook.png", @"movie.png", @"interior.png",@"cook.png", @"movie.png", @"interior.png",@"cook.png", @"movie.png", @"interior.png",@"cook.png", @"movie.png", @"interior.png",@"cook.png", @"movie.png", @"interior.png", @"face_test.png", @"face_test.png", @"face_test.png",nil];
         self.picData = picArray;
         
@@ -110,39 +86,14 @@ UIImageView *image;
         [cell.contentView addSubview:imgView];
         NSLog(@"image size : %f %f", imgView.frame.size.width,imgView.image.size.height);
         NSLog(@"view size : %f", cell.contentView.frame.size.width);
-//        UILabel *lable = [[UILabel alloc] initWithFrame:CGRectMake(0, 86, 100, 30)];
-//        [lable setFont:[UIFont systemFontOfSize:10]];
-//        [lable setNumberOfLines:0];
-//        [lable setLineBreakMode:UILineBreakModeWordWrap];
-//        [lable setTextColor:[UIColor darkGrayColor]];
-//        [lable setText:[NSString stringWithFormat:@"cook\n요리",indexPath.section,indexPath.row]];
-//        [lable setTextAlignment:NSTextAlignmentCenter];
-        
-//        [cell.contentView addSubview:lable];
     } else if ([viewController isEqual:@"enableManagementStates"]) {
         UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 65, 65)];
-        //    [imgView setContentMode:UIViewContentModeCenter];
-        //    self.data = [[NSArray alloc]
-        //                      initWithObjects:@"cook\n요리", @"Green",
-        //                 @"Blue", @"Indigo", @"Violet", @"Green",
-        //                 @"Blue", @"Indigo", @"Violet", @"Green",
-        //                 @"Blue", @"Indigo", @"Violet", @"Green",
-        //                 @"Blue", @"Indigo", @"Violet", nil];
         
         NSArray *picArray = [[NSArray alloc] initWithObjects:@"cook.png", @"movie.png", @"interior.png",@"cook.png", @"movie.png", @"interior.png",@"cook.png", @"movie.png", @"interior.png",@"cook.png", @"movie.png", @"interior.png",@"cook.png", @"movie.png", @"interior.png", @"face_test.png", @"face_test.png", @"face_test.png",nil];
         self.picData = picArray;
         
         imgView.image = [UIImage imageNamed:[self.picData objectAtIndex:indexPath.row]];
         [cell.contentView addSubview:imgView];
-//        UILabel *lable = [[UILabel alloc] initWithFrame:CGRectMake(0, 86, 100, 30)];
-//        [lable setFont:[UIFont systemFontOfSize:10]];
-//        [lable setNumberOfLines:0];
-//        [lable setLineBreakMode:UILineBreakModeWordWrap];
-//        [lable setTextColor:[UIColor darkGrayColor]];
-//        [lable setText:[NSString stringWithFormat:@"cook\n요리",indexPath.section,indexPath.row]];
-//        [lable setTextAlignment:NSTextAlignmentCenter];
-//        
-//        [cell.contentView addSubview:lable];
     }
     return cell;
     
@@ -153,9 +104,9 @@ UIImageView *image;
     if ([viewController isEqual:@"lifeStyle"]) {
         return CGSizeMake(98,114);
     }else if ([viewController isEqual:@"enableOptions"]) {
-        return CGSizeMake(90,90);
-    }else if ([viewController isEqual:@"enableRoomsMore"]) {
         return CGSizeMake(65,65);
+    }else if ([viewController isEqual:@"enableRoomsMore"]) {
+        return CGSizeMake(90,90);
     }
     else {
         return CGSizeMake(65,65);
@@ -164,7 +115,7 @@ UIImageView *image;
 
 // 컬렉션과 컬렉션 width 간격
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
-    return 1;
+    return 2;
 }
 
 // 컬렉션과 컬렉션 height 간격
@@ -187,13 +138,13 @@ UIImageView *image;
     } else if ([viewController isEqual:@"enableOptions"]) {
         [self.delegate didSelectedItem:indexPath];UICollectionViewCell *cell = [self.selectList cellForItemAtIndexPath:indexPath];
         
-        image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 90, 90)];
+        image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 65, 65)];
         image.image = [UIImage imageNamed:@"life_cover.png"];
         [cell.contentView addSubview:image];
     }else if ([viewController isEqual:@"enableRoomsMore"]) {
         [self.delegate didSelectedItem:indexPath];UICollectionViewCell *cell = [self.selectList cellForItemAtIndexPath:indexPath];
         
-        image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 65, 65)];
+        image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 90, 90)];
         image.image = [UIImage imageNamed:@"life_cover.png"];
         [cell.contentView addSubview:image];
     }

@@ -11,7 +11,7 @@
 #import <UIKit/UIKit.h>
 #import "SWMLoginViewController.h"
 #import "SWMCheckRole_VC.h"
-
+#import "HouseData.h"
 
 @implementation SWMAppDelegate
 
@@ -25,6 +25,7 @@ NSString *const FBSessionStateChangedNotification = @"swm.ShallWeMate:FBSessionS
     [application setStatusBarStyle:UIStatusBarStyleLightContent];
     
     [FBProfilePictureView class];
+    [HouseData class];
     
     // Whenever a person opens the app, check for a cached session
     if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {

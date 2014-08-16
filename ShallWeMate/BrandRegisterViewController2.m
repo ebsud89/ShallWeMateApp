@@ -52,7 +52,9 @@
     } else {
         self.brandImage.image = othersImage;
     }
-    
+    self.houseData.premium = self.brandNameString;
+    NSLog(@"brandtest : %@", self.brandNameString);
+    NSLog(@"brand : %@", self.houseData.premium);
 }
 
 //브랜드 인증 코드 세팅하는 함수
@@ -73,7 +75,7 @@
 
         PRegisterViewController1 *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"pRegisterViewController1"];
         vc.premiumBrandName = brandNameString;
-        [self.view addSubview:vc.view];
+        [self.navigationController popViewControllerAnimated:YES];
     } else {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"인증코드"
                                                         message:@"불일치"
@@ -96,20 +98,20 @@
     [self.view endEditing:YES];
 }
 
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-    
-    if ([[segue identifier] isEqualToString:@"brandRegisterSegue"]) {
-        PRegisterViewController1 *vc = [segue destinationViewController];
-        vc.premiumBrandName = brandNameString;
-        NSLog(@" brand controller, brand name : %@", brandNameString);
-    }
-}
+//#pragma mark - Navigation
+//
+//// In a storyboard-based application, you will often want to do a little preparation before navigation
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+//{
+//    // Get the new view controller using [segue destinationViewController].
+//    // Pass the selected object to the new view controller.
+//    
+//    if ([[segue identifier] isEqualToString:@"goBack"]) {
+//        PRegisterViewController1 *vc = [segue destinationViewController];
+//        vc.premiumBrandName = brandNameString;
+//        NSLog(@" brand controller, brand name : %@", brandNameString);
+//    }
+//}
 
 @end
 

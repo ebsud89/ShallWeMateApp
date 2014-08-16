@@ -7,8 +7,10 @@
 //
 
 #import "RegisterViewController5.h"
+#import "SWMSummeryViewController.h"
 
 @implementation RegisterViewController5
+@synthesize houseData;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -199,12 +201,36 @@
 }
 
 - (IBAction)doneButtonClicked:(id)sender {
-    if((_inviteOk.isSelected == YES || _inviteNo == YES) && (_petOk.isSelected == YES || _petNo == YES) && (_privacyMore.isSelected == YES || _privacyLess == YES) && (_smokeOk.isSelected == YES || _smokeNo == YES) && (_drinkOk.isSelected == YES || _drinkNo == YES)) {
+    if((_inviteOk.isSelected == YES || _inviteNo.isSelected == YES) && (_petOk.isSelected == YES || _petNo.isSelected == YES) && (_privacyMore.isSelected == YES || _privacyLess.isSelected == YES) && (_smokeOk.isSelected == YES || _smokeNo.isSelected == YES) && (_drinkOk.isSelected == YES || _drinkNo.isSelected == YES)) {
         
+        
+        self.houseData.enableHouseRoles = [[NSMutableArray alloc]init];
+        
+        if (_inviteOk.isSelected == 1)
+            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:YES]];
+        else if (_inviteNo.isSelected == 1)
+            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:NO]];
+        if (_petOk.isSelected == 1)
+            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:YES]];
+        else if (_petNo.isSelected == 1)
+            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:NO]];
+        if (_privacyMore.isSelected == 1)
+            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:YES]];
+        else if (_privacyLess.isSelected == 1)
+            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:NO]];
+        if (_smokeOk.isSelected == 1)
+            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:YES]];
+        else if (_smokeNo.isSelected == 1)
+            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:NO]];
+        if (_drinkOk.isSelected == 1)
+            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:YES]];
+        else if (_drinkNo.isSelected == 1)
+            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:NO]];
+
         //요약 페이지로 이동
-//        PSummeryViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"PSummeryViewController"];
+        SWMSummeryViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SWMSummeryViewController"];
 //        vc.houseData = self.houseData;
-//        [self.view addSubview:vc.view];
+        [self.view addSubview:vc.view];
     } else {
         NSLog(@"che2");
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"모두 선택해주세요."

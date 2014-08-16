@@ -8,6 +8,7 @@
 
 #import "PRegisterViewController1.h"
 #import "PRegisterViewController2.h"
+#import "BrandRegisterViewController.h"
 #import "CTAssetsPickerController.h"
 #import "CTAssetsPageViewController.h"
 
@@ -36,13 +37,11 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    housedata = [[HouseData alloc]init];
-    
+//    _housedata = [[HouseData alloc]init];
  
 //    self.navigationController.textInputMode = [UITextInputMode activeInputModes];
     
-    [self fillhouseData];
-    
+//    [self fillhouseData];
     
     //키보드 올라갈 때 뷰 올리기
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:self.view.window];
@@ -55,7 +54,11 @@
     //navigation bar color
     [[[self navigationController] navigationBar] setTintColor:[UIColor whiteColor]];
     [[[self navigationController] navigationBar] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
-    [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000]];
+    [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:174/255.0 green:70/255.0 blue:115/255.0 alpha:1]];
+    [[[self navigationController] navigationBar] setBackgroundColor:[UIColor colorWithRed:174/255.0 green:70/255.0 blue:115/255.0 alpha:1]];
+//    [[[self navigationController] navigationBar] setTranslucent:YES];
+    
+    [self refreshHouseData];
 }
 
 
@@ -67,18 +70,13 @@
     [UIView setAnimationDuration:0.3];
     
     CGRect rect = self.view.frame;
-    NSLog(@"height : %f", height);
     if (movedUp)
     {
-//        rect.origin.y -= height;
-//        rect.size.height += height;
         rect.origin.y -= 120;
         rect.size.height += 120;
     }
     else
     {
-//        rect.origin.y += height;
-//        rect.size.height -= height;
         rect.origin.y += 120;
         rect.size.height -= 120;
     }
@@ -121,34 +119,41 @@
 
 - (void) refreshHouseData
 {
-    if (housedata.title != nil) {
-        self.houseTitleTextField.text = housedata.title;
+    if (_housedata.title != nil) {
+        self.houseTitleTextField.text = _housedata.title;
     }
     
-    if (housedata.transportation != nil) {
-        self.subwaySearchBtn.titleLabel.text = housedata.nearSubwayStation;
+    if (_housedata.transportation != nil) {
+        self.subwaySearchBtn.titleLabel.text = _housedata.nearSubwayStation;
     }
     
-    if (housedata.transportation != nil) {
+    if (_housedata.transportation != nil) {
         NSLog(@"걸어서");
     }
     
-    if (housedata.transportationMinutes != nil) {
-        self.subwayMinutesTextFiled.text = housedata.transportationMinutes;
+    if (_housedata.transportationMinutes != nil) {
+        self.subwayMinutesTextFiled.text = _housedata.transportationMinutes;
     }
     
-    if (housedata.introHouse != nil) {
-        self.introHouse.text = housedata.introHouse;
+    if (_housedata.introHouse != nil) {
+        self.introHouse.text = _housedata.introHouse;
+    }
+    
+    if (self.premiumBrandName != nil) {
+        self.premiumBrand.titleLabel.text = _premiumBrandName;
+        
+        
     }
 }
 
 - (void)fillhouseData
 {
-    housedata.title = self.houseTitleTextField.text;
-    housedata.nearSubwayStation = self.subwaySearchBtn.titleLabel.text;
-    housedata.transportation = @"걸어서";
-    housedata.transportationMinutes = self.subwayMinutesTextFiled.text;
-    housedata.introHouse = self.introHouse.text;
+    _housedata.title = self.houseTitleTextField.text;
+    _housedata.nearSubwayStation = self.subwaySearchBtn.titleLabel.text;
+    _housedata.transportation = @"걸어서";
+    _housedata.transportationMinutes = self.subwayMinutesTextFiled.text;
+    _housedata.introHouse = self.introHouse.text;
+    _housedata.premium = self.premiumBrandName;
 }
 
 
@@ -156,6 +161,7 @@
 - (void) didSelectedSubwayStation:(NSString *) text
 {
     self.subwaySearchBtn.titleLabel.text = text;
+
 }
 
 - (void) initScrollView
@@ -375,11 +381,20 @@
     if ([[segue identifier] isEqualToString:@"searchSubway"]) {
         SWMSubwayViewController *vc = [segue destinationViewController];
         vc.delegate = self;
+        
+        [self.view endEditing:YES];
     }
     else if ([[segue identifier] isEqualToString:@"goNext"])
     {
         PRegisterViewController2 *vc = [segue destinationViewController];
-        vc.houseData = housedata;
+        vc.houseData = _housedata;
+        [self fillhouseData];
+        
+    }
+    else if ([[segue identifier] isEqualToString:@"brandRegister1"])
+    {
+        BrandRegisterViewController *vc = [segue destinationViewController];
+        vc.houseData = _housedata;
         [self fillhouseData];
         
     }

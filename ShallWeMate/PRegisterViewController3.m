@@ -40,7 +40,7 @@
     selectionCollection = [[SelectionCollectionViewController alloc] init];
     selectionCollection.delegate = self;
     selectionCollection.viewController = @"enableRoomsMore";
-    [selectionCollection setNumberOfItemsInSection:(int)[houseData.enableManagementStates count]];
+    [selectionCollection setNumberOfItemsInSection:9];//(int)[houseData.enableRoomsMore count]];
     [selectionCollection setSelectList:self.selectList];
     [selectionCollection selectionListInit];
     
@@ -54,6 +54,9 @@
     [[[self navigationController] navigationBar] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000]];
    
+    self.houseData.roomAll = allRoomLabel.text;
+    self.houseData.roomEmpty = posibleRoomLabel.text;
+    
 }
 
 - (void) didSelectedItem:(NSIndexPath *)indexPath

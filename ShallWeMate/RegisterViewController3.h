@@ -18,6 +18,7 @@
     NSArray *agesArray;
     
 }
+@property (strong, nonatomic) HouseData *houseData;
 @property (retain, nonatomic) IBOutlet UIButton *ageSelectBtn;
 //@property (strong, nonatomic) IBOutlet UITextField *age;
 

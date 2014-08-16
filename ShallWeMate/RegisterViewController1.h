@@ -18,6 +18,7 @@
     UIButton *radiobutton1;
     UIButton *radiobutton2;
 }
+@property (strong, nonatomic) HouseData *houseData;
 @property (strong, nonatomic) IBOutlet UITextField *userName;
 @property (weak, nonatomic) IBOutlet FBProfilePictureView *fbProfilePictureView;
 

@@ -17,5 +17,9 @@
 
 @property (strong, nonatomic) HouseData *houseData;
 @property (strong, nonatomic) IBOutlet UIButton *avgAgeButton;
+@property (weak, nonatomic) IBOutlet UITextField *existingMenNum;
+@property (weak, nonatomic) IBOutlet UITextField *existingWomenNum;
+@property (weak, nonatomic) IBOutlet UITextField *wantMenNum;
+@property (weak, nonatomic) IBOutlet UITextField *wantWomenNum;
 
 @end

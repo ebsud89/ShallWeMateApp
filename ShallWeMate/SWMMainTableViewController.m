@@ -11,6 +11,7 @@
 #import "SWMMainDetailViewController.h"
 #import "MakeDumpData.h"
 #import "HouseData.h"
+#import "RegisterViewController1.h"
 #import "SWMHouseImageTableViewCell.h"
 
 @interface SWMMainTableViewController ()
@@ -74,11 +75,16 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex == 0) {
-        NSLog(@"Clicked YES");
+        [self viewDidLoad];
         
     }
     else if (buttonIndex == 1) {
-        NSLog(@"Clicked NO");
+        
+        RegisterViewController1 *privacy = (RegisterViewController1*)[self.storyboard instantiateViewControllerWithIdentifier:@"registerViewController1"];
+        
+        // present
+        [self presentViewController:privacy animated:YES completion:nil];
+        
     }
 }
 
@@ -87,7 +93,6 @@
     NSLog(@"button is touched");
     [MENU_VIEW_CONTROLLER openLeftSideViewControllerAnimated:YES completion:nil];
 }
-
 
 
 #pragma mark - Table view data source
@@ -267,5 +272,18 @@ didSelectRowAtIndexPath:(NSIndexPath *)newIndexPath
     // Pass the selected object to the new view controller.
 }
 */
+
+- (IBAction)searchButtonTouched:(id)sender {
+    
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
+                                                        message:@"초기하우스 검색설정으로 돌아가서 수정합니다."
+                                                       delegate:self
+                                              cancelButtonTitle:@"No"
+                                              otherButtonTitles:@"Yes",nil];
+        [alert show];
+    
+    
+}
+
 
 @end
