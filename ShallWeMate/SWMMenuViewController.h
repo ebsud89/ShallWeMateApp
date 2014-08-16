@@ -15,6 +15,12 @@
 @property (strong, nonatomic) IBOutlet UIButton *houseInfoBtn;
 @property (strong, nonatomic) IBOutlet UIButton *settingBtn;
 
+@property (strong, nonatomic) IBOutlet UIView *providerView;
+@property (strong, nonatomic) IBOutlet UIView *consumerView;
+
+- (void) setProviderMenu;
+- (void) setConsumerMenu;
+
 //-(void)moveLayer:(CALayer*)layer to:(CGPoint)point;
 -(void)openMenu;
 //-(void)closeMenu;

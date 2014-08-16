@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface SWMCheckRole_VC : UIViewController
-
+{
+    BOOL viewDidLoaded;
+}
 @end

@@ -52,13 +52,8 @@
     
     NSArray *contentArray = [content componentsSeparatedByString:@"\n"];
     
-//    subwayStationArray = [[NSMutableArray alloc]initWithArray:nil];
-//    subwayStationNameArray = [[NSMutableArray alloc]initWithArray:nil];
-    
     subwayDicArray = [[NSMutableArray alloc]init];
     
-//    NSString *item = [contentArray objectAtIndex:0];
-//    NSArray *indexArray = [item componentsSeparatedByString:@","];
     
 //    전철역코드,전철역명,호선,외부코드
     for (NSString *item in contentArray) {
@@ -75,10 +70,6 @@
         [self.subwaySearchBar sizeToFit];
         self.searchDisplayController.delegate = self;
         
-        //        NSLog(@"%@",[itemArray objectAtIndex:1]);
-//        [subwayStationNameArray addObject:[itemArray objectAtIndex:1]];
-//        // log first item
-//        [subwayStationArray addObject:itemArray];
     }
 }
 
@@ -95,13 +86,6 @@
     
     searchResults = [subwayDicArray filteredArrayUsingPredicate:predicate];
     
-//    NSLog(@"%@", filteredKeys);
-    
-//    NSPredicate *resultPredicate = [NSPredicate
-//                                    predicateWithFormat:@"SELF contains[cd] %@",
-//                                    searchText];
-//    
-//    searchResults = [subwayStationNameArray filteredArrayUsingPredicate:resultPredicate];
 }
 
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
@@ -140,15 +124,12 @@
     
     
     if (tableView == self.searchDisplayController.searchResultsTableView) {
-//        cell.textLabel.text = [searchResults objectAtIndex:indexPath.row];
         NSMutableDictionary *dic = [searchResults objectAtIndex:indexPath.row];
         cell.textLabel.text= [dic objectForKey:@"전철역명"];
     }
     else {
         NSMutableDictionary *dic = [subwayDicArray objectAtIndex:indexPath.row];
         cell.textLabel.text = [dic objectForKey:@"전철역명"];
-//        NSArray *arr = [subwayStationArray objectAtIndex:indexPath.row];
-//        cell.textLabel.text = [arr objectAtIndex:1];
     }
     
     
@@ -162,9 +143,6 @@
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    //    NSLog(@"%d", self.navigationController.searchDisplayController.active); ->0
-    //    NSLog(@"%d", self.searchDisplayController.active); ->1
     
     NSIndexPath *index;
     

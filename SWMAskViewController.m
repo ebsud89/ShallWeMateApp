@@ -49,11 +49,13 @@
 }
 
 - (IBAction)doneButtonPressed:(id)sender {
-    SWMMainDetailViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"MainDetaileView"];
-    /*
-     이 부분에서 질문 데이터 처리 해야함
-     */
-    [self.view addSubview:vc.view];
+//    SWMMainDetailViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"MainDetaileView"];
+//    /*
+//     이 부분에서 질문 데이터 처리 해야함
+//     */
+//    [self.view addSubview:vc.view];
+    
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
    
     
 }

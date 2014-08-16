@@ -73,9 +73,10 @@
 {
     if ([inputAuthCode.text isEqual:authCode]) {
 
-        PRegisterViewController1 *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"pRegisterViewController1"];
-        vc.premiumBrandName = brandNameString;
-        [self.navigationController popViewControllerAnimated:YES];
+//        PRegisterViewController1 *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"pRegisterViewController1"];
+//        vc.premiumBrandName = brandNameString;
+//        [self.navigationController popViewControllerAnimated:YES];
+        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
     } else {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"인증코드"
                                                         message:@"불일치"

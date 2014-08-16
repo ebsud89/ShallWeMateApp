@@ -127,6 +127,7 @@
     
     
 }
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -155,6 +156,7 @@
     [self openChildView:[self leftView] left:YES animated:animated completion:completionBlock];
     
     [self.leftViewController openMenu];
+//    [self.leftViewController setProviderMenu];
     
 }
 //

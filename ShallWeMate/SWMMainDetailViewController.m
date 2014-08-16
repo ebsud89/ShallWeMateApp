@@ -78,6 +78,20 @@ const int inervalValue = 60;
     [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000]];
 }
 
+- (void) viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    if (shareMode) {
+        [NSTimer scheduledTimerWithTimeInterval: 0.0f
+                                         target: self
+                                       selector: @selector(endShareViewAni)
+                                       userInfo: nil
+                                        repeats: NO];
+        shareMode = NO;
+    }
+
+}
 
 -(void) setHouseImageArray:(NSArray *)houseImageArrays
 {

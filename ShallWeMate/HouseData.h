@@ -17,6 +17,7 @@
 
 @property (retain) NSString *title;
 @property (retain) NSString *nearSubwayStation;
+@property (strong, nonatomic) NSDictionary *subwayDic;
 @property (retain) NSString *transportation;
 @property (retain) NSString *transportationMinutes;
 @property (retain) NSString *introHouse;

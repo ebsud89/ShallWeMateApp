@@ -37,7 +37,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-//    _housedata = [[HouseData alloc]init];
+    _housedata = [[HouseData alloc]init];
  
 //    self.navigationController.textInputMode = [UITextInputMode activeInputModes];
     

@@ -10,6 +10,8 @@
 #import "CollectionViewTableViewCell.h"
 #import "TitleTableViewCell.h"
 #import "ManagementTableViewCell.h"
+#import "SWMImageScrollTableViewCell.h"
+#import "SWMTransportTableViewCell.h"
 
 @interface PSummeryViewController ()
 
@@ -26,13 +28,14 @@
     return self;
 }
 
-
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+
+    [self.contentTableView registerNib:[UINib nibWithNibName:@"SWMImageScrollTableViewCell" bundle:nil] forCellReuseIdentifier:@"imageScrollViewTableViewCell"];
+    [self.contentTableView registerNib:[UINib nibWithNibName:@"SWMTransportTableViewCell" bundle:nil] forCellReuseIdentifier:@"transportTableViewCell"];
     [self.contentTableView registerNib:[UINib nibWithNibName:@"TitleTableViewCell" bundle:nil] forCellReuseIdentifier:@"titleTableViewCell"];
     [self.contentTableView registerNib:[UINib nibWithNibName:@"ManagementTableViewCell" bundle:nil] forCellReuseIdentifier:@"managementTableViewCell"];
     [self.contentTableView registerNib:[UINib nibWithNibName:@"CollectionViewTableViewCell" bundle:nil] forCellReuseIdentifier:@"collectionViewTableViewCell"];
@@ -49,21 +52,36 @@
     [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:112.0/255.0 green:43.0/255.0 blue:102.0/255.0 alpha:1000]];
 }
 
+
+- (IBAction)finishButtonClicked:(id)sender {
+    
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+
 #pragma mark - UITableView
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if(indexPath.row == 0){
-        return 138.0f;
+        return [SWMImageScrollTableViewCell getHeight];
     }
     else if(indexPath.row == 1){
-        return 200.0f;
+        return [TitleTableViewCell getHeight];
     }
     else if(indexPath.row == 2){
-        return 138.0f;
+        return [ManagementTableViewCell getHeight];
     }
     else if (indexPath.row == 3){
-        return 200.0f;
+        return [SWMTransportTableViewCell getHeight];
+    }
+    else if (indexPath.row == 4){
+        return [CollectionViewTableViewCell getHeight];
+    }
+    else if (indexPath.row == 5)
+    {
+        return [CollectionViewTableViewCell getHeight];
     }
     else
         return 100.0f; //cell for comments, in reality the height has to be adjustable
@@ -77,13 +95,22 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
     // If you're serving data from an array, return the length of the array:
-    return 2;
+    return 6;
 }
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (indexPath.row == 0) {
+    if (indexPath.row == 0)
+    {
+        SWMImageScrollTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"imageScrollViewTableViewCell"];
+        //        cell.houseImageArray = self.houseData.houseImageArray;
+        
+        [cell refreshData];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        return cell;
+    }
+    else if (indexPath.row == 1){
         TitleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"titleTableViewCell"];
 
         if (cell == nil) {
@@ -95,7 +122,7 @@
         
         return cell;
     }
-    else if (indexPath.row ==1)
+    else if (indexPath.row ==2)
     {
         ManagementTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"managementTableViewCell"];
         
@@ -105,7 +132,25 @@
         
         return cell;
     }
-    else if (indexPath.row == 2)
+    else if (indexPath.row ==3)
+    {
+        SWMTransportTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"transportTableViewCell"];
+        
+        return cell;
+    }
+    else if (indexPath.row == 4)
+    {
+        CollectionViewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"collectionViewTableViewCell"];
+        
+        if (cell == nil) {
+            NSLog(@"hh");
+            cell = [CollectionViewTableViewCell collectionViewTableViewCell];
+        }
+        [cell setTitle:@"xkdlxmfxkdlfxmf"];
+        
+        return cell;
+    }
+    else if (indexPath.row == 5)
     {
         CollectionViewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"collectionViewTableViewCell"];
         

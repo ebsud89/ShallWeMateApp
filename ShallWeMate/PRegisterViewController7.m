@@ -272,11 +272,11 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     
-    if ([[segue identifier] isEqualToString:@"goNext"])
-    {
+//    if ([[segue identifier] isEqualToString:@"goNext"])
+//    {
         PSummeryViewController *vc = [segue destinationViewController];
         vc.houseData = self.houseData;
-    }
+//    }
 }
 
 

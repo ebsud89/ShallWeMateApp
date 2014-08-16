@@ -141,10 +141,8 @@
     if (checkbox1Selected == 1 && checkbox2Selected == 1 && checkbox3Selected == 1 && checkbox4Selected == 1) {
         
         NSLog(@"chekck 1");
-        //요약 페이지로 이동
-        //        PRegisterViewController1 *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"pRegisterViewController1"];
-        //        vc.premiumBrandName = brandNameString;
-        //        [self.view addSubview:vc.view];
+
+        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
     } else {
         NSLog(@"che2");
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"모두 동의해주세요."

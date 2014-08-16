@@ -29,7 +29,10 @@
         // Prepare side menu view controller
         _menuViewController = [[YSMenuViewController alloc] initWithCenterViewController:mainViewController];
         
-        UIViewController * menu = [storyboard instantiateViewControllerWithIdentifier:@"menuViewController"];
+        SWMMenuViewController * menu = [storyboard instantiateViewControllerWithIdentifier:@"menuViewController"];
+        // setProvider 혹은 setConsumerView를 해줘야함!!!
+//        [menu setConsumerMenu];
+//        [menu setProviderMenu];
         _menuViewController.leftViewController = menu;
         
     }

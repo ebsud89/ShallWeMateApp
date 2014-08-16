@@ -54,6 +54,11 @@
 		AEAA197F1999D49F00B5FB8D /* SWMMateInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAA197D1999D49F00B5FB8D /* SWMMateInfoTableViewCell.m */; };
 		AEAA19801999D49F00B5FB8D /* SWMMateInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEAA197E1999D49F00B5FB8D /* SWMMateInfoTableViewCell.xib */; };
 		AEB4BD69199F59FC004343C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEB4BD68199F59FC004343C3 /* Main.storyboard */; };
+		AEB4BD72199F85A0004343C3 /* SWMTransportTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB4BD70199F85A0004343C3 /* SWMTransportTableViewCell.m */; };
+		AEB4BD73199F85A0004343C3 /* SWMTransportTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEB4BD71199F85A0004343C3 /* SWMTransportTableViewCell.xib */; };
+		AEB4BD76199FAA6E004343C3 /* SWMStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB4BD75199FAA6E004343C3 /* SWMStartViewController.m */; };
+		AEB4BD7C199FAC11004343C3 /* FLAnimatedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB4BD79199FAC11004343C3 /* FLAnimatedImage.m */; };
+		AEB4BD7D199FAC11004343C3 /* FLAnimatedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB4BD7B199FAC11004343C3 /* FLAnimatedImageView.m */; };
 		AED06BFD199CF10A00D0CE54 /* BadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = AED06BFC199CF10A00D0CE54 /* BadgeView.m */; };
 		AED06C01199CF1BD00D0CE54 /* SWMHouseImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AED06BFF199CF1BD00D0CE54 /* SWMHouseImageTableViewCell.m */; };
 		AED06C02199CF1BD00D0CE54 /* SWMHouseImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AED06C00199CF1BD00D0CE54 /* SWMHouseImageTableViewCell.xib */; };
@@ -150,11 +155,6 @@
 /* Begin PBXFileReference section */
 		6899ED721997675100CE0F79 /* SWMNoticeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMNoticeViewController.h; sourceTree = "<group>"; };
 		6899ED731997675100CE0F79 /* SWMNoticeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMNoticeViewController.m; sourceTree = "<group>"; };
-		689ED64C199CE2C900EA2BCD /* cook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cook.png; path = ../cook.png; sourceTree = "<group>"; };
-		689ED64E199CE2DA00EA2BCD /* life_cover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = life_cover.png; path = ../life_cover.png; sourceTree = "<group>"; };
-		689ED64F199CE2DA00EA2BCD /* life_cover02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = life_cover02.png; path = ../life_cover02.png; sourceTree = "<group>"; };
-		689ED650199CE2DA00EA2BCD /* movie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = movie.png; path = ../movie.png; sourceTree = "<group>"; };
-		689ED651199CE2DA00EA2BCD /* interior.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = interior.png; path = ../interior.png; sourceTree = "<group>"; };
 		689ED658199CE45500EA2BCD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		689ED65A199D24E700EA2BCD /* SWMSummeryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMSummeryViewController.h; sourceTree = "<group>"; };
 		689ED65B199D24E700EA2BCD /* SWMSummeryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMSummeryViewController.m; sourceTree = "<group>"; };
@@ -229,6 +229,15 @@
 		AEAA197D1999D49F00B5FB8D /* SWMMateInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMMateInfoTableViewCell.m; sourceTree = "<group>"; };
 		AEAA197E1999D49F00B5FB8D /* SWMMateInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SWMMateInfoTableViewCell.xib; sourceTree = "<group>"; };
 		AEB4BD68199F59FC004343C3 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		AEB4BD6F199F85A0004343C3 /* SWMTransportTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMTransportTableViewCell.h; sourceTree = "<group>"; };
+		AEB4BD70199F85A0004343C3 /* SWMTransportTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMTransportTableViewCell.m; sourceTree = "<group>"; };
+		AEB4BD71199F85A0004343C3 /* SWMTransportTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SWMTransportTableViewCell.xib; sourceTree = "<group>"; };
+		AEB4BD74199FAA6E004343C3 /* SWMStartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMStartViewController.h; sourceTree = "<group>"; };
+		AEB4BD75199FAA6E004343C3 /* SWMStartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMStartViewController.m; sourceTree = "<group>"; };
+		AEB4BD78199FAC11004343C3 /* FLAnimatedImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLAnimatedImage.h; sourceTree = "<group>"; };
+		AEB4BD79199FAC11004343C3 /* FLAnimatedImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLAnimatedImage.m; sourceTree = "<group>"; };
+		AEB4BD7A199FAC11004343C3 /* FLAnimatedImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLAnimatedImageView.h; sourceTree = "<group>"; };
+		AEB4BD7B199FAC11004343C3 /* FLAnimatedImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLAnimatedImageView.m; sourceTree = "<group>"; };
 		AED06BFB199CF10A00D0CE54 /* BadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadgeView.h; sourceTree = "<group>"; };
 		AED06BFC199CF10A00D0CE54 /* BadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgeView.m; sourceTree = "<group>"; };
 		AED06BFE199CF1BD00D0CE54 /* SWMHouseImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMHouseImageTableViewCell.h; sourceTree = "<group>"; };
@@ -418,6 +427,7 @@
 		AEA3948B199BCA390075CD1E /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				AEB4BD77199FABF6004343C3 /* FLAnimatedImage */,
 				AEA3948C199BCA6A0075CD1E /* CTAssetsPickerController */,
 			);
 			name = Library;
@@ -474,6 +484,17 @@
 				AEA643EE1999992B007C0422 /* SWMCollectionViewCell4TableViewCell.xib */,
 			);
 			name = CollectionView;
+			sourceTree = "<group>";
+		};
+		AEB4BD77199FABF6004343C3 /* FLAnimatedImage */ = {
+			isa = PBXGroup;
+			children = (
+				AEB4BD78199FAC11004343C3 /* FLAnimatedImage.h */,
+				AEB4BD79199FAC11004343C3 /* FLAnimatedImage.m */,
+				AEB4BD7A199FAC11004343C3 /* FLAnimatedImageView.h */,
+				AEB4BD7B199FAC11004343C3 /* FLAnimatedImageView.m */,
+			);
+			name = FLAnimatedImage;
 			sourceTree = "<group>";
 		};
 		AED06BFA199CF0E900D0CE54 /* ImageScrollView */ = {
@@ -671,6 +692,9 @@
 				AED06C08199D31EA00D0CE54 /* SWMQAndATableViewCell.h */,
 				AED06C09199D31EA00D0CE54 /* SWMQAndATableViewCell.m */,
 				AED06C0A199D31EA00D0CE54 /* SWMQAndATableViewCell.xib */,
+				AEB4BD6F199F85A0004343C3 /* SWMTransportTableViewCell.h */,
+				AEB4BD70199F85A0004343C3 /* SWMTransportTableViewCell.m */,
+				AEB4BD71199F85A0004343C3 /* SWMTransportTableViewCell.xib */,
 			);
 			name = TableViewCell;
 			sourceTree = "<group>";
@@ -728,6 +752,8 @@
 				EB7859DC198A1631000B4C18 /* SWMAppDelegate.m */,
 				EB785A07198A1B32000B4C18 /* SWMRootViewController.h */,
 				EB785A08198A1B32000B4C18 /* SWMRootViewController.m */,
+				AEB4BD74199FAA6E004343C3 /* SWMStartViewController.h */,
+				AEB4BD75199FAA6E004343C3 /* SWMStartViewController.m */,
 				AEB4BD68199F59FC004343C3 /* Main.storyboard */,
 				EB433BE01990C8F1002667D0 /* TableViewCell */,
 				EB7859D3198A1631000B4C18 /* Supporting Files */,
@@ -952,6 +978,7 @@
 				AED06C07199D313800D0CE54 /* SWMRoomInfoTableViewCell.xib in Resources */,
 				68A9E5F01995FF4D00EF1396 /* missingAvatar.png in Resources */,
 				689ED678199D2BB400EA2BCD /* AppleSDGothicNeo-SemiBold.otf in Resources */,
+				AEB4BD73199F85A0004343C3 /* SWMTransportTableViewCell.xib in Resources */,
 				AEA643EA1999971A007C0422 /* SWMImageScrollTableViewCell.xib in Resources */,
 				68A7CF89199240C600DF4BB3 /* checkbox.png in Resources */,
 				689ED679199D2BB400EA2BCD /* AppleSDGothicNeo-Thin.otf in Resources */,
@@ -994,6 +1021,7 @@
 				AEA394B6199BCA6B0075CD1E /* CTAssetsPageViewController.m in Sources */,
 				AEA643ED1999990C007C0422 /* SWMCollectionViewCell4TableViewCell.m in Sources */,
 				EB7859DD198A1631000B4C18 /* SWMAppDelegate.m in Sources */,
+				AEB4BD72199F85A0004343C3 /* SWMTransportTableViewCell.m in Sources */,
 				EB2F77BA1991EE2000EA365E /* RegisterViewController3.m in Sources */,
 				689ED65C199D24E700EA2BCD /* SWMSummeryViewController.m in Sources */,
 				AEA394B8199BCA6B0075CD1E /* CTAssetsPickerConstants.m in Sources */,
@@ -1038,6 +1066,7 @@
 				EB2F77AA1991D36600EA365E /* MsgListTableCell.m in Sources */,
 				AEAA197F1999D49F00B5FB8D /* SWMMateInfoTableViewCell.m in Sources */,
 				EB2F77491990CD9100EA365E /* PSummeryViewController.m in Sources */,
+				AEB4BD7C199FAC11004343C3 /* FLAnimatedImage.m in Sources */,
 				AED06C0B199D31EA00D0CE54 /* SWMQAndATableViewCell.m in Sources */,
 				EB433B9D1990671C002667D0 /* YSMenuViewController.m in Sources */,
 				AEA643E419999197007C0422 /* SWMRegisterSummeryViewController.m in Sources */,
@@ -1046,7 +1075,9 @@
 				EB2F77C81991F71000EA365E /* BrandRegisterViewCell.m in Sources */,
 				AEA394AF199BCA6B0075CD1E /* ALAsset+assetType.m in Sources */,
 				AEA394B5199BCA6B0075CD1E /* CTAssetsGroupViewController.m in Sources */,
+				AEB4BD7D199FAC11004343C3 /* FLAnimatedImageView.m in Sources */,
 				EB2F77A61991D36600EA365E /* UIBubbleTableView.m in Sources */,
+				AEB4BD76199FAA6E004343C3 /* SWMStartViewController.m in Sources */,
 				EB2F77C61991F71000EA365E /* BrandRegisterViewController.m in Sources */,
 				AEA643E91999971A007C0422 /* SWMImageScrollTableViewCell.m in Sources */,
 				EB433BA119906861002667D0 /* SWMMenuViewController.m in Sources */,

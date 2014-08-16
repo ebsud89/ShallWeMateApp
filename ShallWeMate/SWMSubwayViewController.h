@@ -13,10 +13,7 @@
 @interface SWMSubwayViewController : UIViewController <UISearchDisplayDelegate>
 
 {
-//NSMutableArray *subwayStationArray;
-//
-//NSMutableArray *subwayStationNameArray;
-NSArray *searchResults;
+    NSArray *searchResults;
     
     NSMutableArray *subwayDicArray;
 

@@ -19,6 +19,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        [self.consumerView removeFromSuperview];
     }
     return self;
 }
@@ -29,6 +30,9 @@
     // Do any additional setup after loading the view.
     
     NSLog(@"View Load menu");
+//    [self.consumerView removeFromSuperview];
+//    [self.providerView becomeFirstResponder];
+//    [self.consumerView bringSubviewToFront:self.providerView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -37,6 +41,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void) setProviderMenu
+{
+    [self.consumerView removeFromSuperview];
+    [self.providerView removeFromSuperview];
+}
+
+- (void) setConsumerMenu
+{
+//    [self.providerView removeFromSuperview];
+}
 
 /*
 #pragma mark - Navigation
@@ -104,6 +118,7 @@
 
 -(void)openMenu
 {
+    NSLog(@"openMenuasdfasdfasfasfasdfafasf");
     //    self.myInfoBtn.transform = CGAffineTransformMakeTranslation(0, -CGRectGetMidY(self.view.bounds)/2);
     //    self.houseInfoBtn.transform = CGAffineTransformMakeTranslation(0, -CGRectGetMidY(self.view.bounds)/2);
     //    self.settingBtn.transform = CGAffineTransformMakeTranslation(0, -CGRectGetMidY(self.view.bounds)/2);
