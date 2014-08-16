@@ -9,6 +9,8 @@
 #import "PRegisterViewController1.h"
 #import "PRegisterViewController2.h"
 #import "BrandRegisterViewController.h"
+#import "CTAssetsPickerController.h"
+#import "CTAssetsPageViewController.h"
 
 @interface PRegisterViewController1 ()
 <CTAssetsPickerControllerDelegate, UIPopoverControllerDelegate>

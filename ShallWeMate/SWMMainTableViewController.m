@@ -12,6 +12,7 @@
 #import "MakeDumpData.h"
 #import "HouseData.h"
 #import "RegisterViewController1.h"
+#import "SWMHouseImageTableViewCell.h"
 
 @interface SWMMainTableViewController ()
 
