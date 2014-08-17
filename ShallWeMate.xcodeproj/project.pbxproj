@@ -70,8 +70,6 @@
 		AED06C10199D409600D0CE54 /* SWMLikeItListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AED06C0F199D409600D0CE54 /* SWMLikeItListViewController.m */; };
 		AED06C13199D58D700D0CE54 /* SWMMyProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AED06C12199D58D700D0CE54 /* SWMMyProfileViewController.m */; };
 		EB1FDCFE199FD55E00A7157F /* SWMNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1FDCFD199FD55E00A7157F /* SWMNetwork.m */; };
-		EB1FDD08199FFCD800A7157F /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB1FDD06199FFCD800A7157F /* Icon@2x.png */; };
-		EB1FDD09199FFCD800A7157F /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EB1FDD07199FFCD800A7157F /* Icon.png */; };
 		EB1FDD0C199FFFC600A7157F /* SWMRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1FDD0B199FFFC600A7157F /* SWMRoom.m */; };
 		EB1FDD0F19A0042900A7157F /* SWMMember.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1FDD0E19A0042900A7157F /* SWMMember.m */; };
 		EB1FDD1219A006A400A7157F /* SWMMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1FDD1119A006A400A7157F /* SWMMessage.m */; };
@@ -1011,7 +1009,6 @@
 				EB433BD51990A3E1002667D0 /* testImg1.jpg in Resources */,
 				AED06C02199CF1BD00D0CE54 /* SWMHouseImageTableViewCell.xib in Resources */,
 				AEA76EF8199C90EC00B9B7C3 /* SWMHouseRoleTableViewCell.xib in Resources */,
-				EB1FDD08199FFCD800A7157F /* Icon@2x.png in Resources */,
 				AEA643EF1999992B007C0422 /* SWMCollectionViewCell4TableViewCell.xib in Resources */,
 				68A9E5EC1995FF1900EF1396 /* bubbleMine.png in Resources */,
 				EB7859DF198A1631000B4C18 /* Images.xcassets in Resources */,
@@ -1020,7 +1017,6 @@
 				AEA394B7199BCA6B0075CD1E /* CTAssetsPicker.xcassets in Resources */,
 				AEAA19801999D49F00B5FB8D /* SWMMateInfoTableViewCell.xib in Resources */,
 				EB433BD41990A3E1002667D0 /* testImg3.jpg in Resources */,
-				EB1FDD09199FFCD800A7157F /* Icon.png in Resources */,
 				EB433BD61990A3E1002667D0 /* testImg2.jpg in Resources */,
 				AEB4BD69199F59FC004343C3 /* Main.storyboard in Resources */,
 				EB433BD21990A3E1002667D0 /* face_test.png in Resources */,

@@ -14,6 +14,7 @@
 #import "SWMTableViewCell.h"
 #import "SWMRoomInfoTableViewCell.h"
 #import "SWMQAndATableViewCell.h"
+#import "SWMNetwork.h"
 
 
 @interface SWMMainDetailViewController ()
@@ -76,6 +77,13 @@ const int inervalValue = 60;
     [[[self navigationController] navigationBar] setTintColor:[UIColor whiteColor]];
     [[[self navigationController] navigationBar] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000]];
+    
+    //network
+    
+    SWMNetwork *network = [[SWMNetwork alloc]init];
+    NSArray *myArry = [network getAllRooms];
+    NSLog(@"방 갯수: %ld", [myArry count]);
+    
 }
 
 - (void) viewDidAppear:(BOOL)animated
