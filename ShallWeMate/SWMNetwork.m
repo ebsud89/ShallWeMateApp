@@ -8,6 +8,7 @@
 
 #import "SWMNetwork.h"
 
+#define SWMserverAddr @"http://localhost:8080/SWMserver/"
 #define kServerAddrUpload  @"http://localhost:8080/SWMserver/conntest.jsp"
 //#define kServerAddr  @"http://localhost:3000/names/index"
 #define kServerAddr  @"http://localhost:8080/SWMserver/conntest.jsp"
@@ -16,9 +17,48 @@
 
 @implementation SWMNetwork
 
+- (void) sendUserDataWithPost {
+    
+}
+
+- (void) sendRoomDataWithPost {
+    
+}
+
+- (void) sendQueryArgvWithGet: (NSString *)query : (NSMutableDictionary *)argv {
+    
+//    NSString *args = [[NSString alloc] initWithString:@"%@", argv];
+//        NSURL *url = [NSURL URLWithString:[SWMserverAddr stringByAppendingString:@"test"]];
+    
+}
+
+- (NSArray *) getAllRooms {
+    
+    NSURL *url = [NSURL URLWithString:[SWMserverAddr stringByAppendingString:@"comm/getAllRooms"]];
+    
+    NSLog(@"%@", url);
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    NSURLResponse *resp = nil;
+    NSError *error = nil;
+    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&resp error:&error];
+    
+    NSError *err = nil;
+    NSError *err2 = nil;
+    NSArray *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&err];
+
+    return json;
+}
+
+
+
+
+
+
+
 - (void) uploadAsyncHTTPPost
 {
     NSURL *url = [NSURL URLWithString:kServerAddrUpload];
+
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     NSString *data = @"msg=This_is_Test";
@@ -331,5 +371,16 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
     NSLog(@"%s", __FUNCTION__);
 //    NSString *text = [[[NSString alloc] initWithData:self.recvData encoding:NSUTF8StringEncoding] autorelease];
 //    self.textView.text = text;
+}
+
+- (NSArray *) jsonToArray:(NSData *)inpData {
+    NSError *error = nil;
+    NSArray *json = [NSJSONSerialization JSONObjectWithData:inpData options:kNilOptions error:&error];
+    
+    if (error)
+        NSLog(@"ERROR in Network Class (jsonToArray)");
+    else
+        NSLog(@"JSON item : %lu", [json count]);
+    return json;
 }
 @end
