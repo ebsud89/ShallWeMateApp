@@ -7,14 +7,17 @@
 //
 
 #import "RegisterViewController1.h"
+@interface RegisterViewController1()
+@property (nonatomic, strong) UILabel *jobTitleLabel;
+@end
 
 @implementation RegisterViewController1
-@synthesize houseData;
 @synthesize jobButton;
 @synthesize fbProfilePictureView;
 @synthesize userName;
 @synthesize radiobutton1;
 @synthesize radiobutton2;
+@synthesize jobTitleLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle*)nibBundleOrNil
 {
@@ -39,7 +42,18 @@
 {
     [super viewDidLoad];
     
-    jobsArray = [[NSArray alloc] initWithObjects:@"학생", @"직장인", @"프리랜서", nil];
+    jobsArray = [[NSArray alloc] initWithObjects:@"직업을 선택해주세요.", @"학생", @"직장인", @"프리랜서", nil];
+    // 버튼위에 라벨을 올려주기 위해 만듬
+    jobTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(6.0f, 2.0f, 150.0f, 30.0f)];
+    jobTitleLabel.textColor = [UIColor darkGrayColor];
+    jobTitleLabel.textAlignment = NSTextAlignmentCenter;
+    jobTitleLabel.backgroundColor = [UIColor clearColor];
+    jobTitleLabel.font = [UIFont systemFontOfSize:14.0f];
+    jobTitleLabel.lineBreakMode = NSLineBreakByClipping;
+    [jobButton addSubview:jobTitleLabel];
+    jobTitleLabel.text = [jobsArray objectAtIndex:0]; ;
+    
+    [jobButton addTarget:self action:@selector(jobSelect:)             forControlEvents:UIControlEventTouchUpInside];
     
     SWMAppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
     
@@ -77,8 +91,60 @@
     [[[self navigationController] navigationBar] setTintColor:[UIColor whiteColor]];
     [[[self navigationController] navigationBar] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000]];
+    
 }
 
+//- (void) refreshHouseData
+//{
+//    if (_houseData.title != nil) {
+//        self.houseTitleTextField.text = _houseData.title;
+//    }
+//    
+//    if (_houseData.transportation != nil) {
+//        self.subwaySearchBtn.titleLabel.text = _houseData.nearSubwayStation;
+//    }
+//    
+//    if (_houseData.transportation != nil) {
+//        NSLog(@"걸어서");
+//    }
+//    
+//    if (_houseData.transportationMinutes != nil) {
+//        self.subwayMinutesTextFiled.text = _houseData.transportationMinutes;
+//    }
+//    
+//    if (_houseData.introHouse != nil) {
+//        self.introHouse.text = _houseData.introHouse;
+//    }
+//    
+//}
+//
+//- (void)fillhouseData
+//{
+//    _houseData.title = self.houseTitleTextField.text;
+//    _houseData.nearSubwayStation = self.subwaySearchBtn.titleLabel.text;
+//    _houseData.transportation = @"걸어서";
+//    _houseData.transportationMinutes = self.subwayMinutesTextFiled.text;
+//    _houseData.introHouse = self.introHouse.text;
+//    _houseData.premium = self.premiumBrandName;
+//}
+- (void)setUserDefaults {
+    
+    SWMAppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
+    
+    NSString *age = _ageTextField.text;
+    NSString *job = jobTitleLabel.text;
+    
+    // Store the data
+    appDelegate.defaults = [NSUserDefaults standardUserDefaults];
+    
+    [appDelegate.defaults setObject:job forKey:@"job"];
+    [appDelegate.defaults setObject:age forKey:@"age"];
+    //                                              [defaults setInteger:birthday forKey:@"birthday"];
+    //                                              [defaults setObject:imageData forKey:@"image"];
+    
+    [appDelegate.defaults synchronize];
+
+}
 
 - (void)setViewMovedUp:(BOOL)movedUp height:(float)height
 
@@ -173,17 +239,31 @@
 
 - (IBAction)jobSelect:(id)sender {
     
-    UIPickerView *pickerView = [[UIPickerView alloc] init];
-    [pickerView setDelegate:self];
-    [pickerView setDataSource:self];
+    actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self     cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
+    actionSheet.actionSheetStyle = UIActionSheetStyleBlackOpaque;
     
-    UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
     
-    [pickerView setFrame:CGRectMake(0.0f,
-                                    keyWindow.frame.size.height - pickerView.frame.size.height,
-                                    keyWindow.frame.size.width,
-                                    pickerView.frame.size.height)];
-    [keyWindow addSubview:pickerView];
+    picker = [[UIPickerView alloc] initWithFrame:CGRectMake(0,40, 320, 216)];
+    picker.showsSelectionIndicator=YES;
+    picker.dataSource = self;
+    picker.delegate = self;
+    picker.tag = 0;
+    [actionSheet addSubview:picker];
+    
+    // pickerView 상단에 올라갈 닫기 버튼 만들기
+    UISegmentedControl *closeButton = [[UISegmentedControl alloc] initWithItems:
+                                       [NSArray arrayWithObject:@"완료"]];
+    closeButton.momentary = YES;
+    closeButton.frame = CGRectMake(260, 7.0f, 50.0f, 30.0f);
+    closeButton.segmentedControlStyle = UISegmentedControlStyleBar;
+    closeButton.tintColor = [UIColor blackColor];
+    [closeButton addTarget:self action:@selector(dismissAnimated:) forControlEvents:UIControlEventValueChanged];
+    [actionSheet addSubview:closeButton];
+    [actionSheet showInView:self.view];
+    
+    [actionSheet showFromRect:CGRectMake(0,480, 320,215) inView:self.view animated:YES];
+    [actionSheet setBounds:CGRectMake(0,0, 320, 411)];
+
     
 }
 
@@ -200,13 +280,14 @@
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-    [jobButton setTitle:[jobsArray objectAtIndex:row] forState:UIControlStateNormal];
+//    [jobButton setTitle:[jobsArray objectAtIndex:row] forState:UIControlStateNormal];
+    jobTitleLabel.text = [jobsArray objectAtIndex:row];
     
     //picker view 내리기
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:1.0];
-    pickerView.transform = CGAffineTransformMakeTranslation(0, 275);
-    [UIView commitAnimations];
+//    [UIView beginAnimations:nil context:NULL];
+//    [UIView setAnimationDuration:1.0];
+//    pickerView.transform = CGAffineTransformMakeTranslation(0, 275);
+//    [UIView commitAnimations];
     
     
 }
@@ -217,12 +298,31 @@
     
 }
 
+// 피커뷰 'close'버튼 눌렀을 때,
+- (void)dismissAnimated:(UIButton *)button
+{
+    [actionSheet dismissWithClickedButtonIndex:0 animated:YES];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Navigation
 
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+    
+    if ([[segue identifier] isEqualToString:@"goNext"])
+    {
+        
+        [self setUserDefaults];
+    }
+}
 
 @end

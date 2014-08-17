@@ -40,7 +40,7 @@
     [ageSelectBtn addSubview:ageTitleLabel];
     ageTitleLabel.text = [agesArray objectAtIndex:0]; ;
     
-    [ageSelectBtn addTarget:self action:@selector(selectAgeButtonClicked:)             forControlEvents:UIControlEventTouchUpInside];
+    [ageSelectBtn addTarget:self action:@selector(ageSelect:)             forControlEvents:UIControlEventTouchUpInside];
     
     //cursor coloer
     [[UITextField appearance] setTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1.0]];

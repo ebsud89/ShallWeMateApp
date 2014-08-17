@@ -136,8 +136,9 @@
     
     
     
-    UIImage *img = [UIImage imageNamed:@"makefg.php.png"];
-    [cell.imageView setBackgroundColor:[UIColor blueColor]];
+    UIImage *img = [UIImage imageNamed:@"1호선_수정.png"];
+    [cell.imageView setBackgroundColor:[UIColor clearColor]];
+    NSLog(@"height : %f",cell.imageView.image.size.height);
     cell.imageView.image = img;
     
     return cell;
