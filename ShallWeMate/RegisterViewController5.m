@@ -204,6 +204,8 @@
     if((_inviteOk.isSelected == YES || _inviteNo.isSelected == YES) && (_petOk.isSelected == YES || _petNo.isSelected == YES) && (_privacyMore.isSelected == YES || _privacyLess.isSelected == YES) && (_smokeOk.isSelected == YES || _smokeNo.isSelected == YES) && (_drinkOk.isSelected == YES || _drinkNo.isSelected == YES)) {
         
         
+        /* 하우스 룰 정보 저장하기 */
+        
         self.houseData.enableHouseRoles = [[NSMutableArray alloc]init];
         
         if (_inviteOk.isSelected == 1)

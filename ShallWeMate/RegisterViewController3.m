@@ -7,6 +7,7 @@
 //
 
 #import "RegisterViewController3.h"
+#import "RegisterViewController4.h"
 @interface RegisterViewController3 ()
 @property (nonatomic, strong) UILabel *ageTitleLabel;
 @end
@@ -28,6 +29,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self refreshHouseData];
     agesArray = [[NSArray alloc] initWithObjects:@"평균 연령을 선택해주세요", @"20대 초반", @"20대 중반", @"20대 후반", @"30대 초반", @"30대 중반", @"30대 후반", @"40대 이상", nil];
     
     // 버튼위에 라벨을 올려주기 위해 만듬
@@ -50,6 +53,51 @@
     [[[self navigationController] navigationBar] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000]];
 }
+
+- (void) refreshHouseData
+{
+    
+    
+    /* 수요자측 데이터 (메이트 평균연령, 성별) 뿌리기
+     
+     */
+    
+    
+    //    if (_houseData.title != nil) {
+    //        self.houseTitleTextField.text = _houseData.title;
+    //    }
+    //
+    //    if (_houseData.transportation != nil) {
+    //        self.subwaySearchBtn.titleLabel.text = _houseData.nearSubwayStation;
+    //    }
+    //
+    //    if (_houseData.transportation != nil) {
+    //        NSLog(@"걸어서");
+    //    }
+    //
+    //    if (_houseData.transportationMinutes != nil) {
+    //        self.subwayMinutesTextFiled.text = _houseData.transportationMinutes;
+    //    }
+    //
+    //    if (_houseData.introHouse != nil) {
+    //        self.introHouse.text = _houseData.introHouse;
+    //    }
+    
+}
+
+- (void)fillhouseData
+{
+    /* 기입한 정보 (메이트 성별, 평균 연령) 저장하기 */
+    
+    //    _houseData.title = self.houseTitleTextField.text;
+    //    _houseData.nearSubwayStation = self.subwaySearchBtn.titleLabel.text;
+    //    _houseData.transportation = @"걸어서";
+    //    _houseData.transportationMinutes = self.subwayMinutesTextFiled.text;
+    //    _houseData.introHouse = self.introHouse.text;
+    //    _houseData.premium = self.premiumBrandName;
+}
+
+
 - (IBAction)ageSelect:(id)sender {
     
     actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self     cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
@@ -116,5 +164,20 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"goNext"])
+    {
+        RegisterViewController4 *vc = [segue destinationViewController];
+        
+        /* 기입한 정보를 다음 뷰로 전달*/
+        
+        //        vc.houseData = _housedata;
+        [self fillhouseData];
+        
+    }
+    
+    
+}
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "RegisterViewController1.h"
+#import "RegisterViewController2.h"
 @interface RegisterViewController1()
 @property (nonatomic, strong) UILabel *jobTitleLabel;
 @end
@@ -41,6 +42,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
+    [self refreshHouseData];
     
     jobsArray = [[NSArray alloc] initWithObjects:@"직업을 선택해주세요.", @"학생", @"직장인", @"프리랜서", nil];
     // 버튼위에 라벨을 올려주기 위해 만듬
@@ -94,8 +98,16 @@
     
 }
 
-//- (void) refreshHouseData
-//{
+- (void) refreshHouseData
+{
+    
+    
+    /* 수요자측 데이터 - 수요자 이름, 수요자 나이, 수요자 성별, 수요자 직업 뿌리기
+     
+        이름, 나이는 페이스북 세션 정보 통해 미리 세팅
+     */
+    
+    
 //    if (_houseData.title != nil) {
 //        self.houseTitleTextField.text = _houseData.title;
 //    }
@@ -115,18 +127,21 @@
 //    if (_houseData.introHouse != nil) {
 //        self.introHouse.text = _houseData.introHouse;
 //    }
-//    
-//}
-//
-//- (void)fillhouseData
-//{
+    
+}
+
+- (void)fillhouseData
+{
+    /* 기입한 정보(이름, 나이, 성별, 직업) 저장하기 */
+    
 //    _houseData.title = self.houseTitleTextField.text;
 //    _houseData.nearSubwayStation = self.subwaySearchBtn.titleLabel.text;
 //    _houseData.transportation = @"걸어서";
 //    _houseData.transportationMinutes = self.subwayMinutesTextFiled.text;
 //    _houseData.introHouse = self.introHouse.text;
 //    _houseData.premium = self.premiumBrandName;
-//}
+}
+
 - (void)setUserDefaults {
     
     SWMAppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
@@ -320,8 +335,13 @@
     
     if ([[segue identifier] isEqualToString:@"goNext"])
     {
+        RegisterViewController2 *vc = [segue destinationViewController];
         
-        [self setUserDefaults];
+        /* 기입한 정보를 다음 뷰로 전달*/
+        
+//        vc.houseData = _housedata;
+        [self fillhouseData];
+        
     }
 }
 

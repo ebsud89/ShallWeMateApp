@@ -86,6 +86,18 @@
     
     return newImage ;
 }
+
+//hidden status bar
+//- (void)viewWillAppear:(BOOL)animated {
+//    [super viewWillAppear:animated];
+//    [[UIApplication sharedApplication] setStatusBarHidden:YES];
+//}
+//- (void)viewWillDisappear:(BOOL)animated {
+//    [super viewWillDisappear:animated];
+//    // explicitly set the bar to show or it will remain hidden for other view controllers
+//    [[UIApplication sharedApplication] setStatusBarHidden:NO];
+//}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
