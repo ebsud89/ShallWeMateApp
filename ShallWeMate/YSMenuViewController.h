@@ -46,7 +46,7 @@
 @property (nonatomic, assign) CGFloat   shadowRadius;
 
 // Provider = YES, Consumer = NO
-@property (nonatomic, strong) BOOL ProviderBool;
+@property BOOL ProviderBool;
 
 // delegate
 @property (nonatomic, assign) id<YSMenuViewControllerDelegate> menuDelegate;

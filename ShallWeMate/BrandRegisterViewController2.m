@@ -73,8 +73,8 @@
 {
     if ([inputAuthCode.text isEqual:authCode]) {
 
-//        PRegisterViewController1 *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"pRegisterViewController1"];
-//        vc.premiumBrandName = brandNameString;
+        PRegisterViewController1 *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"pRegisterViewController1"];
+        vc.premiumBrandName = brandNameString;
 //        [self.navigationController popViewControllerAnimated:YES];
         [self.navigationController dismissViewControllerAnimated:YES completion:nil];
     } else {

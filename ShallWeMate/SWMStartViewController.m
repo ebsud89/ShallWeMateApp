@@ -28,12 +28,12 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-//        FLAnimatedImage *manWalkingImage = [[FLAnimatedImage alloc] initWithAnimatedGIFData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"manWalking" ofType:@"gif"]]];
+    FLAnimatedImage *loadingImg = [[FLAnimatedImage alloc] initWithAnimatedGIFData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"loadingImg" ofType:@"gif"]]];
     
-    FLAnimatedImage *loadingImage = [[FLAnimatedImage alloc] initWithAnimatedGIFData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://vikrambahl.com/wp-content/uploads/2014/06/ajax_loader_blue_512.gif"]]];
+//    FLAnimatedImage *loadingImage = [[FLAnimatedImage alloc] initWithAnimatedGIFData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://vikrambahl.com/wp-content/uploads/2014/06/ajax_loader_blue_512.gif"]]];
     
     //Assign the FLAnimatedImage types to each of the FLAnimatedImageViews via the animatedImage property
-    self.loadingImageView.animatedImage = loadingImage;
+    self.loadingImageView.animatedImage = loadingImg;
 
     
     

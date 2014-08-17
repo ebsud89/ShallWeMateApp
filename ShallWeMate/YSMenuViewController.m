@@ -156,6 +156,9 @@
     [self openChildView:[self leftView] left:YES animated:animated completion:completionBlock];
     
     [self.leftViewController openMenu];
+    if (self.ProviderBool) {
+        
+    }
 //    [self.leftViewController setProviderMenu];
     
 }

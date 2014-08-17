@@ -59,6 +59,7 @@
 		AEB4BD76199FAA6E004343C3 /* SWMStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB4BD75199FAA6E004343C3 /* SWMStartViewController.m */; };
 		AEB4BD7C199FAC11004343C3 /* FLAnimatedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB4BD79199FAC11004343C3 /* FLAnimatedImage.m */; };
 		AEB4BD7D199FAC11004343C3 /* FLAnimatedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB4BD7B199FAC11004343C3 /* FLAnimatedImageView.m */; };
+		AEB4BD7F19A00692004343C3 /* loadingImg.gif in Resources */ = {isa = PBXBuildFile; fileRef = AEB4BD7E19A00692004343C3 /* loadingImg.gif */; };
 		AED06BFD199CF10A00D0CE54 /* BadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = AED06BFC199CF10A00D0CE54 /* BadgeView.m */; };
 		AED06C01199CF1BD00D0CE54 /* SWMHouseImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AED06BFF199CF1BD00D0CE54 /* SWMHouseImageTableViewCell.m */; };
 		AED06C02199CF1BD00D0CE54 /* SWMHouseImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AED06C00199CF1BD00D0CE54 /* SWMHouseImageTableViewCell.xib */; };
@@ -240,6 +241,7 @@
 		AEB4BD79199FAC11004343C3 /* FLAnimatedImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLAnimatedImage.m; sourceTree = "<group>"; };
 		AEB4BD7A199FAC11004343C3 /* FLAnimatedImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLAnimatedImageView.h; sourceTree = "<group>"; };
 		AEB4BD7B199FAC11004343C3 /* FLAnimatedImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLAnimatedImageView.m; sourceTree = "<group>"; };
+		AEB4BD7E19A00692004343C3 /* loadingImg.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loadingImg.gif; sourceTree = "<group>"; };
 		AED06BFB199CF10A00D0CE54 /* BadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadgeView.h; sourceTree = "<group>"; };
 		AED06BFC199CF10A00D0CE54 /* BadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgeView.m; sourceTree = "<group>"; };
 		AED06BFE199CF1BD00D0CE54 /* SWMHouseImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMHouseImageTableViewCell.h; sourceTree = "<group>"; };
@@ -820,6 +822,7 @@
 		EB785A01198A19D9000B4C18 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				AEB4BD7E19A00692004343C3 /* loadingImg.gif */,
 				689ED67B199D2C5500EA2BCD /* AppleSDGothicNeo-Bold.otf */,
 				689ED67C199D2C5500EA2BCD /* AppleSDGothicNeo-Regular.otf */,
 				689ED66D199D2BB400EA2BCD /* AppleSDGothicNeo-ExtraBold.otf */,
@@ -978,6 +981,7 @@
 				68A9E5EC1995FF1900EF1396 /* bubbleMine.png in Resources */,
 				EB7859DF198A1631000B4C18 /* Images.xcassets in Resources */,
 				EB433BD01990A3E1002667D0 /* subway.csv in Resources */,
+				AEB4BD7F19A00692004343C3 /* loadingImg.gif in Resources */,
 				AEA394B7199BCA6B0075CD1E /* CTAssetsPicker.xcassets in Resources */,
 				AEAA19801999D49F00B5FB8D /* SWMMateInfoTableViewCell.xib in Resources */,
 				EB433BD41990A3E1002667D0 /* testImg3.jpg in Resources */,

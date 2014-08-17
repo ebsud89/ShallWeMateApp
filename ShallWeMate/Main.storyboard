@@ -2385,7 +2385,7 @@
         <!--Navigation Controller-->
         <scene sceneID="2az-cB-EI4">
             <objects>
-                <navigationController definesPresentationContext="YES" id="jyK-MM-4Jq" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="registerNav" definesPresentationContext="YES" id="jyK-MM-4Jq" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZLG-fT-FPR">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2978,6 +2978,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="pm8-ON-Tk0"/>
-        <segue reference="cEM-01-FAo"/>
+        <segue reference="KpW-0g-yCf"/>
     </inferredMetricsTieBreakers>
 </document>
