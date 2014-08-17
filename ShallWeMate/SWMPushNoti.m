@@ -1,15 +1,13 @@
 //
-//  SWMNetwork.h
+//  SWMPushNoti.m
 //  ShallWeMate
 //
 //  Created by Kim Junhyoung on 8/17/14.
 //  Copyright (c) 2014 Kim Junhyoung. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "SWMPushNoti.h"
 
-@interface SWMNetwork : NSObject
+@implementation SWMPushNoti
 
-
-- (NSArray *) jsonToArray:(NSData *)inpData;
 @end

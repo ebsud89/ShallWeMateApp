@@ -19,6 +19,7 @@
 - (void) uploadAsyncHTTPPost
 {
     NSURL *url = [NSURL URLWithString:kServerAddrUpload];
+
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     NSString *data = @"msg=This_is_Test";
@@ -331,5 +332,16 @@ totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
     NSLog(@"%s", __FUNCTION__);
 //    NSString *text = [[[NSString alloc] initWithData:self.recvData encoding:NSUTF8StringEncoding] autorelease];
 //    self.textView.text = text;
+}
+
+- (NSArray *) jsonToArray:(NSData *)inpData {
+    NSError *error = nil;
+    NSArray *json = [NSJSONSerialization JSONObjectWithData:inpData options:kNilOptions error:&error];
+    
+    if (error)
+        NSLog(@"ERROR in Network Class (jsonToArray)");
+    else
+        NSLog(@"JSON item : %lu", [json count]);
+    return json;
 }
 @end
