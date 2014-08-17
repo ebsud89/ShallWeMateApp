@@ -17,7 +17,6 @@
 		689ED67A199D2BB400EA2BCD /* AppleSDGothicNeo-UltraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 689ED673199D2BB400EA2BCD /* AppleSDGothicNeo-UltraLight.otf */; };
 		689ED67D199D2C5500EA2BCD /* AppleSDGothicNeo-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 689ED67B199D2C5500EA2BCD /* AppleSDGothicNeo-Bold.otf */; };
 		689ED67E199D2C5500EA2BCD /* AppleSDGothicNeo-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 689ED67C199D2C5500EA2BCD /* AppleSDGothicNeo-Regular.otf */; };
-		68A7CF77199207BB00DF4BB3 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68A7CF76199207BB00DF4BB3 /* FacebookSDK.framework */; };
 		68A7CF821992177A00DF4BB3 /* SWMAskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A7CF811992177A00DF4BB3 /* SWMAskViewController.m */; };
 		68A7CF851992178700DF4BB3 /* SWMRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A7CF841992178700DF4BB3 /* SWMRequestViewController.m */; };
 		68A7CF89199240C600DF4BB3 /* checkbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 68A7CF86199240C600DF4BB3 /* checkbox.png */; };
@@ -134,6 +133,7 @@
 		EB433BD51990A3E1002667D0 /* testImg1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB433BCC1990A3E1002667D0 /* testImg1.jpg */; };
 		EB433BD61990A3E1002667D0 /* testImg2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB433BCD1990A3E1002667D0 /* testImg2.jpg */; };
 		EB433BDF1990ABC6002667D0 /* SWMMainDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB433BDE1990ABC6002667D0 /* SWMMainDetailViewController.m */; };
+		EB6BFDF119A085680062F2F4 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB6BFDF019A085680062F2F4 /* FacebookSDK.framework */; };
 		EB7859CD198A1631000B4C18 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB7859CC198A1631000B4C18 /* Foundation.framework */; };
 		EB7859CF198A1631000B4C18 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB7859CE198A1631000B4C18 /* CoreGraphics.framework */; };
 		EB7859D1198A1631000B4C18 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB7859D0198A1631000B4C18 /* UIKit.framework */; };
@@ -175,7 +175,6 @@
 		689ED673199D2BB400EA2BCD /* AppleSDGothicNeo-UltraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AppleSDGothicNeo-UltraLight.otf"; sourceTree = "<group>"; };
 		689ED67B199D2C5500EA2BCD /* AppleSDGothicNeo-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AppleSDGothicNeo-Bold.otf"; sourceTree = "<group>"; };
 		689ED67C199D2C5500EA2BCD /* AppleSDGothicNeo-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AppleSDGothicNeo-Regular.otf"; sourceTree = "<group>"; };
-		68A7CF76199207BB00DF4BB3 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		68A7CF801992177A00DF4BB3 /* SWMAskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMAskViewController.h; sourceTree = "<group>"; };
 		68A7CF811992177A00DF4BB3 /* SWMAskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMAskViewController.m; sourceTree = "<group>"; };
 		68A7CF831992178700DF4BB3 /* SWMRequestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMRequestViewController.h; sourceTree = "<group>"; };
@@ -377,6 +376,7 @@
 		EB433BCD1990A3E1002667D0 /* testImg2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testImg2.jpg; sourceTree = "<group>"; };
 		EB433BDD1990ABC6002667D0 /* SWMMainDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWMMainDetailViewController.h; path = ShallWeMate/SWMMainDetailViewController.h; sourceTree = "<group>"; };
 		EB433BDE1990ABC6002667D0 /* SWMMainDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWMMainDetailViewController.m; path = ShallWeMate/SWMMainDetailViewController.m; sourceTree = "<group>"; };
+		EB6BFDF019A085680062F2F4 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		EB7859C9198A1631000B4C18 /* ShallWeMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShallWeMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB7859CC198A1631000B4C18 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EB7859CE198A1631000B4C18 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -403,13 +403,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68A7CF77199207BB00DF4BB3 /* FacebookSDK.framework in Frameworks */,
 				EB2F77611990D1F600EA365E /* Accounts.framework in Frameworks */,
 				EB2F775F1990D1F200EA365E /* Social.framework in Frameworks */,
 				EB7859CF198A1631000B4C18 /* CoreGraphics.framework in Frameworks */,
 				EB2F775D1990D1D900EA365E /* AdSupport.framework in Frameworks */,
 				EB7859D1198A1631000B4C18 /* UIKit.framework in Frameworks */,
 				EB7859CD198A1631000B4C18 /* Foundation.framework in Frameworks */,
+				EB6BFDF119A085680062F2F4 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -771,7 +771,7 @@
 		EB7859CB198A1631000B4C18 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				68A7CF76199207BB00DF4BB3 /* FacebookSDK.framework */,
+				EB6BFDF019A085680062F2F4 /* FacebookSDK.framework */,
 				EB2F77601990D1F600EA365E /* Accounts.framework */,
 				EB2F775E1990D1F200EA365E /* Social.framework */,
 				EB2F775C1990D1D900EA365E /* AdSupport.framework */,
@@ -965,6 +965,7 @@
 				ORGANIZATIONNAME = "___FULLUSERNAME___";
 				TargetAttributes = {
 					EB7859C8198A1631000B4C18 = {
+						DevelopmentTeam = L2CU8D3577;
 						SystemCapabilities = {
 							com.apple.iOS = {
 								enabled = 0;
