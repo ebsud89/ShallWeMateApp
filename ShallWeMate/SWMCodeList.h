@@ -15,4 +15,7 @@
 - (NSDictionary *) retOptions;
 - (NSDictionary *) retGuarants;
 
+- (id) initWithDictionary : (NSDictionary *) inpDic;
+- (NSString *) description;
+
 @end

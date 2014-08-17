@@ -10,7 +10,39 @@
 
 @implementation SWMMessage
 
+- (id) initWithDictionary : (NSDictionary *)inpDic {
+    
+    self = [self init];
+    
+    if (self != nil) {
+        if (inpDic) {
+            [self setValuesForKeysWithDictionary:inpDic];
+        }
+    }
+    
+    return self;
+}
+
+- (id)valueForUndefinedKey:(NSString *)key
+
+{
+    
+    NSLog(@"undefined key : %@",key);
+    
+    return  nil;
+    
+}
+
+-(void)setValue:(id)value forUndefinedKey:(NSString *)key
+
+{
+    
+    NSLog(@"undefined key : %@",key);
+    
+}
+
+
 - (NSString *) description {
-    return [NSString stringWithFormat:@""];
+    return [NSString stringWithFormat:@"{\"mid\":\"%d\",\"fromid\":\"%d\", \"toid\":\"%d\", \"text\":\"%@\"  ", _mid, _fromid, _toid, _text ];
 }
 @end

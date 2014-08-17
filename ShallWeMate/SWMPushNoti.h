@@ -17,4 +17,7 @@
 @property int noti;
 
 @property (nonatomic, strong) NSString *udid;
+
+- (id) initWithDictionary : (NSDictionary *) inpDic;
+- (NSString *) description;
 @end

@@ -8,6 +8,7 @@
 
 #import "SWMNetwork.h"
 
+#define SWMserverAddr @"http://localhost:8080/SWMserver/"
 #define kServerAddrUpload  @"http://localhost:8080/SWMserver/conntest.jsp"
 //#define kServerAddr  @"http://localhost:3000/names/index"
 #define kServerAddr  @"http://localhost:8080/SWMserver/conntest.jsp"
@@ -15,7 +16,28 @@
 #define kServerAddrRestricted  @"http://localhost:8080/SWMserver/conntest.jsp"
 
 @implementation SWMNetwork
- 
+
+- (void) sendUserDataWithPost {
+    
+}
+
+- (void) sendRoomDataWithPost {
+    
+}
+
+- (void) sendQueryArgvWithGet: (NSString *)query : (NSMutableDictionary *)argv {
+    
+//    NSString *args = [[NSString alloc] initWithString:@"%@", argv];
+//        NSURL *url = [NSURL URLWithString:[SWMserverAddr stringByAppendingString:@"test"]];
+    
+}
+
+
+
+
+
+
+
 - (void) uploadAsyncHTTPPost
 {
     NSURL *url = [NSURL URLWithString:kServerAddrUpload];

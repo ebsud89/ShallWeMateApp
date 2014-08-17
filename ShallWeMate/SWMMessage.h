@@ -15,6 +15,7 @@
 @property int toid;
 @property (strong, nonatomic) NSString *text;
 
+- (id) initWithDictionary : (NSDictionary *)inpDic;
 - (NSString *) description;
 
 @end

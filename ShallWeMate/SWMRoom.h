@@ -35,5 +35,7 @@
 @property int time;
 @property int way;
 
+- (id) initWithDictionary : (NSDictionary *)inpDic;
 - (NSString *) description;
+
 @end
