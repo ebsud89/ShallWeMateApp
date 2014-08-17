@@ -10,6 +10,8 @@
 
 @interface SWMNetwork : NSObject
 
+// Room
+- (NSArray *) getAllRooms;
 
 - (NSArray *) jsonToArray:(NSData *)inpData;
 @end

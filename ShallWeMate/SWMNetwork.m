@@ -32,6 +32,23 @@
     
 }
 
+- (NSArray *) getAllRooms {
+    
+    NSURL *url = [NSURL URLWithString:[SWMserverAddr stringByAppendingString:@"comm/getAllRooms"]];
+    
+    NSLog(@"%@", url);
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    NSURLResponse *resp = nil;
+    NSError *error = nil;
+    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&resp error:&error];
+    
+    NSError *err = nil;
+    NSError *err2 = nil;
+    NSArray *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&err];
+
+    return json;
+}
+
 
 
 
