@@ -66,6 +66,9 @@
 - (IBAction)notFacebookClicked:(id)sender {
     UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"MainTableViewControllerNav"];
     
+    [MENU_VIEW_CONTROLLER setProviderBool:YES]; //Provider Menu View
+//    [MENU_VIEW_CONTROLLER setProviderBool:NO]; //Consumer Menu view
+    
     [MENU_VIEW_CONTROLLER presentCenterViewController:vc animated:YES];
 }
 

@@ -30,9 +30,6 @@
         _menuViewController = [[YSMenuViewController alloc] initWithCenterViewController:mainViewController];
         
         SWMMenuViewController * menu = [storyboard instantiateViewControllerWithIdentifier:@"menuViewController"];
-        // setProvider 혹은 setConsumerView를 해줘야함!!!
-//        [menu setConsumerMenu];
-//        [menu setProviderMenu];
         _menuViewController.leftViewController = menu;
         
     }

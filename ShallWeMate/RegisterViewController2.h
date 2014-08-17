@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SWMSubwayViewController.h"
 
-@interface RegisterViewController2 : UIViewController
+@interface RegisterViewController2 : UIViewController <SubwayViewControllerDelegate>
 {
     UILabel *maxBudgetLabel;
     UILabel *maxDepositLabel;
@@ -28,6 +29,8 @@
 @property (retain, nonatomic) IBOutlet UILabel *maxDepositLabel;
 @property (retain, nonatomic) IBOutlet UILabel *locationLabel;
 @property (retain, nonatomic) IBOutlet UITextField *location;
+
+@property (strong, nonatomic) IBOutlet UIButton *subwayStationSearchBtn;
 
 - (IBAction)budgetSlider:(id)sender;
 - (IBAction)depositSlider:(id)sender;

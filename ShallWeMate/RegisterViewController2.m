@@ -39,6 +39,17 @@
     [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000]];
 }
 
+- (IBAction)subwayStationSearchBtnClicked:(id)sender {
+    
+}
+
+// subway delegate
+- (void) didSelectedSubwayStation:(NSDictionary *) subwayDic
+{
+    self.subwayStationSearchBtn.titleLabel.text = [subwayDic objectForKey:@"전철역명"];
+//    self.housedata.subwayDic = subwayDic;
+    
+}
 
 - (IBAction)budgetSlider:(id)sender {
     //label에 금액 띄우기
@@ -65,6 +76,16 @@
                                                     value:self.maxDeposit.value];
     
     maxDepositLabel.center = CGPointMake(thumbRect.origin.x + self.maxDeposit.frame.origin.x,  self.maxDeposit.frame.origin.y - 20);
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"searchSubway"]) {
+        SWMSubwayViewController *vc = [segue destinationViewController];
+        vc.delegate = self;
+        
+        [self.view endEditing:YES];
+    }
 }
 
 @end

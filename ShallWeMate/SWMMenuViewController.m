@@ -44,12 +44,12 @@
 - (void) setProviderMenu
 {
     [self.consumerView removeFromSuperview];
-    [self.providerView removeFromSuperview];
+//    [self.providerView removeFromSuperview];
 }
 
 - (void) setConsumerMenu
 {
-//    [self.providerView removeFromSuperview];
+    [self.providerView removeFromSuperview];
 }
 
 /*

@@ -155,10 +155,16 @@
     NSLog(@"Open Left Side View controller Animated");
     [self openChildView:[self leftView] left:YES animated:animated completion:completionBlock];
     
-    [self.leftViewController openMenu];
-    if (self.ProviderBool) {
-        
+    if (!self.ProviderBool) {
+        [self.leftViewController setProviderMenu];
     }
+    else
+    {
+        [self.leftViewController setConsumerMenu];
+    }
+    
+    [self.leftViewController openMenu];
+
 //    [self.leftViewController setProviderMenu];
     
 }

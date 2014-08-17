@@ -161,6 +161,7 @@
 - (void) didSelectedSubwayStation:(NSDictionary *) subwayDic
 {
     self.subwaySearchBtn.titleLabel.text = [subwayDic objectForKey:@"전철역명"];
+    self.housedata.subwayDic = subwayDic;
 
 }
 

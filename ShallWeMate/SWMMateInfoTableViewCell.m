@@ -25,4 +25,14 @@
     // Configure the view for the selected state
 }
 
+- (void) setAvgAge:(NSString *)avgAge
+{
+    self.avgAgeLabel.text = avgAge;
+}
+
+- (void) setGender:(NSString *)gender
+{
+    self.genderLabel.text = gender;
+}
+
 @end

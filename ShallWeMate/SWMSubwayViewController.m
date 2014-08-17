@@ -69,6 +69,8 @@
         
         [self.subwaySearchBar sizeToFit];
         self.searchDisplayController.delegate = self;
+//        self.subwayTableView.delegate =self;
+//        self.subwayTableView.dataSource = self;
         
     }
 }
