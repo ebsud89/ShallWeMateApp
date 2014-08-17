@@ -57,9 +57,8 @@
                                                              FBSessionState status,
                                                              NSError *error) {
                 // 뷰 전환
-                //                CheckRole_VC *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"registerView"];
-                //                [self.view addSubview:vc.view];
                 [self performSegueWithIdentifier:@"toRegisterSegue" sender:nil];
+                
                 
             }];
         } else {

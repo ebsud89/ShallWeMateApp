@@ -12,6 +12,8 @@
 @interface RegisterViewController1  : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate>
 {
     
+    UIActionSheet *actionSheet;
+    UIPickerView *picker;
     UIButton *jobButton;
     NSArray *jobsArray;
     UITextField *userName;
@@ -21,6 +23,7 @@
 @property (strong, nonatomic) HouseData *houseData;
 @property (strong, nonatomic) IBOutlet UITextField *userName;
 @property (weak, nonatomic) IBOutlet FBProfilePictureView *fbProfilePictureView;
+@property (weak, nonatomic) IBOutlet UITextField *ageTextField;
 
 
 @property (retain, nonatomic) IBOutlet UIButton *jobButton;

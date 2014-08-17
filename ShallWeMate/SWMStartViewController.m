@@ -7,6 +7,8 @@
 //
 
 #import "SWMStartViewController.h"
+#import "SWMAppDelegate.h"
+#import "SWMLoginViewController.h"
 
 @interface SWMStartViewController ()
 
@@ -46,6 +48,31 @@
 //                                   selector: @selector(startView)
 //                                   userInfo: nil
 //                                    repeats: NO];
+    
+    //facebook session check
+//    SWMAppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
+//    if (!appDelegate.session.isOpen) {
+//        // create a fresh session object
+//        appDelegate.session = [[FBSession alloc] init];
+//        
+//        // session 확인
+//        if (appDelegate.session.state == FBSessionStateCreatedTokenLoaded) {
+//            
+//            [appDelegate.session openWithCompletionHandler:^(FBSession *session,
+//                                                             FBSessionState status,
+//                                                             NSError *error) {
+//                
+//                NSLog(@" session exist");
+//                [self notFacebookClicked];
+//
+//            }];
+//        } else {
+//            NSLog(@"no session");
+//            [self performSegueWithIdentifier:@"facebookLogin" sender:nil];
+//            
+//        }
+//        
+//    }
 }
 
 - (void) startView
@@ -69,6 +96,11 @@
     [MENU_VIEW_CONTROLLER presentCenterViewController:vc animated:YES];
 }
 
+- (IBAction)notFacebookClicked{
+    UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"MainTableViewControllerNav"];
+    
+    [MENU_VIEW_CONTROLLER presentCenterViewController:vc animated:YES];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
