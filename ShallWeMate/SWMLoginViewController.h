@@ -18,6 +18,7 @@
 }
 
 @property NSString *userId;
+@property (weak, nonatomic) IBOutlet UIButton *login;
 
 - (IBAction)facebookLoginClick:(id)sender;
 

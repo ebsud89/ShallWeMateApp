@@ -50,29 +50,29 @@
 //                                    repeats: NO];
     
     //facebook session check
-//    SWMAppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
-//    if (!appDelegate.session.isOpen) {
-//        // create a fresh session object
-//        appDelegate.session = [[FBSession alloc] init];
-//        
-//        // session 확인
-//        if (appDelegate.session.state == FBSessionStateCreatedTokenLoaded) {
-//            
-//            [appDelegate.session openWithCompletionHandler:^(FBSession *session,
-//                                                             FBSessionState status,
-//                                                             NSError *error) {
-//                
-//                NSLog(@" session exist");
-//                [self notFacebookClicked];
-//
-//            }];
-//        } else {
-//            NSLog(@"no session");
-//            [self performSegueWithIdentifier:@"facebookLogin" sender:nil];
-//            
-//        }
-//        
-//    }
+    SWMAppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
+    if (!appDelegate.session.isOpen) {
+        // create a fresh session object
+        appDelegate.session = [[FBSession alloc] init];
+        
+        // session 확인
+        if (appDelegate.session.state == FBSessionStateCreatedTokenLoaded) {
+            
+            [appDelegate.session openWithCompletionHandler:^(FBSession *session,
+                                                             FBSessionState status,
+                                                             NSError *error) {
+                
+                NSLog(@" session exist");
+                [self notFacebookClicked];
+
+            }];
+        } else {
+            NSLog(@"no session");
+            [self performSegueWithIdentifier:@"facebookLogin" sender:nil];
+            
+        }
+        
+    }
 }
 
 - (void) startView

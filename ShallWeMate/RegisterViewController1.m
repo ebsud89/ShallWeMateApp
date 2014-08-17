@@ -12,7 +12,6 @@
 @end
 
 @implementation RegisterViewController1
-@synthesize houseData;
 @synthesize jobButton;
 @synthesize fbProfilePictureView;
 @synthesize userName;
@@ -95,6 +94,39 @@
     
 }
 
+//- (void) refreshHouseData
+//{
+//    if (_houseData.title != nil) {
+//        self.houseTitleTextField.text = _houseData.title;
+//    }
+//    
+//    if (_houseData.transportation != nil) {
+//        self.subwaySearchBtn.titleLabel.text = _houseData.nearSubwayStation;
+//    }
+//    
+//    if (_houseData.transportation != nil) {
+//        NSLog(@"걸어서");
+//    }
+//    
+//    if (_houseData.transportationMinutes != nil) {
+//        self.subwayMinutesTextFiled.text = _houseData.transportationMinutes;
+//    }
+//    
+//    if (_houseData.introHouse != nil) {
+//        self.introHouse.text = _houseData.introHouse;
+//    }
+//    
+//}
+//
+//- (void)fillhouseData
+//{
+//    _houseData.title = self.houseTitleTextField.text;
+//    _houseData.nearSubwayStation = self.subwaySearchBtn.titleLabel.text;
+//    _houseData.transportation = @"걸어서";
+//    _houseData.transportationMinutes = self.subwayMinutesTextFiled.text;
+//    _houseData.introHouse = self.introHouse.text;
+//    _houseData.premium = self.premiumBrandName;
+//}
 - (void)setUserDefaults {
     
     SWMAppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];

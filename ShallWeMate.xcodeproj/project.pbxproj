@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		689ABF4619A07CA40034F30F /* facebook_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 689ABF4519A07CA40034F30F /* facebook_btn.png */; };
+		689ABF4C19A088D50034F30F /* final_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 689ABF4B19A088D50034F30F /* final_logo.png */; };
+		689ABF4E19A089B10034F30F /* back.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 689ABF4D19A089B10034F30F /* back.jpg */; };
+		689ABF5019A08AEF0034F30F /* 1호선.png in Resources */ = {isa = PBXBuildFile; fileRef = 689ABF4F19A08AEF0034F30F /* 1호선.png */; };
+		689ABF5219A08BC90034F30F /* 1호선_수정.png in Resources */ = {isa = PBXBuildFile; fileRef = 689ABF5119A08BC90034F30F /* 1호선_수정.png */; };
+		689ABF5819A08CB70034F30F /* life_cover02.png in Resources */ = {isa = PBXBuildFile; fileRef = 689ABF5319A08CB70034F30F /* life_cover02.png */; };
+		689ABF5919A08CB70034F30F /* life_cover.png in Resources */ = {isa = PBXBuildFile; fileRef = 689ABF5419A08CB70034F30F /* life_cover.png */; };
+		689ABF5A19A08CB70034F30F /* cook.png in Resources */ = {isa = PBXBuildFile; fileRef = 689ABF5519A08CB70034F30F /* cook.png */; };
+		689ABF5B19A08CB70034F30F /* movie.png in Resources */ = {isa = PBXBuildFile; fileRef = 689ABF5619A08CB70034F30F /* movie.png */; };
+		689ABF5C19A08CB70034F30F /* interior.png in Resources */ = {isa = PBXBuildFile; fileRef = 689ABF5719A08CB70034F30F /* interior.png */; };
+		689BDA9319A0678F002FC472 /* 메인배경.png in Resources */ = {isa = PBXBuildFile; fileRef = 689BDA9019A0678F002FC472 /* 메인배경.png */; };
+		689BDA9419A0678F002FC472 /* facebookButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 689BDA9119A0678F002FC472 /* facebookButton.png */; };
+		689BDA9519A0678F002FC472 /* 로고.png in Resources */ = {isa = PBXBuildFile; fileRef = 689BDA9219A0678F002FC472 /* 로고.png */; };
 		689ED65C199D24E700EA2BCD /* SWMSummeryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 689ED65B199D24E700EA2BCD /* SWMSummeryViewController.m */; };
 		689ED674199D2BB400EA2BCD /* AppleSDGothicNeo-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 689ED66D199D2BB400EA2BCD /* AppleSDGothicNeo-ExtraBold.otf */; };
 		689ED675199D2BB400EA2BCD /* AppleSDGothicNeo-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 689ED66E199D2BB400EA2BCD /* AppleSDGothicNeo-Heavy.otf */; };
@@ -158,6 +171,19 @@
 /* Begin PBXFileReference section */
 		6899ED721997675100CE0F79 /* SWMNoticeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMNoticeViewController.h; sourceTree = "<group>"; };
 		6899ED731997675100CE0F79 /* SWMNoticeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMNoticeViewController.m; sourceTree = "<group>"; };
+		689ABF4519A07CA40034F30F /* facebook_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook_btn.png; sourceTree = "<group>"; };
+		689ABF4B19A088D50034F30F /* final_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = final_logo.png; sourceTree = "<group>"; };
+		689ABF4D19A089B10034F30F /* back.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = back.jpg; sourceTree = "<group>"; };
+		689ABF4F19A08AEF0034F30F /* 1호선.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1호선.png"; sourceTree = "<group>"; };
+		689ABF5119A08BC90034F30F /* 1호선_수정.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1호선_수정.png"; sourceTree = "<group>"; };
+		689ABF5319A08CB70034F30F /* life_cover02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = life_cover02.png; sourceTree = "<group>"; };
+		689ABF5419A08CB70034F30F /* life_cover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = life_cover.png; sourceTree = "<group>"; };
+		689ABF5519A08CB70034F30F /* cook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cook.png; sourceTree = "<group>"; };
+		689ABF5619A08CB70034F30F /* movie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = movie.png; sourceTree = "<group>"; };
+		689ABF5719A08CB70034F30F /* interior.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = interior.png; sourceTree = "<group>"; };
+		689BDA9019A0678F002FC472 /* 메인배경.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "메인배경.png"; sourceTree = "<group>"; };
+		689BDA9119A0678F002FC472 /* facebookButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebookButton.png; sourceTree = "<group>"; };
+		689BDA9219A0678F002FC472 /* 로고.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "로고.png"; sourceTree = "<group>"; };
 		689ED658199CE45500EA2BCD /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		689ED65A199D24E700EA2BCD /* SWMSummeryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMSummeryViewController.h; sourceTree = "<group>"; };
 		689ED65B199D24E700EA2BCD /* SWMSummeryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMSummeryViewController.m; sourceTree = "<group>"; };
@@ -822,6 +848,19 @@
 		EB785A01198A19D9000B4C18 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				689ABF5319A08CB70034F30F /* life_cover02.png */,
+				689ABF5419A08CB70034F30F /* life_cover.png */,
+				689ABF5519A08CB70034F30F /* cook.png */,
+				689ABF5619A08CB70034F30F /* movie.png */,
+				689ABF5719A08CB70034F30F /* interior.png */,
+				689ABF5119A08BC90034F30F /* 1호선_수정.png */,
+				689ABF4F19A08AEF0034F30F /* 1호선.png */,
+				689ABF4D19A089B10034F30F /* back.jpg */,
+				689ABF4B19A088D50034F30F /* final_logo.png */,
+				689ABF4519A07CA40034F30F /* facebook_btn.png */,
+				689BDA9019A0678F002FC472 /* 메인배경.png */,
+				689BDA9119A0678F002FC472 /* facebookButton.png */,
+				689BDA9219A0678F002FC472 /* 로고.png */,
 				AEB4BD7E19A00692004343C3 /* loadingImg.gif */,
 				689ED67B199D2C5500EA2BCD /* AppleSDGothicNeo-Bold.otf */,
 				689ED67C199D2C5500EA2BCD /* AppleSDGothicNeo-Regular.otf */,
@@ -987,27 +1026,40 @@
 				EB433BD41990A3E1002667D0 /* testImg3.jpg in Resources */,
 				EB433BD61990A3E1002667D0 /* testImg2.jpg in Resources */,
 				AEB4BD69199F59FC004343C3 /* Main.storyboard in Resources */,
+				689ABF5B19A08CB70034F30F /* movie.png in Resources */,
+				689BDA9519A0678F002FC472 /* 로고.png in Resources */,
 				EB433BD21990A3E1002667D0 /* face_test.png in Resources */,
+				689ABF5A19A08CB70034F30F /* cook.png in Resources */,
 				AED06C0C199D31EA00D0CE54 /* SWMQAndATableViewCell.xib in Resources */,
 				689ED67A199D2BB400EA2BCD /* AppleSDGothicNeo-UltraLight.otf in Resources */,
 				689ED67D199D2C5500EA2BCD /* AppleSDGothicNeo-Bold.otf in Resources */,
 				689ED675199D2BB400EA2BCD /* AppleSDGothicNeo-Heavy.otf in Resources */,
 				EB2F77741991C0BD00EA365E /* TitleTableViewCell.xib in Resources */,
 				EB2F77761991C0BD00EA365E /* ManagementTableViewCell.xib in Resources */,
+				689ABF5219A08BC90034F30F /* 1호선_수정.png in Resources */,
+				689BDA9319A0678F002FC472 /* 메인배경.png in Resources */,
 				689ED676199D2BB400EA2BCD /* AppleSDGothicNeo-Light.otf in Resources */,
 				689ED674199D2BB400EA2BCD /* AppleSDGothicNeo-ExtraBold.otf in Resources */,
+				689ABF5819A08CB70034F30F /* life_cover02.png in Resources */,
 				EB433BCE1990A3E1002667D0 /* radio-off.png in Resources */,
 				AED06C07199D313800D0CE54 /* SWMRoomInfoTableViewCell.xib in Resources */,
+				689ABF5C19A08CB70034F30F /* interior.png in Resources */,
+				689ABF4E19A089B10034F30F /* back.jpg in Resources */,
 				68A9E5F01995FF4D00EF1396 /* missingAvatar.png in Resources */,
 				689ED678199D2BB400EA2BCD /* AppleSDGothicNeo-SemiBold.otf in Resources */,
+				689BDA9419A0678F002FC472 /* facebookButton.png in Resources */,
 				AEB4BD73199F85A0004343C3 /* SWMTransportTableViewCell.xib in Resources */,
+				689ABF4619A07CA40034F30F /* facebook_btn.png in Resources */,
 				AEA643EA1999971A007C0422 /* SWMImageScrollTableViewCell.xib in Resources */,
 				68A7CF89199240C600DF4BB3 /* checkbox.png in Resources */,
 				689ED679199D2BB400EA2BCD /* AppleSDGothicNeo-Thin.otf in Resources */,
+				689ABF4C19A088D50034F30F /* final_logo.png in Resources */,
 				68A7CF8B199240C600DF4BB3 /* checkbox-checked.png in Resources */,
 				EB2F77721991C0BD00EA365E /* CollectionViewTableViewCell.xib in Resources */,
+				689ABF5019A08AEF0034F30F /* 1호선.png in Resources */,
 				EB2F77781991C0BD00EA365E /* BasicSearchTableViewCell.xib in Resources */,
 				EB433BD31990A3E1002667D0 /* testImg.jpg in Resources */,
+				689ABF5919A08CB70034F30F /* life_cover.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
