@@ -89,6 +89,20 @@
     return myStr;
 }
 
+- (NSString *) mergeArray:(NSMutableArray *)array
+{
+    NSNumber *num = [array objectAtIndex:0];
+    NSString *myStr = [NSString stringWithFormat:@"%@",num];
+    
+    for (int i = 1; i< [array count]; i++) {
+        NSNumber *n = [array objectAtIndex:i];
+        NSString *s = [NSString stringWithFormat:@"|%@",n];
+        myStr = [myStr stringByAppendingString:s];
+    }
+    
+    return myStr;
+}
+
 -(void) makeRandomImages
 {
     houseImageArray = [[NSArray alloc]initWithObjects:
@@ -104,6 +118,80 @@
     
     int count = (int)[houseImageArray count];
     NSLog(@"개수개수개수 : %d", count);
+}
+
+- (SWMRoom *)exportToSWMRoom
+{
+    
+    SWMRoom *room = [[SWMRoom alloc]init];
+    
+    
+//    room.rid;
+    
+    room.name = self.title;
+    
+//    room.hostid;
+    
+    
+    
+//    room.sid;
+    
+//    room.sname;
+    
+    room.rent = [self.monthlyRentCost intValue];
+    
+    room.guaranty = [self.securityCost intValue];
+    
+    room.management = [self.managementCost intValue];
+    
+    
+    
+    room.infos = [self mergeArray:self.enableRoomsMore];
+    
+    room.options = [self mergeArray:self.enableOptions];
+    
+    room.styles = [self mergeArray:self.enableLifeStyle];
+    
+    room.rules = [self mergeArray:self.enableHouseRoles];
+    
+    
+    
+    room.premium = [self.premium intValue];
+    
+    
+    
+    room.total = [self.roomAll intValue];
+    
+    room.available = [self.roomEmpty intValue];
+    
+//    room.wsex;
+//    
+//    room.msex;
+    
+    
+    
+    room.time = [self.transportationMinutes intValue];
+    
+    room.way = [self.transportation intValue];
+    
+    room.subwayStationName = [self.subwayDic objectForKey:@"전철역명"];
+    
+    room.subwayStationCode = [self.subwayDic objectForKey:@"전철역코드"];
+    
+    room.introHouse = self.introHouse;
+    
+    room.avgAge = [self.avgAge intValue];
+    
+    room.existingMenNum = [self.existingMenNum intValue];
+    
+    room.existingWomenNum = [self.existingWomenNum intValue];
+    
+    room.wantMenNum = [self.wantMenNum intValue];
+    
+    room.wantWomenNum = [self.wantWomenNum intValue];
+    
+
+    return room;
 }
 
 @end

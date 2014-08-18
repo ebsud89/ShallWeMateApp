@@ -46,6 +46,76 @@
     return [NSString stringWithFormat:@"{\"rid\":\"%d\", \"name\":\"%@\", \"rent\":\"%d\", \"guaranty\":\"%d\", \"management\":\"%d\", \"infos\":\"%@\", \"options\":\"%@\", \"styles\":\"%@\", \"rules\":\"%@\", \"premium\":\"%d\", \"total\":\"%d\", \"available\":\"%d\" , \"wsex\":\"%d\", \"msex\":\"%d\", \"time\":\"%d\", \"way\":\"%d\" ", _rid, _name, _rent, _guaranty, _management, _infos, _options, _styles, _rules, _premium, _total, _available, _wsex, _msex, _time, _way];
 }
 
+- (HouseData *)exportToHouseData
+{
+    
+    HouseData *houseData = [[HouseData alloc]init];
+    
+    
+    houseData.title = self.name;
+    
+//    room.rent = [self.monthlyRentCost intValue];
+    houseData.monthlyRentCost = [NSString stringWithFormat:@"%d",self.rent];
+//    room.guaranty = [self.securityCost intValue];
+    houseData.securityCost = [NSString stringWithFormat:@"%d", self.guaranty];
+//    room.management = [self.managementCost intValue];
+    houseData.managementCost = [NSString stringWithFormat:@"%d", self.management];
+    
+    
+//    room.infos = [self mergeArray:self.enableRoomsMore];
+    NSArray *itemArray = [self.infos componentsSeparatedByString:@"|"];
+    houseData.enableRoomsMore = [[NSMutableArray alloc]initWithArray:itemArray];
+//    room.options = [self mergeArray:self.enableOptions];
+    itemArray = [self.options componentsSeparatedByString:@"|"];
+    houseData.enableOptions = [[NSMutableArray alloc]initWithArray:itemArray];
+//    room.styles = [self mergeArray:self.enableLifeStyle];
+    itemArray = [self.styles componentsSeparatedByString:@"|"];
+    houseData.enableLifeStyle = [[NSMutableArray alloc]initWithArray:itemArray];
+//    room.rules = [self mergeArray:self.enableHouseRoles];
+    itemArray = [self.styles componentsSeparatedByString:@"|"];
+    houseData.enableHouseRoles = [[NSMutableArray alloc]initWithArray:itemArray];
+    
+    
+//    room.premium = [self.premium intValue];
+    houseData.premium = [NSString stringWithFormat:@"%d",self.premium];
+    
+    
+//    room.total = [self.roomAll intValue];
+    houseData.roomAll = [NSString stringWithFormat:@"%d",self.total];
+    
+//    room.available = [self.roomEmpty intValue];
+    houseData.roomEmpty = [NSString stringWithFormat:@"%d", self.available];
+    //    room.wsex;
+    //
+    //    room.msex;
+    
+    
+    
+//    room.time = [self.transportationMinutes intValue];
+    houseData.transportationMinutes = [NSString stringWithFormat:@"%d", self.time];
+//    room.way = [self.transportation intValue];
+    houseData.transportation = [NSString stringWithFormat:@"%d", self.way];
+//    room.subwayStationName = [self.subwayDic objectForKey:@"전철역명"];
+    houseData.subwayDic = [[NSMutableDictionary alloc]init];
+    [houseData.subwayDic setValue:self.subwayStationName forKey:@"전철역명"];
+//    room.subwayStationCode = [self.subwayDic objectForKey:@"전철역코드"];
+    [houseData.subwayDic setValue:self.subwayStationCode forKey:@"전철역코드"];
+//    room.introHouse = self.introHouse;
+    houseData.introHouse = self.introHouse;
+//    room.avgAge = [self.avgAge intValue];
+    houseData.avgAge = [NSString stringWithFormat:@"%d",self.avgAge];
+//    room.existingMenNum = [self.existingMenNum intValue];
+    houseData.existingMenNum = [NSString stringWithFormat:@"%d", self.existingMenNum];
+//    room.existingWomenNum = [self.existingWomenNum intValue];
+    houseData.existingWomenNum = [NSString stringWithFormat:@"%d",self.existingWomenNum];
+//    room.wantMenNum = [self.wantMenNum intValue];
+    houseData.wantMenNum = [NSString stringWithFormat:@"%d",self.wantMenNum];
+//    room.wantWomenNum = [self.wantWomenNum intValue];
+    houseData.wantWomenNum = [NSString stringWithFormat:@"%d", self.wantWomenNum];
+
+    return houseData;
+}
+
 //
 //-(NSString *)description
 //

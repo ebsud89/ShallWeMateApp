@@ -8,7 +8,7 @@
 
 #import "SWMNetwork.h"
 
-#define SWMserverAddr @"http://localhost:8080/SWMserver/"
+#define SWMserverAddr @"http://54.249.103.4/swm/"
 #define kServerAddrUpload  @"http://localhost:8080/SWMserver/conntest.jsp"
 //#define kServerAddr  @"http://localhost:3000/names/index"
 #define kServerAddr  @"http://localhost:8080/SWMserver/conntest.jsp"
@@ -34,7 +34,7 @@
 
 - (NSArray *) getAllRooms {
     
-    NSURL *url = [NSURL URLWithString:[SWMserverAddr stringByAppendingString:@"comm/getAllRooms"]];
+    NSURL *url = [NSURL URLWithString:[SWMserverAddr stringByAppendingString:@"getAllRooms"]];
     
     NSLog(@"%@", url);
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -42,10 +42,20 @@
     NSError *error = nil;
     NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&resp error:&error];
     
+    NSLog(@"%@", data);
+    
     NSError *err = nil;
     NSError *err2 = nil;
     NSArray *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&err];
+    NSLog(@"%ld", [json count]);
 
+    NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"%@", jsonString);
+        for(NSDictionary *item in json) {
+            NSLog(@"Item: %@", item);
+        }
+    
+    
     return json;
 }
 
