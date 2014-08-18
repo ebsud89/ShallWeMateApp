@@ -71,4 +71,49 @@
     NSLog(@"선택한 하우스 룰 : %@", [self printArray:self.enableHouseRoles]);
 }
 
+- (NSString *) mergeArray:(NSMutableArray *)array
+{
+    NSNumber *num = [array objectAtIndex:0];
+    NSString *myStr = [NSString stringWithFormat:@"%@",num];
+    
+    for (int i = 1; i< [array count]; i++) {
+        NSNumber *n = [array objectAtIndex:i];
+        NSString *s = [NSString stringWithFormat:@"|%@",n];
+        myStr = [myStr stringByAppendingString:s];
+    }
+    
+    return myStr;
+}
+
+- (SWMMember *)exportToSWMMember
+{
+    
+    SWMMember *member = [[SWMMember alloc]init];
+
+    member.name = self.name;
+    member.age = [self.age intValue];
+    member.sex = [self.sex intValue];
+    member.job = self.job;
+
+    member.nick = [self.subwayDic objectForKey:@"전철역명"];
+    
+    member.subwayStationCode = [self.subwayDic objectForKey:@"전철역코드"];
+    member.rent = [self.monthlyRentCost intValue];
+  
+    member.guaranty = [self.securityCost intValue];
+    
+
+    member.avgAge = [self.avgAge intValue];
+    
+    member.allowsex = [self.allowsex intValue];
+
+    
+    member.styles = [self mergeArray:self.enableLifeStyle];
+    
+    member.rules = [self mergeArray:self.enableHouseRoles];
+    
+    
+    return member;
+}
+
 @end
