@@ -11,7 +11,7 @@
 @implementation SWMMateInfoTableViewCell
 + (CGFloat)getHeight
 {
-    return 130.0f;
+    return 88.0f;
 }
 - (void)awakeFromNib
 {

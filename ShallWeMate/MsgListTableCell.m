@@ -10,6 +10,8 @@
 
 @implementation MsgListTableCell
 
+UIImageView *imgView;
+
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -20,6 +22,12 @@
     return self;
 }
 
+- (void)viewDidLoad {
+    imgView.image = [UIImage imageNamed:@"face_test.png"];
+    
+    imgView.layer.cornerRadius = imgView.frame.size.width / 2;
+    imgView.clipsToBounds = YES;
+}
 - (void)awakeFromNib
 {
     // Initialization code

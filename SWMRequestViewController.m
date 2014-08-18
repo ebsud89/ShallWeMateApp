@@ -24,23 +24,23 @@
     [super viewDidLoad];
     
     //체크박스 이미지 설정
-    [self.ck1 setBackgroundImage:[UIImage imageNamed:@"checkbox.png"] forState:UIControlStateNormal];
-    [self.ck1 setBackgroundImage:[UIImage imageNamed:@"checkbox-checked.png"] forState:UIControlStateSelected];
+    [self.ck1 setBackgroundImage:[UIImage imageNamed:@"check0.png"] forState:UIControlStateNormal];
+    [self.ck1 setBackgroundImage:[UIImage imageNamed:@"check1.png"] forState:UIControlStateSelected];
     [self.ck1 addTarget:self action:@selector(ckeckbox1pressed:) forControlEvents:UIControlEventTouchUpInside];
     
     
-    [self.ch2 setBackgroundImage:[UIImage imageNamed:@"checkbox.png"] forState:UIControlStateNormal];
-    [self.ch2 setBackgroundImage:[UIImage imageNamed:@"checkbox-checked.png"] forState:UIControlStateSelected];
+    [self.ch2 setBackgroundImage:[UIImage imageNamed:@"check0.png"] forState:UIControlStateNormal];
+    [self.ch2 setBackgroundImage:[UIImage imageNamed:@"check1.png"] forState:UIControlStateSelected];
     [self.ch2 addTarget:self action:@selector(ckeckbox2pressed:) forControlEvents:UIControlEventTouchUpInside];
     
     
-    [self.ch3 setBackgroundImage:[UIImage imageNamed:@"checkbox.png"] forState:UIControlStateNormal];
-    [self.ch3 setBackgroundImage:[UIImage imageNamed:@"checkbox-checked.png"] forState:UIControlStateSelected];
+    [self.ch3 setBackgroundImage:[UIImage imageNamed:@"check0.png"] forState:UIControlStateNormal];
+    [self.ch3 setBackgroundImage:[UIImage imageNamed:@"check1.png"] forState:UIControlStateSelected];
     [self.ch3 addTarget:self action:@selector(ckeckbox3pressed:) forControlEvents:UIControlEventTouchUpInside];
     
     
-    [self.ck4 setBackgroundImage:[UIImage imageNamed:@"checkbox.png"] forState:UIControlStateNormal];
-    [self.ck4 setBackgroundImage:[UIImage imageNamed:@"checkbox-checked.png"] forState:UIControlStateSelected];
+    [self.ck4 setBackgroundImage:[UIImage imageNamed:@"check0.png"] forState:UIControlStateNormal];
+    [self.ck4 setBackgroundImage:[UIImage imageNamed:@"check1.png"] forState:UIControlStateSelected];
     [self.ck4 addTarget:self action:@selector(ckeckbox4pressed:) forControlEvents:UIControlEventTouchUpInside];
     
     //체크박스 선택 유무 확인위한 플래그 설정
@@ -57,8 +57,8 @@
     //navigation bar color
     [[[self navigationController] navigationBar] setTintColor:[UIColor whiteColor]];
     [[[self navigationController] navigationBar] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
-    [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:174/255.0 green:70/255.0 blue:115/255.0 alpha:10000]];
-    //    [[[self navigationController] navigationBar] setBackgroundColor:[UIColor colorWithRed:174/255.0 green:70/255.0 blue:115/255.0 alpha:10000]];
+    [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000]];
+    [[[self navigationController] navigationBar] setBackgroundColor:[UIColor colorWithRed:174/255.0 green:70/255.0 blue:115/255.0 alpha:1]];
     
 }
 

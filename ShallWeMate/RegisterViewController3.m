@@ -9,7 +9,6 @@
 #import "RegisterViewController3.h"
 #import "RegisterViewController4.h"
 @interface RegisterViewController3 ()
-@property (nonatomic, strong) UILabel *ageTitleLabel;
 @end
 @implementation RegisterViewController3
 
@@ -30,17 +29,17 @@
     [super viewDidLoad];
     
     [self refreshHouseData];
-    agesArray = [[NSArray alloc] initWithObjects:@"평균 연령을 선택해주세요", @"20대 초반", @"20대 중반", @"20대 후반", @"30대 초반", @"30대 중반", @"30대 후반", @"40대 이상", nil];
+    agesArray = [[NSArray alloc] initWithObjects: @"20대 초반", @"20대 중반", @"20대 후반", @"30대 초반", @"30대 중반", @"30대 후반", @"40대 이상", nil];
     
     // 버튼위에 라벨을 올려주기 위해 만듬
     ageTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(6.0f, 2.0f, 150.0f, 30.0f)];
-    ageTitleLabel.textColor = [UIColor darkGrayColor];
+    ageTitleLabel.textColor = [UIColor lightGrayColor];
     ageTitleLabel.textAlignment = NSTextAlignmentCenter;
     ageTitleLabel.backgroundColor = [UIColor clearColor];
     ageTitleLabel.font = [UIFont systemFontOfSize:14.0f];
     ageTitleLabel.lineBreakMode = NSLineBreakByClipping;
     [ageSelectBtn addSubview:ageTitleLabel];
-    ageTitleLabel.text = [agesArray objectAtIndex:0]; ;
+    ageTitleLabel.text = @"원하는 메이트의 연령대를 선택해주세요";
     
     [ageSelectBtn addTarget:self action:@selector(ageSelect:)             forControlEvents:UIControlEventTouchUpInside];
     
@@ -53,13 +52,13 @@
     [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000]];
     
     [_sameSex setTag:0];
-    [_sameSex setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [_sameSex setTitleColor:[UIColor purpleColor] forState:UIControlStateSelected];
+    [_sameSex setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+    [_sameSex setTitleColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000] forState:UIControlStateSelected];
     [_sameSex addTarget:self action:@selector(radiobuttonSelected:) forControlEvents:UIControlEventTouchUpInside];
     
     [_mixedSex setTag:1];
-    [_mixedSex setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [_mixedSex setTitleColor:[UIColor purpleColor] forState:UIControlStateSelected];
+    [_mixedSex setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+    [_mixedSex setTitleColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000] forState:UIControlStateSelected];
     [_mixedSex addTarget:self action:@selector(radiobuttonSelected:) forControlEvents:UIControlEventTouchUpInside];
 }
 

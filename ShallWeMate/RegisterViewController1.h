@@ -26,6 +26,9 @@
 @property (weak, nonatomic) IBOutlet FBProfilePictureView *fbProfilePictureView;
 @property (weak, nonatomic) IBOutlet UITextField *ageTextField;
 
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *man;
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *woman;
+
 
 @property (retain, nonatomic) IBOutlet UIButton *jobButton;
 

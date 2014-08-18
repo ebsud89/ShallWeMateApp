@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MemberData.h"
 
 @interface SWMRegisterSummeryViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *contentTableView;
 
+@property (weak, nonatomic) MemberData *memberData;
 @end

@@ -19,6 +19,8 @@
     NSArray *agesArray;
     
 }
+
+@property (weak, nonatomic) IBOutlet UILabel *ageTitleLabel;
 @property (weak, nonatomic) MemberData *memberData;
 @property (retain, nonatomic) IBOutlet UIButton *ageSelectBtn;
 //@property (strong, nonatomic) IBOutlet UITextField *age;

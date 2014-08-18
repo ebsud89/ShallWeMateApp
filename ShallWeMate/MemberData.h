@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SWMMember.h"
 
 @interface MemberData : NSObject
 {
@@ -15,8 +16,8 @@
 
 @property (retain) NSString *name;
 @property (retain) NSString *age;
-@property (retain) NSString *sex;
-@property (retain) NSString *job; //남자는 0 여자는 1
+@property (retain) NSString *sex;//남자는 0 여자는 1
+@property (retain) NSString *job;
 
 //@property (retain) NSString *email;대
 //@property (retain) NSString *phone ;//??
