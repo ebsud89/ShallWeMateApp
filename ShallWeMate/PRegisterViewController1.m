@@ -46,7 +46,7 @@
 //    [self fillhouseData];
     
     textView.text = @"쉐어하우스의 특징이 잘 나타나도록\n50자 이내로 설명해주세요.";
-    textView.textColor = [UIColor colorWithRed:97.0/255.0 green:1.0/255.0 blue:17.0/255.0 alpha:1.0];
+    textView.textColor = [UIColor colorWithRed:209.0/255.0 green:1.0/255.0 blue:17.0/255.0 alpha:1.0];
     textView.delegate = self;
     textView.font = [UIFont systemFontOfSize:15];
     
