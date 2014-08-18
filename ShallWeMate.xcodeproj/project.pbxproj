@@ -1042,6 +1042,7 @@
 		EB785A01198A19D9000B4C18 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				AEAD76F219A24314004E30B7 /* subway */,
 				689A07DD19A263DE001D7C8E /* 완료.png */,
 				689A979119A25A5A00E89909 /* pic1.png */,
 				689A979219A25A5A00E89909 /* pic2.png */,
