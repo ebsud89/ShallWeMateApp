@@ -36,7 +36,7 @@
 
 - (NSString *) printArray:(NSMutableArray *)array
 {
-    NSString *myStr = @" ";
+    NSString *myStr = @"|";
     for (NSNumber *n in array) {
         NSString *s = [NSString stringWithFormat:@"%@ ",n];
         myStr = [myStr stringByAppendingString:s];
