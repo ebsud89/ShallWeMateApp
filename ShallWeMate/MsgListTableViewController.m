@@ -35,8 +35,8 @@
     //덤프 데이터 만들기
     MakeDumpData *dump = [[MakeDumpData alloc]init];
     dataSourceArray = [[NSMutableArray alloc]initWithArray:[dump getHouseDataArray]];
-//
-//    int i = (int) [self.dataSourceArray count];
+    //
+    //    int i = (int) [self.dataSourceArray count];
     
     //cursor color
     [[UITextField appearance] setTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1.0]];
@@ -52,11 +52,6 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (IBAction)menuBtnClicked:(id)sender {
-    NSLog(@"button is touched");
-    [MENU_VIEW_CONTROLLER openLeftSideViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - Table view data source
@@ -104,7 +99,7 @@
     
     HouseData *houseData = [dataSourceArray objectAtIndex:indexPath.row];
     
-//    NSLog(@"houseData %@", houseData.title);
+    //    NSLog(@"houseData %@", houseData.title);
     
     return cell;
 }

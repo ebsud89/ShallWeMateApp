@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MemberData.h"
 
 @interface RegisterViewController5 : UIViewController
 
-@property (strong, nonatomic) HouseData *houseData;
+@property (weak, nonatomic) MemberData *memberData;
 @property (weak, nonatomic) IBOutlet UIButton *inviteOk;
 @property (weak, nonatomic) IBOutlet UIButton *inviteNo;
 @property (weak, nonatomic) IBOutlet UIButton *petOk;

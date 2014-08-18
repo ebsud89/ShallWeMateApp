@@ -23,6 +23,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *subwayMinutesTextFiled;
 @property (strong, nonatomic) IBOutlet UITextField *introHouse;
 @property (strong, nonatomic) NSString *premiumBrandName;
+@property (weak, nonatomic) IBOutlet UITextView *textView;
 
 
 @property (strong, nonatomic) IBOutlet UIScrollView *houseImageScrollView;

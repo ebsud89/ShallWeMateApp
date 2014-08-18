@@ -108,25 +108,28 @@
      */
     
     
-//    if (_houseData.title != nil) {
-//        self.houseTitleTextField.text = _houseData.title;
-//    }
-//    
-//    if (_houseData.transportation != nil) {
-//        self.subwaySearchBtn.titleLabel.text = _houseData.nearSubwayStation;
-//    }
-//    
-//    if (_houseData.transportation != nil) {
-//        NSLog(@"걸어서");
-//    }
-//    
-//    if (_houseData.transportationMinutes != nil) {
-//        self.subwayMinutesTextFiled.text = _houseData.transportationMinutes;
-//    }
-//    
-//    if (_houseData.introHouse != nil) {
-//        self.introHouse.text = _houseData.introHouse;
-//    }
+    if (_memberData.name != nil) {
+        self.userName.text = _memberData.name;
+    }
+    
+    if (_memberData.age != nil) {
+        self.ageTextField.text = _memberData.age;
+    }
+    
+    if (_memberData.sex != nil) {
+        if ([_memberData.sex isEqualToString:@"0"]) {
+            [radiobutton1 setSelected:YES];
+            [radiobutton2 setSelected:NO];
+        } else if ([_memberData.sex isEqualToString:@"1"]) {
+            [radiobutton2 setSelected:YES];
+            [radiobutton1 setSelected:NO];
+        }
+    }
+    
+    if (_memberData.job != nil) {
+        self.jobTitleLabel.text = _memberData.job;
+    }
+    
     
 }
 
@@ -134,12 +137,15 @@
 {
     /* 기입한 정보(이름, 나이, 성별, 직업) 저장하기 */
     
-//    _houseData.title = self.houseTitleTextField.text;
-//    _houseData.nearSubwayStation = self.subwaySearchBtn.titleLabel.text;
-//    _houseData.transportation = @"걸어서";
-//    _houseData.transportationMinutes = self.subwayMinutesTextFiled.text;
-//    _houseData.introHouse = self.introHouse.text;
-//    _houseData.premium = self.premiumBrandName;
+    _memberData.name = self.userName.text;
+    _memberData.age = self.ageTextField.text;
+    if ([radiobutton1 isSelected] == YES) {
+        _memberData.sex = @"0";
+    } else if ([radiobutton2 isSelected] == NO) {
+        _memberData.sex = @"1";
+        
+    }
+    _memberData.job  = self.jobTitleLabel.text;
 }
 
 - (void)setUserDefaults {
@@ -339,7 +345,7 @@
         
         /* 기입한 정보를 다음 뷰로 전달*/
         
-//        vc.houseData = _housedata;
+        vc.memberData = _memberData;
         [self fillhouseData];
         
     }

@@ -12,7 +12,6 @@
 @property (nonatomic, strong) UILabel *ageTitleLabel;
 @end
 @implementation RegisterViewController3
-@synthesize houseData;
 
 @synthesize ageTitleLabel;
 
@@ -52,6 +51,56 @@
     [[[self navigationController] navigationBar] setTintColor:[UIColor whiteColor]];
     [[[self navigationController] navigationBar] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000]];
+    
+    [_sameSex setTag:0];
+    [_sameSex setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [_sameSex setTitleColor:[UIColor purpleColor] forState:UIControlStateSelected];
+    [_sameSex addTarget:self action:@selector(radiobuttonSelected:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [_mixedSex setTag:1];
+    [_mixedSex setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [_mixedSex setTitleColor:[UIColor purpleColor] forState:UIControlStateSelected];
+    [_mixedSex addTarget:self action:@selector(radiobuttonSelected:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+-(void)radiobuttonSelected:(id)sender{
+    switch ([sender tag]) {
+        case 0:
+            if([_sameSex isSelected]==YES)
+            {
+                [_sameSex setSelected:NO];
+                [_mixedSex setSelected:YES];
+            }
+            else{
+                [_sameSex setSelected:YES];
+                [_mixedSex setSelected:NO];
+            }
+            
+            break;
+        case 1:
+            if([_mixedSex isSelected]==YES)
+            {
+                [_mixedSex setSelected:NO];
+                [_sameSex setSelected:YES];
+            }
+            else{
+                [_mixedSex setSelected:YES];
+                [_sameSex setSelected:NO];
+            }
+            
+            break;
+        default:
+            break;
+    }
+    
+}
+
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    [self viewDidLoad];
+    //[[self] popViewControllerAnimated:YES];
+    //[[self navigationController] popViewControllerAnimated:YES];
+    
 }
 
 - (void) refreshHouseData
@@ -62,26 +111,19 @@
      
      */
     
-    
-    //    if (_houseData.title != nil) {
-    //        self.houseTitleTextField.text = _houseData.title;
-    //    }
-    //
-    //    if (_houseData.transportation != nil) {
-    //        self.subwaySearchBtn.titleLabel.text = _houseData.nearSubwayStation;
-    //    }
-    //
-    //    if (_houseData.transportation != nil) {
-    //        NSLog(@"걸어서");
-    //    }
-    //
-    //    if (_houseData.transportationMinutes != nil) {
-    //        self.subwayMinutesTextFiled.text = _houseData.transportationMinutes;
-    //    }
-    //
-    //    if (_houseData.introHouse != nil) {
-    //        self.introHouse.text = _houseData.introHouse;
-    //    }
+    if (_memberData.avgAge != nil) {
+        self.ageTitleLabel.text = _memberData.avgAge;
+    }
+
+    if (_memberData.allowsex != nil) {
+        if ([_memberData.allowsex isEqualToString:@"0"]) {
+            [_sameSex setSelected:YES];
+            [_mixedSex setSelected:NO];
+        } else if ([_memberData.allowsex isEqualToString:@"1"]) {
+            [_mixedSex setSelected:YES];
+            [_sameSex setSelected:NO];
+        }
+    }
     
 }
 
@@ -89,12 +131,12 @@
 {
     /* 기입한 정보 (메이트 성별, 평균 연령) 저장하기 */
     
-    //    _houseData.title = self.houseTitleTextField.text;
-    //    _houseData.nearSubwayStation = self.subwaySearchBtn.titleLabel.text;
-    //    _houseData.transportation = @"걸어서";
-    //    _houseData.transportationMinutes = self.subwayMinutesTextFiled.text;
-    //    _houseData.introHouse = self.introHouse.text;
-    //    _houseData.premium = self.premiumBrandName;
+    _memberData.avgAge = self.ageTitleLabel.text;
+    
+    if (_sameSex.isSelected == 1)
+        self.memberData.allowsex = @"0";
+    else if (_mixedSex.isSelected == 1)
+        self.memberData.allowsex = @"1";
 }
 
 
@@ -172,7 +214,7 @@
         
         /* 기입한 정보를 다음 뷰로 전달*/
         
-        //        vc.houseData = _housedata;
+        vc.memberData = _memberData;
         [self fillhouseData];
         
     }

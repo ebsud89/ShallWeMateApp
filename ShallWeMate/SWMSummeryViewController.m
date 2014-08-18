@@ -41,7 +41,7 @@
     self.contentTableView.dataSource = self;
     
     
-    [self.houseData printAll];
+//    [self.houseData printAll];
     
     //navigation bar color
     [[[self navigationController] navigationBar] setTintColor:[UIColor whiteColor]];
@@ -90,8 +90,8 @@
             cell = [TitleTableViewCell titleTableViewCell];
         }
         
-        [cell setTitle:self.houseData.title];
-        [cell setContent:self.houseData.introHouse];
+//        [cell setTitle:self.houseData.title];
+//        [cell setContent:self.houseData.introHouse];
         
         return cell;
     }
@@ -99,9 +99,9 @@
     {
         ManagementTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"managementTableViewCell"];
         
-        [cell setMonthlyCost:self.houseData.monthlyRentCost];
-        [cell setSecurityCost:self.houseData.securityCost];
-        [cell setManagementCost:self.houseData.securityCost];
+//        [cell setMonthlyCost:self.houseData.monthlyRentCost];
+//        [cell setSecurityCost:self.houseData.securityCost];
+//        [cell setManagementCost:self.houseData.securityCost];
         
         return cell;
     }
@@ -121,9 +121,9 @@
     {
         ManagementTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"managementTableViewCell"];
         
-        [cell setMonthlyCost:self.houseData.monthlyRentCost];
-        [cell setSecurityCost:self.houseData.securityCost];
-        [cell setManagementCost:self.houseData.securityCost];
+//        [cell setMonthlyCost:self.houseData.monthlyRentCost];
+//        [cell setSecurityCost:self.houseData.securityCost];
+//        [cell setManagementCost:self.houseData.securityCost];
         
         return cell;
     }

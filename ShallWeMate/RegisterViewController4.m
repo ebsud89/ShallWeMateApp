@@ -10,10 +10,8 @@
 #import "RegisterViewController5.h"
 
 @interface RegisterViewController4()
-
 @end
 @implementation RegisterViewController4
-@synthesize houseData;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,7 +25,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    // init
+    lifeStyleArray = [[NSMutableArray alloc] init];
+    int i;
+    for (i = 0; i < 15; i++) {
+        [lifeStyleArray addObject:@"0"];
+    }
+    
+//    [lifeStyleArray insertObject:@"|" atIndex:4];
+    for (i = 0; i < 14; i+2) {
+        [lifeStyleArray insertObject:@"|" atIndex:i+1];
+    }
+    NSString *lifeStyleString = [lifeStyleArray componentsJoinedByString:@"\n"];
+    
+    NSLog(@"array test : %@", lifeStyleString);
     
     selectionCol = [[SelectionCollectionViewController alloc]init];
     selectionCol.viewController = @"lifeStyle";
@@ -75,11 +87,14 @@
     //    }
     
 }
-
 - (void)fillhouseData
 {
     /* 기입한 정보 (라이프 스타일) 저장하기 
         */
+//    int i;
+//    for (i = 0; i < 14; i+2) {
+//        [lifeStyleArray insertObject:@"|" atIndex:i+1];
+//    }
     
     //    _houseData.title = self.houseTitleTextField.text;
     //    _houseData.nearSubwayStation = self.subwaySearchBtn.titleLabel.text;
@@ -93,13 +108,32 @@
 - (void) didSelectedItem:(NSIndexPath *)indexPath
 {
     /* 선택(1)한 라이프 스타일을 라이프스타일 스트링에 추가 */
-    [houseData.enableLifeStyle replaceObjectAtIndex:indexPath.row withObject:[NSNumber numberWithBool:YES]];
+    [_memberData.enableLifeStyle replaceObjectAtIndex:indexPath.row withObject:[NSNumber numberWithBool:YES]];
+ 
+    [lifeStyleArray replaceObjectAtIndex:indexPath.row withObject:@"1"];
+    
+//    if (lifeStyleString != nil) {
+//        lifeStyleString = [lifeStyleString stringByAppendingString:@"|1"];
+//    } else {
+//        
+//        lifeStyleString = [lifeStyleString stringByAppendingString:@"1"];
+//    }
 }
 
 - (void) didDeSelectedItem:(NSIndexPath *)indexPath
 {
     /* 선택하지 않은(0) 라이프 스타일을 라이프 스타일 스트링에 추가*/
-    [houseData.enableLifeStyle replaceObjectAtIndex:indexPath.row withObject:[NSNumber numberWithBool:NO]];
+    [_memberData.enableLifeStyle replaceObjectAtIndex:indexPath.row withObject:[NSNumber numberWithBool:NO]];
+    
+    
+    [lifeStyleArray replaceObjectAtIndex:indexPath.row withObject:@"0"];
+    
+//    if (lifeStyleString != nil) {
+//        lifeStyleString = [lifeStyleString stringByAppendingString:@"|0"];
+//    } else {
+//        
+//        lifeStyleString = [lifeStyleString stringByAppendingString:@"0"];
+//    }
 }
 //
 //- (CGFloat) collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
@@ -130,7 +164,7 @@
         
         /* 기입한 정보를 다음 뷰로 전달*/
         
-        //        vc.houseData = _housedata;
+        vc.memberData = _memberData;
         [self fillhouseData];
         
     }

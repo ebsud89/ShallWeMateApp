@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SWMSubwayViewController.h"
+#import "MemberData.h"
 
 @interface RegisterViewController2 : UIViewController <SubwayViewControllerDelegate>
 {
@@ -22,7 +23,7 @@
 }
 
 
-@property (strong, nonatomic) HouseData *houseData;
+@property (weak, nonatomic) MemberData *memberData;
 @property (retain, nonatomic) IBOutlet UISlider *maxBudget;
 @property (retain, nonatomic) IBOutlet UISlider *maxDeposit;
 @property (retain, nonatomic) IBOutlet UILabel *maxBudgetLabel;

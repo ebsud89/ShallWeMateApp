@@ -25,6 +25,7 @@
 @property (strong, nonatomic) IBOutlet UISearchBar *subwaySearchBar;
 @property (strong, nonatomic) IBOutlet UITableView *subwayTableView;
 
+@property (strong, nonatomic) NSArray *picData;
 @property (strong, nonatomic) NSMutableArray *subwayArray;
 
 - (void)initSubwayArray;

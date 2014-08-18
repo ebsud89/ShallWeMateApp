@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SWMAppDelegate.h"
+#import "MemberData.h"
 
 @interface RegisterViewController3 : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate>
 {
@@ -18,9 +19,11 @@
     NSArray *agesArray;
     
 }
-@property (strong, nonatomic) HouseData *houseData;
+@property (weak, nonatomic) MemberData *memberData;
 @property (retain, nonatomic) IBOutlet UIButton *ageSelectBtn;
 //@property (strong, nonatomic) IBOutlet UITextField *age;
+@property (weak, nonatomic) IBOutlet UIButton *sameSex;
+@property (weak, nonatomic) IBOutlet UIButton *mixedSex;
 
 - (IBAction)ageSelect:(id)sender;
 @end

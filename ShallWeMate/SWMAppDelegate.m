@@ -12,6 +12,7 @@
 #import "SWMLoginViewController.h"
 #import "SWMCheckRole_VC.h"
 #import "HouseData.h"
+#import "MemberData.h"
 
 @implementation SWMAppDelegate
 @synthesize defaults;

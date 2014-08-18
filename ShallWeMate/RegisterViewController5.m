@@ -10,7 +10,7 @@
 #import "SWMSummeryViewController.h"
 
 @implementation RegisterViewController5
-@synthesize houseData;
+@synthesize memberData;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -206,32 +206,33 @@
         
         /* 하우스 룰 정보 저장하기 */
         
-        self.houseData.enableHouseRoles = [[NSMutableArray alloc]init];
-        
-        if (_inviteOk.isSelected == 1)
-            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:YES]];
-        else if (_inviteNo.isSelected == 1)
-            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:NO]];
-        if (_petOk.isSelected == 1)
-            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:YES]];
-        else if (_petNo.isSelected == 1)
-            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:NO]];
-        if (_privacyMore.isSelected == 1)
-            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:YES]];
-        else if (_privacyLess.isSelected == 1)
-            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:NO]];
-        if (_smokeOk.isSelected == 1)
-            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:YES]];
-        else if (_smokeNo.isSelected == 1)
-            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:NO]];
-        if (_drinkOk.isSelected == 1)
-            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:YES]];
-        else if (_drinkNo.isSelected == 1)
-            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:NO]];
+//        self.houseData.enableHouseRoles = [[NSMutableArray alloc]init];
+//        
+//        if (_inviteOk.isSelected == 1)
+//            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:YES]];
+//        else if (_inviteNo.isSelected == 1)
+//            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:NO]];
+//        if (_petOk.isSelected == 1)
+//            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:YES]];
+//        else if (_petNo.isSelected == 1)
+//            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:NO]];
+//        if (_privacyMore.isSelected == 1)
+//            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:YES]];
+//        else if (_privacyLess.isSelected == 1)
+//            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:NO]];
+//        if (_smokeOk.isSelected == 1)
+//            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:YES]];
+//        else if (_smokeNo.isSelected == 1)
+//            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:NO]];
+//        if (_drinkOk.isSelected == 1)
+//            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:YES]];
+//        else if (_drinkNo.isSelected == 1)
+//            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:NO]];
 
         //요약 페이지로 이동
         SWMSummeryViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SWMSummeryViewController"];
-//        vc.houseData = self.houseData;
+        
+//        vc.memberData = _memberData;
         [self.view addSubview:vc.view];
     } else {
         NSLog(@"che2");

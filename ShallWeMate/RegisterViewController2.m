@@ -10,7 +10,6 @@
 #import "RegisterViewController3.h"
 
 @implementation RegisterViewController2
-@synthesize houseData;
 
 @synthesize maxBudgetLabel;
 @synthesize maxDepositLabel;
@@ -48,27 +47,18 @@
     /* 수요자측 데이터 (지하철역, 보증금, 월세) 뿌리기
      
      */
-    
-    
-    //    if (_houseData.title != nil) {
-    //        self.houseTitleTextField.text = _houseData.title;
-    //    }
-    //
-    //    if (_houseData.transportation != nil) {
-    //        self.subwaySearchBtn.titleLabel.text = _houseData.nearSubwayStation;
-    //    }
-    //
-    //    if (_houseData.transportation != nil) {
-    //        NSLog(@"걸어서");
-    //    }
-    //
-    //    if (_houseData.transportationMinutes != nil) {
-    //        self.subwayMinutesTextFiled.text = _houseData.transportationMinutes;
-    //    }
-    //
-    //    if (_houseData.introHouse != nil) {
-    //        self.introHouse.text = _houseData.introHouse;
-    //    }
+    if (_memberData.nearSubwayStation != nil) {
+        self.subwayStationSearchBtn.titleLabel.text = _memberData.nearSubwayStation;
+    }
+
+
+    if (_memberData.securityCost != nil) {
+        self.maxDepositLabel.text = _memberData.securityCost;
+    }
+
+    if (_memberData.monthlyRentCost != nil) {
+        self.maxBudgetLabel.text = _memberData.monthlyRentCost;
+    }
     
 }
 
@@ -76,22 +66,19 @@
 {
     /* 기입한 정보 (지하철역, 보증금, 월세) 저장하기 */
     
-    //    _houseData.title = self.houseTitleTextField.text;
-    //    _houseData.nearSubwayStation = self.subwaySearchBtn.titleLabel.text;
-    //    _houseData.transportation = @"걸어서";
-    //    _houseData.transportationMinutes = self.subwayMinutesTextFiled.text;
-    //    _houseData.introHouse = self.introHouse.text;
-    //    _houseData.premium = self.premiumBrandName;
+    _memberData.nearSubwayStation = self.subwayStationSearchBtn.titleLabel.text;
+    _memberData.securityCost = self.maxDepositLabel.text;
+    _memberData.monthlyRentCost = self.maxBudgetLabel.text;
 }
 
-- (IBAction)subwayStationSearchBtnClicked:(id)sender {
-    
-}
+//- (IBAction)subwayStationSearchBtnClicked:(id)sender {
+//    
+//}
 
 // subway delegate
 - (void) didSelectedSubwayStation:(NSDictionary *) subwayDic
 {
-    self.subwayStationSearchBtn.titleLabel.text = [subwayDic objectForKey:@"전철역명"];
+    self.location.text = [subwayDic objectForKey:@"전철역명"];
 //    self.housedata.subwayDic = subwayDic;
     
 }
@@ -136,7 +123,7 @@
         
         /* 기입한 정보를 다음 뷰로 전달*/
         
-        //        vc.houseData = _housedata;
+            vc.memberData = _memberData;
         [self fillhouseData];
         
     }

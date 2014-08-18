@@ -15,9 +15,10 @@
 @interface MsgContentsViewController ()
 {
     IBOutlet UIBubbleTableView *bubbleTable;
+
     IBOutlet UIView *textInputView;
-    IBOutlet UITextField *textField;
     
+    IBOutlet UITextField *textField;
     NSMutableArray *bubbleData;
 }
 
@@ -29,13 +30,13 @@
 {
     [super viewDidLoad];
     
-    NSBubbleData *heyBubble = [NSBubbleData dataWithText:@"Hey" date:[NSDate dateWithTimeIntervalSinceNow:-300] type:BubbleTypeSomeoneElse];
+    NSBubbleData *heyBubble = [NSBubbleData dataWithText:@"저는" date:[NSDate dateWithTimeIntervalSinceNow:-300] type:BubbleTypeSomeoneElse];
     heyBubble.avatar = [UIImage imageNamed:@"avatar1.png"];
     
     NSBubbleData *photoBubble = [NSBubbleData dataWithImage:[UIImage imageNamed:@"halloween.jpg"] date:[NSDate dateWithTimeIntervalSinceNow:-290] type:BubbleTypeSomeoneElse];
     photoBubble.avatar = [UIImage imageNamed:@"avatar1.png"];
     
-    NSBubbleData *replyBubble = [NSBubbleData dataWithText:@"Wow.. Really cool picture out there. iPhone 5 has really nice camera, yeah?" date:[NSDate dateWithTimeIntervalSinceNow:-5] type:BubbleTypeMine];
+    NSBubbleData *replyBubble = [NSBubbleData dataWithText:@"저는 이 부분을 저는 이 부분을 구현할 때 셀에 직접 이미지를 넣고 텍스트를 넣고 한게아니라 UIView를 상속받는 만들어서 구현하여 Cell에 추가하는 방식으로 구현하였습니다." date:[NSDate dateWithTimeIntervalSinceNow:-5] type:BubbleTypeMine];
     replyBubble.avatar = nil;
     
     bubbleData = [[NSMutableArray alloc] initWithObjects:heyBubble, replyBubble, nil];
