@@ -13,6 +13,7 @@
 @end
 
 @implementation SWMSubwayViewController
+UIImageView *image;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,7 +35,14 @@
     [[[self navigationController] navigationBar] setTintColor:[UIColor whiteColor]];
     [[[self navigationController] navigationBar] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000]];
+    
+//    [self.searchBar setShowsCancelButton:NO animated:NO];
 }
+
+//-(void)layoutSubviews{
+//    [super layoutSubviews];
+//    [self setShowsCancelButton:NO animated:NO];
+//}
 
 - (void)didReceiveMemoryWarning
 {
@@ -69,12 +77,12 @@
         
         [self.subwaySearchBar sizeToFit];
         self.searchDisplayController.delegate = self;
-        
+//        self.subwayTableView.delegate =self;
+//        self.subwayTableView.dataSource = self;
     }
 }
 
 - (void)searchDisplayController:(UISearchDisplayController *)controller didShowSearchResultsTableView:(UITableView *)tableView  {
-    
     tableView.frame = self.subwayTableView.frame;
     
 }
@@ -134,9 +142,24 @@
     
     
     
-    UIImage *img = [UIImage imageNamed:@"makefg.php.png"];
-    [cell.imageView setBackgroundColor:[UIColor blueColor]];
-    cell.imageView.image = img;
+//    UIImage *img = [UIImage imageNamed:@"1호선_수정.png"];
+    UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(7, 0, 84, 84)];
+    //    [imgView setContentMode:UIViewContentModeCenter];
+    //    self.data = [[NSArray alloc]
+    //                      initWithObjects:@"cook\n요리", @"Green",
+    //                 @"Blue", @"Indigo", @"Violet", @"Green",
+    //                 @"Blue", @"Indigo", @"Violet", @"Green",
+    //                 @"Blue", @"Indigo", @"Violet", @"Green",
+    //                 @"Blue", @"Indigo", @"Violet", nil];
+    
+    NSArray *picArray = [[NSArray alloc] initWithObjects:@"01.png",@"02.png",@"03.png",@"04.png",@"05.png",@"06.png",@"07.png",@"08.png",@"09.png",@"경의.png",@"경춘.png",@"공항.png",@"분당.png",@"수인.png",@"신분당.png",@"에버.png",@"의정부.png",@"인천.png",@"중앙.png",nil];
+    self.picData = picArray;
+    
+//    imgView.image = [UIImage imageNamed:[self.picData objectAtIndex:indexPath.row]];
+    
+    [cell.imageView setBackgroundColor:[UIColor clearColor]];
+    NSLog(@"height : %f",cell.imageView.image.size.height);
+    cell.imageView.image = [UIImage imageNamed:[self.picData objectAtIndex:indexPath.row]];
     
     return cell;
 }

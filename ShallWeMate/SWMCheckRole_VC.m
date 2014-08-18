@@ -30,10 +30,15 @@
     // Do any additional setup after loading the view.
 
     
-    //navigation bar color
-    [[[self navigationController] navigationBar] setTintColor:[UIColor whiteColor]];
-    [[[self navigationController] navigationBar] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
-    [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000]];
+    //navigation bar hidden
+    [[self navigationController] setNavigationBarHidden:YES animated:YES];
+    
+    //background image setting
+    UIGraphicsBeginImageContext(self.view.frame.size);
+    [[UIImage imageNamed:@"page2_bg.jpg"] drawInRect:self.view.bounds];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    self.view.backgroundColor = [UIColor colorWithPatternImage:image];
 }
 
 - (void) viewDidAppear:(BOOL)animated

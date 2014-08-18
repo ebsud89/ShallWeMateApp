@@ -136,6 +136,7 @@
     {
         SWMTransportTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"transportTableViewCell"];
         
+        [cell setSubwayDictionary:self.houseData.subwayDic];
         return cell;
     }
     else if (indexPath.row == 4)

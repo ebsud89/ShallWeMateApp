@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface SWMMyProfileViewController : UIViewController
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *nameLabel;
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *genderLabel;
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *countryLabel;
+@property (weak, nonatomic) IBOutlet UILabel *jobLabel;
+@property (weak, nonatomic) IBOutlet UILabel *ageLabel;
 
 @end

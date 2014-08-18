@@ -14,4 +14,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *avgAgeLabel;
 @property (strong, nonatomic) IBOutlet UILabel *genderLabel;
 
+@property (strong, nonatomic) NSString *avgAge;
+@property (strong, nonatomic) NSString *gender;
 @end

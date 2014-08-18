@@ -80,7 +80,7 @@
     }
     else if (buttonIndex == 1) {
         
-        RegisterViewController1 *privacy = (RegisterViewController1*)[self.storyboard instantiateViewControllerWithIdentifier:@"registerViewController1"];
+        UIViewController *privacy = [self.storyboard instantiateViewControllerWithIdentifier:@"registerNav"];
         
         // present
         [self presentViewController:privacy animated:YES completion:nil];

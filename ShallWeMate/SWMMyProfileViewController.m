@@ -13,6 +13,11 @@
 @end
 
 @implementation SWMMyProfileViewController
+@synthesize nameLabel;
+@synthesize genderLabel;
+@synthesize countryLabel;
+@synthesize jobLabel;
+@synthesize ageLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,6 +32,32 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    NSString *name = [defaults objectForKey:@"name"];
+    NSString *gender = [defaults objectForKey:@"gender"];
+    NSString *locale = [[NSString alloc] init];
+    if ([[defaults objectForKey:@"locale"] isEqualToString:@"ko_KR"]) {
+        locale = @"대한민국";
+    }
+    NSString *job = [defaults objectForKey:@"job"];
+    NSString *age = [defaults objectForKey:@"age"];
+    
+//    int age = [defaults integerForKey:@"age"];
+//    NSString *ageString = [NSString stringWithFormat:@"%i",age];
+    
+//    NSData *imageData = [defaults dataForKey:@"image"];
+//    UIImage *contactImage = [UIImage imageWithData:imageData];
+    
+    // Update the UI elements with the saved data
+    nameLabel.text = name;
+    genderLabel.text = gender;
+    countryLabel.text = locale;
+    ageLabel.text = age;
+    jobLabel.text = job;
+    
+//    contactImageView.image = contactImage;
 }
 
 - (void)didReceiveMemoryWarning

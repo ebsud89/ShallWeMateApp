@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SWMSubwayViewController.h"
+#import "MemberData.h"
 
-@interface RegisterViewController2 : UIViewController
+@interface RegisterViewController2 : UIViewController <SubwayViewControllerDelegate>
 {
     UILabel *maxBudgetLabel;
     UILabel *maxDepositLabel;
@@ -21,13 +23,15 @@
 }
 
 
-@property (strong, nonatomic) HouseData *houseData;
+@property (weak, nonatomic) MemberData *memberData;
 @property (retain, nonatomic) IBOutlet UISlider *maxBudget;
 @property (retain, nonatomic) IBOutlet UISlider *maxDeposit;
 @property (retain, nonatomic) IBOutlet UILabel *maxBudgetLabel;
 @property (retain, nonatomic) IBOutlet UILabel *maxDepositLabel;
 @property (retain, nonatomic) IBOutlet UILabel *locationLabel;
 @property (retain, nonatomic) IBOutlet UITextField *location;
+
+@property (strong, nonatomic) IBOutlet UIButton *subwayStationSearchBtn;
 
 - (IBAction)budgetSlider:(id)sender;
 - (IBAction)depositSlider:(id)sender;

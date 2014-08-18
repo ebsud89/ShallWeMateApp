@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MemberData.h"
 
 @interface SWMSummeryViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
-@property (strong, nonatomic) HouseData *houseData;
+@property (weak, nonatomic) MemberData *memberData;
 
 @property (strong, nonatomic) IBOutlet UITableView *contentTableView;
 

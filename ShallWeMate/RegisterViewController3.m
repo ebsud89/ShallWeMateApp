@@ -7,11 +7,11 @@
 //
 
 #import "RegisterViewController3.h"
+#import "RegisterViewController4.h"
 @interface RegisterViewController3 ()
 @property (nonatomic, strong) UILabel *ageTitleLabel;
 @end
 @implementation RegisterViewController3
-@synthesize houseData;
 
 @synthesize ageTitleLabel;
 
@@ -28,6 +28,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self refreshHouseData];
     agesArray = [[NSArray alloc] initWithObjects:@"평균 연령을 선택해주세요", @"20대 초반", @"20대 중반", @"20대 후반", @"30대 초반", @"30대 중반", @"30대 후반", @"40대 이상", nil];
     
     // 버튼위에 라벨을 올려주기 위해 만듬
@@ -40,7 +42,7 @@
     [ageSelectBtn addSubview:ageTitleLabel];
     ageTitleLabel.text = [agesArray objectAtIndex:0]; ;
     
-    [ageSelectBtn addTarget:self action:@selector(selectAgeButtonClicked:)             forControlEvents:UIControlEventTouchUpInside];
+    [ageSelectBtn addTarget:self action:@selector(ageSelect:)             forControlEvents:UIControlEventTouchUpInside];
     
     //cursor coloer
     [[UITextField appearance] setTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1.0]];
@@ -49,7 +51,95 @@
     [[[self navigationController] navigationBar] setTintColor:[UIColor whiteColor]];
     [[[self navigationController] navigationBar] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000]];
+    
+    [_sameSex setTag:0];
+    [_sameSex setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [_sameSex setTitleColor:[UIColor purpleColor] forState:UIControlStateSelected];
+    [_sameSex addTarget:self action:@selector(radiobuttonSelected:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [_mixedSex setTag:1];
+    [_mixedSex setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [_mixedSex setTitleColor:[UIColor purpleColor] forState:UIControlStateSelected];
+    [_mixedSex addTarget:self action:@selector(radiobuttonSelected:) forControlEvents:UIControlEventTouchUpInside];
 }
+
+-(void)radiobuttonSelected:(id)sender{
+    switch ([sender tag]) {
+        case 0:
+            if([_sameSex isSelected]==YES)
+            {
+                [_sameSex setSelected:NO];
+                [_mixedSex setSelected:YES];
+            }
+            else{
+                [_sameSex setSelected:YES];
+                [_mixedSex setSelected:NO];
+            }
+            
+            break;
+        case 1:
+            if([_mixedSex isSelected]==YES)
+            {
+                [_mixedSex setSelected:NO];
+                [_sameSex setSelected:YES];
+            }
+            else{
+                [_mixedSex setSelected:YES];
+                [_sameSex setSelected:NO];
+            }
+            
+            break;
+        default:
+            break;
+    }
+    
+}
+
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    [self viewDidLoad];
+    //[[self] popViewControllerAnimated:YES];
+    //[[self navigationController] popViewControllerAnimated:YES];
+    
+}
+
+- (void) refreshHouseData
+{
+    
+    
+    /* 수요자측 데이터 (메이트 평균연령, 성별) 뿌리기
+     
+     */
+    
+    if (_memberData.avgAge != nil) {
+        self.ageTitleLabel.text = _memberData.avgAge;
+    }
+
+    if (_memberData.allowsex != nil) {
+        if ([_memberData.allowsex isEqualToString:@"0"]) {
+            [_sameSex setSelected:YES];
+            [_mixedSex setSelected:NO];
+        } else if ([_memberData.allowsex isEqualToString:@"1"]) {
+            [_mixedSex setSelected:YES];
+            [_sameSex setSelected:NO];
+        }
+    }
+    
+}
+
+- (void)fillhouseData
+{
+    /* 기입한 정보 (메이트 성별, 평균 연령) 저장하기 */
+    
+    _memberData.avgAge = self.ageTitleLabel.text;
+    
+    if (_sameSex.isSelected == 1)
+        self.memberData.allowsex = @"0";
+    else if (_mixedSex.isSelected == 1)
+        self.memberData.allowsex = @"1";
+}
+
+
 - (IBAction)ageSelect:(id)sender {
     
     actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self     cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
@@ -116,5 +206,20 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"goNext"])
+    {
+        RegisterViewController4 *vc = [segue destinationViewController];
+        
+        /* 기입한 정보를 다음 뷰로 전달*/
+        
+        vc.memberData = _memberData;
+        [self fillhouseData];
+        
+    }
+    
+    
+}
 
 @end

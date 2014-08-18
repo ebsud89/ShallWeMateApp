@@ -29,11 +29,24 @@
 
 @property int total;
 @property int available;
-@property int wsex;
-@property int msex;
+@property int wsex; //housedata 랑 안묶음...
+@property int msex; //``
 
 @property int time;
 @property int way;
+
+// 윤석 추가
+@property (strong, nonatomic) NSString * subwayStationName;
+@property (strong, nonatomic) NSString * subwayStationCode;
+@property (strong, nonatomic) NSString * introHouse;
+
+@property int avgAge;
+@property int existingMenNum;
+@property int existingWomenNum;
+@property int wantMenNum;
+@property int wantWomenNum;
+
+
 
 - (id) initWithDictionary : (NSDictionary *)inpDic;
 - (NSString *) description;

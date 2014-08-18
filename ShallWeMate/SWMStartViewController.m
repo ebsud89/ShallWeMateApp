@@ -7,6 +7,8 @@
 //
 
 #import "SWMStartViewController.h"
+#import "SWMAppDelegate.h"
+#import "SWMLoginViewController.h"
 
 @interface SWMStartViewController ()
 
@@ -28,12 +30,12 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-//        FLAnimatedImage *manWalkingImage = [[FLAnimatedImage alloc] initWithAnimatedGIFData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"manWalking" ofType:@"gif"]]];
+    FLAnimatedImage *loadingImg = [[FLAnimatedImage alloc] initWithAnimatedGIFData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"loadingImg" ofType:@"gif"]]];
     
-    FLAnimatedImage *loadingImage = [[FLAnimatedImage alloc] initWithAnimatedGIFData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://vikrambahl.com/wp-content/uploads/2014/06/ajax_loader_blue_512.gif"]]];
+//    FLAnimatedImage *loadingImage = [[FLAnimatedImage alloc] initWithAnimatedGIFData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://vikrambahl.com/wp-content/uploads/2014/06/ajax_loader_blue_512.gif"]]];
     
     //Assign the FLAnimatedImage types to each of the FLAnimatedImageViews via the animatedImage property
-    self.loadingImageView.animatedImage = loadingImage;
+    self.loadingImageView.animatedImage = loadingImg;
 
     
     
@@ -46,6 +48,31 @@
 //                                   selector: @selector(startView)
 //                                   userInfo: nil
 //                                    repeats: NO];
+    
+    //facebook session check
+    SWMAppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
+    if (!appDelegate.session.isOpen) {
+        // create a fresh session object
+        appDelegate.session = [[FBSession alloc] init];
+        
+        // session 확인
+        if (appDelegate.session.state == FBSessionStateCreatedTokenLoaded) {
+            
+            [appDelegate.session openWithCompletionHandler:^(FBSession *session,
+                                                             FBSessionState status,
+                                                             NSError *error) {
+                
+                NSLog(@" session exist");
+                [self notFacebookClicked];
+
+            }];
+        } else {
+            NSLog(@"no session");
+            [self performSegueWithIdentifier:@"facebookLogin" sender:nil];
+            
+        }
+        
+    }
 }
 
 - (void) startView
@@ -66,9 +93,17 @@
 - (IBAction)notFacebookClicked:(id)sender {
     UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"MainTableViewControllerNav"];
     
+    [MENU_VIEW_CONTROLLER setProviderBool:YES]; //Provider Menu View
+//    [MENU_VIEW_CONTROLLER setProviderBool:NO]; //Consumer Menu view
+    
     [MENU_VIEW_CONTROLLER presentCenterViewController:vc animated:YES];
 }
 
+- (IBAction)notFacebookClicked{
+    UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"MainTableViewControllerNav"];
+    
+    [MENU_VIEW_CONTROLLER presentCenterViewController:vc animated:YES];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

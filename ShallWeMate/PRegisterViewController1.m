@@ -11,6 +11,7 @@
 #import "BrandRegisterViewController.h"
 #import "CTAssetsPickerController.h"
 #import "CTAssetsPageViewController.h"
+#import "UIImage+ResizeMagick.h"
 
 @interface PRegisterViewController1 ()
 <CTAssetsPickerControllerDelegate, UIPopoverControllerDelegate>
@@ -23,6 +24,7 @@
 
 @implementation PRegisterViewController1
 @synthesize houseImageScrollView;
+@synthesize textView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -43,6 +45,11 @@
     
 //    [self fillhouseData];
     
+    textView.text = @"쉐어하우스의 특징이 잘 나타나도록\n50자 이내로 설명해주세요.";
+    textView.textColor = [UIColor colorWithRed:209.0/255.0 green:1.0/255.0 blue:17.0/255.0 alpha:1.0];
+    textView.delegate = self;
+    textView.font = [UIFont systemFontOfSize:15];
+    
     //키보드 올라갈 때 뷰 올리기
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:self.view.window];
     
@@ -51,17 +58,28 @@
     //cursor coloer
     [[UITextField appearance] setTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1.0]];
     
+    //navigation bar hidden
+    [[self navigationController] setNavigationBarHidden:NO animated:NO];
     //navigation bar color
     [[[self navigationController] navigationBar] setTintColor:[UIColor whiteColor]];
     [[[self navigationController] navigationBar] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
-    [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:174/255.0 green:70/255.0 blue:115/255.0 alpha:1]];
+    [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000]];
     [[[self navigationController] navigationBar] setBackgroundColor:[UIColor colorWithRed:174/255.0 green:70/255.0 blue:115/255.0 alpha:1]];
 //    [[[self navigationController] navigationBar] setTranslucent:YES];
     
+    
+    
+    [self initScrollView];
     [self refreshHouseData];
 }
 
 
+- (BOOL) textViewShouldBeginEditing:(UITextView *)textView
+{
+    textView.text = @"";
+    textView.textColor = [UIColor blackColor];
+    return YES;
+}
 
 - (void)setViewMovedUp:(BOOL)movedUp height:(float)height
 
@@ -123,7 +141,7 @@
         self.houseTitleTextField.text = _housedata.title;
     }
     
-    if (_housedata.transportation != nil) {
+    if (_housedata.nearSubwayStation != nil) {
         self.subwaySearchBtn.titleLabel.text = _housedata.nearSubwayStation;
     }
     
@@ -161,6 +179,8 @@
 - (void) didSelectedSubwayStation:(NSDictionary *) subwayDic
 {
     self.subwaySearchBtn.titleLabel.text = [subwayDic objectForKey:@"전철역명"];
+    [self.subwaySearchBtn setBackgroundColor:[UIColor clearColor]];
+    self.housedata.subwayDic = subwayDic;
 
 }
 
@@ -195,7 +215,18 @@
         [houseImageScrollView addSubview:imageView];
     }
     
-    self.addPhotoBtn.frame = CGRectMake(houseImageScrollView.frame.size.width*count + 160, houseImageScrollView.frame.size.height/2, self.addPhotoBtn.frame.size.width, self.addPhotoBtn.frame.size.height);
+    self.addPhotoBtn.frame = CGRectMake(0, 0, 320, 64);
+    
+    UIImage * image = [UIImage imageNamed:@"photo.png"];
+//    CGSize sacleSize = CGSizeMake(320, 210);
+//    UIGraphicsBeginImageContextWithOptions(sacleSize, NO, 0.0);
+//    [image drawInRect:CGRectMake(0, 0, sacleSize.width, sacleSize.height)];
+//    UIImage * resizedImage = UIGraphicsGetImageFromCurrentImageContext();
+//    UIGraphicsEndImageContext();
+    
+    UIImage* squareImage = [image resizedImageByMagick: @"320x210#"];
+    
+    [self.addPhotoBtn setBackgroundImage:squareImage forState:UIControlStateNormal];
     
     [houseImageScrollView addSubview:self.addPhotoBtn];
     
@@ -204,6 +235,7 @@
     [self.houseImageScrollView reloadInputViews];
     [self.houseImageScrollView setContentOffset:CGPointZero animated:YES];
 }
+
 
 - (IBAction)imagePickerTouched:(id)sender {
     

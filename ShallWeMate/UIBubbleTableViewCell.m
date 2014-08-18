@@ -58,8 +58,8 @@
 
 - (void) setupInternalData
 {//
-    NSString *name = @"koh gabin"; // 상대 이름
-    NSString *desc = @"house description"; //상대 하우스 설명
+    NSString *name = @"고가빈"; // 상대 이름
+    NSString *desc = @"음악을 좋아하는 사람들의 집"; //상대 하우스 설명
     //
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     
@@ -74,7 +74,7 @@
     }
     //
     
-    self.name = [[UILabel alloc] initWithFrame:CGRectMake(65, -10, self.frame.size.width, 50.0)];
+    self.name = [[UILabel alloc] initWithFrame:CGRectMake(65, -9, self.frame.size.width, 50.0)];
     self.name.text = name;
     self.name.font = [UIFont boldSystemFontOfSize:15];
     self.name.textAlignment = NSTextAlignmentLeft;
@@ -84,13 +84,13 @@
     self.name.backgroundColor = [UIColor clearColor];
     
     
-    self.description = [[UILabel alloc] initWithFrame:CGRectMake(65,      10, self.frame.size.width, 50.0)];
+    self.description = [[UILabel alloc] initWithFrame:CGRectMake(65, 9, self.frame.size.width, 50.0)];
     self.description.text = desc;
-    self.description.font = [UIFont boldSystemFontOfSize:15];
+    self.description.font = [UIFont boldSystemFontOfSize:13];
     self.description.textAlignment = NSTextAlignmentLeft;
     self.description.shadowOffset = CGSizeMake(0, 1);
     self.description.shadowColor = [UIColor whiteColor];
-    self.description.textColor = [UIColor darkGrayColor];
+    self.description.textColor = [UIColor grayColor];
     self.description.backgroundColor = [UIColor clearColor];
     
     //
@@ -116,12 +116,11 @@
     
     [self.customView removeFromSuperview];
     self.customView = self.data.view;
-    self.customView.frame = CGRectMake(x + self.data.insets.left, y + self.data.insets.top +30, width, height);
-    [self.contentView addSubview:self.customView];
+    
     
     if (type == BubbleTypeSomeoneElse)
     {
-        self.bubbleImage.image = [[UIImage imageNamed:@"bubbleSomeone.png"] stretchableImageWithLeftCapWidth:21 topCapHeight:14];
+        self.bubbleImage.image = [[UIImage imageNamed:@"m4.png"] stretchableImageWithLeftCapWidth:17 topCapHeight:18];
         
         //
         // Adjusting the x coordinate for avatar
@@ -133,12 +132,13 @@
 #else
             self.avatarImage = [[UIImageView alloc] initWithImage:(self.data.avatar ? self.data.avatar : [UIImage imageNamed:@"missingAvatar.png"])];
 #endif
-            self.avatarImage.layer.cornerRadius = 9.0;
             self.avatarImage.layer.masksToBounds = YES;
+            self.avatarImage.layer.cornerRadius = self.avatarImage.frame.size.width / 2;
+            self.avatarImage.clipsToBounds = YES;
             self.avatarImage.layer.borderColor = [UIColor colorWithWhite:0.0 alpha:0.2].CGColor;
             self.avatarImage.layer.borderWidth = 1.0;
             
-            CGFloat avatarX = (type == BubbleTypeSomeoneElse) ? 2 : self.frame.size.width - 52;
+            CGFloat avatarX = (type == BubbleTypeSomeoneElse) ? 5 : self.frame.size.width - 52;
             CGFloat avatarY = self.frame.size.height - 50;
             
             self.avatarImage.frame = CGRectMake(avatarX, avatarY, 50, 50);
@@ -152,19 +152,17 @@
         
         [self addSubview:self.name];
         [self addSubview:self.description];
+        self.customView.frame = CGRectMake(x + self.data.insets.left-1, y + self.data.insets.top + 32, width, height);
         
     }
     else {
-        self.bubbleImage.image = [[UIImage imageNamed:@"bubbleMine.png"] stretchableImageWithLeftCapWidth:15 topCapHeight:14];
+        self.bubbleImage.image = [[UIImage imageNamed:@"m1.png"] stretchableImageWithLeftCapWidth:17 topCapHeight:12];
+        self.customView.frame = CGRectMake(x + self.data.insets.left+4, y + self.data.insets.top + 30, width, height+5);
     }
     
-    
-    [self.customView removeFromSuperview];
-    self.customView = self.data.view;
-    self.customView.frame = CGRectMake(x + self.data.insets.left, y + self.data.insets.top +30, width, height);
     [self.contentView addSubview:self.customView];
-    
     self.bubbleImage.frame = CGRectMake(x, y+30, width + self.data.insets.left + self.data.insets.right, height + self.data.insets.top + self.data.insets.bottom);
+//    [self.textLabel setFont:[UIFont fontWithName:@"System" size:10]];
 }
 
 @end

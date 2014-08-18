@@ -10,4 +10,8 @@
 
 @interface SWMTransportTableViewCell : UITableViewCell
 + (CGFloat) getHeight;
+
+@property (strong, nonatomic) NSDictionary *subwayDictionary;
+@property (strong, nonatomic) IBOutlet UILabel *subwayStationName;
+
 @end

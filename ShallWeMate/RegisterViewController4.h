@@ -8,14 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "SelectionCollectionViewController.h"
+#import "MemberData.h"
 
 @interface RegisterViewController4 : UIViewController
 {
     SelectionCollectionViewController *selectionCol;
+    NSMutableArray *lifeStyleArray;
 }
 
 
-@property (strong, nonatomic) HouseData *houseData;
+@property (weak, nonatomic) MemberData *memberData;
 @property (strong, nonatomic) IBOutlet UICollectionView *selectList;
 
 @end

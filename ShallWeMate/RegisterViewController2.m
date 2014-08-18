@@ -7,9 +7,9 @@
 //
 
 #import "RegisterViewController2.h"
+#import "RegisterViewController3.h"
 
 @implementation RegisterViewController2
-@synthesize houseData;
 
 @synthesize maxBudgetLabel;
 @synthesize maxDepositLabel;
@@ -32,6 +32,7 @@
     
     [super viewDidLoad];
     
+    [self refreshHouseData];
     
     //navigation bar color
     [[[self navigationController] navigationBar] setTintColor:[UIColor whiteColor]];
@@ -39,6 +40,48 @@
     [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000]];
 }
 
+- (void) refreshHouseData
+{
+    
+    
+    /* 수요자측 데이터 (지하철역, 보증금, 월세) 뿌리기
+     
+     */
+    if (_memberData.nearSubwayStation != nil) {
+        self.subwayStationSearchBtn.titleLabel.text = _memberData.nearSubwayStation;
+    }
+
+
+    if (_memberData.securityCost != nil) {
+        self.maxDepositLabel.text = _memberData.securityCost;
+    }
+
+    if (_memberData.monthlyRentCost != nil) {
+        self.maxBudgetLabel.text = _memberData.monthlyRentCost;
+    }
+    
+}
+
+- (void)fillhouseData
+{
+    /* 기입한 정보 (지하철역, 보증금, 월세) 저장하기 */
+    
+    _memberData.nearSubwayStation = self.subwayStationSearchBtn.titleLabel.text;
+    _memberData.securityCost = self.maxDepositLabel.text;
+    _memberData.monthlyRentCost = self.maxBudgetLabel.text;
+}
+
+//- (IBAction)subwayStationSearchBtnClicked:(id)sender {
+//    
+//}
+
+// subway delegate
+- (void) didSelectedSubwayStation:(NSDictionary *) subwayDic
+{
+    self.location.text = [subwayDic objectForKey:@"전철역명"];
+//    self.housedata.subwayDic = subwayDic;
+    
+}
 
 - (IBAction)budgetSlider:(id)sender {
     //label에 금액 띄우기
@@ -65,6 +108,27 @@
                                                     value:self.maxDeposit.value];
     
     maxDepositLabel.center = CGPointMake(thumbRect.origin.x + self.maxDeposit.frame.origin.x,  self.maxDeposit.frame.origin.y - 20);
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"searchSubway"]) {
+        SWMSubwayViewController *vc = [segue destinationViewController];
+        vc.delegate = self;
+        
+        [self.view endEditing:YES];
+    } else if ([[segue identifier] isEqualToString:@"goNext"])
+    {
+        RegisterViewController3 *vc = [segue destinationViewController];
+        
+        /* 기입한 정보를 다음 뷰로 전달*/
+        
+            vc.memberData = _memberData;
+        [self fillhouseData];
+        
+    }
+    
+    
 }
 
 @end

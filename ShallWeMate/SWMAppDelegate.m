@@ -12,9 +12,10 @@
 #import "SWMLoginViewController.h"
 #import "SWMCheckRole_VC.h"
 #import "HouseData.h"
+#import "MemberData.h"
 
 @implementation SWMAppDelegate
-
+@synthesize defaults;
 
 NSString *const FBSessionStateChangedNotification = @"swm.ShallWeMate:FBSessionStateChangedNotification";
 
@@ -55,8 +56,31 @@ NSString *const FBSessionStateChangedNotification = @"swm.ShallWeMate:FBSessionS
                                               } else {
                                                   NSLog(@"sessionStateChanged .. Facebook connection Error!!");
                                               }
+                                              
+                                              //정보 저장
+                                              // Create strings and integer to store the text info
+                                              NSString *name = result.name;
+                                              NSString *gender = [result objectForKey:@"gender"];
+                                              NSString *locale = [result objectForKey:@"locale"];
+                                              
+                                              
+                                              // Create instances of NSData
+//                                              UIImage *contactImage = contactImageView.image;
+//                                              NSData *imageData = UIImageJPEGRepresentation(contactImage, 100);
+                                              
+                                              
+                                              // Store the data
+                                             defaults = [NSUserDefaults standardUserDefaults];
+                                              
+                                              [defaults setObject:name forKey:@"name"];
+                                              [defaults setObject:gender forKey:@"gender"];
+                                              [defaults setObject:locale forKey:@"locale"];
+//                                              [defaults setInteger:birthday forKey:@"birthday"];
+//                                              [defaults setObject:imageData forKey:@"image"];
+                                              
+                                              [defaults synchronize];
                                           }];
-                                          
+                                         
                                       }];
     }
     
