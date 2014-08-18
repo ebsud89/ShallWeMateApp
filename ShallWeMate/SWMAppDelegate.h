@@ -21,6 +21,7 @@
 @property (strong, nonatomic) NSString *fbUserName;
 @property (strong, nonatomic) NSUserDefaults *defaults;
 
+
 extern NSString *const FBSessionStateChangedNotification;
 
 - (BOOL) openSessionWithAllowLoginUI:(BOOL)allowLoginUI;
