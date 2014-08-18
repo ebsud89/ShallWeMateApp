@@ -46,40 +46,51 @@
     
     [self refreshHouseData];
     
-    jobsArray = [[NSArray alloc] initWithObjects:@"직업을 선택해주세요.", @"학생", @"직장인", @"프리랜서", nil];
+    jobsArray = [[NSArray alloc] initWithObjects: @"학생", @"직장인", @"프리랜서", nil];
     // 버튼위에 라벨을 올려주기 위해 만듬
-    jobTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(6.0f, 2.0f, 150.0f, 30.0f)];
-    jobTitleLabel.textColor = [UIColor darkGrayColor];
+    jobTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(-25.0f, -5.0f, 150.0f, 30.0f)];
+    jobTitleLabel.textColor = [UIColor lightGrayColor];
     jobTitleLabel.textAlignment = NSTextAlignmentCenter;
     jobTitleLabel.backgroundColor = [UIColor clearColor];
-    jobTitleLabel.font = [UIFont systemFontOfSize:14.0f];
+//    jobTitleLabel.font = [UIFont fontWithName:@"Apple SD Gothic Neo-Regular" size:6];
     jobTitleLabel.lineBreakMode = NSLineBreakByClipping;
     [jobButton addSubview:jobTitleLabel];
-    jobTitleLabel.text = [jobsArray objectAtIndex:0]; ;
+    jobTitleLabel.text = @"직업을 선택해주세요.";
     
     [jobButton addTarget:self action:@selector(jobSelect:)             forControlEvents:UIControlEventTouchUpInside];
     
     SWMAppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
     
     self.fbProfilePictureView.layer.cornerRadius = self.fbProfilePictureView.frame.size.width / 2;
+    UIColor *borderColor = [UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1.0];
+    [self.fbProfilePictureView.layer setBorderColor:borderColor.CGColor];
+    [self.fbProfilePictureView.layer setBorderWidth:2.0];
     self.fbProfilePictureView.clipsToBounds = YES;
-    fbProfilePictureView.profileID = appDelegate.fbUserId;    
+    fbProfilePictureView.profileID = appDelegate.fbUserId;
     
     
     userName.text = appDelegate.fbUserName;
     [userName setFont:[self getFont]];
-    radiobutton1 = [[UIButton alloc] initWithFrame:CGRectMake(93, 310, 30, 30)];
+    radiobutton1 = [[UIButton alloc] initWithFrame:CGRectMake(90, 338, 18, 18)];
     [radiobutton1 setTag:0];
-    [radiobutton1 setBackgroundImage:[UIImage imageNamed:@"radio-off.png"] forState:UIControlStateNormal];
-    [radiobutton1 setBackgroundImage:[UIImage imageNamed:@"radio-on.png"] forState:UIControlStateSelected];
+    [radiobutton1 setBackgroundImage:[UIImage imageNamed:@"pic1.png"] forState:UIControlStateNormal];
+    [radiobutton1 setBackgroundImage:[UIImage imageNamed:@"pic2.png"] forState:UIControlStateSelected];
     [radiobutton1 addTarget:self action:@selector(radiobuttonSelected:) forControlEvents:UIControlEventTouchUpInside];
     
-    radiobutton2 = [[UIButton alloc] initWithFrame:CGRectMake(183, 310, 30, 30)];
+    radiobutton2 = [[UIButton alloc] initWithFrame:CGRectMake(173, 338, 18, 18)];
     [radiobutton2 setTag:1];
-    [radiobutton2 setBackgroundImage:[UIImage imageNamed:@"radio-off.png"] forState:UIControlStateNormal];
-    [radiobutton2 setBackgroundImage:[UIImage imageNamed:@"radio-on.png"] forState:UIControlStateSelected];
+    [radiobutton2 setBackgroundImage:[UIImage imageNamed:@"pic1.png"] forState:UIControlStateNormal];
+    [radiobutton2 setBackgroundImage:[UIImage imageNamed:@"pic2.png"] forState:UIControlStateSelected];
     [radiobutton2 addTarget:self action:@selector(radiobuttonSelected:) forControlEvents:UIControlEventTouchUpInside];
     
+//    userName.text = @"입력하기";
+    userName.textColor = [UIColor colorWithRed:237/255.0 green:103/255.0 blue:103/255.0 alpha:1];
+    userName.font = [UIFont systemFontOfSize:17];
+    userName.delegate = self;
+    
+//    _ageTextField.text = @"입력하기";
+    _ageTextField.textColor = [UIColor colorWithRed:237/255.0 green:103/255.0 blue:103/255.0 alpha:1];
+    _ageTextField.delegate = self;
     
     [self.view addSubview:radiobutton1];
     [self.view addSubview:radiobutton2];
@@ -96,6 +107,24 @@
     [[[self navigationController] navigationBar] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000]];
     
+}
+
+- (BOOL) textViewShouldBeginEditing:(UITextView *)textView
+{
+    textView.text = @"";
+    userName.textColor = [UIColor colorWithRed:237/255.0 green:103/255.0 blue:103/255.0 alpha:10000];
+    _ageTextField.textColor = [UIColor colorWithRed:237/255.0 green:103/255.0 blue:103/255.0 alpha:10000];
+    return YES;
+}
+
+-(void) textViewDidChange:(UITextView *)textView
+{
+
+    if(textView.text.length == 0){
+        textView.textColor = [UIColor colorWithRed:237/255.0 green:103/255.0 blue:103/255.0 alpha:10000];
+        textView.text = @"";
+        [textView resignFirstResponder];
+    }
 }
 
 - (void) refreshHouseData
@@ -232,10 +261,14 @@
             {
                 [radiobutton1 setSelected:NO];
                 [radiobutton2 setSelected:YES];
+                self.woman.textColor = [UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000];
+                self.man.textColor = [UIColor lightGrayColor];
             }
             else{
                 [radiobutton1 setSelected:YES];
                 [radiobutton2 setSelected:NO];
+                self.man.textColor = [UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000];
+                self.woman.textColor = [UIColor lightGrayColor];
             }
             
             break;
@@ -244,10 +277,14 @@
             {
                 [radiobutton2 setSelected:NO];
                 [radiobutton1 setSelected:YES];
+                self.man.textColor = [UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000];
+                self.woman.textColor = [UIColor lightGrayColor];
             }
             else{
                 [radiobutton2 setSelected:YES];
                 [radiobutton1 setSelected:NO];
+                self.woman.textColor = [UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000];
+                self.man.textColor = [UIColor lightGrayColor];
             }
             
             break;
@@ -301,14 +338,8 @@
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-//    [jobButton setTitle:[jobsArray objectAtIndex:row] forState:UIControlStateNormal];
     jobTitleLabel.text = [jobsArray objectAtIndex:row];
-    
-    //picker view 내리기
-//    [UIView beginAnimations:nil context:NULL];
-//    [UIView setAnimationDuration:1.0];
-//    pickerView.transform = CGAffineTransformMakeTranslation(0, 275);
-//    [UIView commitAnimations];
+    jobTitleLabel.textColor = [UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000];
     
     
 }

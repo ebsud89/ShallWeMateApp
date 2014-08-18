@@ -12,7 +12,7 @@
 
 + (CGFloat) getHeight
 {
-    return 150.0f;
+    return 132.0f;
 }
 
 + (BasicSearchTableViewCell*) basicSearchTableViewCell

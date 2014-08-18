@@ -22,53 +22,53 @@
     
     // Do any additional setup after loading the view, typically from a nib.
     [_inviteOk setTag:0];
-    [_inviteOk setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [_inviteOk setTitleColor:[UIColor purpleColor] forState:UIControlStateSelected];
+    [_inviteOk setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+    [_inviteOk setTitleColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000] forState:UIControlStateSelected];
     [_inviteOk addTarget:self action:@selector(radiobuttonSelected:) forControlEvents:UIControlEventTouchUpInside];
     
     [_inviteNo setTag:1];
-    [_inviteNo setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [_inviteNo setTitleColor:[UIColor purpleColor] forState:UIControlStateSelected];
+    [_inviteNo setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+    [_inviteNo setTitleColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000] forState:UIControlStateSelected];
     [_inviteNo addTarget:self action:@selector(radiobuttonSelected:) forControlEvents:UIControlEventTouchUpInside];
     
     [_petOk setTag:2];
-    [_petOk setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [_petOk setTitleColor:[UIColor purpleColor] forState:UIControlStateSelected];
+    [_petOk setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+    [_petOk setTitleColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000] forState:UIControlStateSelected];
     [_petOk addTarget:self action:@selector(radiobuttonSelected:) forControlEvents:UIControlEventTouchUpInside];
     
     [_petNo setTag:3];
-    [_petNo setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [_petNo setTitleColor:[UIColor purpleColor] forState:UIControlStateSelected];
+    [_petNo setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+    [_petNo setTitleColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000] forState:UIControlStateSelected];
     [_petNo addTarget:self action:@selector(radiobuttonSelected:) forControlEvents:UIControlEventTouchUpInside];
     
     [_privacyMore setTag:4];
-    [_privacyMore setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [_privacyMore setTitleColor:[UIColor purpleColor] forState:UIControlStateSelected];
+    [_privacyMore setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+    [_privacyMore setTitleColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000] forState:UIControlStateSelected];
     [_privacyMore addTarget:self action:@selector(radiobuttonSelected:) forControlEvents:UIControlEventTouchUpInside];
     
     [_privacyLess setTag:5];
-    [_privacyLess setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [_privacyLess setTitleColor:[UIColor purpleColor] forState:UIControlStateSelected];
+    [_privacyLess setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+    [_privacyLess setTitleColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000] forState:UIControlStateSelected];
     [_privacyLess addTarget:self action:@selector(radiobuttonSelected:) forControlEvents:UIControlEventTouchUpInside];
     
     [_smokeOk setTag:6];
-    [_smokeOk setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [_smokeOk setTitleColor:[UIColor purpleColor] forState:UIControlStateSelected];
+    [_smokeOk setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+    [_smokeOk setTitleColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000] forState:UIControlStateSelected];
     [_smokeOk addTarget:self action:@selector(radiobuttonSelected:) forControlEvents:UIControlEventTouchUpInside];
     
     [_smokeNo setTag:7];
-    [_smokeNo setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [_smokeNo setTitleColor:[UIColor purpleColor] forState:UIControlStateSelected];
+    [_smokeNo setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+    [_smokeNo setTitleColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000] forState:UIControlStateSelected];
     [_smokeNo addTarget:self action:@selector(radiobuttonSelected:) forControlEvents:UIControlEventTouchUpInside];
     
     [_drinkOk setTag:8];
-    [_drinkOk setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [_drinkOk setTitleColor:[UIColor purpleColor] forState:UIControlStateSelected];
+    [_drinkOk setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+    [_drinkOk setTitleColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000]forState:UIControlStateSelected];
     [_drinkOk addTarget:self action:@selector(radiobuttonSelected:) forControlEvents:UIControlEventTouchUpInside];
     
     [_drinkNo setTag:9];
-    [_drinkNo setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [_drinkNo setTitleColor:[UIColor purpleColor] forState:UIControlStateSelected];
+    [_drinkNo setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+    [_drinkNo setTitleColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000] forState:UIControlStateSelected];
     [_drinkNo addTarget:self action:@selector(radiobuttonSelected:) forControlEvents:UIControlEventTouchUpInside];
 }
 
@@ -232,7 +232,7 @@
         //요약 페이지로 이동
         SWMSummeryViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SWMSummeryViewController"];
         
-//        vc.memberData = _memberData;
+        vc.memberData = memberData;
         [self.view addSubview:vc.view];
     } else {
         NSLog(@"che2");

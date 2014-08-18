@@ -15,6 +15,7 @@
 @implementation MsgListTableViewController
 @synthesize dataSourceArray;
 @synthesize myArray;
+UIImageView *imgView;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -73,23 +74,15 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    /*
-     
-     여기서 셀을 재활용 하여 생산함.
-     
-     셀이 화면에 보일 때 마다 여기를 뺑뺑 돌음... ㅋㅋㅋ
-     
-     추측컨데... (이래도 되나....요......)
-     
-     여기서 일정한 수 만큼 셀을 만들고,
-     
-     화면 밖으로 밀려 나면, 데이터만 싹 바꿔서 다시 재활용하는듯....
-     
-     */
+   
     
     static NSString *reuseIdentifier = @"ReuseableMsgTableCellWithIdentifier";
     MsgContentsViewController *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
     
+    imgView.image = [UIImage imageNamed:@"face_test.png"];
+    
+    imgView.layer.cornerRadius = imgView.frame.size.width / 2;
+    imgView.clipsToBounds = YES;
     
     // Configure the cell...
     
@@ -97,9 +90,6 @@
         NSLog(@"Cell is nil");
     }
     
-    HouseData *houseData = [dataSourceArray objectAtIndex:indexPath.row];
-    
-    //    NSLog(@"houseData %@", houseData.title);
     
     return cell;
 }

@@ -45,8 +45,20 @@
     
 //    [self fillhouseData];
     
+    //text관련
+    self.houseTitleTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"쉐어하우스에 이름을 붙여주세요." attributes:@{NSForegroundColorAttributeName:[UIColor colorWithRed:175.0/255.0 green:175.0/255.0 blue:175.0/255.0 alpha:1.0]}];
+   
+    //줄간격
+    
+    NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
+    style.headIndent = 0; // <--- indention if you need it
+    style.firstLineHeadIndent = 0;
+    style.lineSpacing = 3;
+    textView.attributedText = [[NSAttributedString alloc]
+                               initWithString:@"Predefined Text"
+                               attributes:@{NSParagraphStyleAttributeName : style}];
     textView.text = @"쉐어하우스의 특징이 잘 나타나도록\n50자 이내로 설명해주세요.";
-    textView.textColor = [UIColor colorWithRed:209.0/255.0 green:1.0/255.0 blue:17.0/255.0 alpha:1.0];
+    textView.textColor = [UIColor colorWithRed:175.0/255.0 green:175.0/255.0 blue:175.0/255.0 alpha:1.0];
     textView.delegate = self;
     textView.font = [UIFont systemFontOfSize:15];
     

@@ -10,5 +10,6 @@
 
 @interface SWMHouseRoleTableViewCell : UITableViewCell
 + (CGFloat) getHeight;
+- (IBAction)finishClicked:(id)sender;
 
 @end

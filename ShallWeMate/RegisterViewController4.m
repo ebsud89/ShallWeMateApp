@@ -34,9 +34,10 @@
     }
     
 //    [lifeStyleArray insertObject:@"|" atIndex:4];
-    for (i = 0; i < 14; i+2) {
-        [lifeStyleArray insertObject:@"|" atIndex:i+1];
-    }
+//    for (i = 0; i < 14; i+2) {
+//
+//        [lifeStyleArray insertObject:@"|" atIndex:i];
+//    }
     NSString *lifeStyleString = [lifeStyleArray componentsJoinedByString:@"\n"];
     
     NSLog(@"array test : %@", lifeStyleString);

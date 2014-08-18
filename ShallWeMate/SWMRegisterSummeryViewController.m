@@ -32,10 +32,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self.contentTableView registerNib:[UINib nibWithNibName:@"SWMMateInfoTableViewCell" bundle:nil] forCellReuseIdentifier:@"swmMateInfoTableViewCell"];
+    
     
     [self.contentTableView registerNib:[UINib nibWithNibName:@"BasicSearchTableViewCell" bundle:nil] forCellReuseIdentifier:@"basicSearchTableViewCell"];
     [self.contentTableView registerNib:[UINib nibWithNibName:@"CollectionViewTableViewCell" bundle:nil] forCellReuseIdentifier:@"collectionViewTableViewCell"];
+    [self.contentTableView registerNib:[UINib nibWithNibName:@"SWMMateInfoTableViewCell" bundle:nil] forCellReuseIdentifier:@"swmMateInfoTableViewCell"];
     [self.contentTableView registerNib:[UINib nibWithNibName:@"SWMHouseRoleTableViewCell" bundle:nil] forCellReuseIdentifier:@"swmHouseRoleTableViewCell"];
     
     self.contentTableView.delegate = self;
@@ -50,6 +51,10 @@
 
 - (IBAction)finishedClicked:(id)sender {
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+//    SWMSummeryViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SWMSummeryViewController"];
+//    
+//    vc.memberData = memberData;
+//    [self.view addSubview:vc.view];
 }
 
 #pragma mark - UITableView
@@ -101,7 +106,8 @@
             NSLog(@"클남~~~");
             cell = [CollectionViewTableViewCell collectionViewTableViewCell];
         }
-        [cell setTitle:@"라이프스타일 키워드"];
+        [cell setTitle:@"라이프 스타일 키워드"];
+        [cell setTintColor:[UIColor darkGrayColor]];
         
         return cell;
     }
@@ -132,7 +138,7 @@
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    cell.contentView.backgroundColor = [UIColor whiteColor];
+    cell.contentView.backgroundColor = [UIColor clearColor];
 }
 
 /*

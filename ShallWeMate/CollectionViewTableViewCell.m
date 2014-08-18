@@ -13,7 +13,7 @@
 
 + (CGFloat) getHeight
 {
-    return 200.0f;
+    return 260.0f;
 }
 
 + (CollectionViewTableViewCell*) collectionViewTableViewCell
@@ -38,7 +38,7 @@
     
     // Configure layout
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-    [flowLayout setItemSize:CGSizeMake(65, 65)];
+    [flowLayout setItemSize:CGSizeMake(84, 84)];
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
     [self.collectionView setCollectionViewLayout:flowLayout];
 }

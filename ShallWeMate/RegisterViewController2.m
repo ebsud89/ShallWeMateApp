@@ -89,25 +89,29 @@
     [maxBudgetLabel setText:[NSString stringWithFormat:@"%d", budget]];
     
     //label 위치 변경
-    CGRect trackRect = [self.maxBudget trackRectForBounds:self.maxBudget.bounds];
-    CGRect thumbRect = [self.maxBudget thumbRectForBounds:self.maxBudget.bounds
-                                             trackRect:trackRect
-                                                 value:self.maxBudget.value];
+//    CGRect trackRect = [self.maxBudget trackRectForBounds:self.maxBudget.bounds];
+//    CGRect thumbRect = [self.maxBudget thumbRectForBounds:self.maxBudget.bounds
+//                                             trackRect:trackRect
+//                                                 value:self.maxBudget.value];
+//    
+//    
+//    maxBudgetLabel.center = CGPointMake(thumbRect.origin.x + self.maxBudget.frame.origin.x +16,  self.maxBudget.frame.origin.y - 6);
     
-    maxBudgetLabel.center = CGPointMake(thumbRect.origin.x + self.maxBudget.frame.origin.x,  self.maxBudget.frame.origin.y - 20);
+    maxBudgetLabel.textColor = [UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000];
 }
 
 - (IBAction)depositSlider:(id)sender {
     int deposit = maxDeposit.value;
     [maxDepositLabel setText:[NSString stringWithFormat:@"%d", deposit]];
     
+    maxDepositLabel.textColor = [UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000];
     //label 위치 변경
-    CGRect trackRect = [self.maxDeposit trackRectForBounds:self.maxDeposit.bounds];
-    CGRect thumbRect = [self.maxDeposit thumbRectForBounds:self.maxDeposit.bounds
-                                                trackRect:trackRect
-                                                    value:self.maxDeposit.value];
-    
-    maxDepositLabel.center = CGPointMake(thumbRect.origin.x + self.maxDeposit.frame.origin.x,  self.maxDeposit.frame.origin.y - 20);
+//    CGRect trackRect = [self.maxDeposit trackRectForBounds:self.maxDeposit.bounds];
+//    CGRect thumbRect = [self.maxDeposit thumbRectForBounds:self.maxDeposit.bounds
+//                                                trackRect:trackRect
+//                                                    value:self.maxDeposit.value];
+//    
+//    maxDepositLabel.center = CGPointMake(thumbRect.origin.x + self.maxDeposit.frame.origin.x + 10,  self.maxDeposit.frame.origin.y - 20);
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

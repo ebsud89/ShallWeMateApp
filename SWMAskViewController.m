@@ -17,8 +17,8 @@
 
 - (void)viewDidLoad {
     
-    textView.text = @"(예시)";
-    textView.textColor = [UIColor lightGrayColor];
+    textView.text = @"질문을 입력해주세요.";
+    textView.textColor = [UIColor colorWithRed:237/255.0 green:103/255.0 blue:103/255.0 alpha:10000];
     textView.delegate = self;
     
     //cursor coloer
@@ -27,26 +27,37 @@
     //navigation bar color
     [[[self navigationController] navigationBar] setTintColor:[UIColor whiteColor]];
     [[[self navigationController] navigationBar] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
-    [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:174/255.0 green:70/255.0 blue:115/255.0 alpha:10000]];
+    [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:237/255.0 green:103/255.0 blue:103/255.0 alpha:10000]];
     //    [[[self navigationController] navigationBar] setBackgroundColor:[UIColor colorWithRed:174/255.0 green:70/255.0 blue:115/255.0 alpha:10000]];
+    
+    //줄간격
+    
+    NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
+    style.headIndent = 0; // <--- indention if you need it
+    style.firstLineHeadIndent = 0;
+    style.lineSpacing = 2;
+    _label.attributedText = [[NSAttributedString alloc]
+                             initWithString:@"하우스 매니저에게 궁금한 점을 질문해주세요.\n질문 및 답변은 모두에게 공개됩니다."
+                               attributes:@{NSParagraphStyleAttributeName : style}];
 }
 
 - (BOOL) textViewShouldBeginEditing:(UITextView *)textView
 {
     textView.text = @"";
-    textView.textColor = [UIColor blackColor];
+    textView.textColor = [UIColor colorWithRed:237/255.0 green:103/255.0 blue:103/255.0 alpha:10000];
     return YES;
 }
 
--(void) textViewDidChange:(UITextView *)textView
-{
-    
-    if(textView.text.length == 0){
-        textView.textColor = [UIColor lightGrayColor];
-        textView.text = @"Comment";
-        [textView resignFirstResponder];
-    }
-}
+
+//-(void) textViewDidChange:(UITextView *)textView
+//{
+//    
+//    if(textView.text.length == 0){
+//        textView.textColor = [UIColor colorWithRed:237/255.0 green:103/255.0 blue:103/255.0 alpha:10000];
+//        textView.text = @"";
+//        [textView resignFirstResponder];
+//    }
+//}
 
 - (IBAction)doneButtonPressed:(id)sender {
 //    SWMMainDetailViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"MainDetaileView"];

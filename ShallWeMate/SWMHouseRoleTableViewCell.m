@@ -11,7 +11,14 @@
 @implementation SWMHouseRoleTableViewCell
 + (CGFloat)getHeight
 {
-    return 250.0f;
+    return 296.0f;
+}
+
+- (IBAction)finishClicked:(id)sender {
+//    SWMSummeryViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SWMSummeryViewController"];
+//    
+//    vc.memberData = memberData;
+//    [self.view addSubview:vc.view];
 }
 
 - (void)awakeFromNib

@@ -10,8 +10,8 @@
 
 @interface SWMAskViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *textField;
+@property (weak, nonatomic) IBOutlet UILabel *label;
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 - (IBAction)doneButtonPressed:(id)sender;
-- (IBAction)registerButtonPressed:(id)sender;
 
 @end
