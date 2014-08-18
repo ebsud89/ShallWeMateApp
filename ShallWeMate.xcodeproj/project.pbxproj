@@ -652,6 +652,33 @@
 			name = CollectionView;
 			sourceTree = "<group>";
 		};
+		AEAD76F219A24314004E30B7 /* subway */ = {
+			isa = PBXGroup;
+			children = (
+				68A98F2819A1E99C009AB3A5 /* 01.png */,
+				68A98F2919A1E99C009AB3A5 /* 02.png */,
+				68A98F2A19A1E99C009AB3A5 /* 03.png */,
+				68A98F2B19A1E99C009AB3A5 /* 04.png */,
+				68A98F2C19A1E99C009AB3A5 /* 05.png */,
+				68A98F2D19A1E99C009AB3A5 /* 06.png */,
+				68A98F2E19A1E99C009AB3A5 /* 07.png */,
+				68A98F2F19A1E99C009AB3A5 /* 08.png */,
+				68A98F3019A1E99C009AB3A5 /* 09.png */,
+				68A98F3119A1E99C009AB3A5 /* 경의.png */,
+				68A98F3219A1E99C009AB3A5 /* 경춘.png */,
+				68A98F3319A1E99C009AB3A5 /* 공항.png */,
+				68A98F3419A1E99C009AB3A5 /* 분당.png */,
+				68A98F3519A1E99C009AB3A5 /* 수인.png */,
+				68A98F3619A1E99C009AB3A5 /* 신분당.png */,
+				68A98F3719A1E99C009AB3A5 /* 에버.png */,
+				68A98F3819A1E99C009AB3A5 /* 의정부.png */,
+				68A98F3919A1E99C009AB3A5 /* 인천.png */,
+				68A98F3A19A1E99C009AB3A5 /* 중앙.png */,
+				EB433BC71990A3E1002667D0 /* subway.csv */,
+			);
+			name = subway;
+			sourceTree = "<group>";
+		};
 		AEB4BD77199FABF6004343C3 /* FLAnimatedImage */ = {
 			isa = PBXGroup;
 			children = (
@@ -1003,25 +1030,7 @@
 		EB785A01198A19D9000B4C18 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				68A98F2819A1E99C009AB3A5 /* 01.png */,
-				68A98F2919A1E99C009AB3A5 /* 02.png */,
-				68A98F2A19A1E99C009AB3A5 /* 03.png */,
-				68A98F2B19A1E99C009AB3A5 /* 04.png */,
-				68A98F2C19A1E99C009AB3A5 /* 05.png */,
-				68A98F2D19A1E99C009AB3A5 /* 06.png */,
-				68A98F2E19A1E99C009AB3A5 /* 07.png */,
-				68A98F2F19A1E99C009AB3A5 /* 08.png */,
-				68A98F3019A1E99C009AB3A5 /* 09.png */,
-				68A98F3119A1E99C009AB3A5 /* 경의.png */,
-				68A98F3219A1E99C009AB3A5 /* 경춘.png */,
-				68A98F3319A1E99C009AB3A5 /* 공항.png */,
-				68A98F3419A1E99C009AB3A5 /* 분당.png */,
-				68A98F3519A1E99C009AB3A5 /* 수인.png */,
-				68A98F3619A1E99C009AB3A5 /* 신분당.png */,
-				68A98F3719A1E99C009AB3A5 /* 에버.png */,
-				68A98F3819A1E99C009AB3A5 /* 의정부.png */,
-				68A98F3919A1E99C009AB3A5 /* 인천.png */,
-				68A98F3A19A1E99C009AB3A5 /* 중앙.png */,
+				AEAD76F219A24314004E30B7 /* subway */,
 				68A98F2419A1E11B009AB3A5 /* m4.png */,
 				68A98F2519A1E11B009AB3A5 /* m3.png */,
 				68A98F2019A1DB5C009AB3A5 /* m1.png */,
@@ -1073,7 +1082,6 @@
 				68A7CF88199240C600DF4BB3 /* checkbox-checked.png */,
 				EB433BC51990A3E1002667D0 /* radio-off.png */,
 				EB433BC61990A3E1002667D0 /* radio-on.png */,
-				EB433BC71990A3E1002667D0 /* subway.csv */,
 				EB433BC81990A3E1002667D0 /* makefg.php.png */,
 				EB433BC91990A3E1002667D0 /* face_test.png */,
 				EB433BCA1990A3E1002667D0 /* testImg.jpg */,

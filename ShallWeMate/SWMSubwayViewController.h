@@ -10,14 +10,18 @@
 
 @protocol SubwayViewControllerDelegate;
 
-@interface SWMSubwayViewController : UIViewController <UISearchDisplayDelegate>
+@interface SWMSubwayViewController : UIViewController <UISearchBarDelegate, UISearchDisplayDelegate>
 
 {
     NSArray *searchResults;
     
     NSMutableArray *subwayDicArray;
+    
+    NSMutableArray *subwayTransformArray;
+    
 
 //    id<SubwayViewControllerDelegate> delegate;
+    
 }
 
 @property (nonatomic, assign) id<SubwayViewControllerDelegate>delegate;
