@@ -2316,6 +2316,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Item" id="lup-5c-1wM">
                             <connections>
                                 <action selector="doneButtonClicked:" destination="9kh-fP-wRD" id="BR4-nc-Qbi"/>
+                                <segue destination="dkK-NB-Sur" kind="push" identifier="goNext" id="dsR-yf-jNe"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

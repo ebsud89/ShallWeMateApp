@@ -82,10 +82,19 @@
 //    self.subwayStationSearchBtn.b.image = nil;
     [self.subwayStationSearchBtn setBackgroundImage:nil forState:UIControlStateNormal];
 
+    self.locationLabel = [[UILabel alloc]initWithFrame:self.subwaySearchBtn.titleLabel.frame];
+    
     self.locationLabel.text = [subwayDic objectForKey:@"전철역명"];
-    NSLog(@".... %@", [subwayDic objectForKey:@"전철역명"]);
-//    self.location.text = [subwayDic objectForKey:@"전철역명"];
-//    self.housedata.subwayDic = subwayDic;
+    
+    [self.view addSubview:self.locationLabel];
+    _memberData.subwayDic = subwayDic;
+    [self.location reloadInputViews];
+    
+}
+
+- (void) viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
     
     NSLog(@"aaadsfjosdfjdosjlxnaofjoewjfnvj");
     NSLog(@"%@", _memberData.subwayDic);
