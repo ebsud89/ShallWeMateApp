@@ -8,7 +8,7 @@
 
 #import "PRegisterViewController7.h"
 #import "PSummeryViewController.h"
-
+#import "CustomAlertView.h"
 
 @interface PRegisterViewController7 ()
 
@@ -247,12 +247,13 @@
             vc.houseData = self.houseData;
             [self.view addSubview:vc.view];
     } else {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"모두 선택해주세요."
+        CustomAlertView *alert = [[CustomAlertView alloc] initWithTitle:@"모두 선택해주세요."
                                                         message:@"~~"
                                                        delegate:self
                                               cancelButtonTitle:@"돌아가기"
                                               otherButtonTitles:nil];
         [alert show];
+        alert = nil;
     }
     
 }

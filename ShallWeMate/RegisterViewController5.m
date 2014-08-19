@@ -7,7 +7,8 @@
 //
 
 #import "RegisterViewController5.h"
-#import "SWMSummeryViewController.h"
+#import "SWMRegisterSummeryViewController.h"
+#import "CustomAlertView.h"
 
 @implementation RegisterViewController5
 @synthesize memberData;
@@ -230,18 +231,20 @@
 //            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:NO]];
 
         //요약 페이지로 이동
-        SWMSummeryViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SWMSummeryViewController"];
+        SWMRegisterSummeryViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SWMRegisterSummeryViewController"];
         
         vc.memberData = memberData;
         [self.view addSubview:vc.view];
     } else {
         NSLog(@"che2");
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"모두 선택해주세요."
-                                                        message:@"~~"
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"모든 항목을 선택해주세요."
+                                                        message:@""
                                                        delegate:self
                                               cancelButtonTitle:@"돌아가기"
                                               otherButtonTitles:nil];
         [alert show];
+//        [alert setTopColor:[UIColor colorWithRed:0.7 green:0 blue:0 alpha:1] middleColor:[UIColor colorWithRed:0.5 green:0 blue:0 alpha:1] bottomColor:[UIColor colorWithRed:0.4 green:0 blue:0 alpha:1] lineColor:[UIColor colorWithRed:0.7 green:0 blue:0 alpha:1]];
+        alert = nil;
     }
     
 }

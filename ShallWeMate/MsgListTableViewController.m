@@ -11,6 +11,7 @@
 #import "MsgContentsViewController.h"
 #import "MakeDumpData.h"
 #import "HouseData.h"
+#import "SWMMessage.h"
 
 @implementation MsgListTableViewController
 @synthesize dataSourceArray;
@@ -31,13 +32,12 @@ UIImageView *imgView;
     [super viewDidLoad];
     
     
+    // 메세지 받아오기
+//    SWMMessage *msg = [[SWMMessage alloc]init];
     
-    
-    //덤프 데이터 만들기
+    //test
     MakeDumpData *dump = [[MakeDumpData alloc]init];
     dataSourceArray = [[NSMutableArray alloc]initWithArray:[dump getHouseDataArray]];
-    //
-    //    int i = (int) [self.dataSourceArray count];
     
     //cursor color
     [[UITextField appearance] setTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1.0]];
@@ -45,7 +45,7 @@ UIImageView *imgView;
     //navigation bar color
     [[[self navigationController] navigationBar] setTintColor:[UIColor whiteColor]];
     [[[self navigationController] navigationBar] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
-    [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000]];
+    [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1]];
 }
 
 
@@ -94,9 +94,9 @@ UIImageView *imgView;
     return cell;
 }
 
--(UIStatusBarStyle)preferredStatusBarStyle{
-    return UIStatusBarStyleLightContent;
-}
+//-(UIStatusBarStyle)preferredStatusBarStyle{
+//    return UIStatusBarStyleLightContent;
+//}
 
 //#pragma mark - Navigation
 //

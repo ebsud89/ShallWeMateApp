@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <FacebookSDK/FacebookSDK.h>
 #import "SWMRootViewController.h"
+#import "CustomAlertView.h"
 
 @class LoginViewController;
 

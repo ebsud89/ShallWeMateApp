@@ -42,7 +42,7 @@
     
     // UIBubbleTableView default properties
     
-    self.snapInterval = 120;
+    self.snapInterval = 86400;
     self.typingBubble = NSBubbleTypingTypeNobody;
 }
 
@@ -131,7 +131,6 @@
         for (int i = 0; i < count; i++)
         {
             NSBubbleData *data = (NSBubbleData *)[bubbleData objectAtIndex:i];
-            
             if ([data.date timeIntervalSinceDate:last] > self.snapInterval)
             {
 #if !__has_feature(objc_arc)

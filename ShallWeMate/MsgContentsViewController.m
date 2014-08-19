@@ -30,16 +30,15 @@
 {
     [super viewDidLoad];
     
-    NSBubbleData *heyBubble = [NSBubbleData dataWithText:@"저는" date:[NSDate dateWithTimeIntervalSinceNow:-300] type:BubbleTypeSomeoneElse];
+    //받고 뿌리기
+    NSBubbleData *heyBubble = [NSBubbleData dataWithText:@"저는" date:[NSDate dateWithTimeIntervalSinceNow:-86400] type:BubbleTypeSomeoneElse];
     heyBubble.avatar = [UIImage imageNamed:@"avatar1.png"];
     
-    NSBubbleData *photoBubble = [NSBubbleData dataWithImage:[UIImage imageNamed:@"halloween.jpg"] date:[NSDate dateWithTimeIntervalSinceNow:-290] type:BubbleTypeSomeoneElse];
-    photoBubble.avatar = [UIImage imageNamed:@"avatar1.png"];
+    bubbleData = [[NSMutableArray alloc] initWithObjects:heyBubble, /*replyBubble, thirdBubble,*/ nil];
     
-    NSBubbleData *replyBubble = [NSBubbleData dataWithText:@"저는 이 부분을 저는 이 부분을 구현할 때 셀에 직접 이미지를 넣고 텍스트를 넣고 한게아니라 UIView를 상속받는 만들어서 구현하여 Cell에 추가하는 방식으로 구현하였습니다." date:[NSDate dateWithTimeIntervalSinceNow:-5] type:BubbleTypeMine];
-    replyBubble.avatar = nil;
     
-    bubbleData = [[NSMutableArray alloc] initWithObjects:heyBubble, replyBubble, nil];
+    
+    
     bubbleTable.bubbleDataSource = self;
     
     // The line below sets the snap interval in seconds. This defines how the bubbles will be grouped in time.
@@ -60,13 +59,21 @@
     //    - NSBubbleTypingTypeNone - no "now typing" bubble
     
     bubbleTable.typingBubble = NSBubbleTypingTypeSomebody;
-    
     [bubbleTable reloadData];
     
     // Keyboard events
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWasShown:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillBeHidden:) name:UIKeyboardWillHideNotification object:nil];
+    
+    //cursor color
+    [[UITextField appearance] setTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1.0]];
+    
+    //navigation bar color
+    [[[self navigationController] navigationBar] setTintColor:[UIColor whiteColor]];
+    [[[self navigationController] navigationBar] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1]];
+    NSArray *controllers = [self.navigationController viewControllers];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -83,6 +90,8 @@
 
 - (NSBubbleData *)bubbleTableView:(UIBubbleTableView *)tableView dataForRow:(NSInteger)row
 {
+    
+    [bubbleTable setContentOffset:CGPointMake(0, CGFLOAT_MAX) animated:NO];
     return [bubbleData objectAtIndex:row];
 }
 

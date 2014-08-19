@@ -9,10 +9,12 @@
 #import "RegisterViewController3.h"
 #import "RegisterViewController4.h"
 @interface RegisterViewController3 ()
+@property (nonatomic, strong) UILabel *ageTitleLabel;
 @end
 @implementation RegisterViewController3
-
+@synthesize ageBtn;
 @synthesize ageTitleLabel;
+@synthesize avgAgeLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle*)nibBundleOrNil
 {
@@ -29,19 +31,10 @@
     [super viewDidLoad];
     
     [self refreshHouseData];
+    
+    
     agesArray = [[NSArray alloc] initWithObjects: @"20대 초반", @"20대 중반", @"20대 후반", @"30대 초반", @"30대 중반", @"30대 후반", @"40대 이상", nil];
     
-    // 버튼위에 라벨을 올려주기 위해 만듬
-    ageTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(6.0f, 2.0f, 150.0f, 30.0f)];
-    ageTitleLabel.textColor = [UIColor lightGrayColor];
-    ageTitleLabel.textAlignment = NSTextAlignmentCenter;
-    ageTitleLabel.backgroundColor = [UIColor clearColor];
-    ageTitleLabel.font = [UIFont systemFontOfSize:14.0f];
-    ageTitleLabel.lineBreakMode = NSLineBreakByClipping;
-    [ageSelectBtn addSubview:ageTitleLabel];
-    ageTitleLabel.text = @"원하는 메이트의 연령대를 선택해주세요";
-    
-    [ageSelectBtn addTarget:self action:@selector(ageSelect:)             forControlEvents:UIControlEventTouchUpInside];
     
     //cursor coloer
     [[UITextField appearance] setTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1.0]];
@@ -184,7 +177,8 @@
     - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
     {
         NSLog(@"%@",[agesArray objectAtIndex:row] );
-        ageTitleLabel.text = [agesArray objectAtIndex:row];
+        avgAgeLabel.text = [agesArray objectAtIndex:row];
+        avgAgeLabel.textColor = [UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000];
     }
     
     - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component

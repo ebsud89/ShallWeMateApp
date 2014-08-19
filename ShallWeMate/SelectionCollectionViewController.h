@@ -17,6 +17,7 @@
 @property (strong, nonatomic) UICollectionView *selectList;
 @property (assign, nonatomic) int numberOfItemsInSection;
 @property (strong, nonatomic) NSArray *picData;
+@property (strong, nonatomic) NSArray *unselectedPicData;
 @property (strong, nonatomic) NSArray *data;
 
 - (void) selectionListInit;

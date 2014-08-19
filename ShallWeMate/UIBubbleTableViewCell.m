@@ -98,6 +98,7 @@
     
     CGFloat width = self.data.view.frame.size.width;
     CGFloat height = self.data.view.frame.size.height;
+    NSLog(@"height....%f", height);
     
     CGFloat x = (type == BubbleTypeSomeoneElse) ? 0 : self.frame.size.width - width - self.data.insets.left - self.data.insets.right;
     CGFloat y = 0;
@@ -157,7 +158,8 @@
     }
     else {
         self.bubbleImage.image = [[UIImage imageNamed:@"m1.png"] stretchableImageWithLeftCapWidth:17 topCapHeight:12];
-        self.customView.frame = CGRectMake(x + self.data.insets.left+4, y + self.data.insets.top + 30, width, height+5);
+        self.customView.frame = CGRectMake(x + self.data.insets.left+4, y + self.data.insets.top + 30, width, height);
+        
     }
     
     [self.contentView addSubview:self.customView];

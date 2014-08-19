@@ -11,5 +11,4 @@
 
 @interface MsgContentsViewController : UIViewController<UIBubbleTableViewDataSource>
 
-
 @end

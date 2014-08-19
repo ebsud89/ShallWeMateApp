@@ -7,6 +7,7 @@
 //
 
 #import "SWMRequestViewController.h"
+#import "CustomAlertView.h"
 
 @implementation SWMRequestViewController
 
@@ -141,23 +142,45 @@
     if (checkbox1Selected == 1 && checkbox2Selected == 1 && checkbox3Selected == 1 && checkbox4Selected == 1) {
         
         NSLog(@"chekck 1");
-
-        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+        CustomAlertView *alert = [[CustomAlertView alloc] initWithTitle:@""
+                                                        message:@"입주신청이 완료되었습니다.\n하우스 매니저의 연락을 기다려주세요."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"확인"
+                                              otherButtonTitles:nil];
+        [alert setTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000]];
+        [alert show];
+        [alert setTag:0];
     } else {
         NSLog(@"che2");
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"모두 동의해주세요."
-                                                        message:@"동의하지 않으면 입주신청이 불가능 합니다."
-                                                       delegate:self
+        CustomAlertView *alert = [[CustomAlertView alloc] initWithTitle:@"1"
+                                                        message:@"모두 동의하지 않으면 입주신청이 불가능합니다."
+                                                       delegate:nil
                                               cancelButtonTitle:@"돌아가기"
                                               otherButtonTitles:nil];
+        [alert setTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000]];
         [alert show];
+        [alert setTag:1];
     }
 
 }
 
 
+-(void)willPresentAlertView:(UIAlertView *)alertView{
+    UILabel *theTitle = [alertView valueForKey:@"_titleLabel"];
+    theTitle.font = [UIFont fontWithName:@"Copperplate" size:18];
+    [theTitle setTextColor:[UIColor whiteColor]];
+    
+    UILabel *theBody = [alertView valueForKey:@"_bodyTextLabel"];
+    theBody.font = [UIFont fontWithName:@"system" size:15];
+    [theBody setTextColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000]];
+}
+
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    [self viewDidLoad];
+    if ([alertView tag] == 0) {
+        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    }else {
+        
+    }
     //[[self] popViewControllerAnimated:YES];
     //[[self navigationController] popViewControllerAnimated:YES];
 }

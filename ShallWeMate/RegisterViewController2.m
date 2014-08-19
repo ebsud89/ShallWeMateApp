@@ -78,7 +78,12 @@
 // subway delegate
 - (void) didSelectedSubwayStation:(NSDictionary *) subwayDic
 {
-    self.location.text = [subwayDic objectForKey:@"전철역명"];
+//    self.subwayStationSearchBtn.b.image = nil;
+    [self.subwayStationSearchBtn setBackgroundImage:nil forState:UIControlStateNormal];
+
+    self.locationLabel.text = [subwayDic objectForKey:@"전철역명"];
+    NSLog(@".... %@", [subwayDic objectForKey:@"전철역명"]);
+//    self.location.text = [subwayDic objectForKey:@"전철역명"];
 //    self.housedata.subwayDic = subwayDic;
     
 }
@@ -87,7 +92,7 @@
     //label에 금액 띄우기
     int budget = maxBudget.value;
     [maxBudgetLabel setText:[NSString stringWithFormat:@"%d", budget]];
-    
+    [maxBudgetLabel setFont:[UIFont fontWithName:@"AppleSDGothicNeo-Bold" size:17.0]];
     //label 위치 변경
 //    CGRect trackRect = [self.maxBudget trackRectForBounds:self.maxBudget.bounds];
 //    CGRect thumbRect = [self.maxBudget thumbRectForBounds:self.maxBudget.bounds
@@ -96,7 +101,6 @@
 //    
 //    
 //    maxBudgetLabel.center = CGPointMake(thumbRect.origin.x + self.maxBudget.frame.origin.x +16,  self.maxBudget.frame.origin.y - 6);
-    
     maxBudgetLabel.textColor = [UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000];
 }
 
@@ -104,6 +108,7 @@
     int deposit = maxDeposit.value;
     [maxDepositLabel setText:[NSString stringWithFormat:@"%d", deposit]];
     
+    [maxDepositLabel setFont:[UIFont fontWithName:@"AppleSDGothicNeo-Bold" size:17.0]];
     maxDepositLabel.textColor = [UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000];
     //label 위치 변경
 //    CGRect trackRect = [self.maxDeposit trackRectForBounds:self.maxDeposit.bounds];

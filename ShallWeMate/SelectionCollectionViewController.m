@@ -12,6 +12,9 @@
 @synthesize viewController;
 int count = 0;
 UIImageView *image;
+UIImageView *imgViewOff;
+UIImageView *imgViewOn;
+
 - (id) init
 {
     
@@ -58,6 +61,8 @@ UIImageView *image;
     NSArray *picArray = [[NSArray alloc] initWithObjects:@"cook.png", @"movie.png", @"interior.png",@"cook.png", @"movie.png", @"interior.png",@"cook.png", @"movie.png", @"interior.png",@"cook.png", @"movie.png", @"interior.png",@"cook.png", @"movie.png", @"interior.png", @"face_test.png", @"face_test.png", @"face_test.png", @"face_test.png", @"face_test.png", @"face_test.png", @"face_test.png",nil];
     self.picData = picArray;
     
+        
+        
     imgView.image = [UIImage imageNamed:[self.picData objectAtIndex:indexPath.row]];
     [cell.contentView addSubview:imgView];
     UILabel *lable = [[UILabel alloc] initWithFrame:CGRectMake(0, 86, 100, 30)];
@@ -78,19 +83,23 @@ UIImageView *image;
         imgView.image = [UIImage imageNamed:[self.picData objectAtIndex:indexPath.row]];
         [cell.contentView addSubview:imgView];
     } else if ([viewController isEqual:@"enableRoomsMore"]) {
-        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 90, 90)];
-        NSArray *picArray = [[NSArray alloc] initWithObjects:@"cook.png", @"movie.png", @"interior.png",@"cook.png", @"movie.png", @"interior.png",@"cook.png", @"movie.png", @"interior.png",@"cook.png", @"movie.png", @"interior.png",@"cook.png", @"movie.png", @"interior.png", @"face_test.png", @"face_test.png", @"face_test.png",nil];
-        self.picData = picArray;
-        
-        imgView.image = [UIImage imageNamed:[self.picData objectAtIndex:indexPath.row]];
-        [cell.contentView addSubview:imgView];
-        NSLog(@"image size : %f %f", imgView.frame.size.width,imgView.image.size.height);
-        NSLog(@"view size : %f", cell.contentView.frame.size.width);
+        NSArray *picArray = [[NSArray alloc] initWithObjects:@"침실", @"거실", @"부엌", @"욕실", @"세탁실", @"창고", @"서재", @"주차장", @"엘리베이터", nil];
+        self.data = picArray;
+        UILabel *roomInfo = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 85, 40)];
+        roomInfo.text = [self.data objectAtIndex:indexPath.row];
+        roomInfo.textColor = [UIColor grayColor];
+        [roomInfo setFont:[UIFont fontWithName:@"AppleSDGothicNeo-Bold" size:18.0]];
+        roomInfo.textAlignment = NSTextAlignmentCenter;
+        roomInfo.backgroundColor = [UIColor clearColor];
+        roomInfo.shadowColor = [UIColor lightGrayColor];
+        roomInfo.shadowOffset = CGSizeMake(0.0, 1.0);
+        [cell.contentView addSubview:roomInfo];
     } else if ([viewController isEqual:@"enableManagementStates"]) {
-        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 65, 65)];
+        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(6, 0, 51, 67)];
         
-        NSArray *picArray = [[NSArray alloc] initWithObjects:@"cook.png", @"movie.png", @"interior.png",@"cook.png", @"movie.png", @"interior.png",@"cook.png", @"movie.png", @"interior.png",@"cook.png", @"movie.png", @"interior.png",@"cook.png", @"movie.png", @"interior.png", @"face_test.png", @"face_test.png", @"face_test.png",nil];
+        NSArray *picArray = [[NSArray alloc] initWithObjects:@"관리비_가스비1.png",@"관리비_전기세1.png", @"관리비_수도세1.png", @"관리비_청소비1.png", @"관리비_통신료1.png", @"관리비_보안시스템1.png", @"관리비_화재보험료1.png", @"관리비_수선유지비1.png", nil];
         self.picData = picArray;
+        
         
         imgView.image = [UIImage imageNamed:[self.picData objectAtIndex:indexPath.row]];
         [cell.contentView addSubview:imgView];
@@ -106,15 +115,18 @@ UIImageView *image;
     }else if ([viewController isEqual:@"enableOptions"]) {
         return CGSizeMake(65,65);
     }else if ([viewController isEqual:@"enableRoomsMore"]) {
-        return CGSizeMake(90,90);
+        return CGSizeMake(85,55);
     }
-    else {
-        return CGSizeMake(65,65);
+    else /*if ([viewController isEqual:@"enableManagementStates"])*/ {
+        return CGSizeMake(60,68);
     }
 }
 
 // 컬렉션과 컬렉션 width 간격
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
+//    if ([viewController isEqual:@"enableRoomsMore"]) {
+//        return 5;
+//    }
     return 2;
 }
 
@@ -143,23 +155,27 @@ UIImageView *image;
         [cell.contentView addSubview:image];
     }else if ([viewController isEqual:@"enableRoomsMore"]) {
         [self.delegate didSelectedItem:indexPath];UICollectionViewCell *cell = [self.selectList cellForItemAtIndexPath:indexPath];
-        
-        image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 90, 90)];
-        image.image = [UIImage imageNamed:@"life_cover.png"];
-        [cell.contentView addSubview:image];
+        NSArray *picArray = [[NSArray alloc] initWithObjects:@"침실", @"거실", @"부엌", @"욕실", @"세탁실", @"창고", @"서재", @"주차장", @"엘리베이터", nil];
+        self.data = picArray;
+        UILabel *roomInfo = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 85, 40)];
+        [roomInfo setFont:[UIFont fontWithName:@"AppleSDGothicNeo-Bold" size:18.0]];
+        roomInfo.textAlignment = NSTextAlignmentCenter;
+        roomInfo.text = [self.data objectAtIndex:indexPath.row];
+        roomInfo.textColor = [UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000];
+        [cell.contentView addSubview:roomInfo];
     }
-    else {
+    else if ([viewController isEqual:@"enableManagementStates"]){
         NSLog(@"did selectItem  %ld %ld", (long)indexPath.row, (long)indexPath.section);
         [self.delegate didSelectedItem:indexPath];
         
         UICollectionViewCell *cell = [self.selectList cellForItemAtIndexPath:indexPath];
-        image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 65, 65)];
-        
-        
-        image.image = [UIImage imageNamed:@"life_cover.png"];
-        [cell.contentView addSubview:image];
-//        cell.layer.borderColor = [UIColor blueColor].CGColor;
-//        cell.layer.borderWidth = 3.0f;
+//        image = [[UIImageView alloc] initWithFrame:CGRectMake(7, 0, 50, 50)];
+        NSArray *picArrayBlack = [[NSArray alloc] initWithObjects:@"관리비_가스비.png",@"관리비_전기세.png", @"관리비_수도세.png", @"관리비_청소비.png", @"관리비_통신료.png", @"관리비_보안시스템.png", @"관리비_화재보험료.png", @"관리비_수선유지비.png", nil];
+        self.unselectedPicData = picArrayBlack;
+        imgViewOff = [[UIImageView alloc] initWithFrame:CGRectMake(6, 0, 51, 67)];
+        imgViewOff.image = [UIImage imageNamed:[self.unselectedPicData objectAtIndex:indexPath.row]];
+//        imgView.image = nil;
+        [cell.contentView addSubview:imgViewOff];
     }
 }
 
@@ -170,17 +186,35 @@ UIImageView *image;
             count--;
         NSLog(@"did DeSelectItem %ld", (long)indexPath.row);
         [self.delegate didDeSelectedItem:indexPath];
-            
+            UICollectionViewCell *cell = [self.selectList cellForItemAtIndexPath:indexPath];
         image.image = nil;
+            [cell.contentView addSubview:image];
         }
-    } else {
+    } else if ([viewController isEqual:@"enableOptions"]) {
+        UICollectionViewCell *cell = [self.selectList cellForItemAtIndexPath:indexPath];
+        image.image = nil;
+        [cell.contentView addSubview:image];
+    
+    } else if ([viewController isEqual:@"enableRoomsMore"]) {
+        [self.delegate didSelectedItem:indexPath];UICollectionViewCell *cell = [self.selectList cellForItemAtIndexPath:indexPath];
+        NSArray *picArray = [[NSArray alloc] initWithObjects:@"침실", @"거실", @"부엌", @"욕실", @"세탁실", @"창고", @"서재", @"주차장", @"엘리베이터", nil];
+        self.data = picArray;
+        UILabel *roomInfo = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 85, 40)];
+        roomInfo.textAlignment = NSTextAlignmentCenter;
+        roomInfo.text = [self.data objectAtIndex:indexPath.row];
+        roomInfo.textColor = [UIColor lightGrayColor];
+        [roomInfo setFont:[UIFont fontWithName:@"AppleSDGothicNeo-Bold" size:18.0]];
+        [cell.contentView addSubview:roomInfo];
+    } else if ([viewController isEqual:@"enableManagementStates"]) {
         NSLog(@"did selectItem  %ld %ld", (long)indexPath.row, (long)indexPath.section);
         [self.delegate didSelectedItem:indexPath];
-        
-        image.image = nil;
-//        UICollectionViewCell *cell = [self.selectList cellForItemAtIndexPath:indexPath];
-//        cell.layer.borderColor = nil;
-//        cell.layer.borderWidth = 0.0f;
+        UICollectionViewCell *cell = [self.selectList cellForItemAtIndexPath:indexPath];
+//        image = [[UIImageView alloc] initWithFrame:CGRectMake(7, 0, 50, 50)];
+        NSArray *picArrayBlack = [[NSArray alloc] initWithObjects:@"관리비_가스비1.png",@"관리비_전기세1.png", @"관리비_수도세1.png", @"관리비_청소비1.png", @"관리비_통신료1.png", @"관리비_보안시스템1.png", @"관리비_화재보험료1.png", @"관리비_수선유지비1.png", nil];
+        self.unselectedPicData = picArrayBlack;
+        imgViewOn = [[UIImageView alloc] initWithFrame:CGRectMake(6, 0, 51, 67)];
+        imgViewOn.image = [UIImage imageNamed:[self.unselectedPicData objectAtIndex:indexPath.row]];
+        [cell.contentView addSubview:imgViewOn];
     }
 }
 

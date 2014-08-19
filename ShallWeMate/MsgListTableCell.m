@@ -22,15 +22,16 @@ UIImageView *imgView;
     return self;
 }
 
-- (void)viewDidLoad {
-    imgView.image = [UIImage imageNamed:@"face_test.png"];
-    
-    imgView.layer.cornerRadius = imgView.frame.size.width / 2;
-    imgView.clipsToBounds = YES;
-}
+
 - (void)awakeFromNib
 {
     // Initialization code
+    self.providerImage.layer.cornerRadius = self.providerImage.frame.size.width / 2;
+    UIColor *borderColor = [UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1.0];
+    [self.providerImage.layer setBorderColor:borderColor.CGColor];
+    [self.providerImage.layer setBorderWidth:1.0];
+    self.providerImage.clipsToBounds = YES;
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
