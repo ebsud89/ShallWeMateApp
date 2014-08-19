@@ -243,7 +243,7 @@
                                               cancelButtonTitle:@"돌아가기"
                                               otherButtonTitles:nil];
         [alert show];
-//        [alert setTopColor:[UIColor colorWithRed:0.7 green:0 blue:0 alpha:1] middleColor:[UIColor colorWithRed:0.5 green:0 blue:0 alpha:1] bottomColor:[UIColor colorWithRed:0.4 green:0 blue:0 alpha:1] lineColor:[UIColor colorWithRed:0.7 green:0 blue:0 alpha:1]];
+//        [alert setTopColor:[U IColor colorWithRed:0.7 green:0 blue:0 alpha:1] middleColor:[UIColor colorWithRed:0.5 green:0 blue:0 alpha:1] bottomColor:[UIColor colorWithRed:0.4 green:0 blue:0 alpha:1] lineColor:[UIColor colorWithRed:0.7 green:0 blue:0 alpha:1]];
         alert = nil;
     }
     
