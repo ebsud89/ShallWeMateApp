@@ -14,6 +14,7 @@
 #import "RegisterViewController1.h"
 #import "SWMHouseImageTableViewCell.h"
 #import "SWMNetwork.h"
+#import "MemberData.h"
 
 @interface SWMMainTableViewController ()
 
@@ -54,28 +55,41 @@
     NSArray *roomArray = [network getAllRooms];
     for (NSDictionary *dic in roomArray) {
         SWMRoom *room = [[SWMRoom alloc]initWithDictionary:dic];
-        [room exportToHouseData];
-        [dataSourceArray addObject:room];
+        NSLog(@"\n%@", room);
+        HouseData * houseData = [room exportToHouseData];
+        [dataSourceArray addObject:houseData];
         
     }
     
+    
+    
     [self.tableView registerNib:[UINib nibWithNibName:@"SWMHouseImageTableViewCell" bundle:nil] forCellReuseIdentifier:@"houseImageTableViewCell"];
     
-    
-    //덤프 데이터 만들기
-//    MakeDumpData *dump = [[MakeDumpData alloc]init];
-//    dataSourceArray = [[NSMutableArray alloc]initWithArray:[dump getHouseDataArray]];
-//    
-//    int i = (int) [self.dataSourceArray count];
-//    NSLog(@"데이터 테이블 갯수 : %d", i);
     
     //navigation bar color
     [[[self navigationController] navigationBar] setTintColor:[UIColor whiteColor]];
     [[[self navigationController] navigationBar] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000]];
     
+    [self loadData];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+        [self loadData];
+}
+
+- (void) loadData
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    
+    NSLog(@"%@",[defaults objectForKey:@"forSearchMemberData"]);
     
 }
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -169,6 +183,13 @@
 
      SWMHouseImageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"houseImageTableViewCell" forIndexPath:indexPath];
      
+//     SWMHouseImageTableViewCell *cell = [[SWMHouseImageTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"houseImageTableViewCell"];
+     
+     HouseData *housedata = [dataSourceArray objectAtIndex:indexPath.row];
+     NSLog(@"%@", housedata);
+//     NSLog(@"%d", housedata.title);
+     [cell setTitleText:housedata.title];
+     
      [cell setEnabledBadgeView];
      [cell setEnabledLikeIt];
      
@@ -191,7 +212,7 @@
 
      
      // Configure the cell...
-     [cell viewWithTag:9999999];
+     [cell viewWithTag:indexPath.row];
      return cell;
 }
 

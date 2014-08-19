@@ -50,5 +50,6 @@
 //-(void) makeRandomImages;
 
 -(void) printAll;
+- (SWMMember *)exportToSWMMember;
 
 @end

@@ -27,4 +27,6 @@
 - (void) oneFingerOneTap;
 - (void) setEnabledBadgeView;
 - (void) setEnabledLikeIt;
+
+- (void) setTitleText:(NSString *)text;
 @end

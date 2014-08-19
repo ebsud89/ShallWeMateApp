@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface SWMCollectionViewCell4TableViewCell : UICollectionViewCell
+@property (strong, nonatomic) IBOutlet UIImageView *badgeImageView;
 
 @end
