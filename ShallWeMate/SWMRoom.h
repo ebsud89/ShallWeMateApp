@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "HouseData.h"
 
 @interface SWMRoom : NSObject
 
@@ -47,8 +48,19 @@
 @property int wantWomenNum;
 
 
+//added
+@property int avaliable;
+@property NSString *stationName;
+@property float jaccard;
+@property NSString *guarants;
+@property NSString *stationCode;
+@property int msexr;
+@property int wsexr;
+@property int premiumCode;
+
 
 - (id) initWithDictionary : (NSDictionary *)inpDic;
 - (NSString *) description;
 
+-(id)exportToHouseData;
 @end

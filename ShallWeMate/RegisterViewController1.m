@@ -107,6 +107,11 @@
     [[[self navigationController] navigationBar] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000]];
     
+    
+    
+    // memberData init
+    self.memberData = [[MemberData alloc]init];
+    
 }
 
 - (BOOL) textViewShouldBeginEditing:(UITextView *)textView
@@ -374,6 +379,7 @@
     {
         RegisterViewController2 *vc = [segue destinationViewController];
         
+        [self fillhouseData];
         /* 기입한 정보를 다음 뷰로 전달*/
         
         vc.memberData = _memberData;

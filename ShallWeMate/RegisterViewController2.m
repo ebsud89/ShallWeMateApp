@@ -49,6 +49,7 @@
      */
     if (_memberData.nearSubwayStation != nil) {
         self.subwayStationSearchBtn.titleLabel.text = _memberData.nearSubwayStation;
+        NSLog(@"%@", self.subwayStationSearchBtn.titleLabel.text);
     }
 
 
@@ -86,7 +87,22 @@
 //    self.location.text = [subwayDic objectForKey:@"전철역명"];
 //    self.housedata.subwayDic = subwayDic;
     
+    NSLog(@"aaadsfjosdfjdosjlxnaofjoewjfnvj");
+    NSLog(@"%@", _memberData.subwayDic);
+    self.subwaySearchBtn.titleLabel.text = @"aaaa";
+    if (_memberData.subwayDic != nil) {
+        self.locationLabel = [[UILabel alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
+        
+        self.locationLabel.text = [_memberData.subwayDic objectForKey:@"전철역명"];
+        
+        [self.view addSubview:self.locationLabel];
+//        _memberData.subwayDic = subwayDic;
+//        [self.location reloadInputViews];
+        
+        self.subwaySearchBtn.titleLabel.text = @"zadfioajsofjodjv";
+    }
 }
+
 
 - (IBAction)budgetSlider:(id)sender {
     //label에 금액 띄우기
@@ -132,7 +148,9 @@
         
         /* 기입한 정보를 다음 뷰로 전달*/
         
-            vc.memberData = _memberData;
+        [self fillhouseData];
+        
+        vc.memberData = _memberData;
         [self fillhouseData];
         
     }

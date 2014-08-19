@@ -20,8 +20,9 @@
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 
-@property (strong, nonatomic) NSArray *imageArray;
+@property (strong, nonatomic) NSMutableArray *imageArray;
 @property (strong, nonatomic) NSArray *imageListArray;
 @property (strong, nonatomic) NSString *title;
 
+@property (strong, nonatomic) NSMutableArray *lifestyle;
 @end

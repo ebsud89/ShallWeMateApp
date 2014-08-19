@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="jyK-MM-4Jq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Ndt-us-WJR">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -1907,7 +1907,7 @@
                         <barButtonItem key="backBarButtonItem" title="  " id="14i-2t-oGQ"/>
                         <barButtonItem key="rightBarButtonItem" title="Item" id="0h6-Q6-LfK">
                             <connections>
-                                <segue destination="pub-Dk-hbx" kind="push" identifier="toMateInfo" id="EdJ-KB-IWE"/>
+                                <segue destination="pub-Dk-hbx" kind="push" identifier="goNext" id="EdJ-KB-IWE"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -2123,7 +2123,7 @@
                         <barButtonItem key="backBarButtonItem" title="  " id="P8r-pz-6Sa"/>
                         <barButtonItem key="rightBarButtonItem" title="Item" id="jyt-fY-uTp">
                             <connections>
-                                <segue destination="IeZ-zF-6dV" kind="push" id="Uiy-CE-9ye"/>
+                                <segue destination="IeZ-zF-6dV" kind="push" identifier="goNext" id="Uiy-CE-9ye"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -2136,7 +2136,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rPF-BP-74I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1154" y="2459"/>
+            <point key="canvasLocation" x="1171" y="2459"/>
         </scene>
         <!--Register View Controller5 - 하우스 룰-->
         <scene sceneID="yps-ew-aIF">
@@ -2398,7 +2398,7 @@
                         <barButtonItem key="backBarButtonItem" title="  " id="crQ-rx-uFC"/>
                         <barButtonItem key="rightBarButtonItem" title="Item" id="Nxj-w0-RtK">
                             <connections>
-                                <segue destination="9kh-fP-wRD" kind="push" id="xw9-4c-tNT"/>
+                                <segue destination="9kh-fP-wRD" kind="push" identifier="goNext" id="xw9-4c-tNT"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

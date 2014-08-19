@@ -10,7 +10,7 @@
 #import "SelectionCollectionViewController.h"
 #import "MemberData.h"
 
-@interface RegisterViewController4 : UIViewController
+@interface RegisterViewController4 : UIViewController <SelectionCollectionViewDelegate>
 {
     SelectionCollectionViewController *selectionCol;
     NSMutableArray *lifeStyleArray;

@@ -28,7 +28,7 @@ UIImageView *imgViewOn;
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:1 inSection:0];
 
     [self.selectList selectItemAtIndexPath:indexPath animated:YES scrollPosition:UICollectionViewScrollPositionNone];
-        NSLog(@"did selectItem  %ld %ld", (long)indexPath.row, (long)indexPath.section);
+//        NSLog(@"did selectItem  %ld %ld", (long)indexPath.row, (long)indexPath.section);
 
 }
 

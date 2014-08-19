@@ -202,6 +202,12 @@
 }
 
 - (IBAction)doneButtonClicked:(id)sender {
+    //요약 페이지로 이동
+    SWMSummeryViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SWMSummeryViewController"];
+    
+    vc.memberData = self.memberData;
+    [self.view addSubview:vc.view];
+    
     if((_inviteOk.isSelected == YES || _inviteNo.isSelected == YES) && (_petOk.isSelected == YES || _petNo.isSelected == YES) && (_privacyMore.isSelected == YES || _privacyLess.isSelected == YES) && (_smokeOk.isSelected == YES || _smokeNo.isSelected == YES) && (_drinkOk.isSelected == YES || _drinkNo.isSelected == YES)) {
         
         
@@ -233,8 +239,11 @@
         //요약 페이지로 이동
         SWMRegisterSummeryViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SWMRegisterSummeryViewController"];
         
-        vc.memberData = memberData;
-        [self.view addSubview:vc.view];
+//        //요약 페이지로 이동
+//        SWMSummeryViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SWMSummeryViewController"];
+//        
+//        vc.memberData = memberData;
+//        [self.view addSubview:vc.view];
     } else {
         NSLog(@"che2");
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"모든 항목을 선택해주세요."
@@ -257,5 +266,41 @@
     
 }
 
+- (void)fillMemeberData
+{
+    NSNumber *num =[NSNumber numberWithBool:[self.inviteOk isSelected]];
+    [self.memberData.enableHouseRoles replaceObjectAtIndex:0 withObject:num];
+    
+    NSNumber *num2 =[NSNumber numberWithBool:[self.petOk isSelected]];
+    [self.memberData.enableHouseRoles replaceObjectAtIndex:1 withObject:num2];
+    
+    NSNumber *num3 =[NSNumber numberWithBool:[self.privacyMore isSelected]];
+    [self.memberData.enableHouseRoles replaceObjectAtIndex:2 withObject:num3];
+    
+    NSNumber *num4 =[NSNumber numberWithBool:[self.smokeOk isSelected]];
+    [self.memberData.enableHouseRoles replaceObjectAtIndex:3 withObject:num4];
+    
+    NSNumber *num5 =[NSNumber numberWithBool:[self.drinkOk isSelected]];
+    [self.memberData.enableHouseRoles replaceObjectAtIndex:4 withObject:num5];
+    
+}
+
+#pragma mark - Navigation
+
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"goNext"])
+    {
+        SWMRegisterSummeryViewController *vc = [segue destinationViewController];
+        
+        [self fillMemeberData];
+        /* 기입한 정보를 다음 뷰로 전달*/
+        
+        vc.memberData = memberData;
+        
+        
+    }
+}
 
 @end
