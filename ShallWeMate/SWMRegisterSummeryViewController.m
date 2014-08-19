@@ -12,6 +12,10 @@
 #import "SWMMateInfoTableViewCell.h"
 #import "SWMHouseRoleTableViewCell.h"
 
+#pragma mark - Server Address
+#define swmServerAddr @"http://54.249.103.4/SWMserver"
+#define swmServerAddrLocal @"http://54.249.103.4/SWMserver"
+
 @interface SWMRegisterSummeryViewController ()
 
 @end
@@ -73,6 +77,46 @@
     
     [defaults synchronize];
 }
+
+#pragma mark - Netework
+- (void) sendToMemberData
+{
+    NSURL *url = [NSURL URLWithString:[swmServerAddr stringByAppendingString:@"comm/CompareWithRoom"]];
+    NSLog(@"URL : %@", url);
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    
+    // *data 에 Member 정보에 대한 JSON string 담으면 됨
+    NSString *data = @"rid=135";
+    [request setHTTPMethod:@"POST"];
+    [request setHTTPBody:[data dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    [conn start];
+}
+
+- (void)connection:(NSURLConnection *)connection
+didReceiveResponse:(NSURLResponse *)response
+{
+    NSLog(@"%s", __FUNCTION__);
+    
+}
+
+- (void)connection:(NSURLConnection *)connection
+    didReceiveData:(NSData *)data
+{
+    NSLog(@"%s", __FUNCTION__);
+    // 여기서 *data 가 연결 후에 받은 matched Room 에 대한 JSON 형태
+    // getAllRoom 에서 받은 거 처럼 똑같이 처리하면 될거 같아.
+    
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    NSLog(@"%s", __FUNCTION__);
+}
+
+
 
 #pragma mark - UITableView
 
