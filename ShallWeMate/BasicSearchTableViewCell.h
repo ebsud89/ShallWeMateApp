@@ -18,4 +18,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *monthlyCostMaxLabel;
 @property (strong, nonatomic) IBOutlet UILabel *securityCostMaxLabel;
 
+
+- (void) setSearchLocationText:(NSString *)text;
+- (void) setMonthlyCostMaxText:(NSString *)text;
+- (void) setSecurityCostMaxText:(NSString *)text;
 @end

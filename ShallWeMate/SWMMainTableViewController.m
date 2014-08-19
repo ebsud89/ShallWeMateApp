@@ -13,6 +13,7 @@
 #import "HouseData.h"
 #import "RegisterViewController1.h"
 #import "SWMHouseImageTableViewCell.h"
+#import "SWMNetwork.h"
 
 @interface SWMMainTableViewController ()
 
@@ -48,15 +49,25 @@
      여기서 서버에서 받아와서, HouseData타입의 배열을 만들 때 사용하면 됩니다.
      */
     
+    dataSourceArray = [[NSMutableArray alloc]init];
+    SWMNetwork *network = [[SWMNetwork alloc]init];
+    NSArray *roomArray = [network getAllRooms];
+    for (NSDictionary *dic in roomArray) {
+        SWMRoom *room = [[SWMRoom alloc]initWithDictionary:dic];
+        [room exportToHouseData];
+        [dataSourceArray addObject:room];
+        
+    }
+    
     [self.tableView registerNib:[UINib nibWithNibName:@"SWMHouseImageTableViewCell" bundle:nil] forCellReuseIdentifier:@"houseImageTableViewCell"];
     
     
     //덤프 데이터 만들기
-    MakeDumpData *dump = [[MakeDumpData alloc]init];
-    dataSourceArray = [[NSMutableArray alloc]initWithArray:[dump getHouseDataArray]];
-    
-    int i = (int) [self.dataSourceArray count];
-    NSLog(@"데이터 테이블 갯수 : %d", i);
+//    MakeDumpData *dump = [[MakeDumpData alloc]init];
+//    dataSourceArray = [[NSMutableArray alloc]initWithArray:[dump getHouseDataArray]];
+//    
+//    int i = (int) [self.dataSourceArray count];
+//    NSLog(@"데이터 테이블 갯수 : %d", i);
     
     //navigation bar color
     [[[self navigationController] navigationBar] setTintColor:[UIColor whiteColor]];
@@ -108,7 +119,7 @@
 {
 //#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 10;
+    return [dataSourceArray count];
 }
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

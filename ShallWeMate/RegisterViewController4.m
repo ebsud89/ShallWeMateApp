@@ -34,6 +34,7 @@
     }
     
     selectionCol = [[SelectionCollectionViewController alloc]init];
+    selectionCol.delegate = self;
     selectionCol.viewController = @"lifeStyle";
     [selectionCol setNumberOfItemsInSection:15];
     [selectionCol setSelectList:self.selectList];
@@ -81,19 +82,7 @@
 }
 - (void)fillhouseData
 {
-    /* 기입한 정보 (라이프 스타일) 저장하기 
-        */
-//    int i;
-//    for (i = 0; i < 14; i+2) {
-//        [lifeStyleArray insertObject:@"|" atIndex:i+1];
-//    }
     
-    //    _houseData.title = self.houseTitleTextField.text;
-    //    _houseData.nearSubwayStation = self.subwaySearchBtn.titleLabel.text;
-    //    _houseData.transportation = @"걸어서";
-    //    _houseData.transportationMinutes = self.subwayMinutesTextFiled.text;
-    //    _houseData.introHouse = self.introHouse.text;
-    //    _houseData.premium = self.premiumBrandName;
 }
 
 
@@ -154,10 +143,11 @@
     {
         RegisterViewController5 *vc = [segue destinationViewController];
         
+        [self fillhouseData];
         /* 기입한 정보를 다음 뷰로 전달*/
         
         vc.memberData = _memberData;
-        [self fillhouseData];
+        
         
     }
 }

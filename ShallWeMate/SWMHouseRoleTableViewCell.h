@@ -11,5 +11,11 @@
 @interface SWMHouseRoleTableViewCell : UITableViewCell
 + (CGFloat) getHeight;
 - (IBAction)finishClicked:(id)sender;
+@property (strong, nonatomic) IBOutlet UILabel *firstBtn;
+@property (strong, nonatomic) IBOutlet UILabel *secondBtn;
+@property (strong, nonatomic) IBOutlet UILabel *thirdBtn;
+@property (strong, nonatomic) IBOutlet UILabel *fifthBtn;
+@property (strong, nonatomic) IBOutlet UILabel *sixBtn;
 
+@property (strong, nonatomic) NSMutableArray *houseRule;
 @end
