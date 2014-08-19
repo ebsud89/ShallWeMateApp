@@ -57,6 +57,11 @@
     [self refreshData];
 }
 
+- (void) setTitleText:(NSString *)text
+{
+    self.titleLabel.text = text;
+}
+
 - (void) setEnabledLikeIt
 {
     UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(longPress:)];

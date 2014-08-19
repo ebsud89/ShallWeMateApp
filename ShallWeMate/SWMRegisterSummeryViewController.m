@@ -55,6 +55,23 @@
 //    
 //    vc.memberData = memberData;
 //    [self.view addSubview:vc.view];
+    
+    UIView *overlayView = [[UIView alloc]initWithFrame:self.view.frame];
+    overlayView.backgroundColor = [UIColor blackColor];
+    
+    [self.view addSubview:overlayView];
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    [self saveData];
+}
+
+- (void) saveData
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    SWMMember *mem = [self.memberData exportToSWMMember];
+    [defaults setObject:[mem description] forKey:@"forSearchMemberData"];
+    
+    [defaults synchronize];
 }
 
 #pragma mark - UITableView

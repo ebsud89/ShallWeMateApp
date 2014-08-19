@@ -20,6 +20,7 @@ UIImageView *image;
     return self;
 }
 
+
 - (void) selectItem:(int)index
 {
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:1 inSection:0];
@@ -46,7 +47,7 @@ UIImageView *image;
     UICollectionViewCell *cell = [self.selectList dequeueReusableCellWithReuseIdentifier:@"collectionCell" forIndexPath:indexPath];
     
     if ([viewController isEqual:@"lifeStyle"]) {
-    UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(7, 0, 84, 84)];
+    UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 86, 108)];
 //    [imgView setContentMode:UIViewContentModeCenter];
 //    self.data = [[NSArray alloc]
 //                      initWithObjects:@"cook\n요리", @"Green",
@@ -55,20 +56,12 @@ UIImageView *image;
 //                 @"Blue", @"Indigo", @"Violet", @"Green",
 //                 @"Blue", @"Indigo", @"Violet", nil];
     
-    NSArray *picArray = [[NSArray alloc] initWithObjects:@"cook.png", @"movie.png", @"interior.png",@"cook.png", @"movie.png", @"interior.png",@"cook.png", @"movie.png", @"interior.png",@"cook.png", @"movie.png", @"interior.png",@"cook.png", @"movie.png", @"interior.png", @"face_test.png", @"face_test.png", @"face_test.png", @"face_test.png", @"face_test.png", @"face_test.png", @"face_test.png",nil];
+    NSArray *picArray = [[NSArray alloc] initWithObjects:@"lifestyle_01.png", @"lifestyle_02.png", @"lifestyle_03.png",@"lifestyle_04.png", @"lifestyle_05.png", @"lifestyle_06.png",@"lifestyle_07.png", @"lifestyle_08.png", @"lifestyle_09.png",@"lifestyle_10.png", @"lifestyle_11.png", @"lifestyle_12.png",@"lifestyle_13.png", @"lifestyle_14.png", @"lifestyle_15.png",nil];
     self.picData = picArray;
     
     imgView.image = [UIImage imageNamed:[self.picData objectAtIndex:indexPath.row]];
     [cell.contentView addSubview:imgView];
-    UILabel *lable = [[UILabel alloc] initWithFrame:CGRectMake(0, 86, 100, 30)];
-    [lable setFont:[UIFont systemFontOfSize:10]];
-    [lable setNumberOfLines:0];
-    [lable setLineBreakMode:UILineBreakModeWordWrap];
-    [lable setTextColor:[UIColor darkGrayColor]];
-    [lable setText:[NSString stringWithFormat:@"cook\n요리",indexPath.section,indexPath.row]];
-    [lable setTextAlignment:NSTextAlignmentCenter];
-    
-    [cell.contentView addSubview:lable];
+        
     }else if ([viewController isEqual:@"enableOptions"]) {
         UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 65, 65)];
         
@@ -102,7 +95,7 @@ UIImageView *image;
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([viewController isEqual:@"lifeStyle"]) {
-        return CGSizeMake(98,114);
+        return CGSizeMake(86,108);
     }else if ([viewController isEqual:@"enableOptions"]) {
         return CGSizeMake(65,65);
     }else if ([viewController isEqual:@"enableRoomsMore"]) {
@@ -131,7 +124,7 @@ UIImageView *image;
             NSLog(@"did selectItem  %ld %ld", (long)indexPath.row, (long)indexPath.section);
             [self.delegate didSelectedItem:indexPath];UICollectionViewCell *cell = [self.selectList cellForItemAtIndexPath:indexPath];
             
-            image = [[UIImageView alloc] initWithFrame:CGRectMake(7, 0, 84, 84)];
+            image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 85, 85)];
             image.image = [UIImage imageNamed:@"life_cover.png"];
             [cell.contentView addSubview:image];
         }

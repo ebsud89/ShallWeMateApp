@@ -54,7 +54,7 @@
     for (int i=0; i<[lifestyle count]; i++) {
         NSNumber *num = [lifestyle objectAtIndex:i];
         if ([num boolValue]) {
-            [self.imageArray addObject:[NSString stringWithFormat:@"0%d.png",i]];
+            [self.imageArray addObject:[NSString stringWithFormat:@"lifestyle_0%d.png",i+1]];
         }
     }
     
@@ -99,13 +99,17 @@
     
     SWMCollectionViewCell4TableViewCell *cell = (SWMCollectionViewCell4TableViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
     
+    
     NSString *imageArr = [self.imageArray objectAtIndex:indexPath.row];
     UIImage *badgeImg = [UIImage imageNamed:imageArr];
-    UIImageView *imView = [[UIImageView alloc]initWithFrame:cell.frame];
-    imView.image = badgeImg;
+    UIImageView *imView = [[UIImageView alloc] initWithImage:badgeImg];
+    imView.frame = CGRectMake(imView.frame.origin.x, imView.frame.origin.y, cell.contentView.frame.size.width, cell.contentView.frame.size.height);
     
+
+    NSLog(@"%@", imageArr);
     [cell addSubview:imView];
 
+//    cell.badgeImageView = imView;
     /* end of subclass-based cells block */
     
     // Return the cell
