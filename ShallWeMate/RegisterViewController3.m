@@ -211,10 +211,11 @@
     {
         RegisterViewController4 *vc = [segue destinationViewController];
         
+        [self fillhouseData];
         /* 기입한 정보를 다음 뷰로 전달*/
         
         vc.memberData = _memberData;
-        [self fillhouseData];
+
         
     }
     

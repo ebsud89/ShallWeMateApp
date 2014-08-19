@@ -96,6 +96,11 @@
     {
         BasicSearchTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"basicSearchTableViewCell"];
         
+//        cell setSearchLocationLabel:self.memberData.se
+        NSLog(@"%@", self.memberData.monthlyRentCost);
+        [cell setSecurityCostMaxText:_memberData.securityCost];
+        [cell setMonthlyCostMaxText:_memberData.monthlyRentCost];
+        [cell setSearchLocationText:_memberData.nearSubwayStation];
         return cell;
     }
     else if (indexPath.row ==1)
@@ -108,7 +113,9 @@
         }
         [cell setTitle:@"라이프 스타일 키워드"];
         [cell setTintColor:[UIColor darkGrayColor]];
+        [cell setLifestyle:_memberData.enableLifeStyle];
         
+        NSLog(@"%@", _memberData.enableLifeStyle );
         return cell;
     }
     else if (indexPath.row ==2)
@@ -121,6 +128,7 @@
     {
         SWMHouseRoleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"swmHouseRoleTableViewCell"];
         
+        NSLog(@"%@", _memberData.enableHouseRoles);
         return cell;
     }
     else

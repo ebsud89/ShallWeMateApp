@@ -48,6 +48,25 @@
     self.titleLabel.text = title;
 }
 
+- (void) setLifestyle:(NSMutableArray *)lifestyle
+{
+    self.imageArray = [[NSMutableArray alloc]init];
+    for (int i=0; i<[lifestyle count]; i++) {
+        NSNumber *num = [lifestyle objectAtIndex:i];
+        if ([num boolValue]) {
+            [self.imageArray addObject:[NSString stringWithFormat:@"0%d.png",i]];
+        }
+    }
+    
+    if ([self.imageArray count]<6) {
+        for (int i= (int)[self.imageArray count]; i<6; i++) {
+            [self.imageArray addObject:@""];
+        }
+    }
+    
+    [self.collectionView reloadData];
+}
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
@@ -77,8 +96,15 @@
     /* end of nib-based cell block */
     
     /* Uncomment this block to use subclass-based cells */
+    
     SWMCollectionViewCell4TableViewCell *cell = (SWMCollectionViewCell4TableViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
     
+    NSString *imageArr = [self.imageArray objectAtIndex:indexPath.row];
+    UIImage *badgeImg = [UIImage imageNamed:imageArr];
+    UIImageView *imView = [[UIImageView alloc]initWithFrame:cell.frame];
+    imView.image = badgeImg;
+    
+    [cell addSubview:imView];
 
     /* end of subclass-based cells block */
     

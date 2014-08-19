@@ -193,7 +193,9 @@
     self.subwaySearchBtn.titleLabel.text = [subwayDic objectForKey:@"전철역명"];
     [self.subwaySearchBtn setBackgroundColor:[UIColor clearColor]];
     self.housedata.subwayDic = subwayDic;
-
+    
+    [self.subwaySearchBtn reloadInputViews];
+    
 }
 
 - (void) initScrollView

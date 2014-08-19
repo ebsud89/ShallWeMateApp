@@ -34,4 +34,19 @@
     // Configure the view for the selected state
 }
 
+- (void) setSearchLocationText:(NSString *)text
+{
+    self.searchLocationLabel.text = text;
+}
+- (void) setMonthlyCostMaxText:(NSString *)text
+{
+    self.monthlyCostMaxLabel.text = text;
+}
+
+- (void) setSecurityCostMaxText:(NSString *)text
+{
+    self.securityCostMaxLabel.text = text;
+}
+
+
 @end
