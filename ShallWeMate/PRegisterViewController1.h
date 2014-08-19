@@ -16,6 +16,7 @@
     NSMutableArray *selectHouseImage;
 }
 
+@property (weak, nonatomic) IBOutlet UILabel *stationLabel;
 @property (strong, nonatomic) HouseData *housedata;
 @property (weak, nonatomic) IBOutlet UIButton *premiumBrand;
 @property (strong, nonatomic) IBOutlet UIButton *subwaySearchBtn;
@@ -28,6 +29,9 @@
 
 @property (strong, nonatomic) IBOutlet UIScrollView *houseImageScrollView;
 @property (strong, nonatomic) IBOutlet UIButton *addPhotoBtn;
+@property (weak, nonatomic) IBOutlet UIImageView *brandLogo;
+@property (weak, nonatomic) IBOutlet UILabel *brandName;
+@property (weak, nonatomic) IBOutlet UIImageView *stationImg;
 
 
 - (IBAction)premiumBrandRegister:(id)sender;

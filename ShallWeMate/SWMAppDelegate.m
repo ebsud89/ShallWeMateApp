@@ -60,7 +60,7 @@ NSString *const FBSessionStateChangedNotification = @"swm.ShallWeMate:FBSessionS
                                               
                                               //정보 저장
                                               // Create strings and integer to store the text info
-                                              NSString *name = result.name;
+                                              NSString *name = result.first_name;
                                               NSString *gender = [result objectForKey:@"gender"];
                                               NSString *locale = [result objectForKey:@"locale"];
                                               

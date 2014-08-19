@@ -61,8 +61,6 @@ UIImageView *imgViewOn;
     NSArray *picArray = [[NSArray alloc] initWithObjects:@"cook.png", @"movie.png", @"interior.png",@"cook.png", @"movie.png", @"interior.png",@"cook.png", @"movie.png", @"interior.png",@"cook.png", @"movie.png", @"interior.png",@"cook.png", @"movie.png", @"interior.png", @"face_test.png", @"face_test.png", @"face_test.png", @"face_test.png", @"face_test.png", @"face_test.png", @"face_test.png",nil];
     self.picData = picArray;
     
-        
-        
     imgView.image = [UIImage imageNamed:[self.picData objectAtIndex:indexPath.row]];
     [cell.contentView addSubview:imgView];
     UILabel *lable = [[UILabel alloc] initWithFrame:CGRectMake(0, 86, 100, 30)];
@@ -182,11 +180,11 @@ UIImageView *imgViewOn;
 - (void) collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([viewController isEqual:@"lifeStyle"]) {
+        UICollectionViewCell *cell = [self.selectList cellForItemAtIndexPath:indexPath];
         if (count <= 6){
             count--;
         NSLog(@"did DeSelectItem %ld", (long)indexPath.row);
         [self.delegate didDeSelectedItem:indexPath];
-            UICollectionViewCell *cell = [self.selectList cellForItemAtIndexPath:indexPath];
         image.image = nil;
             [cell.contentView addSubview:image];
         }

@@ -76,14 +76,19 @@
 -(void)radiobuttonSelected:(id)sender{
     switch ([sender tag]) {
         case 0:
+            
             if([_inviteOk isSelected]==YES)
             {
                 [_inviteOk setSelected:NO];
-                [_inviteNo setSelected:YES];
             }
             else{
-                [_inviteOk setSelected:YES];
-                [_inviteNo setSelected:NO];
+                if([_inviteNo isSelected]==YES)
+                {
+                    [_inviteOk setSelected:YES];
+                    [_inviteNo setSelected:NO];
+                } else {
+                    [_inviteOk setSelected:YES];
+                }
             }
             
             break;
@@ -91,11 +96,15 @@
             if([_inviteNo isSelected]==YES)
             {
                 [_inviteNo setSelected:NO];
-                [_inviteOk setSelected:YES];
             }
             else{
-                [_inviteNo setSelected:YES];
-                [_inviteOk setSelected:NO];
+                if([_inviteOk isSelected]==YES)
+                {
+                    [_inviteNo setSelected:YES];
+                    [_inviteOk setSelected:NO];
+                } else {
+                    [_inviteNo setSelected:YES];
+                }
             }
             
             break;
@@ -103,11 +112,15 @@
             if([_petOk isSelected]==YES)
             {
                 [_petOk setSelected:NO];
-                [_petNo setSelected:YES];
             }
             else{
-                [_petOk setSelected:YES];
-                [_petNo setSelected:NO];
+                if([_petNo isSelected]==YES)
+                {
+                    [_petOk setSelected:YES];
+                    [_petNo setSelected:NO];
+                } else {
+                    [_petOk setSelected:YES];
+                }
             }
             
             break;
@@ -115,11 +128,15 @@
             if([_petNo isSelected]==YES)
             {
                 [_petNo setSelected:NO];
-                [_petOk setSelected:YES];
             }
             else{
-                [_petNo setSelected:YES];
-                [_petOk setSelected:NO];
+                if([_petOk isSelected]==YES)
+                {
+                    [_petNo setSelected:YES];
+                    [_petOk setSelected:NO];
+                } else {
+                    [_petNo setSelected:YES];
+                }
             }
             
             break;
@@ -127,11 +144,15 @@
             if([_privacyMore isSelected]==YES)
             {
                 [_privacyMore setSelected:NO];
-                [_privacyLess setSelected:YES];
             }
             else{
-                [_privacyMore setSelected:YES];
-                [_privacyLess setSelected:NO];
+                if([_privacyLess isSelected]==YES)
+                {
+                    [_privacyMore setSelected:YES];
+                    [_privacyLess setSelected:NO];
+                } else {
+                    [_privacyMore setSelected:YES];
+                }
             }
             
             break;
@@ -139,11 +160,15 @@
             if([_privacyLess isSelected]==YES)
             {
                 [_privacyLess setSelected:NO];
-                [_privacyMore setSelected:YES];
             }
             else{
-                [_privacyLess setSelected:YES];
-                [_privacyMore setSelected:NO];
+                if([_privacyMore isSelected]==YES)
+                {
+                    [_privacyLess setSelected:YES];
+                    [_privacyMore setSelected:NO];
+                } else {
+                    [_privacyLess setSelected:YES];
+                }
             }
             
             break;
@@ -151,11 +176,15 @@
             if([_smokeOk isSelected]==YES)
             {
                 [_smokeOk setSelected:NO];
-                [_smokeNo setSelected:YES];
             }
             else{
-                [_smokeOk setSelected:YES];
-                [_smokeNo setSelected:NO];
+                if([_smokeNo isSelected]==YES)
+                {
+                    [_smokeOk setSelected:YES];
+                    [_smokeNo setSelected:NO];
+                } else {
+                    [_smokeOk setSelected:YES];
+                }
             }
             
             break;
@@ -163,11 +192,15 @@
             if([_smokeNo isSelected]==YES)
             {
                 [_smokeNo setSelected:NO];
-                [_smokeOk setSelected:YES];
             }
             else{
-                [_smokeNo setSelected:YES];
-                [_smokeOk setSelected:NO];
+                if([_smokeOk isSelected]==YES)
+                {
+                    [_smokeNo setSelected:YES];
+                    [_smokeOk setSelected:NO];
+                } else {
+                    [_smokeNo setSelected:YES];
+                }
             }
             
             break;
@@ -175,11 +208,15 @@
             if([_drinkOk isSelected]==YES)
             {
                 [_drinkOk setSelected:NO];
-                [_drinkNo setSelected:YES];
             }
             else{
-                [_drinkOk setSelected:YES];
-                [_drinkNo setSelected:NO];
+                if([_drinkNo isSelected]==YES)
+                {
+                    [_drinkOk setSelected:YES];
+                    [_drinkNo setSelected:NO];
+                } else {
+                    [_drinkOk setSelected:YES];
+                }
             }
             
             break;
@@ -187,11 +224,15 @@
             if([_drinkNo isSelected]==YES)
             {
                 [_drinkNo setSelected:NO];
-                [_drinkOk setSelected:YES];
             }
             else{
-                [_drinkNo setSelected:YES];
-                [_drinkOk setSelected:NO];
+                if([_drinkOk isSelected]==YES)
+                {
+                    [_drinkNo setSelected:YES];
+                    [_drinkOk setSelected:NO];
+                } else {
+                    [_drinkNo setSelected:YES];
+                }
             }
             
             break;
@@ -202,11 +243,6 @@
 }
 
 - (IBAction)doneButtonClicked:(id)sender {
-    //요약 페이지로 이동
-    SWMSummeryViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SWMSummeryViewController"];
-    
-    vc.memberData = self.memberData;
-    [self.view addSubview:vc.view];
     
     if((_inviteOk.isSelected == YES || _inviteNo.isSelected == YES) && (_petOk.isSelected == YES || _petNo.isSelected == YES) && (_privacyMore.isSelected == YES || _privacyLess.isSelected == YES) && (_smokeOk.isSelected == YES || _smokeNo.isSelected == YES) && (_drinkOk.isSelected == YES || _drinkNo.isSelected == YES)) {
         
@@ -239,11 +275,9 @@
         //요약 페이지로 이동
         SWMRegisterSummeryViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SWMRegisterSummeryViewController"];
         
-//        //요약 페이지로 이동
-//        SWMSummeryViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SWMSummeryViewController"];
-//        
-//        vc.memberData = memberData;
-//        [self.view addSubview:vc.view];
+        vc.memberData = self.memberData;
+        [self.view addSubview:vc.view];
+        
     } else {
         NSLog(@"che2");
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"모든 항목을 선택해주세요."

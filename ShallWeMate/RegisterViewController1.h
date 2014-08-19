@@ -21,6 +21,7 @@
     UIButton *radiobutton1;
     UIButton *radiobutton2;
 }
+//- (IBAction)inputAge:(id)sender;
 @property (strong, nonatomic) MemberData *memberData;
 @property (strong, nonatomic) IBOutlet UITextField *userName;
 @property (weak, nonatomic) IBOutlet FBProfilePictureView *fbProfilePictureView;

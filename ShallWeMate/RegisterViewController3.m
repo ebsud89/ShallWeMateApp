@@ -61,11 +61,15 @@
             if([_sameSex isSelected]==YES)
             {
                 [_sameSex setSelected:NO];
-                [_mixedSex setSelected:YES];
             }
             else{
-                [_sameSex setSelected:YES];
-                [_mixedSex setSelected:NO];
+                if([_mixedSex isSelected]==YES)
+                {
+                    [_sameSex setSelected:YES];
+                    [_mixedSex setSelected:NO];
+                } else {
+                    [_sameSex setSelected:YES];
+                }
             }
             
             break;
@@ -73,11 +77,15 @@
             if([_mixedSex isSelected]==YES)
             {
                 [_mixedSex setSelected:NO];
-                [_sameSex setSelected:YES];
             }
             else{
-                [_mixedSex setSelected:YES];
-                [_sameSex setSelected:NO];
+                if([_sameSex isSelected]==YES)
+                {
+                    [_mixedSex setSelected:YES];
+                    [_sameSex setSelected:NO];
+                } else{
+                    [_mixedSex setSelected:YES];
+                }
             }
             
             break;
@@ -87,13 +95,6 @@
     
 }
 
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    [self viewDidLoad];
-    //[[self] popViewControllerAnimated:YES];
-    //[[self navigationController] popViewControllerAnimated:YES];
-    
-}
 
 - (void) refreshHouseData
 {
@@ -161,6 +162,35 @@
     
     
 }
+
+- (IBAction)doneButtonClicked:(id)sender {
+    if(_sameSex.isSelected == YES || _mixedSex.isSelected == YES) {
+        
+        RegisterViewController4 *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"LifeStyle"];
+        vc.memberData = self.memberData;
+        [self.view addSubview:vc.view];
+        
+    } else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"메이트 성별을 지정해주세요."
+                                                        message:@""
+                                                       delegate:self
+                                              cancelButtonTitle:@"돌아가기"
+                                              otherButtonTitles:nil];
+        [alert show];
+        //        [alert setTopColor:[U IColor colorWithRed:0.7 green:0 blue:0 alpha:1] middleColor:[UIColor colorWithRed:0.5 green:0 blue:0 alpha:1] bottomColor:[UIColor colorWithRed:0.4 green:0 blue:0 alpha:1] lineColor:[UIColor colorWithRed:0.7 green:0 blue:0 alpha:1]];
+        alert = nil;
+    }
+    
+}
+
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    [self viewDidLoad];
+    //[[self] popViewControllerAnimated:YES];
+    //[[self navigationController] popViewControllerAnimated:YES];
+    
+}
+
     
     
     // pickerView Component 갯수

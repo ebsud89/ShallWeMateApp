@@ -21,6 +21,7 @@
 @property (strong, nonatomic) NSString *fbUserId;
 @property (strong, nonatomic) NSString *fbUserName;
 @property (strong, nonatomic) NSUserDefaults *defaults;
+@property (strong, nonatomic) NSString *brand;
 
 
 extern NSString *const FBSessionStateChangedNotification;

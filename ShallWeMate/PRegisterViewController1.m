@@ -62,6 +62,9 @@
     textView.delegate = self;
     textView.font = [UIFont systemFontOfSize:15];
     
+    //역 아이콘
+//    self.stationImg.hidden=TRUE;
+    
     //키보드 올라갈 때 뷰 올리기
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:self.view.window];
     
@@ -86,6 +89,22 @@
 }
 
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    //initData
+    [self brandSetting];
+}
+
+-(void)brandSetting {
+    SWMAppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
+    
+    if (appDelegate.brand != nil) {
+        self.brandName.text = appDelegate.brand;
+        UIImage* img = [UIImage imageNamed:@"등록완료.png"];
+        [self.premiumBrand setImage:img forState:UIControlStateNormal];
+    }
+}
+
 - (BOOL) textViewShouldBeginEditing:(UITextView *)textView
 {
     textView.text = @"";
@@ -102,13 +121,13 @@
     CGRect rect = self.view.frame;
     if (movedUp)
     {
-        rect.origin.y -= 120;
-        rect.size.height += 120;
+        rect.origin.y -= 220;
+        rect.size.height += 220;
     }
     else
     {
-        rect.origin.y += 120;
-        rect.size.height -= 120;
+        rect.origin.y += 220;
+        rect.size.height -= 220;
     }
     
     self.view.frame = rect;
@@ -155,6 +174,7 @@
     
     if (_housedata.nearSubwayStation != nil) {
         self.subwaySearchBtn.titleLabel.text = _housedata.nearSubwayStation;
+        self.stationLabel.text = _housedata.nearSubwayStation;
     }
     
     if (_housedata.transportation != nil) {
@@ -168,12 +188,7 @@
     if (_housedata.introHouse != nil) {
         self.introHouse.text = _housedata.introHouse;
     }
-    
-    if (self.premiumBrandName != nil) {
-        self.premiumBrand.titleLabel.text = _premiumBrandName;
-        
-        
-    }
+ 
 }
 
 - (void)fillhouseData
@@ -183,18 +198,26 @@
     _housedata.transportation = @"걸어서";
     _housedata.transportationMinutes = self.subwayMinutesTextFiled.text;
     _housedata.introHouse = self.introHouse.text;
-    _housedata.premium = self.premiumBrandName;
+    _housedata.premium = self.brandName.text;
 }
 
 
 // subway delegate
 - (void) didSelectedSubwayStation:(NSDictionary *) subwayDic
 {
-    self.subwaySearchBtn.titleLabel.text = [subwayDic objectForKey:@"전철역명"];
-    [self.subwaySearchBtn setBackgroundColor:[UIColor clearColor]];
+//    self.subwaySearchBtn.titleLabel.text = [subwayDic objectForKey:@"전철역명"];
+    self.stationLabel.text = [subwayDic objectForKey:@"전철역명"];
+    [self.subwaySearchBtn setBackgroundColor:[UIColor whiteColor]];
+    self.subwaySearchBtn.frame= CGRectMake(17.0, 170.0, 74.0, 29.0);
     self.housedata.subwayDic = subwayDic;
     
     [self.subwaySearchBtn reloadInputViews];
+    self.subwaySearchBtn.hidden=TRUE;
+    //역 아이콘
+//    self.stationImg.hidden=FALSE;
+    self.stationLabel.text = [subwayDic objectForKey:@"전철역명"];
+    UIImage* img = [UIImage imageNamed:@"o.png"];
+    [self.stationImg setImage:img];
     
 }
 

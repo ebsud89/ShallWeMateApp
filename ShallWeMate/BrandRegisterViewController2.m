@@ -44,13 +44,35 @@
 //브랜드 로고 이미지 세팅하는 함수
 -(void)brandImageSetting
 {
-    UIImage *woozooImage = [UIImage imageNamed:@"makefg.php.png"];
-    UIImage *othersImage = [UIImage imageNamed:@"face_test.png"];
+    UIImage *woozooImage = [UIImage imageNamed:@"p01.jpg"];
+    UIImage *image2 = [UIImage imageNamed:@"p02.jpg"];
+    UIImage *image3 = [UIImage imageNamed:@"p03.png"];
+    UIImage *image4 = [UIImage imageNamed:@"p04.png"];
+    UIImage *image5 = [UIImage imageNamed:@"p05.jpg"];
+    UIImage *image6 = [UIImage imageNamed:@"p06.jpg"];
+    UIImage *image7 = [UIImage imageNamed:@"p07.png"];
+    UIImage *image8 = [UIImage imageNamed:@"p08.png"];
+    UIImage *image9 = [UIImage imageNamed:@"p09.jpg"];
+
     
-    if ([self.brandNameString  isEqual: @"woozoo"]) {
+    if ([self.brandNameString  isEqual: @"WOOZOO"]) {
         self.brandImage.image = woozooImage;
-    } else {
-        self.brandImage.image = othersImage;
+    } else if ([self.brandNameString  isEqual: @"ZIBOONG"]) {
+        self.brandImage.image = image2;
+    } else if ([self.brandNameString  isEqual: @"통의동집"]) {
+        self.brandImage.image = image3;
+    } else if ([self.brandNameString  isEqual: @"한울"]) {
+        self.brandImage.image = image4;
+    } else if ([self.brandNameString  isEqual: @"함께"]) {
+        self.brandImage.image = image5;
+    } else if ([self.brandNameString  isEqual: @"언니네하우스"]) {
+        self.brandImage.image = image6;
+    } else if ([self.brandNameString  isEqual: @"0ZONE"]) {
+        self.brandImage.image = image7;
+    } else if ([self.brandNameString  isEqual: @"SUN&HOUSE"]) {
+        self.brandImage.image = image8;
+    }else{
+        self.brandImage.image = image9;
     }
     self.houseData.premium = self.brandNameString;
     NSLog(@"brandtest : %@", self.brandNameString);
@@ -60,7 +82,7 @@
 //브랜드 인증 코드 세팅하는 함수
 -(void) authCodeSetting
 {
-    if ([self.brandNameString  isEqual: @"woozoo"]) {
+    if ([self.brandNameString  isEqual: @"WOOZOO"]) {
         self.authCode = @"1234";
     } else {
         self.authCode = @"2345";
@@ -75,6 +97,12 @@
 
         PRegisterViewController1 *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"pRegisterViewController1"];
         vc.premiumBrandName = brandNameString;
+        vc.brandName.text =brandNameString;
+        SWMAppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
+        appDelegate.brand = brandNameString;
+        NSLog(@"te... :%@ %@", brandNameString, appDelegate.brand);
+            
+
 //        [self.navigationController popViewControllerAnimated:YES];
         [self.navigationController dismissViewControllerAnimated:YES completion:nil];
     } else {

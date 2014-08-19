@@ -15,7 +15,7 @@
 @synthesize maxDepositLabel;
 @synthesize maxBudget;
 @synthesize maxDeposit;
-@synthesize locationLabel;
+//@synthesize locationLabel;
 @synthesize location;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle*)nibBundleOrNil
@@ -79,38 +79,42 @@
 // subway delegate
 - (void) didSelectedSubwayStation:(NSDictionary *) subwayDic
 {
-//    self.subwayStationSearchBtn.b.image = nil;
-    [self.subwayStationSearchBtn setBackgroundImage:nil forState:UIControlStateNormal];
-
-    self.locationLabel = [[UILabel alloc]initWithFrame:self.subwaySearchBtn.titleLabel.frame];
+    //    self.subwaySearchBtn.titleLabel.text = [subwayDic objectForKey:@"전철역명"];
+    self.stationLabel.text = [subwayDic objectForKey:@"전철역명"];
+    [self.subwaySearchBtn setBackgroundColor:[UIColor whiteColor]];
+    self.subwaySearchBtn.frame= CGRectMake(17.0, 170.0, 74.0, 29.0);
+    self.memberData.subwayDic = subwayDic;
     
-    self.locationLabel.text = [subwayDic objectForKey:@"전철역명"];
+//    [self.subwaySearchBtn reloadInputViews];
+    self.subwayStationSearchBtn .hidden=TRUE;
+    //역 아이콘
+    //    self.stationImg.hidden=FALSE;
+    self.stationLabel.text = [subwayDic objectForKey:@"전철역명"];
+    UIImage* img = [UIImage imageNamed:@"o.png"];
+    [self.stationImg setImage:img];
     
-    [self.view addSubview:self.locationLabel];
-    _memberData.subwayDic = subwayDic;
-    [self.location reloadInputViews];
     
 }
 
-- (void) viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    
-    NSLog(@"aaadsfjosdfjdosjlxnaofjoewjfnvj");
-    NSLog(@"%@", _memberData.subwayDic);
-    self.subwaySearchBtn.titleLabel.text = @"aaaa";
-    if (_memberData.subwayDic != nil) {
-        self.locationLabel = [[UILabel alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
-        
-        self.locationLabel.text = [_memberData.subwayDic objectForKey:@"전철역명"];
-        
-        [self.view addSubview:self.locationLabel];
-//        _memberData.subwayDic = subwayDic;
-//        [self.location reloadInputViews];
-        
-        self.subwaySearchBtn.titleLabel.text = @"zadfioajsofjodjv";
-    }
-}
+//- (void) viewDidAppear:(BOOL)animated
+//{
+//    [super viewDidAppear:animated];
+//    
+//    NSLog(@"aaadsfjosdfjdosjlxnaofjoewjfnvj");
+//    NSLog(@"%@", _memberData.subwayDic);
+//    self.subwaySearchBtn.titleLabel.text = @"aaaa";
+//    if (_memberData.subwayDic != nil) {
+//        self.locationLabel = [[UILabel alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
+//        
+//        self.locationLabel.text = [_memberData.subwayDic objectForKey:@"전철역명"];
+//        
+//        [self.view addSubview:self.locationLabel];
+////        _memberData.subwayDic = subwayDic;
+////        [self.location reloadInputViews];
+//        
+//        self.subwaySearchBtn.titleLabel.text = @"zadfioajsofjodjv";
+//    }
+//}
 
 
 - (IBAction)budgetSlider:(id)sender {

@@ -17,6 +17,7 @@
 
 @property (strong, nonatomic) IBOutlet UIView *providerView;
 @property (strong, nonatomic) IBOutlet UIView *consumerView;
+- (IBAction)facebookLogout:(id)sender;
 
 - (void) setProviderMenu;
 - (void) setConsumerMenu;

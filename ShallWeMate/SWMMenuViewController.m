@@ -41,6 +41,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)facebookLogout:(id)sender {
+    
+    [FBSession.activeSession closeAndClearTokenInformation];
+    NSLog(@"소비자 - 로그아웃 클릭");
+    UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"facebookLogin"];
+    [MENU_VIEW_CONTROLLER presentCenterViewController:vc animated:YES];
+     
+}
+
 - (void) setProviderMenu
 {
     [self.consumerView removeFromSuperview];
@@ -154,6 +163,10 @@
     //    }];
     //
     //
+    
+    
+    
+    
 }
 
 -(void)moveLayer:(CALayer*)layer to:(CGPoint)point{

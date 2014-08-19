@@ -41,6 +41,7 @@
 
 - (void)viewDidLoad
 {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [super viewDidLoad];
     
     
@@ -71,16 +72,16 @@
     
     userName.text = appDelegate.fbUserName;
     [userName setFont:[self getFont]];
-    radiobutton1 = [[UIButton alloc] initWithFrame:CGRectMake(90, 338, 18, 18)];
+    radiobutton1 = [[UIButton alloc] initWithFrame:CGRectMake(90, 338, 63, 18)];
     [radiobutton1 setTag:0];
-    [radiobutton1 setBackgroundImage:[UIImage imageNamed:@"pic1.png"] forState:UIControlStateNormal];
-    [radiobutton1 setBackgroundImage:[UIImage imageNamed:@"pic2.png"] forState:UIControlStateSelected];
+    [radiobutton1 setBackgroundImage:[UIImage imageNamed:@"pic11.png"] forState:UIControlStateNormal];
+    [radiobutton1 setBackgroundImage:[UIImage imageNamed:@"pic22.png"] forState:UIControlStateSelected];
     [radiobutton1 addTarget:self action:@selector(radiobuttonSelected:) forControlEvents:UIControlEventTouchUpInside];
     
-    radiobutton2 = [[UIButton alloc] initWithFrame:CGRectMake(173, 338, 18, 18)];
+    radiobutton2 = [[UIButton alloc] initWithFrame:CGRectMake(173, 338, 63, 18)];
     [radiobutton2 setTag:1];
-    [radiobutton2 setBackgroundImage:[UIImage imageNamed:@"pic1.png"] forState:UIControlStateNormal];
-    [radiobutton2 setBackgroundImage:[UIImage imageNamed:@"pic2.png"] forState:UIControlStateSelected];
+    [radiobutton2 setBackgroundImage:[UIImage imageNamed:@"pic11.png"] forState:UIControlStateNormal];
+    [radiobutton2 setBackgroundImage:[UIImage imageNamed:@"pic22.png"] forState:UIControlStateSelected];
     [radiobutton2 addTarget:self action:@selector(radiobuttonSelected:) forControlEvents:UIControlEventTouchUpInside];
     
 //    userName.text = @"입력하기";
@@ -232,7 +233,6 @@
 - (void)keyboardWillShow:(NSNotification *)notification
 
 {
-    
     NSDictionary *userInfo = [notification userInfo];
     CGRect keyboardRect;
     [[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] getValue:&keyboardRect];
@@ -265,15 +265,19 @@
             if([radiobutton1 isSelected]==YES)
             {
                 [radiobutton1 setSelected:NO];
-                [radiobutton2 setSelected:YES];
-                self.woman.textColor = [UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000];
                 self.man.textColor = [UIColor lightGrayColor];
             }
             else{
-                [radiobutton1 setSelected:YES];
-                [radiobutton2 setSelected:NO];
-                self.man.textColor = [UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000];
-                self.woman.textColor = [UIColor lightGrayColor];
+                if([radiobutton2 isSelected]==YES)
+                {
+                    [radiobutton1 setSelected:YES];
+                    [radiobutton2 setSelected:NO];
+                    self.man.textColor = [UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000];
+                    self.woman.textColor = [UIColor lightGrayColor];
+                } else {
+                    [radiobutton1 setSelected:YES];
+                    self.man.textColor = [UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000];
+                }
             }
             
             break;
@@ -290,6 +294,25 @@
                 [radiobutton1 setSelected:NO];
                 self.woman.textColor = [UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000];
                 self.man.textColor = [UIColor lightGrayColor];
+            }
+            
+            break;
+            if([radiobutton2 isSelected]==YES)
+            {
+                [radiobutton2 setSelected:NO];
+                self.woman.textColor = [UIColor lightGrayColor];
+            }
+            else{
+                if([radiobutton1 isSelected]==YES)
+                {
+                    [radiobutton2 setSelected:YES];
+                    [radiobutton1 setSelected:NO];
+                    self.woman.textColor = [UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000];
+                    self.man.textColor = [UIColor lightGrayColor];
+                } else {
+                    [radiobutton2 setSelected:YES];
+                    self.woman.textColor = [UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000];
+                }
             }
             
             break;
