@@ -48,27 +48,46 @@
     
     
 
+//    self.heartImgView.frame = CGRectMake(self.heartImgView.frame.origin.x, self.heartImgView.frame.origin.y, self.heartImgView.frame.size.width/2, self.heartImgView.frame.size.height/2);
     
 
-    
+    [self.heartImgView removeFromSuperview];
     self.imageScrollView.delegate = self;
     
     animator = [[UIDynamicAnimator alloc]initWithReferenceView:self.contentView];
+    
+    
     [self refreshData];
 }
+
 
 - (void) setTitleText:(NSString *)text
 {
     self.titleLabel.text = text;
 }
 
-- (void) setEnabledLikeIt
+- (void) setEnabledLikeIt:(NSNumber *) like with:(BOOL)isHeartImg
 {
     UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(longPress:)];
     
     [longPress setMinimumPressDuration:0.5f];
     
+    likeIt = like;
+    
     [self.imageScrollView addGestureRecognizer:longPress];
+    
+    UIImage *myHeart;
+    
+    if (isHeartImg) {
+        myHeart = [UIImage imageNamed:@"loveitl.png"];
+        
+    }
+    else
+    {
+        myHeart = [UIImage imageNamed:@"loveit.png"];
+    }
+    
+    self.heartImgView.image =myHeart;
 }
 
 - (void) setEnabledBadgeView
@@ -101,37 +120,57 @@
     {
         [self.titleLabel setAlpha:0.0f];
     }
-
 }
 
 - (void) longPress:(UILongPressGestureRecognizer*)gesture
 {
-    if ( gesture.state == UIGestureRecognizerStateEnded ) {
-        NSLog(@"Long Press ended");
-        return;
+    if (![likeIt boolValue]) {
+        if (!heartRunning) {
+            [self.contentView addSubview:self.heartImgView];
+            
+            [self.heartImgView setFrame:CGRectMake(113, 72, 93, 76)];
+            
+            self.heartImgView.alpha = 0.0f;
+            self.heartImgView.transform = CGAffineTransformMakeScale(0.7, 0.7);
+            
+            //        heartAnimator = [[UIDynamicAnimator alloc] initWithReferenceView:self.contentView];
+            
+            //        heartBehavior = [[UIAttachmentBehavior alloc]initWithItem:self.heartImgView attachedToAnchor:self.heartImgView.frame.origin];
+            //
+            //        heartBehavior.damping = 0.3;
+            //        heartBehavior.length = 10;
+            //        heartBehavior.frequency = 2.0;
+            //
+            //        [heartAnimator addBehavior:heartBehavior];
+            
+            [UIView animateWithDuration:0.4f animations:^{
+                self.heartImgView.alpha = 1.0f;
+            } completion:^(BOOL finish){
+                [NSTimer scheduledTimerWithTimeInterval:0.4f target:self selector:@selector(zzimEnd) userInfo:nil repeats:NO];
+            }];
+            
+            heartRunning = YES;
+        }
     }
     
-    NSLog(@"찜~~");
-    
-    if (!heartRunning) {
-        square = [[UIView alloc] initWithFrame:
-                          CGRectMake(100, 100, 100, 100)];
-        square.backgroundColor = [UIColor grayColor];
-        [self.contentView addSubview:square];
-        
-        heartAnimator = [[UIDynamicAnimator alloc] initWithReferenceView:self.contentView];
-        
-        heartRunning = YES;
-    }
-    else
-    {
-        // Create a push behavior with two UIViews and a continuous 'push' mode
-//        UIPushBehavior *push = [[UIPushBehavior alloc] initWithItems:@[v1, v2] mode:UIPushBehaviorModeContinuous];
-        
-        // Set an angle and magnitude
-//        [push setAngle:0.2 magnitude:0.5];
-    }
 }
+
+- (void) zzimEnd
+{
+    
+    [UIView animateWithDuration:0.2f animations:^{
+        self.heartImgView.transform = CGAffineTransformMakeScale(0.5, 0.5);
+        self.heartImgView.alpha = 0.0f;
+    } completion:^(BOOL finish){
+        [self.heartImgView removeFromSuperview];
+        likeIt = [NSNumber numberWithDouble:YES];
+    }];
+    
+    NSLog(@"Long Press ended");
+    heartRunning = NO;
+}
+
+
 
 - (void) swipe:(UISwipeGestureRecognizer *)sender
 {

@@ -133,6 +133,11 @@
 		AEAD771C19A37737004E30B7 /* lifestyle_15.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAD770D19A37737004E30B7 /* lifestyle_15.png */; };
 		AEAD771F19A44909004E30B7 /* 입주신청.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAD771D19A44909004E30B7 /* 입주신청.png */; };
 		AEAD772019A44909004E30B7 /* 질문하기.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAD771E19A44909004E30B7 /* 질문하기.png */; };
+		AEAD772319A47774004E30B7 /* SWMLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAD772219A47774004E30B7 /* SWMLoadingView.m */; };
+		AEAD772619A47B68004E30B7 /* UIViewController+LoadingOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAD772519A47B68004E30B7 /* UIViewController+LoadingOverlay.m */; };
+		AEAD772819A47E05004E30B7 /* ladingGIF1.gif in Resources */ = {isa = PBXBuildFile; fileRef = AEAD772719A47E05004E30B7 /* ladingGIF1.gif */; };
+		AEAD772A19A48C3F004E30B7 /* loveit.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAD772919A48C3F004E30B7 /* loveit.png */; };
+		AEAD772C19A48E24004E30B7 /* loveitl.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAD772B19A48E24004E30B7 /* loveitl.png */; };
 		AEB4BD69199F59FC004343C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEB4BD68199F59FC004343C3 /* Main.storyboard */; };
 		AEB4BD72199F85A0004343C3 /* SWMTransportTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB4BD70199F85A0004343C3 /* SWMTransportTableViewCell.m */; };
 		AEB4BD73199F85A0004343C3 /* SWMTransportTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEB4BD71199F85A0004343C3 /* SWMTransportTableViewCell.xib */; };
@@ -404,6 +409,13 @@
 		AEAD770D19A37737004E30B7 /* lifestyle_15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lifestyle_15.png; sourceTree = "<group>"; };
 		AEAD771D19A44909004E30B7 /* 입주신청.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "입주신청.png"; sourceTree = "<group>"; };
 		AEAD771E19A44909004E30B7 /* 질문하기.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "질문하기.png"; sourceTree = "<group>"; };
+		AEAD772119A47774004E30B7 /* SWMLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMLoadingView.h; sourceTree = "<group>"; };
+		AEAD772219A47774004E30B7 /* SWMLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMLoadingView.m; sourceTree = "<group>"; };
+		AEAD772419A47B68004E30B7 /* UIViewController+LoadingOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LoadingOverlay.h"; sourceTree = "<group>"; };
+		AEAD772519A47B68004E30B7 /* UIViewController+LoadingOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LoadingOverlay.m"; sourceTree = "<group>"; };
+		AEAD772719A47E05004E30B7 /* ladingGIF1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ladingGIF1.gif; sourceTree = "<group>"; };
+		AEAD772919A48C3F004E30B7 /* loveit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loveit.png; sourceTree = "<group>"; };
+		AEAD772B19A48E24004E30B7 /* loveitl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loveitl.png; sourceTree = "<group>"; };
 		AEB4BD68199F59FC004343C3 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		AEB4BD6F199F85A0004343C3 /* SWMTransportTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMTransportTableViewCell.h; sourceTree = "<group>"; };
 		AEB4BD70199F85A0004343C3 /* SWMTransportTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMTransportTableViewCell.m; sourceTree = "<group>"; };
@@ -738,6 +750,10 @@
 		AEAD76FA19A36985004E30B7 /* LoadingView */ = {
 			isa = PBXGroup;
 			children = (
+				AEAD772119A47774004E30B7 /* SWMLoadingView.h */,
+				AEAD772219A47774004E30B7 /* SWMLoadingView.m */,
+				AEAD772419A47B68004E30B7 /* UIViewController+LoadingOverlay.h */,
+				AEAD772519A47B68004E30B7 /* UIViewController+LoadingOverlay.m */,
 			);
 			name = LoadingView;
 			sourceTree = "<group>";
@@ -1117,6 +1133,9 @@
 		EB785A01198A19D9000B4C18 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				AEAD772B19A48E24004E30B7 /* loveitl.png */,
+				AEAD772919A48C3F004E30B7 /* loveit.png */,
+				AEAD772719A47E05004E30B7 /* ladingGIF1.gif */,
 				AEAD76FE19A37727004E30B7 /* LifeStyle */,
 				AEAD76F919A36905004E30B7 /* loading */,
 				AEAD76F219A24314004E30B7 /* subway */,
@@ -1363,6 +1382,7 @@
 				AEAD772019A44909004E30B7 /* 질문하기.png in Resources */,
 				68A98F4519A1E99C009AB3A5 /* 경춘.png in Resources */,
 				EB433BD01990A3E1002667D0 /* subway.csv in Resources */,
+				AEAD772819A47E05004E30B7 /* ladingGIF1.gif in Resources */,
 				AEA394B7199BCA6B0075CD1E /* CTAssetsPicker.xcassets in Resources */,
 				AEAA19801999D49F00B5FB8D /* SWMMateInfoTableViewCell.xib in Resources */,
 				68A98F4319A1E99C009AB3A5 /* 09.png in Resources */,
@@ -1387,6 +1407,7 @@
 				689ABF6019A091BF0034F30F /* icon@2x.png in Resources */,
 				AEAD771419A37737004E30B7 /* lifestyle_07.png in Resources */,
 				68A98F2619A1E11B009AB3A5 /* m4.png in Resources */,
+				AEAD772A19A48C3F004E30B7 /* loveit.png in Resources */,
 				689ED675199D2BB400EA2BCD /* AppleSDGothicNeo-Heavy.otf in Resources */,
 				EB2F77741991C0BD00EA365E /* TitleTableViewCell.xib in Resources */,
 				689A07E919A0CC2C0022460D /* 분거리.png in Resources */,
@@ -1402,6 +1423,7 @@
 				AEAD771919A37737004E30B7 /* lifestyle_12.png in Resources */,
 				68A98F4719A1E99C009AB3A5 /* 분당.png in Resources */,
 				689BDA9319A0678F002FC472 /* 메인배경.png in Resources */,
+				AEAD772C19A48E24004E30B7 /* loveitl.png in Resources */,
 				689A07DF19A0A8A90022460D /* photo.png in Resources */,
 				689ABF6819A094FE0034F30F /* page2_등록.png in Resources */,
 				689ED676199D2BB400EA2BCD /* AppleSDGothicNeo-Light.otf in Resources */,
@@ -1524,6 +1546,7 @@
 				AEA394B4199BCA6B0075CD1E /* CTAssetsGroupViewCell.m in Sources */,
 				EB2F77711991C0BD00EA365E /* CollectionViewTableViewCell.m in Sources */,
 				EB2F77551990CFCF00EA365E /* SelectionCollectionViewController.m in Sources */,
+				AEAD772319A47774004E30B7 /* SWMLoadingView.m in Sources */,
 				EB2F77AA1991D36600EA365E /* MsgListTableCell.m in Sources */,
 				AEAA197F1999D49F00B5FB8D /* SWMMateInfoTableViewCell.m in Sources */,
 				EB2F77491990CD9100EA365E /* PSummeryViewController.m in Sources */,
@@ -1545,6 +1568,7 @@
 				AEA643E91999971A007C0422 /* SWMImageScrollTableViewCell.m in Sources */,
 				AEAD76FD19A36BB6004E30B7 /* SWMNSUserDefaultsTool.m in Sources */,
 				EB433BA119906861002667D0 /* SWMMenuViewController.m in Sources */,
+				AEAD772619A47B68004E30B7 /* UIViewController+LoadingOverlay.m in Sources */,
 				EB433BDF1990ABC6002667D0 /* SWMMainDetailViewController.m in Sources */,
 				EB2F77411990CD6F00EA365E /* PRegisterViewController2.m in Sources */,
 				EB1FDD0F19A0042900A7157F /* SWMMember.m in Sources */,

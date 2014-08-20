@@ -17,13 +17,19 @@
     
     UIDynamicAnimator* heartAnimator;
     
+    UIAttachmentBehavior *heartBehavior;
+    
     BOOL heartRunning;
+    
+    NSNumber * likeIt;
     
     UIView* square;
 }
 + (CGFloat) getHeight;
 
 @property (strong, nonatomic) NSMutableArray *houseImageArray;
+
+@property (strong, nonatomic) IBOutlet UIImageView *heartImgView;
 
 @property (strong, nonatomic) IBOutlet SWMHouseImageScrollView *imageScrollView;
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
@@ -32,7 +38,7 @@
 - (void) oneFingerTwoTaps;
 - (void) oneFingerOneTap;
 - (void) setEnabledBadgeView;
-- (void) setEnabledLikeIt;
+- (void) setEnabledLikeIt:(NSNumber *) like with:(BOOL)isHeartImg;
 
 - (void) setTitleText:(NSString *)text;
 @end

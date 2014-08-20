@@ -194,7 +194,7 @@
      [cell setTitleText:housedata.title];
      
      [cell setEnabledBadgeView];
-     [cell setEnabledLikeIt];
+     [cell setEnabledLikeIt:housedata.likeIt with:YES];
      
      UITapGestureRecognizer *oneFingerOneTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(oneFingerOneTap:)];
      

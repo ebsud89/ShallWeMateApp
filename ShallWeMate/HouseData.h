@@ -45,6 +45,8 @@
 
 @property (retain) NSMutableArray *enableHouseRoles;//
 
+@property (strong, nonatomic) NSNumber *likeIt;
+
 ////////////////////////////////////////////////////////////////
 @property (retain) NSString *subTitle;
 @property NSInteger livePeople;
