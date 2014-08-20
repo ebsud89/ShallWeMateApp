@@ -13,8 +13,8 @@
 #import "SWMHouseRoleTableViewCell.h"
 
 #pragma mark - Server Address
-#define swmServerAddr @"http://54.249.103.4/SWMserver"
-#define swmServerAddrLocal @"http://54.249.103.4/SWMserver"
+#define swmServerAddr @"http://54.249.103.4:8080/SWMserver/"
+#define swmServerAddrLocal @"http://10.0.0.20:8080/SWMserver/"
 
 @interface SWMRegisterSummeryViewController ()
 
@@ -59,13 +59,13 @@
 //    
 //    vc.memberData = memberData;
 //    [self.view addSubview:vc.view];
-    
+    NSLog(@"Clicked Button");
+
     UIView *overlayView = [[UIView alloc]initWithFrame:self.view.frame];
     overlayView.backgroundColor = [UIColor blackColor];
     
     [self.view addSubview:overlayView];
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    
     [self sendToMemberData];
     
     [self saveData];

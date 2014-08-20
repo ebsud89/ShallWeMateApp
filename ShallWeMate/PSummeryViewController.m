@@ -13,6 +13,9 @@
 #import "SWMImageScrollTableViewCell.h"
 #import "SWMTransportTableViewCell.h"
 
+#define swmServerAddr @"http://54.249.103.4/SWMserver"
+#define swmServerAddrLocal @"http://54.249.103.4/SWMserver"
+
 @interface PSummeryViewController ()
 
 @end
@@ -194,15 +197,55 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+#pragma mark - Network
+- (void) sendToRoomData
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    NSURL *url = [NSURL URLWithString:[swmServerAddr stringByAppendingString:@"/comm/CompareWithRoom"]];
+    NSLog(@"URL : %@", url);
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    
+    // *data 에 Member 정보에 대한 JSON string 담으면 됨
+    //    NSString *data = @"rid=135";
+    NSLog(@"%@", [self.houseData description]);
+    NSString *data = [self.houseData description];
+    NSLog(@"%@", data);
+    [request setHTTPMethod:@"POST"];
+    [request setHTTPBody:[data dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    [conn start];
 }
-*/
+
+- (void)connection:(NSURLConnection *)connection
+didReceiveResponse:(NSURLResponse *)response
+{
+    NSLog(@"%s", __FUNCTION__);
+    
+}
+
+- (void)connection:(NSURLConnection *)connection
+    didReceiveData:(NSData *)data
+{
+    NSLog(@"%s", __FUNCTION__);
+    // 여기서 *data 가 연결 후에 받은 matched Room 에 대한 JSON 형태
+    // getAllRoom 에서 받은 거 처럼 똑같이 처리하면 될거 같아.
+    
+    NSLog(@"%@", data);
+    
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    NSLog(@"%s", __FUNCTION__);
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    NSLog(@"%s", __FUNCTION__);
+    
+    NSLog(@"error = %@", error);
+}
 
 @end
