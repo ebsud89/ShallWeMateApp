@@ -90,7 +90,10 @@
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     
     // *data 에 Member 정보에 대한 JSON string 담으면 됨
-    NSString *data = @"rid=135";
+//    NSString *data = @"rid=135";
+    SWMMember *mem = [self.memberData exportToSWMMember];
+    NSString *data = [mem description];
+    NSLog(@"%@", data);
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:[data dataUsingEncoding:NSUTF8StringEncoding]];
     
