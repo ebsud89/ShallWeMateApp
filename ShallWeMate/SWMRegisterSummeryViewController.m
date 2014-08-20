@@ -66,7 +66,10 @@
     [self.view addSubview:overlayView];
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
+    [self sendToMemberData];
+    
     [self saveData];
+    
 }
 
 - (void) saveData
@@ -109,6 +112,8 @@ didReceiveResponse:(NSURLResponse *)response
     // 여기서 *data 가 연결 후에 받은 matched Room 에 대한 JSON 형태
     // getAllRoom 에서 받은 거 처럼 똑같이 처리하면 될거 같아.
     
+    NSLog(@"%@", data);
+    
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
@@ -116,6 +121,14 @@ didReceiveResponse:(NSURLResponse *)response
     NSLog(@"%s", __FUNCTION__);
 }
 
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    NSLog(@"%s", __FUNCTION__);
+    
+    NSLog(@"error = %@", error);
+    
+    NSString *text = [error localizedDescription];
+}
 
 
 #pragma mark - UITableView
