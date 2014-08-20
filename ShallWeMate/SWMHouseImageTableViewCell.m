@@ -112,6 +112,25 @@
     }
     
     NSLog(@"찜~~");
+    
+    if (!heartRunning) {
+        square = [[UIView alloc] initWithFrame:
+                          CGRectMake(100, 100, 100, 100)];
+        square.backgroundColor = [UIColor grayColor];
+        [self.contentView addSubview:square];
+        
+        heartAnimator = [[UIDynamicAnimator alloc] initWithReferenceView:self.contentView];
+        
+        heartRunning = YES;
+    }
+    else
+    {
+        // Create a push behavior with two UIViews and a continuous 'push' mode
+//        UIPushBehavior *push = [[UIPushBehavior alloc] initWithItems:@[v1, v2] mode:UIPushBehaviorModeContinuous];
+        
+        // Set an angle and magnitude
+//        [push setAngle:0.2 magnitude:0.5];
+    }
 }
 
 - (void) swipe:(UISwipeGestureRecognizer *)sender

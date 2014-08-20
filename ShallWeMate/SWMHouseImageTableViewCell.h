@@ -14,6 +14,12 @@
     BOOL badgeViewPresent;
     
     UIDynamicAnimator *animator;
+    
+    UIDynamicAnimator* heartAnimator;
+    
+    BOOL heartRunning;
+    
+    UIView* square
 }
 + (CGFloat) getHeight;
 
