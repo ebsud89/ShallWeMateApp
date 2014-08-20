@@ -19,7 +19,7 @@
     
     BOOL heartRunning;
     
-    UIView* square
+    UIView* square;
 }
 + (CGFloat) getHeight;
 
