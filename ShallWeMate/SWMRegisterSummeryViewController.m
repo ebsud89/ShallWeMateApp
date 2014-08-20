@@ -11,9 +11,10 @@
 #import "CollectionViewTableViewCell.h"
 #import "SWMMateInfoTableViewCell.h"
 #import "SWMHouseRoleTableViewCell.h"
+#import "UIViewController+LoadingOverlay.h"
 
 #pragma mark - Server Address
-#define swmServerAddr @"http://54.249.103.4/SWMserver"
+#define swmServerAddr @"http://54.249.103.4:8080/SWMserver"
 #define swmServerAddrLocal @"http://54.249.103.4/SWMserver"
 
 @interface SWMRegisterSummeryViewController ()
@@ -54,22 +55,29 @@
 }
 
 - (IBAction)finishedClicked:(id)sender {
-    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+
+    
+    
 //    SWMSummeryViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SWMSummeryViewController"];
 //    
 //    vc.memberData = memberData;
 //    [self.view addSubview:vc.view];
+    [self showLayer:@"MESSAGE TO SHOW"];
     
-    UIView *overlayView = [[UIView alloc]initWithFrame:self.view.frame];
-    overlayView.backgroundColor = [UIColor blackColor];
+    [self performSelector:@selector(onHideLayer) withObject:nil afterDelay:2.0f];
     
-    [self.view addSubview:overlayView];
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
     [self sendToMemberData];
     
     [self saveData];
     
+}
+
+- (void)onHideLayer
+{
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    [self hideLayer];
 }
 
 - (void) saveData
@@ -86,6 +94,7 @@
 {
     NSURL *url = [NSURL URLWithString:[swmServerAddr stringByAppendingString:@"comm/CompareWithRoom"]];
     NSLog(@"URL : %@", url);
+    NSLog(@"port : %d", [[url port] intValue]);
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     
@@ -198,13 +207,14 @@ didReceiveResponse:(NSURLResponse *)response
     else if (indexPath.row ==2)
     {
         SWMMateInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"swmMateInfoTableViewCell"];
-        
+        [cell setAvgAge:_memberData.avgAge];
+//        [cell setGender:_memberData.copy]
         return cell;
     }
     else if (indexPath.row == 3)
     {
         SWMHouseRoleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"swmHouseRoleTableViewCell"];
-        
+        [cell setHouseRule:_memberData.enableHouseRoles];
         NSLog(@"%@", _memberData.enableHouseRoles);
         return cell;
     }
