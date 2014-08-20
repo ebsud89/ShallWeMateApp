@@ -53,8 +53,8 @@
     [[[self navigationController] navigationBar] setTintColor:[UIColor whiteColor]];
     [[[self navigationController] navigationBar] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000]];
-    [[[self navigationController] navigationBar] setBackgroundColor:[UIColor colorWithRed:174/255.0 green:70/255.0 blue:115/255.0 alpha:1]];
     
+    NSLog(@"test");
     dataSourceArray = [[NSMutableArray alloc]init];
     SWMNetwork *network = [[SWMNetwork alloc]init];
     NSArray *roomArray = [network getAllRooms];
@@ -65,7 +65,6 @@
         [dataSourceArray addObject:houseData];
         
     }
-    
     
     
     [self.tableView registerNib:[UINib nibWithNibName:@"SWMHouseImageTableViewCell" bundle:nil] forCellReuseIdentifier:@"houseImageTableViewCell"];
@@ -89,7 +88,6 @@
 - (void) loadData
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
     
     NSLog(@"%@",[defaults objectForKey:@"forSearchMemberData"]);
     

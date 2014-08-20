@@ -67,6 +67,37 @@
     [self.collectionView reloadData];
 }
 
+// 컬렉션 크기
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    SWMAppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
+    
+    if ([appDelegate.data isEqual:@"관리비"]) {
+        return CGSizeMake(50, 58);
+    } else {
+        return CGSizeMake(90, 90);
+    }
+}
+
+- (void) setManagements:(NSMutableArray *)managements
+{
+    self.imageArray = [[NSMutableArray alloc]init];
+    for (int i=0; i<[managements count]; i++) {
+        NSNumber *num = [managements objectAtIndex:i];
+        if ([num boolValue]) {
+            [self.imageArray addObject:[NSString stringWithFormat:@"관리비_%d.png",i+1]];
+        }
+    }
+    
+//    if ([self.imageArray count]<6) {
+//        for (int i= (int)[self.imageArray count]; i<6; i++) {
+//            [self.imageArray addObject:@""];
+//        }
+//    }
+    
+    [self.collectionView reloadData];
+}
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];

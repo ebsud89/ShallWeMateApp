@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="JAB-B7-TYR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Ndt-us-WJR">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -182,6 +182,9 @@
                                 <state key="normal" image="menu.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="menuButtonClicked:" destination="6lN-dX-NxU" eventType="touchUpInside" id="bPf-IN-Cnr"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="RsU-ou-ihE">
@@ -191,6 +194,9 @@
                                 <state key="normal" image="search.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="searchButtonTouched:" destination="6lN-dX-NxU" eventType="touchUpInside" id="6fT-wd-vQ7"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
@@ -253,7 +259,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HdI-2O-YMi">
-                                        <rect key="frame" x="0.0" y="536" width="320" height="32"/>
+                                        <rect key="frame" x="0.0" y="541" width="320" height="32"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" image="mate.png">
@@ -279,7 +285,7 @@
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cv3-DW-eq8">
                                 <rect key="frame" x="16" y="13" width="16" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="menu.png">
+                                <state key="normal" image="뒤로버튼.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -417,70 +423,70 @@
                                             <action selector="homeClicked:" destination="49Z-DN-Opu" eventType="touchUpInside" id="S7T-0Y-QzI"/>
                                         </connections>
                                     </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vCw-FV-jm2" userLabel="Provider">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1c-hf-kKT">
-                                        <rect key="frame" x="20" y="25" width="109" height="30"/>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vCw-FV-jm2" userLabel="Provider">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
-                                        <state key="normal" title="하우스 정보 수정">
-                                            <color key="titleColor" red="0.92941176469999998" green="0.3872475178" blue="0.42253464039999999" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="pMyHouseProfileClicked:" destination="49Z-DN-Opu" eventType="touchUpInside" id="W0i-bF-Goe"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DrV-uY-HqU">
-                                        <rect key="frame" x="20" y="69" width="45" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
-                                        <state key="normal" title="메세지">
-                                            <color key="titleColor" red="0.92941176469999998" green="0.3872475178" blue="0.42253464039999999" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="pMessageClicked:" destination="49Z-DN-Opu" eventType="touchUpInside" id="ivy-zh-uUo"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OGU-As-S93">
-                                        <rect key="frame" x="20" y="112" width="30" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
-                                        <state key="normal" title="알림">
-                                            <color key="titleColor" red="0.92941176469999998" green="0.3872475178" blue="0.42253464039999999" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="pAlarmClicked:" destination="49Z-DN-Opu" eventType="touchUpInside" id="ghY-j4-fb4"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wIZ-e5-TKG">
-                                        <rect key="frame" x="20" y="157" width="30" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
-                                        <state key="normal" title="설정">
-                                            <color key="titleColor" red="0.92941176469999998" green="0.3872475178" blue="0.42253464039999999" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ean-P5-OVa">
-                                        <rect key="frame" x="20" y="206" width="57" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
-                                        <state key="normal" title="로그아웃">
-                                            <color key="titleColor" red="0.92941176469999998" green="0.3872475178" blue="0.42253464039999999" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="logoutClicked:" destination="49Z-DN-Opu" eventType="touchUpInside" id="ET2-6E-Ky5"/>
-                                        </connections>
-                                    </button>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1c-hf-kKT">
+                                                <rect key="frame" x="20" y="25" width="109" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
+                                                <state key="normal" title="하우스 정보 수정">
+                                                    <color key="titleColor" red="0.92941176469999998" green="0.3872475178" blue="0.42253464039999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="pMyHouseProfileClicked:" destination="49Z-DN-Opu" eventType="touchUpInside" id="W0i-bF-Goe"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DrV-uY-HqU">
+                                                <rect key="frame" x="20" y="69" width="45" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
+                                                <state key="normal" title="메세지">
+                                                    <color key="titleColor" red="0.92941176469999998" green="0.3872475178" blue="0.42253464039999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="pMessageClicked:" destination="49Z-DN-Opu" eventType="touchUpInside" id="ivy-zh-uUo"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OGU-As-S93">
+                                                <rect key="frame" x="20" y="112" width="30" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
+                                                <state key="normal" title="알림">
+                                                    <color key="titleColor" red="0.92941176469999998" green="0.3872475178" blue="0.42253464039999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="pAlarmClicked:" destination="49Z-DN-Opu" eventType="touchUpInside" id="ghY-j4-fb4"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wIZ-e5-TKG">
+                                                <rect key="frame" x="20" y="157" width="30" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
+                                                <state key="normal" title="설정">
+                                                    <color key="titleColor" red="0.92941176469999998" green="0.3872475178" blue="0.42253464039999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ean-P5-OVa">
+                                                <rect key="frame" x="20" y="206" width="57" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
+                                                <state key="normal" title="로그아웃">
+                                                    <color key="titleColor" red="0.92941176469999998" green="0.3872475178" blue="0.42253464039999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="logoutClicked:" destination="49Z-DN-Opu" eventType="touchUpInside" id="ET2-6E-Ky5"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
@@ -1064,6 +1070,21 @@
             </objects>
             <point key="canvasLocation" x="2363" y="1041"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Bpt-BV-49n">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="DDS-J1-7Vf" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Cp9-J8-OnI">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="4D1-HB-U6s" kind="relationship" relationship="rootViewController" id="0ix-vw-kbF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GR0-QP-Zx5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2217" y="1038"/>
+        </scene>
         <!--Check RoleVC-->
         <scene sceneID="bXg-jz-aTH">
             <objects>
@@ -1286,7 +1307,30 @@
                     </view>
                     <navigationItem key="navigationItem" title="방 설정" id="Yc9-0I-uhc">
                         <barButtonItem key="backBarButtonItem" id="MwB-aO-Gzh"/>
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="WlS-Fg-w8x"/>
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="RsH-Hq-40Z">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="fmc-mk-9NF">
+                                <rect key="frame" x="16" y="13" width="18" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="뒤로버튼.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Xds-7s-O12" kind="push" id="WFI-ea-8MN"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="908-5A-lAR">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="thZ-bm-bVq">
+                                <rect key="frame" x="286" y="13" width="18" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="다음버튼.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="hxF-TF-8Q0" kind="push" id="2yt-mZ-pqG"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="allRoomLabel" destination="5Ox-lB-N1a" id="4Rr-AJ-pMB"/>
@@ -1325,7 +1369,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionCell" id="ptJ-rc-fg0">
-                                        <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                        <rect key="frame" x="0.0" y="64" width="90" height="90"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
@@ -1347,10 +1391,29 @@
                     </view>
                     <navigationItem key="navigationItem" title="옵션" id="RUy-sP-qUi">
                         <barButtonItem key="backBarButtonItem" title="  " id="q50-VO-Hmw"/>
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="VzV-5d-RbA">
-                            <connections>
-                                <segue destination="Q78-95-9EF" kind="push" identifier="goNext" id="tMN-oC-DWc"/>
-                            </connections>
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="Nfh-rJ-Htw">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="www-8S-pNF">
+                                <rect key="frame" x="16" y="13" width="18" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="뒤로버튼.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="lAz-zD-AqY" kind="push" id="egc-BV-Oh2"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="t43-3g-nvJ">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="EUo-Vu-OzQ">
+                                <rect key="frame" x="286" y="13" width="18" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="다음버튼.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Q78-95-9EF" kind="push" id="Rp6-aF-lna"/>
+                                </connections>
+                            </button>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -1471,10 +1534,29 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="메이트 정보" id="FsE-W9-4Gc">
                         <barButtonItem key="backBarButtonItem" title="Item" id="ycw-Al-L0P" colorLabel="IBBuiltInLabel-Orange"/>
-                        <barButtonItem key="rightBarButtonItem" title="완료" id="h0n-Xx-0OO">
-                            <connections>
-                                <segue destination="AZE-DH-IvI" kind="push" identifier="goNext" id="8eb-gP-GYM"/>
-                            </connections>
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="4Dv-n8-vQU">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Spt-UR-wsf">
+                                <rect key="frame" x="16" y="13" width="18" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="뒤로버튼.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="hxF-TF-8Q0" kind="push" id="fLQ-PJ-G3r"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="Jh4-j6-YVx">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="rc5-cO-2zF">
+                                <rect key="frame" x="286" y="13" width="18" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="다음버튼.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="AZE-DH-IvI" kind="push" id="kj9-dT-Sv0"/>
+                                </connections>
+                            </button>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -1538,10 +1620,29 @@
                                 <action selector="backBtnClicked:" destination="AZE-DH-IvI" id="RJQ-20-iKH"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="vIF-U1-YKO">
-                            <connections>
-                                <segue destination="qYO-nB-hg4" kind="push" identifier="goNext" id="0b8-Aw-7hM"/>
-                            </connections>
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="31E-Nt-ZVu">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Xqv-tr-4HY">
+                                <rect key="frame" x="16" y="13" width="18" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="뒤로버튼.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Q78-95-9EF" kind="push" id="bUt-e8-Gk5"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="5DO-mB-iBx">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="AMo-8F-gVp">
+                                <rect key="frame" x="286" y="13" width="18" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="다음버튼.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="qYO-nB-hg4" kind="push" id="YTV-l0-vhJ"/>
+                                </connections>
+                            </button>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -1694,10 +1795,29 @@
                     </view>
                     <navigationItem key="navigationItem" title="라이프 패턴" id="hsh-hd-Rbc">
                         <barButtonItem key="backBarButtonItem" title="  " id="gbL-Mx-SyZ"/>
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="Y9Y-bH-DYe">
-                            <connections>
-                                <segue destination="4D1-HB-U6s" kind="push" identifier="goNext" id="cQO-Nf-qxo"/>
-                            </connections>
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="vOP-fM-LVJ">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="fIa-cz-E8f">
+                                <rect key="frame" x="16" y="13" width="18" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="뒤로버튼.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="AZE-DH-IvI" kind="push" id="ecy-rn-Qf5"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="guZ-uJ-Twq">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9PO-Tp-3fU">
+                                <rect key="frame" x="286" y="13" width="18" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="다음버튼.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="4D1-HB-U6s" kind="push" id="WVT-sG-fr3"/>
+                                </connections>
+                            </button>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -1739,6 +1859,18 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="cY4-gc-mjZ">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="Z8y-zJ-SSY">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Dcj-67-CDm">
+                                <rect key="frame" x="16" y="13" width="18" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="뒤로버튼.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="qYO-nB-hg4" kind="push" id="Z25-TP-tOv"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="ok1.png" id="YYi-Fn-c5N">
                             <connections>
                                 <action selector="finishButtonClicked:" destination="4D1-HB-U6s" id="xnt-MP-HG1"/>
@@ -1781,15 +1913,29 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="나의 하우스 키워드" id="kya-5E-ttu">
-                        <barButtonItem key="leftBarButtonItem" image="다음버튼.png" id="FAH-Zb-enH">
-                            <connections>
-                                <segue destination="9kh-fP-wRD" kind="push" id="Mcv-1K-BoA"/>
-                            </connections>
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="tg3-Ke-f6a">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="MVk-L9-EZS">
+                                <rect key="frame" x="16" y="13" width="18" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="뒤로버튼.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="9kh-fP-wRD" kind="push" id="vqb-pa-UaW"/>
+                                </connections>
+                            </button>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="ok1.png" id="ljT-WN-B7e">
-                            <connections>
-                                <action selector="finishedClicked:" destination="dkK-NB-Sur" id="hc4-Kg-bjb"/>
-                            </connections>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="9fW-d0-jl4">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Umy-oU-W6G">
+                                <rect key="frame" x="285" y="12" width="19" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="ok.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="finishedClicked:" destination="dkK-NB-Sur" eventType="touchUpInside" id="ptJ-oL-7ka"/>
+                                </connections>
+                            </button>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -2319,7 +2465,32 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="메이트 정보 설정" id="Cwn-Ry-h84"/>
+                    <navigationItem key="navigationItem" title="메이트 정보 설정" id="Cwn-Ry-h84">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="ZXc-mB-ccq">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="B0Q-bw-OSt">
+                                <rect key="frame" x="16" y="13" width="18" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="뒤로버튼.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="iFg-FY-xss" kind="push" id="hNJ-XZ-mEI"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="C5e-wW-bwa">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Qsl-3G-m5X">
+                                <rect key="frame" x="286" y="13" width="18" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="다음버튼.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="IeZ-zF-6dV" kind="push" id="GaA-Ry-Fgv"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="ageSelectBtn" destination="Qrh-iM-0Ho" id="Twg-nD-MyW"/>
                         <outlet property="ageTitleLabel" destination="YYB-xh-bdL" id="L07-Gm-eYg"/>
@@ -2510,10 +2681,29 @@
                                 <segue destination="IeZ-zF-6dV" kind="push" id="FMM-WV-aLi"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="다음버튼1.png" id="lup-5c-1wM">
-                            <connections>
-                                <segue destination="dkK-NB-Sur" kind="push" id="4Tz-vI-M6T"/>
-                            </connections>
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="yyg-ru-dcw">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="DLH-8H-e6F">
+                                <rect key="frame" x="16" y="13" width="18" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="뒤로버튼.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="IeZ-zF-6dV" kind="push" id="bUS-hJ-vfD"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="V75-bt-GFE">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="uHH-84-9jD">
+                                <rect key="frame" x="286" y="13" width="18" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="다음버튼.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="dkK-NB-Sur" kind="push" id="Cfo-5H-BAk"/>
+                                </connections>
+                            </button>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -2548,7 +2738,7 @@
             </objects>
             <point key="canvasLocation" x="-49" y="2459"/>
         </scene>
-        <!--Register View Controller4 - Title-->
+        <!--Register View Controller4 - 라이프 스타일-->
         <scene sceneID="7n2-Wf-tOo">
             <objects>
                 <viewController storyboardIdentifier="LifeStyle" id="IeZ-zF-6dV" customClass="RegisterViewController4" sceneMemberID="viewController">
@@ -2591,7 +2781,32 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="Ezu-pZ-4uh"/>
+                    <navigationItem key="navigationItem" title="라이프 스타일" id="Ezu-pZ-4uh">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="d7r-n1-5vJ">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="DYE-Hl-t9n">
+                                <rect key="frame" x="16" y="13" width="18" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="뒤로버튼.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="pub-Dk-hbx" kind="push" id="98x-h6-w3v"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="AK7-an-Qax">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="bxe-Hd-mxD">
+                                <rect key="frame" x="286" y="13" width="18" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="다음버튼.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="9kh-fP-wRD" kind="push" id="xHr-Kw-LPW"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="selectList" destination="9eU-fO-ng4" id="RzS-aj-Uhp"/>
                     </connections>
@@ -2657,9 +2872,6 @@
                                 <state key="normal" image="뒤로버튼.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="49Z-DN-Opu" kind="push" id="xOU-6D-4mX"/>
-                                </connections>
                             </button>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="I9e-SL-Fxm">
@@ -2821,9 +3033,6 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <connections>
-                                <segue destination="49Z-DN-Opu" kind="push" id="nF8-m6-SBx"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -3314,11 +3523,10 @@
         <image name="sub2.png" width="341" height="32"/>
         <image name="subway02.png" width="372" height="57"/>
         <image name="zzim.png" width="49" height="41"/>
-        <image name="다음버튼.png" width="36" height="37"/>
         <image name="다음버튼.png" width="220" height="78"/>
-        <image name="다음버튼1.png" width="18" height="18"/>
-        <image name="뒤로버튼.png" width="36" height="37"/>
+        <image name="다음버튼.png" width="36" height="37"/>
         <image name="뒤로버튼.png" width="220" height="78"/>
+        <image name="뒤로버튼.png" width="36" height="37"/>
         <image name="뒤로버튼1.png" width="220" height="78"/>
         <image name="등록하기.png" width="152" height="39"/>
         <image name="분거리.png" width="217" height="27"/>
@@ -3329,13 +3537,23 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="W3a-6y-wFg"/>
-        <segue reference="hjA-Lq-4W6"/>
-        <segue reference="NwH-dz-hZa"/>
-        <segue reference="8DR-tV-pop"/>
+        <segue reference="Vvz-o6-XPJ"/>
         <segue reference="3lD-wT-Dzk"/>
-        <segue reference="0aj-dc-33W"/>
+        <segue reference="hjA-Lq-4W6"/>
+        <segue reference="W3a-6y-wFg"/>
+        <segue reference="96X-iH-d6C"/>
+        <segue reference="NwH-dz-hZa"/>
+        <segue reference="Z25-TP-tOv"/>
+        <segue reference="0ix-vw-kbF"/>
+        <segue reference="ecy-rn-Qf5"/>
+        <segue reference="bUt-e8-Gk5"/>
+        <segue reference="fLQ-PJ-G3r"/>
+        <segue reference="vqb-pa-UaW"/>
+        <segue reference="bUS-hJ-vfD"/>
+        <segue reference="98x-h6-w3v"/>
+        <segue reference="oPl-86-bfa"/>
         <segue reference="QwW-HK-cPO"/>
-        <segue reference="xOU-6D-4mX"/>
+        <segue reference="WFI-ea-8MN"/>
+        <segue reference="O1e-az-zhH"/>
     </inferredMetricsTieBreakers>
 </document>

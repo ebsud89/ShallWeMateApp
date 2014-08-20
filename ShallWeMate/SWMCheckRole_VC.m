@@ -21,6 +21,7 @@
         // Custom initialization
         viewDidLoaded = NO;
     }
+    
     return self;
 }
 

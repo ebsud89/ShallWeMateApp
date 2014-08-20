@@ -163,7 +163,7 @@ UIImageView *optionOn;
         
         UICollectionViewCell *cell = [self.selectList cellForItemAtIndexPath:indexPath];
         //        image = [[UIImageView alloc] initWithFrame:CGRectMake(7, 0, 50, 50)];
-        NSArray *picArrayBlack = [[NSArray alloc] initWithObjects:@"관리비_가스비.png",@"관리비_전기세.png", @"관리비_수도세.png", @"관리비_청소비.png", @"관리비_통신료.png", @"관리비_보안시스템.png", @"관리비_화재보험료.png", @"관리비_수선유지비.png", nil];
+        NSArray *picArrayBlack = [[NSArray alloc] initWithObjects:@"관리비_1.png",@"관리비_2.png", @"관리비_3.png", @"관리비_4.png", @"관리비_5.png", @"관리비_6.png", @"관리비_7.png", @"관리비_8.png", nil];
         self.unselectedPicData = picArrayBlack;
         imgViewOff = [[UIImageView alloc] initWithFrame:CGRectMake(6, 0, 51, 67)];
         imgViewOff.image = [UIImage imageNamed:[self.unselectedPicData objectAtIndex:indexPath.row]];

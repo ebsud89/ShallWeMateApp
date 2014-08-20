@@ -15,7 +15,7 @@
 #import "SWMRoomInfoTableViewCell.h"
 #import "SWMQAndATableViewCell.h"
 #import "SWMNetwork.h"
-
+#import "SWMAppDelegate.h"
 
 @interface SWMMainDetailViewController ()
 
@@ -45,7 +45,7 @@ const int inervalValue = 60;
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    SWMAppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
     
     [self.contentTableView registerNib:[UINib nibWithNibName:@"TitleTableViewCell" bundle:nil] forCellReuseIdentifier:@"titleTableViewCell"];
     [self.contentTableView registerNib:[UINib nibWithNibName:@"ManagementTableViewCell" bundle:nil] forCellReuseIdentifier:@"managementTableViewCell"];
@@ -78,7 +78,6 @@ const int inervalValue = 60;
     [[[self navigationController] navigationBar] setTintColor:[UIColor whiteColor]];
     [[[self navigationController] navigationBar] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000]];
-    
     //network
     
     SWMNetwork *network = [[SWMNetwork alloc]init];
@@ -297,21 +296,24 @@ const int inervalValue = 60;
     else if(indexPath.row == 2){
         return [ManagementTableViewCell getHeight];
     }
-    else if (indexPath.row == 3)
-    {
-        return [SWMRoomInfoTableViewCell getHeight];
+    else if (indexPath.row == 3){
+        return [CollectionViewTableViewCell getHeight];
     }
     else if (indexPath.row == 4)
     {
         return [SWMRoomInfoTableViewCell getHeight];
     }
-    else if (indexPath.row == 5){
-        return [CollectionViewTableViewCell getHeight];
+    else if (indexPath.row == 5)
+    {
+        return [SWMRoomInfoTableViewCell getHeight];
     }
     else if (indexPath.row == 6){
         return [CollectionViewTableViewCell getHeight];
     }
     else if (indexPath.row == 7){
+        return [CollectionViewTableViewCell getHeight];
+    }
+    else if (indexPath.row == 8){
         return [SWMQAndATableViewCell getHeight];
     }
     else
@@ -326,12 +328,12 @@ const int inervalValue = 60;
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
     // If you're serving data from an array, return the length of the array:
-    return 8;
+    return 9;
 }
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    SWMAppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
     if (indexPath.row == 0)
     {
         SWMImageScrollTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"imageScrollViewTableViewCell"];
@@ -364,31 +366,7 @@ const int inervalValue = 60;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
-    else if (indexPath.row ==3)
-    {
-        SWMRoomInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RoomInfoTableViewCell"];
-        
-        return cell;
-    }
-    else if (indexPath.row == 4)
-    {
-        SWMRoomInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RoomInfoTableViewCell"];
-        
-        return cell;
-    }
-    else if (indexPath.row == 5)
-    {
-        CollectionViewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"collectionViewTableViewCell"];
-        
-        if (cell == nil) {
-            NSLog(@"클남~~~");
-            cell = [CollectionViewTableViewCell collectionViewTableViewCell];
-        }
-        [cell setTitle:@"라이프스타일 키워드"];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        return cell;
-    }
-    else if (indexPath.row == 6)
+    else if (indexPath.row == 3)
     {
         CollectionViewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"collectionViewTableViewCell"];
         
@@ -396,11 +374,50 @@ const int inervalValue = 60;
             NSLog(@"hh");
             cell = [CollectionViewTableViewCell collectionViewTableViewCell];
         }
-        [cell setTitle:@"라이프 스타일 키워드"];
+        [cell setTitle:@"관리비 포함 사항"];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        appDelegate.data = @"관리비";
+        return cell;
+    }
+    else if (indexPath.row ==4)
+    {
+        SWMRoomInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RoomInfoTableViewCell"];
+        
+        return cell;
+    }
+    else if (indexPath.row == 5)
+    {
+        SWMRoomInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RoomInfoTableViewCell"];
+        
+        return cell;
+    }
+    else if (indexPath.row == 6)
+    {
+        CollectionViewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"collectionViewTableViewCell"];
+        
+        appDelegate.data = @"공간구성";
+        if (cell == nil) {
+            NSLog(@"클남~~~");
+            cell = [CollectionViewTableViewCell collectionViewTableViewCell];
+        }
+        [cell setTitle:@"공간구성"];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
     else if (indexPath.row == 7)
+    {
+        CollectionViewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"collectionViewTableViewCell"];
+        
+        appDelegate.data = @"옵션";
+        if (cell == nil) {
+            NSLog(@"hh");
+            cell = [CollectionViewTableViewCell collectionViewTableViewCell];
+        }
+        [cell setTitle:@"제공되는 옵션"];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        return cell;
+    }
+    else if (indexPath.row == 8)
     {
         SWMQAndATableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"QAndATableViewCell"];
         
@@ -456,7 +473,7 @@ const int inervalValue = 60;
         [animator removeAllBehaviors];
         
         
-        behavior = [[UIAttachmentBehavior alloc]initWithItem:self.mateButton attachedToAnchor:CGPointMake(160.0f, 544.0f)];
+        behavior = [[UIAttachmentBehavior alloc]initWithItem:self.mateButton attachedToAnchor:CGPointMake(160.0f, 550.0f)];
         
         behavior.length = 2.0;
         behavior.damping = 0.9;
@@ -471,7 +488,7 @@ const int inervalValue = 60;
         [animator removeAllBehaviors];
         
         
-        behavior = [[UIAttachmentBehavior alloc]initWithItem:self.mateButton attachedToAnchor:CGPointMake(160.0f, 594.0f)];
+        behavior = [[UIAttachmentBehavior alloc]initWithItem:self.mateButton attachedToAnchor:CGPointMake(160.0f, 597.0f)];
         
         behavior.length = 2.0;
         behavior.damping = 0.9;
