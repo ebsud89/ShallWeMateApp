@@ -15,6 +15,7 @@
     UIPickerView *picker;
 }
 
+@property (weak, nonatomic) IBOutlet UILabel *avgLabel;
 @property (strong, nonatomic) HouseData *houseData;
 @property (strong, nonatomic) IBOutlet UIButton *avgAgeButton;
 @property (weak, nonatomic) IBOutlet UITextField *existingMenNum;

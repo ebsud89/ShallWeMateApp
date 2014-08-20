@@ -17,5 +17,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *fifthBtn;
 @property (strong, nonatomic) IBOutlet UILabel *sixBtn;
 
+@property (weak, nonatomic) IBOutlet UIButton *bottomButton;
 @property (strong, nonatomic) NSMutableArray *houseRule;
 @end

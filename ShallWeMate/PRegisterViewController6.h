@@ -17,5 +17,6 @@
 @property (strong, nonatomic) HouseData *houseData;
 
 @property (strong, nonatomic) IBOutlet UICollectionView *selectList;
+- (IBAction)backBtnClicked:(id)sender;
 
 @end

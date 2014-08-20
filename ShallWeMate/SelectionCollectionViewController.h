@@ -18,6 +18,7 @@
 @property (assign, nonatomic) int numberOfItemsInSection;
 @property (strong, nonatomic) NSArray *picData;
 @property (strong, nonatomic) NSArray *data;
+@property (strong, nonatomic) NSArray *unselectedPicData;
 
 - (void) selectionListInit;
 - (void) selectItem:(int) index;

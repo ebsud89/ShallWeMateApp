@@ -22,17 +22,18 @@
     UITextField *location;
 }
 
-
 @property (strong, nonatomic) MemberData *memberData;
 @property (retain, nonatomic) IBOutlet UISlider *maxBudget;
 @property (retain, nonatomic) IBOutlet UISlider *maxDeposit;
 @property (retain, nonatomic) IBOutlet UILabel *maxBudgetLabel;
 @property (retain, nonatomic) IBOutlet UILabel *maxDepositLabel;
-@property (retain, nonatomic) IBOutlet UILabel *locationLabel;
-@property (retain, nonatomic) IBOutlet UITextField *location;
+//@property (retain, nonatomic) IBOutlet UILabel *locationLabel;
+//@property (retain, nonatomic) IBOutlet UITextField *location;
 @property (strong, nonatomic) IBOutlet UIButton *subwaySearchBtn;
+@property (weak, nonatomic) IBOutlet UIImageView *stationImg;
+@property (weak, nonatomic) IBOutlet UILabel *stationLabel;
 
-@property (strong, nonatomic) IBOutlet UIButton *subwayStationSearchBtn;
+//@property (strong, nonatomic) IBOutlet UIButton *subwayStationSearchBtn;
 
 - (IBAction)budgetSlider:(id)sender;
 - (IBAction)depositSlider:(id)sender;

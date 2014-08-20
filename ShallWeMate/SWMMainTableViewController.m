@@ -14,6 +14,7 @@
 #import "RegisterViewController1.h"
 #import "SWMHouseImageTableViewCell.h"
 #import "SWMNetwork.h"
+#import "MemberData.h"
 
 @interface SWMMainTableViewController ()
 
@@ -48,34 +49,52 @@
      밑에 소스 코드가 아무 값으로 이루어진 dataSourceArray 만드는 거입니당~
      여기서 서버에서 받아와서, HouseData타입의 배열을 만들 때 사용하면 됩니다.
      */
+    //navigation bar color
+    [[[self navigationController] navigationBar] setTintColor:[UIColor whiteColor]];
+    [[[self navigationController] navigationBar] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000]];
+    [[[self navigationController] navigationBar] setBackgroundColor:[UIColor colorWithRed:174/255.0 green:70/255.0 blue:115/255.0 alpha:1]];
     
     dataSourceArray = [[NSMutableArray alloc]init];
     SWMNetwork *network = [[SWMNetwork alloc]init];
     NSArray *roomArray = [network getAllRooms];
     for (NSDictionary *dic in roomArray) {
         SWMRoom *room = [[SWMRoom alloc]initWithDictionary:dic];
-        [room exportToHouseData];
-        [dataSourceArray addObject:room];
+        NSLog(@"\n%@", room);
+        HouseData * houseData = [room exportToHouseData];
+        [dataSourceArray addObject:houseData];
         
     }
     
+    
+    
     [self.tableView registerNib:[UINib nibWithNibName:@"SWMHouseImageTableViewCell" bundle:nil] forCellReuseIdentifier:@"houseImageTableViewCell"];
     
-    
-    //덤프 데이터 만들기
-//    MakeDumpData *dump = [[MakeDumpData alloc]init];
-//    dataSourceArray = [[NSMutableArray alloc]initWithArray:[dump getHouseDataArray]];
-//    
-//    int i = (int) [self.dataSourceArray count];
-//    NSLog(@"데이터 테이블 갯수 : %d", i);
     
     //navigation bar color
     [[[self navigationController] navigationBar] setTintColor:[UIColor whiteColor]];
     [[[self navigationController] navigationBar] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000]];
     
+    [self loadData];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+        [self loadData];
+}
+
+- (void) loadData
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    
+    NSLog(@"%@",[defaults objectForKey:@"forSearchMemberData"]);
     
 }
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -169,6 +188,13 @@
 
      SWMHouseImageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"houseImageTableViewCell" forIndexPath:indexPath];
      
+//     SWMHouseImageTableViewCell *cell = [[SWMHouseImageTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"houseImageTableViewCell"];
+     
+     HouseData *housedata = [dataSourceArray objectAtIndex:indexPath.row];
+     NSLog(@"%@", housedata);
+//     NSLog(@"%d", housedata.title);
+     [cell setTitleText:housedata.title];
+     
      [cell setEnabledBadgeView];
      [cell setEnabledLikeIt];
      
@@ -191,7 +217,7 @@
 
      
      // Configure the cell...
-     [cell viewWithTag:9999999];
+     [cell viewWithTag:indexPath.row];
      return cell;
 }
 

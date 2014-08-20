@@ -15,8 +15,6 @@
 @synthesize maxDepositLabel;
 @synthesize maxBudget;
 @synthesize maxDeposit;
-@synthesize locationLabel;
-@synthesize location;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle*)nibBundleOrNil
 {
@@ -33,11 +31,10 @@
     [super viewDidLoad];
     
     [self refreshHouseData];
-    
     //navigation bar color
-    [[[self navigationController] navigationBar] setTintColor:[UIColor whiteColor]];
-    [[[self navigationController] navigationBar] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
-    [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000]];
+//    [[[self navigationController] navigationBar] setTintColor:[UIColor whiteColor]];
+//    [[[self navigationController] navigationBar] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+//    [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000]];
 }
 
 - (void) refreshHouseData
@@ -48,8 +45,8 @@
      
      */
     if (_memberData.nearSubwayStation != nil) {
-        self.subwayStationSearchBtn.titleLabel.text = _memberData.nearSubwayStation;
-        NSLog(@"%@", self.subwayStationSearchBtn.titleLabel.text);
+        self.subwaySearchBtn.titleLabel.text = _memberData.nearSubwayStation;
+        NSLog(@"%@", self.subwaySearchBtn.titleLabel.text);
     }
 
 
@@ -67,7 +64,7 @@
 {
     /* 기입한 정보 (지하철역, 보증금, 월세) 저장하기 */
     
-    _memberData.nearSubwayStation = self.subwayStationSearchBtn.titleLabel.text;
+    _memberData.nearSubwayStation = self.subwaySearchBtn.titleLabel.text;
     _memberData.securityCost = self.maxDepositLabel.text;
     _memberData.monthlyRentCost = self.maxBudgetLabel.text;
 }
@@ -79,36 +76,36 @@
 // subway delegate
 - (void) didSelectedSubwayStation:(NSDictionary *) subwayDic
 {
-
-    self.locationLabel = [[UILabel alloc]initWithFrame:self.subwaySearchBtn.titleLabel.frame];
+//    [self.subwaySearchBtn setBackgroundColor:[UIColor whiteColor]];
+    self.memberData.subwayDic = subwayDic;
+    self.subwaySearchBtn .hidden=TRUE;
+//    self.stationImg.hidden=FALSE;
+    self.stationLabel.text = [subwayDic objectForKey:@"전철역명"];
+    UIImage* img = [UIImage imageNamed:@"o.png"];
+    [self.stationImg setImage:img];
     
-    self.locationLabel.text = [subwayDic objectForKey:@"전철역명"];
-    
-    [self.view addSubview:self.locationLabel];
-    _memberData.subwayDic = subwayDic;
-    [self.location reloadInputViews];
     
 }
 
-- (void) viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    
-    NSLog(@"aaadsfjosdfjdosjlxnaofjoewjfnvj");
-    NSLog(@"%@", _memberData.subwayDic);
-    self.subwaySearchBtn.titleLabel.text = @"aaaa";
-    if (_memberData.subwayDic != nil) {
-        self.locationLabel = [[UILabel alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
-        
-        self.locationLabel.text = [_memberData.subwayDic objectForKey:@"전철역명"];
-        
-        [self.view addSubview:self.locationLabel];
-//        _memberData.subwayDic = subwayDic;
-//        [self.location reloadInputViews];
-        
-        self.subwaySearchBtn.titleLabel.text = @"zadfioajsofjodjv";
-    }
-}
+//- (void) viewDidAppear:(BOOL)animated
+//{
+//    [super viewDidAppear:animated];
+//    
+//    NSLog(@"aaadsfjosdfjdosjlxnaofjoewjfnvj");
+//    NSLog(@"%@", _memberData.subwayDic);
+//    self.subwaySearchBtn.titleLabel.text = @"aaaa";
+//    if (_memberData.subwayDic != nil) {
+//        self.locationLabel = [[UILabel alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
+//        
+//        self.locationLabel.text = [_memberData.subwayDic objectForKey:@"전철역명"];
+//        
+//        [self.view addSubview:self.locationLabel];
+////        _memberData.subwayDic = subwayDic;
+////        [self.location reloadInputViews];
+//        
+//        self.subwaySearchBtn.titleLabel.text = @"zadfioajsofjodjv";
+//    }
+//}
 
 
 - (IBAction)budgetSlider:(id)sender {

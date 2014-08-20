@@ -14,6 +14,14 @@
     return 296.0f;
 }
 
+-(void)viewDidLoad {
+//    if (<#condition#>) {
+//        
+//    
+//        [self.bottomButton.imageView setImage:[UIImage imageNamed: @"수정.png"]];
+//    }
+}
+
 - (IBAction)finishClicked:(id)sender {
 //    SWMSummeryViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SWMSummeryViewController"];
 //    

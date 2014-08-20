@@ -16,7 +16,7 @@
 }
 
 @property (strong, nonatomic) HouseData *houseData;
-@property (strong, nonatomic) IBOutlet UIBarButtonItem *commitBtn;
+@property (strong, nonatomic) IBOutlet UIButton *commitBtn;
 @property (strong, nonatomic) NSString *brandNameString;
 @property (strong, nonatomic) IBOutlet UILabel *brandName;
 @property (strong, nonatomic) NSString *authCode;

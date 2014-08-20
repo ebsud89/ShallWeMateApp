@@ -36,19 +36,20 @@
     // Do any additional setup after loading the view.
         [self.houseData printAll];
     
-    avgAgesArray = [[NSArray alloc] initWithObjects:@"평균 연령을 선택해주세요", @"20대 초반", @"20대 중반", @"20대 후반", @"30대 초반", @"30대 중반", @"30대 후반", @"40대 이상", nil];
+    avgAgesArray = [[NSArray alloc] initWithObjects: @"20대 초반", @"20대 중반", @"20대 후반", @"30대 초반", @"30대 중반", @"30대 후반", @"40대 이상", nil];
     
     // 버튼위에 라벨을 올려주기 위해 만듬
-    ageTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(6.0f, 2.0f, 150.0f, 30.0f)];
-    ageTitleLabel.textColor = [UIColor darkGrayColor];
-    ageTitleLabel.textAlignment = NSTextAlignmentCenter;
-    ageTitleLabel.backgroundColor = [UIColor clearColor];
-    ageTitleLabel.font = [UIFont systemFontOfSize:14.0f];
-    ageTitleLabel.lineBreakMode = NSLineBreakByClipping;
-    [_avgAgeButton addSubview:ageTitleLabel];
-    ageTitleLabel.text = [avgAgesArray objectAtIndex:0];
+    //    ageTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(20.0f, 10.0f, 280.0f, 30.0f)];
+    _avgLabel.textColor = [UIColor lightGrayColor];
+    _avgLabel.textAlignment = NSTextAlignmentCenter;
+    _avgLabel.backgroundColor = [UIColor clearColor];
+    _avgLabel.font = [UIFont systemFontOfSize:16.0f];
+    _avgLabel.lineBreakMode = NSLineBreakByClipping;
+    [_avgAgeButton addSubview:_avgLabel];
+    //    _avgLabel.text = @"기존 메이트의 연령대를 선택해주세요";
     
     [_avgAgeButton addTarget:self action:@selector(selectAgeButtonClicked:)             forControlEvents:UIControlEventTouchUpInside];
+
     
     [self refreshHouseData];
     
@@ -198,7 +199,9 @@
 {
     NSLog(@"%@",[avgAgesArray objectAtIndex:row] );
     self.houseData.avgAge =[avgAgesArray objectAtIndex:row];
-    ageTitleLabel.text = [avgAgesArray objectAtIndex:row];
+    _avgLabel.text = [avgAgesArray objectAtIndex:row];
+    _avgLabel.textColor = [UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000];
+
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component

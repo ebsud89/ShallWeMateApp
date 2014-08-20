@@ -25,7 +25,11 @@
 @property (strong, nonatomic) NSString *premiumBrandName;
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 
+@property (weak, nonatomic) IBOutlet UIImageView *brandLogo;
+@property (weak, nonatomic) IBOutlet UILabel *brandName;
+@property (weak, nonatomic) IBOutlet UIImageView *stationImg;
 
+@property (weak, nonatomic) IBOutlet UILabel *stationLabel;
 @property (strong, nonatomic) IBOutlet UIScrollView *houseImageScrollView;
 @property (strong, nonatomic) IBOutlet UIButton *addPhotoBtn;
 

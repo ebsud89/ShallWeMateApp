@@ -17,9 +17,9 @@
     [super viewDidLoad];
     
     //navigation bar color
-    [[[self navigationController] navigationBar] setTintColor:[UIColor whiteColor]];
-    [[[self navigationController] navigationBar] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
-    [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000]];
+//    [[[self navigationController] navigationBar] setTintColor:[UIColor whiteColor]];
+//    [[[self navigationController] navigationBar] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+//    [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000]];
     
     // Do any additional setup after loading the view, typically from a nib.
     [_inviteOk setTag:0];
@@ -79,35 +79,49 @@
             if([_inviteOk isSelected]==YES)
             {
                 [_inviteOk setSelected:NO];
-                [_inviteNo setSelected:YES];
             }
             else{
-                [_inviteOk setSelected:YES];
-                [_inviteNo setSelected:NO];
+                if([_inviteNo isSelected]==YES)
+                {
+                    [_inviteOk setSelected:YES];
+                    [_inviteNo setSelected:NO];
+                } else {
+                    [_inviteOk setSelected:YES];
+                }
             }
             
             break;
         case 1:
+            
             if([_inviteNo isSelected]==YES)
             {
                 [_inviteNo setSelected:NO];
-                [_inviteOk setSelected:YES];
             }
             else{
-                [_inviteNo setSelected:YES];
-                [_inviteOk setSelected:NO];
+                if([_inviteOk isSelected]==YES)
+                {
+                    [_inviteNo setSelected:YES];
+                    [_inviteOk setSelected:NO];
+                } else {
+                    [_inviteNo setSelected:YES];
+                }
             }
             
             break;
         case 2:
+            
             if([_petOk isSelected]==YES)
             {
                 [_petOk setSelected:NO];
-                [_petNo setSelected:YES];
             }
             else{
-                [_petOk setSelected:YES];
-                [_petNo setSelected:NO];
+                if([_petNo isSelected]==YES)
+                {
+                    [_petOk setSelected:YES];
+                    [_petNo setSelected:NO];
+                } else {
+                    [_petOk setSelected:YES];
+                }
             }
             
             break;
@@ -115,11 +129,15 @@
             if([_petNo isSelected]==YES)
             {
                 [_petNo setSelected:NO];
-                [_petOk setSelected:YES];
             }
             else{
-                [_petNo setSelected:YES];
-                [_petOk setSelected:NO];
+                if([_petOk isSelected]==YES)
+                {
+                    [_petNo setSelected:YES];
+                    [_petOk setSelected:NO];
+                } else {
+                    [_petNo setSelected:YES];
+                }
             }
             
             break;
@@ -127,23 +145,32 @@
             if([_privacyMore isSelected]==YES)
             {
                 [_privacyMore setSelected:NO];
-                [_privacyLess setSelected:YES];
             }
             else{
-                [_privacyMore setSelected:YES];
-                [_privacyLess setSelected:NO];
+                if([_privacyLess isSelected]==YES)
+                {
+                    [_privacyMore setSelected:YES];
+                    [_privacyLess setSelected:NO];
+                } else {
+                    [_privacyMore setSelected:YES];
+                }
             }
             
             break;
         case 5:
+            
             if([_privacyLess isSelected]==YES)
             {
                 [_privacyLess setSelected:NO];
-                [_privacyMore setSelected:YES];
             }
             else{
-                [_privacyLess setSelected:YES];
-                [_privacyMore setSelected:NO];
+                if([_privacyMore isSelected]==YES)
+                {
+                    [_privacyLess setSelected:YES];
+                    [_privacyMore setSelected:NO];
+                } else {
+                    [_privacyLess setSelected:YES];
+                }
             }
             
             break;
@@ -151,11 +178,15 @@
             if([_smokeOk isSelected]==YES)
             {
                 [_smokeOk setSelected:NO];
-                [_smokeNo setSelected:YES];
             }
             else{
-                [_smokeOk setSelected:YES];
-                [_smokeNo setSelected:NO];
+                if([_smokeNo isSelected]==YES)
+                {
+                    [_smokeOk setSelected:YES];
+                    [_smokeNo setSelected:NO];
+                } else {
+                    [_smokeOk setSelected:YES];
+                }
             }
             
             break;
@@ -163,23 +194,32 @@
             if([_smokeNo isSelected]==YES)
             {
                 [_smokeNo setSelected:NO];
-                [_smokeOk setSelected:YES];
             }
             else{
-                [_smokeNo setSelected:YES];
-                [_smokeOk setSelected:NO];
+                if([_smokeOk isSelected]==YES)
+                {
+                    [_smokeNo setSelected:YES];
+                    [_smokeOk setSelected:NO];
+                } else {
+                    [_smokeNo setSelected:YES];
+                }
             }
             
             break;
         case 8:
+            
             if([_drinkOk isSelected]==YES)
             {
                 [_drinkOk setSelected:NO];
-                [_drinkNo setSelected:YES];
             }
             else{
-                [_drinkOk setSelected:YES];
-                [_drinkNo setSelected:NO];
+                if([_drinkNo isSelected]==YES)
+                {
+                    [_drinkOk setSelected:YES];
+                    [_drinkNo setSelected:NO];
+                } else {
+                    [_drinkOk setSelected:YES];
+                }
             }
             
             break;
@@ -187,16 +227,21 @@
             if([_drinkNo isSelected]==YES)
             {
                 [_drinkNo setSelected:NO];
-                [_drinkOk setSelected:YES];
             }
             else{
-                [_drinkNo setSelected:YES];
-                [_drinkOk setSelected:NO];
+                if([_drinkOk isSelected]==YES)
+                {
+                    [_drinkNo setSelected:YES];
+                    [_drinkOk setSelected:NO];
+                } else {
+                    [_drinkNo setSelected:YES];
+                }
             }
             
             break;
         default:
             break;
+
     }
     
 }

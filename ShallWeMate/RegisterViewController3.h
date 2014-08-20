@@ -28,4 +28,5 @@
 @property (weak, nonatomic) IBOutlet UIButton *mixedSex;
 
 - (IBAction)ageSelect:(id)sender;
+- (IBAction)doneButtonClicked:(id)sender;
 @end

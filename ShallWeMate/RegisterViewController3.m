@@ -32,14 +32,14 @@
     agesArray = [[NSArray alloc] initWithObjects: @"20대 초반", @"20대 중반", @"20대 후반", @"30대 초반", @"30대 중반", @"30대 후반", @"40대 이상", nil];
     
     // 버튼위에 라벨을 올려주기 위해 만듬
-    ageTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(6.0f, 2.0f, 150.0f, 30.0f)];
-    ageTitleLabel.textColor = [UIColor lightGrayColor];
-    ageTitleLabel.textAlignment = NSTextAlignmentCenter;
-    ageTitleLabel.backgroundColor = [UIColor clearColor];
-    ageTitleLabel.font = [UIFont systemFontOfSize:14.0f];
-    ageTitleLabel.lineBreakMode = NSLineBreakByClipping;
-    [ageSelectBtn addSubview:ageTitleLabel];
-    ageTitleLabel.text = @"원하는 메이트의 연령대를 선택해주세요";
+//    ageTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(6.0f, 2.0f, 150.0f, 30.0f)];
+//    ageTitleLabel.textColor = [UIColor lightGrayColor];
+//    ageTitleLabel.textAlignment = NSTextAlignmentCenter;
+//    ageTitleLabel.backgroundColor = [UIColor clearColor];
+//    ageTitleLabel.font = [UIFont systemFontOfSize:14.0f];
+//    ageTitleLabel.lineBreakMode = NSLineBreakByClipping;
+//    [ageSelectBtn addSubview:ageTitleLabel];
+//    ageTitleLabel.text = @"원하는 메이트의 연령대를 선택해주세요";
     
     [ageSelectBtn addTarget:self action:@selector(ageSelect:)             forControlEvents:UIControlEventTouchUpInside];
     
@@ -47,9 +47,9 @@
     [[UITextField appearance] setTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1.0]];
     
     //navigation bar color
-    [[[self navigationController] navigationBar] setTintColor:[UIColor whiteColor]];
-    [[[self navigationController] navigationBar] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
-    [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000]];
+//    [[[self navigationController] navigationBar] setTintColor:[UIColor whiteColor]];
+//    [[[self navigationController] navigationBar] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+//    [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000]];
     
     [_sameSex setTag:0];
     [_sameSex setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
@@ -68,11 +68,15 @@
             if([_sameSex isSelected]==YES)
             {
                 [_sameSex setSelected:NO];
-                [_mixedSex setSelected:YES];
             }
             else{
-                [_sameSex setSelected:YES];
-                [_mixedSex setSelected:NO];
+                if([_mixedSex isSelected]==YES)
+                {
+                    [_sameSex setSelected:YES];
+                    [_mixedSex setSelected:NO];
+                } else {
+                    [_sameSex setSelected:YES];
+                }
             }
             
             break;
@@ -80,11 +84,15 @@
             if([_mixedSex isSelected]==YES)
             {
                 [_mixedSex setSelected:NO];
-                [_sameSex setSelected:YES];
             }
             else{
-                [_mixedSex setSelected:YES];
-                [_sameSex setSelected:NO];
+                if([_sameSex isSelected]==YES)
+                {
+                    [_mixedSex setSelected:YES];
+                    [_sameSex setSelected:NO];
+                } else{
+                    [_mixedSex setSelected:YES];
+                }
             }
             
             break;
@@ -94,13 +102,6 @@
     
 }
 
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    [self viewDidLoad];
-    //[[self] popViewControllerAnimated:YES];
-    //[[self navigationController] popViewControllerAnimated:YES];
-    
-}
 
 - (void) refreshHouseData
 {
@@ -168,6 +169,35 @@
     
     
 }
+
+//- (IBAction)doneButtonClicked:(id)sender {
+//    if(_sameSex.isSelected == YES || _mixedSex.isSelected == YES) {
+//        
+//        RegisterViewController4 *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"LifeStyle"];
+//        vc.memberData = self.memberData;
+//        [self.view addSubview:vc.view];
+//
+//    } else {
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"메이트 성별을 지정해주세요."
+//                                                        message:@""
+//                                                       delegate:self
+//                                              cancelButtonTitle:@"돌아가기"
+//                                              otherButtonTitles:nil];
+//        [alert show];
+//        //        [alert setTopColor:[U IColor colorWithRed:0.7 green:0 blue:0 alpha:1] middleColor:[UIColor colorWithRed:0.5 green:0 blue:0 alpha:1] bottomColor:[UIColor colorWithRed:0.4 green:0 blue:0 alpha:1] lineColor:[UIColor colorWithRed:0.7 green:0 blue:0 alpha:1]];
+//        alert = nil;
+//    }
+//    
+//}
+
+
+//- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+//    [self viewDidLoad];
+//    //[[self] popViewControllerAnimated:YES];
+//    //[[self navigationController] popViewControllerAnimated:YES];
+//    
+//}
+
     
     
     // pickerView Component 갯수
@@ -185,6 +215,7 @@
     {
         NSLog(@"%@",[agesArray objectAtIndex:row] );
         ageTitleLabel.text = [agesArray objectAtIndex:row];
+        ageTitleLabel.textColor = [UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000];
     }
     
     - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component

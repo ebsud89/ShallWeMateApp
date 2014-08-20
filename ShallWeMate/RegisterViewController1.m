@@ -41,9 +41,12 @@
 
 - (void)viewDidLoad
 {
+    //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [super viewDidLoad];
-    
-    
+//    UIBarButtonItem *backButtonItem = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStylePlain target:nil action:nil];
+//    self.navigationItem.backBarButtonItem = backButtonItem;
+//    
+//    self.navigationItem.backBarButtonItem = backButtonItem;
     [self refreshHouseData];
     
     jobsArray = [[NSArray alloc] initWithObjects: @"학생", @"직장인", @"프리랜서", nil];
@@ -52,7 +55,7 @@
     jobTitleLabel.textColor = [UIColor lightGrayColor];
     jobTitleLabel.textAlignment = NSTextAlignmentCenter;
     jobTitleLabel.backgroundColor = [UIColor clearColor];
-//    jobTitleLabel.font = [UIFont fontWithName:@"Apple SD Gothic Neo-Regular" size:6];
+    //    jobTitleLabel.font = [UIFont fontWithName:@"Apple SD Gothic Neo-Regular" size:6];
     jobTitleLabel.lineBreakMode = NSLineBreakByClipping;
     [jobButton addSubview:jobTitleLabel];
     jobTitleLabel.text = @"직업을 선택해주세요.";
@@ -71,24 +74,24 @@
     
     userName.text = appDelegate.fbUserName;
     [userName setFont:[self getFont]];
-    radiobutton1 = [[UIButton alloc] initWithFrame:CGRectMake(90, 338, 18, 18)];
+    radiobutton1 = [[UIButton alloc] initWithFrame:CGRectMake(90, 338, 63, 18)];
     [radiobutton1 setTag:0];
-    [radiobutton1 setBackgroundImage:[UIImage imageNamed:@"pic1.png"] forState:UIControlStateNormal];
-    [radiobutton1 setBackgroundImage:[UIImage imageNamed:@"pic2.png"] forState:UIControlStateSelected];
+    [radiobutton1 setBackgroundImage:[UIImage imageNamed:@"pic11.png"] forState:UIControlStateNormal];
+    [radiobutton1 setBackgroundImage:[UIImage imageNamed:@"pic22.png"] forState:UIControlStateSelected];
     [radiobutton1 addTarget:self action:@selector(radiobuttonSelected:) forControlEvents:UIControlEventTouchUpInside];
     
-    radiobutton2 = [[UIButton alloc] initWithFrame:CGRectMake(173, 338, 18, 18)];
+    radiobutton2 = [[UIButton alloc] initWithFrame:CGRectMake(173, 338, 63, 18)];
     [radiobutton2 setTag:1];
-    [radiobutton2 setBackgroundImage:[UIImage imageNamed:@"pic1.png"] forState:UIControlStateNormal];
-    [radiobutton2 setBackgroundImage:[UIImage imageNamed:@"pic2.png"] forState:UIControlStateSelected];
+    [radiobutton2 setBackgroundImage:[UIImage imageNamed:@"pic11.png"] forState:UIControlStateNormal];
+    [radiobutton2 setBackgroundImage:[UIImage imageNamed:@"pic22.png"] forState:UIControlStateSelected];
     [radiobutton2 addTarget:self action:@selector(radiobuttonSelected:) forControlEvents:UIControlEventTouchUpInside];
     
-//    userName.text = @"입력하기";
+    //    userName.text = @"입력하기";
     userName.textColor = [UIColor colorWithRed:237/255.0 green:103/255.0 blue:103/255.0 alpha:1];
     userName.font = [UIFont systemFontOfSize:17];
     userName.delegate = self;
     
-//    _ageTextField.text = @"입력하기";
+    //    _ageTextField.text = @"입력하기";
     _ageTextField.textColor = [UIColor colorWithRed:237/255.0 green:103/255.0 blue:103/255.0 alpha:1];
     _ageTextField.delegate = self;
     
@@ -124,7 +127,7 @@
 
 -(void) textViewDidChange:(UITextView *)textView
 {
-
+    
     if(textView.text.length == 0){
         textView.textColor = [UIColor colorWithRed:237/255.0 green:103/255.0 blue:103/255.0 alpha:10000];
         textView.text = @"";
@@ -138,7 +141,7 @@
     
     /* 수요자측 데이터 - 수요자 이름, 수요자 나이, 수요자 성별, 수요자 직업 뿌리기
      
-        이름, 나이는 페이스북 세션 정보 통해 미리 세팅
+     이름, 나이는 페이스북 세션 정보 통해 미리 세팅
      */
     
     
@@ -198,7 +201,7 @@
     //                                              [defaults setObject:imageData forKey:@"image"];
     
     [appDelegate.defaults synchronize];
-
+    
 }
 
 - (void)setViewMovedUp:(BOOL)movedUp height:(float)height
@@ -232,7 +235,6 @@
 - (void)keyboardWillShow:(NSNotification *)notification
 
 {
-    
     NSDictionary *userInfo = [notification userInfo];
     CGRect keyboardRect;
     [[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] getValue:&keyboardRect];
@@ -265,15 +267,19 @@
             if([radiobutton1 isSelected]==YES)
             {
                 [radiobutton1 setSelected:NO];
-                [radiobutton2 setSelected:YES];
-                self.woman.textColor = [UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000];
                 self.man.textColor = [UIColor lightGrayColor];
             }
             else{
-                [radiobutton1 setSelected:YES];
-                [radiobutton2 setSelected:NO];
-                self.man.textColor = [UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000];
-                self.woman.textColor = [UIColor lightGrayColor];
+                if([radiobutton2 isSelected]==YES)
+                {
+                    [radiobutton1 setSelected:YES];
+                    [radiobutton2 setSelected:NO];
+                    self.man.textColor = [UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000];
+                    self.woman.textColor = [UIColor lightGrayColor];
+                } else {
+                    [radiobutton1 setSelected:YES];
+                    self.man.textColor = [UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000];
+                }
             }
             
             break;
@@ -281,20 +287,24 @@
             if([radiobutton2 isSelected]==YES)
             {
                 [radiobutton2 setSelected:NO];
-                [radiobutton1 setSelected:YES];
-                self.man.textColor = [UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000];
                 self.woman.textColor = [UIColor lightGrayColor];
             }
             else{
-                [radiobutton2 setSelected:YES];
-                [radiobutton1 setSelected:NO];
-                self.woman.textColor = [UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000];
-                self.man.textColor = [UIColor lightGrayColor];
+                if([radiobutton1 isSelected]==YES)
+                {
+                    [radiobutton2 setSelected:YES];
+                    [radiobutton1 setSelected:NO];
+                    self.woman.textColor = [UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000];
+                    self.man.textColor = [UIColor lightGrayColor];
+                } else {
+                    [radiobutton2 setSelected:YES];
+                    self.woman.textColor = [UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000];
+                }
             }
             
             break;
         default:
-            break;
+        break;
     }
     
 }
@@ -326,7 +336,7 @@
     
     [actionSheet showFromRect:CGRectMake(0,480, 320,215) inView:self.view animated:YES];
     [actionSheet setBounds:CGRectMake(0,0, 320, 411)];
-
+    
     
 }
 

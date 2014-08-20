@@ -79,8 +79,9 @@
     [[[self navigationController] navigationBar] setBackgroundColor:[UIColor colorWithRed:174/255.0 green:70/255.0 blue:115/255.0 alpha:1]];
 //    [[[self navigationController] navigationBar] setTranslucent:YES];
     
-    
-    
+//    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"yourimage.png"]];
+    UIBarButtonItem * item = [[UIBarButtonItem alloc] initWithCustomView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"뒤로버튼1.png"]]];
+    self.navigationItem.leftBarButtonItem = item;
     [self initScrollView];
     [self refreshHouseData];
 }
@@ -190,12 +191,36 @@
 // subway delegate
 - (void) didSelectedSubwayStation:(NSDictionary *) subwayDic
 {
-    self.subwaySearchBtn.titleLabel.text = [subwayDic objectForKey:@"전철역명"];
-    [self.subwaySearchBtn setBackgroundColor:[UIColor clearColor]];
+    
+    //    self.subwaySearchBtn.titleLabel.text = [subwayDic objectForKey:@"전철역명"];
+    self.stationLabel.text = [subwayDic objectForKey:@"전철역명"];
+    [self.subwaySearchBtn setBackgroundColor:[UIColor whiteColor]];
+    self.subwaySearchBtn.frame= CGRectMake(17.0, 170.0, 74.0, 29.0);
     self.housedata.subwayDic = subwayDic;
     
     [self.subwaySearchBtn reloadInputViews];
+    self.subwaySearchBtn.hidden=TRUE;
+    //역 아이콘
+    //    self.stationImg.hidden=FALSE;
+    self.stationLabel.text = [subwayDic objectForKey:@"전철역명"];
+    UIImage* img = [UIImage imageNamed:@"o.png"];
+    [self.stationImg setImage:img];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    //initData
+    [self brandSetting];
+}
+
+-(void)brandSetting {
+    SWMAppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
     
+    if (appDelegate.brand != nil) {
+        self.brandName.text = appDelegate.brand;
+        UIImage* img = [UIImage imageNamed:@"등록완료.png"];
+        [self.premiumBrand setImage:img forState:UIControlStateNormal];
+    }
 }
 
 - (void) initScrollView
@@ -229,6 +254,7 @@
         [houseImageScrollView addSubview:imageView];
     }
     
+//    self.addPhotoBtn.frame = CGRectMake(0, 138, 320, 64);
     self.addPhotoBtn.frame = CGRectMake(0, 0, 320, 64);
     
     UIImage * image = [UIImage imageNamed:@"photo.png"];
@@ -242,7 +268,8 @@
     
     [self.addPhotoBtn setBackgroundImage:squareImage forState:UIControlStateNormal];
     
-    [houseImageScrollView addSubview:self.addPhotoBtn];
+//    [/*houseImageScrollView*/self.view addSubview:self.addPhotoBtn];
+     [houseImageScrollView addSubview:self.addPhotoBtn];
     
     houseImageScrollView.contentSize = CGSizeMake(houseImageScrollView.frame.size.width * (self.assets.count+1), houseImageScrollView.frame.size.height);
     

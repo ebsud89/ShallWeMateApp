@@ -103,6 +103,13 @@
     [MENU_VIEW_CONTROLLER presentCenterViewController:vc animated:YES];
 }
 
+- (IBAction)logoutClicked:(id)sender {
+    NSLog(@"소비자 - 로그아웃 클릭");
+    [FBSession.activeSession closeAndClearTokenInformation];
+    UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"facebooklogin"];
+    
+    [MENU_VIEW_CONTROLLER presentCenterViewController:vc animated:YES];
+}
 
 // Provider Buttons
 - (IBAction)pMyHouseProfileClicked:(id)sender {
