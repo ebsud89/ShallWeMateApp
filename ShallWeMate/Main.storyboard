@@ -1860,11 +1860,7 @@
                                 </connections>
                             </button>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="ok1.png" id="YYi-Fn-c5N">
-                            <connections>
-                                <segue destination="Ndt-us-WJR" kind="modal" id="zTb-Iy-ER6"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="ok1.png" id="YYi-Fn-c5N"/>
                     </navigationItem>
                     <connections>
                         <outlet property="contentTableView" destination="7H5-ab-eSc" id="C8n-ks-koN"/>
@@ -3511,10 +3507,9 @@
     <inferredMetricsTieBreakers>
         <segue reference="VIp-WF-fBK"/>
         <segue reference="ydK-5C-jPk"/>
-        <segue reference="jyU-cH-V0v"/>
-        <segue reference="JMl-td-baN"/>
-        <segue reference="zTb-Iy-ER6"/>
         <segue reference="Vvz-o6-XPJ"/>
         <segue reference="3lD-wT-Dzk"/>
+        <segue reference="jyU-cH-V0v"/>
+        <segue reference="JMl-td-baN"/>
     </inferredMetricsTieBreakers>
 </document>

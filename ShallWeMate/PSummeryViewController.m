@@ -13,6 +13,7 @@
 #import "SWMImageScrollTableViewCell.h"
 #import "SWMTransportTableViewCell.h"
 #import "SWMManagementTableViewCell.h"
+#import "SWMRoom.h"
 
 #define swmServerAddr @"http://54.249.103.4/SWMserver"
 #define swmServerAddrLocal @"http://54.249.103.4/SWMserver"
@@ -36,7 +37,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    SWMRoom *room = _houseData.exportToSWMRoom;
+    NSLog(@"\n=======\ndescription test %@",room.description);
 
     [self.contentTableView registerNib:[UINib nibWithNibName:@"SWMImageScrollTableViewCell" bundle:nil] forCellReuseIdentifier:@"imageScrollViewTableViewCell"];
     [self.contentTableView registerNib:[UINib nibWithNibName:@"SWMTransportTableViewCell" bundle:nil] forCellReuseIdentifier:@"transportTableViewCell"];
@@ -230,6 +232,20 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)finishedClicked:(id)sender {
+    
+    
+//    
+//    [self showLayer:@"MESSAGE TO SHOW"];
+//    
+//    [self performSelector:@selector(onHideLayer) withObject:nil afterDelay:2.0f];
+//    
+//    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    [self sendToRoomData];
+//
+//    [self saveData];
+    
+}
 
 #pragma mark - Network
 - (void) sendToRoomData
