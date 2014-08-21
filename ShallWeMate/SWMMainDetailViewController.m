@@ -17,6 +17,7 @@
 #import "SWMNetwork.h"
 #import "SWMManagementTableViewCell.h"
 #import "SWMTransportTableViewCell.h"
+#import "SWMMateInfoTableViewCell.h"
 
 @interface SWMMainDetailViewController ()
 
@@ -532,7 +533,16 @@ const int inervalValue = 60;
  {
  // Get the new view controller using [segue destinationViewController].
  // Pass the selected object to the new view controller.
-     
+     if ([[segue identifier] isEqualToString:@"goMate"])
+     {
+         SWMMainDetailViewController *vc = [segue destinationViewController];
+         
+         
+         /* 기입한 정보를 다음 뷰로 전달*/
+         vc.houseData = _houseData;
+         
+         
+     }
  }
 
 
