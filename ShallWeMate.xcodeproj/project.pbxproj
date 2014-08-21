@@ -225,7 +225,6 @@
 		AEAD771619A37737004E30B7 /* lifestyle_09.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAD770719A37737004E30B7 /* lifestyle_09.png */; };
 		AEAD771719A37737004E30B7 /* lifestyle_10.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAD770819A37737004E30B7 /* lifestyle_10.png */; };
 		AEAD771A19A37737004E30B7 /* lifestyle_13.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAD770B19A37737004E30B7 /* lifestyle_13.png */; };
-		AEAD771B19A37737004E30B7 /* lifestyle_14.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAD770C19A37737004E30B7 /* lifestyle_14.png */; };
 		AEAD771C19A37737004E30B7 /* lifestyle_15.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAD770D19A37737004E30B7 /* lifestyle_15.png */; };
 		AEB4BD69199F59FC004343C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEB4BD68199F59FC004343C3 /* Main.storyboard */; };
 		AEB4BD72199F85A0004343C3 /* SWMTransportTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB4BD70199F85A0004343C3 /* SWMTransportTableViewCell.m */; };
@@ -1673,7 +1672,6 @@
 				689ED677199D2BB400EA2BCD /* AppleSDGothicNeo-Medium.otf in Resources */,
 				68AF05D319A3D71600454AEC /* 가구8.png in Resources */,
 				68A98F3D19A1E99C009AB3A5 /* 03.png in Resources */,
-				AEAD771B19A37737004E30B7 /* lifestyle_14.png in Resources */,
 				68AF05EA19A3D71600454AEC /* p04.png in Resources */,
 				AEAD771019A37737004E30B7 /* lifestyle_03.png in Resources */,
 				689A979319A25A5A00E89909 /* pic1.png in Resources */,
