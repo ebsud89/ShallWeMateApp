@@ -7,7 +7,7 @@
 //
 
 #import "SWMManagementTableViewCell.h"
-#import "SWMCollectionViewCell4TableViewCell.h"
+#import "SWMCollectionViewCell.h"
 
 @interface SWMManagementTableViewCell ()
 
@@ -40,7 +40,7 @@
     [self.collectionView setBackgroundColor:[UIColor clearColor]];
     
     /* uncomment this block to use subclassed cells */
-    [self.collectionView registerClass:[SWMCollectionViewCell4TableViewCell class] forCellWithReuseIdentifier:@"collectionViewCell4TableViewCell"];
+    [self.collectionView registerClass:[SWMCollectionViewCell class] forCellWithReuseIdentifier:@"CollectionViewCell"];
     /* end of subclass-based cells block */
     
     // Configure layout
@@ -64,6 +64,27 @@
   
 }
 
+
+- (void) setOption:(NSMutableArray *)option
+{
+    self.imageArray = [[NSMutableArray alloc]init];
+    for (int i=0; i<[option count]; i++) {
+        NSNumber *num = [option objectAtIndex:i];
+        if ([num boolValue]) {
+            [self.imageArray addObject:[NSString stringWithFormat:@"가구%d_1.png",i+1]];
+        }
+    }
+    
+    if ([self.imageArray count]<8) {
+        for (int i= (int)[self.imageArray count]; i<8; i++) {
+            [self.imageArray addObject:@""];
+        }
+    }
+    
+    [self.collectionView reloadData];
+}
+
+
 - (void) setManagements:(NSMutableArray *)managements
 {
     self.imageArray = [[NSMutableArray alloc]init];
@@ -74,11 +95,11 @@
         }
     }
     
-    //    if ([self.imageArray count]<6) {
-    //        for (int i= (int)[self.imageArray count]; i<6; i++) {
-    //            [self.imageArray addObject:@""];
-    //        }
-    //    }
+    if ([self.imageArray count]<8) {
+        for (int i= (int)[self.imageArray count]; i<8; i++) {
+            [self.imageArray addObject:@""];
+        }
+    }
     
     [self.collectionView reloadData];
 }
@@ -93,7 +114,7 @@
 
 - (NSInteger) collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 6;
+    return 8;
 }
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
@@ -103,7 +124,7 @@
 
 - (UICollectionViewCell *) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *cellIdentifier = @"collectionViewCell4TableViewCell";
+    static NSString *cellIdentifier = @"CollectionViewCell";
     
     /*  Uncomment this block to use nib-based cells */
     // UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
@@ -113,14 +134,14 @@
     
     /* Uncomment this block to use subclass-based cells */
     
-    SWMCollectionViewCell4TableViewCell *cell = (SWMCollectionViewCell4TableViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
+    SWMCollectionViewCell *cell = (SWMCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
     
     
     NSString *imageArr = [self.imageArray objectAtIndex:indexPath.row];
     UIImage *badgeImg = [UIImage imageNamed:imageArr];
     UIImageView *imView = [[UIImageView alloc]initWithFrame:cell.frame];
     imView.image = badgeImg;
-    
+    imView.frame = CGRectMake(0, 0, 50, 58);
     NSLog(@"%@", imageArr);
     [cell addSubview:imView];
     

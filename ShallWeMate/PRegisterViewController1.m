@@ -118,7 +118,9 @@
     
 }
 
-
+- (IBAction)backButtonClicked:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 - (void)keyboardWillShow:(NSNotification *)notification
 

@@ -71,21 +71,18 @@
     [self.collectionView reloadData];
 }
 
-- (void) setOption:(NSMutableArray *)option
-{
-    self.imageArray = [[NSMutableArray alloc]init];
-    for (int i=0; i<[option count]; i++) {
-        NSNumber *num = [option objectAtIndex:i];
-        if ([num boolValue]) {
-            [self.imageArray addObject:[NSString stringWithFormat:@"가구%d_1.png",i+1]];
-        }
-    }
-    
-    if ([self.imageArray count]<8) {
-        for (int i= (int)[self.imageArray count]; i<8; i++) {
-            [self.imageArray addObject:@""];
-        }
-    }
+
+-(void)setEnableRoomsMore:(NSMutableArray *)enableRoomsMore {
+    NSMutableArray *array = [[NSMutableArray alloc] init];
+    [self.dataArray addObject:@"침실"];
+    [self.dataArray addObject:@"거실"];
+    [self.dataArray addObject:@"부엌"];
+    [self.dataArray addObject:@"욕실"];
+    [self.dataArray addObject:@"세탁실"];
+    [self.dataArray addObject:@"창고"];
+    [self.dataArray addObject:@"서재"];
+    [self.dataArray addObject:@"주차장"];
+    [self.dataArray addObject:@"엘리베이터"];
     
     [self.collectionView reloadData];
 }

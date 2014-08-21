@@ -90,6 +90,8 @@
 		68A98F4D19A1E99C009AB3A5 /* 중앙.png in Resources */ = {isa = PBXBuildFile; fileRef = 68A98F3A19A1E99C009AB3A5 /* 중앙.png */; };
 		68A9E5F01995FF4D00EF1396 /* missingAvatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 68A9E5EF1995FF4D00EF1396 /* missingAvatar.png */; };
 		68AF04C419A3C46D00454AEC /* o.png in Resources */ = {isa = PBXBuildFile; fileRef = 68AF04C319A3C46D00454AEC /* o.png */; };
+		68C308CF19A6451600EB82A4 /* SWMCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C308CD19A6451600EB82A4 /* SWMCollectionViewCell.m */; };
+		68C308D019A6451600EB82A4 /* SWMCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68C308CE19A6451600EB82A4 /* SWMCollectionViewCell.xib */; };
 		68ED4F7A19A4DE1700A1C189 /* SWMManagementTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 68ED4F7819A4DE1700A1C189 /* SWMManagementTableViewCell.m */; };
 		68ED4F7B19A4DE1700A1C189 /* SWMManagementTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68ED4F7919A4DE1700A1C189 /* SWMManagementTableViewCell.xib */; };
 		AEA394AE199BCA6B0075CD1E /* ALAsset+accessibilityLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA3948E199BCA6A0075CD1E /* ALAsset+accessibilityLabel.m */; };
@@ -466,6 +468,9 @@
 		68C308A919A5EB0E00EB82A4 /* 가구11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "가구11.png"; sourceTree = "<group>"; };
 		68C308AA19A5EB0E00EB82A4 /* 가구12_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "가구12_1.png"; sourceTree = "<group>"; };
 		68C308AB19A5EB0E00EB82A4 /* 가구12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "가구12.png"; sourceTree = "<group>"; };
+		68C308CC19A6451600EB82A4 /* SWMCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWMCollectionViewCell.h; path = Images.xcassets/SWMCollectionViewCell.h; sourceTree = "<group>"; };
+		68C308CD19A6451600EB82A4 /* SWMCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWMCollectionViewCell.m; path = Images.xcassets/SWMCollectionViewCell.m; sourceTree = "<group>"; };
+		68C308CE19A6451600EB82A4 /* SWMCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SWMCollectionViewCell.xib; path = Images.xcassets/SWMCollectionViewCell.xib; sourceTree = "<group>"; };
 		68ED4F7719A4DE1700A1C189 /* SWMManagementTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMManagementTableViewCell.h; sourceTree = "<group>"; };
 		68ED4F7819A4DE1700A1C189 /* SWMManagementTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMManagementTableViewCell.m; sourceTree = "<group>"; };
 		68ED4F7919A4DE1700A1C189 /* SWMManagementTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SWMManagementTableViewCell.xib; sourceTree = "<group>"; };
@@ -1099,6 +1104,9 @@
 				68ED4F7719A4DE1700A1C189 /* SWMManagementTableViewCell.h */,
 				68ED4F7819A4DE1700A1C189 /* SWMManagementTableViewCell.m */,
 				68ED4F7919A4DE1700A1C189 /* SWMManagementTableViewCell.xib */,
+				68C308CC19A6451600EB82A4 /* SWMCollectionViewCell.h */,
+				68C308CD19A6451600EB82A4 /* SWMCollectionViewCell.m */,
+				68C308CE19A6451600EB82A4 /* SWMCollectionViewCell.xib */,
 			);
 			name = CollectionView;
 			sourceTree = "<group>";
@@ -1802,6 +1810,7 @@
 				AEAD771519A37737004E30B7 /* lifestyle_08.png in Resources */,
 				AEAD771819A37737004E30B7 /* lifestyle_11.png in Resources */,
 				AEAA7D1D19A619750093E9C4 /* lifestyle_04 copy.png in Resources */,
+				68C308D019A6451600EB82A4 /* SWMCollectionViewCell.xib in Resources */,
 				AEAD771919A37737004E30B7 /* lifestyle_12.png in Resources */,
 				68A98F4719A1E99C009AB3A5 /* 분당.png in Resources */,
 				689BDA9319A0678F002FC472 /* 메인배경.png in Resources */,
@@ -1946,6 +1955,7 @@
 				AEA394BB199BCA6B0075CD1E /* CTAssetsViewCell.m in Sources */,
 				EB2F77B91991EE2000EA365E /* RegisterViewController2.m in Sources */,
 				EB2F77C81991F71000EA365E /* BrandRegisterViewCell.m in Sources */,
+				68C308CF19A6451600EB82A4 /* SWMCollectionViewCell.m in Sources */,
 				68978B7C19A0D0B00055821E /* UIImage+ResizeMagick.m in Sources */,
 				AEA394AF199BCA6B0075CD1E /* ALAsset+assetType.m in Sources */,
 				AEA394B5199BCA6B0075CD1E /* CTAssetsGroupViewController.m in Sources */,

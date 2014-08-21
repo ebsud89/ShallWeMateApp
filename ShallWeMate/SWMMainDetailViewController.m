@@ -310,7 +310,7 @@ const int inervalValue = 60;
         return [SWMRoomInfoTableViewCell getHeight];
     }
     else if (indexPath.row == 6){
-        return [CollectionViewTableViewCell getHeight];
+        return [SWMManagementTableViewCell getHeight];
     }
     else if (indexPath.row == 7){
         return [CollectionViewTableViewCell getHeight];
@@ -330,7 +330,7 @@ const int inervalValue = 60;
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
     // If you're serving data from an array, return the length of the array:
-    return 9;
+    return 8;
 }
 
 // Customize the appearance of table view cells.
@@ -378,7 +378,7 @@ const int inervalValue = 60;
             cell = [SWMManagementTableViewCell collectionViewTableViewCell];
         }
         [cell setTitle:@"관리비 포함 사항"];
-        [cell setLifestyle:_houseData.enableManagementStates];
+        [cell setManagements:_houseData.enableManagementStates];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
@@ -400,35 +400,35 @@ const int inervalValue = 60;
         
         return cell;
     }
+//    else if (indexPath.row == 6)
+//    {
+//        CollectionViewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"collectionViewTableViewCell"];
+//        
+//        if (cell == nil) {
+//            NSLog(@"클남~~~");
+//            cell = [CollectionViewTableViewCell collectionViewTableViewCell];
+//        }
+//        [cell setTitle:@"공간구성"];
+//        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//        [cell setEnableRoomsMore:_houseData.enableRoomsMore];
+//        appDelegate.data = @"room";
+//        return cell;
+//    }
     else if (indexPath.row == 6)
     {
-        CollectionViewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"collectionViewTableViewCell"];
-        
-        if (cell == nil) {
-            NSLog(@"클남~~~");
-            cell = [CollectionViewTableViewCell collectionViewTableViewCell];
-        }
-        [cell setTitle:@"공간구성"];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        [cell setLifestyle:_houseData.enableRoomsMore];
-        appDelegate.data = @"room";
-        return cell;
-    }
-    else if (indexPath.row == 7)
-    {
-        CollectionViewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"collectionViewTableViewCell"];
+        SWMManagementTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"mcollectionViewTableViewCell"];
         
         if (cell == nil) {
             NSLog(@"hh");
-            cell = [CollectionViewTableViewCell collectionViewTableViewCell];
+            cell = [SWMManagementTableViewCell collectionViewTableViewCell];
         }
         [cell setTitle:@"제공되는 옵션"];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        [cell setLifestyle:_houseData.enableOptions];
+        [cell setOption:_houseData.enableOptions];
         appDelegate.data = @"option";
         return cell;
     }
-    else if (indexPath.row == 8)
+    else if (indexPath.row == 7)
     {
         SWMQAndATableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"QAndATableViewCell"];
         

@@ -21,9 +21,11 @@
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @property (strong, nonatomic) NSMutableArray *imageArray;
+@property (strong, nonatomic) NSMutableArray *dataArray;
 @property (strong, nonatomic) NSArray *imageListArray;
 @property (strong, nonatomic) NSString *title;
 
 @property (strong, nonatomic) NSMutableArray *lifestyle;
-@property (strong, nonatomic) NSMutableArray *option;
+@property (strong, nonatomic) NSMutableArray *enableRoomsMore;
+
 @end

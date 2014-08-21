@@ -12,6 +12,7 @@
 #import "ManagementTableViewCell.h"
 #import "SWMImageScrollTableViewCell.h"
 #import "SWMTransportTableViewCell.h"
+#import "SWMManagementTableViewCell.h"
 
 #define swmServerAddr @"http://54.249.103.4/SWMserver"
 #define swmServerAddrLocal @"http://54.249.103.4/SWMserver"
@@ -42,6 +43,7 @@
     [self.contentTableView registerNib:[UINib nibWithNibName:@"TitleTableViewCell" bundle:nil] forCellReuseIdentifier:@"titleTableViewCell"];
     [self.contentTableView registerNib:[UINib nibWithNibName:@"ManagementTableViewCell" bundle:nil] forCellReuseIdentifier:@"managementTableViewCell"];
     [self.contentTableView registerNib:[UINib nibWithNibName:@"CollectionViewTableViewCell" bundle:nil] forCellReuseIdentifier:@"collectionViewTableViewCell"];
+    [self.contentTableView registerNib:[UINib nibWithNibName:@"SWMManagementTableViewCell" bundle:nil] forCellReuseIdentifier:@"mcollectionViewTableViewCell"];
     
     self.contentTableView.delegate = self;
     self.contentTableView.dataSource = self;
@@ -77,15 +79,19 @@
     else if(indexPath.row == 2){
         return [ManagementTableViewCell getHeight];
     }
-    else if (indexPath.row == 3){
-        return [SWMTransportTableViewCell getHeight];
+    else if (indexPath.row == 3)
+    {
+        return [SWMManagementTableViewCell getHeight];
     }
     else if (indexPath.row == 4){
+        return [SWMTransportTableViewCell getHeight];
+    }
+    else if (indexPath.row == 5){
         return [CollectionViewTableViewCell getHeight];
     }
-    else if (indexPath.row == 5)
+    else if (indexPath.row == 6)
     {
-        return [CollectionViewTableViewCell getHeight];
+        return [SWMManagementTableViewCell getHeight];
     }
     else
         return 100.0f; //cell for comments, in reality the height has to be adjustable
@@ -99,7 +105,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
     // If you're serving data from an array, return the length of the array:
-    return 6;
+    return 7;
 }
 
 // Customize the appearance of table view cells.
@@ -132,28 +138,34 @@
         
         [cell setMonthlyCost:self.houseData.monthlyRentCost];
         [cell setSecurityCost:self.houseData.securityCost];
-        [cell setManagementCost:self.houseData.securityCost];
+        [cell setManagementCost:self.houseData.managementCost];
         
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
     else if (indexPath.row ==3)
     {
-        SWMTransportTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"transportTableViewCell"];
         
-        [cell setSubwayDictionary:self.houseData.subwayDic];
+        SWMManagementTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"mcollectionViewTableViewCell"];
+        
+//        if (cell == nil) {
+//            NSLog(@"hh");
+//            cell = [SWMManagementTableViewCell collectionViewTableViewCell];
+//        }
+        [cell setTitle:@"관리비 포함 사항"];
+        [cell setManagements:_houseData.enableManagementStates];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
+        
     }
     else if (indexPath.row == 4)
     {
-        CollectionViewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"collectionViewTableViewCell"];
+        SWMTransportTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"transportTableViewCell"];
         
-        if (cell == nil) {
-            NSLog(@"hh");
-            cell = [CollectionViewTableViewCell collectionViewTableViewCell];
-        }
-        [cell setTitle:@"라이프 스타일 키워드"];
-        [cell setLifestyle:_houseData.enableLifeStyle];
+        [cell setSubwayDictionary:self.houseData.subwayDic];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
+        
     }
     else if (indexPath.row == 5)
     {
@@ -163,17 +175,32 @@
             NSLog(@"hh");
             cell = [CollectionViewTableViewCell collectionViewTableViewCell];
         }
-        [cell setTitle:@"옵션"];
-        [cell setOption:_houseData.enableOptions];
+        [cell setTitle:@"라이프 스타일 키워드"];
+        [cell setLifestyle:_houseData.enableLifeStyle];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
+        
+    }
+    else if (indexPath.row == 6)
+    {
+        SWMManagementTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"mcollectionViewTableViewCell"];
+        
+        [cell setTitle:@"제공되는 옵션"];
+        [cell setOption:_houseData.enableOptions];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        return cell;
+        
     }
     else
     {
-        ManagementTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"managementTableViewCell"];
+        TitleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"titleTableViewCell"];
         
-        [cell setMonthlyCost:self.houseData.monthlyRentCost];
-        [cell setSecurityCost:self.houseData.securityCost];
-        [cell setManagementCost:self.houseData.securityCost];
+        if (cell == nil) {
+            cell = [TitleTableViewCell titleTableViewCell];
+        }
+        
+        [cell setTitle:@" "];
+        [cell setContent:@" "];
         
         return cell;
     }
