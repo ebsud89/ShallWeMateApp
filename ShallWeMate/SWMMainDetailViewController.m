@@ -537,7 +537,6 @@ const int inervalValue = 60;
      {
          SWMMainDetailViewController *vc = [segue destinationViewController];
          
-         
          /* 기입한 정보를 다음 뷰로 전달*/
          vc.houseData = _houseData;
          
