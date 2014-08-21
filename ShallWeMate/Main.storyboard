@@ -203,7 +203,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9LU-Gw-iCz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-277" y="4035"/>
+            <point key="canvasLocation" x="319" y="4007"/>
         </scene>
         <!--Main Detail View Controller - 살펴보기-->
         <scene sceneID="wwL-8F-fUP">
@@ -309,7 +309,7 @@
                     </connections>
                 </pinchGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="354" y="4035"/>
+            <point key="canvasLocation" x="770" y="4007"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="ADt-F9-OGe">
@@ -529,7 +529,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UH1-WY-KGS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-645" y="4035"/>
+            <point key="canvasLocation" x="-49" y="4007"/>
         </scene>
         <!--Provider Main Detail View Controller-->
         <scene sceneID="elq-nD-eYJ">
@@ -1588,7 +1588,7 @@
                                 <rect key="frame" x="0.0" y="66" width="320" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <string key="text">나의 라이프 스타일에 맞는 키워드를 선택해주세요.
-최대 6개까지 선택할 수 있습니다.</string>
+                                    최대 6개까지 선택할 수 있습니다.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -1874,7 +1874,11 @@
                                 </connections>
                             </button>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="ok1.png" id="YYi-Fn-c5N"/>
+                        <barButtonItem key="rightBarButtonItem" image="ok1.png" id="YYi-Fn-c5N">
+                            <connections>
+                                <segue destination="Ndt-us-WJR" kind="modal" id="zTb-Iy-ER6"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="contentTableView" destination="7H5-ab-eSc" id="C8n-ks-koN"/>
@@ -2323,7 +2327,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" restorationIdentifier="Cell" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="65" id="ciD-bq-JrV" customClass="BrandRegisterViewCell">
-                                <rect key="frame" x="0.0" y="86" width="320" height="65"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ciD-bq-JrV" id="OTZ-q5-vAH">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="64"/>
@@ -3506,8 +3510,8 @@
         <image name="sub2.png" width="341" height="32"/>
         <image name="subway02.png" width="372" height="57"/>
         <image name="zzim.png" width="49" height="41"/>
-        <image name="다음버튼.png" width="220" height="78"/>
         <image name="다음버튼.png" width="36" height="37"/>
+        <image name="다음버튼.png" width="220" height="78"/>
         <image name="뒤로버튼.png" width="220" height="78"/>
         <image name="뒤로버튼.png" width="36" height="37"/>
         <image name="뒤로버튼1.png" width="220" height="78"/>
@@ -3520,23 +3524,13 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="0aj-dc-33W"/>
-        <segue reference="WFI-ea-8MN"/>
-        <segue reference="O1e-az-zhH"/>
-        <segue reference="2yt-mZ-pqG"/>
+        <segue reference="oPl-86-bfa"/>
         <segue reference="QwW-HK-cPO"/>
-        <segue reference="JMl-td-baN"/>
-        <segue reference="kWY-6E-7nJ"/>
-        <segue reference="hjA-Lq-4W6"/>
-        <segue reference="96X-iH-d6C"/>
-        <segue reference="DT6-c8-I3T"/>
-        <segue reference="Vvz-o6-XPJ"/>
+        <segue reference="VIp-WF-fBK"/>
+        <segue reference="WVT-sG-fr3"/>
+        <segue reference="zTb-Iy-ER6"/>
+        <segue reference="8DR-tV-pop"/>
         <segue reference="3lD-wT-Dzk"/>
-        <segue reference="bUS-hJ-vfD"/>
-        <segue reference="vqb-pa-UaW"/>
-        <segue reference="Z25-TP-tOv"/>
-        <segue reference="0ix-vw-kbF"/>
-        <segue reference="ecy-rn-Qf5"/>
-        <segue reference="bUt-e8-Gk5"/>
+        <segue reference="NwH-dz-hZa"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -523,7 +523,8 @@ const int inervalValue = 60;
 }
 
 
-/*
+
+
  #pragma mark - Navigation
  
  // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -531,7 +532,8 @@ const int inervalValue = 60;
  {
  // Get the new view controller using [segue destinationViewController].
  // Pass the selected object to the new view controller.
+     
  }
- */
+
 
 @end

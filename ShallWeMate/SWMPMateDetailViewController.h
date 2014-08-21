@@ -11,4 +11,5 @@
 @interface SWMPMateDetailViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *contentTableView;
 
+@property (strong, nonatomic) HouseData *houseData;
 @end
