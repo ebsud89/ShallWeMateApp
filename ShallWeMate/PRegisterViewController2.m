@@ -195,6 +195,7 @@
     {
         [self updateHouseData];
         
+        [houseData printAll];
         PRegisterViewController3 *vc = [segue destinationViewController];
         vc.houseData = houseData;
     }

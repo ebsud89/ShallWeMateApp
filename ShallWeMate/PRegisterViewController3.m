@@ -161,6 +161,7 @@
         houseData.roomAll = allRoomLabel.text;
         houseData.roomEmpty = self.posibleRoomLabel.text;
         
+        [self.houseData printAll];
         PRegisterViewController4 *vc = [segue destinationViewController];
         vc.houseData = houseData;
     }
