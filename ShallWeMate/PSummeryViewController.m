@@ -163,8 +163,8 @@
             NSLog(@"hh");
             cell = [CollectionViewTableViewCell collectionViewTableViewCell];
         }
-        [cell setTitle:@"하우스 룰"];
-        [cell setLifestyle:_houseData.enableHouseRoles];
+        [cell setTitle:@"옵션"];
+        [cell setOption:_houseData.enableOptions];
         return cell;
     }
     else

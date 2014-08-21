@@ -13,7 +13,7 @@
 
 + (CGFloat) getHeight
 {
-    return 295.0f;
+    return 220.0f;
     
     
 }
@@ -43,7 +43,7 @@
     // Configure layout
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     [flowLayout setItemSize:CGSizeMake(84, 84)];
-    [flowLayout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
+    [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
     [self.collectionView setCollectionViewLayout:flowLayout];
 }
 
@@ -71,6 +71,25 @@
     [self.collectionView reloadData];
 }
 
+- (void) setOption:(NSMutableArray *)option
+{
+    self.imageArray = [[NSMutableArray alloc]init];
+    for (int i=0; i<[option count]; i++) {
+        NSNumber *num = [option objectAtIndex:i];
+        if ([num boolValue]) {
+            [self.imageArray addObject:[NSString stringWithFormat:@"가구%d_1.png",i+1]];
+        }
+    }
+    
+    if ([self.imageArray count]<8) {
+        for (int i= (int)[self.imageArray count]; i<8; i++) {
+            [self.imageArray addObject:@""];
+        }
+    }
+    
+    [self.collectionView reloadData];
+}
+
 // 컬렉션 크기
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -83,6 +102,10 @@
     }
 }
 
+// 컬렉션과 컬렉션 height 간격
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
+    return 5;
+}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
