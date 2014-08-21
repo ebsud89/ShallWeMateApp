@@ -11,15 +11,31 @@
 #import "SWMRegisterSummeryViewController.h"
 
 @implementation RegisterViewController5
-@synthesize memberData;
+
+
+- (IBAction)backButtonClicked:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+
+- (IBAction)nextButtonClicked:(id)sender {
+    SWMRegisterSummeryViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"inMatching"];
+    [self fillMemberData];
+        vc.memberData = self.memberData;
+    //        [self.view addSubview:vc.view];
+    NSLog(@"r5=============%@", self.memberData.name);
+    [self.memberData printAll];
+    [self.navigationController pushViewController: vc animated:NO];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+   
+    NSLog(@"check %@", _memberData.name);
+    [_memberData printAll];
     
-    //navigation bar color
-//    [[[self navigationController] navigationBar] setTintColor:[UIColor whiteColor]];
-//    [[[self navigationController] navigationBar] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
-//    [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000]];
+    
     
     // Do any additional setup after loading the view, typically from a nib.
     [_inviteOk setTag:0];
@@ -246,58 +262,60 @@
     
 }
 
-- (IBAction)doneButtonClicked:(id)sender {
-    //요약 페이지로 이동
-    SWMSummeryViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SWMSummeryViewController"];
-    
-    vc.memberData = self.memberData;
-    [self.view addSubview:vc.view];
-    
-    if((_inviteOk.isSelected == YES || _inviteNo.isSelected == YES) && (_petOk.isSelected == YES || _petNo.isSelected == YES) && (_privacyMore.isSelected == YES || _privacyLess.isSelected == YES) && (_smokeOk.isSelected == YES || _smokeNo.isSelected == YES) && (_drinkOk.isSelected == YES || _drinkNo.isSelected == YES)) {
-        
-        
-        /* 하우스 룰 정보 저장하기 */
-        
-//        self.houseData.enableHouseRoles = [[NSMutableArray alloc]init];
+//- (IBAction)doneButtonClicked:(id)sender {
+//    //요약 페이지로 이동
+//    SWMRegisterSummeryViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SWMRegisterSummeryViewController"];
+//    [self fillMemeberData];
+//    /* 기입한 정보를 다음 뷰로 전달*/
+//    
+//    vc.memberData = self.memberData;
+//    [self.view addSubview:vc.view];
+//    
+//    if((_inviteOk.isSelected == YES || _inviteNo.isSelected == YES) && (_petOk.isSelected == YES || _petNo.isSelected == YES) && (_privacyMore.isSelected == YES || _privacyLess.isSelected == YES) && (_smokeOk.isSelected == YES || _smokeNo.isSelected == YES) && (_drinkOk.isSelected == YES || _drinkNo.isSelected == YES)) {
 //        
-//        if (_inviteOk.isSelected == 1)
-//            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:YES]];
-//        else if (_inviteNo.isSelected == 1)
-//            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:NO]];
-//        if (_petOk.isSelected == 1)
-//            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:YES]];
-//        else if (_petNo.isSelected == 1)
-//            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:NO]];
-//        if (_privacyMore.isSelected == 1)
-//            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:YES]];
-//        else if (_privacyLess.isSelected == 1)
-//            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:NO]];
-//        if (_smokeOk.isSelected == 1)
-//            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:YES]];
-//        else if (_smokeNo.isSelected == 1)
-//            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:NO]];
-//        if (_drinkOk.isSelected == 1)
-//            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:YES]];
-//        else if (_drinkNo.isSelected == 1)
-//            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:NO]];
-
-        
-//        //요약 페이지로 이동
-//        SWMSummeryViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SWMSummeryViewController"];
 //        
-//        vc.memberData = memberData;
-//        [self.view addSubview:vc.view];
-    } else {
-        NSLog(@"che2");
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"모두 선택해주세요."
-                                                        message:@"~~"
-                                                       delegate:self
-                                              cancelButtonTitle:@"돌아가기"
-                                              otherButtonTitles:nil];
-        [alert show];
-    }
-    
-}
+//        /* 하우스 룰 정보 저장하기 */
+//        
+////        self.houseData.enableHouseRoles = [[NSMutableArray alloc]init];
+////        
+////        if (_inviteOk.isSelected == 1)
+////            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:YES]];
+////        else if (_inviteNo.isSelected == 1)
+////            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:NO]];
+////        if (_petOk.isSelected == 1)
+////            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:YES]];
+////        else if (_petNo.isSelected == 1)
+////            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:NO]];
+////        if (_privacyMore.isSelected == 1)
+////            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:YES]];
+////        else if (_privacyLess.isSelected == 1)
+////            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:NO]];
+////        if (_smokeOk.isSelected == 1)
+////            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:YES]];
+////        else if (_smokeNo.isSelected == 1)
+////            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:NO]];
+////        if (_drinkOk.isSelected == 1)
+////            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:YES]];
+////        else if (_drinkNo.isSelected == 1)
+////            [self.houseData.enableHouseRoles addObject:[NSNumber numberWithBool:NO]];
+//
+//        
+////        //요약 페이지로 이동
+////        SWMSummeryViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SWMSummeryViewController"];
+////        
+////        vc.memberData = memberData;
+////        [self.view addSubview:vc.view];
+//    } else {
+//        NSLog(@"che2");
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"모두 선택해주세요."
+//                                                        message:@"~~"
+//                                                       delegate:self
+//                                              cancelButtonTitle:@"돌아가기"
+//                                              otherButtonTitles:nil];
+//        [alert show];
+//    }
+//    
+//}
 
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
@@ -307,7 +325,7 @@
     
 }
 
-- (void)fillMemeberData
+- (void)fillMemberData
 {
     NSNumber *num =[NSNumber numberWithBool:[self.inviteOk isSelected]];
     [self.memberData.enableHouseRoles replaceObjectAtIndex:0 withObject:num];
@@ -335,10 +353,10 @@
     {
         SWMRegisterSummeryViewController *vc = [segue destinationViewController];
         
-        [self fillMemeberData];
+        [self fillMemberData];
         /* 기입한 정보를 다음 뷰로 전달*/
         
-        vc.memberData = memberData;
+        vc.memberData = _memberData;
         
         
     }

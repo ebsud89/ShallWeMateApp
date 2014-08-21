@@ -22,6 +22,23 @@
     return self;
 }
 
+
+- (IBAction)backButtonClicked:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)nextButtonClicked:(id)sender {
+    RegisterViewController5 *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"srchLifePattern"];
+    //        vc.memberData = self.memberData;
+    //        [self.view addSubview:vc.view];
+//    [self fillMemberData];
+    /* 기입한 정보를 다음 뷰로 전달*/
+    NSLog(@"r4=============");
+    [_memberData printAll];
+    vc.memberData = _memberData;
+    NSLog(@"vc.mem %@", vc.memberData.name);
+    [self.navigationController pushViewController: vc animated:NO];
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -49,7 +66,7 @@
 //    [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000]];
 }
 
-- (void) refreshHouseData
+- (void) refreshMemberData
 {
     
     
@@ -79,7 +96,7 @@
     //    }
     
 }
-- (void)fillhouseData
+- (void)fillMemberData
 {
     
 }
@@ -142,7 +159,7 @@
     {
         RegisterViewController5 *vc = [segue destinationViewController];
         
-        [self fillhouseData];
+        [self fillMemberData];
         /* 기입한 정보를 다음 뷰로 전달*/
         
         vc.memberData = _memberData;

@@ -24,11 +24,29 @@
     return self;
 }
 
+
+- (IBAction)backButtonClicked:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+
+- (IBAction)nextButtonClicked:(id)sender {
+    RegisterViewController4 *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"LifeStyle"];
+    //        vc.memberData = self.memberData;
+    //        [self.view addSubview:vc.view];
+    [self fillMemberData];
+    /* 기입한 정보를 다음 뷰로 전달*/
+    NSLog(@"r3=============");
+    [_memberData printAll];
+    vc.memberData = _memberData;
+    [self.navigationController pushViewController: vc animated:NO];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    [self refreshHouseData];
+    [self refreshMemberData];
     agesArray = [[NSArray alloc] initWithObjects: @"20대 초반", @"20대 중반", @"20대 후반", @"30대 초반", @"30대 중반", @"30대 후반", @"40대 이상", nil];
     
     // 버튼위에 라벨을 올려주기 위해 만듬
@@ -103,7 +121,7 @@
 }
 
 
-- (void) refreshHouseData
+- (void) refreshMemberData
 {
     
     
@@ -127,7 +145,7 @@
     
 }
 
-- (void)fillhouseData
+- (void)fillMemberData
 {
     /* 기입한 정보 (메이트 성별, 평균 연령) 저장하기 */
     
@@ -216,6 +234,7 @@
         NSLog(@"%@",[agesArray objectAtIndex:row] );
         ageTitleLabel.text = [agesArray objectAtIndex:row];
         ageTitleLabel.textColor = [UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000];
+        self.memberData.avgAge = [agesArray objectAtIndex:row];
     }
     
     - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
@@ -242,7 +261,7 @@
     {
         RegisterViewController4 *vc = [segue destinationViewController];
         
-        [self fillhouseData];
+        [self fillMemberData];
         /* 기입한 정보를 다음 뷰로 전달*/
         
         vc.memberData = _memberData;

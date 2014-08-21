@@ -25,6 +25,11 @@
     return self;
 }
 
+- (IBAction)backButtonClicked:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+
 
 - (void)viewDidLoad
 {

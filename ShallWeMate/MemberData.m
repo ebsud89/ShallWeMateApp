@@ -36,12 +36,13 @@
 
 - (NSString *) printArray:(NSMutableArray *)array
 {
-    NSString *myStr = @"|";
+    NSString *myStr = @"";
+    
     for (NSNumber *n in array) {
-        NSString *s = [NSString stringWithFormat:@"%@ ",n];
+        NSString *s = [NSString stringWithFormat:@"%@|",n];
         myStr = [myStr stringByAppendingString:s];
     }
-    
+    myStr = [myStr stringByAppendingString:@"0"];
     return myStr;
 }
 
@@ -58,7 +59,7 @@
 //    NSLog(@"연락처 : %@", self.introHouse);
     NSLog(@"가까운 지하철 : %@", self.nearSubwayStation);
     NSLog(@"최대 월세 : %@", self.monthlyRentCost);
-    NSLog(@"최대 보증금", self.securityCost);
+    NSLog(@"최대 보증금 : %@", self.securityCost);
     
     NSLog(@"----------------------------------------------------");
     NSLog(@"희망 메이트 평균 나이 : %@", self.avgAge);

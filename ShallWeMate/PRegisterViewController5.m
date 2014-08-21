@@ -73,6 +73,12 @@
     
 }
 
+
+- (IBAction)backButtonClicked:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+
 - (void) refreshHouseData
 {
     if (houseData.existingMenNum != nil) {

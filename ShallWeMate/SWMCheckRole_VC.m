@@ -62,6 +62,11 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)goMainPage:(id)sender {
+    UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"MainTableViewControllerNav"];
+    
+    [MENU_VIEW_CONTROLLER presentCenterViewController:vc animated:YES];
+}
 
 
 #pragma mark - Navigation
