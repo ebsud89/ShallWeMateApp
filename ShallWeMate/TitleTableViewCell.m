@@ -12,7 +12,7 @@
 
 + (CGFloat) getHeight
 {
-    return 85.0f;
+    return 130.0f;
 }
 
 + (TitleTableViewCell*) titleTableViewCell
@@ -78,7 +78,7 @@
 - (void) setContent:(NSString *)content
 {
     if ([content isEqualToString:@""]) {
-        content = @"내용 입력 안함";
+        content = @"도보 10분 거리에 우체국과 시장이 있으며 교통이 편리한 하우스입니다.";
     }
     self.contentLabel.text = content;
 }
