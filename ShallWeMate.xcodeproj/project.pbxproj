@@ -231,7 +231,6 @@
 		AEA76EF8199C90EC00B9B7C3 /* SWMHouseRoleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEA76EF6199C90EC00B9B7C3 /* SWMHouseRoleTableViewCell.xib */; };
 		AEAA197F1999D49F00B5FB8D /* SWMMateInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAA197D1999D49F00B5FB8D /* SWMMateInfoTableViewCell.m */; };
 		AEAA19801999D49F00B5FB8D /* SWMMateInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEAA197E1999D49F00B5FB8D /* SWMMateInfoTableViewCell.xib */; };
-		AEAD76FD19A36BB6004E30B7 /* SWMNSUserDefaultsTool.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAD76FC19A36BB6004E30B7 /* SWMNSUserDefaultsTool.m */; };
 		AEAD770E19A37737004E30B7 /* lifestyle_01.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAD76FF19A37737004E30B7 /* lifestyle_01.png */; };
 		AEAD770F19A37737004E30B7 /* lifestyle_02.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAD770019A37737004E30B7 /* lifestyle_02.png */; };
 		AEAD771019A37737004E30B7 /* lifestyle_03.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAD770119A37737004E30B7 /* lifestyle_03.png */; };
@@ -2034,7 +2033,6 @@
 				AEB4BD76199FAA6E004343C3 /* SWMStartViewController.m in Sources */,
 				EB2F77C61991F71000EA365E /* BrandRegisterViewController.m in Sources */,
 				AEA643E91999971A007C0422 /* SWMImageScrollTableViewCell.m in Sources */,
-				AEAD76FD19A36BB6004E30B7 /* SWMNSUserDefaultsTool.m in Sources */,
 				EB433BA119906861002667D0 /* SWMMenuViewController.m in Sources */,
 				EB433BDF1990ABC6002667D0 /* SWMMainDetailViewController.m in Sources */,
 				EB2F77411990CD6F00EA365E /* PRegisterViewController2.m in Sources */,
