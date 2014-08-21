@@ -12,7 +12,7 @@
 
 + (CGFloat) getHeight
 {
-    return 120.0f;
+    return 85.0f;
 }
 
 + (TitleTableViewCell*) titleTableViewCell

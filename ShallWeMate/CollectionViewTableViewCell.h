@@ -25,4 +25,5 @@
 @property (strong, nonatomic) NSString *title;
 
 @property (strong, nonatomic) NSMutableArray *lifestyle;
+@property (strong, nonatomic) NSMutableArray *option;
 @end

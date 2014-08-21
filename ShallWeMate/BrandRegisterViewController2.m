@@ -121,6 +121,10 @@
     //[[self navigationController] popViewControllerAnimated:YES];
 }
 
+- (IBAction)backButtonPressed:(id)sender {
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
