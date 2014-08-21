@@ -16,6 +16,8 @@
 #import "SWMNetwork.h"
 #import "MemberData.h"
 
+#define swmServerAddr @"http://54.249.103.4:8080/SWMserver/"
+
 @interface SWMMainTableViewController ()
 
 @end
@@ -336,7 +338,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)newIndexPath
     //    NSURL *url = [NSURL URLWithString:[kServerAddrUpload stringByAppendingString:@"test"]];
     //    [url URLByAppendingPathComponent:@"/test"];
     
-    NSURL *url = [NSURL URLWithString:[swmServerAddr stringByAppendingString:@"getRoomDetail"]];
+    NSURL *url = [NSURL URLWithString:[swmServerAddr stringByAppendingString:@"comm/getRoomDetail"]];
     NSLog(@"URL : %@", url);
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
