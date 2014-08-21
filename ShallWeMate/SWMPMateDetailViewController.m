@@ -97,6 +97,7 @@
             cell = [CollectionViewTableViewCell collectionViewTableViewCell];
         }
         [cell setTitle:@"라이프스타일 키워드"];
+        [cell setLifestyle:_houseData.enableLifeStyle];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
 

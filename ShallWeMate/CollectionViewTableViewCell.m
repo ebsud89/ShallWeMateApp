@@ -58,7 +58,7 @@
     for (int i=0; i<[lifestyle count]; i++) {
         NSNumber *num = [lifestyle objectAtIndex:i];
         if ([num boolValue]) {
-            [self.imageArray addObject:[NSString stringWithFormat:@"lifestyle_0%d.png",i+1]];
+            [self.imageArray addObject:[NSString stringWithFormat:@"lifestyle_0%d copy.png",i+1]];
         }
     }
     

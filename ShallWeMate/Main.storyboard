@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="JAB-B7-TYR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Ndt-us-WJR">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -267,7 +267,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="s7T-3P-Sgw" kind="push" id="3lD-wT-Dzk"/>
+                                            <segue destination="s7T-3P-Sgw" kind="push" identifier="goMate" id="3lD-wT-Dzk"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -309,7 +309,7 @@
                     </connections>
                 </pinchGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="770" y="4007"/>
+            <point key="canvasLocation" x="754" y="4147"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="ADt-F9-OGe">
@@ -604,9 +604,6 @@
                                                 <state key="normal" image="뒤로버튼.png">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
-                                                <connections>
-                                                    <segue destination="7N0-q9-8R3" kind="push" id="8DR-tV-pop"/>
-                                                </connections>
                                             </button>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" style="plain" id="Jim-P6-wXI">
@@ -643,7 +640,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O3L-XN-Rqr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="754" y="3284"/>
+            <point key="canvasLocation" x="796" y="3284"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Pc0-zU-8SJ">
@@ -1576,7 +1573,7 @@
                                 <rect key="frame" x="0.0" y="66" width="320" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <string key="text">나의 라이프 스타일에 맞는 키워드를 선택해주세요.
-최대 6개까지 선택할 수 있습니다.</string>
+                                    최대 6개까지 선택할 수 있습니다.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -2315,7 +2312,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" restorationIdentifier="Cell" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="65" id="ciD-bq-JrV" customClass="BrandRegisterViewCell">
-                                <rect key="frame" x="0.0" y="86" width="320" height="65"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ciD-bq-JrV" id="OTZ-q5-vAH">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="64"/>

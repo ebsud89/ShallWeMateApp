@@ -12,6 +12,7 @@
 
 {
     NSArray *myArray;
+    NSIndexPath *myIndexPath;
 }
 @property(strong, nonatomic) NSArray* myArray;
 @property(strong, nonatomic) NSMutableArray *dataSourceArray;

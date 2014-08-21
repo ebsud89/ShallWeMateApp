@@ -7,7 +7,6 @@
 //
 
 #import "SWMHouseImageTableViewCell.h"
-#import "BadgeView.h"
 
 @implementation SWMHouseImageTableViewCell
 + (CGFloat) getHeight
@@ -20,7 +19,8 @@
     // Initialization code
     
 
-
+    isOpendBadgeView = NO;
+    
     [self hiddenSubView:YES];
     [self.heartImgView removeFromSuperview];
     self.imageScrollView.delegate = self;
@@ -31,9 +31,13 @@
     [self refreshData];
 }
 
+
 - (void) refreshUI
 {
     NSLog(@"~~~~~~~~~~============================");
+
+    self.imageScrollView.contentOffset = CGPointMake(_scrollPage,0);
+    
 }
 
 - (void) setIsMainTableView:(BOOL)isMainTableView with:(HouseData *)houseData
@@ -47,6 +51,19 @@
 //        self.heartLabel.text = houseData
         [self hiddenSubView:NO];
         
+        imageArray = [[NSMutableArray alloc]init];
+        for (int i=0; i<[houseData.enableLifeStyle count]; i++) {
+            NSNumber *num = [houseData.enableLifeStyle objectAtIndex:i];
+            if ([num boolValue]) {
+                [imageArray addObject:[NSString stringWithFormat:@"lifestyle_0%d copy.png",i+1]];
+            }
+        }
+        
+        if ([imageArray count]<6) {
+            for (int i= (int)[imageArray count]; i<6; i++) {
+                [imageArray addObject:@""];
+            }
+        }
     }
 }
 
@@ -101,6 +118,10 @@
     
     // -0.3~0.6 -> 첫페이지
     CGFloat pageIndex = ((self.imageScrollView.contentOffset.x - pageWidth / 3) / pageWidth);
+    
+    _scrollPage = (int) self.imageScrollView.contentOffset.x / self.contentView.frame.size.width;
+    
+    NSLog(@"%f", _scrollPage);
     if (pageIndex <0)
     {
         CGFloat alpha = pageIndex * (-3);
@@ -194,40 +215,49 @@
     
 }
 
+
 - (void) openBadge
 {
-    BadgeView *menuView = [[BadgeView alloc] init];
-    [menuView addMenuItemWithTitle:@"Text" andIcon:[UIImage imageNamed:@"makefg.php.png"] andSelectedBlock:^{
-        NSLog(@"Text selected");
-    }];
-    [menuView addMenuItemWithTitle:@"Photo" andIcon:[UIImage imageNamed:@"makefg.php.png"] andSelectedBlock:^{
-        NSLog(@"Photo selected");
-    }];
-    [menuView addMenuItemWithTitle:@"Quote" andIcon:[UIImage imageNamed:@"makefg.php.png"] andSelectedBlock:^{
-        NSLog(@"Quote selected");
-        
-    }];
-    [menuView addMenuItemWithTitle:@"Link" andIcon:[UIImage imageNamed:@"makefg.php.png"] andSelectedBlock:^{
-        NSLog(@"Link selected");
-        
-    }];
-    [menuView addMenuItemWithTitle:@"Chat" andIcon:[UIImage imageNamed:@"makefg.php.png"] andSelectedBlock:^{
-        NSLog(@"Chat selected");
-        
-    }];
-    [menuView addMenuItemWithTitle:@"Video" andIcon:[UIImage imageNamed:@"makefg.php.png"] andSelectedBlock:^{
-        NSLog(@"Video selected");
-        
-    }];
+    _menuView = [[BadgeView alloc] init];
+    
+    for (int i=0 ; i<6; i++) {
+        [_menuView addMenuItemWithTitle:@"" andIcon:[UIImage imageNamed:[imageArray objectAtIndex:i]] andSelectedBlock:^{
+            NSLog(@"Text selected");
+        }];
+    }
+    
+    isOpendBadgeView = YES;
+
+    
+//    [menuView addMenuItemWithTitle:@"Text" andIcon:[UIImage imageNamed:@"makefg.php.png"] andSelectedBlock:^{
+//        NSLog(@"Text selected");
+//    }];
+//    [menuView addMenuItemWithTitle:@"Photo" andIcon:[UIImage imageNamed:@"makefg.php.png"] andSelectedBlock:^{
+//        NSLog(@"Photo selected");
+//    }];
+//    [menuView addMenuItemWithTitle:@"Quote" andIcon:[UIImage imageNamed:@"makefg.php.png"] andSelectedBlock:^{
+//        NSLog(@"Quote selected");
+//        
+//    }];
+//    [menuView addMenuItemWithTitle:@"Link" andIcon:[UIImage imageNamed:@"makefg.php.png"] andSelectedBlock:^{
+//        NSLog(@"Link selected");
+//        
+//    }];
+//    [menuView addMenuItemWithTitle:@"Chat" andIcon:[UIImage imageNamed:@"makefg.php.png"] andSelectedBlock:^{
+//        NSLog(@"Chat selected");
+//        
+//    }];
+//    [menuView addMenuItemWithTitle:@"Video" andIcon:[UIImage imageNamed:@"makefg.php.png"] andSelectedBlock:^{
+//        NSLog(@"Video selected");
+//        
+//    }];
     
     
-    [menuView show:self.contentView];
+    [_menuView show:self.contentView];
 }
 
 - (void) refreshData
 {
-    
-    
     
     //    if ([self.houseImageArray count] == 0) {
     self.houseImageArray = [[NSMutableArray alloc]initWithObjects:[UIImage imageNamed:@"testImg1.jpg"],[UIImage imageNamed:@"testImg2.jpg"],[UIImage imageNamed:@"testImg3.jpg"],[UIImage imageNamed:@"testImg1.jpg"],[UIImage imageNamed:@"testImg2.jpg"],[UIImage imageNamed:@"testImg3.jpg"], nil];

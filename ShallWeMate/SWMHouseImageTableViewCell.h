@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SWMHouseImageScrollView.h"
+#import "BadgeView.h"
 
 @interface SWMHouseImageTableViewCell : UITableViewCell <UIScrollViewDelegate>
 {
@@ -24,8 +25,17 @@
     NSNumber * likeIt;
     
     UIView* square;
+    
+    NSMutableArray * imageArray;
+    
+    BOOL isOpendBadgeView;
+//    CGFloat scrollPage;
 }
 + (CGFloat) getHeight;
+
+@property (strong, nonatomic) BadgeView *menuView;
+
+@property ( assign) CGFloat scrollPage;
 
 @property (strong, nonatomic) NSMutableArray *houseImageArray;
 

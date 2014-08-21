@@ -12,7 +12,7 @@
 #define BadgeViewHeight 200
 
 #define BadgeViewTag 1999
-#define BadgeViewImageHeight 50
+#define BadgeViewImageHeight 65
 
 #define BadgeViewTitleHeight 0
 
