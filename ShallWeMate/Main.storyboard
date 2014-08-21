@@ -964,6 +964,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="backButtonPressed:" destination="Xds-7s-O12" eventType="touchUpInside" id="Xdl-1g-5CL"/>
                                     <segue destination="aC2-sN-EeQ" kind="push" id="0aj-dc-33W"/>
                                 </connections>
                             </button>
@@ -3531,12 +3532,12 @@
         <segue reference="DT6-c8-I3T"/>
         <segue reference="W3a-6y-wFg"/>
         <segue reference="hjA-Lq-4W6"/>
-        <segue reference="N3K-qD-NSA"/>
-        <segue reference="QwW-HK-cPO"/>
-        <segue reference="JMl-td-baN"/>
+        <segue reference="0aj-dc-33W"/>
         <segue reference="WFI-ea-8MN"/>
         <segue reference="O1e-az-zhH"/>
         <segue reference="2yt-mZ-pqG"/>
+        <segue reference="QwW-HK-cPO"/>
+        <segue reference="JMl-td-baN"/>
         <segue reference="vqb-pa-UaW"/>
         <segue reference="bUS-hJ-vfD"/>
     </inferredMetricsTieBreakers>

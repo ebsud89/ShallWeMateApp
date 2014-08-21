@@ -92,31 +92,6 @@
     
 }
 
-- (IBAction)avgAgeSelect:(id)sender {
-    
-    UIPickerView *pickerView = [[UIPickerView alloc] init];
-    [pickerView setDelegate:self];
-    [pickerView setDataSource:self];
-    
-    UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
-    
-    [pickerView setFrame:CGRectMake(0.0f,
-                                    keyWindow.frame.size.height - pickerView.frame.size.height,
-                                    keyWindow.frame.size.width,
-                                    pickerView.frame.size.height)];
-    [keyWindow addSubview:pickerView];
-    
-}
-
-//- (void) didSelectedItem:(NSIndexPath *)indexPath
-//{
-//    [houseData.enableRoomsMore replaceObjectAtIndex:indexPath.row withObject:[NSNumber numberWithBool:YES]];
-//}
-
-//- (void) didDeSelectedItem:(NSIndexPath *)indexPath
-//{
-//    [houseData.enableRoomsMore replaceObjectAtIndex:indexPath.row withObject:[NSNumber numberWithBool:NO]];
-//}
 
 - (IBAction)arMinus:(id)sender {
     if ([allRoomLabel.text isEqualToString:@"1"]) {
