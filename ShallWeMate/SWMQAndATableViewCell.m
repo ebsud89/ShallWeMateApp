@@ -11,7 +11,7 @@
 @implementation SWMQAndATableViewCell
 + (CGFloat) getHeight
 {
-    return 120.0f;
+    return 180.0f;
 }
 
 - (void)awakeFromNib

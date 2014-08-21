@@ -47,9 +47,9 @@
 //    self.navigationItem.backBarButtonItem = backButtonItem;
 //    
 //    self.navigationItem.backBarButtonItem = backButtonItem;
-    [self refreshHouseData];
+//    [self refreshMemberData];
     
-    jobsArray = [[NSArray alloc] initWithObjects: @"학생", @"직장인", @"프리랜서", nil];
+    jobsArray = [[NSArray alloc] initWithObjects: @"프리랜서", @"직장인", @"학생", nil];
     // 버튼위에 라벨을 올려주기 위해 만듬
     jobTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(-25.0f, -5.0f, 150.0f, 30.0f)];
     jobTitleLabel.textColor = [UIColor lightGrayColor];
@@ -127,6 +127,24 @@
 }
 
 
+- (IBAction)backButtonClicked:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)nextButtonClicked:(id)sender {
+    RegisterViewController2 *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"srchHouseOption"];
+//        vc.memberData = self.memberData;
+//        [self.view addSubview:vc.view];
+    [self fillMemberData];
+    /* 기입한 정보를 다음 뷰로 전달*/
+    
+    vc.memberData = _memberData;
+    NSLog(@"r1=============");
+    [_memberData printAll];
+    [self.navigationController pushViewController: vc animated:NO];
+}
+
+
 - (BOOL) textViewShouldBeginEditing:(UITextView *)textView
 {
     textView.text = @"";
@@ -180,7 +198,7 @@
     
 }
 
-- (void)fillhouseData
+- (void)fillMemberData
 {
     /* 기입한 정보(이름, 나이, 성별, 직업) 저장하기 */
     
@@ -401,11 +419,10 @@
     {
         RegisterViewController2 *vc = [segue destinationViewController];
         
-        [self fillhouseData];
+        [self fillMemberData];
         /* 기입한 정보를 다음 뷰로 전달*/
         
         vc.memberData = _memberData;
-        [self fillhouseData];
         
     }
 }

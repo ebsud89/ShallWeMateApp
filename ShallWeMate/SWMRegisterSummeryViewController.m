@@ -38,6 +38,7 @@
     // Do any additional setup after loading the view.
     
     
+    _memberData.printAll;
     
     [self.contentTableView registerNib:[UINib nibWithNibName:@"BasicSearchTableViewCell" bundle:nil] forCellReuseIdentifier:@"basicSearchTableViewCell"];
     [self.contentTableView registerNib:[UINib nibWithNibName:@"CollectionViewTableViewCell" bundle:nil] forCellReuseIdentifier:@"collectionViewTableViewCell"];
@@ -73,6 +74,11 @@
     
     [self saveData];
     
+}
+
+
+- (IBAction)backButtonClicked:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)onHideLayer

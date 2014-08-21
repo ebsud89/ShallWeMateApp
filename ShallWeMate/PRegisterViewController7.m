@@ -262,6 +262,12 @@
     
 }
 
+
+- (IBAction)backButtonClicked:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+
 //- (IBAction)doneButtonClicked:(id)sender {
 //    if((_inviteOk.isSelected == 1 || _inviteNo.isSelected == 1) && (_petOk.isSelected == 1 || _petNo.isSelected == 1) && (_privacyMore.isSelected == 1 || _privacyLess.isSelected == 1) && (_smokeOk.isSelected == 1 || _smokeNo.isSelected == 1) && (_drinkOk.isSelected == 1 || _drinkNo.isSelected == 1)) {
 //        

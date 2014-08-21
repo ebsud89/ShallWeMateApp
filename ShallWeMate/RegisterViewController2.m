@@ -30,14 +30,14 @@
     
     [super viewDidLoad];
     
-    [self refreshHouseData];
+    [self refreshMemberData];
     //navigation bar color
 //    [[[self navigationController] navigationBar] setTintColor:[UIColor whiteColor]];
 //    [[[self navigationController] navigationBar] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
 //    [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000]];
 }
 
-- (void) refreshHouseData
+- (void) refreshMemberData
 {
     
     
@@ -60,11 +60,11 @@
     
 }
 
-- (void)fillhouseData
+- (void)fillMemberData
 {
     /* 기입한 정보 (지하철역, 보증금, 월세) 저장하기 */
     
-    _memberData.nearSubwayStation = self.subwaySearchBtn.titleLabel.text;
+    _memberData.nearSubwayStation = self.stationLabel.text;
     _memberData.securityCost = self.maxDepositLabel.text;
     _memberData.monthlyRentCost = self.maxBudgetLabel.text;
 }
@@ -86,6 +86,22 @@
     
     
 }
+- (IBAction)nextButtonClicked:(id)sender {
+    RegisterViewController3 *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"srchMateInfo"];
+//    vc.memberData = self.memberData;
+//    [self.view addSubview:vc.view];
+    [self fillMemberData];
+    /* 기입한 정보를 다음 뷰로 전달*/
+    NSLog(@"r2=============");
+    [_memberData printAll];
+    vc.memberData = _memberData;
+    [self.navigationController pushViewController: vc animated:NO];
+}
+
+- (IBAction)backButtonClicked:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 
 //- (void) viewDidAppear:(BOOL)animated
 //{
@@ -152,10 +168,10 @@
         
         /* 기입한 정보를 다음 뷰로 전달*/
         
-        [self fillhouseData];
+        [self fillMemberData];
         
         vc.memberData = _memberData;
-        [self fillhouseData];
+//        [self fillhouseData];
         
     }
     

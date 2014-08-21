@@ -964,8 +964,8 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="backButtonClicked:" destination="Xds-7s-O12" eventType="touchUpInside" id="XAN-Ji-qqO"/>
                                     <action selector="backButtonPressed:" destination="Xds-7s-O12" eventType="touchUpInside" id="Xdl-1g-5CL"/>
-                                    <segue destination="aC2-sN-EeQ" kind="push" id="0aj-dc-33W"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -1122,6 +1122,10 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="goMainPage:" destination="zlM-Cc-A8A" eventType="touchUpInside" id="FJK-rz-932"/>
+                                    <segue destination="Ndt-us-WJR" kind="modal" id="P6V-Hm-NoH"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hello.png" translatesAutoresizingMaskIntoConstraints="NO" id="LIF-n6-ATU">
                                 <rect key="frame" x="1" y="90" width="320" height="271"/>
@@ -1166,6 +1170,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="zlM-Cc-A8A" kind="modal" id="VIp-WF-fBK"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hello.png" translatesAutoresizingMaskIntoConstraints="NO" id="mNz-Y7-8MZ">
                                 <rect key="frame" x="0.0" y="88" width="320" height="271"/>
@@ -1311,7 +1318,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Xds-7s-O12" kind="push" id="WFI-ea-8MN"/>
+                                    <action selector="backButtonClicked:" destination="lAz-zD-AqY" eventType="touchUpInside" id="Suc-ag-fGb"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -1395,7 +1402,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="lAz-zD-AqY" kind="push" id="egc-BV-Oh2"/>
+                                    <action selector="backButtonClicked:" destination="hxF-TF-8Q0" eventType="touchUpInside" id="IWA-ge-24C"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -1538,7 +1545,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="hxF-TF-8Q0" kind="push" id="fLQ-PJ-G3r"/>
+                                    <action selector="backButtonClicked:" destination="Q78-95-9EF" eventType="touchUpInside" id="8pU-oj-Bhg"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -1624,7 +1631,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Q78-95-9EF" kind="push" id="bUt-e8-Gk5"/>
+                                    <action selector="backButtonClicked:" destination="AZE-DH-IvI" eventType="touchUpInside" id="XLK-lG-C8S"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -1799,7 +1806,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="AZE-DH-IvI" kind="push" id="ecy-rn-Qf5"/>
+                                    <action selector="backButtonClicked:" destination="qYO-nB-hg4" eventType="touchUpInside" id="2CZ-u4-Kkn"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -1863,7 +1870,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="qYO-nB-hg4" kind="push" id="Z25-TP-tOv"/>
+                                    <action selector="backButtonClicked:" destination="4D1-HB-U6s" eventType="touchUpInside" id="28b-UP-iGq"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -1884,7 +1891,7 @@
         <!--Register Summery View Controller - 나의 하우스 키워드-->
         <scene sceneID="HRI-Sf-RMl">
             <objects>
-                <viewController storyboardIdentifier="inMatching" id="dkK-NB-Sur" customClass="SWMRegisterSummeryViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="inMatching" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dkK-NB-Sur" customClass="SWMRegisterSummeryViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="d75-iD-qEn"/>
                         <viewControllerLayoutGuide type="bottom" id="vPk-je-PDj"/>
@@ -1917,7 +1924,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="9kh-fP-wRD" kind="push" id="vqb-pa-UaW"/>
+                                    <action selector="backButtonClicked:" destination="dkK-NB-Sur" eventType="touchUpInside" id="USx-95-puc"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -2052,6 +2059,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="backButtonClicked:" destination="rXP-Xg-RRJ" eventType="touchUpInside" id="W8n-1P-rG0"/>
                                     <segue destination="zlM-Cc-A8A" kind="modal" id="hjA-Lq-4W6"/>
                                 </connections>
                             </button>
@@ -2064,7 +2072,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="iFg-FY-xss" kind="push" id="96X-iH-d6C"/>
+                                    <action selector="nextButtonClicked:" destination="rXP-Xg-RRJ" eventType="touchUpInside" id="Uoq-va-ark"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -2215,6 +2223,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="backButtonClicked:" destination="iFg-FY-xss" eventType="touchUpInside" id="dkh-5J-JtA"/>
                                     <segue destination="rXP-Xg-RRJ" kind="push" id="W3a-6y-wFg"/>
                                 </connections>
                             </button>
@@ -2227,7 +2236,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="pub-Dk-hbx" kind="push" id="DT6-c8-I3T"/>
+                                    <action selector="nextButtonClicked:" destination="iFg-FY-xss" eventType="touchUpInside" id="Sa5-jT-D8e"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -2459,7 +2468,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="iFg-FY-xss" kind="push" id="hNJ-XZ-mEI"/>
+                                    <action selector="backButtonClicked:" destination="pub-Dk-hbx" eventType="touchUpInside" id="eF9-ZT-Gwz"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -2471,7 +2480,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="IeZ-zF-6dV" kind="push" id="GaA-Ry-Fgv"/>
+                                    <action selector="nextButtonClicked:" destination="pub-Dk-hbx" eventType="touchUpInside" id="dBF-vC-Hv2"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -2661,11 +2670,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="하우스 룰" id="0B7-5m-DaO">
-                        <barButtonItem key="backBarButtonItem" image="다음버튼.png" id="ajx-Ld-QBI">
-                            <connections>
-                                <segue destination="IeZ-zF-6dV" kind="push" id="FMM-WV-aLi"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="leftBarButtonItem" style="plain" id="yyg-ru-dcw">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="DLH-8H-e6F">
                                 <rect key="frame" x="16" y="13" width="18" height="18"/>
@@ -2674,7 +2678,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="IeZ-zF-6dV" kind="push" id="bUS-hJ-vfD"/>
+                                    <action selector="backButtonClicked:" destination="9kh-fP-wRD" eventType="touchUpInside" id="aHf-FB-vL2"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -2686,6 +2690,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="nextButtonClicked:" destination="9kh-fP-wRD" eventType="touchUpInside" id="qAF-js-Tii"/>
                                     <segue destination="dkK-NB-Sur" kind="push" id="Cfo-5H-BAk"/>
                                 </connections>
                             </button>
@@ -2775,7 +2780,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="pub-Dk-hbx" kind="push" id="98x-h6-w3v"/>
+                                    <action selector="backButtonClicked:" destination="IeZ-zF-6dV" eventType="touchUpInside" id="WFX-A9-fYm"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -2787,6 +2792,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="nextButtonClicked:" destination="IeZ-zF-6dV" eventType="touchUpInside" id="uyB-py-g6e"/>
                                     <segue destination="9kh-fP-wRD" kind="push" id="xHr-Kw-LPW"/>
                                 </connections>
                             </button>
@@ -3522,23 +3528,14 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="0aj-dc-33W"/>
-        <segue reference="WFI-ea-8MN"/>
-        <segue reference="O1e-az-zhH"/>
-        <segue reference="2yt-mZ-pqG"/>
-        <segue reference="JMl-td-baN"/>
+        <segue reference="oPl-86-bfa"/>
         <segue reference="QwW-HK-cPO"/>
+        <segue reference="WVT-sG-fr3"/>
+        <segue reference="zTb-Iy-ER6"/>
         <segue reference="Vvz-o6-XPJ"/>
-        <segue reference="0ix-vw-kbF"/>
-        <segue reference="Z25-TP-tOv"/>
-        <segue reference="ecy-rn-Qf5"/>
-        <segue reference="bUt-e8-Gk5"/>
         <segue reference="3lD-wT-Dzk"/>
-        <segue reference="96X-iH-d6C"/>
+        <segue reference="NwH-dz-hZa"/>
         <segue reference="W3a-6y-wFg"/>
         <segue reference="hjA-Lq-4W6"/>
-        <segue reference="DT6-c8-I3T"/>
-        <segue reference="vqb-pa-UaW"/>
-        <segue reference="bUS-hJ-vfD"/>
     </inferredMetricsTieBreakers>
 </document>
