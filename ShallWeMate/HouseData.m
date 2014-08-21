@@ -46,6 +46,8 @@
             [self.enableHouseRoles addObject:[NSNumber numberWithBool:NO]];
         }
         
+        self.likeIt = [NSNumber numberWithDouble:NO];
+        
     }
     return self;
     

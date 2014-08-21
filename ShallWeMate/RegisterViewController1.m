@@ -117,6 +117,16 @@
     
 }
 
+- (void) saveData
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    SWMMember *mem = [self.memberData exportToSWMMember];
+    [defaults setObject:[mem description] forKey:@"forPersonalInfor"];
+    
+    [defaults synchronize];
+}
+
+
 - (BOOL) textViewShouldBeginEditing:(UITextView *)textView
 {
     textView.text = @"";
@@ -384,6 +394,8 @@
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    [self saveData];
     
     if ([[segue identifier] isEqualToString:@"goNext"])
     {

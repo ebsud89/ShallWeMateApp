@@ -11,6 +11,11 @@
 #import "CollectionViewTableViewCell.h"
 #import "SWMMateInfoTableViewCell.h"
 #import "SWMHouseRoleTableViewCell.h"
+#import "UIViewController+LoadingOverlay.h"
+
+#pragma mark - Server Address
+#define swmServerAddr @"http://54.249.103.4:8080/SWMserver/"
+#define swmServerAddrLocal @"http://10.0.0.20:8080/SWMserver/"
 
 @interface SWMRegisterSummeryViewController ()
 
@@ -50,7 +55,9 @@
 }
 
 - (IBAction)finishedClicked:(id)sender {
-    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+
+    
+    
 //    SWMSummeryViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SWMSummeryViewController"];
 //    
 //    vc.memberData = memberData;
@@ -73,6 +80,21 @@
     
     [defaults synchronize];
 }
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    NSLog(@"%s", __FUNCTION__);
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    NSLog(@"%s", __FUNCTION__);
+    
+    NSLog(@"error = %@", error);
+    
+    NSString *text = [error localizedDescription];
+}
+
 
 #pragma mark - UITableView
 
@@ -140,13 +162,14 @@
     else if (indexPath.row ==2)
     {
         SWMMateInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"swmMateInfoTableViewCell"];
-        
+        [cell setAvgAge:_memberData.avgAge];
+//        [cell setGender:_memberData.copy]
         return cell;
     }
     else if (indexPath.row == 3)
     {
         SWMHouseRoleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"swmHouseRoleTableViewCell"];
-        
+        [cell setHouseRule:_memberData.enableHouseRoles];
         NSLog(@"%@", _memberData.enableHouseRoles);
         return cell;
     }

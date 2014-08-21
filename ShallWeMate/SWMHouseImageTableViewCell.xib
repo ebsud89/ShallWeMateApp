@@ -17,6 +17,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="219"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </scrollView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="loveitl.png" translatesAutoresizingMaskIntoConstraints="NO" id="IAt-oN-9Zi">
+                        <rect key="frame" x="113" y="72" width="93" height="76"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUL-q7-1UE">
                         <rect key="frame" x="0.0" y="168" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -24,12 +28,85 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heart.png" translatesAutoresizingMaskIntoConstraints="NO" id="0EC-Ox-Mb1">
+                        <rect key="frame" x="234" y="23" width="16" height="16"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="door.png" translatesAutoresizingMaskIntoConstraints="NO" id="qo5-Ux-UV6">
+                        <rect key="frame" x="234" y="52" width="16" height="16"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="man.png" translatesAutoresizingMaskIntoConstraints="NO" id="ban-w2-KBe">
+                        <rect key="frame" x="234" y="81" width="16" height="16"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sub.png" translatesAutoresizingMaskIntoConstraints="NO" id="KrO-XO-jVz">
+                        <rect key="frame" x="20" y="146" width="16" height="16"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xPt-bn-1Ov">
+                        <rect key="frame" x="20" y="20" width="184" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qUG-o3-uBQ">
+                        <rect key="frame" x="258" y="178" width="42" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Trf-pv-sNB">
+                        <rect key="frame" x="49" y="143" width="61" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gaC-F9-yvl">
+                        <rect key="frame" x="258" y="78" width="42" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iI4-Dz-cah">
+                        <rect key="frame" x="258" y="49" width="42" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I7u-Sy-0Sw">
+                        <rect key="frame" x="258" y="20" width="42" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </tableViewCellContentView>
             <connections>
+                <outlet property="costLabel" destination="qUG-o3-uBQ" id="bYp-et-sPt"/>
+                <outlet property="heartImgView" destination="IAt-oN-9Zi" id="Msi-bX-phS"/>
+                <outlet property="heartLabel" destination="I7u-Sy-0Sw" id="FfG-j9-RKk"/>
+                <outlet property="houseLabel" destination="iI4-Dz-cah" id="dmI-6Z-HK8"/>
+                <outlet property="iamgeviewHouse" destination="qo5-Ux-UV6" id="nlB-qq-R7d"/>
                 <outlet property="imageScrollView" destination="GFL-tB-UHC" id="fFL-6l-8WK"/>
+                <outlet property="imageviewHeart" destination="0EC-Ox-Mb1" id="2mS-kq-lpT"/>
+                <outlet property="imageviewPeople" destination="ban-w2-KBe" id="HFk-Rf-cLf"/>
+                <outlet property="imgeViewSubway" destination="KrO-XO-jVz" id="dqs-9a-RLM"/>
+                <outlet property="matchResultLabel" destination="xPt-bn-1Ov" id="83b-tB-I2p"/>
+                <outlet property="peopleLabel" destination="gaC-F9-yvl" id="0xH-kb-u58"/>
+                <outlet property="subwayLabel" destination="Trf-pv-sNB" id="WDW-V6-wSq"/>
                 <outlet property="titleLabel" destination="UUL-q7-1UE" id="1tt-hr-EwN"/>
             </connections>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="door.png" width="33" height="33"/>
+        <image name="heart.png" width="33" height="33"/>
+        <image name="loveitl.png" width="187" height="153"/>
+        <image name="man.png" width="33" height="33"/>
+        <image name="sub.png" width="33" height="33"/>
+    </resources>
 </document>

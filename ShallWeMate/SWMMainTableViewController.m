@@ -91,6 +91,7 @@
     
     NSLog(@"%@",[defaults objectForKey:@"forSearchMemberData"]);
     
+        [self loadData];
 }
 
 
@@ -194,7 +195,7 @@
      [cell setTitleText:housedata.title];
      
      [cell setEnabledBadgeView];
-     [cell setEnabledLikeIt];
+     [cell setEnabledLikeIt:housedata.likeIt with:YES];
      
      UITapGestureRecognizer *oneFingerOneTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(oneFingerOneTap:)];
      
@@ -202,6 +203,8 @@
      [oneFingerOneTap setNumberOfTouchesRequired:1];
      
      [cell.contentView addGestureRecognizer:oneFingerOneTap];
+     
+     
 
 //     UITapGestureRecognizer *oneFingerTwoTaps =
 //     [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(oneFingerTwoTaps:)] ;
@@ -217,6 +220,13 @@
      // Configure the cell...
      [cell viewWithTag:indexPath.row];
      return cell;
+}
+
+-(void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    SWMHouseImageTableViewCell *myCell = (SWMHouseImageTableViewCell*) cell;
+    
+    [myCell refreshUI];
 }
 
 - (void) oneFingerTwoTaps:(UISwipeGestureRecognizer *)gestureRecognizer
@@ -320,5 +330,62 @@ didSelectRowAtIndexPath:(NSIndexPath *)newIndexPath
     
 }
 
+#pragma mark - Network
+- (void) sendToServerWithRoomID
+{
+    //    NSURL *url = [NSURL URLWithString:[kServerAddrUpload stringByAppendingString:@"test"]];
+    //    [url URLByAppendingPathComponent:@"/test"];
+    
+    NSURL *url = [NSURL URLWithString:[swmServerAddr stringByAppendingString:@"getRoomDetail"]];
+    NSLog(@"URL : %@", url);
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    // *data 에 선택한 방에 대한 rid 정보를 JSON 형식으로 넣어주면 되
+    NSString *data = @"";
+    [request setHTTPMethod:@"POST"];
+    [request setHTTPBody:[data dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    NSURLResponse *resp = nil;
+    NSError *error = nil;
+    
+    // connect server
+    NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    [conn start];
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    NSLog(@"%s", __FUNCTION__);
+    
+    NSLog(@"error = %@", error);
+    
+    NSString *text = [error localizedDescription];
+}
+
+- (void)connection:(NSURLConnection *)connection
+didCancelAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
+{
+    NSLog(@"%s", __FUNCTION__);
+    
+}
+
+- (void)connection:(NSURLConnection *)connection
+didReceiveResponse:(NSURLResponse *)response
+{
+    NSLog(@"%s", __FUNCTION__);
+    
+}
+
+- (void)connection:(NSURLConnection *)connection
+    didReceiveData:(NSData *)data
+{
+    NSLog(@"%s", __FUNCTION__);
+    
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    NSLog(@"%s", __FUNCTION__);
+}
 
 @end

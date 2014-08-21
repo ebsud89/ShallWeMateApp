@@ -40,21 +40,6 @@
     return self;
 }
 
-//- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-//{
-//    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-//    if (self) {
-//        // Custom initialization
-//    }
-//    return self;
-//}
-//
-//- (void)viewDidLoad
-//{
-//    [super viewDidLoad];
-//    // Do any additional setup after loading the view.
-//}
-
 - (id)initWithCenterViewController:(UIViewController *)centerViewController
 {
     if (self = [super init])
@@ -123,9 +108,6 @@
     //    _contentViewController = contentViewController;
     
     NSAssert(_centerViewController != nil, @"Center view controller can't be nil");
-    
-    
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated
