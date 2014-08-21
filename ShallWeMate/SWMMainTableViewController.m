@@ -235,7 +235,7 @@
     NSLog(@"Action : One Finger, One Taps");
     
 //    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-    NSLog(@"%d 번째 셀이 선택되었습니다.", (int) myIndexPath1.row);
+    NSLog(@"%d 번째 셀이 선택되었습니다.", (int) myIndexPath.row);
     
     [self performSegueWithIdentifier:@"MainTableIdentifier" sender:self];
     
