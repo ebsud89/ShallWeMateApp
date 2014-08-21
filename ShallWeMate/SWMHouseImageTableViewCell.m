@@ -19,38 +19,9 @@
 {
     // Initialization code
     
-//    UITapGestureRecognizer *oneFingerOneTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(oneFingerOneTap)];
-//    
-//    [oneFingerOneTap setNumberOfTapsRequired:1];
-//    [oneFingerOneTap setNumberOfTouchesRequired:1];
-//    
-//    [self.contentView addGestureRecognizer:oneFingerOneTap];
-    
-    // Create gesture recognizer
-    
-//    UITapGestureRecognizer *oneFingerTwoTaps =
-//    [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(oneFingerTwoTaps)] ;
-//    
-//    // Set required taps and number of touches
-//    [oneFingerTwoTaps setNumberOfTapsRequired:2];
-//    [oneFingerTwoTaps setNumberOfTouchesRequired:1];
-//    
-//    // Add the gesture to the view
-//    [self.imageScrollView addGestureRecognizer:oneFingerTwoTaps];
-    
-//    // Add gestures
-//    UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(movePanel:)];
-//    [panGesture setMinimumNumberOfTouches:1];
-//    [panGesture setMaximumNumberOfTouches:1];
-//    [panGesture setDelegate:self];
-//    
-//    [self.contentView addGestureRecognizer:panGesture];
-    
-    
 
-//    self.heartImgView.frame = CGRectMake(self.heartImgView.frame.origin.x, self.heartImgView.frame.origin.y, self.heartImgView.frame.size.width/2, self.heartImgView.frame.size.height/2);
-    
 
+    [self hiddenSubView:YES];
     [self.heartImgView removeFromSuperview];
     self.imageScrollView.delegate = self;
     
@@ -60,6 +31,24 @@
     [self refreshData];
 }
 
+- (void) refreshUI
+{
+    NSLog(@"~~~~~~~~~~============================");
+}
+
+- (void) setIsMainTableView:(BOOL)isMainTableView with:(HouseData *)houseData
+{
+    if (isMainTableView) {
+        self.houseLabel.text = houseData.roomAll;
+        self.peopleLabel.text = houseData.roomEmpty;
+        self.costLabel.text = houseData.monthlyRentCost;
+        
+        
+//        self.heartLabel.text = houseData
+        [self hiddenSubView:NO];
+        
+    }
+}
 
 - (void) setTitleText:(NSString *)text
 {
@@ -109,16 +98,19 @@
 //스크롤이 변경될때 page의 currentPage 설정
 - (void)scrollViewDidScroll:(UIScrollView *)sender {
     CGFloat pageWidth = self.imageScrollView.frame.size.width;
-
+    
     // -0.3~0.6 -> 첫페이지
     CGFloat pageIndex = ((self.imageScrollView.contentOffset.x - pageWidth / 3) / pageWidth);
     if (pageIndex <0)
     {
-        [self.titleLabel setAlpha:(pageIndex*-3)];
+        CGFloat alpha = pageIndex * (-3);
+        [self setAlphaSubview:alpha];
+        
     }
     else
     {
-        [self.titleLabel setAlpha:0.0f];
+        CGFloat alpha = 0;
+        [self setAlphaSubview:alpha];
     }
 }
 
@@ -262,5 +254,36 @@
     
 }
 
+- (void) hiddenSubView:(BOOL)hidden
+{
+    self.titleLabel.hidden = hidden;
+    self.subwayLabel.hidden = hidden;
+    self.houseLabel.hidden = hidden;
+    self.peopleLabel.hidden = hidden;
+    self.matchResultLabel.hidden = hidden;
+    self.imgeViewSubway.hidden = hidden;
+    self.imageviewHeart.hidden = hidden;
+    self.iamgeviewHouse.hidden = hidden;
+    self.imageviewPeople.hidden = hidden;
+    
+    self.costLabel.hidden = hidden;
+    self.heartLabel.hidden = hidden;
+}
+
+- (void) setAlphaSubview:(CGFloat)alpha
+{
+    [self.titleLabel setAlpha:alpha];
+    [self.subwayLabel setAlpha:alpha];
+    [self.houseLabel setAlpha:alpha];
+    [self.peopleLabel setAlpha:alpha];
+    [self.matchResultLabel setAlpha:alpha];
+    [self.imgeViewSubway setAlpha:alpha];
+    [self.imageviewHeart setAlpha:alpha];
+    [self.iamgeviewHouse setAlpha:alpha];
+    [self.imageviewPeople setAlpha:alpha];
+    
+    [self.costLabel setAlpha:alpha];
+    [self.heartLabel setAlpha:alpha];
+}
 
 @end

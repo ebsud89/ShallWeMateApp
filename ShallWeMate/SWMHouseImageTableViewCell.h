@@ -32,7 +32,22 @@
 @property (strong, nonatomic) IBOutlet UIImageView *heartImgView;
 
 @property (strong, nonatomic) IBOutlet SWMHouseImageScrollView *imageScrollView;
+
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
+@property (strong, nonatomic) IBOutlet UILabel *subwayLabel;
+@property (strong, nonatomic) IBOutlet UILabel *houseLabel;
+@property (strong, nonatomic) IBOutlet UILabel *peopleLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *matchResultLabel;
+
+@property (strong, nonatomic) IBOutlet UIImageView *imgeViewSubway;
+@property (strong, nonatomic) IBOutlet UIImageView *imageviewHeart;
+@property (strong, nonatomic) IBOutlet UIImageView *iamgeviewHouse;
+@property (strong, nonatomic) IBOutlet UIImageView *imageviewPeople;
+
+@property (strong, nonatomic) IBOutlet UILabel *costLabel;
+@property (strong, nonatomic) IBOutlet UILabel *heartLabel;
+
+@property (nonatomic) BOOL isMainTableView;
 
 - (void) openBadge;
 - (void) oneFingerTwoTaps;
@@ -41,4 +56,6 @@
 - (void) setEnabledLikeIt:(NSNumber *) like with:(BOOL)isHeartImg;
 
 - (void) setTitleText:(NSString *)text;
+- (void) refreshUI;
+- (void) setIsMainTableView:(BOOL)isMainTableView with:(HouseData *)houseData;
 @end

@@ -64,8 +64,9 @@
 //    [self.view addSubview:vc.view];
     NSLog(@"Clicked Button");
 
-    UIView *overlayView = [[UIView alloc]initWithFrame:self.view.frame];
-    overlayView.backgroundColor = [UIColor blackColor];
+    [self showLayer:@"MESSAGE TO SHOW"];
+    
+    [self performSelector:@selector(onHideLayer) withObject:nil afterDelay:2.0f];
     
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     [self sendToMemberData];

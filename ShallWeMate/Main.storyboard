@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="QXp-JQ-BC8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Ndt-us-WJR">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -1953,7 +1953,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1x3-WJ-X7R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1513" y="1041"/>
+            <point key="canvasLocation" x="1509" y="1033"/>
         </scene>
         <!--Brand Register View Controller - 브랜드 등록-->
         <scene sceneID="Nxn-gc-Qre">
@@ -2981,6 +2981,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="KpW-0g-yCf"/>
         <segue reference="NwH-dz-hZa"/>
-        <segue reference="3lD-wT-Dzk"/>
+        <segue reference="pm8-ON-Tk0"/>
     </inferredMetricsTieBreakers>
 </document>

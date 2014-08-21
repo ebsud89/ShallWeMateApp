@@ -193,6 +193,8 @@
 //     NSLog(@"%d", housedata.title);
      [cell setTitleText:housedata.title];
      
+     [cell setIsMainTableView:YES with:housedata];
+     
      [cell setEnabledBadgeView];
      [cell setEnabledLikeIt:housedata.likeIt with:YES];
      
@@ -202,6 +204,8 @@
      [oneFingerOneTap setNumberOfTouchesRequired:1];
      
      [cell.contentView addGestureRecognizer:oneFingerOneTap];
+     
+     
 
 //     UITapGestureRecognizer *oneFingerTwoTaps =
 //     [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(oneFingerTwoTaps:)] ;
@@ -217,6 +221,13 @@
      // Configure the cell...
      [cell viewWithTag:indexPath.row];
      return cell;
+}
+
+-(void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    SWMHouseImageTableViewCell *myCell = (SWMHouseImageTableViewCell*) cell;
+    
+    [myCell refreshUI];
 }
 
 - (void) oneFingerTwoTaps:(UISwipeGestureRecognizer *)gestureRecognizer
