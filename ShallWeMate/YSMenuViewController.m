@@ -137,13 +137,21 @@
     NSLog(@"Open Left Side View controller Animated");
     [self openChildView:[self leftView] left:YES animated:animated completion:completionBlock];
     
-//    if (!self.ProviderBool) {
-//        [self.leftViewController setProviderMenu];
-//    }
-//    else
-//    {
-//        [self.leftViewController setConsumerMenu];
-//    }
+//    ===================================================================
+
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    NSLog(@"%@",[defaults objectForKey:@"MenuMode"]);
+    
+    NSNumber * menuMode = [defaults objectForKey:@"MenuMode"];
+    
+    if ([menuMode boolValue]) {
+        [self.leftViewController setProviderMenu];
+    }
+    else
+    {
+        [self.leftViewController setConsumerMenu];
+    }
     
     [self.leftViewController openMenu];
 

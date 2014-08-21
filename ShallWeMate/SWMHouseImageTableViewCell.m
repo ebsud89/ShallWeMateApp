@@ -31,12 +31,31 @@
     [self refreshData];
 }
 
+- (void) refreshUI
+{
+    NSLog(@"~~~~~~~~~~============================");
+}
+
+- (void) setIsMainTableView:(BOOL)isMainTableView with:(HouseData *)houseData
+{
+    if (isMainTableView) {
+        self.houseLabel.text = houseData.roomAll;
+        self.peopleLabel.text = houseData.roomEmpty;
+        self.costLabel.text = houseData.monthlyRentCost;
+        
+        
+//        self.heartLabel.text = houseData
+        [self hiddenSubView:NO];
+        
+    }
+}
+
 - (void) setTitleText:(NSString *)text
 {
     self.titleLabel.text = text;
 }
 
-- (void) setEnabledLikeIt
+- (void) setEnabledLikeIt:(NSNumber *) like with:(BOOL)isHeartImg
 {
     UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(longPress:)];
     

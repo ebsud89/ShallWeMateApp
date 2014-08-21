@@ -53,7 +53,9 @@
 - (void) oneFingerTwoTaps;
 - (void) oneFingerOneTap;
 - (void) setEnabledBadgeView;
-- (void) setEnabledLikeIt;
+- (void) setEnabledLikeIt:(NSNumber *) like with:(BOOL)isHeartImg;
 
 - (void) setTitleText:(NSString *)text;
+- (void) refreshUI;
+- (void) setIsMainTableView:(BOOL)isMainTableView with:(HouseData *)houseData;
 @end

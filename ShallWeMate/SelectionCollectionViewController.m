@@ -104,7 +104,7 @@ UIImageView *optionOn;
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([viewController isEqual:@"lifeStyle"]) {
-        return CGSizeMake(86, 108);
+        return CGSizeMake(86,108);
     }else if ([viewController isEqual:@"enableOptions"]) {
         return CGSizeMake(60,68);
     }else if ([viewController isEqual:@"enableRoomsMore"]) {

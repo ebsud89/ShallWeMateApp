@@ -62,14 +62,24 @@
 //    
 //    vc.memberData = memberData;
 //    [self.view addSubview:vc.view];
+    NSLog(@"Clicked Button");
+
+    [self showLayer:@"MESSAGE TO SHOW"];
     
-    UIView *overlayView = [[UIView alloc]initWithFrame:self.view.frame];
-    overlayView.backgroundColor = [UIColor blackColor];
+    [self performSelector:@selector(onHideLayer) withObject:nil afterDelay:2.0f];
     
     [self.view addSubview:overlayView];
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    [self sendToMemberData];
     
     [self saveData];
+    
+}
+
+- (void)onHideLayer
+{
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    [self hideLayer];
 }
 
 - (void) saveData
@@ -79,6 +89,45 @@
     [defaults setObject:[mem description] forKey:@"forSearchMemberData"];
     
     [defaults synchronize];
+}
+
+#pragma mark - Netework
+- (void) sendToMemberData
+{
+    NSURL *url = [NSURL URLWithString:[swmServerAddr stringByAppendingString:@"comm/CompareWithRoom"]];
+    NSLog(@"URL : %@", url);
+    NSLog(@"port : %d", [[url port] intValue]);
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    
+    // *data 에 Member 정보에 대한 JSON string 담으면 됨
+//    NSString *data = @"rid=135";
+    SWMMember *mem = [self.memberData exportToSWMMember];
+    NSString *data = [mem description];
+    NSLog(@"%@", data);
+    [request setHTTPMethod:@"POST"];
+    [request setHTTPBody:[data dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    [conn start];
+}
+
+- (void)connection:(NSURLConnection *)connection
+didReceiveResponse:(NSURLResponse *)response
+{
+    NSLog(@"%s", __FUNCTION__);
+    
+}
+
+- (void)connection:(NSURLConnection *)connection
+    didReceiveData:(NSData *)data
+{
+    NSLog(@"%s", __FUNCTION__);
+    // 여기서 *data 가 연결 후에 받은 matched Room 에 대한 JSON 형태
+    // getAllRoom 에서 받은 거 처럼 똑같이 처리하면 될거 같아.
+    
+    NSLog(@"%@", data);
+    
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection

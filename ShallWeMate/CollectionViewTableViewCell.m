@@ -119,8 +119,9 @@
     
     NSString *imageArr = [self.imageArray objectAtIndex:indexPath.row];
     UIImage *badgeImg = [UIImage imageNamed:imageArr];
-    UIImageView *imView = [[UIImageView alloc]initWithFrame:cell.frame];
-    imView.image = badgeImg;
+    UIImageView *imView = [[UIImageView alloc] initWithImage:badgeImg];
+    imView.frame = CGRectMake(imView.frame.origin.x, imView.frame.origin.y, cell.contentView.frame.size.width, cell.contentView.frame.size.height);
+    
 
     NSLog(@"%@", imageArr);
     [cell addSubview:imView];

@@ -626,7 +626,8 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="하우스에서 함께 생활하게 될 메이트 프로필입니다. 나와 잘 맞는 메이트인지 살펴보세요." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="306" translatesAutoresizingMaskIntoConstraints="NO" id="9qy-sS-Yze">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="하우스에서 함께 생활하게 될 메이트 프로필입니다.
+나와 잘 맞는 메이트인지 살펴보세요." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="306" translatesAutoresizingMaskIntoConstraints="NO" id="9qy-sS-Yze">
                                 <rect key="frame" x="9" y="74" width="306" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="15"/>
@@ -2735,7 +2736,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="나의 라이프 스타일에 맞는 키워드를  최대 6가지 선택해주세요." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="300" translatesAutoresizingMaskIntoConstraints="NO" id="yRL-lf-dPl">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="나의 라이프 스타일에 맞는 키워드를 
+최대 6가지 선택해주세요." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="300" translatesAutoresizingMaskIntoConstraints="NO" id="yRL-lf-dPl">
                                 <rect key="frame" x="10" y="74" width="300" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="15"/>
@@ -3524,23 +3526,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="0ix-vw-kbF"/>
-        <segue reference="Z25-TP-tOv"/>
-        <segue reference="ecy-rn-Qf5"/>
-        <segue reference="bUt-e8-Gk5"/>
-        <segue reference="Vvz-o6-XPJ"/>
-        <segue reference="3lD-wT-Dzk"/>
-        <segue reference="hNJ-XZ-mEI"/>
-        <segue reference="DT6-c8-I3T"/>
-        <segue reference="W3a-6y-wFg"/>
-        <segue reference="hjA-Lq-4W6"/>
-        <segue reference="0aj-dc-33W"/>
-        <segue reference="WFI-ea-8MN"/>
-        <segue reference="O1e-az-zhH"/>
-        <segue reference="2yt-mZ-pqG"/>
-        <segue reference="QwW-HK-cPO"/>
-        <segue reference="JMl-td-baN"/>
-        <segue reference="vqb-pa-UaW"/>
-        <segue reference="bUS-hJ-vfD"/>
+        <segue reference="KpW-0g-yCf"/>
+        <segue reference="NwH-dz-hZa"/>
+        <segue reference="pm8-ON-Tk0"/>
     </inferredMetricsTieBreakers>
 </document>
