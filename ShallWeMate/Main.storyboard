@@ -2060,7 +2060,6 @@
                                 </state>
                                 <connections>
                                     <action selector="backButtonClicked:" destination="rXP-Xg-RRJ" eventType="touchUpInside" id="W8n-1P-rG0"/>
-                                    <segue destination="zlM-Cc-A8A" kind="modal" id="hjA-Lq-4W6"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -2224,7 +2223,6 @@
                                 </state>
                                 <connections>
                                     <action selector="backButtonClicked:" destination="iFg-FY-xss" eventType="touchUpInside" id="dkh-5J-JtA"/>
-                                    <segue destination="rXP-Xg-RRJ" kind="push" id="W3a-6y-wFg"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -2691,7 +2689,6 @@
                                 </state>
                                 <connections>
                                     <action selector="nextButtonClicked:" destination="9kh-fP-wRD" eventType="touchUpInside" id="qAF-js-Tii"/>
-                                    <segue destination="dkK-NB-Sur" kind="push" id="Cfo-5H-BAk"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -2793,7 +2790,6 @@
                                 </state>
                                 <connections>
                                     <action selector="nextButtonClicked:" destination="IeZ-zF-6dV" eventType="touchUpInside" id="uyB-py-g6e"/>
-                                    <segue destination="9kh-fP-wRD" kind="push" id="xHr-Kw-LPW"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -3530,12 +3526,11 @@
     <inferredMetricsTieBreakers>
         <segue reference="oPl-86-bfa"/>
         <segue reference="QwW-HK-cPO"/>
+        <segue reference="VIp-WF-fBK"/>
         <segue reference="WVT-sG-fr3"/>
         <segue reference="zTb-Iy-ER6"/>
         <segue reference="Vvz-o6-XPJ"/>
         <segue reference="3lD-wT-Dzk"/>
         <segue reference="NwH-dz-hZa"/>
-        <segue reference="W3a-6y-wFg"/>
-        <segue reference="hjA-Lq-4W6"/>
     </inferredMetricsTieBreakers>
 </document>
