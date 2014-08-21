@@ -13,5 +13,7 @@
 
 @property (strong, nonatomic) NSDictionary *subwayDictionary;
 @property (strong, nonatomic) IBOutlet UILabel *subwayStationName;
+@property (weak, nonatomic) IBOutlet UILabel *how;
+@property (weak, nonatomic) IBOutlet UILabel *minutes;
 
 @end

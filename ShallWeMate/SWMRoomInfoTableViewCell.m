@@ -11,7 +11,7 @@
 @implementation SWMRoomInfoTableViewCell
 + (CGFloat) getHeight
 {
-    return 110.0f;
+    return 90.0f;
 }
 
 - (void)awakeFromNib
@@ -25,5 +25,28 @@
 
     // Configure the view for the selected state
 }
+- (void) setWantN:(NSString *)wantN :(NSString*)allN
+{
+    NSString *want = wantN;
+    self.wantN.text = want;
+    
+    NSString *str = allN;
+    self.allN.text = str;
+    
+}
+- (void) setAllN:(NSString *)allN
+{
+    NSString *str = allN;
+    self.allN.text = str;
+    
+}
 
+- (void) setMemN:(UILabel *)memN {
+    NSString *want = memN;
+    self.memN.text = want;
+}
+-(void) setWomenN:(UILabel *)womenN {
+    NSString *want = womenN;
+    self.womenN.text = want;
+}
 @end

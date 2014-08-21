@@ -54,10 +54,10 @@
 }
 
 
-- (IBAction)finishButtonClicked:(id)sender {
-    
-    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
-}
+//- (IBAction)finishButtonClicked:(id)sender {
+//    
+//    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+//}
 
 
 
@@ -148,8 +148,8 @@
             NSLog(@"hh");
             cell = [CollectionViewTableViewCell collectionViewTableViewCell];
         }
-        [cell setTitle:@"xkdlxmfxkdlfxmf"];
-        
+        [cell setTitle:@"라이프 스타일 키워드"];
+        [cell setLifestyle:_houseData.enableLifeStyle];
         return cell;
     }
     else if (indexPath.row == 5)
@@ -160,8 +160,8 @@
             NSLog(@"hh");
             cell = [CollectionViewTableViewCell collectionViewTableViewCell];
         }
-        [cell setTitle:@"xkdlxmfxkdlfxmf"];
-        
+        [cell setTitle:@"하우스 룰"];
+        [cell setLifestyle:_houseData.enableHouseRoles];
         return cell;
     }
     else

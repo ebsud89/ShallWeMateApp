@@ -10,4 +10,8 @@
 
 @interface SWMRoomInfoTableViewCell : UITableViewCell
 + (CGFloat) getHeight;
+@property (weak, nonatomic) IBOutlet UILabel *wantN;
+@property (weak, nonatomic) IBOutlet UILabel *allN;
+@property (weak, nonatomic) IBOutlet UILabel *memN;
+@property (weak, nonatomic) IBOutlet UILabel *womenN;
 @end

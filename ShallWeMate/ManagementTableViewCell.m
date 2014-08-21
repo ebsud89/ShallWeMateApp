@@ -12,7 +12,7 @@
 
 + (CGFloat) getHeight
 {
-    return 180.0f;
+    return 115.0f;
 }
 
 + (ManagementTableViewCell*) managementTableViewCell

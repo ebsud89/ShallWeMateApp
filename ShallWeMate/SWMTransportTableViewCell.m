@@ -33,4 +33,16 @@
     
 }
 
+- (void) setHow:(NSString *)how
+{
+    NSString *str = how;
+    self.how.text = str;
+    
+}
+- (void) setMinutes:(NSString *)minutes
+{
+    NSString *str = minutes;
+    self.minutes.text = str;
+    
+}
 @end

@@ -15,7 +15,8 @@
 #import "SWMRoomInfoTableViewCell.h"
 #import "SWMQAndATableViewCell.h"
 #import "SWMNetwork.h"
-#import "SWMAppDelegate.h"
+#import "SWMManagementTableViewCell.h"
+#import "SWMTransportTableViewCell.h"
 
 @interface SWMMainDetailViewController ()
 
@@ -45,14 +46,14 @@ const int inervalValue = 60;
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    SWMAppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
     
     [self.contentTableView registerNib:[UINib nibWithNibName:@"TitleTableViewCell" bundle:nil] forCellReuseIdentifier:@"titleTableViewCell"];
     [self.contentTableView registerNib:[UINib nibWithNibName:@"ManagementTableViewCell" bundle:nil] forCellReuseIdentifier:@"managementTableViewCell"];
     [self.contentTableView registerNib:[UINib nibWithNibName:@"CollectionViewTableViewCell" bundle:nil] forCellReuseIdentifier:@"collectionViewTableViewCell"];
-    
+    [self.contentTableView registerNib:[UINib nibWithNibName:@"SWMManagementTableViewCell" bundle:nil] forCellReuseIdentifier:@"mcollectionViewTableViewCell"];
     [self.contentTableView registerNib:[UINib nibWithNibName:@"SWMImageScrollTableViewCell" bundle:nil] forCellReuseIdentifier:@"imageScrollViewTableViewCell"];
     
+    [self.contentTableView registerNib:[UINib nibWithNibName:@"SWMTransportTableViewCell" bundle:nil] forCellReuseIdentifier:@"TransportTableViewCell"];
     [self.contentTableView registerNib:[UINib nibWithNibName:@"SWMRoomInfoTableViewCell" bundle:nil] forCellReuseIdentifier:@"RoomInfoTableViewCell"];
     [self.contentTableView registerNib:[UINib nibWithNibName:@"SWMQAndATableViewCell" bundle:nil] forCellReuseIdentifier:@"QAndATableViewCell"];
     
@@ -297,11 +298,11 @@ const int inervalValue = 60;
         return [ManagementTableViewCell getHeight];
     }
     else if (indexPath.row == 3){
-        return [CollectionViewTableViewCell getHeight];
+        return [SWMManagementTableViewCell getHeight];
     }
     else if (indexPath.row == 4)
     {
-        return [SWMRoomInfoTableViewCell getHeight];
+        return [SWMTransportTableViewCell getHeight];
     }
     else if (indexPath.row == 5)
     {
@@ -317,7 +318,7 @@ const int inervalValue = 60;
         return [SWMQAndATableViewCell getHeight];
     }
     else
-        return 100.0f; //cell for comments, in reality the height has to be adjustable
+        return 90.0f; //cell for comments, in reality the height has to be adjustable
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -341,6 +342,7 @@ const int inervalValue = 60;
         
         [cell refreshData];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//        cell 
         return cell;
     }
     else if (indexPath.row ==1)
@@ -351,8 +353,8 @@ const int inervalValue = 60;
             cell = [TitleTableViewCell titleTableViewCell];
         }
         
-        [cell setTitle:@"디저트를 좋아하는 사람들의 하우스"];
-        [cell setContent:@"진짜 재밌고, 유쾌한 사람들이 모여 사는 쉐어하우스입니다. 많은 관심을 가지고 오세요"];
+        [cell setTitle:_houseData.title];//@"디저트를 좋아하는 사람들의 하우스"];
+        [cell setContent:_houseData.description];//@"진짜 재밌고, 유쾌한 사람들이 모여 사는 쉐어하우스입니다. 많은 관심을 가지고 오세요"];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
@@ -368,26 +370,32 @@ const int inervalValue = 60;
     }
     else if (indexPath.row == 3)
     {
-        CollectionViewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"collectionViewTableViewCell"];
+        SWMManagementTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"mcollectionViewTableViewCell"];
         
         if (cell == nil) {
             NSLog(@"hh");
-            cell = [CollectionViewTableViewCell collectionViewTableViewCell];
+            cell = [SWMManagementTableViewCell collectionViewTableViewCell];
         }
         [cell setTitle:@"관리비 포함 사항"];
+        [cell setLifestyle:_houseData.enableManagementStates];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        appDelegate.data = @"관리비";
         return cell;
     }
     else if (indexPath.row ==4)
     {
-        SWMRoomInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RoomInfoTableViewCell"];
-        
+        SWMTransportTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TransportTableViewCell"];
+        [cell setSubwayDictionary:_houseData.subwayDic];
+        [cell setHow:_houseData.transportation];
+        [cell setMinutes:_houseData.transportationMinutes];
         return cell;
     }
     else if (indexPath.row == 5)
     {
         SWMRoomInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RoomInfoTableViewCell"];
+        [cell setWomenN:_houseData.wantWomenNum];
+        [cell setMemN:_houseData.wantMenNum];
+        [cell setWantN:_houseData.roomEmpty];
+        [cell setAllN:_houseData.roomAll];
         
         return cell;
     }
@@ -395,26 +403,28 @@ const int inervalValue = 60;
     {
         CollectionViewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"collectionViewTableViewCell"];
         
-        appDelegate.data = @"공간구성";
         if (cell == nil) {
             NSLog(@"클남~~~");
             cell = [CollectionViewTableViewCell collectionViewTableViewCell];
         }
         [cell setTitle:@"공간구성"];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        [cell setLifestyle:_houseData.enableRoomsMore];
+        appDelegate.data = @"room";
         return cell;
     }
     else if (indexPath.row == 7)
     {
         CollectionViewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"collectionViewTableViewCell"];
         
-        appDelegate.data = @"옵션";
         if (cell == nil) {
             NSLog(@"hh");
             cell = [CollectionViewTableViewCell collectionViewTableViewCell];
         }
         [cell setTitle:@"제공되는 옵션"];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        [cell setLifestyle:_houseData.enableOptions];
+        appDelegate.data = @"option";
         return cell;
     }
     else if (indexPath.row == 8)
@@ -507,6 +517,11 @@ const int inervalValue = 60;
 {
     cell.contentView.backgroundColor = [UIColor whiteColor];
 }
+
+- (IBAction)backButtonClicked:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 
 /*
  #pragma mark - Navigation

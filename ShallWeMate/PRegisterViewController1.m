@@ -103,13 +103,13 @@
     CGRect rect = self.view.frame;
     if (movedUp)
     {
-        rect.origin.y -= 120;
-        rect.size.height += 120;
+        rect.origin.y -= 200;
+        rect.size.height += 200;
     }
     else
     {
-        rect.origin.y += 120;
-        rect.size.height -= 120;
+        rect.origin.y += 200;
+        rect.size.height -= 200;
     }
     
     self.view.frame = rect;

@@ -122,6 +122,8 @@
     }
     else if (indexPath.row ==1)
     {
+        SWMAppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
+        
         CollectionViewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"collectionViewTableViewCell"];
         
         if (cell == nil) {
@@ -131,7 +133,7 @@
         [cell setTitle:@"라이프 스타일 키워드"];
         [cell setTintColor:[UIColor darkGrayColor]];
         [cell setLifestyle:_memberData.enableLifeStyle];
-        
+        appDelegate.data = @"lifestyle";
         NSLog(@"%@", _memberData.enableLifeStyle );
         return cell;
     }

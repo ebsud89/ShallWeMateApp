@@ -1,28 +1,31 @@
 //
-//  CollectionViewTableViewCell.m
-//  start
+//  SWMManagementTableViewController.m
+//  ShallWeMate
 //
-//  Created by 컴049 on 2014. 8. 1..
-//  Copyright (c) 2014년 컴049. All rights reserved.
+//  Created by 컴038 on 8/20/14.
+//  Copyright (c) 2014 컴038. All rights reserved.
 //
 
-#import "CollectionViewTableViewCell.h"
+#import "SWMManagementTableViewCell.h"
 #import "SWMCollectionViewCell4TableViewCell.h"
 
-@implementation CollectionViewTableViewCell
+@interface SWMManagementTableViewCell ()
 
+@end
+
+@implementation SWMManagementTableViewCell
 + (CGFloat) getHeight
 {
-    return 295.0f;
+    return 115.0f;
     
     
 }
 
 
 
-+ (CollectionViewTableViewCell*) collectionViewTableViewCell
++ (SWMManagementTableViewCell*) collectionViewTableViewCell
 {
-    CollectionViewTableViewCell *cell = [[[NSBundle mainBundle] loadNibNamed:@"CollectionViewTableViewCell" owner:self options:nil] objectAtIndex:0];
+    SWMManagementTableViewCell *cell = [[[NSBundle mainBundle] loadNibNamed:@"SWMManagementTableViewCell" owner:self options:nil] objectAtIndex:0];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
@@ -31,7 +34,7 @@
 - (void)awakeFromNib
 {
     // Initialization code
-
+    
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     [self.collectionView setBackgroundColor:[UIColor clearColor]];
@@ -52,42 +55,38 @@
     self.titleLabel.text = title;
 }
 
-- (void) setLifestyle:(NSMutableArray *)lifestyle
-{
-    self.imageArray = [[NSMutableArray alloc]init];
-    for (int i=0; i<[lifestyle count]; i++) {
-        NSNumber *num = [lifestyle objectAtIndex:i];
-        if ([num boolValue]) {
-            [self.imageArray addObject:[NSString stringWithFormat:@"lifestyle_0%d.png",i+1]];
-        }
-    }
-    
-    if ([self.imageArray count]<6) {
-        for (int i= (int)[self.imageArray count]; i<6; i++) {
-            [self.imageArray addObject:@""];
-        }
-    }
-    
-    [self.collectionView reloadData];
-}
+
 
 // 컬렉션 크기
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
+        return CGSizeMake(50, 58);
   
-    SWMAppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
-    if ([appDelegate.data isEqualToString:@"lifestyle"]) {
-        return CGSizeMake(84, 84);
-    } else {
-        return CGSizeMake(70, 70);
-    }
 }
 
+- (void) setManagements:(NSMutableArray *)managements
+{
+    self.imageArray = [[NSMutableArray alloc]init];
+    for (int i=0; i<[managements count]; i++) {
+        NSNumber *num = [managements objectAtIndex:i];
+        if ([num boolValue]) {
+            [self.imageArray addObject:[NSString stringWithFormat:@"관리비_%d.png",i+1]];
+        }
+    }
+    
+    //    if ([self.imageArray count]<6) {
+    //        for (int i= (int)[self.imageArray count]; i<6; i++) {
+    //            [self.imageArray addObject:@""];
+    //        }
+    //    }
+    
+    [self.collectionView reloadData];
+}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
-
+    
     // Configure the view for the selected state
     
 }
@@ -121,11 +120,11 @@
     UIImage *badgeImg = [UIImage imageNamed:imageArr];
     UIImageView *imView = [[UIImageView alloc]initWithFrame:cell.frame];
     imView.image = badgeImg;
-
+    
     NSLog(@"%@", imageArr);
     [cell addSubview:imView];
-
-//    cell.badgeImageView = imView;
+    
+    //    cell.badgeImageView = imView;
     /* end of subclass-based cells block */
     
     // Return the cell
