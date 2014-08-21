@@ -13,7 +13,7 @@
 
 + (CGFloat) getHeight
 {
-    return 220.0f;
+    return 240.0f;
     
     
 }

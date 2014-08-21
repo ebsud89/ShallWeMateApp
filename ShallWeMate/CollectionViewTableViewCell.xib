@@ -21,7 +21,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="fO2-Fk-j01">
-                        <rect key="frame" x="29" y="55" width="262" height="153"/>
+                        <rect key="frame" x="14" y="55" width="292" height="217"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="3" id="4ZA-gA-N41">
                             <size key="itemSize" width="70" height="70"/>

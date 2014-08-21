@@ -57,7 +57,7 @@
         return 138.0f;
     }
     else if(indexPath.row == 1){
-        return 200.0f;
+        return 220.0f;
     }
     else if(indexPath.row == 2){
         return 138.0f;

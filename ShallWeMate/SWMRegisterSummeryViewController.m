@@ -217,7 +217,12 @@ didReceiveResponse:(NSURLResponse *)response
     {
         SWMMateInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"swmMateInfoTableViewCell"];
         [cell setAvgAge:_memberData.avgAge];
-//        [cell setGender:_memberData.copy]
+        if ([_memberData.allowsex isEqualToString:@"0"]) {
+            [cell setGender:@"동성만"];
+        } else if ([_memberData.allowsex isEqualToString:@"1"]) {
+            [cell setGender:@"상관없어요"];
+        }
+        
         return cell;
     }
     else if (indexPath.row == 3)
