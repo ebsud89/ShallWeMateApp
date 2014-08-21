@@ -43,7 +43,7 @@
  
 //    self.navigationController.textInputMode = [UITextInputMode activeInputModes];
     
-//    [self fillhouseData];
+    [self fillhouseData];
     
     //text관련
     self.houseTitleTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"쉐어하우스에 이름을 붙여주세요." attributes:@{NSForegroundColorAttributeName:[UIColor colorWithRed:175.0/255.0 green:175.0/255.0 blue:175.0/255.0 alpha:1.0]}];
@@ -462,6 +462,7 @@
         PRegisterViewController2 *vc = [segue destinationViewController];
         vc.houseData = _housedata;
         [self fillhouseData];
+        [self.housedata printAll];
         
     }
     else if ([[segue identifier] isEqualToString:@"brandRegister1"])

@@ -93,6 +93,7 @@
     if ([[segue identifier] isEqualToString:@"goNext"])
     {
         
+        [self.houseData printAll];
         PRegisterViewController5 *vc = [segue destinationViewController];
         vc.houseData = houseData;
     }

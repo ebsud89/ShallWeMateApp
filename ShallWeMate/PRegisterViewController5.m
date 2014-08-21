@@ -241,6 +241,7 @@
     {
         PRegisterViewController6 *vc = [segue destinationViewController];
         vc.houseData = houseData;
+        [self.houseData printAll];
     }
 }
 

@@ -328,6 +328,7 @@
 //    {
         PSummeryViewController *vc = [segue destinationViewController];
         vc.houseData = self.houseData;
+    [self.houseData printAll];
 //    }
 }
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="jyK-MM-4Jq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="JAB-B7-TYR">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -826,7 +826,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Xds-7s-O12" kind="push" id="3Hi-AA-271"/>
+                                    <segue destination="Xds-7s-O12" kind="push" identifier="goNext" id="3Hi-AA-271"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -977,7 +977,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="lAz-zD-AqY" kind="push" id="O1e-az-zhH"/>
+                                    <segue destination="lAz-zD-AqY" kind="push" identifier="goNext" id="O1e-az-zhH"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -1330,7 +1330,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="hxF-TF-8Q0" kind="push" id="2yt-mZ-pqG"/>
+                                    <segue destination="hxF-TF-8Q0" kind="push" identifier="goNext" id="2yt-mZ-pqG"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -1414,7 +1414,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Q78-95-9EF" kind="push" id="Rp6-aF-lna"/>
+                                    <segue destination="Q78-95-9EF" kind="push" identifier="goNext" id="Rp6-aF-lna"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -1557,7 +1557,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="AZE-DH-IvI" kind="push" id="kj9-dT-Sv0"/>
+                                    <segue destination="AZE-DH-IvI" kind="push" identifier="goNext" id="kj9-dT-Sv0"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -1643,7 +1643,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="qYO-nB-hg4" kind="push" id="YTV-l0-vhJ"/>
+                                    <segue destination="qYO-nB-hg4" kind="push" identifier="goNext" id="YTV-l0-vhJ"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -1818,7 +1818,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="4D1-HB-U6s" kind="push" id="WVT-sG-fr3"/>
+                                    <segue destination="4D1-HB-U6s" kind="push" identifier="goNext" id="WVT-sG-fr3"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -1886,7 +1886,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="deJ-U0-3Xe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3429" y="1779"/>
+            <point key="canvasLocation" x="3497" y="1779"/>
         </scene>
         <!--Register Summery View Controller - 나의 하우스 키워드-->
         <scene sceneID="HRI-Sf-RMl">
@@ -3512,8 +3512,8 @@
         <image name="zzim.png" width="49" height="41"/>
         <image name="다음버튼.png" width="220" height="78"/>
         <image name="다음버튼.png" width="36" height="37"/>
-        <image name="뒤로버튼.png" width="220" height="78"/>
         <image name="뒤로버튼.png" width="36" height="37"/>
+        <image name="뒤로버튼.png" width="220" height="78"/>
         <image name="뒤로버튼1.png" width="220" height="78"/>
         <image name="등록하기.png" width="152" height="39"/>
         <image name="분거리.png" width="217" height="27"/>
@@ -3527,10 +3527,10 @@
         <segue reference="oPl-86-bfa"/>
         <segue reference="QwW-HK-cPO"/>
         <segue reference="VIp-WF-fBK"/>
+        <segue reference="JMl-td-baN"/>
         <segue reference="WVT-sG-fr3"/>
         <segue reference="zTb-Iy-ER6"/>
         <segue reference="Vvz-o6-XPJ"/>
         <segue reference="3lD-wT-Dzk"/>
-        <segue reference="NwH-dz-hZa"/>
     </inferredMetricsTieBreakers>
 </document>
