@@ -569,8 +569,6 @@
 		AEAA197C1999D49F00B5FB8D /* SWMMateInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMMateInfoTableViewCell.h; sourceTree = "<group>"; };
 		AEAA197D1999D49F00B5FB8D /* SWMMateInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMMateInfoTableViewCell.m; sourceTree = "<group>"; };
 		AEAA197E1999D49F00B5FB8D /* SWMMateInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SWMMateInfoTableViewCell.xib; sourceTree = "<group>"; };
-		AEAD76FB19A36BB6004E30B7 /* SWMNSUserDefaultsTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMNSUserDefaultsTool.h; sourceTree = "<group>"; };
-		AEAD76FC19A36BB6004E30B7 /* SWMNSUserDefaultsTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMNSUserDefaultsTool.m; sourceTree = "<group>"; };
 		AEB4BD68199F59FC004343C3 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		AEB4BD6F199F85A0004343C3 /* SWMTransportTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMTransportTableViewCell.h; sourceTree = "<group>"; };
 		AEB4BD70199F85A0004343C3 /* SWMTransportTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMTransportTableViewCell.m; sourceTree = "<group>"; };
@@ -1033,8 +1031,6 @@
 				EB1FDD1419A0082700A7157F /* SWMPushNoti.m */,
 				EB1FDD1919A0090400A7157F /* SWMCodeList.h */,
 				EB1FDD1A19A0090400A7157F /* SWMCodeList.m */,
-				AEAD76FB19A36BB6004E30B7 /* SWMNSUserDefaultsTool.h */,
-				AEAD76FC19A36BB6004E30B7 /* SWMNSUserDefaultsTool.m */,
 			);
 			name = Network;
 			sourceTree = "<group>";
