@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="jyK-MM-4Jq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Ndt-us-WJR">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -203,7 +203,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9LU-Gw-iCz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="319" y="4007"/>
+            <point key="canvasLocation" x="-277" y="4035"/>
         </scene>
         <!--Main Detail View Controller - 살펴보기-->
         <scene sceneID="wwL-8F-fUP">
@@ -309,7 +309,7 @@
                     </connections>
                 </pinchGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="770" y="4007"/>
+            <point key="canvasLocation" x="354" y="4035"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="ADt-F9-OGe">
@@ -529,7 +529,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UH1-WY-KGS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-49" y="4007"/>
+            <point key="canvasLocation" x="-645" y="4035"/>
         </scene>
         <!--Provider Main Detail View Controller-->
         <scene sceneID="elq-nD-eYJ">
@@ -1867,11 +1867,7 @@
                                 </connections>
                             </button>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="ok1.png" id="YYi-Fn-c5N">
-                            <connections>
-                                <segue destination="Ndt-us-WJR" kind="modal" id="zTb-Iy-ER6"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="ok1.png" id="YYi-Fn-c5N"/>
                     </navigationItem>
                     <connections>
                         <outlet property="contentTableView" destination="7H5-ab-eSc" id="C8n-ks-koN"/>
@@ -3526,19 +3522,19 @@
         <segue reference="WFI-ea-8MN"/>
         <segue reference="O1e-az-zhH"/>
         <segue reference="2yt-mZ-pqG"/>
-        <segue reference="JMl-td-baN"/>
         <segue reference="QwW-HK-cPO"/>
+        <segue reference="JMl-td-baN"/>
+        <segue reference="kWY-6E-7nJ"/>
+        <segue reference="hjA-Lq-4W6"/>
+        <segue reference="96X-iH-d6C"/>
+        <segue reference="DT6-c8-I3T"/>
         <segue reference="Vvz-o6-XPJ"/>
-        <segue reference="0ix-vw-kbF"/>
+        <segue reference="3lD-wT-Dzk"/>
+        <segue reference="bUS-hJ-vfD"/>
+        <segue reference="vqb-pa-UaW"/>
         <segue reference="Z25-TP-tOv"/>
+        <segue reference="0ix-vw-kbF"/>
         <segue reference="ecy-rn-Qf5"/>
         <segue reference="bUt-e8-Gk5"/>
-        <segue reference="3lD-wT-Dzk"/>
-        <segue reference="96X-iH-d6C"/>
-        <segue reference="W3a-6y-wFg"/>
-        <segue reference="hjA-Lq-4W6"/>
-        <segue reference="DT6-c8-I3T"/>
-        <segue reference="vqb-pa-UaW"/>
-        <segue reference="bUS-hJ-vfD"/>
     </inferredMetricsTieBreakers>
 </document>

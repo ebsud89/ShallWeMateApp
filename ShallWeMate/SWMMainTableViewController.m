@@ -46,11 +46,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    /*
-     여기서 초기화 ....
-     밑에 소스 코드가 아무 값으로 이루어진 dataSourceArray 만드는 거입니당~
-     여기서 서버에서 받아와서, HouseData타입의 배열을 만들 때 사용하면 됩니다.
-     */
+    
     //navigation bar color
     [[[self navigationController] navigationBar] setTintColor:[UIColor whiteColor]];
     [[[self navigationController] navigationBar] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
@@ -65,9 +61,7 @@
         NSLog(@"\n%@", room);
         HouseData * houseData = [room exportToHouseData];
         [dataSourceArray addObject:houseData];
-        
     }
-    
     
     [self.tableView registerNib:[UINib nibWithNibName:@"SWMHouseImageTableViewCell" bundle:nil] forCellReuseIdentifier:@"houseImageTableViewCell"];
     
@@ -92,8 +86,7 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     NSLog(@"%@",[defaults objectForKey:@"forSearchMemberData"]);
-    
-        [self loadData];
+
 }
 
 
@@ -194,6 +187,7 @@
      HouseData *housedata = [dataSourceArray objectAtIndex:indexPath.row];
      NSLog(@"%@", housedata);
 //     NSLog(@"%d", housedata.title);
+     [cell setIsMainTableView:YES with:housedata];
      [cell setTitleText:housedata.title];
      
      [cell setEnabledBadgeView];
@@ -206,20 +200,6 @@
      
      [cell.contentView addGestureRecognizer:oneFingerOneTap];
      
-     
-
-//     UITapGestureRecognizer *oneFingerTwoTaps =
-//     [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(oneFingerTwoTaps:)] ;
-//     
-//     // Set required taps and number of touches
-//     [oneFingerTwoTaps setNumberOfTapsRequired:2];
-//     [oneFingerTwoTaps setNumberOfTouchesRequired:1];
-//     
-//     // Add the gesture to the view
-//     [cell.imageScrollView addGestureRecognizer:oneFingerTwoTaps];
-
-     
-     // Configure the cell...
      [cell viewWithTag:indexPath.row];
      return cell;
 }
@@ -229,25 +209,19 @@
     SWMHouseImageTableViewCell *myCell = (SWMHouseImageTableViewCell*) cell;
     
     [myCell refreshUI];
+    
+}
+
+-(void) tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    SWMHouseImageTableViewCell *myCell = (SWMHouseImageTableViewCell*) cell;
+    
+    [myCell.menuView dismiss:nil];
 }
 
 - (void) oneFingerTwoTaps:(UISwipeGestureRecognizer *)gestureRecognizer
 {
         NSLog(@"Action : One Finger, Two Taps");
-//    //Get location of the swipe
-//    CGPoint location = [gestureRecognizer locationInView:self.tableView];
-//    
-//    //Get the corresponding index path within the table view
-//    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:location];
-    
-    //Check if index path is valid
-//    if(indexPath)
-//    {
-//        //Get the cell out of the table view
-//        SWMHouseImageTableViewCell *cell = (SWMHouseImageTableViewCell *) [self.tableView cellForRowAtIndexPath:indexPath];
-//        
-//        [cell openBadge];
-//    }
 }
 
 - (void) oneFingerOneTap:(UISwipeGestureRecognizer *)gestureRecognizer
@@ -323,7 +297,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)newIndexPath
 - (IBAction)searchButtonTouched:(id)sender {
     
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
-                                                        message:@"초기하우스 검색설정으로 돌아가서 수정합니다."
+                                                        message:@"초기 하우스 검색설정으로\n돌아가서 수정합니다."
                                                        delegate:self
                                               cancelButtonTitle:@"No"
                                               otherButtonTitles:@"Yes",nil];

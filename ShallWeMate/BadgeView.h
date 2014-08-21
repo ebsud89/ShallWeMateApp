@@ -18,5 +18,5 @@ typedef void (^BadgeViewSelectedBlock)(void);
 - (void)addMenuItemWithTitle:(NSString*)title andIcon:(UIImage*)icon andSelectedBlock:(BadgeViewSelectedBlock)block;
 - (void)show;
 - (void)show:(UIView *)cell;
-
+- (void)dismiss:(id)sender;
 @end
