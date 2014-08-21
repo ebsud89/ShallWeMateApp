@@ -3514,7 +3514,6 @@
         <image name="다음버튼.png" width="220" height="78"/>
         <image name="뒤로버튼.png" width="220" height="78"/>
         <image name="뒤로버튼.png" width="36" height="37"/>
-        <image name="뒤로버튼.png" width="220" height="78"/>
         <image name="뒤로버튼1.png" width="220" height="78"/>
         <image name="등록하기.png" width="152" height="39"/>
         <image name="분거리.png" width="217" height="27"/>
@@ -3531,7 +3530,7 @@
         <segue reference="JMl-td-baN"/>
         <segue reference="WVT-sG-fr3"/>
         <segue reference="zTb-Iy-ER6"/>
-        <segue reference="8DR-tV-pop"/>
+        <segue reference="Vvz-o6-XPJ"/>
         <segue reference="3lD-wT-Dzk"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -16,6 +16,7 @@
 #import "SWMNetwork.h"
 #import "MemberData.h"
 
+
 #define swmServerAddr @"http://54.249.103.4:8080/SWMserver/"
 
 @interface SWMMainTableViewController ()
@@ -229,12 +230,12 @@
     CGPoint location = [gestureRecognizer locationInView:self.tableView];
     
     //Get the corresponding index path within the table view
-    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:location];
+    myIndexPath = [self.tableView indexPathForRowAtPoint:location];
 
     NSLog(@"Action : One Finger, One Taps");
     
 //    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-    NSLog(@"%d 번째 셀이 선택되었습니다.", (int) indexPath.row);
+    NSLog(@"%d 번째 셀이 선택되었습니다.", (int) myIndexPath.row);
     
     [self performSegueWithIdentifier:@"MainTableIdentifier" sender:self];
     
@@ -283,7 +284,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)newIndexPath
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -291,8 +292,20 @@ didSelectRowAtIndexPath:(NSIndexPath *)newIndexPath
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    if ([[segue identifier] isEqualToString:@"MainTableIdentifier"])
+    {
+        SWMMainDetailViewController *vc = [segue destinationViewController];
+        
+        
+        /* 기입한 정보를 다음 뷰로 전달*/
+        vc.houseData = [self.dataSourceArray objectAtIndex:myIndexPath.row];
+        
+        
+    }
+//    MainTableIdentifier
 }
-*/
+
 
 - (IBAction)searchButtonTouched:(id)sender {
     
