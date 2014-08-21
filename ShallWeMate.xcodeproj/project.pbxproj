@@ -221,13 +221,9 @@
 		AEAD771019A37737004E30B7 /* lifestyle_03.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAD770119A37737004E30B7 /* lifestyle_03.png */; };
 		AEAD771119A37737004E30B7 /* lifestyle_04.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAD770219A37737004E30B7 /* lifestyle_04.png */; };
 		AEAD771219A37737004E30B7 /* lifestyle_05.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAD770319A37737004E30B7 /* lifestyle_05.png */; };
-		AEAD771319A37737004E30B7 /* lifestyle_06.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAD770419A37737004E30B7 /* lifestyle_06.png */; };
 		AEAD771419A37737004E30B7 /* lifestyle_07.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAD770519A37737004E30B7 /* lifestyle_07.png */; };
-		AEAD771519A37737004E30B7 /* lifestyle_08.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAD770619A37737004E30B7 /* lifestyle_08.png */; };
 		AEAD771619A37737004E30B7 /* lifestyle_09.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAD770719A37737004E30B7 /* lifestyle_09.png */; };
 		AEAD771719A37737004E30B7 /* lifestyle_10.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAD770819A37737004E30B7 /* lifestyle_10.png */; };
-		AEAD771819A37737004E30B7 /* lifestyle_11.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAD770919A37737004E30B7 /* lifestyle_11.png */; };
-		AEAD771919A37737004E30B7 /* lifestyle_12.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAD770A19A37737004E30B7 /* lifestyle_12.png */; };
 		AEAD771A19A37737004E30B7 /* lifestyle_13.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAD770B19A37737004E30B7 /* lifestyle_13.png */; };
 		AEAD771B19A37737004E30B7 /* lifestyle_14.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAD770C19A37737004E30B7 /* lifestyle_14.png */; };
 		AEAD771C19A37737004E30B7 /* lifestyle_15.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAD770D19A37737004E30B7 /* lifestyle_15.png */; };
@@ -1790,10 +1786,6 @@
 				68AF04E319A3D4C100454AEC /* 가구4_1.png in Resources */,
 				68A98F4419A1E99C009AB3A5 /* 경의.png in Resources */,
 				689ABF5219A08BC90034F30F /* 1호선_수정.png in Resources */,
-				AEAD771319A37737004E30B7 /* lifestyle_06.png in Resources */,
-				AEAD771519A37737004E30B7 /* lifestyle_08.png in Resources */,
-				AEAD771819A37737004E30B7 /* lifestyle_11.png in Resources */,
-				AEAD771919A37737004E30B7 /* lifestyle_12.png in Resources */,
 				68A98F4719A1E99C009AB3A5 /* 분당.png in Resources */,
 				68AF04DE19A3D4C100454AEC /* 가구1_1.png in Resources */,
 				68AF05F319A3D71600454AEC /* 관리비_6.png in Resources */,
