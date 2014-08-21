@@ -80,8 +80,6 @@
 //    [[[self navigationController] navigationBar] setTranslucent:YES];
     
 //    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"yourimage.png"]];
-    UIBarButtonItem * item = [[UIBarButtonItem alloc] initWithCustomView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"뒤로버튼1.png"]]];
-    self.navigationItem.leftBarButtonItem = item;
     [self initScrollView];
     [self refreshHouseData];
 }
@@ -118,9 +116,9 @@
     
 }
 
-- (IBAction)backButtonClicked:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
-}
+//- (IBAction)backButtonClicked:(id)sender {
+//    [self.navigationController popViewControllerAnimated:YES];
+//}
 
 - (void)keyboardWillShow:(NSNotification *)notification
 
@@ -227,18 +225,20 @@
 
 - (void) initScrollView
 {
-    self.houseImageScrollView.scrollsToTop = YES;
+//    self.houseImageScrollView.scrollsToTop = YES;
+//    houseImageScrollView.directionalLockEnabled = YES;
+//    [self.houseImageScrollView setContentOffset:CGPointZero animated:YES];
     NSArray *subViews = [houseImageScrollView subviews];
     if (subViews != nil) {
         for (UIView *subView in subViews) {
             [subView removeFromSuperview];
         }
     }
-    
+//    houseImageScrollView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"photo2.png"]];
     
     int count = (int) [self.assets count];
     
-    
+    CGSize sacleSize = CGSizeMake(320, 210);
     for (int i=0; i<count; i++) {
         CGRect frame;
         frame.origin.x = houseImageScrollView.frame.size.width*i;
@@ -254,29 +254,39 @@
         UIImageView *imageView = [[UIImageView alloc] initWithImage:myImage];
         imageView.frame = frame;
         [houseImageScrollView addSubview:imageView];
+        NSLog(@"%f, %f", imageView.frame.origin.x, imageView.frame.origin.y);
     }
+    NSLog(@"size %f", houseImageScrollView.frame.size);
+//
+//    self.addPhotoBtn.frame = CGRectMake(320*count, self.addPhotoBtn.frame.origin.y, self.addPhotoBtn.frame.size.width, self.addPhotoBtn.frame.size.height);
+    self.addPhotoBtn.frame = CGRectMake(320*count, 0, 320, 210);
     
-//    self.addPhotoBtn.frame = CGRectMake(0, 138, 320, 64);
-    self.addPhotoBtn.frame = CGRectMake(0, 0, 320, 64);
-    
-    UIImage * image = [UIImage imageNamed:@"photo.png"];
 //    CGSize sacleSize = CGSizeMake(320, 210);
 //    UIGraphicsBeginImageContextWithOptions(sacleSize, NO, 0.0);
 //    [image drawInRect:CGRectMake(0, 0, sacleSize.width, sacleSize.height)];
 //    UIImage * resizedImage = UIGraphicsGetImageFromCurrentImageContext();
 //    UIGraphicsEndImageContext();
     
-    UIImage* squareImage = [image resizedImageByMagick: @"320x210#"];
+
+//    [self.addPhotoBtn setBackgroundImage:squareImage forState:UIControlStateNormal];
     
-    [self.addPhotoBtn setBackgroundImage:squareImage forState:UIControlStateNormal];
     
-//    [/*houseImageScrollView*/self.view addSubview:self.addPhotoBtn];
+//    if (count == 0) {
+//    [/*houseImageScrollView*/self.view addSubview:self.a	ddPhotoBtn];
      [houseImageScrollView addSubview:self.addPhotoBtn];
-    
+//    }
     houseImageScrollView.contentSize = CGSizeMake(houseImageScrollView.frame.size.width * (self.assets.count+1), houseImageScrollView.frame.size.height);
     
+    NSLog(@"%f , %f", houseImageScrollView.contentSize.width, houseImageScrollView.contentSize.height   );
+    
     [self.houseImageScrollView reloadInputViews];
-    [self.houseImageScrollView setContentOffset:CGPointZero animated:YES];
+//    if (count == 0) {
+    
+//        [self.houseImageScrollView setContentOffset:CGPointZero animated:YES];
+//    } else {
+//        
+//        [self.houseImageScrollView setContentOffset:CGPointMake(0, 64) animated:YES];
+//    }
 }
 
 
