@@ -2056,7 +2056,6 @@
                                 </state>
                                 <connections>
                                     <action selector="backButtonClicked:" destination="rXP-Xg-RRJ" eventType="touchUpInside" id="W8n-1P-rG0"/>
-                                    <segue destination="zlM-Cc-A8A" kind="modal" id="hjA-Lq-4W6"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -2220,7 +2219,6 @@
                                 </state>
                                 <connections>
                                     <action selector="backButtonClicked:" destination="iFg-FY-xss" eventType="touchUpInside" id="dkh-5J-JtA"/>
-                                    <segue destination="rXP-Xg-RRJ" kind="push" id="W3a-6y-wFg"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -2687,7 +2685,6 @@
                                 </state>
                                 <connections>
                                     <action selector="nextButtonClicked:" destination="9kh-fP-wRD" eventType="touchUpInside" id="qAF-js-Tii"/>
-                                    <segue destination="dkK-NB-Sur" kind="push" id="Cfo-5H-BAk"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -2789,7 +2786,6 @@
                                 </state>
                                 <connections>
                                     <action selector="nextButtonClicked:" destination="IeZ-zF-6dV" eventType="touchUpInside" id="uyB-py-g6e"/>
-                                    <segue destination="9kh-fP-wRD" kind="push" id="xHr-Kw-LPW"/>
                                 </connections>
                             </button>
                         </barButtonItem>
