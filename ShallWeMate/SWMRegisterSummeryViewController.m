@@ -67,7 +67,13 @@
 
     [self showLayer:@"MESSAGE TO SHOW"];
     
-    [self performSelector:@selector(onHideLayer) withObject:nil afterDelay:2.0f];
+    [self performSelector:@selector(onHideLayer) withObject:nil afterDelay:5.0f];
+    
+    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+    
+    NSNumber *mode = [NSNumber numberWithBool:YES];
+    [defaults setObject:mode forKey:@"AppMode"];
+
     
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     [self sendToMemberData];
@@ -194,6 +200,7 @@ didReceiveResponse:(NSURLResponse *)response
         [cell setSecurityCostMaxText:_memberData.securityCost];
         [cell setMonthlyCostMaxText:_memberData.monthlyRentCost];
         [cell setSearchLocationText:_memberData.nearSubwayStation];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
     else if (indexPath.row ==1)
@@ -209,6 +216,7 @@ didReceiveResponse:(NSURLResponse *)response
         [cell setTitle:@"라이프 스타일 키워드"];
         [cell setTintColor:[UIColor darkGrayColor]];
         [cell setLifestyle:_memberData.enableLifeStyle];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         appDelegate.data = @"lifestyle";
         NSLog(@"%@", _memberData.enableLifeStyle );
         return cell;
@@ -222,7 +230,7 @@ didReceiveResponse:(NSURLResponse *)response
         } else if ([_memberData.allowsex isEqualToString:@"1"]) {
             [cell setGender:@"상관없어요"];
         }
-        
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
     else if (indexPath.row == 3)
@@ -230,6 +238,7 @@ didReceiveResponse:(NSURLResponse *)response
         SWMHouseRoleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"swmHouseRoleTableViewCell"];
         [cell setHouseRule:_memberData.enableHouseRoles];
         NSLog(@"%@", _memberData.enableHouseRoles);
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
     else

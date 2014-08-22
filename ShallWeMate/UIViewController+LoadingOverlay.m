@@ -31,9 +31,9 @@
     /* Add LayerView */
     [self.view addSubview:layer];
     
-    FLAnimatedImage *myLoadingImage = [[FLAnimatedImage alloc] initWithAnimatedGIFData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ladingGIF1" ofType:@"gif"]]];
+    FLAnimatedImage *myLoadingImage = [[FLAnimatedImage alloc] initWithAnimatedGIFData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"NowMatching" ofType:@"gif"]]];
     
-    FLAnimatedImageView *myImageView = [[FLAnimatedImageView alloc]initWithFrame:CGRectMake(10, 200, 300, 150)];
+    FLAnimatedImageView *myImageView = [[FLAnimatedImageView alloc]initWithFrame:CGRectMake(0, 200, 320, 180)];
     
     myImageView.animatedImage = myLoadingImage;
     myImageView.alpha = 0.0f;

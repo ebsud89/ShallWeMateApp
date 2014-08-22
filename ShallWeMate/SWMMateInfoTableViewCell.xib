@@ -43,6 +43,7 @@
                     </label>
                 </subviews>
             </tableViewCellContentView>
+            <color key="backgroundColor" red="0.96862745100000003" green="0.95294117649999999" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="avgAgeLabel" destination="8l8-MH-uuP" id="14X-H3-zKW"/>
                 <outlet property="genderLabel" destination="g3E-uX-nD6" id="K0a-0f-y1J"/>

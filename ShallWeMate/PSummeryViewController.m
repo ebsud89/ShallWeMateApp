@@ -15,6 +15,8 @@
 #import "SWMManagementTableViewCell.h"
 #import "SWMRoom.h"
 
+#import "UIViewController+LoadingOverlay.h"
+
 #define swmServerAddr @"http://54.249.103.4/SWMserver"
 #define swmServerAddrLocal @"http://54.249.103.4/SWMserver"
 
@@ -235,16 +237,27 @@
 - (IBAction)finishedClicked:(id)sender {
     
     
-//    
-//    [self showLayer:@"MESSAGE TO SHOW"];
-//    
-//    [self performSelector:@selector(onHideLayer) withObject:nil afterDelay:2.0f];
-//    
-//    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    [self sendToRoomData];
-//
-//    [self saveData];
     
+    
+    [self showLayer:@"MESSAGE TO SHOW"];
+    
+    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+    
+    NSNumber *mode = [NSNumber numberWithBool:NO];
+    [defaults setObject:mode forKey:@"AppMode"];
+    
+    [self performSelector:@selector(onHideLayer) withObject:nil afterDelay:5.0f];
+    
+    [self sendToRoomData];
+    
+
+}
+
+
+- (void)onHideLayer
+{
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    [self hideLayer];
 }
 
 #pragma mark - Network

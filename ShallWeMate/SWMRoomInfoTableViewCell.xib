@@ -79,6 +79,7 @@
                     </imageView>
                 </subviews>
             </tableViewCellContentView>
+            <color key="backgroundColor" red="0.96862745100000003" green="0.95294117649999999" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="allN" destination="gK2-D4-EAa" id="zMi-2v-YVo"/>
                 <outlet property="memN" destination="jAv-wF-XR1" id="Eft-8A-cqF"/>

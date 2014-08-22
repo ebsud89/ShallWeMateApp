@@ -46,15 +46,15 @@
 //    houseRule
     NSNumber *num = [houseRule objectAtIndex:0];
     if ([num boolValue]) {
-        self.firstBtn.text = @"원하지 않아요";
+        self.firstBtn.text = @"가능해요";
     }
     else
     {
-        self.firstBtn.text = @"가능해요";
+        self.firstBtn.text = @"원하지 않아요";
     }
     
     NSNumber *num2 = [houseRule objectAtIndex:1];
-    if ([num2 boolValue]) {
+    if (![num2 boolValue]) {
         self.secondBtn.text = @"싫어요";
     }
     else
@@ -63,7 +63,7 @@
     }
     
     NSNumber *num3 = [houseRule objectAtIndex:2];
-    if ([num3 boolValue]) {
+    if (![num3 boolValue]) {
         self.thirdBtn.text = @"중요치 않아요";
     }
     else
@@ -72,7 +72,7 @@
     }
     
     NSNumber *num4 = [houseRule objectAtIndex:3];
-    if ([num4 boolValue]) {
+    if (![num4 boolValue]) {
         self.fifthBtn.text = @"싫어요";
     }
     else
@@ -81,7 +81,7 @@
     }
     
     NSNumber *num5 = [houseRule objectAtIndex:4];
-    if ([num5 boolValue]) {
+    if (![num5 boolValue]) {
         self.sixBtn.text = @"싫어요";
     }
     else

@@ -97,6 +97,10 @@ UIImageView *imgView;
 -(UIStatusBarStyle)preferredStatusBarStyle{
     return UIStatusBarStyleLightContent;
 }
+- (IBAction)menuBtnClicked:(id)sender {
+    NSLog(@"button is touched");
+    [MENU_VIEW_CONTROLLER openLeftSideViewControllerAnimated:YES completion:nil];
+}
 
 //#pragma mark - Navigation
 //

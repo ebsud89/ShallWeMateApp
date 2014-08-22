@@ -29,6 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSLog(@"startview");
     // Do any additional setup after loading the view.
     FLAnimatedImage *loadingImg = [[FLAnimatedImage alloc] initWithAnimatedGIFData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"loadingImg" ofType:@"gif"]]];
     
@@ -62,16 +63,42 @@
                                                              FBSessionState status,
                                                              NSError *error) {
                 
-                NSLog(@" session exist");
+                NSLog(@"                    session exist");
                 [self notFacebookClicked];
 
             }];
         } else {
-            NSLog(@"no session");
+            NSLog(@"              no session");
             [self performSegueWithIdentifier:@"facebookLogin" sender:nil];
-            
         }
         
+    }
+}
+
+- (void) viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+    
+    NSNumber *mode = [defaults objectForKey:@"AppMode"];
+    
+    if (mode != nil) {
+        if ([mode boolValue]) { //수요자
+            UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"MainTableViewControllerNav"];
+            
+            [MENU_VIEW_CONTROLLER presentCenterViewController:vc animated:YES];
+        }
+        else // 공급자
+        {
+            UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"pMainDetailView"];
+            
+            [MENU_VIEW_CONTROLLER presentCenterViewController:vc animated:YES];
+        }
+    }
+    else
+    {
+        [self performSegueWithIdentifier:@"facebookLogin" sender:self];
     }
 }
 

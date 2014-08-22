@@ -38,7 +38,7 @@ UIImageView *optionOn;
 
 - (void) selectionListInit
 {
-    [self.selectList setBackgroundColor:[UIColor whiteColor]];
+    [self.selectList setBackgroundColor:[UIColor clearColor]];
     
     [self.selectList setAllowsMultipleSelection:YES];
 }

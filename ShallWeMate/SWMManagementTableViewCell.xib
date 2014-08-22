@@ -33,6 +33,8 @@
                     </collectionView>
                 </subviews>
             </tableViewCellContentView>
+            <color key="backgroundColor" red="0.96862745100000003" green="0.95294117649999999" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="tintColor" red="0.96862745100000003" green="0.95294117649999999" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="collectionView" destination="q7c-iY-IIQ" id="yL0-vU-vzQ"/>
                 <outlet property="titleLabel" destination="f0C-2Y-ySM" id="Iqn-NF-6oO"/>

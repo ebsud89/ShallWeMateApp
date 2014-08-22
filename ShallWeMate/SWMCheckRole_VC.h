@@ -11,6 +11,9 @@
 @interface SWMCheckRole_VC : UIViewController
 {
     BOOL viewDidLoaded;
+    
 }
+
+- (void)dismissView;
 
 @end

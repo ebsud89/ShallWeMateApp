@@ -298,6 +298,8 @@
     
     self.costLabel.hidden = hidden;
     self.heartLabel.hidden = hidden;
+    
+    self.costTextLabel.hidden = hidden;
 }
 
 - (void) setAlphaSubview:(CGFloat)alpha
@@ -314,6 +316,8 @@
     
     [self.costLabel setAlpha:alpha];
     [self.heartLabel setAlpha:alpha];
+    
+    [self.costTextLabel setAlpha:alpha];
 }
 
 @end

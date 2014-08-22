@@ -83,9 +83,18 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="500" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JhK-KA-WGJ">
+                        <rect key="frame" x="244" y="190" width="42" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="17"/>
+                        <color key="textColor" red="0.96862745100000003" green="0.95294117649999999" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </tableViewCellContentView>
             <connections>
+                <outlet property="costLabel" destination="JhK-KA-WGJ" id="5tq-50-J4b"/>
+                <outlet property="costTextLabel" destination="qUG-o3-uBQ" id="TXf-SO-RjS"/>
                 <outlet property="heartImgView" destination="IAt-oN-9Zi" id="Msi-bX-phS"/>
                 <outlet property="heartLabel" destination="I7u-Sy-0Sw" id="FfG-j9-RKk"/>
                 <outlet property="houseLabel" destination="iI4-Dz-cah" id="dmI-6Z-HK8"/>
@@ -97,6 +106,7 @@
                 <outlet property="matchResultLabel" destination="xPt-bn-1Ov" id="83b-tB-I2p"/>
                 <outlet property="peopleLabel" destination="gaC-F9-yvl" id="0xH-kb-u58"/>
                 <outlet property="subwayLabel" destination="Trf-pv-sNB" id="WDW-V6-wSq"/>
+                <outlet property="titleLabel" destination="UUL-q7-1UE" id="BYf-hk-TIt"/>
             </connections>
         </tableViewCell>
     </objects>

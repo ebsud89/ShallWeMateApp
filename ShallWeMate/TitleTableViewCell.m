@@ -78,7 +78,7 @@
 - (void) setContent:(NSString *)content
 {
     if ([content isEqualToString:@""]) {
-        content = @"도보 10분 거리에 우체국과 시장이 있으며 교통이 편리한 하우스입니다.";
+        content = @"함께 여행계획도 세우고 무용담도 나눌 수 있는 특별한 공간";
     }
     self.contentLabel.text = content;
 }

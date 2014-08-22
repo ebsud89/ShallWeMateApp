@@ -80,13 +80,15 @@
     
     [_drinkOk setTag:8];
     [_drinkOk setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
-    [_drinkOk setTitleColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000]forState:UIControlStateSelected];
+    [_drinkOk setTitleColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000] forState:UIControlStateSelected];
     [_drinkOk addTarget:self action:@selector(radiobuttonSelected:) forControlEvents:UIControlEventTouchUpInside];
     
     [_drinkNo setTag:9];
     [_drinkNo setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     [_drinkNo setTitleColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000] forState:UIControlStateSelected];
     [_drinkNo addTarget:self action:@selector(radiobuttonSelected:) forControlEvents:UIControlEventTouchUpInside];
+    
+
 }
 
 -(void)radiobuttonSelected:(id)sender{

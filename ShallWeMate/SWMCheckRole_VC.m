@@ -47,7 +47,8 @@
     [super viewDidAppear:animated];
     
     if (viewDidLoaded) {
-        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+//        [NSTimer timerWithTimeInterval:0.1f target:self selector:@selector(dismissView) userInfo:nil repeats:NO];
+        [self dismissView];
     }
     else
     {
@@ -57,17 +58,23 @@
     NSLog(@"뷰 어피어");
 }
 
+- (void)dismissView
+{
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)goMainPage:(id)sender {
-    UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"MainTableViewControllerNav"];
-    
-    [MENU_VIEW_CONTROLLER presentCenterViewController:vc animated:YES];
+//    UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"MainTableViewControllerNav"];
+//    
+//    [MENU_VIEW_CONTROLLER presentCenterViewController:vc animated:YES];
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+//    [self.navigationController popViewControllerAnimated:YES];
 }
-
 
 #pragma mark - Navigation
 

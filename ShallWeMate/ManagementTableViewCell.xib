@@ -78,6 +78,7 @@
                     </label>
                 </subviews>
             </tableViewCellContentView>
+            <color key="backgroundColor" red="0.96862745100000003" green="0.95294117649999999" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="managementBoldLabel" destination="NGM-iv-vrK" id="acc-X0-K8T"/>
                 <outlet property="managementLabel" destination="dOP-zg-MMs" id="ecH-Bf-9Wb"/>

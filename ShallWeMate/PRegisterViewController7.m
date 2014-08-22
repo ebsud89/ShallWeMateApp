@@ -79,6 +79,8 @@
     [_drinkNo setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     [_drinkNo setTitleColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000] forState:UIControlStateSelected];
     [_drinkNo addTarget:self action:@selector(radiobuttonSelected:) forControlEvents:UIControlEventTouchUpInside];
+    
+
 
     
     //navigation bar color

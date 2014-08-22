@@ -57,6 +57,9 @@
 @property (strong, nonatomic) IBOutlet UILabel *costLabel;
 @property (strong, nonatomic) IBOutlet UILabel *heartLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *costTextLabel;
+
+
 @property (nonatomic) BOOL isMainTableView;
 
 - (void) openBadge;

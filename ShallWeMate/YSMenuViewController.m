@@ -141,16 +141,16 @@
 
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    NSLog(@"%@",[defaults objectForKey:@"MenuMode"]);
+    NSLog(@"%@",[defaults objectForKey:@"AppMode"]);
     
-    NSNumber * menuMode = [defaults objectForKey:@"MenuMode"];
+    NSNumber * menuMode = [defaults objectForKey:@"AppMode"];
     
     if ([menuMode boolValue]) {
-        [self.leftViewController setProviderMenu];
+        [self.leftViewController setConsumerMenu];
     }
     else
     {
-        [self.leftViewController setConsumerMenu];
+        [self.leftViewController setProviderMenu];
     }
     
     [self.leftViewController openMenu];
