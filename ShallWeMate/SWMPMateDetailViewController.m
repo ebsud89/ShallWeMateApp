@@ -41,6 +41,7 @@
     [self.contentTableView registerNib:[UINib nibWithNibName:@"SWMHouseRoleTableViewCell" bundle:nil] forCellReuseIdentifier:@"swmHouseRoleTableViewCell"];
     
     self.contentTableView.delegate 	 = self;
+    self.contentTableView.dataSource = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -104,13 +105,15 @@
     else if (indexPath.row == 1)
     {
         SWMMateInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"swmMateInfoTableViewCell"];
+        [cell setAvgAge:_houseData.avgAge];
         
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
     else if (indexPath.row == 2)
     {
         SWMHouseRoleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"swmHouseRoleTableViewCell"];
-        
+        [cell setHouseRule:_houseData.enableHouseRoles];
         return cell;
     }
     else

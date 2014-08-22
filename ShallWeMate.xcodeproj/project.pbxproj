@@ -2178,7 +2178,6 @@
 				68A98F4819A1E99C009AB3A5 /* 수인.png in Resources */,
 				AEAA7D2219A619750093E9C4 /* lifestyle_09 copy.png in Resources */,
 				AEAA7D2119A619750093E9C4 /* lifestyle_08 copy.png in Resources */,
-				68C309C719A7438100EB82A4 /* 가구3_1.png in Resources */,
 				689A07D419A0A0440022460D /* page3_nono.png in Resources */,
 				689F97DE19A76D6A007BE957 /* Room2c.jpg in Resources */,
 				AEAA7D1C19A619750093E9C4 /* lifestyle_03 copy.png in Resources */,

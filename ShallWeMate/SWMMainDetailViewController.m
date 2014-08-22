@@ -18,6 +18,7 @@
 #import "SWMManagementTableViewCell.h"
 #import "SWMTransportTableViewCell.h"
 #import "SWMMateInfoTableViewCell.h"
+#import "SWMPMateDetailViewController.h"
 
 @interface SWMMainDetailViewController ()
 
@@ -340,7 +341,7 @@ const int inervalValue = 60;
     {
         SWMImageScrollTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"imageScrollViewTableViewCell"];
         //        cell.houseImageArray = self.houseData.houseImageArray;
-        
+        [cell setHouseImageArray:self.houseData.houseImageArray];
         [cell refreshData];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
 //        cell 
@@ -535,7 +536,7 @@ const int inervalValue = 60;
  // Pass the selected object to the new view controller.
      if ([[segue identifier] isEqualToString:@"goMate"])
      {
-         SWMMainDetailViewController *vc = [segue destinationViewController];
+         SWMPMateDetailViewController *vc = [segue destinationViewController];
          
          /* 기입한 정보를 다음 뷰로 전달*/
          vc.houseData = _houseData;
