@@ -48,8 +48,9 @@
     [self.fbProfilePictureView.layer setBorderWidth:2.0];
     self.fbProfilePictureView.clipsToBounds = YES;
     self.fbProfilePictureView.profileID = appDelegate.fbUserId;
+    NSString *objectId = [defaults objectForKey:@"objectId"];
     
-
+    self.fbProfilePictureView.profileID = objectId;
     NSString *name = [defaults objectForKey:@"name"];
     NSString *gender = [defaults objectForKey:@"gender"];
     NSString *locale = [[NSString alloc] init];

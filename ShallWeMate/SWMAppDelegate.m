@@ -22,7 +22,7 @@ NSString *const FBSessionStateChangedNotification = @"swm.ShallWeMate:FBSessionS
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [FBSession.activeSession closeAndClearTokenInformation];
+//    [FBSession.activeSession closeAndClearTokenInformation];
     [application setStatusBarStyle:UIStatusBarStyleLightContent];
     
     [FBProfilePictureView class];
@@ -59,6 +59,7 @@ NSString *const FBSessionStateChangedNotification = @"swm.ShallWeMate:FBSessionS
                                               
                                               //정보 저장
                                               // Create strings and integer to store the text info
+                                               NSString *id = result.objectID;                                              NSString *objectId = [result objectForKey:@"objectId"];
                                               NSString *name = result.first_name;                                              NSString *gender = [result objectForKey:@"gender"];
                                               NSString *locale = [result objectForKey:@"locale"];
                                               
@@ -70,7 +71,7 @@ NSString *const FBSessionStateChangedNotification = @"swm.ShallWeMate:FBSessionS
                                               
                                               // Store the data
                                              defaults = [NSUserDefaults standardUserDefaults];
-                                              
+                                              [defaults setObject:name forKey:@"objectId"];
                                               [defaults setObject:name forKey:@"name"];
                                               [defaults setObject:gender forKey:@"gender"];
                                               [defaults setObject:locale forKey:@"locale"];

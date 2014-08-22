@@ -69,12 +69,12 @@
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B1t-lm-eni">
-                        <rect key="frame" x="30" y="40" width="30" height="30"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="door_pink.png" translatesAutoresizingMaskIntoConstraints="NO" id="B1t-lm-eni">
+                        <rect key="frame" x="34" y="38" width="33" height="33"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="inA-Xf-ytG">
-                        <rect key="frame" x="154" y="40" width="30" height="30"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="man_pink.png" translatesAutoresizingMaskIntoConstraints="NO" id="inA-Xf-ytG">
+                        <rect key="frame" x="150" y="38" width="30" height="30"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
                 </subviews>
@@ -88,4 +88,8 @@
             </connections>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="door_pink.png" width="33" height="33"/>
+        <image name="man_pink.png" width="33" height="33"/>
+    </resources>
 </document>

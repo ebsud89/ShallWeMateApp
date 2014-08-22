@@ -79,8 +79,8 @@
 
 - (IBAction)myHouseProfileClicked:(id)sender {
     NSLog(@"소비자 - 나의 하우스 프로필 클릭");
-    UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"inMatching"];
-    [MENU_VIEW_CONTROLLER presentCenterViewController:vc animated:YES];
+//    UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"inMatching"];
+//    [MENU_VIEW_CONTROLLER presentCenterViewController:vc animated:YES];
 }
 
 - (IBAction)myProfileClicked:(id)sender {

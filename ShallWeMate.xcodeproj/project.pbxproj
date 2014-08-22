@@ -109,6 +109,11 @@
 		689F982819A76E34007BE957 /* Room9c.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 689F982119A76E34007BE957 /* Room9c.jpg */; };
 		689F982919A76E34007BE957 /* Room9d.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 689F982219A76E34007BE957 /* Room9d.jpg */; };
 		689F982A19A76E34007BE957 /* Room9e.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 689F982319A76E34007BE957 /* Room9e.jpg */; };
+		689F982E19A77C1D007BE957 /* uu.png in Resources */ = {isa = PBXBuildFile; fileRef = 689F982B19A77C1D007BE957 /* uu.png */; };
+		689F982F19A77C1D007BE957 /* walk.png in Resources */ = {isa = PBXBuildFile; fileRef = 689F982C19A77C1D007BE957 /* walk.png */; };
+		689F983019A77C1D007BE957 /* clock.png in Resources */ = {isa = PBXBuildFile; fileRef = 689F982D19A77C1D007BE957 /* clock.png */; };
+		689F983319A77DA1007BE957 /* door_pink.png in Resources */ = {isa = PBXBuildFile; fileRef = 689F983119A77DA1007BE957 /* door_pink.png */; };
+		689F983419A77DA1007BE957 /* man_pink.png in Resources */ = {isa = PBXBuildFile; fileRef = 689F983219A77DA1007BE957 /* man_pink.png */; };
 		68A2080A19A44AED0050850D /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 68A2080819A44AED0050850D /* plus.png */; };
 		68A2080B19A44AED0050850D /* minus.png in Resources */ = {isa = PBXBuildFile; fileRef = 68A2080919A44AED0050850D /* minus.png */; };
 		68A7CF821992177A00DF4BB3 /* SWMAskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A7CF811992177A00DF4BB3 /* SWMAskViewController.m */; };
@@ -147,7 +152,6 @@
 		68C308DE19A6C4DD00EB82A4 /* 뒤로버튼1.png in Resources */ = {isa = PBXBuildFile; fileRef = 68C308DD19A6C4DD00EB82A4 /* 뒤로버튼1.png */; };
 		68C308E019A6D7E600EB82A4 /* NowMatching.gif in Resources */ = {isa = PBXBuildFile; fileRef = 68C308DF19A6D7E600EB82A4 /* NowMatching.gif */; };
 		68C309C019A7112800EB82A4 /* mate1.png in Resources */ = {isa = PBXBuildFile; fileRef = 68C309BF19A7112800EB82A4 /* mate1.png */; };
-		68C309C719A7438100EB82A4 /* 가구3_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 68C309C619A7438100EB82A4 /* 가구3_1.png */; };
 		68C309C919A76AE400EB82A4 /* pic11.png in Resources */ = {isa = PBXBuildFile; fileRef = 68C309C819A76AE400EB82A4 /* pic11.png */; };
 		68ED4F7A19A4DE1700A1C189 /* SWMManagementTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 68ED4F7819A4DE1700A1C189 /* SWMManagementTableViewCell.m */; };
 		68ED4F7B19A4DE1700A1C189 /* SWMManagementTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68ED4F7919A4DE1700A1C189 /* SWMManagementTableViewCell.xib */; };
@@ -539,6 +543,11 @@
 		689F982119A76E34007BE957 /* Room9c.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Room9c.jpg; sourceTree = "<group>"; };
 		689F982219A76E34007BE957 /* Room9d.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Room9d.jpg; sourceTree = "<group>"; };
 		689F982319A76E34007BE957 /* Room9e.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Room9e.jpg; sourceTree = "<group>"; };
+		689F982B19A77C1D007BE957 /* uu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uu.png; sourceTree = "<group>"; };
+		689F982C19A77C1D007BE957 /* walk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = walk.png; sourceTree = "<group>"; };
+		689F982D19A77C1D007BE957 /* clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clock.png; sourceTree = "<group>"; };
+		689F983119A77DA1007BE957 /* door_pink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = door_pink.png; sourceTree = "<group>"; };
+		689F983219A77DA1007BE957 /* man_pink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = man_pink.png; sourceTree = "<group>"; };
 		68A2080819A44AED0050850D /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
 		68A2080919A44AED0050850D /* minus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minus.png; sourceTree = "<group>"; };
 		68A7CF801992177A00DF4BB3 /* SWMAskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMAskViewController.h; sourceTree = "<group>"; };
@@ -1143,6 +1152,11 @@
 		68B05CBD19A5DCCE007DC34D /* button */ = {
 			isa = PBXGroup;
 			children = (
+				689F983119A77DA1007BE957 /* door_pink.png */,
+				689F983219A77DA1007BE957 /* man_pink.png */,
+				689F982B19A77C1D007BE957 /* uu.png */,
+				689F982C19A77C1D007BE957 /* walk.png */,
+				689F982D19A77C1D007BE957 /* clock.png */,
 				68C309C819A76AE400EB82A4 /* pic11.png */,
 				68C309C119A72F6700EB82A4 /* 등록완료.png */,
 				689A848C19A46312003AD85E /* menu1.png */,
@@ -2136,6 +2150,7 @@
 				689B50E019A38F91008763E8 /* pic22.png in Resources */,
 				689F97E819A76D77007BE957 /* Room3c.jpg in Resources */,
 				AEAA7ECE19A733EE0093E9C4 /* Room36.jpg in Resources */,
+				689F983419A77DA1007BE957 /* man_pink.png in Resources */,
 				AEAA7EC119A733EE0093E9C4 /* Room23.jpg in Resources */,
 				689F97D319A76D4B007BE957 /* Room1b.jpg in Resources */,
 				AEAA7ED219A733EE0093E9C4 /* Room40.jpg in Resources */,
@@ -2218,6 +2233,7 @@
 				68A98F4A19A1E99C009AB3A5 /* 에버.png in Resources */,
 				AEAA7EAE19A733ED0093E9C4 /* Room4.jpg in Resources */,
 				AEAA7EBE19A733EE0093E9C4 /* Room20.jpg in Resources */,
+				689F983019A77C1D007BE957 /* clock.png in Resources */,
 				68A98F4419A1E99C009AB3A5 /* 경의.png in Resources */,
 				AEAD771319A37737004E30B7 /* lifestyle_06.png in Resources */,
 				68C308DA19A6C47A00EB82A4 /* menu.png in Resources */,
@@ -2227,6 +2243,7 @@
 				AEAD771819A37737004E30B7 /* lifestyle_11.png in Resources */,
 				AEAA7D1D19A619750093E9C4 /* lifestyle_04 copy.png in Resources */,
 				68C308D019A6451600EB82A4 /* SWMCollectionViewCell.xib in Resources */,
+				689F982F19A77C1D007BE957 /* walk.png in Resources */,
 				689F97FD19A76E0F007BE957 /* Room5d.jpg in Resources */,
 				AEAD771919A37737004E30B7 /* lifestyle_12.png in Resources */,
 				68A98F4719A1E99C009AB3A5 /* 분당.png in Resources */,
@@ -2285,6 +2302,7 @@
 				689ED679199D2BB400EA2BCD /* AppleSDGothicNeo-Thin.otf in Resources */,
 				689F980519A76E18007BE957 /* Room6b.jpg in Resources */,
 				AEAA7E4A19A71DF20093E9C4 /* 관리비_1.png in Resources */,
+				689F982E19A77C1D007BE957 /* uu.png in Resources */,
 				689ABF4C19A088D50034F30F /* final_logo.png in Resources */,
 				68A98F2719A1E11B009AB3A5 /* m3.png in Resources */,
 				689F97D419A76D4B007BE957 /* Room1c.jpg in Resources */,
@@ -2311,6 +2329,7 @@
 				689F982919A76E34007BE957 /* Room9d.jpg in Resources */,
 				68C308D219A67CB500EB82A4 /* photo2.png in Resources */,
 				AEAA7EC019A733EE0093E9C4 /* Room22.jpg in Resources */,
+				689F983319A77DA1007BE957 /* door_pink.png in Resources */,
 				EB433BD31990A3E1002667D0 /* testImg.jpg in Resources */,
 				689ABF5919A08CB70034F30F /* life_cover.png in Resources */,
 				689F97FA19A76E0F007BE957 /* Room5a.jpg in Resources */,
