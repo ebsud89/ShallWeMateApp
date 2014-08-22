@@ -18,7 +18,7 @@
 #import "UIViewController+LoadingOverlay.h"
 
 #define swmServerAddr @"http://54.249.103.4/SWMserver"
-#define swmServerAddrLocal @"http://54.249.103.4/SWMserver"
+#define swmServerAddrLocal @"http://192.168.1.10:8080/SWMserver"
 
 @interface PSummeryViewController ()
 
@@ -39,8 +39,6 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    SWMRoom *room = _houseData.exportToSWMRoom;
-    NSLog(@"\n=======\ndescription test %@",room.description);
     
     [self.contentTableView registerNib:[UINib nibWithNibName:@"SWMImageScrollTableViewCell" bundle:nil] forCellReuseIdentifier:@"imageScrollViewTableViewCell"];
     [self.contentTableView registerNib:[UINib nibWithNibName:@"SWMTransportTableViewCell" bundle:nil] forCellReuseIdentifier:@"transportTableViewCell"];
@@ -53,7 +51,7 @@
     self.contentTableView.dataSource = self;
     
     
-    [self.houseData printAll];
+//    [self.houseData printAll];
     
     //navigation bar color
     [[[self navigationController] navigationBar] setTintColor:[UIColor whiteColor]];
@@ -264,9 +262,13 @@
 //    
 //    [defaults synchronize];
     
-    [self performSelector:@selector(onHideLayer) withObject:nil afterDelay:5.0f];
+    [self performSelector:@selector(onHideLayer) withObject:nil afterDelay:5.0f];    
     
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     [self sendToRoomData];
+    
+    [self saveData];
+
     
 }
 
@@ -280,21 +282,30 @@
 #pragma mark - Network
 - (void) sendToRoomData
 {
-    NSURL *url = [NSURL URLWithString:[swmServerAddr stringByAppendingString:@"/comm/CompareWithRoom"]];
+    NSURL *url = [NSURL URLWithString:[swmServerAddrLocal stringByAppendingString:@"/comm/regRoom"]];
     NSLog(@"URL : %@", url);
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     
-    // *data 에 Member 정보에 대한 JSON string 담으면 됨
-    //    NSString *data = @"rid=135";
-    NSLog(@"%@", [self.houseData description]);
-    NSString *data = [self.houseData description];
-    NSLog(@"%@", data);
+    SWMRoom *room = [self.houseData exportToSWMRoom];
+//    NSLog(@"\n=======\ndescription test %@",room.description);
+
+    NSString *type = @"ROOM=";
+    NSString *data = [type stringByAppendingString:[room description]];
+    NSLog(@"room data (summery) : %@", data);
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:[data dataUsingEncoding:NSUTF8StringEncoding]];
     
     NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
     [conn start];
+}
+
+- (void) saveData {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    SWMRoom *room = [self.houseData exportToSWMRoom];
+    [defaults setObject:[room description] forKey:@"forProviderHouseData"];
+    
+    [defaults synchronize];
 }
 
 - (void)connection:(NSURLConnection *)connection
