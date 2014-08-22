@@ -15,7 +15,7 @@
 @synthesize brandImage;
 @synthesize inputAuthCode;
 @synthesize authCode;
-@synthesize commitBtn;
+//@synthesize commitBtn;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle*)nibBundleOrNil
 {
