@@ -118,7 +118,7 @@
     if (indexPath.row == 0)
     {
         SWMImageScrollTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"imageScrollViewTableViewCell"];
-        //        cell.houseImageArray = self.houseData.houseImageArray;
+            cell.houseImageArray = self.houseData.houseImageArray;
         
         [cell refreshData];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;

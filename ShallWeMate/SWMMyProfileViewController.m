@@ -7,6 +7,7 @@
 //
 
 #import "SWMMyProfileViewController.h"
+#import "NSUserDefaults+RMSaveCustomObject.h"
 
 @interface SWMMyProfileViewController ()
 
@@ -40,27 +41,37 @@
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    NSString *name = [defaults objectForKey:@"name"];
-    NSString *gender = [defaults objectForKey:@"gender"];
-    NSString *locale = [[NSString alloc] init];
-    if ([[defaults objectForKey:@"locale"] isEqualToString:@"ko_KR"]) {
-        locale = @"대한민국";
+    _memberData = [defaults rm_customObjectForKey:@"myHouse"];
+    
+    SWMAppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
+    
+    
+    
+    self.imageView.layer.cornerRadius = self.imageView.frame.size.width / 2;
+    UIColor *borderColor = [UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1.0];
+    [self.imageView.layer setBorderColor:borderColor.CGColor];
+    [self.imageView.layer setBorderWidth:2.0];
+    self.imageView.clipsToBounds = YES;
+    
+    NSString *gender =  _memberData.sex;
+    if ([gender isEqualToString:@"1"])  {
+        gender = @"여자";
+    } else {
+        gender = @"남자";
     }
-    NSString *job = [defaults objectForKey:@"job"];
-    NSString *age = [defaults objectForKey:@"age"];
-    
-//    int age = [defaults integerForKey:@"age"];
-//    NSString *ageString = [NSString stringWithFormat:@"%i",age];
-    
-//    NSData *imageData = [defaults dataForKey:@"image"];
-//    UIImage *contactImage = [UIImage imageWithData:imageData];
+//    NSString *locale = [[NSString alloc] init];
+//    if ([[defaults objectForKey:@"locale"] isEqualToString:@"ko_KR"]) {
+//        locale = @"대한민국";
+//    }
+//    NSString *job = [defaults objectForKey:@"job"];
+//    NSString *age = [defaults objectForKey:@"age"];
     
     // Update the UI elements with the saved data
-    nameLabel.text = name;
+    nameLabel.text = _memberData.name;
     genderLabel.text = gender;
-    countryLabel.text = locale;
-    ageLabel.text = age;
-    jobLabel.text = job;
+//    countryLabel.text = locale;
+    ageLabel.text = _memberData.age;
+    jobLabel.text = _memberData.job;
     
 //    contactImageView.image = contactImage;
 }

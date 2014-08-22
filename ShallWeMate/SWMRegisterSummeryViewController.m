@@ -12,6 +12,7 @@
 #import "SWMMateInfoTableViewCell.h"
 #import "SWMHouseRoleTableViewCell.h"
 #import "UIViewController+LoadingOverlay.h"
+#import "NSUserDefaults+RMSaveCustomObject.h"
 
 #pragma mark - Server Address
 #define swmServerAddr @"http://54.249.103.4:8080/SWMserver/"
@@ -71,10 +72,11 @@
     
     NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
     
+    
     NSNumber *mode = [NSNumber numberWithBool:YES];
     [defaults setObject:mode forKey:@"AppMode"];
-
-    
+    [defaults rm_setCustomObject:_memberData forKey:@"myHouse"];
+    [defaults synchronize];
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     [self sendToMemberData];
     

@@ -13,8 +13,8 @@
 {
     NSMutableArray *arry = [[NSMutableArray alloc]init];
     
-    if (rid<4) {
-        for (int i= 0; i<3; i++) {
+    if (rid<10) {
+        for (int i= 0; i<5; i++) {
             NSString * myStr = [NSString stringWithFormat:@"Room%d%c.jpg", rid, 97+i];
             NSLog(@"%@", myStr);
             

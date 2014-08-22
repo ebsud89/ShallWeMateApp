@@ -75,6 +75,9 @@
     self.fbProfilePictureView.clipsToBounds = YES;
     fbProfilePictureView.profileID = appDelegate.fbUserId;
     
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:fbProfilePictureView];
+    [defaults setObject:data forKey:@"fbImage"];
+    [defaults synchronize];
     
     userName.text = appDelegate.fbUserName;
     NSLog(@"name %@ , %@", userName.text, appDelegate.fbUserName);
@@ -225,7 +228,6 @@
     
     NSString *age = _ageTextField.text;
     NSString *job = jobTitleLabel.text;
-    
     // Store the data
     appDelegate.defaults = [NSUserDefaults standardUserDefaults];
     
@@ -234,8 +236,9 @@
     //                                              [defaults setInteger:birthday forKey:@"birthday"];
     //                                              [defaults setObject:imageData forKey:@"image"];
     
+    [appDelegate.defaults setObject:UIImagePNGRepresentation(fbProfilePictureView) forKey:@"image"];
     [appDelegate.defaults synchronize];
-    
+    NSLog(@"age, job %@ %@", age, job);
 }
 
 - (void)setViewMovedUp:(BOOL)movedUp height:(float)height
