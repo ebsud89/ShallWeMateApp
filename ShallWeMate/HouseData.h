@@ -14,7 +14,7 @@
 {
     NSString *str;
 }
-@property (retain) NSArray *houseImageArray;
+@property (retain) NSMutableArray *houseImageArray;
 
 @property (retain) NSString *title;//
 @property (retain) NSString *nearSubwayStation;

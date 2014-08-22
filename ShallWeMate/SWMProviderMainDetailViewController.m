@@ -51,6 +51,10 @@
     
     animator = [[UIDynamicAnimator alloc]initWithReferenceView:self.view];
     
+    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+    
+    self.houseData = [defaults objectForKey:@"forProviderHouseData"];
+    
 //    lastGestureVelocity = CGPointMake(0.0f, 999.0f);
 }
 
@@ -101,7 +105,7 @@
     {
         SWMImageScrollTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"imageScrollViewTableViewCell"];
 //        cell.houseImageArray = self.houseData.houseImageArray;
-        
+        [cell setHouseImageArray:self.houseData.houseImageArray];
         [cell refreshData];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
@@ -114,8 +118,8 @@
             cell = [TitleTableViewCell titleTableViewCell];
         }
         
-        [cell setTitle:@"디저트를 좋아하는 사람들의 하우스"];
-        [cell setContent:@"진짜 재밌고, 유쾌한 사람들이 모여 사는 쉐어하우스입니다. 많은 관심을 가지고 오세요"];
+        [cell setTitle:self.houseData.title];
+        [cell setContent:self.houseData.introHouse];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
@@ -138,6 +142,8 @@
             cell = [CollectionViewTableViewCell collectionViewTableViewCell];
         }
         [cell setTitle:@"라이프스타일 키워드"];
+        
+        [cell setLifestyle:self.houseData.enableLifeStyle];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
