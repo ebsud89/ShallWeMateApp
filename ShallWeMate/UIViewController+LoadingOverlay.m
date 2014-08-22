@@ -40,7 +40,8 @@
     
     [UIView animateWithDuration:0.2f animations:^{
         myImageView.alpha = 1.0f;
-        layer.backgroundColor = [[UIColor clearColor]colorWithAlphaComponent:0.5f];
+        layer.backgroundColor = [[UIColor clearColor]colorWithAlphaComponent:0.7f];
+        
         
     }];
     [self.view addSubview:myImageView];

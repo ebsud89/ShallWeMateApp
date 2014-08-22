@@ -71,5 +71,7 @@
 
 - (void) setTitleText:(NSString *)text;
 - (void) refreshUI;
+- (void) refreshData;
 - (void) setIsMainTableView:(BOOL)isMainTableView with:(HouseData *)houseData;
+-(void) setPremiumImageText:(NSString *)imageStr;
 @end

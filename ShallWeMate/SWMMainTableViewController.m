@@ -15,6 +15,7 @@
 #import "SWMHouseImageTableViewCell.h"
 #import "SWMNetwork.h"
 #import "MemberData.h"
+#import "SWMMakeImageArray.h"
 
 
 #define swmServerAddr @"http://54.249.103.4:8080/SWMserver/"
@@ -66,6 +67,12 @@ UIImageView *image;
     }
     
     [self.tableView registerNib:[UINib nibWithNibName:@"SWMHouseImageTableViewCell" bundle:nil] forCellReuseIdentifier:@"houseImageTableViewCell"];
+    
+    SWMMakeImageArray *makeArr = [[SWMMakeImageArray alloc]init];
+    for (int i=0; i<[roomArray count];  i++) {
+        HouseData *houseData = [self.dataSourceArray objectAtIndex:i];
+        [houseData setHouseImageArray:[makeArr getImageArray:i]];
+    }
     
     
     //navigation bar color
@@ -167,33 +174,22 @@ UIImageView *image;
 //     if (cell == nil) {
 //         NSLog(@"Cell is nil");
 //     }
-//     
-//     HouseData *houseData = [dataSourceArray objectAtIndex:indexPath.row];
-//     
-//     NSLog(@"houseData %@", houseData.title);
-//     cell.titleLabel.text = houseData.title;
-//     cell.subTitleLabel.text = houseData.subTitle;
-//     cell.priceLabel.text = [NSString stringWithFormat:@"%lu 만원", (unsigned long)houseData.price];
-//     
-//     int i = (int)[houseData.houseImageArray count];
-//     NSLog(@"이미지 개수 : %d", i);
-//     
-//     [cell setHouseImageArray:houseData.houseImageArray];
-//     
-//     return cell;
+//
 
      SWMHouseImageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"houseImageTableViewCell" forIndexPath:indexPath];
      
-//     SWMHouseImageTableViewCell *cell = [[SWMHouseImageTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"houseImageTableViewCell"];
-     
      HouseData *housedata = [dataSourceArray objectAtIndex:indexPath.row];
      NSLog(@"%@", housedata);
-//     NSLog(@"%d", housedata.title);
+     
      [cell setIsMainTableView:YES with:housedata];
      [cell setTitleText:housedata.title];
      
      [cell setEnabledBadgeView];
      [cell setEnabledLikeIt:housedata.likeIt with:YES];
+     
+     [cell setHouseImageArray:housedata.houseImageArray];
+     
+     [cell refreshData];
      
      int brandNum = [housedata.premium intValue];
      
@@ -206,7 +202,7 @@ UIImageView *image;
      image.image = [UIImage imageNamed:[self.picData objectAtIndex:brandNum-1]];
      }
      
-     [cell setPremium:image];
+     [cell setPremiumImageText:[picArray objectAtIndex:0]];
      
 //     self.imageArray = [[NSMutableArray alloc]init];
 //     for (int i=0; i<[option count]; i++) {

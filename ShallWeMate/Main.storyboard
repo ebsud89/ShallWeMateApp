@@ -1924,7 +1924,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="ok1.png" id="YYi-Fn-c5N">
                             <connections>
-                                <action selector="finishedClicked:" destination="4D1-HB-U6s" id="h1A-bu-UX2"/>
+                                <action selector="finishedClicked:" destination="4D1-HB-U6s" id="m4P-3l-Tdj"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -3581,8 +3581,8 @@
         <image name="sub2.png" width="341" height="32"/>
         <image name="subway02.png" width="372" height="57"/>
         <image name="zzim.png" width="49" height="41"/>
-        <image name="다음버튼.png" width="36" height="37"/>
         <image name="다음버튼.png" width="220" height="78"/>
+        <image name="다음버튼.png" width="36" height="37"/>
         <image name="뒤로버튼.png" width="220" height="78"/>
         <image name="뒤로버튼.png" width="36" height="37"/>
         <image name="뒤로버튼1.png" width="220" height="78"/>

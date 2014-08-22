@@ -78,6 +78,13 @@
 //    NSLog(@"preminum : %f", premium.frame.size.height);
 //    
 //}
+
+-(void) setPremiumImageText:(NSString *)imageStr
+{
+    self.premium.image = [UIImage imageNamed:imageStr];
+    NSLog(@"preminum : %f", self.premium.frame.size.height);
+}
+
 - (void) setEnabledLikeIt:(NSNumber *) like with:(BOOL)isHeartImg
 {
     UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(longPress:)];
@@ -112,15 +119,17 @@
     badgeViewPresent = NO;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
-    // Configure the view for the selected state
-    
-}
+//- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+//{
+//    [super setSelected:selected animated:animated];
+//    // Configure the view for the selected state
+//    
+//}
 
 //스크롤이 변경될때 page의 currentPage 설정
 - (void)scrollViewDidScroll:(UIScrollView *)sender {
+    
+    NSLog(@"Scrollololololololololl");
     CGFloat pageWidth = self.imageScrollView.frame.size.width;
     
     // -0.3~0.6 -> 첫페이지
@@ -234,31 +243,6 @@
     }
     
     isOpendBadgeView = YES;
-
-    
-//    [menuView addMenuItemWithTitle:@"Text" andIcon:[UIImage imageNamed:@"makefg.php.png"] andSelectedBlock:^{
-//        NSLog(@"Text selected");
-//    }];
-//    [menuView addMenuItemWithTitle:@"Photo" andIcon:[UIImage imageNamed:@"makefg.php.png"] andSelectedBlock:^{
-//        NSLog(@"Photo selected");
-//    }];
-//    [menuView addMenuItemWithTitle:@"Quote" andIcon:[UIImage imageNamed:@"makefg.php.png"] andSelectedBlock:^{
-//        NSLog(@"Quote selected");
-//        
-//    }];
-//    [menuView addMenuItemWithTitle:@"Link" andIcon:[UIImage imageNamed:@"makefg.php.png"] andSelectedBlock:^{
-//        NSLog(@"Link selected");
-//        
-//    }];
-//    [menuView addMenuItemWithTitle:@"Chat" andIcon:[UIImage imageNamed:@"makefg.php.png"] andSelectedBlock:^{
-//        NSLog(@"Chat selected");
-//        
-//    }];
-//    [menuView addMenuItemWithTitle:@"Video" andIcon:[UIImage imageNamed:@"makefg.php.png"] andSelectedBlock:^{
-//        NSLog(@"Video selected");
-//        
-//    }];
-    
     
     [_menuView show:self.contentView];
 }
@@ -266,9 +250,10 @@
 - (void) refreshData
 {
     
-    //    if ([self.houseImageArray count] == 0) {
-    self.houseImageArray = [[NSMutableArray alloc]initWithObjects:[UIImage imageNamed:@"testImg1.jpg"],[UIImage imageNamed:@"testImg2.jpg"],[UIImage imageNamed:@"testImg3.jpg"],[UIImage imageNamed:@"testImg1.jpg"],[UIImage imageNamed:@"testImg2.jpg"],[UIImage imageNamed:@"testImg3.jpg"], nil];
-    //    }
+    if ([self.houseImageArray count] == 0) {
+        
+        self.houseImageArray = [[NSMutableArray alloc]initWithObjects:[UIImage imageNamed:@"testImg1.jpg"],[UIImage imageNamed:@"testImg2.jpg"],[UIImage imageNamed:@"testImg3.jpg"],[UIImage imageNamed:@"testImg1.jpg"],[UIImage imageNamed:@"testImg2.jpg"],[UIImage imageNamed:@"testImg3.jpg"], nil];
+    }
     
     
     int count = (int) [self.houseImageArray count];
@@ -307,6 +292,7 @@
     self.heartLabel.hidden = hidden;
     
     self.costTextLabel.hidden = hidden;
+    self.premium.hidden = hidden;
 }
 
 - (void) setAlphaSubview:(CGFloat)alpha
@@ -325,6 +311,7 @@
     [self.heartLabel setAlpha:alpha];
     
     [self.costTextLabel setAlpha:alpha];
+    [self.premium setAlpha:alpha];
 }
 
 @end
