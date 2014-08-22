@@ -24,5 +24,10 @@
     UIGraphicsEndImageContext();
     self.view.backgroundColor = [UIColor colorWithPatternImage:image];
 }
+- (IBAction)cancelButton:(id)sender {
+    [self.navigationController dismissViewControllerAnimated:NO completion:nil];
+}
+
+
 
 @end

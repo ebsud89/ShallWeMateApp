@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MemberData.h"
 
 @interface SWMMyProfileViewController : UIViewController
 @property (unsafe_unretained, nonatomic) IBOutlet UILabel *nameLabel;
@@ -14,5 +15,8 @@
 @property (unsafe_unretained, nonatomic) IBOutlet UILabel *countryLabel;
 @property (weak, nonatomic) IBOutlet UILabel *jobLabel;
 @property (weak, nonatomic) IBOutlet UILabel *ageLabel;
-@property (weak, nonatomic) FBProfilePictureView *fbProfilePictureView;
+//@property (weak, nonatomic) FBProfilePictureView *fbProfilePictureView;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
+@property (weak, nonatomic) MemberData *memberData;
 @end

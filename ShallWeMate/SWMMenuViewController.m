@@ -30,6 +30,10 @@
     // Do any additional setup after loading the view.
     
     NSLog(@"View Load menu");
+    
+   
+
+    
 //    [self.consumerView removeFromSuperview];
 //    [self.providerView becomeFirstResponder];
 //    [self.consumerView bringSubviewToFront:self.providerView];
@@ -79,8 +83,8 @@
 
 - (IBAction)myHouseProfileClicked:(id)sender {
     NSLog(@"소비자 - 나의 하우스 프로필 클릭");
-//    UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"inMatching"];
-//    [MENU_VIEW_CONTROLLER presentCenterViewController:vc animated:YES];
+    UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"houseProfileNav"];
+    [MENU_VIEW_CONTROLLER presentCenterViewController:vc animated:YES];
 }
 
 - (IBAction)myProfileClicked:(id)sender {

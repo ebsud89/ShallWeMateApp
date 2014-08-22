@@ -1,4 +1,12 @@
 //
+//  SWMHouseProfileViewController.m
+//  ShallWeMate
+//
+//  Created by 컴038 on 8/22/14.
+//  Copyright (c) 2014 컴038. All rights reserved.
+//
+
+//
 //  SWMRegisterSummeryViewController.m
 //  ShallWeMate
 //
@@ -6,24 +14,15 @@
 //  Copyright (c) 2014년 컴049. All rights reserved.
 //
 
-#import "SWMRegisterSummeryViewController.h"
+#import "SWMHouseProfileViewController.h"
 #import "BasicSearchTableViewCell.h"
 #import "CollectionViewTableViewCell.h"
 #import "SWMMateInfoTableViewCell.h"
 #import "SWMHouseRoleTableViewCell.h"
-#import "UIViewController+LoadingOverlay.h"
-#import "NSUserDefaults+RMSaveCustomObject.h"
+#import "NSUserDefaults+RMSaveCustomObject.h"	
 
-#pragma mark - Server Address
-#define swmServerAddr @"http://54.249.103.4:8080/SWMserver/"
-#define swmServerAddrLocal @"http://10.0.0.20:8080/SWMserver/"
 
-@interface SWMRegisterSummeryViewController ()
-
-@end
-
-@implementation SWMRegisterSummeryViewController
-
+@implementation SWMHouseProfileViewController
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -37,9 +36,14 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    //navigation bar color
+    [[[self navigationController] navigationBar] setTintColor:[UIColor whiteColor]];
+    [[[self navigationController] navigationBar] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    [[[self navigationController] navigationBar] setBarTintColor:[UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1000]];
     
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    _memberData.printAll;
+    _memberData = [defaults rm_customObjectForKey:@"myHouse"];
     
     [self.contentTableView registerNib:[UINib nibWithNibName:@"BasicSearchTableViewCell" bundle:nil] forCellReuseIdentifier:@"basicSearchTableViewCell"];
     [self.contentTableView registerNib:[UINib nibWithNibName:@"CollectionViewTableViewCell" bundle:nil] forCellReuseIdentifier:@"collectionViewTableViewCell"];
@@ -56,107 +60,10 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)finishedClicked:(id)sender {
-
-    
-    
-//    SWMSummeryViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SWMSummeryViewController"];
-//    
-//    vc.memberData = memberData;
-//    [self.view addSubview:vc.view];
-    NSLog(@"Clicked Button");
-
-    [self showLayer:@"MESSAGE TO SHOW"];
-    
-    [self performSelector:@selector(onHideLayer) withObject:nil afterDelay:5.0f];
-    
-    NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
-    
-    
-    NSNumber *mode = [NSNumber numberWithBool:YES];
-    [defaults setObject:mode forKey:@"AppMode"];
-    [defaults rm_setCustomObject:_memberData forKey:@"myHouse"];
-    [defaults synchronize];
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    [self sendToMemberData];
-    
-    [self saveData];
-    
+- (IBAction)menuBtnClicked:(id)sender {
+    NSLog(@"button is touched");
+    [MENU_VIEW_CONTROLLER openLeftSideViewControllerAnimated:YES completion:nil];
 }
-
-
-- (IBAction)backButtonClicked:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
-- (void)onHideLayer
-{
-    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
-    [self hideLayer];
-}
-
-- (void) saveData
-{
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    SWMMember *mem = [self.memberData exportToSWMMember];
-    [defaults setObject:[mem description] forKey:@"forSearchMemberData"];
-    
-    [defaults synchronize];
-}
-
-#pragma mark - Netework
-- (void) sendToMemberData
-{
-    NSURL *url = [NSURL URLWithString:[swmServerAddr stringByAppendingString:@"comm/CompareWithRoom"]];
-    NSLog(@"URL : %@", url);
-    NSLog(@"port : %d", [[url port] intValue]);
-    
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-    
-    // *data 에 Member 정보에 대한 JSON string 담으면 됨
-//    NSString *data = @"rid=135";
-    SWMMember *mem = [self.memberData exportToSWMMember];
-    NSString *data = [mem description];
-    NSLog(@"%@", data);
-    [request setHTTPMethod:@"POST"];
-    [request setHTTPBody:[data dataUsingEncoding:NSUTF8StringEncoding]];
-    
-    NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-    [conn start];
-}
-
-- (void)connection:(NSURLConnection *)connection
-didReceiveResponse:(NSURLResponse *)response
-{
-    NSLog(@"%s", __FUNCTION__);
-    
-}
-
-- (void)connection:(NSURLConnection *)connection
-    didReceiveData:(NSData *)data
-{
-    NSLog(@"%s", __FUNCTION__);
-    // 여기서 *data 가 연결 후에 받은 matched Room 에 대한 JSON 형태
-    // getAllRoom 에서 받은 거 처럼 똑같이 처리하면 될거 같아.
-    
-    NSLog(@"%@", data);
-    
-}
-
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection
-{
-    NSLog(@"%s", __FUNCTION__);
-}
-
-- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
-{
-    NSLog(@"%s", __FUNCTION__);
-    
-    NSLog(@"error = %@", error);
-    
-    NSString *text = [error localizedDescription];
-}
-
 
 #pragma mark - UITableView
 
@@ -197,8 +104,8 @@ didReceiveResponse:(NSURLResponse *)response
     {
         BasicSearchTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"basicSearchTableViewCell"];
         
-//        cell setSearchLocationLabel:self.memberData.se
-        NSLog(@"%@", self.memberData.monthlyRentCost);
+        //        cell setSearchLocationLabel:self.memberData.se
+        NSLog(@"%@", _memberData.monthlyRentCost);
         [cell setSecurityCostMaxText:_memberData.securityCost];
         [cell setMonthlyCostMaxText:_memberData.monthlyRentCost];
         [cell setSearchLocationText:_memberData.nearSubwayStation];
@@ -262,14 +169,14 @@ didReceiveResponse:(NSURLResponse *)response
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

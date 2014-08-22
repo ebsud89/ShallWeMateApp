@@ -75,6 +75,9 @@
     self.fbProfilePictureView.clipsToBounds = YES;
     fbProfilePictureView.profileID = appDelegate.fbUserId;
     
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:fbProfilePictureView];
+    [defaults setObject:data forKey:@"fbImage"];
+    [defaults synchronize];
     
     userName.text = appDelegate.fbUserName;
     NSLog(@"name %@ , %@", userName.text, appDelegate.fbUserName);
