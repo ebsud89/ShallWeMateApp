@@ -61,6 +61,10 @@
     jobTitleLabel.text = @"직업을 선택해주세요.";
     
     [jobButton addTarget:self action:@selector(jobSelect:)             forControlEvents:UIControlEventTouchUpInside];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    NSString *name = [defaults objectForKey:@"name"];
+    NSLog(@"namename %@", name);
     
     SWMAppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
     
@@ -73,6 +77,7 @@
     
     
     userName.text = appDelegate.fbUserName;
+    NSLog(@"name %@ , %@", userName.text, appDelegate.fbUserName);
     [userName setFont:[self getFont]];
     radiobutton1 = [[UIButton alloc] initWithFrame:CGRectMake(90, 338, 63, 18)];
     [radiobutton1 setTag:0];
@@ -114,6 +119,7 @@
     
     // memberData init
     self.memberData = [[MemberData alloc]init];
+    self.memberData.name = appDelegate.fbUserName;
     
 }
 

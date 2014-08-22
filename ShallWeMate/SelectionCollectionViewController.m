@@ -90,7 +90,7 @@ UIImageView *optionOn;
     } else if ([viewController isEqual:@"enableManagementStates"]) {
         UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(6, 0, 51, 67)];
         
-        NSArray *picArray = [[NSArray alloc] initWithObjects:@"관리비_가스비1.png",@"관리비_전기세1.png", @"관리비_수도세1.png", @"관리비_청소비1.png", @"관리비_통신료1.png", @"관리비_보안시스템1.png", @"관리비_화재보험료1.png", @"관리비_수선유지비1.png", nil];
+        NSArray *picArray = [[NSArray alloc] initWithObjects:@"관리비_가스비1.png",@"관리비_보안시스템1.png", @"관리비_수도세1.png", @"관리비_수선유지비1.png", @"관리비_전기세1.png", @"관리비_청소비1.png", @"관리비_통신료1.png", @"관리비_화재보험료1.png", nil];
         self.picData = picArray;
         
         
@@ -208,8 +208,7 @@ UIImageView *optionOn;
         [self.delegate didSelectedItem:indexPath];
         UICollectionViewCell *cell = [self.selectList cellForItemAtIndexPath:indexPath];
         //        image = [[UIImageView alloc] initWithFrame:CGRectMake(7, 0, 50, 50)];
-        NSArray *picArrayBlack = [[NSArray alloc] initWithObjects:@"관리비_가스비1.png",@"관리비_전기세1.png", @"관리비_수도세1.png", @"관리비_청소비1.png", @"관리비_통신료1.png", @"관리비_보안시스템1.png", @"관리비_화재보험료1.png", @"관리비_수선유지비1.png", nil];
-        self.unselectedPicData = picArrayBlack;
+        NSArray *picArrayBlack = [[NSArray alloc] initWithObjects:@"관리비_가스비1.png",@"관리비_보안시스템1.png", @"관리비_수도세1.png", @"관리비_수선유지비1.png", @"관리비_전기세1.png", @"관리비_청소비1.png", @"관리비_통신료1.png", @"관리비_화재보험료1.png", nil];
         imgViewOn = [[UIImageView alloc] initWithFrame:CGRectMake(6, 0, 51, 67)];
         imgViewOn.image = [UIImage imageNamed:[self.unselectedPicData objectAtIndex:indexPath.row]];
         [cell.contentView addSubview:imgViewOn];

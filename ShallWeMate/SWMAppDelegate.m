@@ -48,7 +48,7 @@ NSString *const FBSessionStateChangedNotification = @"swm.ShallWeMate:FBSessionS
                                           [FBRequestConnection startForMeWithCompletionHandler:^(FBRequestConnection *connection, id<FBGraphUser> result, NSError *error) {
                                               if (!error) {
                                                   NSLog(@"first .. user info: %@", result);
-                                                  NSLog(@"user's name: %@", result.name);
+                                                  NSLog(@"user's name: %@", result.first_name);
                                                   NSLog(@"user's objectID(=id): %@", result.objectID);
                                                   self.fbUserId = result.objectID;
                                                   self.fbUserName = result.name;

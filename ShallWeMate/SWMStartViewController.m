@@ -33,6 +33,13 @@
     // Do any additional setup after loading the view.
     FLAnimatedImage *loadingImg = [[FLAnimatedImage alloc] initWithAnimatedGIFData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"loadingImg" ofType:@"gif"]]];
     
+    //background image setting
+    UIGraphicsBeginImageContext(self.view.frame.size);
+    [[UIImage imageNamed:@"page2_bg.jpg"] drawInRect:self.view.bounds];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    self.view.backgroundColor = [UIColor colorWithPatternImage:image];
+    
 //    FLAnimatedImage *loadingImage = [[FLAnimatedImage alloc] initWithAnimatedGIFData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://vikrambahl.com/wp-content/uploads/2014/06/ajax_loader_blue_512.gif"]]];
     
     //Assign the FLAnimatedImage types to each of the FLAnimatedImageViews via the animatedImage property
