@@ -54,7 +54,9 @@
     
     NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
     
-    self.houseData = [defaults objectForKey:@"forProviderHouseData"];
+    
+    SWMRoom *roomData =[defaults objectForKey:@"forProviderHouseData"];
+    self.houseData = [roomData exportToHouseData];
     
 //    lastGestureVelocity = CGPointMake(0.0f, 999.0f);
 }

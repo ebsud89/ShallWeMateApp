@@ -75,7 +75,8 @@
 //    room.rules = [self mergeArray:self.enableHouseRoles];
     itemArray = [self.styles componentsSeparatedByString:@"|"];
     houseData.enableHouseRoles = [[NSMutableArray alloc]initWithArray:itemArray];
-    
+    itemArray = [self.guarants componentsSeparatedByString:@"|"];
+    houseData.enableManagementStates = [[NSMutableArray alloc] initWithArray:itemArray];
     
 //    room.premium = [self.premium intValue];
     houseData.premium = [NSString stringWithFormat:@"%d",self.premium];
@@ -106,13 +107,13 @@
 //    room.avgAge = [self.avgAge intValue];
     houseData.avgAge = [NSString stringWithFormat:@"%d",self.avgAge];
 //    room.existingMenNum = [self.existingMenNum intValue];
-    houseData.existingMenNum = [NSString stringWithFormat:@"%d", self.existingMenNum];
+    houseData.existingMenNum = [NSString stringWithFormat:@"%d", self.msex];
 //    room.existingWomenNum = [self.existingWomenNum intValue];
-    houseData.existingWomenNum = [NSString stringWithFormat:@"%d",self.existingWomenNum];
+    houseData.existingWomenNum = [NSString stringWithFormat:@"%d",self.wsex];
 //    room.wantMenNum = [self.wantMenNum intValue];
-    houseData.wantMenNum = [NSString stringWithFormat:@"%d",self.wantMenNum];
+    houseData.wantMenNum = [NSString stringWithFormat:@"%d",self.msexr];
 //    room.wantWomenNum = [self.wantWomenNum intValue];
-    houseData.wantWomenNum = [NSString stringWithFormat:@"%d", self.wantWomenNum];
+    houseData.wantWomenNum = [NSString stringWithFormat:@"%d", self.wsexr];
     houseData.premium = [NSString stringWithFormat:@"%d", self.premium];
     houseData.premiumCode = self.premiumCode;
     

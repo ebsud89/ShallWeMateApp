@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "YSMenuProtocol.h"
+#import "SWMMember.h"
 
 @interface SWMProviderMainDetailViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 {
@@ -17,6 +18,8 @@
     
     UIDynamicAnimator *animator;
     UIAttachmentBehavior *behavior;
+    
+    SWMMember *memberData;
 }
 @property (strong, nonatomic) IBOutlet UITableView *contentTableView;
 @property (strong, nonatomic) IBOutlet UIButton *mateButton;
