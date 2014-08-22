@@ -19,6 +19,7 @@
     return self;
 }
 
+
 -(void) touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
     if (!self.dragging)
         [self.superview touchesCancelled: touches withEvent:event];
