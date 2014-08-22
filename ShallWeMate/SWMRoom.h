@@ -41,7 +41,7 @@
 @property (strong, nonatomic) NSString * subwayStationCode;
 @property (strong, nonatomic) NSString * introHouse;
 
-@property int avgAge;
+@property (strong, nonatomic) NSString * avgAge;
 @property int existingMenNum;
 @property int existingWomenNum;
 @property int wantMenNum;

@@ -43,7 +43,7 @@
 
 
 - (NSString *) description {
-    return [NSString stringWithFormat:@"{\"rid\":\"%d\", \"name\":\"%@\", \"rent\":\"%d\", \"guaranty\":\"%d\", \"guarants\":\"%@\", \"management\":\"%d\", \"infos\":\"%@\", \"options\":\"%@\", \"styles\":\"%@\", \"rules\":\"%@\", \"premium\":\"%d\", \"total\":\"%d\", \"available\":\"%d\", \"time\":\"%d\", \"way\":\"%d\", \"station\":\"%@\", \"subwayStationCode\":\"%@\", \"intro\":\"%@\", \"avgAge\":\"%d\", \"msex\":\"%d\", \"wsex\":\"%d\", \"msexr\":\"%d\", \"wsexr\":\"%d\"} ", _rid, _name, _rent, _guaranty, _guarants, _management, _infos, _options, _styles, _rules, _premium, _total, _available, _time, _way, _subwayStationName, _subwayStationCode, _introHouse, _avgAge, _msex, _wsex, _msexr, _wsexr];
+    return [NSString stringWithFormat:@"{\"rid\":\"%d\", \"name\":\"%@\", \"rent\":\"%d\", \"guaranty\":\"%d\", \"guarants\":\"%@\", \"management\":\"%d\", \"infos\":\"%@\", \"options\":\"%@\", \"styles\":\"%@\", \"rules\":\"%@\", \"premium\":\"%d\", \"total\":\"%d\", \"available\":\"%d\", \"time\":\"%d\", \"way\":\"%d\", \"station\":\"%@\", \"subwayStationCode\":\"%@\", \"intro\":\"%@\", \"avgAge\":\"%@\", \"msex\":\"%d\", \"wsex\":\"%d\", \"msexr\":\"%d\", \"wsexr\":\"%d\"} ", _rid, _name, _rent, _guaranty, _guarants, _management, _infos, _options, _styles, _rules, _premium, _total, _available, _time, _way, _subwayStationName, _subwayStationCode, _introHouse, _avgAge, _msex, _wsex, _msexr, _wsexr];
 }
 
 
