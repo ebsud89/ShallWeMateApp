@@ -188,6 +188,14 @@
     if (self.premiumBrandName == nil) {
         _housedata.premium = @"1";
     }
+    
+    NSMutableArray *houseImage = [[NSMutableArray alloc]init];
+    for (ALAsset *asset in self.assets) {
+                UIImage *myImage = [UIImage imageWithCGImage:asset.defaultRepresentation.fullResolutionImage];
+        [houseImage addObject:myImage];
+    }
+    
+    [_housedata setHouseImageArray:houseImage];
 }
 
 

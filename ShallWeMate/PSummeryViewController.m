@@ -119,7 +119,7 @@
     {
         SWMImageScrollTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"imageScrollViewTableViewCell"];
         //        cell.houseImageArray = self.houseData.houseImageArray;
-        
+        [cell setHouseImageArray:self.houseData.houseImageArray];
         [cell refreshData];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
@@ -225,6 +225,7 @@
 
 - (IBAction)backButtonClicked:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
+    
 }
 
 
@@ -245,6 +246,9 @@
     
     NSNumber *mode = [NSNumber numberWithBool:NO];
     [defaults setObject:mode forKey:@"AppMode"];
+    
+    
+    [defaults setObject:self.houseData forKey:@"forProviderHouseData"];
     
     [self performSelector:@selector(onHideLayer) withObject:nil afterDelay:5.0f];
     
