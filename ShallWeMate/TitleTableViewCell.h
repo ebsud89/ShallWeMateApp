@@ -21,6 +21,7 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *contentLabel;
+-(void) setIntroHouse:(NSString *) text;
 + (TitleTableViewCell*) titleTableViewCell;
 + (CGFloat) getHeight;
 @end

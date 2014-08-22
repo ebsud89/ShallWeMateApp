@@ -356,7 +356,8 @@ const int inervalValue = 60;
         }
         
         [cell setTitle:_houseData.title];//@"디저트를 좋아하는 사람들의 하우스"];
-        [cell setContent:_houseData.description];//@"진짜 재밌고, 유쾌한 사람들이 모여 사는 쉐어하우스입니다. 많은 관심을 가지고 오세요"];
+//        [cell setContent:_houseData.description];//@"진짜 재밌고, 유쾌한 사람들이 모여 사는 쉐어하우스입니다. 많은 관심을 가지고 오세요"];
+        [cell setIntroHouse:_houseData.introHouse];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
@@ -386,7 +387,7 @@ const int inervalValue = 60;
     else if (indexPath.row ==4)
     {
         SWMTransportTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TransportTableViewCell"];
-        [cell setSubwayDictionary:_houseData.subwayDic];
+        [cell setSubwayDictionary:_houseData.stationCode];
         [cell setHow:_houseData.transportation];
         [cell setMinutes:_houseData.transportationMinutes];
         return cell;

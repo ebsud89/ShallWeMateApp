@@ -219,7 +219,12 @@
     
     room.wsexr = [self.wantWomenNum intValue];
     
-
+    
+    room.premiumCode = self.premiumCode;
+    
+    room.stationCode = self.stationCode;
+    
+    
     return room;
 }
 

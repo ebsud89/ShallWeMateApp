@@ -114,6 +114,9 @@
 //    room.wantWomenNum = [self.wantWomenNum intValue];
     houseData.wantWomenNum = [NSString stringWithFormat:@"%d", self.wantWomenNum];
     houseData.premium = [NSString stringWithFormat:@"%d", self.premium];
+    houseData.premiumCode = self.premiumCode;
+    
+    houseData.stationCode = self.stationCode;
     return houseData;
 }
 

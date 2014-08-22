@@ -47,6 +47,8 @@
 
 @property (strong, nonatomic) NSNumber *likeIt;
 
+@property int premiumCode;
+@property (retain) NSString *stationCode;
 ////////////////////////////////////////////////////////////////
 @property (retain) NSString *subTitle;
 @property NSInteger livePeople;

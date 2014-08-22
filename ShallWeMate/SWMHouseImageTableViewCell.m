@@ -46,7 +46,7 @@
         self.houseLabel.text = houseData.roomAll;
         self.peopleLabel.text = houseData.roomEmpty;
         self.costLabel.text = houseData.monthlyRentCost;
-        
+        self.subwayLabel.text = houseData.stationCode;
         
 //        self.heartLabel.text = houseData
         [self hiddenSubView:NO];
@@ -129,7 +129,7 @@
 //스크롤이 변경될때 page의 currentPage 설정
 - (void)scrollViewDidScroll:(UIScrollView *)sender {
     
-    NSLog(@"Scrollololololololololl");
+//    NSLog(@"Scrollololololololololl");
     CGFloat pageWidth = self.imageScrollView.frame.size.width;
     
     // -0.3~0.6 -> 첫페이지
@@ -137,7 +137,7 @@
     
     _scrollPage = (int) self.imageScrollView.contentOffset.x / self.contentView.frame.size.width;
     
-    NSLog(@"%f", _scrollPage);
+//    NSLog(@"%f", _scrollPage);
     if (pageIndex <0)
     {
         CGFloat alpha = pageIndex * (-3);

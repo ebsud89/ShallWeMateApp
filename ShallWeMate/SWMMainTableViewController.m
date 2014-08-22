@@ -87,7 +87,11 @@ UIImageView *image;
 {
     [super viewDidAppear:animated];
     
-        [self loadData];
+    [self loadData];
+    
+    [self.tableView reloadData];
+
+    
 }
 
 - (void) loadData
@@ -193,8 +197,9 @@ UIImageView *image;
      
      int brandNum = [housedata.premium intValue];
      
-     NSArray *picArray = [[NSArray alloc] initWithObjects:@"p01.jpg", @"p02.jpg", @"p03.png",@"p04.png", @"p05.jpg", @"p06.jpg",@"p07.png", @"p08.png", @"p09.jpg",nil];
+     NSArray *picArray = [[NSArray alloc] initWithObjects:@"p02.jpg", @"p01.jpg", @"p03.png",@"p04.png", @"p05.jpg", @"p06.jpg",@"p07.png", @"p08.png", @"p09.jpg",nil];
      self.picData = picArray;
+     
      image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 60, 60)];
      if (brandNum == 0) {
          image.image = nil;
@@ -202,7 +207,7 @@ UIImageView *image;
      image.image = [UIImage imageNamed:[self.picData objectAtIndex:brandNum-1]];
      }
      
-     [cell setPremiumImageText:[picArray objectAtIndex:0]];
+     [cell setPremiumImageText:[picArray objectAtIndex:housedata.premiumCode]];
      
 //     self.imageArray = [[NSMutableArray alloc]init];
 //     for (int i=0; i<[option count]; i++) {

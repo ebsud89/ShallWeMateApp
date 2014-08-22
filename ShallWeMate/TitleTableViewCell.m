@@ -75,6 +75,11 @@
     self.titleLabel.text = title;
 }
 
+-(void) setIntroHouse:(NSString *) text
+{
+    self.contentLabel.text = text;
+}
+
 - (void) setContent:(NSString *)content
 {
     if ([content isEqualToString:@""]) {

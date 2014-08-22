@@ -26,9 +26,8 @@
     // Configure the view for the selected state
 }
 
-- (void) setSubwayDictionary:(NSDictionary *)subwayDictionary
+- (void) setSubwayStationCode:(NSString *)str
 {
-    NSString *str = [subwayDictionary objectForKey:@"전철역명"];
     self.subwayStationName.text = str;
     
 }

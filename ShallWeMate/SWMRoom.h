@@ -59,6 +59,7 @@
 @property int premiumCode;
 
 
+
 - (id) initWithDictionary : (NSDictionary *)inpDic;
 - (NSString *) description;
 
