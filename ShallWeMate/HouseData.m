@@ -101,6 +101,9 @@
     
     NSLog(@"----------------------------------------------------");
     NSLog(@"선택한 하우스 룰 : %@", [self printArray:self.enableHouseRoles]);
+    
+    NSLog(@"----------------------------------------------------");
+    NSLog(@"남자, 여자: %@, %@", self.existingMenNum, self.existingWomenNum);
 }
 
 - (NSString *) printArray:(NSMutableArray *)array
@@ -169,6 +172,7 @@
     
     room.management = [self.managementCost intValue];
     
+    room.guarants =[self mergeArray:self.enableManagementStates];
     
     
     room.infos = [self mergeArray:self.enableRoomsMore];
@@ -207,13 +211,13 @@
     
     room.avgAge = [self.avgAge intValue];
     
-    room.existingMenNum = [self.existingMenNum intValue];
+    room.msex = [self.existingMenNum intValue];
     
-    room.existingWomenNum = [self.existingWomenNum intValue];
+    room.wsex = [self.existingWomenNum intValue];
     
-    room.wantMenNum = [self.wantMenNum intValue];
+    room.msexr = [self.wantMenNum intValue];
     
-    room.wantWomenNum = [self.wantWomenNum intValue];
+    room.wsexr = [self.wantWomenNum intValue];
     
 
     return room;

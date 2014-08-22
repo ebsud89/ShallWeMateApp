@@ -102,6 +102,15 @@
     }
 }
 
+- (void) fillHouseData
+{
+    houseData.existingMenNum = self.existingMenNum.text;
+    houseData.existingWomenNum = self.existingWomenNum.text;
+    houseData.wantMenNum = self.wantMenNum.text;
+    houseData.wantWomenNum = self.wantWomenNum.text;
+    houseData.avgAge = ageTitleLabel.text;
+}
+
 - (void)setViewMovedUp:(BOOL)movedUp height:(float)height
 
 {
@@ -241,6 +250,7 @@
     {
         PRegisterViewController6 *vc = [segue destinationViewController];
         vc.houseData = houseData;
+        [self fillHouseData];
         [self.houseData printAll];
     }
 }
