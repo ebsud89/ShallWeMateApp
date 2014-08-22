@@ -53,6 +53,7 @@
 @property (strong, nonatomic) IBOutlet UIImageView *imageviewHeart;
 @property (strong, nonatomic) IBOutlet UIImageView *iamgeviewHouse;
 @property (strong, nonatomic) IBOutlet UIImageView *imageviewPeople;
+@property (strong, nonatomic) IBOutlet UIImageView *premium;
 
 @property (strong, nonatomic) IBOutlet UILabel *costLabel;
 @property (strong, nonatomic) IBOutlet UILabel *heartLabel;

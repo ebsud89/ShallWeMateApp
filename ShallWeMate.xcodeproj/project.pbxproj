@@ -408,15 +408,6 @@
 		68A9E5EF1995FF4D00EF1396 /* missingAvatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = missingAvatar.png; sourceTree = "<group>"; };
 		68AF04C319A3C46D00454AEC /* o.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = o.png; sourceTree = "<group>"; };
 		68AF05A219A3D71600454AEC /* 등록완료.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "등록완료.png"; path = "../../../Dropbox/2014 sGen team/Gui디자인/등록완료.png"; sourceTree = "<group>"; };
-		68AF05A419A3D71600454AEC /* p01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = p01.jpg; sourceTree = "<group>"; };
-		68AF05A519A3D71600454AEC /* p02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = p02.jpg; sourceTree = "<group>"; };
-		68AF05A619A3D71600454AEC /* p03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p03.png; sourceTree = "<group>"; };
-		68AF05A719A3D71600454AEC /* p04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p04.png; sourceTree = "<group>"; };
-		68AF05A819A3D71600454AEC /* p05.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = p05.jpg; sourceTree = "<group>"; };
-		68AF05A919A3D71600454AEC /* p06.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = p06.jpg; sourceTree = "<group>"; };
-		68AF05AA19A3D71600454AEC /* p07.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p07.png; sourceTree = "<group>"; };
-		68AF05AB19A3D71600454AEC /* p08.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p08.png; sourceTree = "<group>"; };
-		68AF05AC19A3D71600454AEC /* p09.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = p09.jpg; sourceTree = "<group>"; };
 		68AF05AD19A3D71600454AEC /* edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = edit.png; path = "../../../Dropbox/2014 sGen team/Gui디자인/edit.png"; sourceTree = "<group>"; };
 		68AF060119A3D77300454AEC /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = search.png; path = "../../../Dropbox/2014 sGen team/Gui디자인/search.png"; sourceTree = "<group>"; };
 		68AF060219A3D77300454AEC /* ok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ok.png; path = "../../../Dropbox/2014 sGen team/Gui디자인/ok.png"; sourceTree = "<group>"; };
@@ -425,15 +416,6 @@
 		68AF060519A3D77300454AEC /* a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = a.png; path = "../../../Dropbox/2014 sGen team/Gui디자인/a.png"; sourceTree = "<group>"; };
 		68AF060619A3D77300454AEC /* q.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = q.png; path = "../../../Dropbox/2014 sGen team/Gui디자인/q.png"; sourceTree = "<group>"; };
 		68AF060719A3D77300454AEC /* mate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mate.png; path = "../../../Dropbox/2014 sGen team/Gui디자인/mate.png"; sourceTree = "<group>"; };
-		68C3088219A5EAFF00EB82A4 /* p01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = p01.jpg; sourceTree = "<group>"; };
-		68C3088319A5EAFF00EB82A4 /* p02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = p02.jpg; sourceTree = "<group>"; };
-		68C3088419A5EAFF00EB82A4 /* p03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p03.png; sourceTree = "<group>"; };
-		68C3088519A5EAFF00EB82A4 /* p04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p04.png; sourceTree = "<group>"; };
-		68C3088619A5EAFF00EB82A4 /* p05.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = p05.jpg; sourceTree = "<group>"; };
-		68C3088719A5EAFF00EB82A4 /* p06.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = p06.jpg; sourceTree = "<group>"; };
-		68C3088819A5EAFF00EB82A4 /* p07.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p07.png; sourceTree = "<group>"; };
-		68C3088919A5EAFF00EB82A4 /* p08.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p08.png; sourceTree = "<group>"; };
-		68C3088A19A5EAFF00EB82A4 /* p09.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = p09.jpg; sourceTree = "<group>"; };
 		68C308CC19A6451600EB82A4 /* SWMCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWMCollectionViewCell.h; path = Images.xcassets/SWMCollectionViewCell.h; sourceTree = "<group>"; };
 		68C308CD19A6451600EB82A4 /* SWMCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWMCollectionViewCell.m; path = Images.xcassets/SWMCollectionViewCell.m; sourceTree = "<group>"; };
 		68C308CE19A6451600EB82A4 /* SWMCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SWMCollectionViewCell.xib; path = Images.xcassets/SWMCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -836,24 +818,6 @@
 		68AF05A319A3D71600454AEC /* 프리미엄브랜드 */ = {
 			isa = PBXGroup;
 			children = (
-				68C3088219A5EAFF00EB82A4 /* p01.jpg */,
-				68C3088319A5EAFF00EB82A4 /* p02.jpg */,
-				68C3088419A5EAFF00EB82A4 /* p03.png */,
-				68C3088519A5EAFF00EB82A4 /* p04.png */,
-				68C3088619A5EAFF00EB82A4 /* p05.jpg */,
-				68C3088719A5EAFF00EB82A4 /* p06.jpg */,
-				68C3088819A5EAFF00EB82A4 /* p07.png */,
-				68C3088919A5EAFF00EB82A4 /* p08.png */,
-				68C3088A19A5EAFF00EB82A4 /* p09.jpg */,
-				68AF05A419A3D71600454AEC /* p01.jpg */,
-				68AF05A519A3D71600454AEC /* p02.jpg */,
-				68AF05A619A3D71600454AEC /* p03.png */,
-				68AF05A719A3D71600454AEC /* p04.png */,
-				68AF05A819A3D71600454AEC /* p05.jpg */,
-				68AF05A919A3D71600454AEC /* p06.jpg */,
-				68AF05AA19A3D71600454AEC /* p07.png */,
-				68AF05AB19A3D71600454AEC /* p08.png */,
-				68AF05AC19A3D71600454AEC /* p09.jpg */,
 			);
 			name = "프리미엄브랜드";
 			path = "../../../Dropbox/2014 sGen team/Gui디자인/프리미엄브랜드";

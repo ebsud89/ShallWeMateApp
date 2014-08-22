@@ -62,6 +62,29 @@
     NSLog(@"걸어서 or 버스로 : %@", self.transportation);
     NSLog(@"지하철에서 내려서 몇분 : %@", self.transportationMinutes);
     NSLog(@"하우스 소개 : %@", self.introHouse);
+    NSString *brand;
+    if ([self.premium isEqual:@"1"]) {
+        brand = @" ";
+    } else if ([self.premium isEqual:@"2"]) {
+        brand = @"WOOZOO";
+    } else if ([self.premium isEqual:@"3"]) {
+        brand = @"ZIBOONG";
+    } else if ([self.premium isEqual:@"4"]) {
+        brand = @"통의동집";
+    } else if ([self.premium isEqual:@"5"]) {
+        brand = @"한울";
+    } else if ([self.premium isEqual:@"6"]) {
+        brand = @"함께";
+    } else if ([self.premium isEqual:@"7"]) {
+        brand = @"언니네하우스";
+    } else if ([self.premium isEqual:@"8"]) {
+        brand = @"0ZONE";
+    } else if ([self.premium isEqual:@"9"]) {
+        brand = @"SUN&HOUSE";
+    } else if ([self.premium isEqual:@"10"]) {
+        brand = @"HABIZAE";
+    }
+    NSLog(@"프리미엄 브랜드 : %@", brand);
     
     NSLog(@"----------------------------------------------------");
     NSLog(@"월세 : %@", self.monthlyRentCost);

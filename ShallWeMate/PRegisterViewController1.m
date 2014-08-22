@@ -184,7 +184,10 @@
     _housedata.transportation = @"걸어서";
     _housedata.transportationMinutes = self.subwayMinutesTextFiled.text;
     _housedata.introHouse = self.introHouse.text;
-    _housedata.premium = self.premiumBrandName;
+//    _housedata.premium = self.premiumBrandName;
+    if (self.premiumBrandName == nil) {
+        _housedata.premium = @"1";
+    }
 }
 
 

@@ -43,7 +43,7 @@
 
 
 - (NSString *) description {
-    return [NSString stringWithFormat:@"{\"rid\":\"%d\", \"name\":\"%@\", \"rent\":\"%d\", \"guaranty\":\"%d\", \"management\":\"%d\", \"infos\":\"%@\", \"options\":\"%@\", \"styles\":\"%@\", \"rules\":\"%@\", \"premium\":\"%d\", \"total\":\"%d\", \"available\":\"%d\" , \"wsex\":\"%d\", \"msex\":\"%d\", \"time\":\"%d\", \"way\":\"%d\", \"subwayStationName\":\"%@\", \"subwayStationCode\":\"%@\", \"introHouse\":\"%@\", \"avgAge\":\"%d\", \"existingMenNum\":\"%d\", \"existingWomenNum\":\"%d\", \"wantMenNum\":\"%d\", \"wantWomenNum\":\"%d\", \"avaliable\":\"%d\", \"stationName\":\"%@\", \"jaccard\":\"%f\", \"guarants\":\"%@\", \"stationCode\":\"%@\", \"msexr\":\"%d\", \"wsexr\":\"%d\", \"premiumCode\":\"%d\"} ", _rid, _name, _rent, _guaranty, _management, _infos, _options, _styles, _rules, _premium, _total, _available, _wsex, _msex, _time, _way, _subwayStationName, _subwayStationCode, _introHouse, _avgAge, _existingMenNum, _existingWomenNum, _wantMenNum, _wantWomenNum, _avaliable, _stationName, _jaccard, _guarants, _stationCode, _msexr, _wsexr, _premiumCode];
+    return [NSString stringWithFormat:@"{\"rid\":\"%d\", \"name\":\"%@\", \"rent\":\"%d\", \"guaranty\":\"%d\", \"management\":\"%d\", \"infos\":\"%@\", \"options\":\"%@\", \"styles\":\"%@\", \"rules\":\"%@\", \"premium\":\"%d\", \"total\":\"%d\", \"available\":\"%d\" , \"wsex\":\"%d\", \"msex\":\"%d\", \"time\":\"%d\", \"way\":\"%d\", \"subwayStationName\":\"%@\", \"subwayStationCode\":\"%@\", \"introHouse\":\"%@\", \"avgAge\":\"%d\", \"existingMenNum\":\"%d\", \"existingWomenNum\":\"%d\", \"wantMenNum\":\"%d\", \"wantWomenNum\":\"%d\", \"avaliable\":\"%d\", \"stationName\":\"%@\", \"jaccard\":\"%f\", \"guarants\":\"%@\", \"stationCode\":\"%@\", \"msexr\":\"%d\", \"wsexr\":\"%d\", \"premiumCode\":\"%d\"} ", _rid, _name, _rent, _guaranty, _management, _infos, _options, _styles, _rules, _premium, _total, _available, _wsex, _msex, _time, _way, _subwayStationName, _subwayStationCode, _introHouse, _avgAge, _existingMenNum, _existingWomenNum, _wantMenNum, _wantWomenNum, _avaliable, _stationName, _jaccard, _guarants, _stationCode, _msexr, _wsexr, _premium];
 }
 
 
@@ -113,7 +113,7 @@
     houseData.wantMenNum = [NSString stringWithFormat:@"%d",self.wantMenNum];
 //    room.wantWomenNum = [self.wantWomenNum intValue];
     houseData.wantWomenNum = [NSString stringWithFormat:@"%d", self.wantWomenNum];
-
+    houseData.premium = [NSString stringWithFormat:@"%d", self.premium];
     return houseData;
 }
 

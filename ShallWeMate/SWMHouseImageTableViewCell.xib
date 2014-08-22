@@ -16,6 +16,12 @@
                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GFL-tB-UHC" customClass="SWMHouseImageScrollView">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="219"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="p01.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="qao-4m-lIP">
+                                <rect key="frame" x="20" y="41" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
                     </scrollView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="loveitl.png" translatesAutoresizingMaskIntoConstraints="NO" id="IAt-oN-9Zi">
                         <rect key="frame" x="113" y="72" width="93" height="76"/>
@@ -105,6 +111,7 @@
                 <outlet property="imgeViewSubway" destination="KrO-XO-jVz" id="dqs-9a-RLM"/>
                 <outlet property="matchResultLabel" destination="xPt-bn-1Ov" id="83b-tB-I2p"/>
                 <outlet property="peopleLabel" destination="gaC-F9-yvl" id="0xH-kb-u58"/>
+                <outlet property="premium" destination="qao-4m-lIP" id="8sZ-Mm-TRM"/>
                 <outlet property="subwayLabel" destination="Trf-pv-sNB" id="WDW-V6-wSq"/>
                 <outlet property="titleLabel" destination="UUL-q7-1UE" id="BYf-hk-TIt"/>
             </connections>
@@ -116,6 +123,7 @@
         <image name="heart.png" width="33" height="33"/>
         <image name="loveitl.png" width="187" height="153"/>
         <image name="man.png" width="33" height="33"/>
+        <image name="p01.jpg" width="180" height="180"/>
         <image name="sub.png" width="33" height="33"/>
     </resources>
 </document>

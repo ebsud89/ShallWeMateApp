@@ -16,6 +16,7 @@
 }
 @property(strong, nonatomic) NSArray* myArray;
 @property(strong, nonatomic) NSMutableArray *dataSourceArray;
+@property (strong, nonatomic) NSArray *picData;
 - (IBAction)searchButtonTouched:(id)sender;
 
 

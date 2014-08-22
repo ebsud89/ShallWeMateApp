@@ -102,7 +102,7 @@
         appDelegate.brand = brandNameString;
         NSLog(@"te... :%@ %@", brandNameString, appDelegate.brand);
         
-        
+        vc.housedata = self.houseData;
         //        [self.navigationController popViewControllerAnimated:YES];
         [self.navigationController dismissViewControllerAnimated:YES completion:nil];
     } else {

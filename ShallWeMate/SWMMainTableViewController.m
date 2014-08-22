@@ -27,6 +27,7 @@
 
 @synthesize dataSourceArray;
 @synthesize myArray;
+UIImageView *image;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -193,6 +194,33 @@
      
      [cell setEnabledBadgeView];
      [cell setEnabledLikeIt:housedata.likeIt with:YES];
+     
+     int brandNum = [housedata.premium intValue];
+     
+     NSArray *picArray = [[NSArray alloc] initWithObjects:@"p01.jpg", @"p02.jpg", @"p03.png",@"p04.png", @"p05.jpg", @"p06.jpg",@"p07.png", @"p08.png", @"p09.jpg",nil];
+     self.picData = picArray;
+     image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 60, 60)];
+     if (brandNum == 0) {
+         image.image = nil;
+     } else {
+     image.image = [UIImage imageNamed:[self.picData objectAtIndex:brandNum-1]];
+     }
+     
+     [cell setPremium:image];
+     
+//     self.imageArray = [[NSMutableArray alloc]init];
+//     for (int i=0; i<[option count]; i++) {
+//         NSNumber *num = [option objectAtIndex:i];
+//         if ([num boolValue]) {
+//             [self.imageArray addObject:[NSString stringWithFormat:@"가구%d_1.png",i+1]];
+//         }
+//     }
+//     
+//     if ([self.imageArray count]<8) {
+//         for (int i= (int)[self.imageArray count]; i<8; i++) {
+//             [self.imageArray addObject:@""];
+//         }
+//     }
      
      UITapGestureRecognizer *oneFingerOneTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(oneFingerOneTap:)];
      
