@@ -40,6 +40,16 @@
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
+    SWMAppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
+    
+    self.fbProfilePictureView.layer.cornerRadius = self.fbProfilePictureView.frame.size.width / 2;
+    UIColor *borderColor = [UIColor colorWithRed:237.0/255.0 green:103.0/255.0 blue:103.0/255.0 alpha:1.0];
+    [self.fbProfilePictureView.layer setBorderColor:borderColor.CGColor];
+    [self.fbProfilePictureView.layer setBorderWidth:2.0];
+    self.fbProfilePictureView.clipsToBounds = YES;
+    self.fbProfilePictureView.profileID = appDelegate.fbUserId;
+    
+
     NSString *name = [defaults objectForKey:@"name"];
     NSString *gender = [defaults objectForKey:@"gender"];
     NSString *locale = [[NSString alloc] init];

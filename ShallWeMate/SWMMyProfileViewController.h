@@ -14,5 +14,5 @@
 @property (unsafe_unretained, nonatomic) IBOutlet UILabel *countryLabel;
 @property (weak, nonatomic) IBOutlet UILabel *jobLabel;
 @property (weak, nonatomic) IBOutlet UILabel *ageLabel;
-
+@property (weak, nonatomic) FBProfilePictureView *fbProfilePictureView;
 @end
