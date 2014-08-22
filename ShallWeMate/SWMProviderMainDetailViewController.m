@@ -169,12 +169,12 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     
-    // Get visible cells on table view.
-    NSArray *visibleCells = [self.contentTableView visibleCells];
-    
-    for (SWMTableViewCell *cell in visibleCells) {
-        [cell cellOnTableView:self.contentTableView didScrollOnView:self.view];
-    }
+//    // Get visible cells on table view.
+//    NSArray *visibleCells = [self.contentTableView visibleCells];
+//    
+//    for (SWMTableViewCell *cell in visibleCells) {
+//        [cell cellOnTableView:self.contentTableView didScrollOnView:self.view];
+//    }
     
     CGPoint translation = [scrollView.panGestureRecognizer translationInView:scrollView.superview];
     

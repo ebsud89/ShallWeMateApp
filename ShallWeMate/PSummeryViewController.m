@@ -247,8 +247,23 @@
     NSNumber *mode = [NSNumber numberWithBool:NO];
     [defaults setObject:mode forKey:@"AppMode"];
     
-    
-    [defaults setObject:self.houseData forKey:@"forProviderHouseData"];
+
+//    NSMutableArray *arr = [[NSMutableArray alloc]init]; // set value
+//    
+//    for (UIImage *img in _houseData.houseImageArray) {
+//        NSData *someImageData = UIImagePNGRepresentation(img);
+//        [arr addObject:someImageData];
+//        
+//
+//    }
+//    
+//    
+//    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:[_houseData description]];
+//    
+//    [defaults setObject:data forKey:@"forProviderHouseData"];
+//    [[NSUserDefaults standardUserDefaults] setObject:arr forKey:@"forProviderHouseDataImages"];
+//    
+//    [defaults synchronize];
     
     [self performSelector:@selector(onHideLayer) withObject:nil afterDelay:5.0f];
     
