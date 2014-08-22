@@ -92,11 +92,11 @@
 {
   
     SWMAppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
-    if ([appDelegate.data isEqualToString:@"lifestyle"]) {
-        return CGSizeMake(84, 84);
-    } else {
+//    if ([appDelegate.data isEqualToString:@"lifestyle"]) {
         return CGSizeMake(70, 70);
-    }
+//    } else {
+//        return CGSizeMake(70, 70);
+//    }
 }
 
 // 컬렉션과 컬렉션 height 간격

@@ -79,6 +79,11 @@
     [[[self navigationController] navigationBar] setBackgroundColor:[UIColor colorWithRed:174/255.0 green:70/255.0 blue:115/255.0 alpha:1]];
 //    [[[self navigationController] navigationBar] setTranslucent:YES];
     
+    
+    
+    
+    
+    
 //    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"yourimage.png"]];
     [self initScrollView];
     [self refreshHouseData];
@@ -216,6 +221,8 @@
     self.stationLabel.text = [subwayDic objectForKey:@"전철역명"];
     UIImage* img = [UIImage imageNamed:@"o.png"];
     [self.stationImg setImage:img];
+    
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -228,10 +235,13 @@
     SWMAppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
     
     if (appDelegate.brand != nil) {
-        self.brandName.text = appDelegate.brand;
-        UIImage* img = [UIImage imageNamed:@"등록완료.png"];
-        [self.premiumBrand setImage:img forState:UIControlStateNormal];
+//        self.brandName.text = appDelegate.brand;
+        UIImage* im = [UIImage imageNamed:@"등록완료.png"];
+//        self.premiumBrand.frame
+        //        [self.premiumBrand setImage:img forState:UIControlStateNormal];
+        [self.premiumBrand setBackgroundImage:im forState:UIControlStateNormal];
     }
+//    NSLog(@"brandsetting %@", self.brandName.text);
 }
 
 - (void) initScrollView

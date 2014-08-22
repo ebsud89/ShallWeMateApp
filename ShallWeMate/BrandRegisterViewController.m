@@ -160,7 +160,7 @@
         //        [vc brandImage:];
         //        vc.brandImage = brandImage;//picData[indexPath.row];
         vc.brandNameString = brandName[indexPath.row];
-        NSLog(@"brand name : %@", brandName[indexPath.row]);
+        NSLog(@"brand name1 : %@", brandName[indexPath.row]);
         _houseData.premium = indexPath.row+1;
         NSLog(@"brand name2 : %@",  _houseData.premium);
         vc.houseData = _houseData;

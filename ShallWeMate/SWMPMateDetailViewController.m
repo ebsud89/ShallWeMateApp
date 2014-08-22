@@ -40,8 +40,7 @@
     [self.contentTableView registerNib:[UINib nibWithNibName:@"SWMMateInfoTableViewCell" bundle:nil] forCellReuseIdentifier:@"swmMateInfoTableViewCell"];
     [self.contentTableView registerNib:[UINib nibWithNibName:@"SWMHouseRoleTableViewCell" bundle:nil] forCellReuseIdentifier:@"swmHouseRoleTableViewCell"];
     
-    self.contentTableView.delegate = self;
-    self.contentTableView.dataSource = self;
+    self.contentTableView.delegate 	 = self;
 }
 
 - (void)didReceiveMemoryWarning

@@ -268,7 +268,7 @@
                                         <rect key="frame" x="0.0" y="541" width="320" height="32"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" image="mate.png">
+                                        <state key="normal" image="mate1.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -586,7 +586,7 @@
             </objects>
             <point key="canvasLocation" x="319" y="3284"/>
         </scene>
-        <!--Mate Detail View Controller-->
+        <!--Mate Detail View Controller - 메이트 프로필-->
         <scene sceneID="8AK-al-gRH">
             <objects>
                 <viewController id="s7T-3P-Sgw" customClass="SWMPMateDetailViewController" sceneMemberID="viewController">
@@ -601,6 +601,10 @@
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wHa-wO-zkm">
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.92941176469999998" green="0.3872475178" blue="0.42253464039999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="0.96862745100000003" green="0.95294117649999999" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                </textAttributes>
                                 <items>
                                     <navigationItem title="메이트 프로필" id="BI7-KX-dUF">
                                         <barButtonItem key="leftBarButtonItem" style="plain" id="nmT-EF-VwM">
@@ -639,7 +643,29 @@
                         </subviews>
                         <color key="backgroundColor" red="0.96862745100000003" green="0.95294117649999999" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="2Gh-fJ-D7n"/>
+                    <navigationItem key="navigationItem" title="메이트 프로필" id="2Gh-fJ-D7n">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="9dX-60-7ju">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4Tv-PW-C1i">
+                                <rect key="frame" x="16" y="13" width="18" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="뒤로버튼.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismis:" destination="s7T-3P-Sgw" eventType="touchUpInside" id="FYh-Sy-Fgx"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="pdc-ID-tBk">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="6cD-6I-qjm">
+                                <rect key="frame" x="279" y="9" width="25" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="zzim.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="contentTableView" destination="1Mx-OH-inc" id="jhZ-gS-kjo"/>
                     </connections>
@@ -756,7 +782,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V2v-eA-fCt">
                                 <rect key="frame" x="224" y="532" width="76" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="등록하기.png">
+                                <state key="normal" backgroundImage="등록하기.png">
                                     <color key="titleColor" red="0.92941176469999998" green="0.3872475178" blue="0.42253464039999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -843,7 +869,7 @@
                         <outlet property="houseImageScrollView" destination="lQd-JY-LgW" id="aXi-6B-yoj"/>
                         <outlet property="houseTitleTextField" destination="DFF-Cq-Thy" id="DAq-oT-crP"/>
                         <outlet property="introHouse" destination="VL0-5Q-v8m" id="YMl-j7-2hT"/>
-                        <outlet property="premiumBrand" destination="V2v-eA-fCt" id="UCW-Hs-S5o"/>
+                        <outlet property="premiumBrand" destination="V2v-eA-fCt" id="MYz-8E-iTJ"/>
                         <outlet property="stationImg" destination="uL7-Jx-N4z" id="Xnx-yC-RZ7"/>
                         <outlet property="stationLabel" destination="BJl-VE-nJA" id="x3F-8f-Gbm"/>
                         <outlet property="subwayMinutesTextFiled" destination="SMq-hN-ZRf" id="yzy-Uf-bbR"/>
@@ -1865,15 +1891,16 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="7H5-ab-eSc">
-                                <rect key="frame" x="0.0" y="125" width="320" height="443"/>
+                                <rect key="frame" x="0.0" y="63" width="320" height="505"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </tableView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="나의 완성된 하우스 키워드입니다.   모두 맞으면 완료해주세요." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="Xb5-OC-1hW">
-                                <rect key="frame" x="20" y="72" width="280" height="54"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="나의 완성된 하우스 키워드입니다.   모두 맞으면 완료해주세요." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="Xb5-OC-1hW">
+                                <rect key="frame" x="0.0" y="63" width="320" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.96862745100000003" green="0.95294117649999999" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="15"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -1921,19 +1948,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="나의 완성된 하우스 키워드입니다.   모두 맞으면 완료해주세요." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="sBE-Vx-Njr">
-                                <rect key="frame" x="20" y="74" width="280" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="15"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="YYX-5A-hcV">
-                                <rect key="frame" x="0.0" y="130" width="320" height="438"/>
+                                <rect key="frame" x="0.0" y="96" width="320" height="472"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.96862745100000003" green="0.95294117649999999" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.96862745100000003" green="0.95294117649999999" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                             </tableView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="나의 완성된 하우스 키워드입니다.   모두 맞으면 완료해주세요." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="sBE-Vx-Njr">
+                                <rect key="frame" x="0.0" y="74" width="320" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.96862745100000003" green="0.95294117649999999" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="15"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.96862745100000003" green="0.95294117649999999" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -3535,7 +3563,7 @@
         <image name="final_logo.png" width="640" height="603"/>
         <image name="hello.png" width="640" height="543"/>
         <image name="line.png" width="640" height="3"/>
-        <image name="mate.png" width="640" height="63"/>
+        <image name="mate1.png" width="640" height="63"/>
         <image name="menu.png" width="32" height="35"/>
         <image name="minus.png" width="48" height="48"/>
         <image name="ok.png" width="37" height="38"/>
@@ -3567,9 +3595,9 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="oPl-86-bfa"/>
-        <segue reference="JMl-td-baN"/>
         <segue reference="Vvz-o6-XPJ"/>
         <segue reference="3lD-wT-Dzk"/>
+        <segue reference="oPl-86-bfa"/>
+        <segue reference="JMl-td-baN"/>
     </inferredMetricsTieBreakers>
 </document>

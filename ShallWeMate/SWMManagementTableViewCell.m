@@ -16,7 +16,7 @@
 @implementation SWMManagementTableViewCell
 + (CGFloat) getHeight
 {
-    return 115.0f;
+    return 125.0f;
     
     
 }
@@ -60,10 +60,14 @@
 // 컬렉션 크기
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-        return CGSizeMake(50, 58);
+        return CGSizeMake(50,43);
   
 }
 
+// 컬렉션과 컬렉션 width 간격
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
+    return 1;
+}
 
 - (void) setOption:(NSMutableArray *)option
 {
