@@ -60,7 +60,7 @@
 // 컬렉션 크기
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-        return CGSizeMake(51,51);
+        return CGSizeMake(50,43);
   
 }
 

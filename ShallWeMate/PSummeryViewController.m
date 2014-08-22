@@ -15,7 +15,7 @@
 #import "SWMManagementTableViewCell.h"
 #import "SWMRoom.h"
 
-#import "UIViewController+LoadingOverlay2.h"
+#import "UIViewController+LoadingOverlay.h"
 
 #define swmServerAddr @"http://54.249.103.4/SWMserver"
 #define swmServerAddrLocal @"http://54.249.103.4/SWMserver"
@@ -41,7 +41,7 @@
     // Do any additional setup after loading the view.
     SWMRoom *room = _houseData.exportToSWMRoom;
     NSLog(@"\n=======\ndescription test %@",room.description);
-
+    
     [self.contentTableView registerNib:[UINib nibWithNibName:@"SWMImageScrollTableViewCell" bundle:nil] forCellReuseIdentifier:@"imageScrollViewTableViewCell"];
     [self.contentTableView registerNib:[UINib nibWithNibName:@"SWMTransportTableViewCell" bundle:nil] forCellReuseIdentifier:@"transportTableViewCell"];
     [self.contentTableView registerNib:[UINib nibWithNibName:@"TitleTableViewCell" bundle:nil] forCellReuseIdentifier:@"titleTableViewCell"];
@@ -64,7 +64,7 @@
 
 
 //- (IBAction)finishButtonClicked:(id)sender {
-//    
+//
 //    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 //}
 
@@ -119,14 +119,14 @@
     {
         SWMImageScrollTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"imageScrollViewTableViewCell"];
         //        cell.houseImageArray = self.houseData.houseImageArray;
-        [cell setHouseImageArray:self.houseData.houseImageArray];
+        
         [cell refreshData];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
     else if (indexPath.row == 1){
         TitleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"titleTableViewCell"];
-
+        
         if (cell == nil) {
             cell = [TitleTableViewCell titleTableViewCell];
         }
@@ -152,10 +152,10 @@
         
         SWMManagementTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"mcollectionViewTableViewCell"];
         
-//        if (cell == nil) {
-//            NSLog(@"hh");
-//            cell = [SWMManagementTableViewCell collectionViewTableViewCell];
-//        }
+        //        if (cell == nil) {
+        //            NSLog(@"hh");
+        //            cell = [SWMManagementTableViewCell collectionViewTableViewCell];
+        //        }
         [cell setTitle:@"관리비 포함 사항"];
         [cell setManagements:_houseData.enableManagementStates];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -225,7 +225,6 @@
 
 - (IBAction)backButtonClicked:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
-    
 }
 
 
@@ -247,14 +246,10 @@
     NSNumber *mode = [NSNumber numberWithBool:NO];
     [defaults setObject:mode forKey:@"AppMode"];
     
-    
-    [defaults setObject:self.houseData forKey:@"forProviderHouseData"];
-    
     [self performSelector:@selector(onHideLayer) withObject:nil afterDelay:5.0f];
     
     [self sendToRoomData];
     
-
 }
 
 

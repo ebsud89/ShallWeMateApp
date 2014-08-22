@@ -98,7 +98,7 @@
 		68C308E019A6D7E600EB82A4 /* NowMatching.gif in Resources */ = {isa = PBXBuildFile; fileRef = 68C308DF19A6D7E600EB82A4 /* NowMatching.gif */; };
 		68C309C019A7112800EB82A4 /* mate1.png in Resources */ = {isa = PBXBuildFile; fileRef = 68C309BF19A7112800EB82A4 /* mate1.png */; };
 		68C309C219A72F6700EB82A4 /* 등록완료.png in Resources */ = {isa = PBXBuildFile; fileRef = 68C309C119A72F6700EB82A4 /* 등록완료.png */; };
-		68C309C519A7379300EB82A4 /* UIViewController+LoadingOverlay2.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C309C419A7379300EB82A4 /* UIViewController+LoadingOverlay2.m */; };
+		68C309C719A7438100EB82A4 /* 가구3_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 68C309C619A7438100EB82A4 /* 가구3_1.png */; };
 		68ED4F7A19A4DE1700A1C189 /* SWMManagementTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 68ED4F7819A4DE1700A1C189 /* SWMManagementTableViewCell.m */; };
 		68ED4F7B19A4DE1700A1C189 /* SWMManagementTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68ED4F7919A4DE1700A1C189 /* SWMManagementTableViewCell.xib */; };
 		AEA394AE199BCA6B0075CD1E /* ALAsset+accessibilityLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA3948E199BCA6A0075CD1E /* ALAsset+accessibilityLabel.m */; };
@@ -443,8 +443,7 @@
 		68C3093819A70C0500EB82A4 /* 가구3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "가구3.png"; sourceTree = "<group>"; };
 		68C309BF19A7112800EB82A4 /* mate1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mate1.png; sourceTree = "<group>"; };
 		68C309C119A72F6700EB82A4 /* 등록완료.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "등록완료.png"; sourceTree = "<group>"; };
-		68C309C319A7379300EB82A4 /* UIViewController+LoadingOverlay2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LoadingOverlay2.h"; sourceTree = "<group>"; };
-		68C309C419A7379300EB82A4 /* UIViewController+LoadingOverlay2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LoadingOverlay2.m"; sourceTree = "<group>"; };
+		68C309C619A7438100EB82A4 /* 가구3_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "가구3_1.png"; sourceTree = "<group>"; };
 		68ED4F7719A4DE1700A1C189 /* SWMManagementTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMManagementTableViewCell.h; sourceTree = "<group>"; };
 		68ED4F7819A4DE1700A1C189 /* SWMManagementTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMManagementTableViewCell.m; sourceTree = "<group>"; };
 		68ED4F7919A4DE1700A1C189 /* SWMManagementTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SWMManagementTableViewCell.xib; sourceTree = "<group>"; };
@@ -822,6 +821,7 @@
 		68AF057919A3D71600454AEC /* 가구 */ = {
 			isa = PBXGroup;
 			children = (
+				68C309C619A7438100EB82A4 /* 가구3_1.png */,
 				AEAA7DF019A717A50093E9C4 /* 가구1_1.png */,
 				AEAA7DF119A717A50093E9C4 /* 가구1.png */,
 				AEAA7DF219A717A50093E9C4 /* 가구2_1.png */,
@@ -1179,8 +1179,6 @@
 			children = (
 				AEAD772419A47B68004E30B7 /* UIViewController+LoadingOverlay.h */,
 				AEAD772519A47B68004E30B7 /* UIViewController+LoadingOverlay.m */,
-				68C309C319A7379300EB82A4 /* UIViewController+LoadingOverlay2.h */,
-				68C309C419A7379300EB82A4 /* UIViewController+LoadingOverlay2.m */,
 			);
 			name = LoadingView;
 			sourceTree = "<group>";
@@ -1821,6 +1819,7 @@
 				68A98F4819A1E99C009AB3A5 /* 수인.png in Resources */,
 				AEAA7D2219A619750093E9C4 /* lifestyle_09 copy.png in Resources */,
 				AEAA7D2119A619750093E9C4 /* lifestyle_08 copy.png in Resources */,
+				68C309C719A7438100EB82A4 /* 가구3_1.png in Resources */,
 				689A07D419A0A0440022460D /* page3_nono.png in Resources */,
 				AEAA7D1C19A619750093E9C4 /* lifestyle_03 copy.png in Resources */,
 				68A2080A19A44AED0050850D /* plus.png in Resources */,
@@ -2017,7 +2016,6 @@
 				68C308CF19A6451600EB82A4 /* SWMCollectionViewCell.m in Sources */,
 				68978B7C19A0D0B00055821E /* UIImage+ResizeMagick.m in Sources */,
 				AEA394AF199BCA6B0075CD1E /* ALAsset+assetType.m in Sources */,
-				68C309C519A7379300EB82A4 /* UIViewController+LoadingOverlay2.m in Sources */,
 				AEA394B5199BCA6B0075CD1E /* CTAssetsGroupViewController.m in Sources */,
 				AEB4BD7D199FAC11004343C3 /* FLAnimatedImageView.m in Sources */,
 				EB2F77A61991D36600EA365E /* UIBubbleTableView.m in Sources */,
