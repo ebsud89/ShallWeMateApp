@@ -37,7 +37,7 @@
     [_memberData printAll];
     vc.memberData = _memberData;
     NSLog(@"vc.mem %@", vc.memberData.name);
-    [self.navigationController pushViewController: vc animated:NO];
+    [self.navigationController pushViewController: vc animated:YES];
 }
 - (void)viewDidLoad
 {

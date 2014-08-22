@@ -147,7 +147,7 @@
     vc.memberData = _memberData;
     NSLog(@"r1=============");
     [_memberData printAll];
-    [self.navigationController pushViewController: vc animated:NO];
+    [self.navigationController pushViewController: vc animated:YES];
 }
 
 

@@ -25,7 +25,7 @@
     //        [self.view addSubview:vc.view];
     NSLog(@"r5=============%@", self.memberData.name);
     [self.memberData printAll];
-    [self.navigationController pushViewController: vc animated:NO];
+    [self.navigationController pushViewController: vc animated:YES];
 }
 
 - (void)viewDidLoad

@@ -50,9 +50,10 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)dismis:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:^{
-        NSLog(@"닫음");
-    }];
+    [self.navigationController popViewControllerAnimated:YES];
+//    [self dismissViewControllerAnimated:YES completion:^{
+//        NSLog(@"닫음");
+//    }];
 }
 
 #pragma mark - UITableView

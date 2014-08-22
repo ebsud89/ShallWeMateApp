@@ -95,7 +95,7 @@
     NSLog(@"r2=============");
     [_memberData printAll];
     vc.memberData = _memberData;
-    [self.navigationController pushViewController: vc animated:NO];
+    [self.navigationController pushViewController: vc animated:YES];
 }
 
 - (IBAction)backButtonClicked:(id)sender {
