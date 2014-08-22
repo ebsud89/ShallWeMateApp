@@ -97,8 +97,6 @@
 		68C308DE19A6C4DD00EB82A4 /* 뒤로버튼1.png in Resources */ = {isa = PBXBuildFile; fileRef = 68C308DD19A6C4DD00EB82A4 /* 뒤로버튼1.png */; };
 		68C308E019A6D7E600EB82A4 /* NowMatching.gif in Resources */ = {isa = PBXBuildFile; fileRef = 68C308DF19A6D7E600EB82A4 /* NowMatching.gif */; };
 		68C309C019A7112800EB82A4 /* mate1.png in Resources */ = {isa = PBXBuildFile; fileRef = 68C309BF19A7112800EB82A4 /* mate1.png */; };
-		68C309C219A72F6700EB82A4 /* 등록완료.png in Resources */ = {isa = PBXBuildFile; fileRef = 68C309C119A72F6700EB82A4 /* 등록완료.png */; };
-		68C309C719A7438100EB82A4 /* 가구3_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 68C309C619A7438100EB82A4 /* 가구3_1.png */; };
 		68ED4F7A19A4DE1700A1C189 /* SWMManagementTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 68ED4F7819A4DE1700A1C189 /* SWMManagementTableViewCell.m */; };
 		68ED4F7B19A4DE1700A1C189 /* SWMManagementTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68ED4F7919A4DE1700A1C189 /* SWMManagementTableViewCell.xib */; };
 		AEA394AE199BCA6B0075CD1E /* ALAsset+accessibilityLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA3948E199BCA6A0075CD1E /* ALAsset+accessibilityLabel.m */; };
@@ -2055,7 +2053,6 @@
 				AEAA7D2219A619750093E9C4 /* lifestyle_09 copy.png in Resources */,
 				AEAA7EAA19A733ED0093E9C4 /* Room3a.jpg in Resources */,
 				AEAA7D2119A619750093E9C4 /* lifestyle_08 copy.png in Resources */,
-				68C309C719A7438100EB82A4 /* 가구3_1.png in Resources */,
 				689A07D419A0A0440022460D /* page3_nono.png in Resources */,
 				AEAA7D1C19A619750093E9C4 /* lifestyle_03 copy.png in Resources */,
 				68A2080A19A44AED0050850D /* plus.png in Resources */,
