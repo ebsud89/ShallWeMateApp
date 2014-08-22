@@ -15,7 +15,7 @@
 #import "SWMManagementTableViewCell.h"
 #import "SWMRoom.h"
 
-#import "UIViewController+LoadingOverlay.h"
+#import "UIViewController+LoadingOverlay2.h"
 
 #define swmServerAddr @"http://54.249.103.4/SWMserver"
 #define swmServerAddrLocal @"http://54.249.103.4/SWMserver"

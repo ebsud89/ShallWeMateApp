@@ -100,7 +100,7 @@
         vc.brandName.text =brandNameString;
         SWMAppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
         appDelegate.brand = brandNameString;
-        NSLog(@"te... :%@ %@", brandNameString, appDelegate.brand);
+        NSLog(@"brand name3 4 :%@ %@", brandNameString, appDelegate.brand);
         
         vc.housedata = self.houseData;
         //        [self.navigationController popViewControllerAnimated:YES];

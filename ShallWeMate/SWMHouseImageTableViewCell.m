@@ -72,12 +72,12 @@
     self.titleLabel.text = text;
 }
 
--(void) setPremium:(UIImageView *)premium
-{
-    self.premium = premium;
-    NSLog(@"preminum : %f", premium.frame.size.height);
-    
-}
+//-(void) setPremium:(UIImageView *)premium
+//{
+//    self.premium = premium;
+//    NSLog(@"preminum : %f", premium.frame.size.height);
+//    
+//}
 - (void) setEnabledLikeIt:(NSNumber *) like with:(BOOL)isHeartImg
 {
     UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(longPress:)];
