@@ -106,7 +106,7 @@
     {
         SWMImageScrollTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"imageScrollViewTableViewCell"];
 //        cell.houseImageArray = self.houseData.houseImageArray;
-        [cell setHouseImageArray:self.houseData.houseImageArray];
+//        [cell setHouseImageArray:self.houseData.houseImageArray];
         [cell refreshData];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;

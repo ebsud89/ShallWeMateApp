@@ -72,12 +72,11 @@
     self.titleLabel.text = text;
 }
 
-//-(void) setPremium:(UIImageView *)premium
-//{
-//    self.premium = premium;
-//    NSLog(@"preminum : %f", premium.frame.size.height);
-//    
-//}
+-(void)setIntroHouse:(NSString *)introHouse
+{
+    NSLog(@"introHouse : %@", introHouse);
+    
+}
 
 -(void) setPremiumImageText:(NSString *)imageStr
 {

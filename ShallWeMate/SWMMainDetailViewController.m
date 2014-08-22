@@ -294,31 +294,36 @@ const int inervalValue = 60;
         return [SWMImageScrollTableViewCell getHeight];
     }
     else if(indexPath.row == 1){
-        return [TitleTableViewCell getHeight];
+        return 70.0f;//[TitleTableViewCell getHeight];
     }
     else if(indexPath.row == 2){
         return [ManagementTableViewCell getHeight];
     }
     else if (indexPath.row == 3){
-        return [SWMManagementTableViewCell getHeight];
+//        return [SWMManagementTableViewCell getHeight];
+        return 70.0f;//[SWMManagementTableViewCell getHeight];
     }
     else if (indexPath.row == 4)
     {
-        return [SWMTransportTableViewCell getHeight];
+//        return [SWMTransportTableViewCell getHeight];
+        return [SWMRoomInfoTableViewCell getHeight];
     }
     else if (indexPath.row == 5)
     {
-        return [SWMRoomInfoTableViewCell getHeight];
-    }
-    else if (indexPath.row == 6){
+//        return [SWMRoomInfoTableViewCell getHeight];
         return [SWMManagementTableViewCell getHeight];
     }
-    else if (indexPath.row == 7){
+    else if (indexPath.row == 6){
+//        return [SWMManagementTableViewCell getHeight];
         return [CollectionViewTableViewCell getHeight];
     }
-    else if (indexPath.row == 8){
+    else if (indexPath.row == 7){
+//        return [CollectionViewTableViewCell getHeight];
         return [SWMQAndATableViewCell getHeight];
     }
+//    else if (indexPath.row == 8){
+//        return [SWMQAndATableViewCell getHeight];
+//    }
     else
         return 90.0f; //cell for comments, in reality the height has to be adjustable
 }
@@ -331,7 +336,7 @@ const int inervalValue = 60;
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
     // If you're serving data from an array, return the length of the array:
-    return 8;
+    return 7;
 }
 
 // Customize the appearance of table view cells.
@@ -356,8 +361,11 @@ const int inervalValue = 60;
         }
         
         [cell setTitle:_houseData.title];//@"디저트를 좋아하는 사람들의 하우스"];
-//        [cell setContent:_houseData.description];//@"진짜 재밌고, 유쾌한 사람들이 모여 사는 쉐어하우스입니다. 많은 관심을 가지고 오세요"];
+        //        [cell setContent:_houseData.description];//@"진짜 재밌고, 유쾌한 사람들이 모여 사는 쉐어하우스입니다. 많은 관심을 가지고 오세요"];
+        NSLog(@"maindetailtableviewcell, settitle %@", _houseData.title);
         [cell setIntroHouse:_houseData.introHouse];
+        NSLog(@"maindetailtableviewcell, setintrohouse %@", _houseData.introHouse);
+        NSLog(@"maindetailtableviewcell, setintrohouse %@", _houseData.description);
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
@@ -371,20 +379,20 @@ const int inervalValue = 60;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
-    else if (indexPath.row == 3)
-    {
-        SWMManagementTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"mcollectionViewTableViewCell"];
-        
-        if (cell == nil) {
-            NSLog(@"hh");
-            cell = [SWMManagementTableViewCell collectionViewTableViewCell];
-        }
-        [cell setTitle:@"관리비 포함 사항"];
-        [cell setManagements:_houseData.enableManagementStates];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        return cell;
-    }
-    else if (indexPath.row ==4)
+//    else if (indexPath.row == 3)
+//    {
+//        SWMManagementTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"mcollectionViewTableViewCell"];
+//        
+//        if (cell == nil) {
+//            NSLog(@"hh");
+//            cell = [SWMManagementTableViewCell collectionViewTableViewCell];
+//        }
+//        [cell setTitle:@"관리비 포함 사항"];
+//        [cell setManagements:_houseData.enableManagementStates];
+//        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//        return cell;
+//    }
+    else if (indexPath.row ==3)
     {
         SWMTransportTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TransportTableViewCell"];
         [cell setSubwayDictionary:_houseData.stationCode];
@@ -392,7 +400,7 @@ const int inervalValue = 60;
         [cell setMinutes:_houseData.transportationMinutes];
         return cell;
     }
-    else if (indexPath.row == 5)
+    else if (indexPath.row == 4)
     {
         SWMRoomInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RoomInfoTableViewCell"];
         [cell setWomenN:_houseData.wantWomenNum];
@@ -416,7 +424,7 @@ const int inervalValue = 60;
 //        appDelegate.data = @"room";
 //        return cell;
 //    }
-    else if (indexPath.row == 6)
+    else if (indexPath.row == 5)
     {
         SWMManagementTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"mcollectionViewTableViewCell"];
         
@@ -430,7 +438,7 @@ const int inervalValue = 60;
         appDelegate.data = @"option";
         return cell;
     }
-    else if (indexPath.row == 7)
+    else if (indexPath.row == 6)
     {
         SWMQAndATableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"QAndATableViewCell"];
         

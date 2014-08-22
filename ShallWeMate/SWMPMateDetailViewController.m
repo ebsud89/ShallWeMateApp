@@ -106,8 +106,8 @@
     else if (indexPath.row == 1)
     {
         SWMMateInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"swmMateInfoTableViewCell"];
-        [cell setAvgAge:_houseData.avgAge];
-        
+        [cell setAvgAge:@"20대 중반"];
+        [cell setGender:@"상관없어요"];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }

@@ -54,7 +54,7 @@
     self.imageView.clipsToBounds = YES;
     
     NSString *gender =  _memberData.sex;
-    if ([gender isEqualToString:@"1"])  {
+    if ([gender isEqualToString:@"0"])  {
         gender = @"여자";
     } else {
         gender = @"남자";

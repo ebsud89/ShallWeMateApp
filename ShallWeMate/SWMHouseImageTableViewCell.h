@@ -70,6 +70,7 @@
 - (void) setEnabledLikeIt:(NSNumber *) like with:(BOOL)isHeartImg;
 
 - (void) setTitleText:(NSString *)text;
+- (void) setIntroHouse:(NSString *)text;
 - (void) refreshUI;
 - (void) refreshData;
 - (void) setIsMainTableView:(BOOL)isMainTableView with:(HouseData *)houseData;

@@ -77,6 +77,7 @@
 
 -(void) setIntroHouse:(NSString *) text
 {
+    NSLog(@"titletableviewcell, setIntroHouse text %@", text);
     self.contentLabel.text = text;
 }
 

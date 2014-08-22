@@ -187,10 +187,9 @@ UIImageView *image;
      
      [cell setIsMainTableView:YES with:housedata];
      [cell setTitleText:housedata.title];
-     
      [cell setEnabledBadgeView];
      [cell setEnabledLikeIt:housedata.likeIt with:YES];
-     
+     [cell setIntroHouse:housedata.introHouse];
      [cell setHouseImageArray:housedata.houseImageArray];
      
      [cell refreshData];

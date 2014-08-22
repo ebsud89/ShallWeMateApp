@@ -15,4 +15,5 @@
 
 - (void) startView;
 - (void) popFacebookLogin;
+- (void)goNext;
 @end

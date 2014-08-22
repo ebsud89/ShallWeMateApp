@@ -31,7 +31,7 @@
     [super viewDidLoad];
     NSLog(@"startview");
     // Do any additional setup after loading the view.
-    FLAnimatedImage *loadingImg = [[FLAnimatedImage alloc] initWithAnimatedGIFData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"loadingImg" ofType:@"gif"]]];
+    FLAnimatedImage *loadingImg = [[FLAnimatedImage alloc] initWithAnimatedGIFData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"logoGIF" ofType:@"gif"]]];
     
     //background image setting
     UIGraphicsBeginImageContext(self.view.frame.size);
@@ -49,6 +49,11 @@
     
     //Add the FLAnimatedImage view objects as subviews
     [self.view addSubview:self.loadingImageView ];
+    
+    FLAnimatedImageView *imageView = [[FLAnimatedImageView alloc] init];
+    imageView.animatedImage = loadingImg;
+    imageView.frame = CGRectMake(20, 100, 304, 250);
+    [self.view addSubview:imageView];
     
     
 //    [NSTimer scheduledTimerWithTimeInterval: 3.0
@@ -86,9 +91,17 @@
 {
     [super viewDidAppear:animated];
     
+
+    
+    [NSTimer scheduledTimerWithTimeInterval:5.0f target:self selector:@selector(goNext) userInfo:nil repeats:NO];
+}
+
+-(void) goNext
+{
     NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
     
     NSNumber *mode = [defaults objectForKey:@"AppMode"];
+    NSLog(@"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ %b", mode);
     
     if (mode != nil) {
         if ([mode boolValue]) { //수요자
@@ -98,7 +111,7 @@
         }
         else // 공급자
         {
-            UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"pMainDetailView"];
+            UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"pMainDetailViewNav00"];
             
             [MENU_VIEW_CONTROLLER presentCenterViewController:vc animated:YES];
         }
