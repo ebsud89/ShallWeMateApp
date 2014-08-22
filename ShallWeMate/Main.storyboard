@@ -1051,23 +1051,15 @@
                                 </connections>
                             </button>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="5So-vZ-79F">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="jfS-i2-Ifx">
-                                <rect key="frame" x="285" y="12" width="19" height="19"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="ok.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="doneButtonPressed:" destination="XSR-Fy-oW1" eventType="touchUpInside" id="1Mn-G1-d8g"/>
-                                </connections>
-                            </button>
+                        <barButtonItem key="rightBarButtonItem" image="ok1.png" id="Szp-Ta-50G">
+                            <connections>
+                                <action selector="doneButtonPressed:" destination="XSR-Fy-oW1" id="dhN-Uu-3Fr"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="brandImage" destination="9Ik-ub-vRW" id="U2H-5k-MGd"/>
                         <outlet property="brandName" destination="sJB-sO-Qby" id="GPw-2P-ean"/>
-                        <outlet property="commitBtn" destination="jfS-i2-Ifx" id="uBI-Q9-IpL"/>
                         <outlet property="inputAuthCode" destination="xV5-DD-KDk" id="TYo-GI-2Ga"/>
                     </connections>
                 </viewController>
@@ -3563,8 +3555,8 @@
         <image name="zzim.png" width="49" height="41"/>
         <image name="다음버튼.png" width="36" height="37"/>
         <image name="다음버튼.png" width="220" height="78"/>
-        <image name="뒤로버튼.png" width="36" height="37"/>
         <image name="뒤로버튼.png" width="220" height="78"/>
+        <image name="뒤로버튼.png" width="36" height="37"/>
         <image name="뒤로버튼1.png" width="220" height="78"/>
         <image name="등록하기.png" width="152" height="39"/>
         <image name="분거리.png" width="217" height="27"/>
